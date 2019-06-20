@@ -17,8 +17,12 @@ items:
   fullName: DotNetHelper.Database.EventHandler.SqlExceptionEventArgs
   type: Class
   source:
+    remote:
+      path: src/DotNetHelper.Database/EventHandler/SQLException.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: SqlExceptionEventArgs
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\EventHandler\SQLException.cs
+    path: ../src/DotNetHelper.Database/EventHandler/SQLException.cs
     startLine: 4
   assemblies:
   - DotNetHelper.Database
@@ -58,8 +62,12 @@ items:
   fullName: DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.Exception
   type: Property
   source:
+    remote:
+      path: src/DotNetHelper.Database/EventHandler/SQLException.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Exception
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\EventHandler\SQLException.cs
+    path: ../src/DotNetHelper.Database/EventHandler/SQLException.cs
     startLine: 6
   assemblies:
   - DotNetHelper.Database
@@ -89,8 +97,12 @@ items:
   fullName: DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.Sql
   type: Property
   source:
+    remote:
+      path: src/DotNetHelper.Database/EventHandler/SQLException.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Sql
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\EventHandler\SQLException.cs
+    path: ../src/DotNetHelper.Database/EventHandler/SQLException.cs
     startLine: 7
   assemblies:
   - DotNetHelper.Database
@@ -120,8 +132,12 @@ items:
   fullName: DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.SqlExceptionEventArgs(System.Exception, System.String)
   type: Constructor
   source:
+    remote:
+      path: src/DotNetHelper.Database/EventHandler/SQLException.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: .ctor
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\EventHandler\SQLException.cs
+    path: ../src/DotNetHelper.Database/EventHandler/SQLException.cs
     startLine: 9
   assemblies:
   - DotNetHelper.Database
@@ -151,8 +167,12 @@ items:
   fullName: DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.SqlExceptionEventArgs(System.Exception)
   type: Constructor
   source:
+    remote:
+      path: src/DotNetHelper.Database/EventHandler/SQLException.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: .ctor
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\EventHandler\SQLException.cs
+    path: ../src/DotNetHelper.Database/EventHandler/SQLException.cs
     startLine: 14
   assemblies:
   - DotNetHelper.Database

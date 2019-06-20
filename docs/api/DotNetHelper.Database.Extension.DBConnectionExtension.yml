@@ -15,8 +15,12 @@ items:
   fullName: DotNetHelper.Database.Extension.DBConnectionExtension
   type: Class
   source:
+    remote:
+      path: src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: DBConnectionExtension
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\IDBConnectionExtension.cs
+    path: ../src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
     startLine: 4
   assemblies:
   - DotNetHelper.Database
@@ -54,8 +58,12 @@ items:
   fullName: DotNetHelper.Database.Extension.DBConnectionExtension.OpenSafely(System.Data.IDbConnection)
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: OpenSafely
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\IDBConnectionExtension.cs
+    path: ../src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
     startLine: 6
   assemblies:
   - DotNetHelper.Database
@@ -89,8 +97,12 @@ items:
   fullName: DotNetHelper.Database.Extension.DBConnectionExtension.CloseSafely(System.Data.IDbConnection)
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: CloseSafely
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\IDBConnectionExtension.cs
+    path: ../src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
     startLine: 19
   assemblies:
   - DotNetHelper.Database

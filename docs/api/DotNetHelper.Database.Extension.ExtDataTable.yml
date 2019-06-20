@@ -17,8 +17,12 @@ items:
   fullName: DotNetHelper.Database.Extension.ExtDataTable
   type: Class
   source:
+    remote:
+      path: src/DotNetHelper.Database/Extension/ExtDataTable.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExtDataTable
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\ExtDataTable.cs
+    path: ../src/DotNetHelper.Database/Extension/ExtDataTable.cs
     startLine: 12
   assemblies:
   - DotNetHelper.Database
@@ -56,8 +60,12 @@ items:
   fullName: DotNetHelper.Database.Extension.ExtDataTable.SetColumnsOrder(System.Data.DataTable, System.String[])
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/Extension/ExtDataTable.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: SetColumnsOrder
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\ExtDataTable.cs
+    path: ../src/DotNetHelper.Database/Extension/ExtDataTable.cs
     startLine: 20
   assemblies:
   - DotNetHelper.Database
@@ -101,8 +109,12 @@ items:
   fullName: DotNetHelper.Database.Extension.ExtDataTable.SetColumnPosition(System.Data.DataTable, System.String, System.Int32)
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/Extension/ExtDataTable.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: SetColumnPosition
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\ExtDataTable.cs
+    path: ../src/DotNetHelper.Database/Extension/ExtDataTable.cs
     startLine: 46
   assemblies:
   - DotNetHelper.Database
@@ -146,8 +158,12 @@ items:
   fullName: DotNetHelper.Database.Extension.ExtDataTable.MapTo<T>(System.Data.DataRow, System.Boolean)
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/Extension/ExtDataTable.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: MapTo
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\ExtDataTable.cs
+    path: ../src/DotNetHelper.Database/Extension/ExtDataTable.cs
     startLine: 64
   assemblies:
   - DotNetHelper.Database
@@ -198,8 +214,12 @@ items:
   fullName: DotNetHelper.Database.Extension.ExtDataTable.MapToList<T>(System.Data.DataTable, System.Boolean)
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/Extension/ExtDataTable.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: MapToList
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\ExtDataTable.cs
+    path: ../src/DotNetHelper.Database/Extension/ExtDataTable.cs
     startLine: 97
   assemblies:
   - DotNetHelper.Database

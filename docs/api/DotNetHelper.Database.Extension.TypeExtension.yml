@@ -15,8 +15,12 @@ items:
   fullName: DotNetHelper.Database.Extension.TypeExtension
   type: Class
   source:
+    remote:
+      path: src/DotNetHelper.Database/Extension/TypeExtension.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: TypeExtension
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\TypeExtension.cs
+    path: ../src/DotNetHelper.Database/Extension/TypeExtension.cs
     startLine: 9
   assemblies:
   - DotNetHelper.Database
@@ -54,8 +58,12 @@ items:
   fullName: DotNetHelper.Database.Extension.TypeExtension.IsNullable(System.Type)
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/Extension/TypeExtension.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: IsNullable
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\TypeExtension.cs
+    path: ../src/DotNetHelper.Database/Extension/TypeExtension.cs
     startLine: 18
   assemblies:
   - DotNetHelper.Database
@@ -95,8 +103,12 @@ items:
   fullName: DotNetHelper.Database.Extension.TypeExtension.IsTypeDynamic(System.Type)
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/Extension/TypeExtension.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: IsTypeDynamic
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\TypeExtension.cs
+    path: ../src/DotNetHelper.Database/Extension/TypeExtension.cs
     startLine: 29
   assemblies:
   - DotNetHelper.Database

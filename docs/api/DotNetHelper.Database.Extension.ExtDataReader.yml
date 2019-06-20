@@ -17,8 +17,12 @@ items:
   fullName: DotNetHelper.Database.Extension.ExtDataReader
   type: Class
   source:
+    remote:
+      path: src/DotNetHelper.Database/Extension/ExtDataReader.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExtDataReader
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\ExtDataReader.cs
+    path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
     startLine: 15
   assemblies:
   - DotNetHelper.Database
@@ -56,8 +60,12 @@ items:
   fullName: DotNetHelper.Database.Extension.ExtDataReader.GetBytes(System.Data.IDataReader, System.Int32)
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/Extension/ExtDataReader.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetBytes
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\ExtDataReader.cs
+    path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
     startLine: 26
   assemblies:
   - DotNetHelper.Database
@@ -100,8 +108,12 @@ items:
   fullName: DotNetHelper.Database.Extension.ExtDataReader.HasRows(System.Data.IDataReader)
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/Extension/ExtDataReader.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: HasRows
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\ExtDataReader.cs
+    path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
     startLine: 47
   assemblies:
   - DotNetHelper.Database
@@ -137,8 +149,12 @@ items:
   fullName: DotNetHelper.Database.Extension.ExtDataReader.MapToList<T>(System.Data.IDataReader, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>)
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/Extension/ExtDataReader.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: MapToList
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\ExtDataReader.cs
+    path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
     startLine: 62
   assemblies:
   - DotNetHelper.Database
@@ -192,8 +208,12 @@ items:
   fullName: DotNetHelper.Database.Extension.ExtDataReader.MapTo<T>(System.Data.IDataReader, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>)
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/Extension/ExtDataReader.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: MapTo
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\ExtDataReader.cs
+    path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
     startLine: 134
   assemblies:
   - DotNetHelper.Database

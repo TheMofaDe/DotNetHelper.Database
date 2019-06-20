@@ -13,8 +13,12 @@ items:
   fullName: DotNetHelper.Database.Models.QueryBucketManager.FullQueryBucketEventHandler
   type: Delegate
   source:
+    remote:
+      path: src/DotNetHelper.Database/Models/QueryBucketManager.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: FullQueryBucketEventHandler
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Models\QueryBucketManager.cs
+    path: ../src/DotNetHelper.Database/Models/QueryBucketManager.cs
     startLine: 10
   assemblies:
   - DotNetHelper.Database

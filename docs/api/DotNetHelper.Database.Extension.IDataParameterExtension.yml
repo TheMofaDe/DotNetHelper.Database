@@ -14,8 +14,12 @@ items:
   fullName: DotNetHelper.Database.Extension.IDataParameterExtension
   type: Class
   source:
+    remote:
+      path: src/DotNetHelper.Database/Extension/IDataParameterExtension.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: IDataParameterExtension
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\IDataParameterExtension.cs
+    path: ../src/DotNetHelper.Database/Extension/IDataParameterExtension.cs
     startLine: 6
   assemblies:
   - DotNetHelper.Database
@@ -53,8 +57,12 @@ items:
   fullName: DotNetHelper.Database.Extension.IDataParameterExtension.AddRange<T>(System.Data.IDataParameterCollection, System.Collections.Generic.IEnumerable<T>)
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/Extension/IDataParameterExtension.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: AddRange
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\IDataParameterExtension.cs
+    path: ../src/DotNetHelper.Database/Extension/IDataParameterExtension.cs
     startLine: 8
   assemblies:
   - DotNetHelper.Database

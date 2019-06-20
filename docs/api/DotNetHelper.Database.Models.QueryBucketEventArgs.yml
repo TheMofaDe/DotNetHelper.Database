@@ -15,8 +15,12 @@ items:
   fullName: DotNetHelper.Database.Models.QueryBucketEventArgs
   type: Class
   source:
+    remote:
+      path: src/DotNetHelper.Database/Models/QueryBucketManager.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: QueryBucketEventArgs
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Models\QueryBucketManager.cs
+    path: ../src/DotNetHelper.Database/Models/QueryBucketManager.cs
     startLine: 83
   assemblies:
   - DotNetHelper.Database
@@ -56,8 +60,12 @@ items:
   fullName: DotNetHelper.Database.Models.QueryBucketEventArgs.QueryBucket
   type: Property
   source:
+    remote:
+      path: src/DotNetHelper.Database/Models/QueryBucketManager.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: QueryBucket
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Models\QueryBucketManager.cs
+    path: ../src/DotNetHelper.Database/Models/QueryBucketManager.cs
     startLine: 85
   assemblies:
   - DotNetHelper.Database
@@ -87,8 +95,12 @@ items:
   fullName: DotNetHelper.Database.Models.QueryBucketEventArgs.QueryBucketEventArgs(DotNetHelper.Database.Models.QueryBucket)
   type: Constructor
   source:
+    remote:
+      path: src/DotNetHelper.Database/Models/QueryBucketManager.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: .ctor
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Models\QueryBucketManager.cs
+    path: ../src/DotNetHelper.Database/Models/QueryBucketManager.cs
     startLine: 87
   assemblies:
   - DotNetHelper.Database

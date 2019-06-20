@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\DotNetHelper.Database.Abstractions\DotNetHelper.Database.csproj" />
+    <ProjectReference Include="..\..\src\DotNetHelper.Database\DotNetHelper.Database.csproj" />
   </ItemGroup>
 
 </Project>

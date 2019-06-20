@@ -20,8 +20,12 @@ items:
   fullName: DotNetHelper.Database.Models.QueryBucket
   type: Class
   source:
+    remote:
+      path: src/DotNetHelper.Database/Models/QueryBucket.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: QueryBucket
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Models\QueryBucket.cs
+    path: ../src/DotNetHelper.Database/Models/QueryBucket.cs
     startLine: 4
   assemblies:
   - DotNetHelper.Database
@@ -57,8 +61,12 @@ items:
   fullName: DotNetHelper.Database.Models.QueryBucket.ConnectionStartTime
   type: Property
   source:
+    remote:
+      path: src/DotNetHelper.Database/Models/QueryBucket.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ConnectionStartTime
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Models\QueryBucket.cs
+    path: ../src/DotNetHelper.Database/Models/QueryBucket.cs
     startLine: 6
   assemblies:
   - DotNetHelper.Database
@@ -88,8 +96,12 @@ items:
   fullName: DotNetHelper.Database.Models.QueryBucket.ConnectionDisposeTime
   type: Property
   source:
+    remote:
+      path: src/DotNetHelper.Database/Models/QueryBucket.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ConnectionDisposeTime
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Models\QueryBucket.cs
+    path: ../src/DotNetHelper.Database/Models/QueryBucket.cs
     startLine: 7
   assemblies:
   - DotNetHelper.Database
@@ -119,8 +131,12 @@ items:
   fullName: DotNetHelper.Database.Models.QueryBucket.Query
   type: Property
   source:
+    remote:
+      path: src/DotNetHelper.Database/Models/QueryBucket.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Query
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Models\QueryBucket.cs
+    path: ../src/DotNetHelper.Database/Models/QueryBucket.cs
     startLine: 8
   assemblies:
   - DotNetHelper.Database
@@ -150,8 +166,12 @@ items:
   fullName: DotNetHelper.Database.Models.QueryBucket.ReadableQuery
   type: Property
   source:
+    remote:
+      path: src/DotNetHelper.Database/Models/QueryBucket.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ReadableQuery
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Models\QueryBucket.cs
+    path: ../src/DotNetHelper.Database/Models/QueryBucket.cs
     startLine: 9
   assemblies:
   - DotNetHelper.Database
@@ -181,8 +201,12 @@ items:
   fullName: DotNetHelper.Database.Models.QueryBucket.Server
   type: Property
   source:
+    remote:
+      path: src/DotNetHelper.Database/Models/QueryBucket.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Server
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Models\QueryBucket.cs
+    path: ../src/DotNetHelper.Database/Models/QueryBucket.cs
     startLine: 10
   assemblies:
   - DotNetHelper.Database
@@ -212,8 +236,12 @@ items:
   fullName: DotNetHelper.Database.Models.QueryBucket.DatabaseType
   type: Property
   source:
+    remote:
+      path: src/DotNetHelper.Database/Models/QueryBucket.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: DatabaseType
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Models\QueryBucket.cs
+    path: ../src/DotNetHelper.Database/Models/QueryBucket.cs
     startLine: 11
   assemblies:
   - DotNetHelper.Database
@@ -243,8 +271,12 @@ items:
   fullName: DotNetHelper.Database.Models.QueryBucket.ExecutedSuccessfully
   type: Property
   source:
+    remote:
+      path: src/DotNetHelper.Database/Models/QueryBucket.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecutedSuccessfully
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Models\QueryBucket.cs
+    path: ../src/DotNetHelper.Database/Models/QueryBucket.cs
     startLine: 12
   assemblies:
   - DotNetHelper.Database

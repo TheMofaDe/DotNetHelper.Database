@@ -15,8 +15,12 @@ items:
   fullName: DotNetHelper.Database.Interface.IColumnSerializer
   type: Interface
   source:
+    remote:
+      path: src/DotNetHelper.Database/Interface/ISerializer.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: IColumnSerializer
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Interface\ISerializer.cs
+    path: ../src/DotNetHelper.Database/Interface/ISerializer.cs
     startLine: 4
   assemblies:
   - DotNetHelper.Database
@@ -42,8 +46,12 @@ items:
   fullName: DotNetHelper.Database.Interface.IColumnSerializer.Serialize
   type: Property
   source:
+    remote:
+      path: src/DotNetHelper.Database/Interface/ISerializer.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Serialize
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Interface\ISerializer.cs
+    path: ../src/DotNetHelper.Database/Interface/ISerializer.cs
     startLine: 6
   assemblies:
   - DotNetHelper.Database
@@ -71,8 +79,12 @@ items:
   fullName: DotNetHelper.Database.Interface.IColumnSerializer.Deserialize
   type: Property
   source:
+    remote:
+      path: src/DotNetHelper.Database/Interface/ISerializer.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Deserialize
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Interface\ISerializer.cs
+    path: ../src/DotNetHelper.Database/Interface/ISerializer.cs
     startLine: 7
   assemblies:
   - DotNetHelper.Database

@@ -22,8 +22,12 @@ items:
   fullName: DotNetHelper.Database.Models.QueryBucketManager
   type: Class
   source:
+    remote:
+      path: src/DotNetHelper.Database/Models/QueryBucketManager.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: QueryBucketManager
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Models\QueryBucketManager.cs
+    path: ../src/DotNetHelper.Database/Models/QueryBucketManager.cs
     startLine: 5
   assemblies:
   - DotNetHelper.Database
@@ -63,8 +67,12 @@ items:
   fullName: DotNetHelper.Database.Models.QueryBucketManager.MaxBucketSize
   type: Property
   source:
+    remote:
+      path: src/DotNetHelper.Database/Models/QueryBucketManager.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: MaxBucketSize
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Models\QueryBucketManager.cs
+    path: ../src/DotNetHelper.Database/Models/QueryBucketManager.cs
     startLine: 7
   assemblies:
   - DotNetHelper.Database
@@ -94,8 +102,12 @@ items:
   fullName: DotNetHelper.Database.Models.QueryBucketManager.IncludeReadableQuery
   type: Property
   source:
+    remote:
+      path: src/DotNetHelper.Database/Models/QueryBucketManager.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: IncludeReadableQuery
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Models\QueryBucketManager.cs
+    path: ../src/DotNetHelper.Database/Models/QueryBucketManager.cs
     startLine: 8
   assemblies:
   - DotNetHelper.Database
@@ -125,8 +137,12 @@ items:
   fullName: DotNetHelper.Database.Models.QueryBucketManager.FullBucketReached
   type: Event
   source:
+    remote:
+      path: src/DotNetHelper.Database/Models/QueryBucketManager.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: FullBucketReached
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Models\QueryBucketManager.cs
+    path: ../src/DotNetHelper.Database/Models/QueryBucketManager.cs
     startLine: 11
   assemblies:
   - DotNetHelper.Database
@@ -152,8 +168,12 @@ items:
   fullName: DotNetHelper.Database.Models.QueryBucketManager.BeforeAddToBucket
   type: Event
   source:
+    remote:
+      path: src/DotNetHelper.Database/Models/QueryBucketManager.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: BeforeAddToBucket
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Models\QueryBucketManager.cs
+    path: ../src/DotNetHelper.Database/Models/QueryBucketManager.cs
     startLine: 15
   assemblies:
   - DotNetHelper.Database
@@ -179,8 +199,12 @@ items:
   fullName: DotNetHelper.Database.Models.QueryBucketManager.QueryBucketManager()
   type: Constructor
   source:
+    remote:
+      path: src/DotNetHelper.Database/Models/QueryBucketManager.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: .ctor
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Models\QueryBucketManager.cs
+    path: ../src/DotNetHelper.Database/Models/QueryBucketManager.cs
     startLine: 19
   assemblies:
   - DotNetHelper.Database
@@ -205,8 +229,12 @@ items:
   fullName: DotNetHelper.Database.Models.QueryBucketManager.AddBucket(DotNetHelper.Database.Models.QueryBucket)
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/Models/QueryBucketManager.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: AddBucket
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Models\QueryBucketManager.cs
+    path: ../src/DotNetHelper.Database/Models/QueryBucketManager.cs
     startLine: 23
   assemblies:
   - DotNetHelper.Database
@@ -234,8 +262,12 @@ items:
   fullName: DotNetHelper.Database.Models.QueryBucketManager.OnFullBucket(DotNetHelper.Database.Models.FullQueryBucketEventArgs)
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/Models/QueryBucketManager.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: OnFullBucket
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Models\QueryBucketManager.cs
+    path: ../src/DotNetHelper.Database/Models/QueryBucketManager.cs
     startLine: 41
   assemblies:
   - DotNetHelper.Database
@@ -265,8 +297,12 @@ items:
   fullName: DotNetHelper.Database.Models.QueryBucketManager.OnBeforeAdd(DotNetHelper.Database.Models.QueryBucketEventArgs)
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/Models/QueryBucketManager.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: OnBeforeAdd
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Models\QueryBucketManager.cs
+    path: ../src/DotNetHelper.Database/Models/QueryBucketManager.cs
     startLine: 47
   assemblies:
   - DotNetHelper.Database
@@ -296,8 +332,12 @@ items:
   fullName: DotNetHelper.Database.Models.QueryBucketManager.Dispose()
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/Models/QueryBucketManager.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Dispose
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Models\QueryBucketManager.cs
+    path: ../src/DotNetHelper.Database/Models/QueryBucketManager.cs
     startLine: 54
   assemblies:
   - DotNetHelper.Database

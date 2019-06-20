@@ -42,8 +42,12 @@ items:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>
   type: Class
   source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: DatabaseAccess
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\DataSource\DataBaseAccess.cs
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
     startLine: 21
   assemblies:
   - DotNetHelper.Database
@@ -88,8 +92,12 @@ items:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.CommandTimeOut
   type: Property
   source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: CommandTimeOut
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\DataSource\DataBaseAccess.cs
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
     startLine: 24
   assemblies:
   - DotNetHelper.Database
@@ -121,8 +129,12 @@ items:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.ConnectionTimeOut
   type: Property
   source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ConnectionTimeOut
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\DataSource\DataBaseAccess.cs
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
     startLine: 25
   assemblies:
   - DotNetHelper.Database
@@ -154,8 +166,12 @@ items:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.ObjectToSql
   type: Property
   source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ObjectToSql
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\DataSource\DataBaseAccess.cs
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
     startLine: 27
   assemblies:
   - DotNetHelper.Database
@@ -187,8 +203,12 @@ items:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.SqlSyntaxHelper
   type: Property
   source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: SqlSyntaxHelper
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\DataSource\DataBaseAccess.cs
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
     startLine: 28
   assemblies:
   - DotNetHelper.Database
@@ -220,8 +240,12 @@ items:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.DatabaseAccess(DotNetHelper.ObjectToSql.Enum.DataBaseType)
   type: Constructor
   source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: .ctor
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\DataSource\DataBaseAccess.cs
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
     startLine: 32
   assemblies:
   - DotNetHelper.Database
@@ -251,8 +275,12 @@ items:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.DatabaseAccess(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.String)
   type: Constructor
   source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: .ctor
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\DataSource\DataBaseAccess.cs
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
     startLine: 37
   assemblies:
   - DotNetHelper.Database
@@ -284,8 +312,12 @@ items:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.DatabaseAccess(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.String, System.TimeSpan)
   type: Constructor
   source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: .ctor
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\DataSource\DataBaseAccess.cs
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
     startLine: 44
   assemblies:
   - DotNetHelper.Database
@@ -319,8 +351,12 @@ items:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.DatabaseAccess(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.String, System.TimeSpan, System.TimeSpan)
   type: Constructor
   source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: .ctor
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\DataSource\DataBaseAccess.cs
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
     startLine: 52
   assemblies:
   - DotNetHelper.Database
@@ -356,8 +392,12 @@ items:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.GetNewConnection(System.Boolean)
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewConnection
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\DataSource\DataBaseAccess.cs
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
     startLine: 64
   assemblies:
   - DotNetHelper.Database
@@ -389,8 +429,12 @@ items:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.GetNewCommand(System.Data.IDbConnection, System.String, System.Data.CommandType, System.Collections.Generic.IEnumerable<System.Data.IDataParameter>)
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewCommand
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\DataSource\DataBaseAccess.cs
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
     startLine: 72
   assemblies:
   - DotNetHelper.Database
@@ -429,8 +473,12 @@ items:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.GetNewCommandAndTransaction(System.Data.IDbConnection)
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewCommandAndTransaction
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\DataSource\DataBaseAccess.cs
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
     startLine: 85
   assemblies:
   - DotNetHelper.Database
@@ -462,8 +510,12 @@ items:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.ExecuteNonQuery(System.String, System.Data.CommandType, System.Collections.Generic.IEnumerable<System.Data.IDataParameter>)
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteNonQuery
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\DataSource\DataBaseAccess.cs
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
     startLine: 105
   assemblies:
   - DotNetHelper.Database
@@ -506,8 +558,12 @@ items:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.ExecuteScalar(System.String, System.Data.CommandType, System.Collections.Generic.List<System.Data.Common.DbParameter>)
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteScalar
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\DataSource\DataBaseAccess.cs
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
     startLine: 121
   assemblies:
   - DotNetHelper.Database
@@ -550,8 +606,12 @@ items:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.ExecuteTransaction(System.Collections.Generic.List<System.String>, System.Boolean, System.Boolean)
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteTransaction
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\DataSource\DataBaseAccess.cs
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
     startLine: 130
   assemblies:
   - DotNetHelper.Database
@@ -588,8 +648,12 @@ items:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.GetDataReader(System.String, System.Data.CommandType, System.Collections.Generic.List<System.Data.Common.DbParameter>)
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataReader
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\DataSource\DataBaseAccess.cs
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
     startLine: 161
   assemblies:
   - DotNetHelper.Database
@@ -626,8 +690,12 @@ items:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.GetDataTable(System.String, System.Data.CommandType, System.Collections.Generic.List<System.Data.Common.DbParameter>)
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTable
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\DataSource\DataBaseAccess.cs
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
     startLine: 169
   assemblies:
   - DotNetHelper.Database
@@ -664,8 +732,12 @@ items:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.GetDataTable(System.String)
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTable
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\DataSource\DataBaseAccess.cs
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
     startLine: 178
   assemblies:
   - DotNetHelper.Database
@@ -697,8 +769,12 @@ items:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.GetDataTableWithSchema(System.String, System.Data.CommandType, System.Collections.Generic.List<System.Data.Common.DbParameter>)
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTableWithSchema
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\DataSource\DataBaseAccess.cs
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
     startLine: 183
   assemblies:
   - DotNetHelper.Database
@@ -735,8 +811,12 @@ items:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.GetDataTableWithSchema(System.String)
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTableWithSchema
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\DataSource\DataBaseAccess.cs
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
     startLine: 198
   assemblies:
   - DotNetHelper.Database
@@ -768,8 +848,12 @@ items:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.GetNewParameter(System.String, System.Object)
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewParameter
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\DataSource\DataBaseAccess.cs
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
     startLine: 203
   assemblies:
   - DotNetHelper.Database
@@ -803,8 +887,12 @@ items:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.CanConnect()
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: CanConnect
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\DataSource\DataBaseAccess.cs
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
     startLine: 210
   assemblies:
   - DotNetHelper.Database
@@ -833,8 +921,12 @@ items:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.Get<T>(System.String, System.Data.CommandType, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Collections.Generic.List<System.Data.Common.DbParameter>)
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\DataSource\DataBaseAccess.cs
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
     startLine: 226
   assemblies:
   - DotNetHelper.Database
@@ -881,8 +973,12 @@ items:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.Get<T>()
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\DataSource\DataBaseAccess.cs
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
     startLine: 231
   assemblies:
   - DotNetHelper.Database
@@ -916,8 +1012,12 @@ items:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.Get<T>(System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>)
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\DataSource\DataBaseAccess.cs
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
     startLine: 236
   assemblies:
   - DotNetHelper.Database
@@ -958,8 +1058,12 @@ items:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.Get<T>(System.String, System.Data.CommandType, System.Collections.Generic.List<System.Data.Common.DbParameter>)
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\DataSource\DataBaseAccess.cs
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
     startLine: 242
   assemblies:
   - DotNetHelper.Database
@@ -1000,8 +1104,12 @@ items:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.Execute<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType)
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Execute
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\DataSource\DataBaseAccess.cs
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
     startLine: 249
   assemblies:
   - DotNetHelper.Database
@@ -1040,8 +1148,12 @@ items:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.Execute<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, DotNetHelper.Database.Interface.IColumnSerializer, DotNetHelper.Database.Interface.IColumnSerializer, DotNetHelper.Database.Interface.IColumnSerializer)
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Execute
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\DataSource\DataBaseAccess.cs
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
     startLine: 257
   assemblies:
   - DotNetHelper.Database
@@ -1086,8 +1198,12 @@ items:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.ExecuteAndGetOutput<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutput
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\DataSource\DataBaseAccess.cs
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
     startLine: 266
   assemblies:
   - DotNetHelper.Database
@@ -1128,8 +1244,12 @@ items:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.ExecuteAndGetOutput<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, DotNetHelper.Database.Interface.IColumnSerializer, DotNetHelper.Database.Interface.IColumnSerializer, DotNetHelper.Database.Interface.IColumnSerializer, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
   type: Method
   source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutput
-    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\DataSource\DataBaseAccess.cs
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
     startLine: 274
   assemblies:
   - DotNetHelper.Database
