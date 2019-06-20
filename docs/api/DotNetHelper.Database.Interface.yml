@@ -1,0 +1,28 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper.Database.Interface
+  commentId: N:DotNetHelper.Database.Interface
+  id: DotNetHelper.Database.Interface
+  children:
+  - DotNetHelper.Database.Interface.IColumnSerializer
+  langs:
+  - csharp
+  - vb
+  name: DotNetHelper.Database.Interface
+  nameWithType: DotNetHelper.Database.Interface
+  fullName: DotNetHelper.Database.Interface
+  type: Namespace
+  assemblies:
+  - DotNetHelper.Database
+references:
+- uid: DotNetHelper.Database.Interface.IColumnSerializer
+  commentId: T:DotNetHelper.Database.Interface.IColumnSerializer
+  parent: DotNetHelper.Database.Interface
+  name: IColumnSerializer
+  nameWithType: IColumnSerializer
+  fullName: DotNetHelper.Database.Interface.IColumnSerializer
+- uid: DotNetHelper.Database.Interface
+  commentId: N:DotNetHelper.Database.Interface
+  name: DotNetHelper.Database.Interface
+  nameWithType: DotNetHelper.Database.Interface
+  fullName: DotNetHelper.Database.Interface

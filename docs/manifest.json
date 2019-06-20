@@ -1,0 +1,348 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Business/TheMoFaDe/Code/TheMofaDe/DotNetHelper.Database.Abstractions/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.Database.DataSource.DatabaseAccess-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html",
+          "hash": "9YNuAR0/YUNNtdebB2gsUQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.Database.DataSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.Database.DataSource.html",
+          "hash": "jhiDxMWdPPnb7MKt8G44lw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.html",
+          "hash": "45hbCx0D2oIgYzFJG5QMMQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.Database.EventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.Database.EventHandler.html",
+          "hash": "3lc3EbdRCkVCtNCmYlc3vg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.Database.Extension.DBConnectionExtension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.Database.Extension.DBConnectionExtension.html",
+          "hash": "l0gyz7p/lMCzORwvPx7g1Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.Database.Extension.ExtDataReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.Database.Extension.ExtDataReader.html",
+          "hash": "Nryp4KEu31+pVUGEzduVwA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.Database.Extension.ExtDataTable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.Database.Extension.ExtDataTable.html",
+          "hash": "ylWDQmqXntAo5b4vIQQACw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.Database.Extension.IDataParameterExtension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.Database.Extension.IDataParameterExtension.html",
+          "hash": "sa4zZ9mbGwRiPCdOu4pfJg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.Database.Extension.TypeExtension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.Database.Extension.TypeExtension.html",
+          "hash": "D3Q7fXv8Ln+r/RGZ79FGWg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.Database.Extension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.Database.Extension.html",
+          "hash": "iEGuh2VEoCrc+N1ltCVfNg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.Database.Interface.IColumnSerializer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.Database.Interface.IColumnSerializer.html",
+          "hash": "DBvGCMk50B1IKpLmoE0IBg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.Database.Interface.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.Database.Interface.html",
+          "hash": "jEVLnbIsGolhMP5bo4w+2Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.Database.Models.FullQueryBucketEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.Database.Models.FullQueryBucketEventArgs.html",
+          "hash": "x8jwZ2Bw6vJ5bLL/sIpS8g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.Database.Models.QueryBucket.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.Database.Models.QueryBucket.html",
+          "hash": "9kiqy3DLsiy2FzeSLfnKbw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.Database.Models.QueryBucketEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.Database.Models.QueryBucketEventArgs.html",
+          "hash": "qAXl6x5zLbo4/ULEJYq3Ow=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.Database.Models.QueryBucketManager.FullQueryBucketEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.Database.Models.QueryBucketManager.FullQueryBucketEventHandler.html",
+          "hash": "8RjyLSUMCmKoWX0gbro2Ew=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.Database.Models.QueryBucketManager.OnBeforeAddToBucketEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.Database.Models.QueryBucketManager.OnBeforeAddToBucketEventHandler.html",
+          "hash": "fAe9ISz41JfiMeVGz/q9bA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.Database.Models.QueryBucketManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.Database.Models.QueryBucketManager.html",
+          "hash": "gGjePH1l277WLYCkw8Lyqg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNetHelper.Database.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNetHelper.Database.Models.html",
+          "hash": "jtPqmB+MOFV/phefoCbkTA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/sample.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/sample.html",
+          "hash": "9BMl1p9URlwV5UvsWzLkNQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/icon.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/icon.png",
+          "link_to_path": "C:\\Business\\TheMoFaDe\\Code\\TheMofaDe\\DotNetHelper.Database.Abstractions\\docs/images/icon.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "vg5Ed7/d//aYojIAky2KGw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "langwordmapping/langwordMapping.yml",
+      "output": {
+        "resource": {
+          "relative_path": "langwordmapping/langwordMapping.yml",
+          "link_to_path": "C:\\Business\\TheMoFaDe\\Code\\TheMofaDe\\DotNetHelper.Database.Abstractions\\docs/langwordmapping/langwordMapping.yml"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 19,
+          "skipped_file_count": 0
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 2,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

@@ -1,0 +1,503 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper.Database.Extension.TypeExtension
+  commentId: T:DotNetHelper.Database.Extension.TypeExtension
+  id: TypeExtension
+  parent: DotNetHelper.Database.Extension
+  children:
+  - DotNetHelper.Database.Extension.TypeExtension.IsNullable(System.Type)
+  - DotNetHelper.Database.Extension.TypeExtension.IsTypeDynamic(System.Type)
+  langs:
+  - csharp
+  - vb
+  name: TypeExtension
+  nameWithType: TypeExtension
+  fullName: DotNetHelper.Database.Extension.TypeExtension
+  type: Class
+  source:
+    id: TypeExtension
+    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\TypeExtension.cs
+    startLine: 9
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Extension
+  syntax:
+    content: public static class TypeExtension
+    content.vb: Public Module TypeExtension
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: DotNetHelper.Database.Extension.TypeExtension.IsNullable(System.Type)
+  commentId: M:DotNetHelper.Database.Extension.TypeExtension.IsNullable(System.Type)
+  id: IsNullable(System.Type)
+  isExtensionMethod: true
+  parent: DotNetHelper.Database.Extension.TypeExtension
+  langs:
+  - csharp
+  - vb
+  name: IsNullable(Type)
+  nameWithType: TypeExtension.IsNullable(Type)
+  fullName: DotNetHelper.Database.Extension.TypeExtension.IsNullable(System.Type)
+  type: Method
+  source:
+    id: IsNullable
+    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\TypeExtension.cs
+    startLine: 18
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Extension
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public static (bool isNullableT, Type underlyingType)IsNullable(this Type type)
+    parameters:
+    - id: type
+      type: System.Type
+      description: ''
+    return:
+      type: System.ValueTuple{System.Boolean,System.Type}
+      description: ''
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function IsNullable(type As Type) As(isNullableT As Boolean, underlyingType As Type)
+  overload: DotNetHelper.Database.Extension.TypeExtension.IsNullable*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: DotNetHelper.Database.Extension.TypeExtension.IsTypeDynamic(System.Type)
+  commentId: M:DotNetHelper.Database.Extension.TypeExtension.IsTypeDynamic(System.Type)
+  id: IsTypeDynamic(System.Type)
+  isExtensionMethod: true
+  parent: DotNetHelper.Database.Extension.TypeExtension
+  langs:
+  - csharp
+  - vb
+  name: IsTypeDynamic(Type)
+  nameWithType: TypeExtension.IsTypeDynamic(Type)
+  fullName: DotNetHelper.Database.Extension.TypeExtension.IsTypeDynamic(System.Type)
+  type: Method
+  source:
+    id: IsTypeDynamic
+    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\TypeExtension.cs
+    startLine: 29
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Extension
+  syntax:
+    content: public static bool IsTypeDynamic(this Type type)
+    parameters:
+    - id: type
+      type: System.Type
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function IsTypeDynamic(type As Type) As Boolean
+  overload: DotNetHelper.Database.Extension.TypeExtension.IsTypeDynamic*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: DotNetHelper.Database.Extension
+  commentId: N:DotNetHelper.Database.Extension
+  name: DotNetHelper.Database.Extension
+  nameWithType: DotNetHelper.Database.Extension
+  fullName: DotNetHelper.Database.Extension
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DotNetHelper.Database.Extension.TypeExtension.IsNullable*
+  commentId: Overload:DotNetHelper.Database.Extension.TypeExtension.IsNullable
+  name: IsNullable
+  nameWithType: TypeExtension.IsNullable
+  fullName: DotNetHelper.Database.Extension.TypeExtension.IsNullable
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: System.ValueTuple{System.Boolean,System.Type}
+  commentId: T:System.ValueTuple{System.Boolean,System.Type}
+  parent: System
+  isExternal: true
+  name: ValueTuple<Boolean, Type>
+  nameWithType: ValueTuple<Boolean, Type>
+  fullName: System.ValueTuple<System.Boolean, System.Type>
+  nameWithType.vb: ValueTuple(Of Boolean, Type)
+  fullName.vb: System.ValueTuple(Of System.Boolean, System.Type)
+  name.vb: ValueTuple(Of Boolean, Type)
+  spec.csharp:
+  - uid: System.ValueTuple`2
+    name: ValueTuple
+    nameWithType: ValueTuple
+    fullName: System.ValueTuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.ValueTuple`2
+    name: ValueTuple
+    nameWithType: ValueTuple
+    fullName: System.ValueTuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.Database.Extension.TypeExtension.IsTypeDynamic*
+  commentId: Overload:DotNetHelper.Database.Extension.TypeExtension.IsTypeDynamic
+  name: IsTypeDynamic
+  nameWithType: TypeExtension.IsTypeDynamic
+  fullName: DotNetHelper.Database.Extension.TypeExtension.IsTypeDynamic
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean

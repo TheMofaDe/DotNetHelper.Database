@@ -1,0 +1,713 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper.Database.Extension.ExtDataTable
+  commentId: T:DotNetHelper.Database.Extension.ExtDataTable
+  id: ExtDataTable
+  parent: DotNetHelper.Database.Extension
+  children:
+  - DotNetHelper.Database.Extension.ExtDataTable.MapTo``1(System.Data.DataRow,System.Boolean)
+  - DotNetHelper.Database.Extension.ExtDataTable.MapToList``1(System.Data.DataTable,System.Boolean)
+  - DotNetHelper.Database.Extension.ExtDataTable.SetColumnPosition(System.Data.DataTable,System.String,System.Int32)
+  - DotNetHelper.Database.Extension.ExtDataTable.SetColumnsOrder(System.Data.DataTable,System.String[])
+  langs:
+  - csharp
+  - vb
+  name: ExtDataTable
+  nameWithType: ExtDataTable
+  fullName: DotNetHelper.Database.Extension.ExtDataTable
+  type: Class
+  source:
+    id: ExtDataTable
+    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\ExtDataTable.cs
+    startLine: 12
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Extension
+  syntax:
+    content: public static class ExtDataTable
+    content.vb: Public Module ExtDataTable
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: DotNetHelper.Database.Extension.ExtDataTable.SetColumnsOrder(System.Data.DataTable,System.String[])
+  commentId: M:DotNetHelper.Database.Extension.ExtDataTable.SetColumnsOrder(System.Data.DataTable,System.String[])
+  id: SetColumnsOrder(System.Data.DataTable,System.String[])
+  isExtensionMethod: true
+  parent: DotNetHelper.Database.Extension.ExtDataTable
+  langs:
+  - csharp
+  - vb
+  name: SetColumnsOrder(DataTable, String[])
+  nameWithType: ExtDataTable.SetColumnsOrder(DataTable, String[])
+  fullName: DotNetHelper.Database.Extension.ExtDataTable.SetColumnsOrder(System.Data.DataTable, System.String[])
+  type: Method
+  source:
+    id: SetColumnsOrder
+    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\ExtDataTable.cs
+    startLine: 20
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Extension
+  summary: "\nSetOrdinal of DataTable columns based on the index of the columnNames array. Removes invalid column names first.\n"
+  remarks: 'http://stackoverflow.com/questions/3757997/how-to-change-datatable-colums-order '
+  example: []
+  syntax:
+    content: public static void SetColumnsOrder(this DataTable table, params string[] columnNames)
+    parameters:
+    - id: table
+      type: System.Data.DataTable
+      description: ''
+    - id: columnNames
+      type: System.String[]
+      description: ''
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Sub SetColumnsOrder(table As DataTable, ParamArray columnNames As String())
+  overload: DotNetHelper.Database.Extension.ExtDataTable.SetColumnsOrder*
+  nameWithType.vb: ExtDataTable.SetColumnsOrder(DataTable, String())
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: DotNetHelper.Database.Extension.ExtDataTable.SetColumnsOrder(System.Data.DataTable, System.String())
+  name.vb: SetColumnsOrder(DataTable, String())
+- uid: DotNetHelper.Database.Extension.ExtDataTable.SetColumnPosition(System.Data.DataTable,System.String,System.Int32)
+  commentId: M:DotNetHelper.Database.Extension.ExtDataTable.SetColumnPosition(System.Data.DataTable,System.String,System.Int32)
+  id: SetColumnPosition(System.Data.DataTable,System.String,System.Int32)
+  isExtensionMethod: true
+  parent: DotNetHelper.Database.Extension.ExtDataTable
+  langs:
+  - csharp
+  - vb
+  name: SetColumnPosition(DataTable, String, Int32)
+  nameWithType: ExtDataTable.SetColumnPosition(DataTable, String, Int32)
+  fullName: DotNetHelper.Database.Extension.ExtDataTable.SetColumnPosition(System.Data.DataTable, System.String, System.Int32)
+  type: Method
+  source:
+    id: SetColumnPosition
+    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\ExtDataTable.cs
+    startLine: 46
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Extension
+  summary: "\nSetOrdinal of DataTable columns based on the index of the columnNames array. Removes invalid column names first.\n"
+  remarks: http://stackoverflow.com/questions/3757997/how-to-change-datatable-colums-order
+  example: []
+  syntax:
+    content: public static bool SetColumnPosition(this DataTable table, string columnName, int position)
+    parameters:
+    - id: table
+      type: System.Data.DataTable
+      description: ''
+    - id: columnName
+      type: System.String
+    - id: position
+      type: System.Int32
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function SetColumnPosition(table As DataTable, columnName As String, position As Integer) As Boolean
+  overload: DotNetHelper.Database.Extension.ExtDataTable.SetColumnPosition*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: DotNetHelper.Database.Extension.ExtDataTable.MapTo``1(System.Data.DataRow,System.Boolean)
+  commentId: M:DotNetHelper.Database.Extension.ExtDataTable.MapTo``1(System.Data.DataRow,System.Boolean)
+  id: MapTo``1(System.Data.DataRow,System.Boolean)
+  isExtensionMethod: true
+  parent: DotNetHelper.Database.Extension.ExtDataTable
+  langs:
+  - csharp
+  - vb
+  name: MapTo<T>(DataRow, Boolean)
+  nameWithType: ExtDataTable.MapTo<T>(DataRow, Boolean)
+  fullName: DotNetHelper.Database.Extension.ExtDataTable.MapTo<T>(System.Data.DataRow, System.Boolean)
+  type: Method
+  source:
+    id: MapTo
+    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\ExtDataTable.cs
+    startLine: 64
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Extension
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: >-
+      public static T MapTo<T>(this DataRow row, bool useAttributeName = true)
+          where T : class
+    parameters:
+    - id: row
+      type: System.Data.DataRow
+      description: ''
+    - id: useAttributeName
+      type: System.Boolean
+      description: ''
+    typeParameters:
+    - id: T
+      description: ''
+    return:
+      type: '{T}'
+      description: ''
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function MapTo(Of T As Class)(row As DataRow, useAttributeName As Boolean = True) As T
+  overload: DotNetHelper.Database.Extension.ExtDataTable.MapTo*
+  nameWithType.vb: ExtDataTable.MapTo(Of T)(DataRow, Boolean)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: DotNetHelper.Database.Extension.ExtDataTable.MapTo(Of T)(System.Data.DataRow, System.Boolean)
+  name.vb: MapTo(Of T)(DataRow, Boolean)
+- uid: DotNetHelper.Database.Extension.ExtDataTable.MapToList``1(System.Data.DataTable,System.Boolean)
+  commentId: M:DotNetHelper.Database.Extension.ExtDataTable.MapToList``1(System.Data.DataTable,System.Boolean)
+  id: MapToList``1(System.Data.DataTable,System.Boolean)
+  isExtensionMethod: true
+  parent: DotNetHelper.Database.Extension.ExtDataTable
+  langs:
+  - csharp
+  - vb
+  name: MapToList<T>(DataTable, Boolean)
+  nameWithType: ExtDataTable.MapToList<T>(DataTable, Boolean)
+  fullName: DotNetHelper.Database.Extension.ExtDataTable.MapToList<T>(System.Data.DataTable, System.Boolean)
+  type: Method
+  source:
+    id: MapToList
+    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\ExtDataTable.cs
+    startLine: 97
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Extension
+  syntax:
+    content: >-
+      public static List<T> MapToList<T>(this DataTable dataTable, bool useAttributeName = true)
+          where T : class
+    parameters:
+    - id: dataTable
+      type: System.Data.DataTable
+    - id: useAttributeName
+      type: System.Boolean
+    typeParameters:
+    - id: T
+    return:
+      type: System.Collections.Generic.List{{T}}
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function MapToList(Of T As Class)(dataTable As DataTable, useAttributeName As Boolean = True) As List(Of T)
+  overload: DotNetHelper.Database.Extension.ExtDataTable.MapToList*
+  nameWithType.vb: ExtDataTable.MapToList(Of T)(DataTable, Boolean)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: DotNetHelper.Database.Extension.ExtDataTable.MapToList(Of T)(System.Data.DataTable, System.Boolean)
+  name.vb: MapToList(Of T)(DataTable, Boolean)
+references:
+- uid: DotNetHelper.Database.Extension
+  commentId: N:DotNetHelper.Database.Extension
+  name: DotNetHelper.Database.Extension
+  nameWithType: DotNetHelper.Database.Extension
+  fullName: DotNetHelper.Database.Extension
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DotNetHelper.Database.Extension.ExtDataTable.SetColumnsOrder*
+  commentId: Overload:DotNetHelper.Database.Extension.ExtDataTable.SetColumnsOrder
+  name: SetColumnsOrder
+  nameWithType: ExtDataTable.SetColumnsOrder
+  fullName: DotNetHelper.Database.Extension.ExtDataTable.SetColumnsOrder
+- uid: System.Data.DataTable
+  commentId: T:System.Data.DataTable
+  parent: System.Data
+  isExternal: true
+  name: DataTable
+  nameWithType: DataTable
+  fullName: System.Data.DataTable
+- uid: System.String[]
+  isExternal: true
+  name: String[]
+  nameWithType: String[]
+  fullName: System.String[]
+  nameWithType.vb: String()
+  fullName.vb: System.String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.Data
+  commentId: N:System.Data
+  isExternal: true
+  name: System.Data
+  nameWithType: System.Data
+  fullName: System.Data
+- uid: DotNetHelper.Database.Extension.ExtDataTable.SetColumnPosition*
+  commentId: Overload:DotNetHelper.Database.Extension.ExtDataTable.SetColumnPosition
+  name: SetColumnPosition
+  nameWithType: ExtDataTable.SetColumnPosition
+  fullName: DotNetHelper.Database.Extension.ExtDataTable.SetColumnPosition
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: DotNetHelper.Database.Extension.ExtDataTable.MapTo*
+  commentId: Overload:DotNetHelper.Database.Extension.ExtDataTable.MapTo
+  name: MapTo
+  nameWithType: ExtDataTable.MapTo
+  fullName: DotNetHelper.Database.Extension.ExtDataTable.MapTo
+- uid: System.Data.DataRow
+  commentId: T:System.Data.DataRow
+  parent: System.Data
+  isExternal: true
+  name: DataRow
+  nameWithType: DataRow
+  fullName: System.Data.DataRow
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: DotNetHelper.Database.Extension.ExtDataTable.MapToList*
+  commentId: Overload:DotNetHelper.Database.Extension.ExtDataTable.MapToList
+  name: MapToList
+  nameWithType: ExtDataTable.MapToList
+  fullName: DotNetHelper.Database.Extension.ExtDataTable.MapToList
+- uid: System.Collections.Generic.List{{T}}
+  commentId: T:System.Collections.Generic.List{``0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic

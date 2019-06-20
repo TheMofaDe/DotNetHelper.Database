@@ -1,0 +1,889 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper.Database.Extension.ExtDataReader
+  commentId: T:DotNetHelper.Database.Extension.ExtDataReader
+  id: ExtDataReader
+  parent: DotNetHelper.Database.Extension
+  children:
+  - DotNetHelper.Database.Extension.ExtDataReader.GetBytes(System.Data.IDataReader,System.Int32)
+  - DotNetHelper.Database.Extension.ExtDataReader.HasRows(System.Data.IDataReader)
+  - DotNetHelper.Database.Extension.ExtDataReader.MapTo``1(System.Data.IDataReader,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  - DotNetHelper.Database.Extension.ExtDataReader.MapToList``1(System.Data.IDataReader,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  langs:
+  - csharp
+  - vb
+  name: ExtDataReader
+  nameWithType: ExtDataReader
+  fullName: DotNetHelper.Database.Extension.ExtDataReader
+  type: Class
+  source:
+    id: ExtDataReader
+    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\ExtDataReader.cs
+    startLine: 15
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Extension
+  syntax:
+    content: public static class ExtDataReader
+    content.vb: Public Module ExtDataReader
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: DotNetHelper.Database.Extension.ExtDataReader.GetBytes(System.Data.IDataReader,System.Int32)
+  commentId: M:DotNetHelper.Database.Extension.ExtDataReader.GetBytes(System.Data.IDataReader,System.Int32)
+  id: GetBytes(System.Data.IDataReader,System.Int32)
+  isExtensionMethod: true
+  parent: DotNetHelper.Database.Extension.ExtDataReader
+  langs:
+  - csharp
+  - vb
+  name: GetBytes(IDataReader, Int32)
+  nameWithType: ExtDataReader.GetBytes(IDataReader, Int32)
+  fullName: DotNetHelper.Database.Extension.ExtDataReader.GetBytes(System.Data.IDataReader, System.Int32)
+  type: Method
+  source:
+    id: GetBytes
+    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\ExtDataReader.cs
+    startLine: 26
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Extension
+  summary: "\nReads all available bytes from reader\n"
+  example: []
+  syntax:
+    content: public static byte[] GetBytes(this IDataReader reader, int ordinal)
+    parameters:
+    - id: reader
+      type: System.Data.IDataReader
+      description: ''
+    - id: ordinal
+      type: System.Int32
+      description: ''
+    return:
+      type: System.Byte[]
+      description: ''
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function GetBytes(reader As IDataReader, ordinal As Integer) As Byte()
+  overload: DotNetHelper.Database.Extension.ExtDataReader.GetBytes*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: DotNetHelper.Database.Extension.ExtDataReader.HasRows(System.Data.IDataReader)
+  commentId: M:DotNetHelper.Database.Extension.ExtDataReader.HasRows(System.Data.IDataReader)
+  id: HasRows(System.Data.IDataReader)
+  isExtensionMethod: true
+  parent: DotNetHelper.Database.Extension.ExtDataReader
+  langs:
+  - csharp
+  - vb
+  name: HasRows(IDataReader)
+  nameWithType: ExtDataReader.HasRows(IDataReader)
+  fullName: DotNetHelper.Database.Extension.ExtDataReader.HasRows(System.Data.IDataReader)
+  type: Method
+  source:
+    id: HasRows
+    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\ExtDataReader.cs
+    startLine: 47
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Extension
+  syntax:
+    content: public static bool? HasRows(this IDataReader reader)
+    parameters:
+    - id: reader
+      type: System.Data.IDataReader
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function HasRows(reader As IDataReader) As Boolean?
+  overload: DotNetHelper.Database.Extension.ExtDataReader.HasRows*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: DotNetHelper.Database.Extension.ExtDataReader.MapToList``1(System.Data.IDataReader,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  commentId: M:DotNetHelper.Database.Extension.ExtDataReader.MapToList``1(System.Data.IDataReader,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  id: MapToList``1(System.Data.IDataReader,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  isExtensionMethod: true
+  parent: DotNetHelper.Database.Extension.ExtDataReader
+  langs:
+  - csharp
+  - vb
+  name: MapToList<T>(IDataReader, Func<Object, String>, Func<Object, String>, Func<Object, String>)
+  nameWithType: ExtDataReader.MapToList<T>(IDataReader, Func<Object, String>, Func<Object, String>, Func<Object, String>)
+  fullName: DotNetHelper.Database.Extension.ExtDataReader.MapToList<T>(System.Data.IDataReader, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>)
+  type: Method
+  source:
+    id: MapToList
+    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\ExtDataReader.cs
+    startLine: 62
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Extension
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: >-
+      public static List<T> MapToList<T>(this IDataReader reader, Func<object, string> xmlDeserializer, Func<object, string> jsonDeserializer, Func<object, string> csvDeserializer)
+          where T : class
+    parameters:
+    - id: reader
+      type: System.Data.IDataReader
+      description: ''
+    - id: xmlDeserializer
+      type: System.Func{System.Object,System.String}
+    - id: jsonDeserializer
+      type: System.Func{System.Object,System.String}
+    - id: csvDeserializer
+      type: System.Func{System.Object,System.String}
+    typeParameters:
+    - id: T
+      description: ''
+    return:
+      type: System.Collections.Generic.List{{T}}
+      description: ''
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function MapToList(Of T As Class)(reader As IDataReader, xmlDeserializer As Func(Of Object, String), jsonDeserializer As Func(Of Object, String), csvDeserializer As Func(Of Object, String)) As List(Of T)
+  overload: DotNetHelper.Database.Extension.ExtDataReader.MapToList*
+  nameWithType.vb: ExtDataReader.MapToList(Of T)(IDataReader, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: DotNetHelper.Database.Extension.ExtDataReader.MapToList(Of T)(System.Data.IDataReader, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String))
+  name.vb: MapToList(Of T)(IDataReader, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
+- uid: DotNetHelper.Database.Extension.ExtDataReader.MapTo``1(System.Data.IDataReader,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  commentId: M:DotNetHelper.Database.Extension.ExtDataReader.MapTo``1(System.Data.IDataReader,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  id: MapTo``1(System.Data.IDataReader,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  isExtensionMethod: true
+  parent: DotNetHelper.Database.Extension.ExtDataReader
+  langs:
+  - csharp
+  - vb
+  name: MapTo<T>(IDataReader, Func<Object, String>, Func<Object, String>, Func<Object, String>)
+  nameWithType: ExtDataReader.MapTo<T>(IDataReader, Func<Object, String>, Func<Object, String>, Func<Object, String>)
+  fullName: DotNetHelper.Database.Extension.ExtDataReader.MapTo<T>(System.Data.IDataReader, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>)
+  type: Method
+  source:
+    id: MapTo
+    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\ExtDataReader.cs
+    startLine: 134
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Extension
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: >-
+      public static T MapTo<T>(this IDataReader reader, Func<object, string> xmlDeserializer, Func<object, string> jsonDeserializer, Func<object, string> csvDeserializer)
+          where T : class
+    parameters:
+    - id: reader
+      type: System.Data.IDataReader
+      description: ''
+    - id: xmlDeserializer
+      type: System.Func{System.Object,System.String}
+    - id: jsonDeserializer
+      type: System.Func{System.Object,System.String}
+    - id: csvDeserializer
+      type: System.Func{System.Object,System.String}
+    typeParameters:
+    - id: T
+      description: ''
+    return:
+      type: '{T}'
+      description: ''
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function MapTo(Of T As Class)(reader As IDataReader, xmlDeserializer As Func(Of Object, String), jsonDeserializer As Func(Of Object, String), csvDeserializer As Func(Of Object, String)) As T
+  overload: DotNetHelper.Database.Extension.ExtDataReader.MapTo*
+  nameWithType.vb: ExtDataReader.MapTo(Of T)(IDataReader, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: DotNetHelper.Database.Extension.ExtDataReader.MapTo(Of T)(System.Data.IDataReader, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String))
+  name.vb: MapTo(Of T)(IDataReader, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
+references:
+- uid: DotNetHelper.Database.Extension
+  commentId: N:DotNetHelper.Database.Extension
+  name: DotNetHelper.Database.Extension
+  nameWithType: DotNetHelper.Database.Extension
+  fullName: DotNetHelper.Database.Extension
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DotNetHelper.Database.Extension.ExtDataReader.GetBytes*
+  commentId: Overload:DotNetHelper.Database.Extension.ExtDataReader.GetBytes
+  name: GetBytes
+  nameWithType: ExtDataReader.GetBytes
+  fullName: DotNetHelper.Database.Extension.ExtDataReader.GetBytes
+- uid: System.Data.IDataReader
+  commentId: T:System.Data.IDataReader
+  parent: System.Data
+  isExternal: true
+  name: IDataReader
+  nameWithType: IDataReader
+  fullName: System.Data.IDataReader
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.Data
+  commentId: N:System.Data
+  isExternal: true
+  name: System.Data
+  nameWithType: System.Data
+  fullName: System.Data
+- uid: DotNetHelper.Database.Extension.ExtDataReader.HasRows*
+  commentId: Overload:DotNetHelper.Database.Extension.ExtDataReader.HasRows
+  name: HasRows
+  nameWithType: ExtDataReader.HasRows
+  fullName: DotNetHelper.Database.Extension.ExtDataReader.HasRows
+- uid: System.Nullable{System.Boolean}
+  commentId: T:System.Nullable{System.Boolean}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<Boolean>
+  nameWithType: Nullable<Boolean>
+  fullName: System.Nullable<System.Boolean>
+  nameWithType.vb: Nullable(Of Boolean)
+  fullName.vb: System.Nullable(Of System.Boolean)
+  name.vb: Nullable(Of Boolean)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.Database.Extension.ExtDataReader.MapToList*
+  commentId: Overload:DotNetHelper.Database.Extension.ExtDataReader.MapToList
+  name: MapToList
+  nameWithType: ExtDataReader.MapToList
+  fullName: DotNetHelper.Database.Extension.ExtDataReader.MapToList
+- uid: System.Func{System.Object,System.String}
+  commentId: T:System.Func{System.Object,System.String}
+  parent: System
+  definition: System.Func`2
+  name: Func<Object, String>
+  nameWithType: Func<Object, String>
+  fullName: System.Func<System.Object, System.String>
+  nameWithType.vb: Func(Of Object, String)
+  fullName.vb: System.Func(Of System.Object, System.String)
+  name.vb: Func(Of Object, String)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List{{T}}
+  commentId: T:System.Collections.Generic.List{``0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: DotNetHelper.Database.Extension.ExtDataReader.MapTo*
+  commentId: Overload:DotNetHelper.Database.Extension.ExtDataReader.MapTo
+  name: MapTo
+  nameWithType: ExtDataReader.MapTo
+  fullName: DotNetHelper.Database.Extension.ExtDataReader.MapTo
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T

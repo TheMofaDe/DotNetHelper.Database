@@ -1,0 +1,434 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper.Database.Extension.DBConnectionExtension
+  commentId: T:DotNetHelper.Database.Extension.DBConnectionExtension
+  id: DBConnectionExtension
+  parent: DotNetHelper.Database.Extension
+  children:
+  - DotNetHelper.Database.Extension.DBConnectionExtension.CloseSafely(System.Data.IDbConnection)
+  - DotNetHelper.Database.Extension.DBConnectionExtension.OpenSafely(System.Data.IDbConnection)
+  langs:
+  - csharp
+  - vb
+  name: DBConnectionExtension
+  nameWithType: DBConnectionExtension
+  fullName: DotNetHelper.Database.Extension.DBConnectionExtension
+  type: Class
+  source:
+    id: DBConnectionExtension
+    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\IDBConnectionExtension.cs
+    startLine: 4
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Extension
+  syntax:
+    content: public static class DBConnectionExtension
+    content.vb: Public Module DBConnectionExtension
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: DotNetHelper.Database.Extension.DBConnectionExtension.OpenSafely(System.Data.IDbConnection)
+  commentId: M:DotNetHelper.Database.Extension.DBConnectionExtension.OpenSafely(System.Data.IDbConnection)
+  id: OpenSafely(System.Data.IDbConnection)
+  isExtensionMethod: true
+  parent: DotNetHelper.Database.Extension.DBConnectionExtension
+  langs:
+  - csharp
+  - vb
+  name: OpenSafely(IDbConnection)
+  nameWithType: DBConnectionExtension.OpenSafely(IDbConnection)
+  fullName: DotNetHelper.Database.Extension.DBConnectionExtension.OpenSafely(System.Data.IDbConnection)
+  type: Method
+  source:
+    id: OpenSafely
+    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\IDBConnectionExtension.cs
+    startLine: 6
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Extension
+  syntax:
+    content: public static void OpenSafely(this IDbConnection connection)
+    parameters:
+    - id: connection
+      type: System.Data.IDbConnection
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Sub OpenSafely(connection As IDbConnection)
+  overload: DotNetHelper.Database.Extension.DBConnectionExtension.OpenSafely*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: DotNetHelper.Database.Extension.DBConnectionExtension.CloseSafely(System.Data.IDbConnection)
+  commentId: M:DotNetHelper.Database.Extension.DBConnectionExtension.CloseSafely(System.Data.IDbConnection)
+  id: CloseSafely(System.Data.IDbConnection)
+  isExtensionMethod: true
+  parent: DotNetHelper.Database.Extension.DBConnectionExtension
+  langs:
+  - csharp
+  - vb
+  name: CloseSafely(IDbConnection)
+  nameWithType: DBConnectionExtension.CloseSafely(IDbConnection)
+  fullName: DotNetHelper.Database.Extension.DBConnectionExtension.CloseSafely(System.Data.IDbConnection)
+  type: Method
+  source:
+    id: CloseSafely
+    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Extension\IDBConnectionExtension.cs
+    startLine: 19
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Extension
+  syntax:
+    content: public static void CloseSafely(this IDbConnection connection)
+    parameters:
+    - id: connection
+      type: System.Data.IDbConnection
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Sub CloseSafely(connection As IDbConnection)
+  overload: DotNetHelper.Database.Extension.DBConnectionExtension.CloseSafely*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: DotNetHelper.Database.Extension
+  commentId: N:DotNetHelper.Database.Extension
+  name: DotNetHelper.Database.Extension
+  nameWithType: DotNetHelper.Database.Extension
+  fullName: DotNetHelper.Database.Extension
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DotNetHelper.Database.Extension.DBConnectionExtension.OpenSafely*
+  commentId: Overload:DotNetHelper.Database.Extension.DBConnectionExtension.OpenSafely
+  name: OpenSafely
+  nameWithType: DBConnectionExtension.OpenSafely
+  fullName: DotNetHelper.Database.Extension.DBConnectionExtension.OpenSafely
+- uid: System.Data.IDbConnection
+  commentId: T:System.Data.IDbConnection
+  parent: System.Data
+  isExternal: true
+  name: IDbConnection
+  nameWithType: IDbConnection
+  fullName: System.Data.IDbConnection
+- uid: System.Data
+  commentId: N:System.Data
+  isExternal: true
+  name: System.Data
+  nameWithType: System.Data
+  fullName: System.Data
+- uid: DotNetHelper.Database.Extension.DBConnectionExtension.CloseSafely*
+  commentId: Overload:DotNetHelper.Database.Extension.DBConnectionExtension.CloseSafely
+  name: CloseSafely
+  nameWithType: DBConnectionExtension.CloseSafely
+  fullName: DotNetHelper.Database.Extension.DBConnectionExtension.CloseSafely

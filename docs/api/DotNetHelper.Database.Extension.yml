@@ -1,0 +1,46 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper.Database.Extension
+  commentId: N:DotNetHelper.Database.Extension
+  id: DotNetHelper.Database.Extension
+  children:
+  - DotNetHelper.Database.Extension.DBConnectionExtension
+  - DotNetHelper.Database.Extension.ExtDataReader
+  - DotNetHelper.Database.Extension.ExtDataTable
+  - DotNetHelper.Database.Extension.IDataParameterExtension
+  - DotNetHelper.Database.Extension.TypeExtension
+  langs:
+  - csharp
+  - vb
+  name: DotNetHelper.Database.Extension
+  nameWithType: DotNetHelper.Database.Extension
+  fullName: DotNetHelper.Database.Extension
+  type: Namespace
+  assemblies:
+  - DotNetHelper.Database
+references:
+- uid: DotNetHelper.Database.Extension.ExtDataReader
+  commentId: T:DotNetHelper.Database.Extension.ExtDataReader
+  name: ExtDataReader
+  nameWithType: ExtDataReader
+  fullName: DotNetHelper.Database.Extension.ExtDataReader
+- uid: DotNetHelper.Database.Extension.ExtDataTable
+  commentId: T:DotNetHelper.Database.Extension.ExtDataTable
+  name: ExtDataTable
+  nameWithType: ExtDataTable
+  fullName: DotNetHelper.Database.Extension.ExtDataTable
+- uid: DotNetHelper.Database.Extension.IDataParameterExtension
+  commentId: T:DotNetHelper.Database.Extension.IDataParameterExtension
+  name: IDataParameterExtension
+  nameWithType: IDataParameterExtension
+  fullName: DotNetHelper.Database.Extension.IDataParameterExtension
+- uid: DotNetHelper.Database.Extension.DBConnectionExtension
+  commentId: T:DotNetHelper.Database.Extension.DBConnectionExtension
+  name: DBConnectionExtension
+  nameWithType: DBConnectionExtension
+  fullName: DotNetHelper.Database.Extension.DBConnectionExtension
+- uid: DotNetHelper.Database.Extension.TypeExtension
+  commentId: T:DotNetHelper.Database.Extension.TypeExtension
+  name: TypeExtension
+  nameWithType: TypeExtension
+  fullName: DotNetHelper.Database.Extension.TypeExtension

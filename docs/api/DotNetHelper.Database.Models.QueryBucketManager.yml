@@ -1,0 +1,729 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper.Database.Models.QueryBucketManager
+  commentId: T:DotNetHelper.Database.Models.QueryBucketManager
+  id: QueryBucketManager
+  parent: DotNetHelper.Database.Models
+  children:
+  - DotNetHelper.Database.Models.QueryBucketManager.#ctor
+  - DotNetHelper.Database.Models.QueryBucketManager.AddBucket(DotNetHelper.Database.Models.QueryBucket)
+  - DotNetHelper.Database.Models.QueryBucketManager.BeforeAddToBucket
+  - DotNetHelper.Database.Models.QueryBucketManager.Dispose
+  - DotNetHelper.Database.Models.QueryBucketManager.FullBucketReached
+  - DotNetHelper.Database.Models.QueryBucketManager.IncludeReadableQuery
+  - DotNetHelper.Database.Models.QueryBucketManager.MaxBucketSize
+  - DotNetHelper.Database.Models.QueryBucketManager.OnBeforeAdd(DotNetHelper.Database.Models.QueryBucketEventArgs)
+  - DotNetHelper.Database.Models.QueryBucketManager.OnFullBucket(DotNetHelper.Database.Models.FullQueryBucketEventArgs)
+  langs:
+  - csharp
+  - vb
+  name: QueryBucketManager
+  nameWithType: QueryBucketManager
+  fullName: DotNetHelper.Database.Models.QueryBucketManager
+  type: Class
+  source:
+    id: QueryBucketManager
+    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Models\QueryBucketManager.cs
+    startLine: 5
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Models
+  syntax:
+    content: 'public class QueryBucketManager : IDisposable'
+    content.vb: >-
+      Public Class QueryBucketManager
+          Implements IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: DotNetHelper.Database.Models.QueryBucketManager.MaxBucketSize
+  commentId: P:DotNetHelper.Database.Models.QueryBucketManager.MaxBucketSize
+  id: MaxBucketSize
+  parent: DotNetHelper.Database.Models.QueryBucketManager
+  langs:
+  - csharp
+  - vb
+  name: MaxBucketSize
+  nameWithType: QueryBucketManager.MaxBucketSize
+  fullName: DotNetHelper.Database.Models.QueryBucketManager.MaxBucketSize
+  type: Property
+  source:
+    id: MaxBucketSize
+    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Models\QueryBucketManager.cs
+    startLine: 7
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Models
+  syntax:
+    content: public int MaxBucketSize { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property MaxBucketSize As Integer
+  overload: DotNetHelper.Database.Models.QueryBucketManager.MaxBucketSize*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper.Database.Models.QueryBucketManager.IncludeReadableQuery
+  commentId: P:DotNetHelper.Database.Models.QueryBucketManager.IncludeReadableQuery
+  id: IncludeReadableQuery
+  parent: DotNetHelper.Database.Models.QueryBucketManager
+  langs:
+  - csharp
+  - vb
+  name: IncludeReadableQuery
+  nameWithType: QueryBucketManager.IncludeReadableQuery
+  fullName: DotNetHelper.Database.Models.QueryBucketManager.IncludeReadableQuery
+  type: Property
+  source:
+    id: IncludeReadableQuery
+    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Models\QueryBucketManager.cs
+    startLine: 8
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Models
+  syntax:
+    content: public bool IncludeReadableQuery { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IncludeReadableQuery As Boolean
+  overload: DotNetHelper.Database.Models.QueryBucketManager.IncludeReadableQuery*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper.Database.Models.QueryBucketManager.FullBucketReached
+  commentId: E:DotNetHelper.Database.Models.QueryBucketManager.FullBucketReached
+  id: FullBucketReached
+  parent: DotNetHelper.Database.Models.QueryBucketManager
+  langs:
+  - csharp
+  - vb
+  name: FullBucketReached
+  nameWithType: QueryBucketManager.FullBucketReached
+  fullName: DotNetHelper.Database.Models.QueryBucketManager.FullBucketReached
+  type: Event
+  source:
+    id: FullBucketReached
+    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Models\QueryBucketManager.cs
+    startLine: 11
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Models
+  syntax:
+    content: public event QueryBucketManager.FullQueryBucketEventHandler FullBucketReached
+    return:
+      type: DotNetHelper.Database.Models.QueryBucketManager.FullQueryBucketEventHandler
+    content.vb: Public Event FullBucketReached As QueryBucketManager.FullQueryBucketEventHandler
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper.Database.Models.QueryBucketManager.BeforeAddToBucket
+  commentId: E:DotNetHelper.Database.Models.QueryBucketManager.BeforeAddToBucket
+  id: BeforeAddToBucket
+  parent: DotNetHelper.Database.Models.QueryBucketManager
+  langs:
+  - csharp
+  - vb
+  name: BeforeAddToBucket
+  nameWithType: QueryBucketManager.BeforeAddToBucket
+  fullName: DotNetHelper.Database.Models.QueryBucketManager.BeforeAddToBucket
+  type: Event
+  source:
+    id: BeforeAddToBucket
+    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Models\QueryBucketManager.cs
+    startLine: 15
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Models
+  syntax:
+    content: public event QueryBucketManager.OnBeforeAddToBucketEventHandler BeforeAddToBucket
+    return:
+      type: DotNetHelper.Database.Models.QueryBucketManager.OnBeforeAddToBucketEventHandler
+    content.vb: Public Event BeforeAddToBucket As QueryBucketManager.OnBeforeAddToBucketEventHandler
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper.Database.Models.QueryBucketManager.#ctor
+  commentId: M:DotNetHelper.Database.Models.QueryBucketManager.#ctor
+  id: '#ctor'
+  parent: DotNetHelper.Database.Models.QueryBucketManager
+  langs:
+  - csharp
+  - vb
+  name: QueryBucketManager()
+  nameWithType: QueryBucketManager.QueryBucketManager()
+  fullName: DotNetHelper.Database.Models.QueryBucketManager.QueryBucketManager()
+  type: Constructor
+  source:
+    id: .ctor
+    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Models\QueryBucketManager.cs
+    startLine: 19
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Models
+  syntax:
+    content: public QueryBucketManager()
+    content.vb: Public Sub New
+  overload: DotNetHelper.Database.Models.QueryBucketManager.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper.Database.Models.QueryBucketManager.AddBucket(DotNetHelper.Database.Models.QueryBucket)
+  commentId: M:DotNetHelper.Database.Models.QueryBucketManager.AddBucket(DotNetHelper.Database.Models.QueryBucket)
+  id: AddBucket(DotNetHelper.Database.Models.QueryBucket)
+  parent: DotNetHelper.Database.Models.QueryBucketManager
+  langs:
+  - csharp
+  - vb
+  name: AddBucket(QueryBucket)
+  nameWithType: QueryBucketManager.AddBucket(QueryBucket)
+  fullName: DotNetHelper.Database.Models.QueryBucketManager.AddBucket(DotNetHelper.Database.Models.QueryBucket)
+  type: Method
+  source:
+    id: AddBucket
+    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Models\QueryBucketManager.cs
+    startLine: 23
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Models
+  syntax:
+    content: public void AddBucket(QueryBucket bucket)
+    parameters:
+    - id: bucket
+      type: DotNetHelper.Database.Models.QueryBucket
+    content.vb: Public Sub AddBucket(bucket As QueryBucket)
+  overload: DotNetHelper.Database.Models.QueryBucketManager.AddBucket*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DotNetHelper.Database.Models.QueryBucketManager.OnFullBucket(DotNetHelper.Database.Models.FullQueryBucketEventArgs)
+  commentId: M:DotNetHelper.Database.Models.QueryBucketManager.OnFullBucket(DotNetHelper.Database.Models.FullQueryBucketEventArgs)
+  id: OnFullBucket(DotNetHelper.Database.Models.FullQueryBucketEventArgs)
+  parent: DotNetHelper.Database.Models.QueryBucketManager
+  langs:
+  - csharp
+  - vb
+  name: OnFullBucket(FullQueryBucketEventArgs)
+  nameWithType: QueryBucketManager.OnFullBucket(FullQueryBucketEventArgs)
+  fullName: DotNetHelper.Database.Models.QueryBucketManager.OnFullBucket(DotNetHelper.Database.Models.FullQueryBucketEventArgs)
+  type: Method
+  source:
+    id: OnFullBucket
+    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Models\QueryBucketManager.cs
+    startLine: 41
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Models
+  syntax:
+    content: protected virtual void OnFullBucket(FullQueryBucketEventArgs e)
+    parameters:
+    - id: e
+      type: DotNetHelper.Database.Models.FullQueryBucketEventArgs
+    content.vb: Protected Overridable Sub OnFullBucket(e As FullQueryBucketEventArgs)
+  overload: DotNetHelper.Database.Models.QueryBucketManager.OnFullBucket*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: DotNetHelper.Database.Models.QueryBucketManager.OnBeforeAdd(DotNetHelper.Database.Models.QueryBucketEventArgs)
+  commentId: M:DotNetHelper.Database.Models.QueryBucketManager.OnBeforeAdd(DotNetHelper.Database.Models.QueryBucketEventArgs)
+  id: OnBeforeAdd(DotNetHelper.Database.Models.QueryBucketEventArgs)
+  parent: DotNetHelper.Database.Models.QueryBucketManager
+  langs:
+  - csharp
+  - vb
+  name: OnBeforeAdd(QueryBucketEventArgs)
+  nameWithType: QueryBucketManager.OnBeforeAdd(QueryBucketEventArgs)
+  fullName: DotNetHelper.Database.Models.QueryBucketManager.OnBeforeAdd(DotNetHelper.Database.Models.QueryBucketEventArgs)
+  type: Method
+  source:
+    id: OnBeforeAdd
+    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Models\QueryBucketManager.cs
+    startLine: 47
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Models
+  syntax:
+    content: protected virtual void OnBeforeAdd(QueryBucketEventArgs e)
+    parameters:
+    - id: e
+      type: DotNetHelper.Database.Models.QueryBucketEventArgs
+    content.vb: Protected Overridable Sub OnBeforeAdd(e As QueryBucketEventArgs)
+  overload: DotNetHelper.Database.Models.QueryBucketManager.OnBeforeAdd*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: DotNetHelper.Database.Models.QueryBucketManager.Dispose
+  commentId: M:DotNetHelper.Database.Models.QueryBucketManager.Dispose
+  id: Dispose
+  parent: DotNetHelper.Database.Models.QueryBucketManager
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: QueryBucketManager.Dispose()
+  fullName: DotNetHelper.Database.Models.QueryBucketManager.Dispose()
+  type: Method
+  source:
+    id: Dispose
+    path: C:\Business\TheMoFaDe\Code\TheMofaDe\DotNetHelper.Database.Abstractions\src\DotNetHelper.Database.Abstractions\Models\QueryBucketManager.cs
+    startLine: 54
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Models
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: DotNetHelper.Database.Models.QueryBucketManager.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: DotNetHelper.Database.Models
+  commentId: N:DotNetHelper.Database.Models
+  name: DotNetHelper.Database.Models
+  nameWithType: DotNetHelper.Database.Models
+  fullName: DotNetHelper.Database.Models
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DotNetHelper.Database.Models.QueryBucketManager.MaxBucketSize*
+  commentId: Overload:DotNetHelper.Database.Models.QueryBucketManager.MaxBucketSize
+  name: MaxBucketSize
+  nameWithType: QueryBucketManager.MaxBucketSize
+  fullName: DotNetHelper.Database.Models.QueryBucketManager.MaxBucketSize
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: DotNetHelper.Database.Models.QueryBucketManager.IncludeReadableQuery*
+  commentId: Overload:DotNetHelper.Database.Models.QueryBucketManager.IncludeReadableQuery
+  name: IncludeReadableQuery
+  nameWithType: QueryBucketManager.IncludeReadableQuery
+  fullName: DotNetHelper.Database.Models.QueryBucketManager.IncludeReadableQuery
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: DotNetHelper.Database.Models.QueryBucketManager.FullQueryBucketEventHandler
+  commentId: T:DotNetHelper.Database.Models.QueryBucketManager.FullQueryBucketEventHandler
+  parent: DotNetHelper.Database.Models
+  name: QueryBucketManager.FullQueryBucketEventHandler
+  nameWithType: QueryBucketManager.FullQueryBucketEventHandler
+  fullName: DotNetHelper.Database.Models.QueryBucketManager.FullQueryBucketEventHandler
+- uid: DotNetHelper.Database.Models.QueryBucketManager.OnBeforeAddToBucketEventHandler
+  commentId: T:DotNetHelper.Database.Models.QueryBucketManager.OnBeforeAddToBucketEventHandler
+  parent: DotNetHelper.Database.Models
+  name: QueryBucketManager.OnBeforeAddToBucketEventHandler
+  nameWithType: QueryBucketManager.OnBeforeAddToBucketEventHandler
+  fullName: DotNetHelper.Database.Models.QueryBucketManager.OnBeforeAddToBucketEventHandler
+- uid: DotNetHelper.Database.Models.QueryBucketManager.#ctor*
+  commentId: Overload:DotNetHelper.Database.Models.QueryBucketManager.#ctor
+  name: QueryBucketManager
+  nameWithType: QueryBucketManager.QueryBucketManager
+  fullName: DotNetHelper.Database.Models.QueryBucketManager.QueryBucketManager
+- uid: DotNetHelper.Database.Models.QueryBucketManager.AddBucket*
+  commentId: Overload:DotNetHelper.Database.Models.QueryBucketManager.AddBucket
+  name: AddBucket
+  nameWithType: QueryBucketManager.AddBucket
+  fullName: DotNetHelper.Database.Models.QueryBucketManager.AddBucket
+- uid: DotNetHelper.Database.Models.QueryBucket
+  commentId: T:DotNetHelper.Database.Models.QueryBucket
+  parent: DotNetHelper.Database.Models
+  name: QueryBucket
+  nameWithType: QueryBucket
+  fullName: DotNetHelper.Database.Models.QueryBucket
+- uid: DotNetHelper.Database.Models.QueryBucketManager.OnFullBucket*
+  commentId: Overload:DotNetHelper.Database.Models.QueryBucketManager.OnFullBucket
+  name: OnFullBucket
+  nameWithType: QueryBucketManager.OnFullBucket
+  fullName: DotNetHelper.Database.Models.QueryBucketManager.OnFullBucket
+- uid: DotNetHelper.Database.Models.FullQueryBucketEventArgs
+  commentId: T:DotNetHelper.Database.Models.FullQueryBucketEventArgs
+  parent: DotNetHelper.Database.Models
+  name: FullQueryBucketEventArgs
+  nameWithType: FullQueryBucketEventArgs
+  fullName: DotNetHelper.Database.Models.FullQueryBucketEventArgs
+- uid: DotNetHelper.Database.Models.QueryBucketManager.OnBeforeAdd*
+  commentId: Overload:DotNetHelper.Database.Models.QueryBucketManager.OnBeforeAdd
+  name: OnBeforeAdd
+  nameWithType: QueryBucketManager.OnBeforeAdd
+  fullName: DotNetHelper.Database.Models.QueryBucketManager.OnBeforeAdd
+- uid: DotNetHelper.Database.Models.QueryBucketEventArgs
+  commentId: T:DotNetHelper.Database.Models.QueryBucketEventArgs
+  parent: DotNetHelper.Database.Models
+  name: QueryBucketEventArgs
+  nameWithType: QueryBucketEventArgs
+  fullName: DotNetHelper.Database.Models.QueryBucketEventArgs
+- uid: DotNetHelper.Database.Models.QueryBucketManager.Dispose*
+  commentId: Overload:DotNetHelper.Database.Models.QueryBucketManager.Dispose
+  name: Dispose
+  nameWithType: QueryBucketManager.Dispose
+  fullName: DotNetHelper.Database.Models.QueryBucketManager.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )

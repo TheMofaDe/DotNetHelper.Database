@@ -1,0 +1,45 @@
+### YamlMime:TableOfContent
+- uid: DotNetHelper.Database.DataSource
+  name: DotNetHelper.Database.DataSource
+  items:
+  - uid: DotNetHelper.Database.DataSource.DatabaseAccess`2
+    name: DatabaseAccess<C, P>
+    name.vb: DatabaseAccess(Of C, P)
+- uid: DotNetHelper.Database.EventHandler
+  name: DotNetHelper.Database.EventHandler
+  items:
+  - uid: DotNetHelper.Database.EventHandler.SqlExceptionEventArgs
+    name: SqlExceptionEventArgs
+- uid: DotNetHelper.Database.Extension
+  name: DotNetHelper.Database.Extension
+  items:
+  - uid: DotNetHelper.Database.Extension.DBConnectionExtension
+    name: DBConnectionExtension
+  - uid: DotNetHelper.Database.Extension.ExtDataReader
+    name: ExtDataReader
+  - uid: DotNetHelper.Database.Extension.ExtDataTable
+    name: ExtDataTable
+  - uid: DotNetHelper.Database.Extension.IDataParameterExtension
+    name: IDataParameterExtension
+  - uid: DotNetHelper.Database.Extension.TypeExtension
+    name: TypeExtension
+- uid: DotNetHelper.Database.Interface
+  name: DotNetHelper.Database.Interface
+  items:
+  - uid: DotNetHelper.Database.Interface.IColumnSerializer
+    name: IColumnSerializer
+- uid: DotNetHelper.Database.Models
+  name: DotNetHelper.Database.Models
+  items:
+  - uid: DotNetHelper.Database.Models.FullQueryBucketEventArgs
+    name: FullQueryBucketEventArgs
+  - uid: DotNetHelper.Database.Models.QueryBucket
+    name: QueryBucket
+  - uid: DotNetHelper.Database.Models.QueryBucketEventArgs
+    name: QueryBucketEventArgs
+  - uid: DotNetHelper.Database.Models.QueryBucketManager
+    name: QueryBucketManager
+  - uid: DotNetHelper.Database.Models.QueryBucketManager.FullQueryBucketEventHandler
+    name: QueryBucketManager.FullQueryBucketEventHandler
+  - uid: DotNetHelper.Database.Models.QueryBucketManager.OnBeforeAddToBucketEventHandler
+    name: QueryBucketManager.OnBeforeAddToBucketEventHandler
