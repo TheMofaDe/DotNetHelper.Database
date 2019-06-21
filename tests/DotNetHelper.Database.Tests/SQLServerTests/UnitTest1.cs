@@ -64,7 +64,7 @@ namespace Tests
         {
             var newEmployee = MockEmployee.Hashset.Take(2).Last();
             var sql = DatabaseAccess.ObjectToSql.BuildQuery<Employee>(null, ActionType.Insert);
-            var dbParameters = DatabaseAccess.ObjectToSql.BuildDbParameterList(newEmployee,(s, o) => DatabaseAccess.GetNewParameter(s,o),null,null,null,true);
+            var dbParameters = DatabaseAccess.ObjectToSql.BuildDbParameterList(newEmployee,(s, o) => DatabaseAccess.GetNewParameter(s,o),null,null,null);
             var outputtedResult = DatabaseAccess.ExecuteNonQuery(sql,CommandType.Text,dbParameters);
             Assert.AreEqual(outputtedResult, 1, "Something went wrong add new employee record");
         }

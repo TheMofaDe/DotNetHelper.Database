@@ -251,7 +251,7 @@ namespace DotNetHelper.Database.DataSource
         {
             var sqlTable = new SQLTable(DatabaseType, typeof(T));
             var sql = ObjectToSql.BuildQuery<T>(sqlTable.FullNameWithBrackets, actionType);
-            var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, null, null, null, true);
+            var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, null, null, null);
             return ExecuteNonQuery(sql, CommandType.Text, parameters);
         }
 
@@ -259,7 +259,7 @@ namespace DotNetHelper.Database.DataSource
         {
             var sqlTable = new SQLTable(DatabaseType, typeof(T));
             var sql = ObjectToSql.BuildQuery<T>(sqlTable.FullNameWithBrackets, actionType);
-            var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, xmlSerializer?.Serialize, jsonSerializer?.Serialize, csvSerializer?.Serialize, true);
+            var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, xmlSerializer?.Serialize, jsonSerializer?.Serialize, csvSerializer?.Serialize);
             return ExecuteNonQuery(sql, CommandType.Text, parameters);
         }
 
@@ -268,7 +268,7 @@ namespace DotNetHelper.Database.DataSource
         {
             var sqlTable = new SQLTable(DatabaseType, typeof(T));
             var sql = ObjectToSql.BuildQueryWithOutputs<T>(sqlTable.FullNameWithBrackets, actionType, outputFields);
-            var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, null, null, null, true);
+            var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, null, null, null);
             return GetDataReader(sql, CommandType.Text, parameters).MapTo<T>(null, null, null);
         }
 
@@ -276,7 +276,7 @@ namespace DotNetHelper.Database.DataSource
         {
             var sqlTable = new SQLTable(DatabaseType, typeof(T));
             var sql = ObjectToSql.BuildQueryWithOutputs<T>(sqlTable.FullNameWithBrackets, actionType, outputFields);
-            var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, xmlSerializer?.Serialize, jsonSerializer?.Serialize, csvSerializer?.Serialize, true);
+            var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, xmlSerializer?.Serialize, jsonSerializer?.Serialize, csvSerializer?.Serialize);
             return GetDataReader(sql, CommandType.Text, parameters).MapTo<T>(xmlSerializer?.Deserialize, jsonSerializer?.Deserialize, csvSerializer?.Deserialize);
         }
 
