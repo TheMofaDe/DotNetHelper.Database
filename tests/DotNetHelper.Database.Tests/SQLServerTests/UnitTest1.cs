@@ -38,6 +38,8 @@ namespace Tests
         
             var deleteTableIfExist = $"IF OBJECT_ID(N'[Test].[dbo].[Employee]', N'U') IS NOT NULL BEGIN DROP TABLE [Test].[dbo].[Employee] END ELSE BEGIN PRINT 'Nothing To Clean Up' END";
             DatabaseAccess.ExecuteNonQuery(deleteTableIfExist, CommandType.Text);
+            var deleteTableIfExist2 = $"IF OBJECT_ID(N'[Test].[dbo].[Employee2]', N'U') IS NOT NULL BEGIN DROP TABLE [Test].[dbo].[Employee2] END ELSE BEGIN PRINT 'Nothing To Clean Up' END";
+            DatabaseAccess.ExecuteNonQuery(deleteTableIfExist2, CommandType.Text);
             var employeeTableSql = Assembly.GetExecutingAssembly().GetManifestResourceNames().Single(str => str.EndsWith("EmployeeTable.sql"));
             var sql = TestHelper.GetEmbeddedResourceFile(employeeTableSql);
             var createTableResult = DatabaseAccess.ExecuteNonQuery(TestHelper.GetEmbeddedResourceFile(employeeTableSql), CommandType.Text);
@@ -103,9 +105,25 @@ namespace Tests
             Assert.AreEqual(dt.Rows.Count, 3);
         }
 
-
         [Test]
         [Order(5)]
+        public void Test_GetDataTableWithKeyInfo_Returns_All_Data_And_Has_Correct_Schema()
+        {
+            var dt = DatabaseAccess.GetDataTableWithKeyInfo($"SELECT * FROM Employee2");
+            dt.TableName = "Employee";
+
+            Assert.AreEqual(dt.TableName, "Employee");
+            Assert.AreEqual(dt.Columns["IdentityField"].AutoIncrement, true);
+            Assert.AreEqual(dt.Columns["IdentityField"].AllowDBNull, false);
+            Assert.AreEqual(dt.Columns["IdentityField"].ReadOnly, true);
+            Assert.AreEqual(dt.Columns["FirstName"].MaxLength, 400);
+            Assert.Contains(dt.Columns["PrimaryKey"],dt.PrimaryKey);
+            Assert.AreEqual(dt.Rows.Count, 0);
+        }
+
+
+        [Test]
+        [Order(6)]
         public void Test_MapDataTableToList()
         {
             var dt = DatabaseAccess.GetDataTableWithSchema($"SELECT * FROM Employee");
@@ -118,7 +136,7 @@ namespace Tests
 
 
         [Test]
-        [Order(6)]
+        [Order(7)]
         public void Test_MapDataReaderToList()
         {
 
@@ -131,7 +149,7 @@ namespace Tests
 
 
         [Test]
-        [Order(7)]
+        [Order(8)]
         public void Test_GetData()
         {
 

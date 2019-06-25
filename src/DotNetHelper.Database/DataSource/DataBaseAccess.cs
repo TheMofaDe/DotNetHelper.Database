@@ -19,7 +19,7 @@ namespace DotNetHelper.Database.DataSource
     /// </summary>
     /// <typeparam name="C">An implementation of IDBConnection</typeparam>
     /// <typeparam name="P">The corresponding DbParameter class to ties with the specified IDBConnection </typeparam>
-    public class DatabaseAccess<C,P> where C : class, IDbConnection, IDisposable, new() where P : DbParameter, new()
+    public class DatabaseAccess<C, P> where C : class, IDbConnection, IDisposable, new() where P : DbParameter, new()
     {
         private string ConnectionString { get; }
         public TimeSpan CommandTimeOut { get; set; }
@@ -50,7 +50,7 @@ namespace DotNetHelper.Database.DataSource
             SqlSyntaxHelper = new SqlSyntaxHelper(type);
             ObjectToSql = new ObjectToSql.Services.ObjectToSql(type);
         }
-        public DatabaseAccess(DataBaseType type ,string connectionString, TimeSpan commandTimeOut, TimeSpan connectionTimeOut)
+        public DatabaseAccess(DataBaseType type, string connectionString, TimeSpan commandTimeOut, TimeSpan connectionTimeOut)
         {
             if (string.IsNullOrEmpty(connectionString)) throw new NullReferenceException("invalid connection string");
             ConnectionString = connectionString;
@@ -76,8 +76,8 @@ namespace DotNetHelper.Database.DataSource
             command.CommandText = sql;
             command.Connection = connection;
             command.CommandType = commandType;
-            if(parameters != null)
-            command.Parameters.AddRange(parameters);
+            if (parameters != null)
+                command.Parameters.AddRange(parameters);
             var isValidInt32 = int.TryParse(CommandTimeOut.TotalSeconds.ToString(CultureInfo.CurrentCulture), out var timeoutInSeconds);
             command.CommandTimeout = isValidInt32 ? timeoutInSeconds : int.MaxValue;
             return command;
@@ -113,6 +113,20 @@ namespace DotNetHelper.Database.DataSource
         }
 
         /// <summary>
+        /// Execute an SQL Command and returns the number of rows affected
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="commandType"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        public int ExecuteNonQuery(C connection, string sql, CommandType commandType, IEnumerable<IDataParameter> parameters = null)
+        {
+            var command = GetNewCommand(connection, sql, commandType, parameters);
+            return command.ExecuteNonQuery();
+
+        }
+
+        /// <summary>
         /// Executes the sql and return the 1st column of the 1st row as an object
         /// </summary>
         /// <param name="sql"></param>
@@ -126,6 +140,20 @@ namespace DotNetHelper.Database.DataSource
                 var command = GetNewCommand(connection, sql, commandType, parameters);
                 return command.ExecuteScalar();
             }
+        }
+
+        /// <summary>
+        /// Executes the sql and return the 1st column of the 1st row as an object
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="commandType"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        public object ExecuteScalar(C connection, string sql, CommandType commandType, List<DbParameter> parameters = null)
+        {
+            var command = GetNewCommand(connection, sql, commandType, parameters);
+            return command.ExecuteScalar();
+
         }
 
         public int ExecuteTransaction(List<string> sqls, bool rollbackOnException, bool throwException = true)
@@ -159,6 +187,36 @@ namespace DotNetHelper.Database.DataSource
             return recordAffected;
         }
 
+        public int ExecuteTransaction(C connection, List<string> sqls, bool rollbackOnException, bool throwException = true)
+        {
+            var recordAffected = 0;
+            if (sqls == null || !sqls.Any()) return recordAffected;
+
+            var obj = GetNewCommandAndTransaction(connection);
+            var command = obj.command;
+            var transaction = obj.transaction;
+            try
+            {
+                sqls.ForEach(delegate (string s)
+                {
+                    command.CommandText = s;
+                    recordAffected += command.ExecuteNonQuery();
+                });
+                transaction.Commit();
+            }
+            catch (Exception)
+            {
+                if (rollbackOnException)
+                    transaction.Rollback();
+                if (throwException)
+                {
+                    throw;
+                }
+            }
+
+            return recordAffected;
+        }
+
         public IDataReader GetDataReader(string sql, CommandType commandType, List<DbParameter> parameters = null)
         {
             var connection = GetNewConnection(true);
@@ -181,7 +239,14 @@ namespace DotNetHelper.Database.DataSource
             return GetDataTable(selectSql, CommandType.Text);
         }
 
-        public DataTable GetDataTableWithSchema(string sql, CommandType commandType,List<DbParameter> parameters = null)
+        /// <summary>
+        /// Applies the schema/metadata of the sql to a dataTable and populate it with the result set
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="commandType"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        public DataTable GetDataTableWithSchema(string sql, CommandType commandType, List<DbParameter> parameters = null)
         {
             var dt = new DataTable();
             using (var connection = GetNewConnection(true))
@@ -193,18 +258,53 @@ namespace DotNetHelper.Database.DataSource
                 dt.Load(data);
                 return dt;
             }
-         
         }
 
+        /// <summary>
+        /// Applies the schema/metadata of the sql to a dataTable and populate it with the result set.
+        /// If working with a large dataSet and you don't need the dataTable which columns are primary keys then use GetDataTableWithSchema for better performance
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="commandType"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        public DataTable GetDataTableWithKeyInfo(string sql, CommandType commandType, List<DbParameter> parameters = null)
+        {
+            var dt = new DataTable();
+            using (var connection = GetNewConnection(true))
+            {
+                var command = GetNewCommand(connection, sql, commandType, parameters);
+                var schema = command.ExecuteReader(CommandBehavior.KeyInfo);
+                dt.Load(schema);
+                var data = command.ExecuteReader();
+                dt.Load(data);
+                return dt;
+            }
+        }
+        /// <summary>
+        /// Applies the schema/metadata of the sql to a dataTable and populate it with the result set
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <returns></returns>
         public DataTable GetDataTableWithSchema(string sql)
         {
             return GetDataTableWithSchema(sql, CommandType.Text, null);
         }
+        /// <summary>
+        /// Applies the schema/metadata of the sql to a dataTable and populate it with the result set.
+        /// If working with a large dataSet and you don't need the dataTable which columns are primary keys then use GetDataTableWithSchema for better proformance
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <returns></returns>
+        public DataTable GetDataTableWithKeyInfo(string sql)
+        {
+            return GetDataTableWithKeyInfo(sql, CommandType.Text, null);
+        }
 
         public P GetNewParameter(string parameterName, object value)
         {
-            var parameter = new P {ParameterName = parameterName, Value = value};
-            return parameter;  
+            var parameter = new P { ParameterName = parameterName, Value = value };
+            return parameter;
         }
 
 
@@ -231,7 +331,7 @@ namespace DotNetHelper.Database.DataSource
 
         public List<T> Get<T>() where T : class
         {
-            var sqlTable = new SQLTable(DatabaseType,typeof(T));
+            var sqlTable = new SQLTable(DatabaseType, typeof(T));
             return Get<T>($"SELECT * FROM {sqlTable.FullNameWithBrackets}", CommandType.Text, null, null, null, null);
         }
         public List<T> Get<T>(Func<object, string> xmlDeserializer, Func<object, string> jsonDeserializer, Func<object, string> csvDeserializer) where T : class
@@ -272,7 +372,7 @@ namespace DotNetHelper.Database.DataSource
             return GetDataReader(sql, CommandType.Text, parameters).MapTo<T>(null, null, null);
         }
 
-        public T ExecuteAndGetOutput<T>(T instance, ActionType actionType, IColumnSerializer xmlSerializer, IColumnSerializer jsonSerializer, IColumnSerializer csvSerializer,  params Expression<Func<T, object>>[] outputFields) where T : class
+        public T ExecuteAndGetOutput<T>(T instance, ActionType actionType, IColumnSerializer xmlSerializer, IColumnSerializer jsonSerializer, IColumnSerializer csvSerializer, params Expression<Func<T, object>>[] outputFields) where T : class
         {
             var sqlTable = new SQLTable(DatabaseType, typeof(T));
             var sql = ObjectToSql.BuildQueryWithOutputs<T>(sqlTable.FullNameWithBrackets, actionType, outputFields);

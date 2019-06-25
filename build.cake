@@ -127,6 +127,7 @@ Task("Build")
 #region Tests
 
 Task("Test")
+    .WithCriteria<BuildParameters>((context, parameters) => parameters.IsRunningOnWindows,  "Unit tests will only run on windows agent.")
     .WithCriteria<BuildParameters>((context, parameters) => parameters.EnabledUnitTests, "Unit tests were disabled.")
     .IsDependentOn("Build")
     .Does<BuildParameters>((parameters) =>
@@ -528,7 +529,7 @@ Task("Publish-Coverage")
         Codecov(new CodecovSettings {
             Files = new [] { coverageFile.ToString() },
             Token = token
-			,Required = false
+		//	,Required = true
         });
 		Information("Uploading Coverage File --> " + coverageFile.ToString());
     }

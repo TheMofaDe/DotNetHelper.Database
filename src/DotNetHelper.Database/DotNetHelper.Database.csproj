@@ -32,7 +32,7 @@
 
 
   <ItemGroup>
-    <PackageReference Include="DotNetHelper.ObjectToSql" Version="1.0.25" />
+    <PackageReference Include="DotNetHelper.ObjectToSql" Version="1.0.29" />
   </ItemGroup>
 
 
