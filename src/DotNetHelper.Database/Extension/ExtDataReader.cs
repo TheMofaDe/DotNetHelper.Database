@@ -218,6 +218,50 @@ namespace DotNetHelper.Database.Extension
 
 
 
+        public static DataTable MapToDataTable<T>(this IEnumerable<T> source) where T : class
+        {
+            source.IsNullThrow(nameof(source));
+            var dt = new DataTable();
+            if (source.Count() == 0)
+            {
+                if(source is IEnumerable<IDynamicMetaObjectProvider>) 
+                    return dt;
+                // IF THIS IS NOT DYNAMIC WE CAN AT LEAST APPLY THE DATA TABLE SCHEMA
+            }
+            List<MemberWrapper> members;
+            if (source is IEnumerable<IDynamicMetaObjectProvider> listOfDynamicObjects)
+            {
+                members = ExtFastMember.GetMemberWrappers(listOfDynamicObjects.First()).Where(w => !w.IsMemberASerializableColumn() && !w.ShouldMemberBeIgnored()).AsList();
+            }
+            else
+            {
+                members = ExtFastMember.GetMemberWrappers<T>(true).Where(w => !w.IsMemberASerializableColumn() && !w.ShouldMemberBeIgnored()).AsList();
+            }
+
+            var keyColumns = new List<DataColumn>() { };
+            members.ForEach(delegate(MemberWrapper member)
+            {
+                var dc = new DataColumn(member.GetNameFromCustomAttributeOrDefault(), member.Type);
+
+                if (member.IsMemberAnIdentityColumn())
+                    dc.AutoIncrement = true;
+
+                if (member.IsMemberAPrimaryKeyColumn())
+                    keyColumns.Add(dc);
+
+                dt.Columns.Add(dc);
+            });
+            dt.PrimaryKey = keyColumns.ToArray();
+
+            source.AsList().ForEach(delegate(T obj)
+            {
+                var row = dt.NewRow();
+                members.ForEach(w => row[w.Name] = w.GetValue(obj));
+                dt.Rows.Add(row);
+            });
+
+            return dt;
+        }
 
     }
 }
