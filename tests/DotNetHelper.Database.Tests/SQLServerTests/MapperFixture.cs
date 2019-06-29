@@ -86,7 +86,7 @@ namespace Tests
            
         }
 
-        [master]
+        [Test]
         [Order(1)]
         public void Test_Execute__AddsNewEmployee()
         {
@@ -95,7 +95,7 @@ namespace Tests
             Assert.AreEqual(outputtedResult, 1, "Something went wrong add new employee record");
         }
 
-        [master]
+        [Test]
         [Order(2)]
         public void Test_ExecuteNonQuery_AddsNewEmployee()
         {
@@ -106,7 +106,7 @@ namespace Tests
             Assert.AreEqual(outputtedResult, 1, "Something went wrong add new employee record");
         }
 
-        [master]
+        [Test]
         [Order(3)]
         public void Test_Insert_Employee_And_Output_Identity_Field()
         {
@@ -116,7 +116,7 @@ namespace Tests
         }
 
 
-        [master]
+        [Test]
 
         public void Test_ExecuteScalar_Returns_First_Column_First_Row()
         {
@@ -125,7 +125,7 @@ namespace Tests
         }
 
 
-        [master]
+        [Test]
         [Order(4)]
         public void Test_GetDataTableWithSchema_Returns_All_Data_And_Has_Correct_Schema()
         {
@@ -140,7 +140,7 @@ namespace Tests
             Assert.AreEqual(dt.Rows.Count, 3);
         }
 
-        [master]
+        [Test]
         [Order(5)]
         public void Test_GetDataTableWithKeyInfo_Returns_All_Data_And_Has_Correct_Schema()
         {
@@ -157,7 +157,7 @@ namespace Tests
         }
 
 
-        [master]
+        [Test]
         [Order(6)]
         public void Test_MapDataTableToList()
         {
@@ -170,7 +170,7 @@ namespace Tests
         }
 
 
-        [master]
+        [Test]
         [Order(7)]
         public void Test_MapDataReaderToList()
         {
@@ -183,7 +183,7 @@ namespace Tests
         }
 
 
-        [master]
+        [Test]
         [Order(8)]
         public void Test_GetData()
         {
@@ -197,7 +197,7 @@ namespace Tests
 
 
 
-        [master]
+        [Test]
         [Order(8)]
         public void Test_MapToDataTable()
         {
