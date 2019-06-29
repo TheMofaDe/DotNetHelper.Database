@@ -8,6 +8,7 @@ items:
   - DotNetHelper.Database.Extension.ExtDataReader.GetBytes(System.Data.IDataReader,System.Int32)
   - DotNetHelper.Database.Extension.ExtDataReader.HasRows(System.Data.IDataReader)
   - DotNetHelper.Database.Extension.ExtDataReader.MapTo``1(System.Data.IDataReader,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  - DotNetHelper.Database.Extension.ExtDataReader.MapToDataTable``1(System.Collections.Generic.IEnumerable{``0})
   - DotNetHelper.Database.Extension.ExtDataReader.MapToList``1(System.Data.IDataReader,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
   langs:
   - csharp
@@ -254,6 +255,54 @@ items:
   - Shared
   fullName.vb: DotNetHelper.Database.Extension.ExtDataReader.MapTo(Of T)(System.Data.IDataReader, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String))
   name.vb: MapTo(Of T)(IDataReader, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
+- uid: DotNetHelper.Database.Extension.ExtDataReader.MapToDataTable``1(System.Collections.Generic.IEnumerable{``0})
+  commentId: M:DotNetHelper.Database.Extension.ExtDataReader.MapToDataTable``1(System.Collections.Generic.IEnumerable{``0})
+  id: MapToDataTable``1(System.Collections.Generic.IEnumerable{``0})
+  isExtensionMethod: true
+  parent: DotNetHelper.Database.Extension.ExtDataReader
+  langs:
+  - csharp
+  - vb
+  name: MapToDataTable<T>(IEnumerable<T>)
+  nameWithType: ExtDataReader.MapToDataTable<T>(IEnumerable<T>)
+  fullName: DotNetHelper.Database.Extension.ExtDataReader.MapToDataTable<T>(System.Collections.Generic.IEnumerable<T>)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.Database/Extension/ExtDataReader.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+    id: MapToDataTable
+    path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
+    startLine: 220
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Extension
+  syntax:
+    content: >-
+      public static DataTable MapToDataTable<T>(this IEnumerable<T> source)
+          where T : class
+    parameters:
+    - id: source
+      type: System.Collections.Generic.IEnumerable{{T}}
+    typeParameters:
+    - id: T
+    return:
+      type: System.Data.DataTable
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function MapToDataTable(Of T As Class)(source As IEnumerable(Of T)) As DataTable
+  overload: DotNetHelper.Database.Extension.ExtDataReader.MapToDataTable*
+  nameWithType.vb: ExtDataReader.MapToDataTable(Of T)(IEnumerable(Of T))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: DotNetHelper.Database.Extension.ExtDataReader.MapToDataTable(Of T)(System.Collections.Generic.IEnumerable(Of T))
+  name.vb: MapToDataTable(Of T)(IEnumerable(Of T))
 references:
 - uid: DotNetHelper.Database.Extension
   commentId: N:DotNetHelper.Database.Extension
@@ -907,3 +956,94 @@ references:
   name: T
   nameWithType: T
   fullName: T
+- uid: DotNetHelper.Database.Extension.ExtDataReader.MapToDataTable*
+  commentId: Overload:DotNetHelper.Database.Extension.ExtDataReader.MapToDataTable
+  name: MapToDataTable
+  nameWithType: ExtDataReader.MapToDataTable
+  fullName: DotNetHelper.Database.Extension.ExtDataReader.MapToDataTable
+- uid: System.Collections.Generic.IEnumerable{{T}}
+  commentId: T:System.Collections.Generic.IEnumerable{``0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Data.DataTable
+  commentId: T:System.Data.DataTable
+  parent: System.Data
+  isExternal: true
+  name: DataTable
+  nameWithType: DataTable
+  fullName: System.Data.DataTable
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )

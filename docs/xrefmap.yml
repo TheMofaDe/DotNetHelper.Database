@@ -162,6 +162,15 @@ references:
   fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).ExecuteAndGetOutput(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
   nameWithType: DatabaseAccess<C, P>.ExecuteAndGetOutput<T>(T, ActionType, Expression<Func<T, Object>>[])
   nameWithType.vb: DatabaseAccess(Of C, P).ExecuteAndGetOutput(Of T)(T, ActionType, Expression(Of Func(Of T, Object))())
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteNonQuery(`0,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
+  name: ExecuteNonQuery(C, String, CommandType, IEnumerable<IDataParameter>)
+  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_ExecuteNonQuery__0_System_String_System_Data_CommandType_System_Collections_Generic_IEnumerable_System_Data_IDataParameter__
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteNonQuery(`0,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
+  name.vb: ExecuteNonQuery(C, String, CommandType, IEnumerable(Of IDataParameter))
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.ExecuteNonQuery(C, System.String, System.Data.CommandType, System.Collections.Generic.IEnumerable<System.Data.IDataParameter>)
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).ExecuteNonQuery(C, System.String, System.Data.CommandType, System.Collections.Generic.IEnumerable(Of System.Data.IDataParameter))
+  nameWithType: DatabaseAccess<C, P>.ExecuteNonQuery(C, String, CommandType, IEnumerable<IDataParameter>)
+  nameWithType.vb: DatabaseAccess(Of C, P).ExecuteNonQuery(C, String, CommandType, IEnumerable(Of IDataParameter))
 - uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteNonQuery(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
   name: ExecuteNonQuery(String, CommandType, IEnumerable<IDataParameter>)
   href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_ExecuteNonQuery_System_String_System_Data_CommandType_System_Collections_Generic_IEnumerable_System_Data_IDataParameter__
@@ -180,6 +189,15 @@ references:
   fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).ExecuteNonQuery
   nameWithType: DatabaseAccess<C, P>.ExecuteNonQuery
   nameWithType.vb: DatabaseAccess(Of C, P).ExecuteNonQuery
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteScalar(`0,System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name: ExecuteScalar(C, String, CommandType, List<DbParameter>)
+  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_ExecuteScalar__0_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteScalar(`0,System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name.vb: ExecuteScalar(C, String, CommandType, List(Of DbParameter))
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.ExecuteScalar(C, System.String, System.Data.CommandType, System.Collections.Generic.List<System.Data.Common.DbParameter>)
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).ExecuteScalar(C, System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
+  nameWithType: DatabaseAccess<C, P>.ExecuteScalar(C, String, CommandType, List<DbParameter>)
+  nameWithType.vb: DatabaseAccess(Of C, P).ExecuteScalar(C, String, CommandType, List(Of DbParameter))
 - uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteScalar(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   name: ExecuteScalar(String, CommandType, List<DbParameter>)
   href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_ExecuteScalar_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__
@@ -198,6 +216,15 @@ references:
   fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).ExecuteScalar
   nameWithType: DatabaseAccess<C, P>.ExecuteScalar
   nameWithType.vb: DatabaseAccess(Of C, P).ExecuteScalar
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteTransaction(`0,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
+  name: ExecuteTransaction(C, List<String>, Boolean, Boolean)
+  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_ExecuteTransaction__0_System_Collections_Generic_List_System_String__System_Boolean_System_Boolean_
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteTransaction(`0,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
+  name.vb: ExecuteTransaction(C, List(Of String), Boolean, Boolean)
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.ExecuteTransaction(C, System.Collections.Generic.List<System.String>, System.Boolean, System.Boolean)
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).ExecuteTransaction(C, System.Collections.Generic.List(Of System.String), System.Boolean, System.Boolean)
+  nameWithType: DatabaseAccess<C, P>.ExecuteTransaction(C, List<String>, Boolean, Boolean)
+  nameWithType.vb: DatabaseAccess(Of C, P).ExecuteTransaction(C, List(Of String), Boolean, Boolean)
 - uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteTransaction(System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
   name: ExecuteTransaction(List<String>, Boolean, Boolean)
   href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_ExecuteTransaction_System_Collections_Generic_List_System_String__System_Boolean_System_Boolean_
@@ -305,6 +332,32 @@ references:
   fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).GetDataTable
   nameWithType: DatabaseAccess<C, P>.GetDataTable
   nameWithType.vb: DatabaseAccess(Of C, P).GetDataTable
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.GetDataTableWithKeyInfo(System.String)
+  name: GetDataTableWithKeyInfo(String)
+  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_GetDataTableWithKeyInfo_System_String_
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`2.GetDataTableWithKeyInfo(System.String)
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.GetDataTableWithKeyInfo(System.String)
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).GetDataTableWithKeyInfo(System.String)
+  nameWithType: DatabaseAccess<C, P>.GetDataTableWithKeyInfo(String)
+  nameWithType.vb: DatabaseAccess(Of C, P).GetDataTableWithKeyInfo(String)
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.GetDataTableWithKeyInfo(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name: GetDataTableWithKeyInfo(String, CommandType, List<DbParameter>)
+  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_GetDataTableWithKeyInfo_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`2.GetDataTableWithKeyInfo(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name.vb: GetDataTableWithKeyInfo(String, CommandType, List(Of DbParameter))
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.GetDataTableWithKeyInfo(System.String, System.Data.CommandType, System.Collections.Generic.List<System.Data.Common.DbParameter>)
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).GetDataTableWithKeyInfo(System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
+  nameWithType: DatabaseAccess<C, P>.GetDataTableWithKeyInfo(String, CommandType, List<DbParameter>)
+  nameWithType.vb: DatabaseAccess(Of C, P).GetDataTableWithKeyInfo(String, CommandType, List(Of DbParameter))
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.GetDataTableWithKeyInfo*
+  name: GetDataTableWithKeyInfo
+  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_GetDataTableWithKeyInfo_
+  commentId: Overload:DotNetHelper.Database.DataSource.DatabaseAccess`2.GetDataTableWithKeyInfo
+  isSpec: "True"
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.GetDataTableWithKeyInfo
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).GetDataTableWithKeyInfo
+  nameWithType: DatabaseAccess<C, P>.GetDataTableWithKeyInfo
+  nameWithType.vb: DatabaseAccess(Of C, P).GetDataTableWithKeyInfo
 - uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.GetDataTableWithSchema(System.String)
   name: GetDataTableWithSchema(String)
   href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_GetDataTableWithSchema_System_String_
@@ -577,6 +630,22 @@ references:
   fullName.vb: DotNetHelper.Database.Extension.ExtDataReader.MapTo(Of T)(System.Data.IDataReader, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String))
   nameWithType: ExtDataReader.MapTo<T>(IDataReader, Func<Object, String>, Func<Object, String>, Func<Object, String>)
   nameWithType.vb: ExtDataReader.MapTo(Of T)(IDataReader, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
+- uid: DotNetHelper.Database.Extension.ExtDataReader.MapToDataTable*
+  name: MapToDataTable
+  href: api/DotNetHelper.Database.Extension.ExtDataReader.html#DotNetHelper_Database_Extension_ExtDataReader_MapToDataTable_
+  commentId: Overload:DotNetHelper.Database.Extension.ExtDataReader.MapToDataTable
+  isSpec: "True"
+  fullName: DotNetHelper.Database.Extension.ExtDataReader.MapToDataTable
+  nameWithType: ExtDataReader.MapToDataTable
+- uid: DotNetHelper.Database.Extension.ExtDataReader.MapToDataTable``1(System.Collections.Generic.IEnumerable{``0})
+  name: MapToDataTable<T>(IEnumerable<T>)
+  href: api/DotNetHelper.Database.Extension.ExtDataReader.html#DotNetHelper_Database_Extension_ExtDataReader_MapToDataTable__1_System_Collections_Generic_IEnumerable___0__
+  commentId: M:DotNetHelper.Database.Extension.ExtDataReader.MapToDataTable``1(System.Collections.Generic.IEnumerable{``0})
+  name.vb: MapToDataTable(Of T)(IEnumerable(Of T))
+  fullName: DotNetHelper.Database.Extension.ExtDataReader.MapToDataTable<T>(System.Collections.Generic.IEnumerable<T>)
+  fullName.vb: DotNetHelper.Database.Extension.ExtDataReader.MapToDataTable(Of T)(System.Collections.Generic.IEnumerable(Of T))
+  nameWithType: ExtDataReader.MapToDataTable<T>(IEnumerable<T>)
+  nameWithType.vb: ExtDataReader.MapToDataTable(Of T)(IEnumerable(Of T))
 - uid: DotNetHelper.Database.Extension.ExtDataReader.MapToList*
   name: MapToList
   href: api/DotNetHelper.Database.Extension.ExtDataReader.html#DotNetHelper_Database_Extension_ExtDataReader_MapToList_

@@ -144,7 +144,7 @@ Task("Test")
 
 		var tf = targetFramework.Replace("netstandard","netcoreapp");
 
-	    var testAssemblies = GetFiles("./tests/**/bin/" + parameters.Configuration + "/" + tf + "/*DotNetHelper.ObjectToSql.Tests.dll");
+	    var testAssemblies = GetFiles("./tests/**/bin/" + parameters.Configuration + "/" + tf + "/*.Tests.dll");
 
 		var nunitSettings = new NUnit3Settings
 		{

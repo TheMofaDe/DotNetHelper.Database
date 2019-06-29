@@ -16,8 +16,11 @@ items:
   - DotNetHelper.Database.DataSource.DatabaseAccess`2.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,DotNetHelper.Database.Interface.IColumnSerializer,DotNetHelper.Database.Interface.IColumnSerializer,DotNetHelper.Database.Interface.IColumnSerializer)
   - DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,DotNetHelper.Database.Interface.IColumnSerializer,DotNetHelper.Database.Interface.IColumnSerializer,DotNetHelper.Database.Interface.IColumnSerializer,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   - DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  - DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteNonQuery(`0,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
   - DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteNonQuery(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
+  - DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteScalar(`0,System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   - DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteScalar(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  - DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteTransaction(`0,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
   - DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteTransaction(System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
   - DotNetHelper.Database.DataSource.DatabaseAccess`2.Get``1
   - DotNetHelper.Database.DataSource.DatabaseAccess`2.Get``1(System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
@@ -26,6 +29,8 @@ items:
   - DotNetHelper.Database.DataSource.DatabaseAccess`2.GetDataReader(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   - DotNetHelper.Database.DataSource.DatabaseAccess`2.GetDataTable(System.String)
   - DotNetHelper.Database.DataSource.DatabaseAccess`2.GetDataTable(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  - DotNetHelper.Database.DataSource.DatabaseAccess`2.GetDataTableWithKeyInfo(System.String)
+  - DotNetHelper.Database.DataSource.DatabaseAccess`2.GetDataTableWithKeyInfo(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   - DotNetHelper.Database.DataSource.DatabaseAccess`2.GetDataTableWithSchema(System.String)
   - DotNetHelper.Database.DataSource.DatabaseAccess`2.GetDataTableWithSchema(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   - DotNetHelper.Database.DataSource.DatabaseAccess`2.GetNewCommand(System.Data.IDbConnection,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
@@ -546,6 +551,56 @@ items:
   - Public
   fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).ExecuteNonQuery(System.String, System.Data.CommandType, System.Collections.Generic.IEnumerable(Of System.Data.IDataParameter))
   name.vb: ExecuteNonQuery(String, CommandType, IEnumerable(Of IDataParameter))
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteNonQuery(`0,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteNonQuery(`0,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
+  id: ExecuteNonQuery(`0,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
+  parent: DotNetHelper.Database.DataSource.DatabaseAccess`2
+  langs:
+  - csharp
+  - vb
+  name: ExecuteNonQuery(C, String, CommandType, IEnumerable<IDataParameter>)
+  nameWithType: DatabaseAccess<C, P>.ExecuteNonQuery(C, String, CommandType, IEnumerable<IDataParameter>)
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.ExecuteNonQuery(C, System.String, System.Data.CommandType, System.Collections.Generic.IEnumerable<System.Data.IDataParameter>)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+    id: ExecuteNonQuery
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+    startLine: 121
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.DataSource
+  summary: "\nExecute an SQL Command and returns the number of rows affected\n"
+  example: []
+  syntax:
+    content: public int ExecuteNonQuery(C connection, string sql, CommandType commandType, IEnumerable<IDataParameter> parameters = null)
+    parameters:
+    - id: connection
+      type: '{C}'
+    - id: sql
+      type: System.String
+      description: ''
+    - id: commandType
+      type: System.Data.CommandType
+      description: ''
+    - id: parameters
+      type: System.Collections.Generic.IEnumerable{System.Data.IDataParameter}
+      description: ''
+    return:
+      type: System.Int32
+      description: ''
+    content.vb: Public Function ExecuteNonQuery(connection As C, sql As String, commandType As CommandType, parameters As IEnumerable(Of IDataParameter) = Nothing) As Integer
+  overload: DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteNonQuery*
+  nameWithType.vb: DatabaseAccess(Of C, P).ExecuteNonQuery(C, String, CommandType, IEnumerable(Of IDataParameter))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).ExecuteNonQuery(C, System.String, System.Data.CommandType, System.Collections.Generic.IEnumerable(Of System.Data.IDataParameter))
+  name.vb: ExecuteNonQuery(C, String, CommandType, IEnumerable(Of IDataParameter))
 - uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteScalar(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteScalar(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   id: ExecuteScalar(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
@@ -564,7 +619,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteScalar
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 121
+    startLine: 135
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -594,6 +649,56 @@ items:
   - Public
   fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).ExecuteScalar(System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
   name.vb: ExecuteScalar(String, CommandType, List(Of DbParameter))
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteScalar(`0,System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteScalar(`0,System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  id: ExecuteScalar(`0,System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  parent: DotNetHelper.Database.DataSource.DatabaseAccess`2
+  langs:
+  - csharp
+  - vb
+  name: ExecuteScalar(C, String, CommandType, List<DbParameter>)
+  nameWithType: DatabaseAccess<C, P>.ExecuteScalar(C, String, CommandType, List<DbParameter>)
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.ExecuteScalar(C, System.String, System.Data.CommandType, System.Collections.Generic.List<System.Data.Common.DbParameter>)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+    id: ExecuteScalar
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+    startLine: 151
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.DataSource
+  summary: "\nExecutes the sql and return the 1st column of the 1st row as an object\n"
+  example: []
+  syntax:
+    content: public object ExecuteScalar(C connection, string sql, CommandType commandType, List<DbParameter> parameters = null)
+    parameters:
+    - id: connection
+      type: '{C}'
+    - id: sql
+      type: System.String
+      description: ''
+    - id: commandType
+      type: System.Data.CommandType
+      description: ''
+    - id: parameters
+      type: System.Collections.Generic.List{System.Data.Common.DbParameter}
+      description: ''
+    return:
+      type: System.Object
+      description: ''
+    content.vb: Public Function ExecuteScalar(connection As C, sql As String, commandType As CommandType, parameters As List(Of DbParameter) = Nothing) As Object
+  overload: DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteScalar*
+  nameWithType.vb: DatabaseAccess(Of C, P).ExecuteScalar(C, String, CommandType, List(Of DbParameter))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).ExecuteScalar(C, System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
+  name.vb: ExecuteScalar(C, String, CommandType, List(Of DbParameter))
 - uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteTransaction(System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
   commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteTransaction(System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
   id: ExecuteTransaction(System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
@@ -612,7 +717,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteTransaction
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 130
+    startLine: 158
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -636,6 +741,50 @@ items:
   - Public
   fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).ExecuteTransaction(System.Collections.Generic.List(Of System.String), System.Boolean, System.Boolean)
   name.vb: ExecuteTransaction(List(Of String), Boolean, Boolean)
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteTransaction(`0,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteTransaction(`0,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
+  id: ExecuteTransaction(`0,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
+  parent: DotNetHelper.Database.DataSource.DatabaseAccess`2
+  langs:
+  - csharp
+  - vb
+  name: ExecuteTransaction(C, List<String>, Boolean, Boolean)
+  nameWithType: DatabaseAccess<C, P>.ExecuteTransaction(C, List<String>, Boolean, Boolean)
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.ExecuteTransaction(C, System.Collections.Generic.List<System.String>, System.Boolean, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+    id: ExecuteTransaction
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+    startLine: 189
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.DataSource
+  syntax:
+    content: public int ExecuteTransaction(C connection, List<string> sqls, bool rollbackOnException, bool throwException = true)
+    parameters:
+    - id: connection
+      type: '{C}'
+    - id: sqls
+      type: System.Collections.Generic.List{System.String}
+    - id: rollbackOnException
+      type: System.Boolean
+    - id: throwException
+      type: System.Boolean
+    return:
+      type: System.Int32
+    content.vb: Public Function ExecuteTransaction(connection As C, sqls As List(Of String), rollbackOnException As Boolean, throwException As Boolean = True) As Integer
+  overload: DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteTransaction*
+  nameWithType.vb: DatabaseAccess(Of C, P).ExecuteTransaction(C, List(Of String), Boolean, Boolean)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).ExecuteTransaction(C, System.Collections.Generic.List(Of System.String), System.Boolean, System.Boolean)
+  name.vb: ExecuteTransaction(C, List(Of String), Boolean, Boolean)
 - uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.GetDataReader(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`2.GetDataReader(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   id: GetDataReader(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
@@ -654,7 +803,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataReader
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 161
+    startLine: 219
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -696,7 +845,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTable
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 169
+    startLine: 227
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -738,7 +887,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTable
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 178
+    startLine: 236
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -775,21 +924,27 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTableWithSchema
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 183
+    startLine: 248
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
+  summary: "\nApplies the schema/metadata of the sql to a dataTable and populate it with the result set\n"
+  example: []
   syntax:
     content: public DataTable GetDataTableWithSchema(string sql, CommandType commandType, List<DbParameter> parameters = null)
     parameters:
     - id: sql
       type: System.String
+      description: ''
     - id: commandType
       type: System.Data.CommandType
+      description: ''
     - id: parameters
       type: System.Collections.Generic.List{System.Data.Common.DbParameter}
+      description: ''
     return:
       type: System.Data.DataTable
+      description: ''
     content.vb: Public Function GetDataTableWithSchema(sql As String, commandType As CommandType, parameters As List(Of DbParameter) = Nothing) As DataTable
   overload: DotNetHelper.Database.DataSource.DatabaseAccess`2.GetDataTableWithSchema*
   nameWithType.vb: DatabaseAccess(Of C, P).GetDataTableWithSchema(String, CommandType, List(Of DbParameter))
@@ -799,6 +954,54 @@ items:
   - Public
   fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).GetDataTableWithSchema(System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
   name.vb: GetDataTableWithSchema(String, CommandType, List(Of DbParameter))
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.GetDataTableWithKeyInfo(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`2.GetDataTableWithKeyInfo(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  id: GetDataTableWithKeyInfo(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  parent: DotNetHelper.Database.DataSource.DatabaseAccess`2
+  langs:
+  - csharp
+  - vb
+  name: GetDataTableWithKeyInfo(String, CommandType, List<DbParameter>)
+  nameWithType: DatabaseAccess<C, P>.GetDataTableWithKeyInfo(String, CommandType, List<DbParameter>)
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.GetDataTableWithKeyInfo(System.String, System.Data.CommandType, System.Collections.Generic.List<System.Data.Common.DbParameter>)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+    id: GetDataTableWithKeyInfo
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+    startLine: 270
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.DataSource
+  summary: "\nApplies the schema/metadata of the sql to a dataTable and populate it with the result set.\nIf working with a large dataSet and you don&apos;t need the dataTable which columns are primary keys then use GetDataTableWithSchema for better performance\n"
+  example: []
+  syntax:
+    content: public DataTable GetDataTableWithKeyInfo(string sql, CommandType commandType, List<DbParameter> parameters = null)
+    parameters:
+    - id: sql
+      type: System.String
+      description: ''
+    - id: commandType
+      type: System.Data.CommandType
+      description: ''
+    - id: parameters
+      type: System.Collections.Generic.List{System.Data.Common.DbParameter}
+      description: ''
+    return:
+      type: System.Data.DataTable
+      description: ''
+    content.vb: Public Function GetDataTableWithKeyInfo(sql As String, commandType As CommandType, parameters As List(Of DbParameter) = Nothing) As DataTable
+  overload: DotNetHelper.Database.DataSource.DatabaseAccess`2.GetDataTableWithKeyInfo*
+  nameWithType.vb: DatabaseAccess(Of C, P).GetDataTableWithKeyInfo(String, CommandType, List(Of DbParameter))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).GetDataTableWithKeyInfo(System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
+  name.vb: GetDataTableWithKeyInfo(String, CommandType, List(Of DbParameter))
 - uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.GetDataTableWithSchema(System.String)
   commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`2.GetDataTableWithSchema(System.String)
   id: GetDataTableWithSchema(System.String)
@@ -817,17 +1020,21 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTableWithSchema
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 198
+    startLine: 288
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
+  summary: "\nApplies the schema/metadata of the sql to a dataTable and populate it with the result set\n"
+  example: []
   syntax:
     content: public DataTable GetDataTableWithSchema(string sql)
     parameters:
     - id: sql
       type: System.String
+      description: ''
     return:
       type: System.Data.DataTable
+      description: ''
     content.vb: Public Function GetDataTableWithSchema(sql As String) As DataTable
   overload: DotNetHelper.Database.DataSource.DatabaseAccess`2.GetDataTableWithSchema*
   nameWithType.vb: DatabaseAccess(Of C, P).GetDataTableWithSchema(String)
@@ -836,6 +1043,47 @@ items:
   modifiers.vb:
   - Public
   fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).GetDataTableWithSchema(System.String)
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.GetDataTableWithKeyInfo(System.String)
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`2.GetDataTableWithKeyInfo(System.String)
+  id: GetDataTableWithKeyInfo(System.String)
+  parent: DotNetHelper.Database.DataSource.DatabaseAccess`2
+  langs:
+  - csharp
+  - vb
+  name: GetDataTableWithKeyInfo(String)
+  nameWithType: DatabaseAccess<C, P>.GetDataTableWithKeyInfo(String)
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.GetDataTableWithKeyInfo(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+    id: GetDataTableWithKeyInfo
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+    startLine: 298
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.DataSource
+  summary: "\nApplies the schema/metadata of the sql to a dataTable and populate it with the result set.\nIf working with a large dataSet and you don&apos;t need the dataTable which columns are primary keys then use GetDataTableWithSchema for better proformance\n"
+  example: []
+  syntax:
+    content: public DataTable GetDataTableWithKeyInfo(string sql)
+    parameters:
+    - id: sql
+      type: System.String
+      description: ''
+    return:
+      type: System.Data.DataTable
+      description: ''
+    content.vb: Public Function GetDataTableWithKeyInfo(sql As String) As DataTable
+  overload: DotNetHelper.Database.DataSource.DatabaseAccess`2.GetDataTableWithKeyInfo*
+  nameWithType.vb: DatabaseAccess(Of C, P).GetDataTableWithKeyInfo(String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).GetDataTableWithKeyInfo(System.String)
 - uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.GetNewParameter(System.String,System.Object)
   commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`2.GetNewParameter(System.String,System.Object)
   id: GetNewParameter(System.String,System.Object)
@@ -854,7 +1102,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewParameter
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 203
+    startLine: 303
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -893,7 +1141,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: CanConnect
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 210
+    startLine: 310
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -927,7 +1175,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 226
+    startLine: 326
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -979,7 +1227,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 231
+    startLine: 331
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1018,7 +1266,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 236
+    startLine: 336
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1064,7 +1312,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 242
+    startLine: 342
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1110,7 +1358,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Execute
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 249
+    startLine: 349
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1154,7 +1402,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Execute
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 257
+    startLine: 357
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1204,7 +1452,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutput
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 266
+    startLine: 366
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1250,7 +1498,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutput
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 274
+    startLine: 374
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1888,6 +2136,16 @@ references:
   name: Int32
   nameWithType: Int32
   fullName: System.Int32
+- uid: '{C}'
+  commentId: '!:C'
+  definition: C
+  name: C
+  nameWithType: C
+  fullName: C
+- uid: C
+  name: C
+  nameWithType: C
+  fullName: C
 - uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteScalar*
   commentId: Overload:DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteScalar
   name: ExecuteScalar
@@ -2064,6 +2322,13 @@ references:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.GetDataTableWithSchema
   nameWithType.vb: DatabaseAccess(Of C, P).GetDataTableWithSchema
   fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).GetDataTableWithSchema
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.GetDataTableWithKeyInfo*
+  commentId: Overload:DotNetHelper.Database.DataSource.DatabaseAccess`2.GetDataTableWithKeyInfo
+  name: GetDataTableWithKeyInfo
+  nameWithType: DatabaseAccess<C, P>.GetDataTableWithKeyInfo
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.GetDataTableWithKeyInfo
+  nameWithType.vb: DatabaseAccess(Of C, P).GetDataTableWithKeyInfo
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).GetDataTableWithKeyInfo
 - uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.GetNewParameter*
   commentId: Overload:DotNetHelper.Database.DataSource.DatabaseAccess`2.GetNewParameter
   name: GetNewParameter
