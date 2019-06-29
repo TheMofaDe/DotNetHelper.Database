@@ -1,7 +1,4 @@
-﻿IF DB_ID (N'Test') IS NOT NULL
-DROP DATABASE Test;
-CREATE DATABASE Test;
-CREATE TABLE [Test].[dbo].[Employee](
+﻿CREATE TABLE [master].[dbo].[Employee](
 	[IdentityField] [int] NOT NULL IDENTITY (1,1),
 	[FirstName] [varchar](400) NOT NULL,
 	[LastName] [varchar](400) NOT NULL,
@@ -9,7 +6,7 @@ CREATE TABLE [Test].[dbo].[Employee](
 	[CreatedAt] DateTime NOT NULL,
 	[FavoriteColor] [varchar](400) NOT NULL
 );
-CREATE TABLE [Test].[dbo].[Employee2](
+CREATE TABLE [master].[dbo].[Employee2](
 	[IdentityField] [int] NOT NULL IDENTITY (1,1),
 	[PrimaryKey] [varchar](400) NOT NULL PRIMARY KEY,
 	[FirstName] [varchar](400) NOT NULL,

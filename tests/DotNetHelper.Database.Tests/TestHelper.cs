@@ -15,7 +15,7 @@ namespace DotNetHelper.Database.Tests
         {
             if (Environment.MachineName == "DESKTOP-MEON7CL" || Environment.MachineName == "JMCNEAL-W8")
             {
-                return $"Server=localhost;Initial Catalog=Test;Integrated Security=True";
+                return $"Server=localhost;Initial Catalog=master;Integrated Security=True";
             }
             else
             {

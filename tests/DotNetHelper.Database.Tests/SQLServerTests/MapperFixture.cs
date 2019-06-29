@@ -71,9 +71,9 @@ namespace Tests
         public void RunBeforeAnyTests()
         {
         
-            var deleteTableIfExist = $"IF OBJECT_ID(N'[Test].[dbo].[Employee]', N'U') IS NOT NULL BEGIN DROP TABLE [Test].[dbo].[Employee] END ELSE BEGIN PRINT 'Nothing To Clean Up' END";
+            var deleteTableIfExist = $"IF OBJECT_ID(N'[master].[dbo].[Employee]', N'U') IS NOT NULL BEGIN DROP TABLE [master].[dbo].[Employee] END ELSE BEGIN PRINT 'Nothing To Clean Up' END";
             DatabaseAccess.ExecuteNonQuery(deleteTableIfExist, CommandType.Text);
-            var deleteTableIfExist2 = $"IF OBJECT_ID(N'[Test].[dbo].[Employee2]', N'U') IS NOT NULL BEGIN DROP TABLE [Test].[dbo].[Employee2] END ELSE BEGIN PRINT 'Nothing To Clean Up' END";
+            var deleteTableIfExist2 = $"IF OBJECT_ID(N'[master].[dbo].[Employee2]', N'U') IS NOT NULL BEGIN DROP TABLE [master].[dbo].[Employee2] END ELSE BEGIN PRINT 'Nothing To Clean Up' END";
             DatabaseAccess.ExecuteNonQuery(deleteTableIfExist2, CommandType.Text);
             var employeeTableSql = Assembly.GetExecutingAssembly().GetManifestResourceNames().Single(str => str.EndsWith("EmployeeTable.sql"));
             var sql = TestHelper.GetEmbeddedResourceFile(employeeTableSql);
@@ -86,7 +86,7 @@ namespace Tests
            
         }
 
-        [Test]
+        [master]
         [Order(1)]
         public void Test_Execute__AddsNewEmployee()
         {
@@ -95,7 +95,7 @@ namespace Tests
             Assert.AreEqual(outputtedResult, 1, "Something went wrong add new employee record");
         }
 
-        [Test]
+        [master]
         [Order(2)]
         public void Test_ExecuteNonQuery_AddsNewEmployee()
         {
@@ -106,7 +106,7 @@ namespace Tests
             Assert.AreEqual(outputtedResult, 1, "Something went wrong add new employee record");
         }
 
-        [Test]
+        [master]
         [Order(3)]
         public void Test_Insert_Employee_And_Output_Identity_Field()
         {
@@ -116,7 +116,7 @@ namespace Tests
         }
 
 
-        [Test]
+        [master]
 
         public void Test_ExecuteScalar_Returns_First_Column_First_Row()
         {
@@ -125,7 +125,7 @@ namespace Tests
         }
 
 
-        [Test]
+        [master]
         [Order(4)]
         public void Test_GetDataTableWithSchema_Returns_All_Data_And_Has_Correct_Schema()
         {
@@ -140,7 +140,7 @@ namespace Tests
             Assert.AreEqual(dt.Rows.Count, 3);
         }
 
-        [Test]
+        [master]
         [Order(5)]
         public void Test_GetDataTableWithKeyInfo_Returns_All_Data_And_Has_Correct_Schema()
         {
@@ -157,7 +157,7 @@ namespace Tests
         }
 
 
-        [Test]
+        [master]
         [Order(6)]
         public void Test_MapDataTableToList()
         {
@@ -170,7 +170,7 @@ namespace Tests
         }
 
 
-        [Test]
+        [master]
         [Order(7)]
         public void Test_MapDataReaderToList()
         {
@@ -183,7 +183,7 @@ namespace Tests
         }
 
 
-        [Test]
+        [master]
         [Order(8)]
         public void Test_GetData()
         {
@@ -197,7 +197,7 @@ namespace Tests
 
 
 
-        [Test]
+        [master]
         [Order(8)]
         public void Test_MapToDataTable()
         {
