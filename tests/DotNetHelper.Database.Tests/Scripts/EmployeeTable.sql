@@ -1,8 +1,6 @@
 ﻿IF DB_ID (N'Test') IS NOT NULL
 DROP DATABASE Test;
-GO
 CREATE DATABASE Test;
-GO
 CREATE TABLE [Test].[dbo].[Employee](
 	[IdentityField] [int] NOT NULL IDENTITY (1,1),
 	[FirstName] [varchar](400) NOT NULL,
