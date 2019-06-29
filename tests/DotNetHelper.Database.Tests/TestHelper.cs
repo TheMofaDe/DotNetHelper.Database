@@ -19,7 +19,7 @@ namespace DotNetHelper.Database.Tests
             }
             else
             {
-                return $@"Server=(local)\SQL2012SP1;Database=master;UID=sa;PWD=Password12!";
+                return $@"Server=(local)\SQL2014;Database=master;UID=sa;PWD=Password12!";
             }
         }
 

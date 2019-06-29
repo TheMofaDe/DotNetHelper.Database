@@ -16,4 +16,4 @@ build_script:
 - ps: .\build.ps1 --target="AppVeyor"
 test: off
 services:
-  - mssql2012sp1
+  - mssql2014
