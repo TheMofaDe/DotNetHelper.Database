@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using DotNetHelper.Database.DataSource;
@@ -9,11 +10,12 @@ using DotNetHelper.Database.Tests;
 using DotNetHelper.Database.Tests.MockData;
 using DotNetHelper.Database.Tests.Models;
 using DotNetHelper.ObjectToSql.Enum;
+using Newtonsoft.Json;
 using NUnit.Framework;
 
 namespace Tests
 {
-    public class SqlServerTests
+    public class SqlServerFixture
     {
 
         public DatabaseAccess<SqlConnection,SqlParameter> DatabaseAccess { get; set; } = new DatabaseAccess<SqlConnection, SqlParameter>(DataBaseType.SqlServer,TestHelper.SQLServerConnectionString);
@@ -35,14 +37,13 @@ namespace Tests
         [OneTimeSetUp]
         public void RunBeforeAnyTests()
         {
-        
-            var deleteTableIfExist = $"IF OBJECT_ID(N'[master].[dbo].[Employee]', N'U') IS NOT NULL BEGIN DROP TABLE [master].[dbo].[Employee] END ELSE BEGIN PRINT 'Nothing To Clean Up' END";
-            DatabaseAccess.ExecuteNonQuery(deleteTableIfExist, CommandType.Text);
-            var deleteTableIfExist2 = $"IF OBJECT_ID(N'[master].[dbo].[Employee2]', N'U') IS NOT NULL BEGIN DROP TABLE [master].[dbo].[Employee2] END ELSE BEGIN PRINT 'Nothing To Clean Up' END";
-            DatabaseAccess.ExecuteNonQuery(deleteTableIfExist2, CommandType.Text);
-            var employeeTableSql = Assembly.GetExecutingAssembly().GetManifestResourceNames().Single(str => str.EndsWith("EmployeeTable.sql"));
-            var sql = TestHelper.GetEmbeddedResourceFile(employeeTableSql);
-            var createTableResult = DatabaseAccess.ExecuteNonQuery(TestHelper.GetEmbeddedResourceFile(employeeTableSql), CommandType.Text);
+            var assemblyResources = Assembly.GetExecutingAssembly().GetManifestResourceNames(); //example DotNetHelper.Database.Tests.Scripts.sqlserver.sql
+            var sqls = assemblyResources.Where(str => str.EndsWith($"{DatabaseAccess.SqlSyntaxHelper.DataBaseType}.sql",StringComparison.OrdinalIgnoreCase)).ToList();
+            sqls.ForEach(delegate(string s)
+            {
+               var result = DatabaseAccess.ExecuteNonQuery(TestHelper.GetEmbeddedResourceFile(s), CommandType.Text);
+            });
+            
         }
 
         [OneTimeTearDown]
@@ -51,13 +52,19 @@ namespace Tests
            
         }
 
+
+
+
+
         [Test]
         [Order(1)]
-        public void Test_Execute__AddsNewEmployee()
+        public void Test_Execute_AddsNewEmployee()
         {
             var newEmployee = MockEmployee.Hashset.Take(1).Last();
             var outputtedResult = DatabaseAccess.Execute(newEmployee, ActionType.Insert);
             Assert.AreEqual(outputtedResult, 1, "Something went wrong add new employee record");
+
+            
         }
 
         [Test]
@@ -109,7 +116,7 @@ namespace Tests
         [Order(5)]
         public void Test_GetDataTableWithKeyInfo_Returns_All_Data_And_Has_Correct_Schema()
         {
-            var dt = DatabaseAccess.GetDataTableWithKeyInfo($"SELECT * FROM Employee2");
+            var dt = DatabaseAccess.GetDataTableWithKeyInfo($"SELECT * FROM Employee");
             dt.TableName = "Employee";
 
             Assert.AreEqual(dt.TableName, "Employee");
@@ -117,8 +124,8 @@ namespace Tests
             Assert.AreEqual(dt.Columns["IdentityField"].AllowDBNull, false);
             Assert.AreEqual(dt.Columns["IdentityField"].ReadOnly, true);
             Assert.AreEqual(dt.Columns["FirstName"].MaxLength, 400);
-            Assert.Contains(dt.Columns["PrimaryKey"],dt.PrimaryKey);
-            Assert.AreEqual(dt.Rows.Count, 0);
+            Assert.Contains(dt.Columns["IdentityField"],dt.PrimaryKey);
+            Assert.AreEqual(dt.Rows.Count, 3);
         }
 
 
@@ -127,7 +134,7 @@ namespace Tests
         public void Test_MapDataTableToList()
         {
             var dt = DatabaseAccess.GetDataTableWithSchema($"SELECT * FROM Employee");
-            var list = dt.MapToList<Employee>();
+            var list = dt.MapToList<Employee>(); // .OrderBy(e => e.IdentityField ).ToList();
             Assert.AreEqual(dt.Rows.Count, 3);
             Assert.IsTrue(CompareEmployees(list[0], MockEmployee.Hashset.Take(1).Last()));
             Assert.IsTrue(CompareEmployees(list[1], MockEmployee.Hashset.Take(2).Last()));
@@ -163,15 +170,23 @@ namespace Tests
 
         public bool CompareEmployees(Employee one, Employee two)
         {
-            return
+            var match = 
                 one.LastName == two.LastName
                 && one.CreatedAt == two.CreatedAt
                 && one.DateOfBirth == two.DateOfBirth
                 && one.FavoriteColor == two.FavoriteColor
                 && one.FirstName == two.FirstName
                 && one.IdentityField == two.IdentityField;
-        }
+            //if (!match)
+            //{
+            //     var json1 = JsonConvert.SerializeObject(one, Formatting.Indented);
+            //     var json2 = JsonConvert.SerializeObject(two, Formatting.Indented);
+            //     Directory.CreateDirectory($@"C:\Temp\TestResult\");
+            //     File.WriteAllText($@"C:\Temp\TestResult\{DateTime.Now:HH-mm-ss}",$"{json1}{Environment.NewLine}{json2}");
+            //}
 
+            return match;
+        }
 
 
 

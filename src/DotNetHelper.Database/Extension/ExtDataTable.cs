@@ -60,7 +60,7 @@ namespace DotNetHelper.Database.Extension
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="row"></param>
-        /// <param name="useAttributeName"></param>
+        /// <param name="useAttributeName">if true when mapping datarow columns to T instance. Attribute mapto name will be used instead of property name if exist</param>
         /// <returns></returns>
         public static T MapTo<T>(this DataRow row,bool useAttributeName = true) where T : class
         {
@@ -85,7 +85,7 @@ namespace DotNetHelper.Database.Extension
                     if (value == DBNull.Value) value = null;
                     try
                     {
-                        ExtFastMember.SetMemberValue(obj, columnName, value);
+                        ExtFastMember.SetMemberValue(obj, wrapper.Name, value);
                     } 
                     catch (InvalidOperationException) { } // These are properties or field without a setter
                     catch (ArgumentOutOfRangeException) { }
