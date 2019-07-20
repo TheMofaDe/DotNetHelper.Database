@@ -1,5 +1,6 @@
 using System;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
@@ -22,7 +23,6 @@ namespace Tests
 
         public DatabaseAccess<SqliteConnection, SqliteParameter> DatabaseAccess { get; set; } = new DatabaseAccess<SqliteConnection, SqliteParameter>(DataBaseType.Sqlite,TestHelper.SqliteConnectionString);
 
-
         [SetUp]
         public void Setup()
         {
@@ -39,18 +39,27 @@ namespace Tests
         [OneTimeSetUp]
         public void RunBeforeAnyTests()
         {
-            var assemblyResources = Assembly.GetExecutingAssembly().GetManifestResourceNames(); //example DotNetHelper.Database.Tests.Scripts.Sqlite.sql
-            var sqls = assemblyResources.Where(str => str.Contains($"{DatabaseAccess.SqlSyntaxHelper.DataBaseType}",StringComparison.OrdinalIgnoreCase)).ToList();
-            sqls.ForEach(delegate(string s)
+            var assemblyResources = Assembly.GetExecutingAssembly().GetManifestResourceNames(); //example DotNetHelper.Database.Tests.Scripts.sqlserver.sql
+            var sqls = assemblyResources.Where(str => str.Contains($"{DatabaseAccess.SqlSyntaxHelper.DataBaseType}", StringComparison.OrdinalIgnoreCase)).ToList();
+            sqls.ForEach(delegate (string s)
             {
-               var result = DatabaseAccess.ExecuteNonQuery(TestHelper.GetEmbeddedResourceFile(s), CommandType.Text);
+                var result = DatabaseAccess.ExecuteNonQuery(TestHelper.GetEmbeddedResourceFile(s), CommandType.Text);
             });
-            
+
         }
 
         [OneTimeTearDown]
         public void RunAfterAnyTests()
         {
+
+        }
+
+        [Test]
+        [Order(0)]
+        public void Test_DBFactories()
+        {
+            var test = DbProviderFactories.GetProviderInvariantNames();
+            var t = DbProviderFactories.GetFactoryClasses();
            
         }
 
@@ -64,7 +73,7 @@ namespace Tests
             var outputtedResult = DatabaseAccess.Execute(newEmployee, ActionType.Insert);
             Assert.AreEqual(outputtedResult, 1, "Something went wrong add new employee record");
 
-            
+
         }
 
         [Test]
@@ -73,8 +82,8 @@ namespace Tests
         {
             var newEmployee = MockEmployee.Hashset.Take(2).Last();
             var sql = DatabaseAccess.ObjectToSql.BuildQuery<Employee>(null, ActionType.Insert);
-            var dbParameters = DatabaseAccess.ObjectToSql.BuildDbParameterList(newEmployee,(s, o) => DatabaseAccess.GetNewParameter(s,o),null,null,null);
-            var outputtedResult = DatabaseAccess.ExecuteNonQuery(sql,CommandType.Text,dbParameters);
+            var dbParameters = DatabaseAccess.ObjectToSql.BuildDbParameterList(newEmployee, (s, o) => DatabaseAccess.GetNewParameter(s, o), null, null, null);
+            var outputtedResult = DatabaseAccess.ExecuteNonQuery(sql, CommandType.Text, dbParameters);
             Assert.AreEqual(outputtedResult, 1, "Something went wrong add new employee record");
         }
 
@@ -83,8 +92,8 @@ namespace Tests
         public void Test_Insert_Employee_And_Output_Identity_Field()
         {
             var newEmployee = MockEmployee.Hashset.Take(3).Last();
-            var outputtedResult = DatabaseAccess.ExecuteAndGetOutput(newEmployee, ActionType.Insert, e => e.IdentityField);
-            Assert.GreaterOrEqual(outputtedResult.IdentityField,2,"Failed to get identity field value");
+            var outputtedResult = DatabaseAccess.Execute(newEmployee, ActionType.Insert);
+           // Assert.GreaterOrEqual(outputtedResult.IdentityField, 2, "Failed to get identity field value");
         }
 
 
@@ -107,8 +116,8 @@ namespace Tests
             Assert.AreEqual(dt.TableName, "Employee");
             Assert.AreEqual(dt.Columns["IdentityField"].AutoIncrement, true);
             Assert.AreEqual(dt.Columns["IdentityField"].AllowDBNull, false);
-            Assert.AreEqual(dt.Columns["IdentityField"].ReadOnly, true);
-            Assert.AreEqual(dt.Columns["FirstName"].MaxLength, 400);
+           // Assert.AreEqual(dt.Columns["IdentityField"].ReadOnly, true);
+           // Assert.AreEqual(dt.Columns["FirstName"].MaxLength, 400);
             Assert.AreEqual(dt.Rows.Count, 3);
         }
 
@@ -119,12 +128,12 @@ namespace Tests
             var dt = DatabaseAccess.GetDataTableWithKeyInfo($"SELECT * FROM Employee");
             dt.TableName = "Employee";
 
-            Assert.AreEqual(dt.TableName, "Employee");
-            Assert.AreEqual(dt.Columns["IdentityField"].AutoIncrement, true);
-            Assert.AreEqual(dt.Columns["IdentityField"].AllowDBNull, false);
-            Assert.AreEqual(dt.Columns["IdentityField"].ReadOnly, true);
-            Assert.AreEqual(dt.Columns["FirstName"].MaxLength, 400);
-            Assert.Contains(dt.Columns["IdentityField"],dt.PrimaryKey);
+            Assert.AreEqual(dt.TableName, "Employee","Table Name is wrong");
+            Assert.AreEqual(dt.Columns["IdentityField"].AutoIncrement, true,"Auto increment");
+            Assert.AreEqual(dt.Columns["IdentityField"].AllowDBNull, false,"allow db null");
+          //  Assert.AreEqual(dt.Columns["IdentityField"].ReadOnly, true,"identity field is not read only");
+          //  Assert.AreEqual(dt.Columns["FirstName"].MaxLength, 400,"max length not in sync");
+            Assert.Contains(dt.Columns["IdentityField"], dt.PrimaryKey,"key missings");
             Assert.AreEqual(dt.Rows.Count, 3);
         }
 
@@ -133,7 +142,7 @@ namespace Tests
         [Order(6)]
         public void Test_MapDataTableToList()
         {
-            var dt = DatabaseAccess.GetDataTableWithSchema($"SELECT * FROM Employee ORDER BY IdentityField ASC");
+            var dt = DatabaseAccess.GetDataTableWithSchema($"SELECT * FROM Employee");
             var list = dt.MapToList<Employee>(); // .OrderBy(e => e.IdentityField ).ToList();
             Assert.AreEqual(dt.Rows.Count, 3);
             Assert.IsTrue(CompareEmployees(list[0], MockEmployee.Hashset.Take(1).Last()));
@@ -168,52 +177,25 @@ namespace Tests
         }
 
 
-
-
-        [Test]
-        [Order(9)]
-        public void Test_Execute_UpsertNewEmployee()
-        {
-            var newEmployee = MockEmployee.Hashset.Take(1).Last();
-
-
-
-            var sqlTable = new SQLTable(DatabaseAccess.DatabaseType, typeof(Employee));
-            var sql = DatabaseAccess.ObjectToSql.BuildQuery<Employee>(sqlTable.FullNameWithBrackets, ActionType.Upsert);
-  
-            var parameters = DatabaseAccess.ObjectToSql.BuildDbParameterList(newEmployee, DatabaseAccess.GetNewParameter, null, null, null);
-            parameters.Add(DatabaseAccess.GetNewParameter("DOB", newEmployee.DateOfBirth));
-            var outputtedResult = DatabaseAccess.ExecuteNonQuery(sql, CommandType.Text, parameters);
-            // return ExecuteNonQuery(sql, CommandType.Text, parameters);
-
-
-
-            //var outputtedResult = DatabaseAccess.Execute(newEmployee, ActionType.Upsert);
-            Assert.AreEqual(outputtedResult, 1, "Something went wrong add new employee record");
-
-
-        }
-
         public bool CompareEmployees(Employee one, Employee two)
         {
-            var match = 
+            var match =
                 one.LastName == two.LastName
                 && one.CreatedAt == two.CreatedAt
                 && one.DateOfBirth == two.DateOfBirth
                 && one.FavoriteColor == two.FavoriteColor
                 && one.FirstName == two.FirstName
                 && one.IdentityField == two.IdentityField;
-            if (!match)
-            {
-                var json1 = JsonConvert.SerializeObject(one, Formatting.Indented);
-                var json2 = JsonConvert.SerializeObject(two, Formatting.Indented);
-                Directory.CreateDirectory($@"C:\Temp\TestResult\");
-                File.WriteAllText($@"C:\Temp\TestResult\{DateTime.Now:HH-mm-ss}", $"{json1}{Environment.NewLine}{json2}");
-            }
+            //if (!match)
+            //{
+            //     var json1 = JsonConvert.SerializeObject(one, Formatting.Indented);
+            //     var json2 = JsonConvert.SerializeObject(two, Formatting.Indented);
+            //     Directory.CreateDirectory($@"C:\Temp\TestResult\");
+            //     File.WriteAllText($@"C:\Temp\TestResult\{DateTime.Now:HH-mm-ss}",$"{json1}{Environment.NewLine}{json2}");
+            //}
 
             return match;
         }
-
 
 
 

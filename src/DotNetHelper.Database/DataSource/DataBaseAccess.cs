@@ -19,7 +19,7 @@ namespace DotNetHelper.Database.DataSource
     /// </summary>
     /// <typeparam name="C">An implementation of IDBConnection</typeparam>
     /// <typeparam name="P">The corresponding DbParameter class to ties with the specified IDBConnection </typeparam>
-    public class DatabaseAccess<C, P> where C : class, IDbConnection, IDisposable, new() where P : DbParameter, new() 
+    public class DatabaseAccess<C, P> : IDatabaseAccess where C : class, IDbConnection, IDisposable,  new() where P : DbParameter, new()  
     {
 
         private string ConnectionString { get; }
@@ -414,25 +414,6 @@ namespace DotNetHelper.Database.DataSource
             return GetDataReader(sql, CommandType.Text, parameters);
         }
 
-
-
-        //// This example assumes a reference to System.Data.Common.
-        // DataTable GetProviderFactoryClasses()
-        //{
-        //    // Retrieve the installed providers and factories.
-        //    DataTable table = DbProviderFactories.GetFactoryClasses();
-        
-
-        //    // Display each row and column value.
-        //    foreach (DataRow row in table.Rows)
-        //    {
-        //        foreach (DataColumn column in table.Columns)
-        //        {
-        //            Console.WriteLine(row[column]);
-        //        }
-        //    }
-        //    return table;
-        //}
-
+     
     }
 }
