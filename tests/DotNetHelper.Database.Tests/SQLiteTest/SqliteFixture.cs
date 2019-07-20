@@ -10,15 +10,17 @@ using DotNetHelper.Database.Tests;
 using DotNetHelper.Database.Tests.MockData;
 using DotNetHelper.Database.Tests.Models;
 using DotNetHelper.ObjectToSql.Enum;
+using DotNetHelper.ObjectToSql.Model;
+using DotNetHelper.ObjectToSql.Services;
 using Newtonsoft.Json;
 using NUnit.Framework;
-
+using Microsoft.Data.Sqlite;
 namespace Tests
 {
     public class SqliteFixture
     {
 
-        public DatabaseAccess<SqlConnection,SqlParameter> DatabaseAccess { get; set; } = new DatabaseAccess<SqliteConnection, SqliteParameter>(DataBaseType.Sqlite,TestHelper.SqliteConnectionString);
+        public DatabaseAccess<SqliteConnection, SqliteParameter> DatabaseAccess { get; set; } = new DatabaseAccess<SqliteConnection, SqliteParameter>(DataBaseType.Sqlite,TestHelper.SqliteConnectionString);
 
 
         [SetUp]
@@ -38,7 +40,7 @@ namespace Tests
         public void RunBeforeAnyTests()
         {
             var assemblyResources = Assembly.GetExecutingAssembly().GetManifestResourceNames(); //example DotNetHelper.Database.Tests.Scripts.Sqlite.sql
-            var sqls = assemblyResources.Where(str => str.EndsWith($"{DatabaseAccess.SqlSyntaxHelper.DataBaseType}.sql",StringComparison.OrdinalIgnoreCase)).ToList();
+            var sqls = assemblyResources.Where(str => str.Contains($"{DatabaseAccess.SqlSyntaxHelper.DataBaseType}",StringComparison.OrdinalIgnoreCase)).ToList();
             sqls.ForEach(delegate(string s)
             {
                var result = DatabaseAccess.ExecuteNonQuery(TestHelper.GetEmbeddedResourceFile(s), CommandType.Text);
@@ -51,8 +53,6 @@ namespace Tests
         {
            
         }
-
-
 
 
 
@@ -133,7 +133,7 @@ namespace Tests
         [Order(6)]
         public void Test_MapDataTableToList()
         {
-            var dt = DatabaseAccess.GetDataTableWithSchema($"SELECT * FROM Employee");
+            var dt = DatabaseAccess.GetDataTableWithSchema($"SELECT * FROM Employee ORDER BY IdentityField ASC");
             var list = dt.MapToList<Employee>(); // .OrderBy(e => e.IdentityField ).ToList();
             Assert.AreEqual(dt.Rows.Count, 3);
             Assert.IsTrue(CompareEmployees(list[0], MockEmployee.Hashset.Take(1).Last()));
@@ -168,6 +168,32 @@ namespace Tests
         }
 
 
+
+
+        [Test]
+        [Order(9)]
+        public void Test_Execute_UpsertNewEmployee()
+        {
+            var newEmployee = MockEmployee.Hashset.Take(1).Last();
+
+
+
+            var sqlTable = new SQLTable(DatabaseAccess.DatabaseType, typeof(Employee));
+            var sql = DatabaseAccess.ObjectToSql.BuildQuery<Employee>(sqlTable.FullNameWithBrackets, ActionType.Upsert);
+  
+            var parameters = DatabaseAccess.ObjectToSql.BuildDbParameterList(newEmployee, DatabaseAccess.GetNewParameter, null, null, null);
+            parameters.Add(DatabaseAccess.GetNewParameter("DOB", newEmployee.DateOfBirth));
+            var outputtedResult = DatabaseAccess.ExecuteNonQuery(sql, CommandType.Text, parameters);
+            // return ExecuteNonQuery(sql, CommandType.Text, parameters);
+
+
+
+            //var outputtedResult = DatabaseAccess.Execute(newEmployee, ActionType.Upsert);
+            Assert.AreEqual(outputtedResult, 1, "Something went wrong add new employee record");
+
+
+        }
+
         public bool CompareEmployees(Employee one, Employee two)
         {
             var match = 
@@ -177,13 +203,13 @@ namespace Tests
                 && one.FavoriteColor == two.FavoriteColor
                 && one.FirstName == two.FirstName
                 && one.IdentityField == two.IdentityField;
-            //if (!match)
-            //{
-            //     var json1 = JsonConvert.SerializeObject(one, Formatting.Indented);
-            //     var json2 = JsonConvert.SerializeObject(two, Formatting.Indented);
-            //     Directory.CreateDirectory($@"C:\Temp\TestResult\");
-            //     File.WriteAllText($@"C:\Temp\TestResult\{DateTime.Now:HH-mm-ss}",$"{json1}{Environment.NewLine}{json2}");
-            //}
+            if (!match)
+            {
+                var json1 = JsonConvert.SerializeObject(one, Formatting.Indented);
+                var json2 = JsonConvert.SerializeObject(two, Formatting.Indented);
+                Directory.CreateDirectory($@"C:\Temp\TestResult\");
+                File.WriteAllText($@"C:\Temp\TestResult\{DateTime.Now:HH-mm-ss}", $"{json1}{Environment.NewLine}{json2}");
+            }
 
             return match;
         }

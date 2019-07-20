@@ -97,11 +97,13 @@ namespace DotNetHelper.Database.Extension
 
         }
         /// <summary>
-        /// 
+        /// Maps the IDataReder to a list of T
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="reader"></param>
-        /// <param name="type"></param>
+        /// <param name="xmlDeserializer">If the type of T have a property that is marked as xml & is stored in the database as xml. this function will execute to deserialize the value</param>
+        /// <param name="jsonDeserializer">If the type of T have a property that is marked as json & is stored in the database as json. this function will execute to deserialize the value</param>
+        /// <param name="csvDeserializer">If the type of T have a property that is marked as csv & is stored in the database as csv. this function will execute to deserialize the value</param>
         /// <returns></returns>
         public static List<T> MapToList<T>(this IDataReader reader, Func<string, Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer) where T : class
         {
@@ -138,12 +140,28 @@ namespace DotNetHelper.Database.Extension
         }
 
 
+
+        /// <summary>
+        /// Maps the IDataReder to a list of T
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="reader"></param>
+        
+        /// <returns></returns>
+        public static List<T> MapToList<T>(this IDataReader reader) where T : class
+        {
+            return reader.MapToList<T>(null, null, null);
+        }
+
+
         /// <summary>
         /// 
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="reader"></param>
-        /// <param name="type"></param>
+        /// <param name="xmlDeserializer">If the type of T have a property that is marked as xml & is stored in the database as xml. this function will execute to deserialize the value</param>
+        /// <param name="jsonDeserializer">If the type of T have a property that is marked as json & is stored in the database as json. this function will execute to deserialize the value</param>
+        /// <param name="csvDeserializer">If the type of T have a property that is marked as csv & is stored in the database as csv. this function will execute to deserialize the value</param>
         /// <returns></returns>
         public static T MapTo<T>(this IDataReader reader, Func<string, Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer) where T : class
         {
@@ -173,6 +191,19 @@ namespace DotNetHelper.Database.Extension
             }
 
             return null;
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="reader"></param>
+        /// <returns></returns>
+        public static T MapTo<T>(this IDataReader reader) where T : class
+        {
+            return reader.MapTo<T>(null, null, null);
         }
 
 

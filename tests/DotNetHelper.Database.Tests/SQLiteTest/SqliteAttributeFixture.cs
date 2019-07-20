@@ -19,7 +19,7 @@ using DotNetHelper.Serialization.Csv;
 using DotNetHelper.Serialization.Json;
 using Newtonsoft.Json;
 using NUnit.Framework;
-
+using Microsoft.Data.Sqlite;
 namespace Tests
 {
     [Parallelizable(ParallelScope.None)]
@@ -31,7 +31,7 @@ namespace Tests
        
         public ISerializer Json { get; } = new DataSourceJson(new JsonSerializerSettings(){Formatting = Formatting.None});
         public ISerializer Csv { get; } = new DataSourceCsv(new Configuration());
-        public DatabaseAccess<SqlConnection,SqlParameter> DatabaseAccess { get; set; } = new DatabaseAccess<SqliteConnection, SqliteParameter>(DataBaseType.Sqlite,TestHelper.SqliteConnectionString);
+        public DatabaseAccess<SqliteConnection, SqliteParameter> DatabaseAccess { get; set; } = new DatabaseAccess<SqliteConnection, SqliteParameter>(DataBaseType.Sqlite,TestHelper.SqliteConnectionString);
 
 
         public  string SerializeObject<T>( T toSerialize)
@@ -101,7 +101,8 @@ namespace Tests
         [OneTimeTearDown]
         public void RunAfterAnyTests()
         {
-           
+            var result = DatabaseAccess.ExecuteNonQuery("DROP TABLE Employee", CommandType.Text);
+            var result2 = DatabaseAccess.ExecuteNonQuery("DROP TABLE Employee2", CommandType.Text);
         }
 
         [Test]

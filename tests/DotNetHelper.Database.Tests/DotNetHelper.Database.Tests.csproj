@@ -1,25 +1,29 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp2.2;net452</TargetFrameworks>
+    <TargetFrameworks>netcoreapp2.2</TargetFrameworks>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Scripts\sqlite.sql" />
+    <None Remove="Scripts\sqlite2.sql" />
     <None Remove="Scripts\sqlserver.sql" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Scripts\sqlite2.sql" />
+    <EmbeddedResource Include="Scripts\sqlite.sql" />
     <EmbeddedResource Include="Scripts\sqlserver.sql" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="DotNetHelper.Serialization.Csv" Version="1.0.10" />
     <PackageReference Include="DotNetHelper.Serialization.Json" Version="1.0.12" />
-    <PackageReference Include="nunit" Version="3.11.0" />
-    <PackageReference Include="NUnit3TestAdapter" Version="3.12.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
+    <PackageReference Include="nunit" Version="3.12.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.13.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,10 +31,10 @@
   </ItemGroup>
 
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.2'">
     <PackageReference Include="Microsoft.Data.Sqlite">
       <!--Microsoft.EntityFrameworkCore.Sqlite-->
-      <Version>2.2.4</Version>
+      <Version>3.0.0-preview6.19304.10</Version>
     </PackageReference>
   </ItemGroup>
 
