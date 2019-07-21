@@ -46,7 +46,7 @@
   </ItemGroup>
 
 
-  <PropertyGroup Condition="'$(TargetFramework)' == 'netcoreapp2.2'">
+  <PropertyGroup Condition="'$(TargetFramework)' == 'netcoreapp2.2' OR '$(TargetFramework)' == 'net452' ">
     <DefineConstants>$(DefineConstants);SUPPORTSQLITE</DefineConstants>
   </PropertyGroup>
 
