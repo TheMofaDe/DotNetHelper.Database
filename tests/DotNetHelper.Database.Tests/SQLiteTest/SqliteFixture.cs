@@ -1,3 +1,4 @@
+#if SUPPORTSQLITE
 using System;
 using System.Data;
 using System.Data.Common;
@@ -15,6 +16,7 @@ using DotNetHelper.ObjectToSql.Model;
 using DotNetHelper.ObjectToSql.Services;
 using Newtonsoft.Json;
 using NUnit.Framework;
+
 using Microsoft.Data.Sqlite;
 namespace Tests
 {
@@ -39,8 +41,11 @@ namespace Tests
         [OneTimeSetUp]
         public void RunBeforeAnyTests()
         {
+            if (File.Exists(TestHelper.LocalDatabaseFile))
+                File.Delete(TestHelper.LocalDatabaseFile);
+            File.Create(TestHelper.LocalDatabaseFile);
             var assemblyResources = Assembly.GetExecutingAssembly().GetManifestResourceNames(); //example DotNetHelper.Database.Tests.Scripts.sqlserver.sql
-            var sqls = assemblyResources.Where(str => str.Contains($"{DatabaseAccess.SqlSyntaxHelper.DataBaseType}", StringComparison.OrdinalIgnoreCase)).ToList();
+            var sqls = assemblyResources.Where(str => str.Contains($"{DatabaseAccess.SqlSyntaxHelper.DataBaseType}")).ToList();
             sqls.ForEach(delegate (string s)
             {
                 var result = DatabaseAccess.ExecuteNonQuery(TestHelper.GetEmbeddedResourceFile(s), CommandType.Text);
@@ -51,18 +56,11 @@ namespace Tests
         [OneTimeTearDown]
         public void RunAfterAnyTests()
         {
-
+            if (File.Exists(TestHelper.LocalDatabaseFile))
+                File.Delete(TestHelper.LocalDatabaseFile);
         }
 
-        [Test]
-        [Order(0)]
-        public void Test_DBFactories()
-        {
-            var test = DbProviderFactories.GetProviderInvariantNames();
-            var t = DbProviderFactories.GetFactoryClasses();
-           
-        }
-
+       
 
 
         [Test]
@@ -201,3 +199,5 @@ namespace Tests
 
     }
 }
+
+#endif

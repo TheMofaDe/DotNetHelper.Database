@@ -12,7 +12,8 @@ namespace DotNetHelper.Database.Tests
     {
         public static string SQLServerConnectionString { get; set; } = GetCS();
 
-        public static string SqliteConnectionString { get; set; } = $"Data Source={Path.Combine(Environment.CurrentDirectory, "data.db")};";
+        public static string LocalDatabaseFile { get; } = $"{Path.Combine(Environment.CurrentDirectory, "data.db")}";
+        public static string SqliteConnectionString { get; set; } = $"Data Source={LocalDatabaseFile};";
         private static string GetCS()
         {
             if (Environment.MachineName == "DESKTOP-MEON7CL" || Environment.MachineName == "JMCNEAL-W8")

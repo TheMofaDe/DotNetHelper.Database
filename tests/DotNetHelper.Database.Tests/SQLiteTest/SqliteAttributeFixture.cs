@@ -1,3 +1,4 @@
+#if SUPPORTSQLITE
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -166,3 +167,5 @@ namespace Tests
 
     }
 }
+
+#endif
