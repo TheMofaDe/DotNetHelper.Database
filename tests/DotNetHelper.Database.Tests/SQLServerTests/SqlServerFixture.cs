@@ -1,19 +1,17 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.IO;
 using System.Linq;
 using System.Reflection;
 using DotNetHelper.Database.DataSource;
 using DotNetHelper.Database.Extension;
-using DotNetHelper.Database.Tests;
+using DotNetHelper.Database.Tests.Helpers;
 using DotNetHelper.Database.Tests.MockData;
 using DotNetHelper.Database.Tests.Models;
 using DotNetHelper.ObjectToSql.Enum;
-using Newtonsoft.Json;
 using NUnit.Framework;
 
-namespace Tests
+namespace DotNetHelper.Database.Tests.SQLServerTests
 {
     public class SqlServerFixture
     {

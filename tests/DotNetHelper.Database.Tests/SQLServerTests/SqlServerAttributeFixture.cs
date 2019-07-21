@@ -8,8 +8,7 @@ using System.Reflection;
 using System.Xml.Serialization;
 using CsvHelper.Configuration;
 using DotNetHelper.Database.DataSource;
-using DotNetHelper.Database.Extension;
-using DotNetHelper.Database.Tests;
+using DotNetHelper.Database.Tests.Helpers;
 using DotNetHelper.Database.Tests.MockData;
 using DotNetHelper.Database.Tests.Models;
 using DotNetHelper.ObjectToSql.Enum;
@@ -20,7 +19,7 @@ using DotNetHelper.Serialization.Json;
 using Newtonsoft.Json;
 using NUnit.Framework;
 
-namespace Tests
+namespace DotNetHelper.Database.Tests.SQLServerTests
 {
     [Parallelizable(ParallelScope.None)]
 

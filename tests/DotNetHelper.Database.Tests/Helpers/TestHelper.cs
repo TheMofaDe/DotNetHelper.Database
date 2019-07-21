@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Reflection;
-using System.Text;
 
-namespace DotNetHelper.Database.Tests
+namespace DotNetHelper.Database.Tests.Helpers
 {
     public static class TestHelper
     {
@@ -35,7 +30,6 @@ namespace DotNetHelper.Database.Tests
                 string result = r.ReadToEnd();
                 return result;
             }
-            return "";
         }
 
 

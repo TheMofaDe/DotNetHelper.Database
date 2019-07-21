@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net452;net45;netcoreapp2.2</TargetFrameworks>
+    <TargetFrameworks>netcoreapp2.2;net452;net45</TargetFrameworks>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -13,8 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Scripts\sqlite2.sql" />
-    <EmbeddedResource Include="Scripts\sqlite.sql" />
+    <EmbeddedResource Include="Scripts\Sqlite2.sql" />
+    <EmbeddedResource Include="Scripts\Sqlite.sql" />
     <EmbeddedResource Include="Scripts\sqlserver.sql" />
   </ItemGroup>
 
@@ -46,7 +46,7 @@
   </ItemGroup>
 
 
-  <PropertyGroup Condition="'$(TargetFramework)' == 'netcoreapp2.2'  ">
+  <PropertyGroup Condition="'$(TargetFramework)' == 'netcoreapp2.2'">
     <DefineConstants>$(DefineConstants);SUPPORTSQLITE</DefineConstants>
   </PropertyGroup>
 

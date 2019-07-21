@@ -1,25 +1,20 @@
 #if SUPPORTSQLITE
-using System;
 using System.Data;
-using System.Data.Common;
-using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using DotNetHelper.Database.DataSource;
 using DotNetHelper.Database.Extension;
-using DotNetHelper.Database.Tests;
+using DotNetHelper.Database.Tests.Helpers;
 using DotNetHelper.Database.Tests.MockData;
 using DotNetHelper.Database.Tests.Models;
 using DotNetHelper.ObjectToSql.Enum;
-using DotNetHelper.ObjectToSql.Model;
-using DotNetHelper.ObjectToSql.Services;
-using Newtonsoft.Json;
+using Microsoft.Data.Sqlite;
 using NUnit.Framework;
 
-using Microsoft.Data.Sqlite;
-namespace Tests
+namespace DotNetHelper.Database.Tests.SQLiteTest
 {
+//[Parallelizable(ParallelScope.None)]
     public class SqliteFixture
     {
 
@@ -43,7 +38,7 @@ namespace Tests
         {
             if (File.Exists(TestHelper.LocalDatabaseFile))
                 File.Delete(TestHelper.LocalDatabaseFile);
-            File.Create(TestHelper.LocalDatabaseFile);
+          //  File.Create(TestHelper.LocalDatabaseFile);
             var assemblyResources = Assembly.GetExecutingAssembly().GetManifestResourceNames(); //example DotNetHelper.Database.Tests.Scripts.sqlserver.sql
             var sqls = assemblyResources.Where(str => str.Contains($"{DatabaseAccess.SqlSyntaxHelper.DataBaseType}")).ToList();
             sqls.ForEach(delegate (string s)
