@@ -111,7 +111,7 @@ namespace Tests
         {
 
             var obj = GetEmployeeSerialize(1);
-            var recordCount = DatabaseAccess.Execute(obj,ActionType.Insert,SerializeObject,Json.SerializeToString,Csv.SerializeToString);
+            var recordCount = DatabaseAccess.Execute(obj,ActionType.Insert,null,SerializeObject,Json.SerializeToString,Csv.SerializeToString);
         }
 
         [Test]

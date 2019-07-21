@@ -1,6 +1,443 @@
 ### YamlMime:XRefMap
 sorted: true
 references:
+- uid: DotNetHelper.Database
+  name: DotNetHelper.Database
+  href: api/DotNetHelper.Database.html
+  commentId: N:DotNetHelper.Database
+  fullName: DotNetHelper.Database
+  nameWithType: DotNetHelper.Database
+- uid: DotNetHelper.Database.DatabaseAccessFactory
+  name: DatabaseAccessFactory
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html
+  commentId: T:DotNetHelper.Database.DatabaseAccessFactory
+  fullName: DotNetHelper.Database.DatabaseAccessFactory
+  nameWithType: DatabaseAccessFactory
+- uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.TimeSpan)
+  name: DatabaseAccessFactory(DataBaseType, TimeSpan)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory__ctor_DotNetHelper_ObjectToSql_Enum_DataBaseType_System_TimeSpan_
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.TimeSpan)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.TimeSpan)
+  nameWithType: DatabaseAccessFactory.DatabaseAccessFactory(DataBaseType, TimeSpan)
+- uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.TimeSpan,System.TimeSpan)
+  name: DatabaseAccessFactory(DataBaseType, TimeSpan, TimeSpan)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory__ctor_DotNetHelper_ObjectToSql_Enum_DataBaseType_System_TimeSpan_System_TimeSpan_
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.TimeSpan,System.TimeSpan)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.TimeSpan, System.TimeSpan)
+  nameWithType: DatabaseAccessFactory.DatabaseAccessFactory(DataBaseType, TimeSpan, TimeSpan)
+- uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.Data.Common.DbProviderFactory,DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  name: DatabaseAccessFactory(DbProviderFactory, DataBaseType)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory__ctor_System_Data_Common_DbProviderFactory_DotNetHelper_ObjectToSql_Enum_DataBaseType_
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.Data.Common.DbProviderFactory,DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(System.Data.Common.DbProviderFactory, DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  nameWithType: DatabaseAccessFactory.DatabaseAccessFactory(DbProviderFactory, DataBaseType)
+- uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.String,DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  name: DatabaseAccessFactory(String, DataBaseType)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory__ctor_System_String_DotNetHelper_ObjectToSql_Enum_DataBaseType_
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.String,DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(System.String, DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  nameWithType: DatabaseAccessFactory.DatabaseAccessFactory(String, DataBaseType)
+- uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor*
+  name: DatabaseAccessFactory
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory__ctor_
+  commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.#ctor
+  isSpec: "True"
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory
+  nameWithType: DatabaseAccessFactory.DatabaseAccessFactory
+- uid: DotNetHelper.Database.DatabaseAccessFactory.CanConnect
+  name: CanConnect()
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_CanConnect
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.CanConnect
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.CanConnect()
+  nameWithType: DatabaseAccessFactory.CanConnect()
+- uid: DotNetHelper.Database.DatabaseAccessFactory.CanConnect*
+  name: CanConnect
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_CanConnect_
+  commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.CanConnect
+  isSpec: "True"
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.CanConnect
+  nameWithType: DatabaseAccessFactory.CanConnect
+- uid: DotNetHelper.Database.DatabaseAccessFactory.CommandTimeOut
+  name: CommandTimeOut
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_CommandTimeOut
+  commentId: P:DotNetHelper.Database.DatabaseAccessFactory.CommandTimeOut
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.CommandTimeOut
+  nameWithType: DatabaseAccessFactory.CommandTimeOut
+- uid: DotNetHelper.Database.DatabaseAccessFactory.CommandTimeOut*
+  name: CommandTimeOut
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_CommandTimeOut_
+  commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.CommandTimeOut
+  isSpec: "True"
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.CommandTimeOut
+  nameWithType: DatabaseAccessFactory.CommandTimeOut
+- uid: DotNetHelper.Database.DatabaseAccessFactory.ConnectionTimeOut
+  name: ConnectionTimeOut
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_ConnectionTimeOut
+  commentId: P:DotNetHelper.Database.DatabaseAccessFactory.ConnectionTimeOut
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.ConnectionTimeOut
+  nameWithType: DatabaseAccessFactory.ConnectionTimeOut
+- uid: DotNetHelper.Database.DatabaseAccessFactory.ConnectionTimeOut*
+  name: ConnectionTimeOut
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_ConnectionTimeOut_
+  commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.ConnectionTimeOut
+  isSpec: "True"
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.ConnectionTimeOut
+  nameWithType: DatabaseAccessFactory.ConnectionTimeOut
+- uid: DotNetHelper.Database.DatabaseAccessFactory.DatabaseType
+  name: DatabaseType
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_DatabaseType
+  commentId: P:DotNetHelper.Database.DatabaseAccessFactory.DatabaseType
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.DatabaseType
+  nameWithType: DatabaseAccessFactory.DatabaseType
+- uid: DotNetHelper.Database.DatabaseAccessFactory.DatabaseType*
+  name: DatabaseType
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_DatabaseType_
+  commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.DatabaseType
+  isSpec: "True"
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.DatabaseType
+  nameWithType: DatabaseAccessFactory.DatabaseType
+- uid: DotNetHelper.Database.DatabaseAccessFactory.DbProviderFactory
+  name: DbProviderFactory
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_DbProviderFactory
+  commentId: P:DotNetHelper.Database.DatabaseAccessFactory.DbProviderFactory
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.DbProviderFactory
+  nameWithType: DatabaseAccessFactory.DbProviderFactory
+- uid: DotNetHelper.Database.DatabaseAccessFactory.DbProviderFactory*
+  name: DbProviderFactory
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_DbProviderFactory_
+  commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.DbProviderFactory
+  isSpec: "True"
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.DbProviderFactory
+  nameWithType: DatabaseAccessFactory.DbProviderFactory
+- uid: DotNetHelper.Database.DatabaseAccessFactory.Execute*
+  name: Execute
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_Execute_
+  commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.Execute
+  isSpec: "True"
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.Execute
+  nameWithType: DatabaseAccessFactory.Execute
+- uid: DotNetHelper.Database.DatabaseAccessFactory.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType)
+  name: Execute<T>(T, ActionType)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_Execute__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType)
+  name.vb: Execute(Of T)(T, ActionType)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.Execute<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType)
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType)
+  nameWithType: DatabaseAccessFactory.Execute<T>(T, ActionType)
+  nameWithType.vb: DatabaseAccessFactory.Execute(Of T)(T, ActionType)
+- uid: DotNetHelper.Database.DatabaseAccessFactory.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  name: Execute<T>(T, ActionType, String, Func<Object, String>, Func<Object, String>, Func<Object, String>)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_Execute__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_String_System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  name.vb: Execute(Of T)(T, ActionType, String, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.Execute<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>)
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String))
+  nameWithType: DatabaseAccessFactory.Execute<T>(T, ActionType, String, Func<Object, String>, Func<Object, String>, Func<Object, String>)
+  nameWithType.vb: DatabaseAccessFactory.Execute(Of T)(T, ActionType, String, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
+- uid: DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutput*
+  name: ExecuteAndGetOutput
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_ExecuteAndGetOutput_
+  commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutput
+  isSpec: "True"
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutput
+  nameWithType: DatabaseAccessFactory.ExecuteAndGetOutput
+- uid: DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name: ExecuteAndGetOutput<T>(T, ActionType, Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_ExecuteAndGetOutput__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Linq_Expressions_Expression_System_Func___0_System_Object_____
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name.vb: ExecuteAndGetOutput(Of T)(T, ActionType, Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutput<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutput(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  nameWithType: DatabaseAccessFactory.ExecuteAndGetOutput<T>(T, ActionType, Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
+  nameWithType.vb: DatabaseAccessFactory.ExecuteAndGetOutput(Of T)(T, ActionType, Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
+- uid: DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name: ExecuteAndGetOutput<T>(T, ActionType, Expression<Func<T, Object>>[])
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_ExecuteAndGetOutput__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_Linq_Expressions_Expression_System_Func___0_System_Object_____
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name.vb: ExecuteAndGetOutput(Of T)(T, ActionType, Expression(Of Func(Of T, Object))())
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutput<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutput(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  nameWithType: DatabaseAccessFactory.ExecuteAndGetOutput<T>(T, ActionType, Expression<Func<T, Object>>[])
+  nameWithType.vb: DatabaseAccessFactory.ExecuteAndGetOutput(Of T)(T, ActionType, Expression(Of Func(Of T, Object))())
+- uid: DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutputAsDataReader*
+  name: ExecuteAndGetOutputAsDataReader
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_ExecuteAndGetOutputAsDataReader_
+  commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutputAsDataReader
+  isSpec: "True"
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutputAsDataReader
+  nameWithType: DatabaseAccessFactory.ExecuteAndGetOutputAsDataReader
+- uid: DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutputAsDataReader``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name: ExecuteAndGetOutputAsDataReader<T>(T, ActionType, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_ExecuteAndGetOutputAsDataReader__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Linq_Expressions_Expression_System_Func___0_System_Object_____
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutputAsDataReader``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name.vb: ExecuteAndGetOutputAsDataReader(Of T)(T, ActionType, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutputAsDataReader<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutputAsDataReader(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  nameWithType: DatabaseAccessFactory.ExecuteAndGetOutputAsDataReader<T>(T, ActionType, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
+  nameWithType.vb: DatabaseAccessFactory.ExecuteAndGetOutputAsDataReader(Of T)(T, ActionType, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
+- uid: DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutputAsDataReader``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name: ExecuteAndGetOutputAsDataReader<T>(T, ActionType, Expression<Func<T, Object>>[])
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_ExecuteAndGetOutputAsDataReader__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_Linq_Expressions_Expression_System_Func___0_System_Object_____
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutputAsDataReader``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name.vb: ExecuteAndGetOutputAsDataReader(Of T)(T, ActionType, Expression(Of Func(Of T, Object))())
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutputAsDataReader<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutputAsDataReader(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  nameWithType: DatabaseAccessFactory.ExecuteAndGetOutputAsDataReader<T>(T, ActionType, Expression<Func<T, Object>>[])
+  nameWithType.vb: DatabaseAccessFactory.ExecuteAndGetOutputAsDataReader(Of T)(T, ActionType, Expression(Of Func(Of T, Object))())
+- uid: DotNetHelper.Database.DatabaseAccessFactory.ExecuteNonQuery(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
+  name: ExecuteNonQuery(String, CommandType, IEnumerable<IDataParameter>)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_ExecuteNonQuery_System_String_System_Data_CommandType_System_Collections_Generic_IEnumerable_System_Data_IDataParameter__
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.ExecuteNonQuery(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
+  name.vb: ExecuteNonQuery(String, CommandType, IEnumerable(Of IDataParameter))
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.ExecuteNonQuery(System.String, System.Data.CommandType, System.Collections.Generic.IEnumerable<System.Data.IDataParameter>)
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.ExecuteNonQuery(System.String, System.Data.CommandType, System.Collections.Generic.IEnumerable(Of System.Data.IDataParameter))
+  nameWithType: DatabaseAccessFactory.ExecuteNonQuery(String, CommandType, IEnumerable<IDataParameter>)
+  nameWithType.vb: DatabaseAccessFactory.ExecuteNonQuery(String, CommandType, IEnumerable(Of IDataParameter))
+- uid: DotNetHelper.Database.DatabaseAccessFactory.ExecuteNonQuery*
+  name: ExecuteNonQuery
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_ExecuteNonQuery_
+  commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.ExecuteNonQuery
+  isSpec: "True"
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.ExecuteNonQuery
+  nameWithType: DatabaseAccessFactory.ExecuteNonQuery
+- uid: DotNetHelper.Database.DatabaseAccessFactory.ExecuteScalar(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name: ExecuteScalar(String, CommandType, List<DbParameter>)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_ExecuteScalar_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.ExecuteScalar(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name.vb: ExecuteScalar(String, CommandType, List(Of DbParameter))
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.ExecuteScalar(System.String, System.Data.CommandType, System.Collections.Generic.List<System.Data.Common.DbParameter>)
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.ExecuteScalar(System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
+  nameWithType: DatabaseAccessFactory.ExecuteScalar(String, CommandType, List<DbParameter>)
+  nameWithType.vb: DatabaseAccessFactory.ExecuteScalar(String, CommandType, List(Of DbParameter))
+- uid: DotNetHelper.Database.DatabaseAccessFactory.ExecuteScalar*
+  name: ExecuteScalar
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_ExecuteScalar_
+  commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.ExecuteScalar
+  isSpec: "True"
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.ExecuteScalar
+  nameWithType: DatabaseAccessFactory.ExecuteScalar
+- uid: DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
+  name: ExecuteTransaction(List<String>, Boolean, Boolean)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_ExecuteTransaction_System_Collections_Generic_List_System_String__System_Boolean_System_Boolean_
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
+  name.vb: ExecuteTransaction(List(Of String), Boolean, Boolean)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Collections.Generic.List<System.String>, System.Boolean, System.Boolean)
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Collections.Generic.List(Of System.String), System.Boolean, System.Boolean)
+  nameWithType: DatabaseAccessFactory.ExecuteTransaction(List<String>, Boolean, Boolean)
+  nameWithType.vb: DatabaseAccessFactory.ExecuteTransaction(List(Of String), Boolean, Boolean)
+- uid: DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction*
+  name: ExecuteTransaction
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_ExecuteTransaction_
+  commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction
+  isSpec: "True"
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction
+  nameWithType: DatabaseAccessFactory.ExecuteTransaction
+- uid: DotNetHelper.Database.DatabaseAccessFactory.Get*
+  name: Get
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_Get_
+  commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.Get
+  isSpec: "True"
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.Get
+  nameWithType: DatabaseAccessFactory.Get
+- uid: DotNetHelper.Database.DatabaseAccessFactory.Get``1
+  name: Get<T>()
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_Get__1
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.Get``1
+  name.vb: Get(Of T)()
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.Get<T>()
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.Get(Of T)()
+  nameWithType: DatabaseAccessFactory.Get<T>()
+  nameWithType.vb: DatabaseAccessFactory.Get(Of T)()
+- uid: DotNetHelper.Database.DatabaseAccessFactory.Get``1(System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object})
+  name: Get<T>(Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_Get__1_System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.Get``1(System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object})
+  name.vb: Get(Of T)(Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object))
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.Get<T>(System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>)
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.Get(Of T)(System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object))
+  nameWithType: DatabaseAccessFactory.Get<T>(Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>)
+  nameWithType.vb: DatabaseAccessFactory.Get(Of T)(Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object))
+- uid: DotNetHelper.Database.DatabaseAccessFactory.Get``1(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name: Get<T>(String, CommandType, List<DbParameter>)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_Get__1_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.Get``1(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name.vb: Get(Of T)(String, CommandType, List(Of DbParameter))
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.Get<T>(System.String, System.Data.CommandType, System.Collections.Generic.List<System.Data.Common.DbParameter>)
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.Get(Of T)(System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
+  nameWithType: DatabaseAccessFactory.Get<T>(String, CommandType, List<DbParameter>)
+  nameWithType.vb: DatabaseAccessFactory.Get(Of T)(String, CommandType, List(Of DbParameter))
+- uid: DotNetHelper.Database.DatabaseAccessFactory.Get``1(System.String,System.Data.CommandType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name: Get<T>(String, CommandType, Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>, List<DbParameter>)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_Get__1_System_String_System_Data_CommandType_System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__System_Collections_Generic_List_System_Data_Common_DbParameter__
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.Get``1(System.String,System.Data.CommandType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name.vb: Get(Of T)(String, CommandType, Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object), List(Of DbParameter))
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.Get<T>(System.String, System.Data.CommandType, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>, System.Collections.Generic.List<System.Data.Common.DbParameter>)
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.Get(Of T)(System.String, System.Data.CommandType, System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Collections.Generic.List(Of System.Data.Common.DbParameter))
+  nameWithType: DatabaseAccessFactory.Get<T>(String, CommandType, Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>, List<DbParameter>)
+  nameWithType.vb: DatabaseAccessFactory.Get(Of T)(String, CommandType, Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object), List(Of DbParameter))
+- uid: DotNetHelper.Database.DatabaseAccessFactory.GetDataReader(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name: GetDataReader(String, CommandType, List<DbParameter>)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_GetDataReader_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.GetDataReader(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name.vb: GetDataReader(String, CommandType, List(Of DbParameter))
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.GetDataReader(System.String, System.Data.CommandType, System.Collections.Generic.List<System.Data.Common.DbParameter>)
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.GetDataReader(System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
+  nameWithType: DatabaseAccessFactory.GetDataReader(String, CommandType, List<DbParameter>)
+  nameWithType.vb: DatabaseAccessFactory.GetDataReader(String, CommandType, List(Of DbParameter))
+- uid: DotNetHelper.Database.DatabaseAccessFactory.GetDataReader*
+  name: GetDataReader
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_GetDataReader_
+  commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.GetDataReader
+  isSpec: "True"
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.GetDataReader
+  nameWithType: DatabaseAccessFactory.GetDataReader
+- uid: DotNetHelper.Database.DatabaseAccessFactory.GetDataTable(System.String)
+  name: GetDataTable(String)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_GetDataTable_System_String_
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.GetDataTable(System.String)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.GetDataTable(System.String)
+  nameWithType: DatabaseAccessFactory.GetDataTable(String)
+- uid: DotNetHelper.Database.DatabaseAccessFactory.GetDataTable(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name: GetDataTable(String, CommandType, List<DbParameter>)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_GetDataTable_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.GetDataTable(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name.vb: GetDataTable(String, CommandType, List(Of DbParameter))
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.GetDataTable(System.String, System.Data.CommandType, System.Collections.Generic.List<System.Data.Common.DbParameter>)
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.GetDataTable(System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
+  nameWithType: DatabaseAccessFactory.GetDataTable(String, CommandType, List<DbParameter>)
+  nameWithType.vb: DatabaseAccessFactory.GetDataTable(String, CommandType, List(Of DbParameter))
+- uid: DotNetHelper.Database.DatabaseAccessFactory.GetDataTable*
+  name: GetDataTable
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_GetDataTable_
+  commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.GetDataTable
+  isSpec: "True"
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.GetDataTable
+  nameWithType: DatabaseAccessFactory.GetDataTable
+- uid: DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithKeyInfo(System.String)
+  name: GetDataTableWithKeyInfo(String)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_GetDataTableWithKeyInfo_System_String_
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithKeyInfo(System.String)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithKeyInfo(System.String)
+  nameWithType: DatabaseAccessFactory.GetDataTableWithKeyInfo(String)
+- uid: DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithKeyInfo(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name: GetDataTableWithKeyInfo(String, CommandType, List<DbParameter>)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_GetDataTableWithKeyInfo_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithKeyInfo(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name.vb: GetDataTableWithKeyInfo(String, CommandType, List(Of DbParameter))
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithKeyInfo(System.String, System.Data.CommandType, System.Collections.Generic.List<System.Data.Common.DbParameter>)
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithKeyInfo(System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
+  nameWithType: DatabaseAccessFactory.GetDataTableWithKeyInfo(String, CommandType, List<DbParameter>)
+  nameWithType.vb: DatabaseAccessFactory.GetDataTableWithKeyInfo(String, CommandType, List(Of DbParameter))
+- uid: DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithKeyInfo*
+  name: GetDataTableWithKeyInfo
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_GetDataTableWithKeyInfo_
+  commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithKeyInfo
+  isSpec: "True"
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithKeyInfo
+  nameWithType: DatabaseAccessFactory.GetDataTableWithKeyInfo
+- uid: DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithSchema(System.String)
+  name: GetDataTableWithSchema(String)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_GetDataTableWithSchema_System_String_
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithSchema(System.String)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithSchema(System.String)
+  nameWithType: DatabaseAccessFactory.GetDataTableWithSchema(String)
+- uid: DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithSchema(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name: GetDataTableWithSchema(String, CommandType, List<DbParameter>)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_GetDataTableWithSchema_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithSchema(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name.vb: GetDataTableWithSchema(String, CommandType, List(Of DbParameter))
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithSchema(System.String, System.Data.CommandType, System.Collections.Generic.List<System.Data.Common.DbParameter>)
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithSchema(System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
+  nameWithType: DatabaseAccessFactory.GetDataTableWithSchema(String, CommandType, List<DbParameter>)
+  nameWithType.vb: DatabaseAccessFactory.GetDataTableWithSchema(String, CommandType, List(Of DbParameter))
+- uid: DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithSchema*
+  name: GetDataTableWithSchema
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_GetDataTableWithSchema_
+  commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithSchema
+  isSpec: "True"
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithSchema
+  nameWithType: DatabaseAccessFactory.GetDataTableWithSchema
+- uid: DotNetHelper.Database.DatabaseAccessFactory.GetNewCommand(System.Data.IDbConnection,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
+  name: GetNewCommand(IDbConnection, String, CommandType, IEnumerable<IDataParameter>)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_GetNewCommand_System_Data_IDbConnection_System_String_System_Data_CommandType_System_Collections_Generic_IEnumerable_System_Data_IDataParameter__
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.GetNewCommand(System.Data.IDbConnection,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
+  name.vb: GetNewCommand(IDbConnection, String, CommandType, IEnumerable(Of IDataParameter))
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.GetNewCommand(System.Data.IDbConnection, System.String, System.Data.CommandType, System.Collections.Generic.IEnumerable<System.Data.IDataParameter>)
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.GetNewCommand(System.Data.IDbConnection, System.String, System.Data.CommandType, System.Collections.Generic.IEnumerable(Of System.Data.IDataParameter))
+  nameWithType: DatabaseAccessFactory.GetNewCommand(IDbConnection, String, CommandType, IEnumerable<IDataParameter>)
+  nameWithType.vb: DatabaseAccessFactory.GetNewCommand(IDbConnection, String, CommandType, IEnumerable(Of IDataParameter))
+- uid: DotNetHelper.Database.DatabaseAccessFactory.GetNewCommand*
+  name: GetNewCommand
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_GetNewCommand_
+  commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.GetNewCommand
+  isSpec: "True"
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.GetNewCommand
+  nameWithType: DatabaseAccessFactory.GetNewCommand
+- uid: DotNetHelper.Database.DatabaseAccessFactory.GetNewCommandAndTransaction(System.Data.IDbConnection)
+  name: GetNewCommandAndTransaction(IDbConnection)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_GetNewCommandAndTransaction_System_Data_IDbConnection_
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.GetNewCommandAndTransaction(System.Data.IDbConnection)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.GetNewCommandAndTransaction(System.Data.IDbConnection)
+  nameWithType: DatabaseAccessFactory.GetNewCommandAndTransaction(IDbConnection)
+- uid: DotNetHelper.Database.DatabaseAccessFactory.GetNewCommandAndTransaction*
+  name: GetNewCommandAndTransaction
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_GetNewCommandAndTransaction_
+  commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.GetNewCommandAndTransaction
+  isSpec: "True"
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.GetNewCommandAndTransaction
+  nameWithType: DatabaseAccessFactory.GetNewCommandAndTransaction
+- uid: DotNetHelper.Database.DatabaseAccessFactory.GetNewConnection(System.Boolean)
+  name: GetNewConnection(Boolean)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_GetNewConnection_System_Boolean_
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.GetNewConnection(System.Boolean)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.GetNewConnection(System.Boolean)
+  nameWithType: DatabaseAccessFactory.GetNewConnection(Boolean)
+- uid: DotNetHelper.Database.DatabaseAccessFactory.GetNewConnection*
+  name: GetNewConnection
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_GetNewConnection_
+  commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.GetNewConnection
+  isSpec: "True"
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.GetNewConnection
+  nameWithType: DatabaseAccessFactory.GetNewConnection
+- uid: DotNetHelper.Database.DatabaseAccessFactory.GetNewParameter(System.String,System.Object)
+  name: GetNewParameter(String, Object)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_GetNewParameter_System_String_System_Object_
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.GetNewParameter(System.String,System.Object)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.GetNewParameter(System.String, System.Object)
+  nameWithType: DatabaseAccessFactory.GetNewParameter(String, Object)
+- uid: DotNetHelper.Database.DatabaseAccessFactory.GetNewParameter*
+  name: GetNewParameter
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_GetNewParameter_
+  commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.GetNewParameter
+  isSpec: "True"
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.GetNewParameter
+  nameWithType: DatabaseAccessFactory.GetNewParameter
+- uid: DotNetHelper.Database.DatabaseAccessFactory.ObjectToSql
+  name: ObjectToSql
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_ObjectToSql
+  commentId: P:DotNetHelper.Database.DatabaseAccessFactory.ObjectToSql
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.ObjectToSql
+  nameWithType: DatabaseAccessFactory.ObjectToSql
+- uid: DotNetHelper.Database.DatabaseAccessFactory.ObjectToSql*
+  name: ObjectToSql
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_ObjectToSql_
+  commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.ObjectToSql
+  isSpec: "True"
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.ObjectToSql
+  nameWithType: DatabaseAccessFactory.ObjectToSql
+- uid: DotNetHelper.Database.DatabaseAccessFactory.SqlSyntaxHelper
+  name: SqlSyntaxHelper
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_SqlSyntaxHelper
+  commentId: P:DotNetHelper.Database.DatabaseAccessFactory.SqlSyntaxHelper
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.SqlSyntaxHelper
+  nameWithType: DatabaseAccessFactory.SqlSyntaxHelper
+- uid: DotNetHelper.Database.DatabaseAccessFactory.SqlSyntaxHelper*
+  name: SqlSyntaxHelper
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_SqlSyntaxHelper_
+  commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.SqlSyntaxHelper
+  isSpec: "True"
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.SqlSyntaxHelper
+  nameWithType: DatabaseAccessFactory.SqlSyntaxHelper
 - uid: DotNetHelper.Database.DataSource
   name: DotNetHelper.Database.DataSource
   href: api/DotNetHelper.Database.DataSource.html
@@ -108,6 +545,23 @@ references:
   fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).ConnectionTimeOut
   nameWithType: DatabaseAccess<C, P>.ConnectionTimeOut
   nameWithType.vb: DatabaseAccess(Of C, P).ConnectionTimeOut
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.DatabaseType
+  name: DatabaseType
+  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_DatabaseType
+  commentId: P:DotNetHelper.Database.DataSource.DatabaseAccess`2.DatabaseType
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.DatabaseType
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).DatabaseType
+  nameWithType: DatabaseAccess<C, P>.DatabaseType
+  nameWithType.vb: DatabaseAccess(Of C, P).DatabaseType
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.DatabaseType*
+  name: DatabaseType
+  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_DatabaseType_
+  commentId: Overload:DotNetHelper.Database.DataSource.DatabaseAccess`2.DatabaseType
+  isSpec: "True"
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.DatabaseType
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).DatabaseType
+  nameWithType: DatabaseAccess<C, P>.DatabaseType
+  nameWithType.vb: DatabaseAccess(Of C, P).DatabaseType
 - uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.Execute*
   name: Execute
   href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_Execute_
@@ -126,15 +580,24 @@ references:
   fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType)
   nameWithType: DatabaseAccess<C, P>.Execute<T>(T, ActionType)
   nameWithType.vb: DatabaseAccess(Of C, P).Execute(Of T)(T, ActionType)
-- uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,DotNetHelper.Database.Interface.IColumnSerializer,DotNetHelper.Database.Interface.IColumnSerializer,DotNetHelper.Database.Interface.IColumnSerializer)
-  name: Execute<T>(T, ActionType, IColumnSerializer, IColumnSerializer, IColumnSerializer)
-  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_Execute__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_DotNetHelper_Database_Interface_IColumnSerializer_DotNetHelper_Database_Interface_IColumnSerializer_DotNetHelper_Database_Interface_IColumnSerializer_
-  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`2.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,DotNetHelper.Database.Interface.IColumnSerializer,DotNetHelper.Database.Interface.IColumnSerializer,DotNetHelper.Database.Interface.IColumnSerializer)
-  name.vb: Execute(Of T)(T, ActionType, IColumnSerializer, IColumnSerializer, IColumnSerializer)
-  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.Execute<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, DotNetHelper.Database.Interface.IColumnSerializer, DotNetHelper.Database.Interface.IColumnSerializer, DotNetHelper.Database.Interface.IColumnSerializer)
-  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, DotNetHelper.Database.Interface.IColumnSerializer, DotNetHelper.Database.Interface.IColumnSerializer, DotNetHelper.Database.Interface.IColumnSerializer)
-  nameWithType: DatabaseAccess<C, P>.Execute<T>(T, ActionType, IColumnSerializer, IColumnSerializer, IColumnSerializer)
-  nameWithType.vb: DatabaseAccess(Of C, P).Execute(Of T)(T, ActionType, IColumnSerializer, IColumnSerializer, IColumnSerializer)
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
+  name: Execute<T>(T, ActionType, String)
+  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_Execute__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_String_
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`2.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
+  name.vb: Execute(Of T)(T, ActionType, String)
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.Execute<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String)
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String)
+  nameWithType: DatabaseAccess<C, P>.Execute<T>(T, ActionType, String)
+  nameWithType.vb: DatabaseAccess(Of C, P).Execute(Of T)(T, ActionType, String)
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  name: Execute<T>(T, ActionType, String, Func<Object, String>, Func<Object, String>, Func<Object, String>)
+  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_Execute__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_String_System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`2.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  name.vb: Execute(Of T)(T, ActionType, String, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.Execute<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>)
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String))
+  nameWithType: DatabaseAccess<C, P>.Execute<T>(T, ActionType, String, Func<Object, String>, Func<Object, String>, Func<Object, String>)
+  nameWithType.vb: DatabaseAccess(Of C, P).Execute(Of T)(T, ActionType, String, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
 - uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteAndGetOutput*
   name: ExecuteAndGetOutput
   href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_ExecuteAndGetOutput_
@@ -144,15 +607,15 @@ references:
   fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).ExecuteAndGetOutput
   nameWithType: DatabaseAccess<C, P>.ExecuteAndGetOutput
   nameWithType.vb: DatabaseAccess(Of C, P).ExecuteAndGetOutput
-- uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,DotNetHelper.Database.Interface.IColumnSerializer,DotNetHelper.Database.Interface.IColumnSerializer,DotNetHelper.Database.Interface.IColumnSerializer,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  name: ExecuteAndGetOutput<T>(T, ActionType, IColumnSerializer, IColumnSerializer, IColumnSerializer, Expression<Func<T, Object>>[])
-  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_ExecuteAndGetOutput__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_DotNetHelper_Database_Interface_IColumnSerializer_DotNetHelper_Database_Interface_IColumnSerializer_DotNetHelper_Database_Interface_IColumnSerializer_System_Linq_Expressions_Expression_System_Func___0_System_Object_____
-  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,DotNetHelper.Database.Interface.IColumnSerializer,DotNetHelper.Database.Interface.IColumnSerializer,DotNetHelper.Database.Interface.IColumnSerializer,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  name.vb: ExecuteAndGetOutput(Of T)(T, ActionType, IColumnSerializer, IColumnSerializer, IColumnSerializer, Expression(Of Func(Of T, Object))())
-  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.ExecuteAndGetOutput<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, DotNetHelper.Database.Interface.IColumnSerializer, DotNetHelper.Database.Interface.IColumnSerializer, DotNetHelper.Database.Interface.IColumnSerializer, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
-  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).ExecuteAndGetOutput(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, DotNetHelper.Database.Interface.IColumnSerializer, DotNetHelper.Database.Interface.IColumnSerializer, DotNetHelper.Database.Interface.IColumnSerializer, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
-  nameWithType: DatabaseAccess<C, P>.ExecuteAndGetOutput<T>(T, ActionType, IColumnSerializer, IColumnSerializer, IColumnSerializer, Expression<Func<T, Object>>[])
-  nameWithType.vb: DatabaseAccess(Of C, P).ExecuteAndGetOutput(Of T)(T, ActionType, IColumnSerializer, IColumnSerializer, IColumnSerializer, Expression(Of Func(Of T, Object))())
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name: ExecuteAndGetOutput<T>(T, ActionType, Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
+  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_ExecuteAndGetOutput__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Linq_Expressions_Expression_System_Func___0_System_Object_____
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name.vb: ExecuteAndGetOutput(Of T)(T, ActionType, Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.ExecuteAndGetOutput<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).ExecuteAndGetOutput(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  nameWithType: DatabaseAccess<C, P>.ExecuteAndGetOutput<T>(T, ActionType, Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
+  nameWithType.vb: DatabaseAccess(Of C, P).ExecuteAndGetOutput(Of T)(T, ActionType, Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
 - uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   name: ExecuteAndGetOutput<T>(T, ActionType, Expression<Func<T, Object>>[])
   href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_ExecuteAndGetOutput__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_Linq_Expressions_Expression_System_Func___0_System_Object_____
@@ -162,6 +625,33 @@ references:
   fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).ExecuteAndGetOutput(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
   nameWithType: DatabaseAccess<C, P>.ExecuteAndGetOutput<T>(T, ActionType, Expression<Func<T, Object>>[])
   nameWithType.vb: DatabaseAccess(Of C, P).ExecuteAndGetOutput(Of T)(T, ActionType, Expression(Of Func(Of T, Object))())
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteAndGetOutputAsDataReader*
+  name: ExecuteAndGetOutputAsDataReader
+  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_ExecuteAndGetOutputAsDataReader_
+  commentId: Overload:DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteAndGetOutputAsDataReader
+  isSpec: "True"
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.ExecuteAndGetOutputAsDataReader
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).ExecuteAndGetOutputAsDataReader
+  nameWithType: DatabaseAccess<C, P>.ExecuteAndGetOutputAsDataReader
+  nameWithType.vb: DatabaseAccess(Of C, P).ExecuteAndGetOutputAsDataReader
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteAndGetOutputAsDataReader``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name: ExecuteAndGetOutputAsDataReader<T>(T, ActionType, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
+  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_ExecuteAndGetOutputAsDataReader__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Linq_Expressions_Expression_System_Func___0_System_Object_____
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteAndGetOutputAsDataReader``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name.vb: ExecuteAndGetOutputAsDataReader(Of T)(T, ActionType, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.ExecuteAndGetOutputAsDataReader<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).ExecuteAndGetOutputAsDataReader(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  nameWithType: DatabaseAccess<C, P>.ExecuteAndGetOutputAsDataReader<T>(T, ActionType, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
+  nameWithType.vb: DatabaseAccess(Of C, P).ExecuteAndGetOutputAsDataReader(Of T)(T, ActionType, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteAndGetOutputAsDataReader``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name: ExecuteAndGetOutputAsDataReader<T>(T, ActionType, Expression<Func<T, Object>>[])
+  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_ExecuteAndGetOutputAsDataReader__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_Linq_Expressions_Expression_System_Func___0_System_Object_____
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteAndGetOutputAsDataReader``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name.vb: ExecuteAndGetOutputAsDataReader(Of T)(T, ActionType, Expression(Of Func(Of T, Object))())
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.ExecuteAndGetOutputAsDataReader<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).ExecuteAndGetOutputAsDataReader(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  nameWithType: DatabaseAccess<C, P>.ExecuteAndGetOutputAsDataReader<T>(T, ActionType, Expression<Func<T, Object>>[])
+  nameWithType.vb: DatabaseAccess(Of C, P).ExecuteAndGetOutputAsDataReader(Of T)(T, ActionType, Expression(Of Func(Of T, Object))())
 - uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteNonQuery(`0,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
   name: ExecuteNonQuery(C, String, CommandType, IEnumerable<IDataParameter>)
   href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_ExecuteNonQuery__0_System_String_System_Data_CommandType_System_Collections_Generic_IEnumerable_System_Data_IDataParameter__
@@ -261,15 +751,15 @@ references:
   fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).Get(Of T)()
   nameWithType: DatabaseAccess<C, P>.Get<T>()
   nameWithType.vb: DatabaseAccess(Of C, P).Get(Of T)()
-- uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.Get``1(System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
-  name: Get<T>(Func<Object, String>, Func<Object, String>, Func<Object, String>)
-  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_Get__1_System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__
-  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`2.Get``1(System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
-  name.vb: Get(Of T)(Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
-  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.Get<T>(System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>)
-  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).Get(Of T)(System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String))
-  nameWithType: DatabaseAccess<C, P>.Get<T>(Func<Object, String>, Func<Object, String>, Func<Object, String>)
-  nameWithType.vb: DatabaseAccess(Of C, P).Get(Of T)(Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.Get``1(System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object})
+  name: Get<T>(Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>)
+  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_Get__1_System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`2.Get``1(System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object})
+  name.vb: Get(Of T)(Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object))
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.Get<T>(System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>)
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).Get(Of T)(System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object))
+  nameWithType: DatabaseAccess<C, P>.Get<T>(Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>)
+  nameWithType.vb: DatabaseAccess(Of C, P).Get(Of T)(Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object))
 - uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.Get``1(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   name: Get<T>(String, CommandType, List<DbParameter>)
   href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_Get__1_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__
@@ -279,15 +769,15 @@ references:
   fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).Get(Of T)(System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
   nameWithType: DatabaseAccess<C, P>.Get<T>(String, CommandType, List<DbParameter>)
   nameWithType.vb: DatabaseAccess(Of C, P).Get(Of T)(String, CommandType, List(Of DbParameter))
-- uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.Get``1(System.String,System.Data.CommandType,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Collections.Generic.List{System.Data.Common.DbParameter})
-  name: Get<T>(String, CommandType, Func<Object, String>, Func<Object, String>, Func<Object, String>, List<DbParameter>)
-  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_Get__1_System_String_System_Data_CommandType_System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Collections_Generic_List_System_Data_Common_DbParameter__
-  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`2.Get``1(System.String,System.Data.CommandType,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Collections.Generic.List{System.Data.Common.DbParameter})
-  name.vb: Get(Of T)(String, CommandType, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), List(Of DbParameter))
-  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.Get<T>(System.String, System.Data.CommandType, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Collections.Generic.List<System.Data.Common.DbParameter>)
-  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).Get(Of T)(System.String, System.Data.CommandType, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Collections.Generic.List(Of System.Data.Common.DbParameter))
-  nameWithType: DatabaseAccess<C, P>.Get<T>(String, CommandType, Func<Object, String>, Func<Object, String>, Func<Object, String>, List<DbParameter>)
-  nameWithType.vb: DatabaseAccess(Of C, P).Get(Of T)(String, CommandType, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), List(Of DbParameter))
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.Get``1(System.String,System.Data.CommandType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name: Get<T>(String, CommandType, Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>, List<DbParameter>)
+  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_Get__1_System_String_System_Data_CommandType_System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__System_Collections_Generic_List_System_Data_Common_DbParameter__
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`2.Get``1(System.String,System.Data.CommandType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name.vb: Get(Of T)(String, CommandType, Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object), List(Of DbParameter))
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.Get<T>(System.String, System.Data.CommandType, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>, System.Collections.Generic.List<System.Data.Common.DbParameter>)
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).Get(Of T)(System.String, System.Data.CommandType, System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Collections.Generic.List(Of System.Data.Common.DbParameter))
+  nameWithType: DatabaseAccess<C, P>.Get<T>(String, CommandType, Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>, List<DbParameter>)
+  nameWithType.vb: DatabaseAccess(Of C, P).Get(Of T)(String, CommandType, Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object), List(Of DbParameter))
 - uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.GetDataReader(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   name: GetDataReader(String, CommandType, List<DbParameter>)
   href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_GetDataReader_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__
@@ -621,15 +1111,24 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.Database.Extension.ExtDataReader.MapTo
   nameWithType: ExtDataReader.MapTo
-- uid: DotNetHelper.Database.Extension.ExtDataReader.MapTo``1(System.Data.IDataReader,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
-  name: MapTo<T>(IDataReader, Func<Object, String>, Func<Object, String>, Func<Object, String>)
-  href: api/DotNetHelper.Database.Extension.ExtDataReader.html#DotNetHelper_Database_Extension_ExtDataReader_MapTo__1_System_Data_IDataReader_System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__
-  commentId: M:DotNetHelper.Database.Extension.ExtDataReader.MapTo``1(System.Data.IDataReader,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
-  name.vb: MapTo(Of T)(IDataReader, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
-  fullName: DotNetHelper.Database.Extension.ExtDataReader.MapTo<T>(System.Data.IDataReader, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>)
-  fullName.vb: DotNetHelper.Database.Extension.ExtDataReader.MapTo(Of T)(System.Data.IDataReader, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String))
-  nameWithType: ExtDataReader.MapTo<T>(IDataReader, Func<Object, String>, Func<Object, String>, Func<Object, String>)
-  nameWithType.vb: ExtDataReader.MapTo(Of T)(IDataReader, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
+- uid: DotNetHelper.Database.Extension.ExtDataReader.MapTo``1(System.Data.IDataReader)
+  name: MapTo<T>(IDataReader)
+  href: api/DotNetHelper.Database.Extension.ExtDataReader.html#DotNetHelper_Database_Extension_ExtDataReader_MapTo__1_System_Data_IDataReader_
+  commentId: M:DotNetHelper.Database.Extension.ExtDataReader.MapTo``1(System.Data.IDataReader)
+  name.vb: MapTo(Of T)(IDataReader)
+  fullName: DotNetHelper.Database.Extension.ExtDataReader.MapTo<T>(System.Data.IDataReader)
+  fullName.vb: DotNetHelper.Database.Extension.ExtDataReader.MapTo(Of T)(System.Data.IDataReader)
+  nameWithType: ExtDataReader.MapTo<T>(IDataReader)
+  nameWithType.vb: ExtDataReader.MapTo(Of T)(IDataReader)
+- uid: DotNetHelper.Database.Extension.ExtDataReader.MapTo``1(System.Data.IDataReader,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object})
+  name: MapTo<T>(IDataReader, Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>)
+  href: api/DotNetHelper.Database.Extension.ExtDataReader.html#DotNetHelper_Database_Extension_ExtDataReader_MapTo__1_System_Data_IDataReader_System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__
+  commentId: M:DotNetHelper.Database.Extension.ExtDataReader.MapTo``1(System.Data.IDataReader,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object})
+  name.vb: MapTo(Of T)(IDataReader, Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object))
+  fullName: DotNetHelper.Database.Extension.ExtDataReader.MapTo<T>(System.Data.IDataReader, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>)
+  fullName.vb: DotNetHelper.Database.Extension.ExtDataReader.MapTo(Of T)(System.Data.IDataReader, System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object))
+  nameWithType: ExtDataReader.MapTo<T>(IDataReader, Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>)
+  nameWithType.vb: ExtDataReader.MapTo(Of T)(IDataReader, Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object))
 - uid: DotNetHelper.Database.Extension.ExtDataReader.MapToDataTable*
   name: MapToDataTable
   href: api/DotNetHelper.Database.Extension.ExtDataReader.html#DotNetHelper_Database_Extension_ExtDataReader_MapToDataTable_
@@ -653,15 +1152,24 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.Database.Extension.ExtDataReader.MapToList
   nameWithType: ExtDataReader.MapToList
-- uid: DotNetHelper.Database.Extension.ExtDataReader.MapToList``1(System.Data.IDataReader,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
-  name: MapToList<T>(IDataReader, Func<Object, String>, Func<Object, String>, Func<Object, String>)
-  href: api/DotNetHelper.Database.Extension.ExtDataReader.html#DotNetHelper_Database_Extension_ExtDataReader_MapToList__1_System_Data_IDataReader_System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__
-  commentId: M:DotNetHelper.Database.Extension.ExtDataReader.MapToList``1(System.Data.IDataReader,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
-  name.vb: MapToList(Of T)(IDataReader, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
-  fullName: DotNetHelper.Database.Extension.ExtDataReader.MapToList<T>(System.Data.IDataReader, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>)
-  fullName.vb: DotNetHelper.Database.Extension.ExtDataReader.MapToList(Of T)(System.Data.IDataReader, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String))
-  nameWithType: ExtDataReader.MapToList<T>(IDataReader, Func<Object, String>, Func<Object, String>, Func<Object, String>)
-  nameWithType.vb: ExtDataReader.MapToList(Of T)(IDataReader, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
+- uid: DotNetHelper.Database.Extension.ExtDataReader.MapToList``1(System.Data.IDataReader)
+  name: MapToList<T>(IDataReader)
+  href: api/DotNetHelper.Database.Extension.ExtDataReader.html#DotNetHelper_Database_Extension_ExtDataReader_MapToList__1_System_Data_IDataReader_
+  commentId: M:DotNetHelper.Database.Extension.ExtDataReader.MapToList``1(System.Data.IDataReader)
+  name.vb: MapToList(Of T)(IDataReader)
+  fullName: DotNetHelper.Database.Extension.ExtDataReader.MapToList<T>(System.Data.IDataReader)
+  fullName.vb: DotNetHelper.Database.Extension.ExtDataReader.MapToList(Of T)(System.Data.IDataReader)
+  nameWithType: ExtDataReader.MapToList<T>(IDataReader)
+  nameWithType.vb: ExtDataReader.MapToList(Of T)(IDataReader)
+- uid: DotNetHelper.Database.Extension.ExtDataReader.MapToList``1(System.Data.IDataReader,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object})
+  name: MapToList<T>(IDataReader, Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>)
+  href: api/DotNetHelper.Database.Extension.ExtDataReader.html#DotNetHelper_Database_Extension_ExtDataReader_MapToList__1_System_Data_IDataReader_System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__
+  commentId: M:DotNetHelper.Database.Extension.ExtDataReader.MapToList``1(System.Data.IDataReader,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object})
+  name.vb: MapToList(Of T)(IDataReader, Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object))
+  fullName: DotNetHelper.Database.Extension.ExtDataReader.MapToList<T>(System.Data.IDataReader, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>)
+  fullName.vb: DotNetHelper.Database.Extension.ExtDataReader.MapToList(Of T)(System.Data.IDataReader, System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object))
+  nameWithType: ExtDataReader.MapToList<T>(IDataReader, Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>)
+  nameWithType.vb: ExtDataReader.MapToList(Of T)(IDataReader, Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object))
 - uid: DotNetHelper.Database.Extension.ExtDataTable
   name: ExtDataTable
   href: api/DotNetHelper.Database.Extension.ExtDataTable.html
@@ -770,6 +1278,19 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.Database.Extension.TypeExtension.IsNullable
   nameWithType: TypeExtension.IsNullable
+- uid: DotNetHelper.Database.Extension.TypeExtension.IsTypeAnonymousType(System.Type)
+  name: IsTypeAnonymousType(Type)
+  href: api/DotNetHelper.Database.Extension.TypeExtension.html#DotNetHelper_Database_Extension_TypeExtension_IsTypeAnonymousType_System_Type_
+  commentId: M:DotNetHelper.Database.Extension.TypeExtension.IsTypeAnonymousType(System.Type)
+  fullName: DotNetHelper.Database.Extension.TypeExtension.IsTypeAnonymousType(System.Type)
+  nameWithType: TypeExtension.IsTypeAnonymousType(Type)
+- uid: DotNetHelper.Database.Extension.TypeExtension.IsTypeAnonymousType*
+  name: IsTypeAnonymousType
+  href: api/DotNetHelper.Database.Extension.TypeExtension.html#DotNetHelper_Database_Extension_TypeExtension_IsTypeAnonymousType_
+  commentId: Overload:DotNetHelper.Database.Extension.TypeExtension.IsTypeAnonymousType
+  isSpec: "True"
+  fullName: DotNetHelper.Database.Extension.TypeExtension.IsTypeAnonymousType
+  nameWithType: TypeExtension.IsTypeAnonymousType
 - uid: DotNetHelper.Database.Extension.TypeExtension.IsTypeDynamic(System.Type)
   name: IsTypeDynamic(Type)
   href: api/DotNetHelper.Database.Extension.TypeExtension.html#DotNetHelper_Database_Extension_TypeExtension_IsTypeDynamic_System_Type_
@@ -821,6 +1342,367 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.Database.Interface.IColumnSerializer.Serialize
   nameWithType: IColumnSerializer.Serialize
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess
+  name: IDatabaseAccess
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html
+  commentId: T:DotNetHelper.Database.Interface.IDatabaseAccess
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess
+  nameWithType: IDatabaseAccess
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.CanConnect
+  name: CanConnect()
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_CanConnect
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.CanConnect
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.CanConnect()
+  nameWithType: IDatabaseAccess.CanConnect()
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.CanConnect*
+  name: CanConnect
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_CanConnect_
+  commentId: Overload:DotNetHelper.Database.Interface.IDatabaseAccess.CanConnect
+  isSpec: "True"
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.CanConnect
+  nameWithType: IDatabaseAccess.CanConnect
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.CommandTimeOut
+  name: CommandTimeOut
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_CommandTimeOut
+  commentId: P:DotNetHelper.Database.Interface.IDatabaseAccess.CommandTimeOut
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.CommandTimeOut
+  nameWithType: IDatabaseAccess.CommandTimeOut
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.CommandTimeOut*
+  name: CommandTimeOut
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_CommandTimeOut_
+  commentId: Overload:DotNetHelper.Database.Interface.IDatabaseAccess.CommandTimeOut
+  isSpec: "True"
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.CommandTimeOut
+  nameWithType: IDatabaseAccess.CommandTimeOut
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.ConnectionTimeOut
+  name: ConnectionTimeOut
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_ConnectionTimeOut
+  commentId: P:DotNetHelper.Database.Interface.IDatabaseAccess.ConnectionTimeOut
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.ConnectionTimeOut
+  nameWithType: IDatabaseAccess.ConnectionTimeOut
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.ConnectionTimeOut*
+  name: ConnectionTimeOut
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_ConnectionTimeOut_
+  commentId: Overload:DotNetHelper.Database.Interface.IDatabaseAccess.ConnectionTimeOut
+  isSpec: "True"
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.ConnectionTimeOut
+  nameWithType: IDatabaseAccess.ConnectionTimeOut
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.DatabaseType
+  name: DatabaseType
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_DatabaseType
+  commentId: P:DotNetHelper.Database.Interface.IDatabaseAccess.DatabaseType
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.DatabaseType
+  nameWithType: IDatabaseAccess.DatabaseType
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.DatabaseType*
+  name: DatabaseType
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_DatabaseType_
+  commentId: Overload:DotNetHelper.Database.Interface.IDatabaseAccess.DatabaseType
+  isSpec: "True"
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.DatabaseType
+  nameWithType: IDatabaseAccess.DatabaseType
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.Execute*
+  name: Execute
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_Execute_
+  commentId: Overload:DotNetHelper.Database.Interface.IDatabaseAccess.Execute
+  isSpec: "True"
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.Execute
+  nameWithType: IDatabaseAccess.Execute
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType)
+  name: Execute<T>(T, ActionType)
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_Execute__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType)
+  name.vb: Execute(Of T)(T, ActionType)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.Execute<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType)
+  nameWithType: IDatabaseAccess.Execute<T>(T, ActionType)
+  nameWithType.vb: IDatabaseAccess.Execute(Of T)(T, ActionType)
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  name: Execute<T>(T, ActionType, String, Func<Object, String>, Func<Object, String>, Func<Object, String>)
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_Execute__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_String_System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  name.vb: Execute(Of T)(T, ActionType, String, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.Execute<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String))
+  nameWithType: IDatabaseAccess.Execute<T>(T, ActionType, String, Func<Object, String>, Func<Object, String>, Func<Object, String>)
+  nameWithType.vb: IDatabaseAccess.Execute(Of T)(T, ActionType, String, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutput*
+  name: ExecuteAndGetOutput
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_ExecuteAndGetOutput_
+  commentId: Overload:DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutput
+  isSpec: "True"
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutput
+  nameWithType: IDatabaseAccess.ExecuteAndGetOutput
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name: ExecuteAndGetOutput<T>(T, ActionType, Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_ExecuteAndGetOutput__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Linq_Expressions_Expression_System_Func___0_System_Object_____
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name.vb: ExecuteAndGetOutput(Of T)(T, ActionType, Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutput<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutput(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  nameWithType: IDatabaseAccess.ExecuteAndGetOutput<T>(T, ActionType, Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
+  nameWithType.vb: IDatabaseAccess.ExecuteAndGetOutput(Of T)(T, ActionType, Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name: ExecuteAndGetOutput<T>(T, ActionType, Expression<Func<T, Object>>[])
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_ExecuteAndGetOutput__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_Linq_Expressions_Expression_System_Func___0_System_Object_____
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name.vb: ExecuteAndGetOutput(Of T)(T, ActionType, Expression(Of Func(Of T, Object))())
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutput<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutput(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  nameWithType: IDatabaseAccess.ExecuteAndGetOutput<T>(T, ActionType, Expression<Func<T, Object>>[])
+  nameWithType.vb: IDatabaseAccess.ExecuteAndGetOutput(Of T)(T, ActionType, Expression(Of Func(Of T, Object))())
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutputAsDataReader*
+  name: ExecuteAndGetOutputAsDataReader
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_ExecuteAndGetOutputAsDataReader_
+  commentId: Overload:DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutputAsDataReader
+  isSpec: "True"
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutputAsDataReader
+  nameWithType: IDatabaseAccess.ExecuteAndGetOutputAsDataReader
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutputAsDataReader``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name: ExecuteAndGetOutputAsDataReader<T>(T, ActionType, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_ExecuteAndGetOutputAsDataReader__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Linq_Expressions_Expression_System_Func___0_System_Object_____
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutputAsDataReader``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name.vb: ExecuteAndGetOutputAsDataReader(Of T)(T, ActionType, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutputAsDataReader<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutputAsDataReader(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  nameWithType: IDatabaseAccess.ExecuteAndGetOutputAsDataReader<T>(T, ActionType, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
+  nameWithType.vb: IDatabaseAccess.ExecuteAndGetOutputAsDataReader(Of T)(T, ActionType, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutputAsDataReader``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name: ExecuteAndGetOutputAsDataReader<T>(T, ActionType, Expression<Func<T, Object>>[])
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_ExecuteAndGetOutputAsDataReader__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_Linq_Expressions_Expression_System_Func___0_System_Object_____
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutputAsDataReader``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name.vb: ExecuteAndGetOutputAsDataReader(Of T)(T, ActionType, Expression(Of Func(Of T, Object))())
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutputAsDataReader<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutputAsDataReader(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  nameWithType: IDatabaseAccess.ExecuteAndGetOutputAsDataReader<T>(T, ActionType, Expression<Func<T, Object>>[])
+  nameWithType.vb: IDatabaseAccess.ExecuteAndGetOutputAsDataReader(Of T)(T, ActionType, Expression(Of Func(Of T, Object))())
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteNonQuery(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
+  name: ExecuteNonQuery(String, CommandType, IEnumerable<IDataParameter>)
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_ExecuteNonQuery_System_String_System_Data_CommandType_System_Collections_Generic_IEnumerable_System_Data_IDataParameter__
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteNonQuery(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
+  name.vb: ExecuteNonQuery(String, CommandType, IEnumerable(Of IDataParameter))
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteNonQuery(System.String, System.Data.CommandType, System.Collections.Generic.IEnumerable<System.Data.IDataParameter>)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteNonQuery(System.String, System.Data.CommandType, System.Collections.Generic.IEnumerable(Of System.Data.IDataParameter))
+  nameWithType: IDatabaseAccess.ExecuteNonQuery(String, CommandType, IEnumerable<IDataParameter>)
+  nameWithType.vb: IDatabaseAccess.ExecuteNonQuery(String, CommandType, IEnumerable(Of IDataParameter))
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteNonQuery*
+  name: ExecuteNonQuery
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_ExecuteNonQuery_
+  commentId: Overload:DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteNonQuery
+  isSpec: "True"
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteNonQuery
+  nameWithType: IDatabaseAccess.ExecuteNonQuery
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteScalar(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name: ExecuteScalar(String, CommandType, List<DbParameter>)
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_ExecuteScalar_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteScalar(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name.vb: ExecuteScalar(String, CommandType, List(Of DbParameter))
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteScalar(System.String, System.Data.CommandType, System.Collections.Generic.List<System.Data.Common.DbParameter>)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteScalar(System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
+  nameWithType: IDatabaseAccess.ExecuteScalar(String, CommandType, List<DbParameter>)
+  nameWithType.vb: IDatabaseAccess.ExecuteScalar(String, CommandType, List(Of DbParameter))
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteScalar*
+  name: ExecuteScalar
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_ExecuteScalar_
+  commentId: Overload:DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteScalar
+  isSpec: "True"
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteScalar
+  nameWithType: IDatabaseAccess.ExecuteScalar
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteTransaction(System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
+  name: ExecuteTransaction(List<String>, Boolean, Boolean)
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_ExecuteTransaction_System_Collections_Generic_List_System_String__System_Boolean_System_Boolean_
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteTransaction(System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
+  name.vb: ExecuteTransaction(List(Of String), Boolean, Boolean)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteTransaction(System.Collections.Generic.List<System.String>, System.Boolean, System.Boolean)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteTransaction(System.Collections.Generic.List(Of System.String), System.Boolean, System.Boolean)
+  nameWithType: IDatabaseAccess.ExecuteTransaction(List<String>, Boolean, Boolean)
+  nameWithType.vb: IDatabaseAccess.ExecuteTransaction(List(Of String), Boolean, Boolean)
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteTransaction*
+  name: ExecuteTransaction
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_ExecuteTransaction_
+  commentId: Overload:DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteTransaction
+  isSpec: "True"
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteTransaction
+  nameWithType: IDatabaseAccess.ExecuteTransaction
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.Get*
+  name: Get
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_Get_
+  commentId: Overload:DotNetHelper.Database.Interface.IDatabaseAccess.Get
+  isSpec: "True"
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.Get
+  nameWithType: IDatabaseAccess.Get
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.Get``1
+  name: Get<T>()
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_Get__1
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.Get``1
+  name.vb: Get(Of T)()
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.Get<T>()
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.Get(Of T)()
+  nameWithType: IDatabaseAccess.Get<T>()
+  nameWithType.vb: IDatabaseAccess.Get(Of T)()
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.Get``1(System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object})
+  name: Get<T>(Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>)
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_Get__1_System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.Get``1(System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object})
+  name.vb: Get(Of T)(Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object))
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.Get<T>(System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.Get(Of T)(System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object))
+  nameWithType: IDatabaseAccess.Get<T>(Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>)
+  nameWithType.vb: IDatabaseAccess.Get(Of T)(Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object))
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.Get``1(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name: Get<T>(String, CommandType, List<DbParameter>)
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_Get__1_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.Get``1(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name.vb: Get(Of T)(String, CommandType, List(Of DbParameter))
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.Get<T>(System.String, System.Data.CommandType, System.Collections.Generic.List<System.Data.Common.DbParameter>)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.Get(Of T)(System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
+  nameWithType: IDatabaseAccess.Get<T>(String, CommandType, List<DbParameter>)
+  nameWithType.vb: IDatabaseAccess.Get(Of T)(String, CommandType, List(Of DbParameter))
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.Get``1(System.String,System.Data.CommandType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name: Get<T>(String, CommandType, Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>, List<DbParameter>)
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_Get__1_System_String_System_Data_CommandType_System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__System_Collections_Generic_List_System_Data_Common_DbParameter__
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.Get``1(System.String,System.Data.CommandType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name.vb: Get(Of T)(String, CommandType, Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object), List(Of DbParameter))
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.Get<T>(System.String, System.Data.CommandType, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>, System.Collections.Generic.List<System.Data.Common.DbParameter>)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.Get(Of T)(System.String, System.Data.CommandType, System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Collections.Generic.List(Of System.Data.Common.DbParameter))
+  nameWithType: IDatabaseAccess.Get<T>(String, CommandType, Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>, List<DbParameter>)
+  nameWithType.vb: IDatabaseAccess.Get(Of T)(String, CommandType, Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object), List(Of DbParameter))
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataReader(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name: GetDataReader(String, CommandType, List<DbParameter>)
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_GetDataReader_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.GetDataReader(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name.vb: GetDataReader(String, CommandType, List(Of DbParameter))
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataReader(System.String, System.Data.CommandType, System.Collections.Generic.List<System.Data.Common.DbParameter>)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataReader(System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
+  nameWithType: IDatabaseAccess.GetDataReader(String, CommandType, List<DbParameter>)
+  nameWithType.vb: IDatabaseAccess.GetDataReader(String, CommandType, List(Of DbParameter))
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataReader*
+  name: GetDataReader
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_GetDataReader_
+  commentId: Overload:DotNetHelper.Database.Interface.IDatabaseAccess.GetDataReader
+  isSpec: "True"
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataReader
+  nameWithType: IDatabaseAccess.GetDataReader
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable(System.String)
+  name: GetDataTable(String)
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_GetDataTable_System_String_
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable(System.String)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable(System.String)
+  nameWithType: IDatabaseAccess.GetDataTable(String)
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name: GetDataTable(String, CommandType, List<DbParameter>)
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_GetDataTable_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name.vb: GetDataTable(String, CommandType, List(Of DbParameter))
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable(System.String, System.Data.CommandType, System.Collections.Generic.List<System.Data.Common.DbParameter>)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable(System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
+  nameWithType: IDatabaseAccess.GetDataTable(String, CommandType, List<DbParameter>)
+  nameWithType.vb: IDatabaseAccess.GetDataTable(String, CommandType, List(Of DbParameter))
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable*
+  name: GetDataTable
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_GetDataTable_
+  commentId: Overload:DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable
+  isSpec: "True"
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable
+  nameWithType: IDatabaseAccess.GetDataTable
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTableWithKeyInfo(System.String)
+  name: GetDataTableWithKeyInfo(String)
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_GetDataTableWithKeyInfo_System_String_
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTableWithKeyInfo(System.String)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTableWithKeyInfo(System.String)
+  nameWithType: IDatabaseAccess.GetDataTableWithKeyInfo(String)
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTableWithKeyInfo(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name: GetDataTableWithKeyInfo(String, CommandType, List<DbParameter>)
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_GetDataTableWithKeyInfo_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTableWithKeyInfo(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name.vb: GetDataTableWithKeyInfo(String, CommandType, List(Of DbParameter))
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTableWithKeyInfo(System.String, System.Data.CommandType, System.Collections.Generic.List<System.Data.Common.DbParameter>)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTableWithKeyInfo(System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
+  nameWithType: IDatabaseAccess.GetDataTableWithKeyInfo(String, CommandType, List<DbParameter>)
+  nameWithType.vb: IDatabaseAccess.GetDataTableWithKeyInfo(String, CommandType, List(Of DbParameter))
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTableWithKeyInfo*
+  name: GetDataTableWithKeyInfo
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_GetDataTableWithKeyInfo_
+  commentId: Overload:DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTableWithKeyInfo
+  isSpec: "True"
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTableWithKeyInfo
+  nameWithType: IDatabaseAccess.GetDataTableWithKeyInfo
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTableWithSchema(System.String)
+  name: GetDataTableWithSchema(String)
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_GetDataTableWithSchema_System_String_
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTableWithSchema(System.String)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTableWithSchema(System.String)
+  nameWithType: IDatabaseAccess.GetDataTableWithSchema(String)
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTableWithSchema(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name: GetDataTableWithSchema(String, CommandType, List<DbParameter>)
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_GetDataTableWithSchema_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTableWithSchema(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name.vb: GetDataTableWithSchema(String, CommandType, List(Of DbParameter))
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTableWithSchema(System.String, System.Data.CommandType, System.Collections.Generic.List<System.Data.Common.DbParameter>)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTableWithSchema(System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
+  nameWithType: IDatabaseAccess.GetDataTableWithSchema(String, CommandType, List<DbParameter>)
+  nameWithType.vb: IDatabaseAccess.GetDataTableWithSchema(String, CommandType, List(Of DbParameter))
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTableWithSchema*
+  name: GetDataTableWithSchema
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_GetDataTableWithSchema_
+  commentId: Overload:DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTableWithSchema
+  isSpec: "True"
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTableWithSchema
+  nameWithType: IDatabaseAccess.GetDataTableWithSchema
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommand(System.Data.IDbConnection,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
+  name: GetNewCommand(IDbConnection, String, CommandType, IEnumerable<IDataParameter>)
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_GetNewCommand_System_Data_IDbConnection_System_String_System_Data_CommandType_System_Collections_Generic_IEnumerable_System_Data_IDataParameter__
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommand(System.Data.IDbConnection,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
+  name.vb: GetNewCommand(IDbConnection, String, CommandType, IEnumerable(Of IDataParameter))
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommand(System.Data.IDbConnection, System.String, System.Data.CommandType, System.Collections.Generic.IEnumerable<System.Data.IDataParameter>)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommand(System.Data.IDbConnection, System.String, System.Data.CommandType, System.Collections.Generic.IEnumerable(Of System.Data.IDataParameter))
+  nameWithType: IDatabaseAccess.GetNewCommand(IDbConnection, String, CommandType, IEnumerable<IDataParameter>)
+  nameWithType.vb: IDatabaseAccess.GetNewCommand(IDbConnection, String, CommandType, IEnumerable(Of IDataParameter))
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommand*
+  name: GetNewCommand
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_GetNewCommand_
+  commentId: Overload:DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommand
+  isSpec: "True"
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommand
+  nameWithType: IDatabaseAccess.GetNewCommand
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommandAndTransaction(System.Data.IDbConnection)
+  name: GetNewCommandAndTransaction(IDbConnection)
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_GetNewCommandAndTransaction_System_Data_IDbConnection_
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommandAndTransaction(System.Data.IDbConnection)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommandAndTransaction(System.Data.IDbConnection)
+  nameWithType: IDatabaseAccess.GetNewCommandAndTransaction(IDbConnection)
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommandAndTransaction*
+  name: GetNewCommandAndTransaction
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_GetNewCommandAndTransaction_
+  commentId: Overload:DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommandAndTransaction
+  isSpec: "True"
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommandAndTransaction
+  nameWithType: IDatabaseAccess.GetNewCommandAndTransaction
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.ObjectToSql
+  name: ObjectToSql
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_ObjectToSql
+  commentId: P:DotNetHelper.Database.Interface.IDatabaseAccess.ObjectToSql
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.ObjectToSql
+  nameWithType: IDatabaseAccess.ObjectToSql
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.ObjectToSql*
+  name: ObjectToSql
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_ObjectToSql_
+  commentId: Overload:DotNetHelper.Database.Interface.IDatabaseAccess.ObjectToSql
+  isSpec: "True"
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.ObjectToSql
+  nameWithType: IDatabaseAccess.ObjectToSql
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlSyntaxHelper
+  name: SqlSyntaxHelper
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_SqlSyntaxHelper
+  commentId: P:DotNetHelper.Database.Interface.IDatabaseAccess.SqlSyntaxHelper
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlSyntaxHelper
+  nameWithType: IDatabaseAccess.SqlSyntaxHelper
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlSyntaxHelper*
+  name: SqlSyntaxHelper
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_SqlSyntaxHelper_
+  commentId: Overload:DotNetHelper.Database.Interface.IDatabaseAccess.SqlSyntaxHelper
+  isSpec: "True"
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlSyntaxHelper
+  nameWithType: IDatabaseAccess.SqlSyntaxHelper
 - uid: DotNetHelper.Database.Models
   name: DotNetHelper.Database.Models
   href: api/DotNetHelper.Database.Models.html
@@ -1112,3 +1994,6 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.Database.Models.QueryBucketManager.OnFullBucket
   nameWithType: QueryBucketManager.OnFullBucket
+- uid: TSD
+  name: THIS IS THE HOME PAGE TO TUTORIALS
+  href: tutorials/index.html

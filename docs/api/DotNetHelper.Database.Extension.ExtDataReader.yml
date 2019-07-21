@@ -7,9 +7,11 @@ items:
   children:
   - DotNetHelper.Database.Extension.ExtDataReader.GetBytes(System.Data.IDataReader,System.Int32)
   - DotNetHelper.Database.Extension.ExtDataReader.HasRows(System.Data.IDataReader)
-  - DotNetHelper.Database.Extension.ExtDataReader.MapTo``1(System.Data.IDataReader,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  - DotNetHelper.Database.Extension.ExtDataReader.MapTo``1(System.Data.IDataReader)
+  - DotNetHelper.Database.Extension.ExtDataReader.MapTo``1(System.Data.IDataReader,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object})
   - DotNetHelper.Database.Extension.ExtDataReader.MapToDataTable``1(System.Collections.Generic.IEnumerable{``0})
-  - DotNetHelper.Database.Extension.ExtDataReader.MapToList``1(System.Data.IDataReader,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  - DotNetHelper.Database.Extension.ExtDataReader.MapToList``1(System.Data.IDataReader)
+  - DotNetHelper.Database.Extension.ExtDataReader.MapToList``1(System.Data.IDataReader,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object})
   langs:
   - csharp
   - vb
@@ -24,7 +26,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExtDataReader
     path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
-    startLine: 15
+    startLine: 16
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
@@ -67,7 +69,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetBytes
     path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
-    startLine: 26
+    startLine: 27
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
@@ -115,7 +117,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: HasRows
     path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
-    startLine: 47
+    startLine: 48
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
@@ -137,17 +139,17 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: DotNetHelper.Database.Extension.ExtDataReader.MapToList``1(System.Data.IDataReader,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
-  commentId: M:DotNetHelper.Database.Extension.ExtDataReader.MapToList``1(System.Data.IDataReader,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
-  id: MapToList``1(System.Data.IDataReader,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+- uid: DotNetHelper.Database.Extension.ExtDataReader.MapToList``1(System.Data.IDataReader,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object})
+  commentId: M:DotNetHelper.Database.Extension.ExtDataReader.MapToList``1(System.Data.IDataReader,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object})
+  id: MapToList``1(System.Data.IDataReader,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object})
   isExtensionMethod: true
   parent: DotNetHelper.Database.Extension.ExtDataReader
   langs:
   - csharp
   - vb
-  name: MapToList<T>(IDataReader, Func<Object, String>, Func<Object, String>, Func<Object, String>)
-  nameWithType: ExtDataReader.MapToList<T>(IDataReader, Func<Object, String>, Func<Object, String>, Func<Object, String>)
-  fullName: DotNetHelper.Database.Extension.ExtDataReader.MapToList<T>(System.Data.IDataReader, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>)
+  name: MapToList<T>(IDataReader, Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>)
+  nameWithType: ExtDataReader.MapToList<T>(IDataReader, Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>)
+  fullName: DotNetHelper.Database.Extension.ExtDataReader.MapToList<T>(System.Data.IDataReader, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>)
   type: Method
   source:
     remote:
@@ -156,26 +158,74 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: MapToList
     path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
-    startLine: 62
+    startLine: 107
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
-  summary: "\n\n"
+  syntax:
+    content: >-
+      public static List<T> MapToList<T>(this IDataReader reader, Func<string, Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer)
+          where T : class
+    parameters:
+    - id: reader
+      type: System.Data.IDataReader
+    - id: xmlDeserializer
+      type: System.Func{System.String,System.Type,System.Object}
+    - id: jsonDeserializer
+      type: System.Func{System.String,System.Type,System.Object}
+    - id: csvDeserializer
+      type: System.Func{System.String,System.Type,System.Object}
+    typeParameters:
+    - id: T
+    return:
+      type: System.Collections.Generic.List{{T}}
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function MapToList(Of T As Class)(reader As IDataReader, xmlDeserializer As Func(Of String, Type, Object), jsonDeserializer As Func(Of String, Type, Object), csvDeserializer As Func(Of String, Type, Object)) As List(Of T)
+  overload: DotNetHelper.Database.Extension.ExtDataReader.MapToList*
+  nameWithType.vb: ExtDataReader.MapToList(Of T)(IDataReader, Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: DotNetHelper.Database.Extension.ExtDataReader.MapToList(Of T)(System.Data.IDataReader, System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object))
+  name.vb: MapToList(Of T)(IDataReader, Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object))
+- uid: DotNetHelper.Database.Extension.ExtDataReader.MapToList``1(System.Data.IDataReader)
+  commentId: M:DotNetHelper.Database.Extension.ExtDataReader.MapToList``1(System.Data.IDataReader)
+  id: MapToList``1(System.Data.IDataReader)
+  isExtensionMethod: true
+  parent: DotNetHelper.Database.Extension.ExtDataReader
+  langs:
+  - csharp
+  - vb
+  name: MapToList<T>(IDataReader)
+  nameWithType: ExtDataReader.MapToList<T>(IDataReader)
+  fullName: DotNetHelper.Database.Extension.ExtDataReader.MapToList<T>(System.Data.IDataReader)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.Database/Extension/ExtDataReader.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+    id: MapToList
+    path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
+    startLine: 150
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Extension
+  summary: "\nMaps the IDataReder to a list of T\n"
   example: []
   syntax:
     content: >-
-      public static List<T> MapToList<T>(this IDataReader reader, Func<object, string> xmlDeserializer, Func<object, string> jsonDeserializer, Func<object, string> csvDeserializer)
+      public static List<T> MapToList<T>(this IDataReader reader)
           where T : class
     parameters:
     - id: reader
       type: System.Data.IDataReader
       description: ''
-    - id: xmlDeserializer
-      type: System.Func{System.Object,System.String}
-    - id: jsonDeserializer
-      type: System.Func{System.Object,System.String}
-    - id: csvDeserializer
-      type: System.Func{System.Object,System.String}
     typeParameters:
     - id: T
       description: ''
@@ -185,28 +235,28 @@ items:
     content.vb: >-
       <ExtensionAttribute>
 
-      Public Shared Function MapToList(Of T As Class)(reader As IDataReader, xmlDeserializer As Func(Of Object, String), jsonDeserializer As Func(Of Object, String), csvDeserializer As Func(Of Object, String)) As List(Of T)
+      Public Shared Function MapToList(Of T As Class)(reader As IDataReader) As List(Of T)
   overload: DotNetHelper.Database.Extension.ExtDataReader.MapToList*
-  nameWithType.vb: ExtDataReader.MapToList(Of T)(IDataReader, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
+  nameWithType.vb: ExtDataReader.MapToList(Of T)(IDataReader)
   modifiers.csharp:
   - public
   - static
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: DotNetHelper.Database.Extension.ExtDataReader.MapToList(Of T)(System.Data.IDataReader, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String))
-  name.vb: MapToList(Of T)(IDataReader, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
-- uid: DotNetHelper.Database.Extension.ExtDataReader.MapTo``1(System.Data.IDataReader,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
-  commentId: M:DotNetHelper.Database.Extension.ExtDataReader.MapTo``1(System.Data.IDataReader,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
-  id: MapTo``1(System.Data.IDataReader,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  fullName.vb: DotNetHelper.Database.Extension.ExtDataReader.MapToList(Of T)(System.Data.IDataReader)
+  name.vb: MapToList(Of T)(IDataReader)
+- uid: DotNetHelper.Database.Extension.ExtDataReader.MapTo``1(System.Data.IDataReader,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object})
+  commentId: M:DotNetHelper.Database.Extension.ExtDataReader.MapTo``1(System.Data.IDataReader,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object})
+  id: MapTo``1(System.Data.IDataReader,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object})
   isExtensionMethod: true
   parent: DotNetHelper.Database.Extension.ExtDataReader
   langs:
   - csharp
   - vb
-  name: MapTo<T>(IDataReader, Func<Object, String>, Func<Object, String>, Func<Object, String>)
-  nameWithType: ExtDataReader.MapTo<T>(IDataReader, Func<Object, String>, Func<Object, String>, Func<Object, String>)
-  fullName: DotNetHelper.Database.Extension.ExtDataReader.MapTo<T>(System.Data.IDataReader, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>)
+  name: MapTo<T>(IDataReader, Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>)
+  nameWithType: ExtDataReader.MapTo<T>(IDataReader, Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>)
+  fullName: DotNetHelper.Database.Extension.ExtDataReader.MapTo<T>(System.Data.IDataReader, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>)
   type: Method
   source:
     remote:
@@ -215,7 +265,61 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: MapTo
     path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
-    startLine: 134
+    startLine: 165
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Extension
+  syntax:
+    content: >-
+      public static T MapTo<T>(this IDataReader reader, Func<string, Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer)
+          where T : class
+    parameters:
+    - id: reader
+      type: System.Data.IDataReader
+    - id: xmlDeserializer
+      type: System.Func{System.String,System.Type,System.Object}
+    - id: jsonDeserializer
+      type: System.Func{System.String,System.Type,System.Object}
+    - id: csvDeserializer
+      type: System.Func{System.String,System.Type,System.Object}
+    typeParameters:
+    - id: T
+    return:
+      type: '{T}'
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function MapTo(Of T As Class)(reader As IDataReader, xmlDeserializer As Func(Of String, Type, Object), jsonDeserializer As Func(Of String, Type, Object), csvDeserializer As Func(Of String, Type, Object)) As T
+  overload: DotNetHelper.Database.Extension.ExtDataReader.MapTo*
+  nameWithType.vb: ExtDataReader.MapTo(Of T)(IDataReader, Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: DotNetHelper.Database.Extension.ExtDataReader.MapTo(Of T)(System.Data.IDataReader, System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object))
+  name.vb: MapTo(Of T)(IDataReader, Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object))
+- uid: DotNetHelper.Database.Extension.ExtDataReader.MapTo``1(System.Data.IDataReader)
+  commentId: M:DotNetHelper.Database.Extension.ExtDataReader.MapTo``1(System.Data.IDataReader)
+  id: MapTo``1(System.Data.IDataReader)
+  isExtensionMethod: true
+  parent: DotNetHelper.Database.Extension.ExtDataReader
+  langs:
+  - csharp
+  - vb
+  name: MapTo<T>(IDataReader)
+  nameWithType: ExtDataReader.MapTo<T>(IDataReader)
+  fullName: DotNetHelper.Database.Extension.ExtDataReader.MapTo<T>(System.Data.IDataReader)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.Database/Extension/ExtDataReader.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+    id: MapTo
+    path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
+    startLine: 203
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
@@ -223,18 +327,12 @@ items:
   example: []
   syntax:
     content: >-
-      public static T MapTo<T>(this IDataReader reader, Func<object, string> xmlDeserializer, Func<object, string> jsonDeserializer, Func<object, string> csvDeserializer)
+      public static T MapTo<T>(this IDataReader reader)
           where T : class
     parameters:
     - id: reader
       type: System.Data.IDataReader
       description: ''
-    - id: xmlDeserializer
-      type: System.Func{System.Object,System.String}
-    - id: jsonDeserializer
-      type: System.Func{System.Object,System.String}
-    - id: csvDeserializer
-      type: System.Func{System.Object,System.String}
     typeParameters:
     - id: T
       description: ''
@@ -244,17 +342,17 @@ items:
     content.vb: >-
       <ExtensionAttribute>
 
-      Public Shared Function MapTo(Of T As Class)(reader As IDataReader, xmlDeserializer As Func(Of Object, String), jsonDeserializer As Func(Of Object, String), csvDeserializer As Func(Of Object, String)) As T
+      Public Shared Function MapTo(Of T As Class)(reader As IDataReader) As T
   overload: DotNetHelper.Database.Extension.ExtDataReader.MapTo*
-  nameWithType.vb: ExtDataReader.MapTo(Of T)(IDataReader, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
+  nameWithType.vb: ExtDataReader.MapTo(Of T)(IDataReader)
   modifiers.csharp:
   - public
   - static
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: DotNetHelper.Database.Extension.ExtDataReader.MapTo(Of T)(System.Data.IDataReader, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String))
-  name.vb: MapTo(Of T)(IDataReader, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
+  fullName.vb: DotNetHelper.Database.Extension.ExtDataReader.MapTo(Of T)(System.Data.IDataReader)
+  name.vb: MapTo(Of T)(IDataReader)
 - uid: DotNetHelper.Database.Extension.ExtDataReader.MapToDataTable``1(System.Collections.Generic.IEnumerable{``0})
   commentId: M:DotNetHelper.Database.Extension.ExtDataReader.MapToDataTable``1(System.Collections.Generic.IEnumerable{``0})
   id: MapToDataTable``1(System.Collections.Generic.IEnumerable{``0})
@@ -274,7 +372,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: MapToDataTable
     path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
-    startLine: 220
+    startLine: 245
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
@@ -745,18 +843,18 @@ references:
   name: MapToList
   nameWithType: ExtDataReader.MapToList
   fullName: DotNetHelper.Database.Extension.ExtDataReader.MapToList
-- uid: System.Func{System.Object,System.String}
-  commentId: T:System.Func{System.Object,System.String}
+- uid: System.Func{System.String,System.Type,System.Object}
+  commentId: T:System.Func{System.String,System.Type,System.Object}
   parent: System
-  definition: System.Func`2
-  name: Func<Object, String>
-  nameWithType: Func<Object, String>
-  fullName: System.Func<System.Object, System.String>
-  nameWithType.vb: Func(Of Object, String)
-  fullName.vb: System.Func(Of System.Object, System.String)
-  name.vb: Func(Of Object, String)
+  definition: System.Func`3
+  name: Func<String, Type, Object>
+  nameWithType: Func<String, Type, Object>
+  fullName: System.Func<System.String, System.Type, System.Object>
+  nameWithType.vb: Func(Of String, Type, Object)
+  fullName.vb: System.Func(Of System.String, System.Type, System.Object)
+  name.vb: Func(Of String, Type, Object)
   spec.csharp:
-  - uid: System.Func`2
+  - uid: System.Func`3
     name: Func
     nameWithType: Func
     fullName: System.Func
@@ -764,24 +862,32 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
   - uid: System.String
     name: String
     nameWithType: String
     fullName: System.String
     isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: System.Func`2
+  - uid: System.Func`3
     name: Func
     nameWithType: Func
     fullName: System.Func
@@ -789,18 +895,26 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
   - uid: System.String
     name: String
     nameWithType: String
     fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
     isExternal: true
   - name: )
     nameWithType: )
@@ -845,17 +959,17 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Func`2
-  commentId: T:System.Func`2
+- uid: System.Func`3
+  commentId: T:System.Func`3
   isExternal: true
-  name: Func<T, TResult>
-  nameWithType: Func<T, TResult>
-  fullName: System.Func<T, TResult>
-  nameWithType.vb: Func(Of T, TResult)
-  fullName.vb: System.Func(Of T, TResult)
-  name.vb: Func(Of T, TResult)
+  name: Func<T1, T2, TResult>
+  nameWithType: Func<T1, T2, TResult>
+  fullName: System.Func<T1, T2, TResult>
+  nameWithType.vb: Func(Of T1, T2, TResult)
+  fullName.vb: System.Func(Of T1, T2, TResult)
+  name.vb: Func(Of T1, T2, TResult)
   spec.csharp:
-  - uid: System.Func`2
+  - uid: System.Func`3
     name: Func
     nameWithType: Func
     fullName: System.Func
@@ -863,9 +977,15 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
   - name: ', '
     nameWithType: ', '
     fullName: ', '
@@ -876,7 +996,7 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: System.Func`2
+  - uid: System.Func`3
     name: Func
     nameWithType: Func
     fullName: System.Func
@@ -884,9 +1004,15 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
   - name: ', '
     nameWithType: ', '
     fullName: ', '

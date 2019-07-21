@@ -180,7 +180,7 @@ items:
       description: ''
     - id: useAttributeName
       type: System.Boolean
-      description: ''
+      description: if true when mapping datarow columns to T instance. Attribute mapto name will be used instead of property name if exist
     typeParameters:
     - id: T
       description: ''

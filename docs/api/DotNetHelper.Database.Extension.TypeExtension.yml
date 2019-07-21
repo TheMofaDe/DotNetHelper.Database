@@ -6,6 +6,7 @@ items:
   parent: DotNetHelper.Database.Extension
   children:
   - DotNetHelper.Database.Extension.TypeExtension.IsNullable(System.Type)
+  - DotNetHelper.Database.Extension.TypeExtension.IsTypeAnonymousType(System.Type)
   - DotNetHelper.Database.Extension.TypeExtension.IsTypeDynamic(System.Type)
   langs:
   - csharp
@@ -21,7 +22,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: TypeExtension
     path: ../src/DotNetHelper.Database/Extension/TypeExtension.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
@@ -64,7 +65,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: IsNullable
     path: ../src/DotNetHelper.Database/Extension/TypeExtension.cs
-    startLine: 18
+    startLine: 20
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
@@ -109,7 +110,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: IsTypeDynamic
     path: ../src/DotNetHelper.Database/Extension/TypeExtension.cs
-    startLine: 29
+    startLine: 31
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
@@ -125,6 +126,47 @@ items:
 
       Public Shared Function IsTypeDynamic(type As Type) As Boolean
   overload: DotNetHelper.Database.Extension.TypeExtension.IsTypeDynamic*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: DotNetHelper.Database.Extension.TypeExtension.IsTypeAnonymousType(System.Type)
+  commentId: M:DotNetHelper.Database.Extension.TypeExtension.IsTypeAnonymousType(System.Type)
+  id: IsTypeAnonymousType(System.Type)
+  isExtensionMethod: true
+  parent: DotNetHelper.Database.Extension.TypeExtension
+  langs:
+  - csharp
+  - vb
+  name: IsTypeAnonymousType(Type)
+  nameWithType: TypeExtension.IsTypeAnonymousType(Type)
+  fullName: DotNetHelper.Database.Extension.TypeExtension.IsTypeAnonymousType(System.Type)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.Database/Extension/TypeExtension.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+    id: IsTypeAnonymousType
+    path: ../src/DotNetHelper.Database/Extension/TypeExtension.cs
+    startLine: 36
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Extension
+  syntax:
+    content: public static bool IsTypeAnonymousType(this Type type)
+    parameters:
+    - id: type
+      type: System.Type
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function IsTypeAnonymousType(type As Type) As Boolean
+  overload: DotNetHelper.Database.Extension.TypeExtension.IsTypeAnonymousType*
   modifiers.csharp:
   - public
   - static
@@ -513,3 +555,8 @@ references:
   name: Boolean
   nameWithType: Boolean
   fullName: System.Boolean
+- uid: DotNetHelper.Database.Extension.TypeExtension.IsTypeAnonymousType*
+  commentId: Overload:DotNetHelper.Database.Extension.TypeExtension.IsTypeAnonymousType
+  name: IsTypeAnonymousType
+  nameWithType: TypeExtension.IsTypeAnonymousType
+  fullName: DotNetHelper.Database.Extension.TypeExtension.IsTypeAnonymousType

@@ -5,6 +5,7 @@ items:
   id: DotNetHelper.Database.Interface
   children:
   - DotNetHelper.Database.Interface.IColumnSerializer
+  - DotNetHelper.Database.Interface.IDatabaseAccess
   langs:
   - csharp
   - vb
@@ -15,9 +16,14 @@ items:
   assemblies:
   - DotNetHelper.Database
 references:
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess
+  commentId: T:DotNetHelper.Database.Interface.IDatabaseAccess
+  parent: DotNetHelper.Database.Interface
+  name: IDatabaseAccess
+  nameWithType: IDatabaseAccess
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess
 - uid: DotNetHelper.Database.Interface.IColumnSerializer
   commentId: T:DotNetHelper.Database.Interface.IColumnSerializer
-  parent: DotNetHelper.Database.Interface
   name: IColumnSerializer
   nameWithType: IColumnSerializer
   fullName: DotNetHelper.Database.Interface.IColumnSerializer

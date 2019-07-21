@@ -1,60 +1,84 @@
 # DotNetHelper.Database
 
-#### *DotNetHelper.Database takes your generic types or dynamic & anonymous objects and convert it to sql.* 
+#### *DotNetHelper.Database is a lightweight ORM that works with generics,dynamic, & anonyous objects for ADO.NET * 
 
 || [**View on Github**][Github] || 
 
 
 ## Features
-+ INSERT
-+ UPDATE
-+ DELETE
-+ UPSERT
-+ INSERT with OUTPUT Columns
-+ UPDATE with OUTPUT Columns
-+ DELETE with OUTPUT Columns
-+ UPSERT with OUTPUT Columns
++ Can  *(Insert,Update,Upsert,Delete)* any *(Generic,Anonymous,Dynamic)* object into database
++ Support Any **IDbConnection** & work with **DbFactory**
++ Support auto-serializing & deserializing column that is as stored as CSV,JSON, & XML in the database 
++ Map List To **DataTable**
++ Map **DataTable** To List
++ Map **IDataReader** To List
++ Map **DataRow** To A Class
+
 
 ## Supported Databases
 + SQLSERVER
 + SQLITE
-+ MYSQL
 + More to come
 
 
-## How to use
-##### How to Use With Generics Types
-```csharp
-public class Employee {
-      public FirstName { get; set; }
-      public LastName  { get; set; }
-}
-            var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
-            var insertSql = sqlServerObjectToSql.BuildQuery<Employee>("TABLE NAME OR DEFAULT TO TYPE NAME", ActionType.Insert);
-// OR 
-            var insertSql = sqlServerObjectToSql.BuildQuery("TABLE NAME OR DEFAULT TO TYPE NAME", ActionType.Insert,typeof(Employee));
+## Example 
+##### For this example my table in the database will look like this
+```sql 
+CREATE TABLE [master].[dbo].[Employee](
+	[IdentityField] [int] NOT NULL IDENTITY (1,1) PRIMARY KEY,
+	[FirstName] [varchar](400) NOT NULL,
+	[LastName] [varchar](400) NOT NULL,
+	[DOB] DateTime NOT NULL,
+	[CreatedAt] DateTime NOT NULL DEFAULT GETDATE(),
+	[FavoriteColor] [varchar](400)  NULL
+);
 ```
 
-##### How to Use With Dynamic Objects
+##### My generic object class will look like this 
 ```csharp
-            var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
-            dynamic record = new ExpandoObject();
-            record.FirstName = "John";
-            record.LastName = "Doe";
-            var insertSql = sqlServerObjectToSql.BuildQuery("TABLE NAME OR DEFAULT TO TYPE NAME", ActionType.Insert,record);
+public class Employee
+    {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)] // Marks this property as an identity field 
+        [Key]  // marks this property as a primary key... 
+        public int IdentityField { get; set; }
+
+        [NotMapped] // This property will be ignore when performing database actions
+        public string FullName => FirstName + " " + LastName;
+
+        [SqlColumn(MapTo = "DOB")]  // This property is actually name DOB in the database
+        public DateTime DateOfBirth { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string FavoriteColor { get; set; }
+        public DateTime CreatedAt { get; } = new DateTime();
+        
+    }
 ```
 
+##### Now lets add some new employees from code using dynamic,anonymous & generic objects
 
-##### How to Use With Anonymous Objects
+
+
 ```csharp
-            var sqlServerObjectToSql = new ObjectToSql(DataBaseType.SqlServer);
-            var anonymousObject = new { FirstName = "John" , LastName = "Doe"}
-            var insertSql = sqlServerObjectToSql.BuildQuery("TABLE NAME OR DEFAULT TO TYPE NAME", ActionType.Insert,anonymousObject);
+ dynamic dynamicEmployee = new ExpandoObject(); // A DYNAMIC EMPLOYEE
+                    dynamicEmployee.FirstName = "Joe Sister";
+                    dynamicEmployee.LastName = "Dynamic";
+                    dynamicEmployee.DOB = DateTime.Today.AddDays(-2);
+
+            var employee = new Employee() {DateOfBirth = DateTime.Today, FavoriteColor = "Blue", FirstName = "Joe" , LastName = "Generic"}; // A GENERIC EMPLOYEE
+            var anonymousEmployee = new {FirstName = "Joe Brother", DOB = DateTime.Today.AddDays(-1) , LastName = "Anonymous"}; // A ANONYMOUS EMPLOYEE
+
+            var dbAccess = new DatabaseAccess<SqlConnection, SqlParameter>(DataBaseType.SqlServer, "Server=localhost;Initial Catalog=master;Integrated Security=True"); // Specify database provider to ensure syntax is correct
+
+            // Lets add our 3 employees to the database note 
+            var recordAffected = dbAccess.Execute(employee, ActionType.Insert); // ActionType is a enum of Insert,Update,Delete,Upsert
+            recordAffected += dbAccess.Execute(anonymousEmployee, ActionType.Insert,"Employee"); // you need to specify the table name when using anonymous objects
+            recordAffected += dbAccess.Execute<ExpandoObject>(dynamicEmployee, ActionType.Insert,"Employee");  // you need to specify the table name when using dynamic objects
+
 ```
-##### Output
-```sql
-INSERT INTO TableNameGoHere ([FirstName],[LastName]) VALUES (@FirstName,@LastName)
-```
+
+##### Finish Product 
+![alt text][logo]
 
 
 <!-- Links. -->
@@ -71,7 +95,7 @@ INSERT INTO TableNameGoHere ([FirstName],[LastName]) VALUES (@FirstName,@LastNam
 [WiX]: http://wixtoolset.org/
 [DocFx]: https://dotnet.github.io/docfx/
 [Github]: https://github.com/TheMofaDe/DotNetHelper.Database
-
+[logo]: images/snippet1.gif "Snippet 1"
 
 <!-- Documentation Links. -->
 [Docs]: https://themofade.github.io/DotNetHelper.Database/index.html

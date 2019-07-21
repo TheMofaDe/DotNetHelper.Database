@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetHelper.Database.Tests
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetHelper.Database", "src\DotNetHelper.Database\DotNetHelper.Database.csproj", "{AF7A7D03-8216-45BB-9E2F-C03A7BDF70AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsoleApp", "samples\TestConsoleApp\TestConsoleApp.csproj", "{7D14B389-4630-4C0E-AED9-E7DC9BE306F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestConsoleApp", "samples\TestConsoleApp\TestConsoleApp.csproj", "{7D14B389-4630-4C0E-AED9-E7DC9BE306F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
