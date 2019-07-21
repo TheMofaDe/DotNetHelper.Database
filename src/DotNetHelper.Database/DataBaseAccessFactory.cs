@@ -317,10 +317,10 @@ namespace DotNetHelper.Database
 
         public int Execute<T>(T instance, ActionType actionType) where T : class
         {
-            return Execute(instance, actionType, null, null, null);
+            return Execute(instance, actionType, null,null, null, null);
         }
 
-        public int Execute<T>(T instance, ActionType actionType, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer) where T : class
+        public int Execute<T>(T instance, ActionType actionType, string tableName, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer) where T : class
         {
             var sqlTable = new SQLTable(DatabaseType, typeof(T));
             var sql = ObjectToSql.BuildQuery<T>(sqlTable.FullNameWithBrackets, actionType);

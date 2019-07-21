@@ -117,7 +117,7 @@ namespace DotNetHelper.Database.Interface
         List<T> Get<T>(Func<string, Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer) where T : class;
         List<T> Get<T>(string sql, CommandType commandType, List<DbParameter> parameters = null) where T : class;
         int Execute<T>(T instance, ActionType actionType) where T : class;
-        int Execute<T>(T instance, ActionType actionType, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer) where T : class;
+        int Execute<T>(T instance, ActionType actionType, string tableName, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer) where T : class;
         T ExecuteAndGetOutput<T>(T instance, ActionType actionType, params Expression<Func<T, object>>[] outputFields) where T : class;
 
         T ExecuteAndGetOutput<T>(T instance, ActionType actionType

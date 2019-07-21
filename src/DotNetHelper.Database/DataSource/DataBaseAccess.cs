@@ -370,13 +370,16 @@ namespace DotNetHelper.Database.DataSource
 
         public int Execute<T>(T instance, ActionType actionType) where T : class
         {
-            return Execute(instance, actionType, null, null, null);
+            return Execute(instance, actionType,null, null, null, null);
         }
-
-        public int Execute<T>(T instance, ActionType actionType, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer) where T : class
+        public int Execute<T>(T instance, ActionType actionType, string tableName) where T : class
         {
-            var sqlTable = new SQLTable(DatabaseType, typeof(T));
-            var sql = ObjectToSql.BuildQuery<T>(sqlTable.FullNameWithBrackets, actionType);
+            return Execute(instance, actionType, tableName, null, null, null);
+        }
+        public int Execute<T>(T instance, ActionType actionType, string tableName, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer) where T : class
+        {
+            var type = typeof(T);
+            var sql = (type.IsTypeAnonymousType() || type.IsTypeDynamic()) ? ObjectToSql.BuildQuery(tableName ?? new SQLTable(DatabaseType, type).FullNameWithBrackets, actionType,instance) : ObjectToSql.BuildQuery<T>(tableName ?? new SQLTable(DatabaseType, type).FullNameWithBrackets, actionType);
             var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, xmlSerializer, jsonSerializer, csvSerializer);
             return ExecuteNonQuery(sql, CommandType.Text, parameters);
         }
@@ -414,6 +417,7 @@ namespace DotNetHelper.Database.DataSource
             return GetDataReader(sql, CommandType.Text, parameters);
         }
 
-     
+
+
     }
 }

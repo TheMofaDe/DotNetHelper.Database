@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Dynamic;
+using System.Reflection;
+using System.Runtime.CompilerServices;
 
 namespace DotNetHelper.Database.Extension
 {
@@ -31,5 +33,15 @@ namespace DotNetHelper.Database.Extension
         {
             return typeof(IDynamicMetaObjectProvider).IsAssignableFrom(type);
         }
+
+        public static bool IsTypeAnonymousType(this Type type)
+        {
+            // https://stackoverflow.com/questions/2483023/how-to-test-if-a-type-is-anonymous
+            return System.Attribute.IsDefined(type, typeof(CompilerGeneratedAttribute), false)
+                   && type.IsGenericType && type.Name.Contains("AnonymousType")
+                   && (type.Name.StartsWith("<>") || type.Name.StartsWith("VB$"))
+                   && (type.Attributes & TypeAttributes.NotPublic) == TypeAttributes.NotPublic;
+        }
+
     }
 }
