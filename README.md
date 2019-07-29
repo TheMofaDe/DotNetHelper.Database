@@ -5,17 +5,21 @@
 
 || [**Documentation**][Docs] • [**API**][Docs-API] • [**Tutorials**][Docs-Tutorials] ||  [**Change Log**][Changelogs] • || [**View on Github**][Github]|| 
 
-| AppVeyor | AzureDevOps |
-| :-----: | :-----: |
-| [![Build status](https://ci.appveyor.com/api/projects/status/DotNetHelper.Database?svg=true)](https://ci.appveyor.com/project/TheMofaDe/DotNetHelper.Database)  | [![Build Status](https://dev.azure.com/Josephmcnealjr0013/DotNetHelper.Database/_apis/build/status/TheMofaDe.DotNetHelper.Database?branchName=master)](https://dev.azure.com/Josephmcnealjr0013/DotNetHelper.ObjectToSql/_build/latest?definitionId=5&branchName=master)  
-
 | Package  | Tests | Code Coverage |
 | :-----:  | :---: | :------: |
 | ![Build Status][nuget-downloads]  | ![Build Status][tests]  | [![codecov](https://codecov.io/gh/TheMofaDe/DotNetHelper.Database/branch/master/graph/badge.svg)](https://codecov.io/gh/TheMofaDe/DotNetHelper.Database) |
 
 
+| Continous Integration | Windows | Linux | MacOS | 
+| :-----: | :-----: | :-----: | :-----: |
+| **AppVeyor** | [![Build status](https://ci.appveyor.com/api/projects/status/9mog32m4mejqyd3i?svg=true)](https://ci.appveyor.com/project/TheMofaDe/dotnethelper-database)  | | |
+| **Azure Devops** | ![Build Status][azure-windows]  | ![Build Status][azure-linux]  | ![Build Status][azure-macOS] | 
+
+
+
 
 ## Features
++ Can dynamically build your sql statement from any *(Generic,Anonymous,Dynamic)* object but also support you providing on as well
 + Can  *(Insert,Update,Upsert,Delete)* any *(Generic,Anonymous,Dynamic)* object into database
 + Support Any **IDbConnection** & work with **DbFactory**
 + Support auto-serializing & deserializing columns that is as stored as CSV,JSON, & XML in the database 
@@ -77,7 +81,7 @@ public class Employee
 
             var dbAccess = new DatabaseAccess<SqlConnection, SqlParameter>(DataBaseType.SqlServer, "Server=localhost;Initial Catalog=master;Integrated Security=True"); // Specify database provider to ensure syntax is correct
 
-            // Lets add our 3 employees to the database note 
+            // Lets add our 3 employees to the database now
             var recordAffected = dbAccess.Execute(employee, ActionType.Insert); // ActionType is a enum of Insert,Update,Delete,Upsert
             recordAffected += dbAccess.Execute(anonymousEmployee, ActionType.Insert,"Employee"); // you need to specify the table name when using anonymous objects
             recordAffected += dbAccess.Execute<ExpandoObject>(dynamicEmployee, ActionType.Insert,"Employee");  // you need to specify the table name when using dynamic objects
@@ -110,6 +114,7 @@ For more information, please refer to the [Officials Docs][Docs]
 [WiX]: http://wixtoolset.org/
 [DocFx]: https://dotnet.github.io/docfx/
 [Github]: https://github.com/TheMofaDe/DotNetHelper.Database
+[logo]: docs/images/snippet1.gif "Snippet 1"
 
 
 <!-- Documentation Links. -->
@@ -118,7 +123,7 @@ For more information, please refer to the [Officials Docs][Docs]
 [Docs-Tutorials]: https://themofade.github.io/DotNetHelper.Database/tutorials/index.html
 [Docs-samples]: https://dotnet.github.io/docfx/
 [Changelogs]: https://dotnet.github.io/docfx/
-c
+
 
 <!-- BADGES. -->
 
@@ -126,4 +131,7 @@ c
 [tests]: https://img.shields.io/appveyor/tests/TheMofaDe/DotNetHelper.Database.svg?style=flat-square
 [coverage-status]: https://dev.azure.com/Josephmcnealjr0013/DotNetHelper.Database/_apis/build/status/TheMofaDe.DotNetHelper.Database?branchName=master&jobName=Windows
 
-
+[azure-windows]: https://dev.azure.com/Josephmcnealjr0013/DotNetHelper.Database/_apis/build/status/TheMofaDe.DotNetHelper.Database?branchName=master&jobName=Windows
+[azure-linux]: https://dev.azure.com/Josephmcnealjr0013/DotNetHelper.Database/_apis/build/status/TheMofaDe.DotNetHelper.Database?branchName=master&jobName=Linux
+[azure-macOS]: https://dev.azure.com/Josephmcnealjr0013/DotNetHelper.Database/_apis/build/status/TheMofaDe.DotNetHelper.Database?branchName=master&jobName=macOS
+[app-veyor]: https://ci.appveyor.com/project/TheMofaDe/dotnethelper-database

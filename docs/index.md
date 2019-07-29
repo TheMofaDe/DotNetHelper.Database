@@ -6,9 +6,11 @@
 
 
 ## Features
++ Can dynamically build your sql statement from any *(Generic,Anonymous,Dynamic)* object but also support you providing on as well
 + Can  *(Insert,Update,Upsert,Delete)* any *(Generic,Anonymous,Dynamic)* object into database
 + Support Any **IDbConnection** & work with **DbFactory**
-+ Support auto-serializing & deserializing column that is as stored as CSV,JSON, & XML in the database 
++ Support auto-serializing & deserializing columns that is as stored as CSV,JSON, & XML in the database 
+  + You implement the serialization so we don't have to depend on libraries like newtonsoft.json 
 + Map List To **DataTable**
 + Map **DataTable** To List
 + Map **IDataReader** To List

@@ -22,7 +22,7 @@ namespace DotNetHelper.Database.DataSource
     public class DatabaseAccess<C, P> : IDatabaseAccess where C : class, IDbConnection, IDisposable,  new() where P : DbParameter, new()  
     {
 
-        private string ConnectionString { get; }
+        public string ConnectionString { get; }
         public TimeSpan CommandTimeOut { get; set; }
         public TimeSpan ConnectionTimeOut { get; set; }
         public DataBaseType DatabaseType { get; } = DataBaseType.SqlServer;
@@ -38,14 +38,12 @@ namespace DotNetHelper.Database.DataSource
         }
         public DatabaseAccess(DataBaseType type, string connectionString)
         {
-            if (string.IsNullOrEmpty(connectionString)) throw new NullReferenceException("invalid connection string");
             ConnectionString = connectionString;
             SqlSyntaxHelper = new SqlSyntaxHelper(type);
             ObjectToSql = new ObjectToSql.Services.ObjectToSql(type);
         }
         public DatabaseAccess(DataBaseType type, string connectionString, TimeSpan commandTimeOut)
         {
-            if (string.IsNullOrEmpty(connectionString)) throw new NullReferenceException("invalid connection string");
             ConnectionString = connectionString;
             CommandTimeOut = commandTimeOut;
             SqlSyntaxHelper = new SqlSyntaxHelper(type);
@@ -53,7 +51,6 @@ namespace DotNetHelper.Database.DataSource
         }
         public DatabaseAccess(DataBaseType type, string connectionString, TimeSpan commandTimeOut, TimeSpan connectionTimeOut)
         {
-            if (string.IsNullOrEmpty(connectionString)) throw new NullReferenceException("invalid connection string");
             ConnectionString = connectionString;
             CommandTimeOut = commandTimeOut;
             ConnectionTimeOut = connectionTimeOut;
@@ -159,6 +156,14 @@ namespace DotNetHelper.Database.DataSource
 
         }
 
+
+        /// <summary>
+        /// Executes a list of sql as in a single transaction 
+        /// </summary>
+        /// <param name="sqls"></param>
+        /// <param name="rollbackOnException"></param>
+        /// <param name="throwException"></param>
+        /// <returns></returns>
         public int ExecuteTransaction(List<string> sqls, bool rollbackOnException, bool throwException = true)
         {
             var recordAffected = 0;
@@ -181,6 +186,7 @@ namespace DotNetHelper.Database.DataSource
                 {
                     if (rollbackOnException)
                         transaction.Rollback();
+                    recordAffected = 0;
                     if (throwException)
                     {
                         throw;
@@ -321,7 +327,10 @@ namespace DotNetHelper.Database.DataSource
             return parameter;
         }
 
-
+        /// <summary>
+        /// Attempts to open a connection to the database using the connection string provided in the constructor. 
+        /// </summary>
+        /// <returns></returns>
         public bool CanConnect()
         {
             try
