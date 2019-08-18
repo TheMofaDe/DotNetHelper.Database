@@ -42,7 +42,7 @@
 
 
   <ItemGroup>
-    <PackageReference Include="DotNetHelper.ObjectToSql" Version="1.0.62" />
+    <PackageReference Include="DotNetHelper.ObjectToSql" Version="1.0.89" />
     <!--<ProjectReference Include="..\..\..\DotNetHelper.ObjectToSql\src\DotNetHelper.ObjectToSql\DotNetHelper.ObjectToSql.csproj" />-->  
   </ItemGroup>
 

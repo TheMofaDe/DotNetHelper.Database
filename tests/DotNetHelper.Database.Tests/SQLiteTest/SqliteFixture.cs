@@ -40,7 +40,7 @@ namespace DotNetHelper.Database.Tests.SQLiteTest
                 File.Delete(TestHelper.LocalDatabaseFile);
           //  File.Create(TestHelper.LocalDatabaseFile);
             var assemblyResources = Assembly.GetExecutingAssembly().GetManifestResourceNames(); //example DotNetHelper.Database.Tests.Scripts.sqlserver.sql
-            var sqls = assemblyResources.Where(str => str.Contains($"{DatabaseAccess.SqlSyntaxHelper.DataBaseType}")).ToList();
+            var sqls = assemblyResources.Where(str => str.Contains($"{DatabaseAccess.DatabaseType}")).ToList();
             sqls.ForEach(delegate (string s)
             {
                 var result = DatabaseAccess.ExecuteNonQuery(TestHelper.GetEmbeddedResourceFile(s), CommandType.Text);
@@ -74,9 +74,10 @@ namespace DotNetHelper.Database.Tests.SQLiteTest
         public void Test_ExecuteNonQuery_AddsNewEmployee()
         {
             var newEmployee = MockEmployee.Hashset.Take(2).Last();
-            var sql = DatabaseAccess.ObjectToSql.BuildQuery<Employee>(null, ActionType.Insert);
-            var dbParameters = DatabaseAccess.ObjectToSql.BuildDbParameterList(newEmployee, (s, o) => DatabaseAccess.GetNewParameter(s, o), null, null, null);
-            var outputtedResult = DatabaseAccess.ExecuteNonQuery(sql, CommandType.Text, dbParameters);
+            //var sql = DatabaseAccess.ObjectToSql.BuildQuery<Employee>(null, ActionType.Insert);
+            //var dbParameters = DatabaseAccess.ObjectToSql.BuildDbParameterList(newEmployee, (s, o) => DatabaseAccess.GetNewParameter(s, o), null, null, null);
+            //var outputtedResult = DatabaseAccess.ExecuteNonQuery(sql, CommandType.Text, dbParameters);
+            var outputtedResult = DatabaseAccess.Execute(newEmployee, ActionType.Insert);
             Assert.AreEqual(outputtedResult, 1, "Something went wrong add new employee record");
         }
 
@@ -103,6 +104,9 @@ namespace DotNetHelper.Database.Tests.SQLiteTest
         [Order(4)]
         public void Test_GetDataTableWithSchema_Returns_All_Data_And_Has_Correct_Schema()
         {
+#if NET452
+            return; // NOT SUPPORT BY OLD VERSION OF SQLITE
+#else
             var dt = DatabaseAccess.GetDataTableWithSchema($"SELECT * FROM Employee");
             dt.TableName = "Employee";
 
@@ -112,12 +116,17 @@ namespace DotNetHelper.Database.Tests.SQLiteTest
            // Assert.AreEqual(dt.Columns["IdentityField"].ReadOnly, true);
            // Assert.AreEqual(dt.Columns["FirstName"].MaxLength, 400);
             Assert.AreEqual(dt.Rows.Count, 3);
+#endif
         }
+        
 
         [Test]
         [Order(5)]
         public void Test_GetDataTableWithKeyInfo_Returns_All_Data_And_Has_Correct_Schema()
         {
+#if NET452
+            return; // NOT SUPPORT BY OLD VERSION OF SQLITE
+#else
             var dt = DatabaseAccess.GetDataTableWithKeyInfo($"SELECT * FROM Employee");
             dt.TableName = "Employee";
 
@@ -128,6 +137,8 @@ namespace DotNetHelper.Database.Tests.SQLiteTest
           //  Assert.AreEqual(dt.Columns["FirstName"].MaxLength, 400,"max length not in sync");
             Assert.Contains(dt.Columns["IdentityField"], dt.PrimaryKey,"key missings");
             Assert.AreEqual(dt.Rows.Count, 3);
+#endif
+
         }
 
 
@@ -135,12 +146,16 @@ namespace DotNetHelper.Database.Tests.SQLiteTest
         [Order(6)]
         public void Test_MapDataTableToList()
         {
+#if NET452
+            return; // NOT SUPPORT BY OLD VERSION OF SQLITE
+#else
             var dt = DatabaseAccess.GetDataTableWithSchema($"SELECT * FROM Employee");
             var list = dt.MapToList<Employee>(); // .OrderBy(e => e.IdentityField ).ToList();
             Assert.AreEqual(dt.Rows.Count, 3);
             Assert.IsTrue(CompareEmployees(list[0], MockEmployee.Hashset.Take(1).Last()));
             Assert.IsTrue(CompareEmployees(list[1], MockEmployee.Hashset.Take(2).Last()));
             Assert.IsTrue(CompareEmployees(list[2], MockEmployee.Hashset.Take(3).Last()));
+#endif
         }
 
 

@@ -90,7 +90,7 @@ namespace DotNetHelper.Database.Tests.SQLServerTests
         {
 
             var assemblyResources = Assembly.GetExecutingAssembly().GetManifestResourceNames(); //example DotNetHelper.Database.Tests.Scripts.sqlserver.sql
-            var sqls = assemblyResources.Where(str => str.EndsWith($"{DatabaseAccess.SqlSyntaxHelper.DataBaseType}.sql", StringComparison.OrdinalIgnoreCase)).ToList();
+            var sqls = assemblyResources.Where(str => str.EndsWith($"{DatabaseAccess.DatabaseType}.sql", StringComparison.OrdinalIgnoreCase)).ToList();
             sqls.ForEach(delegate (string s)
             {
                 var result = DatabaseAccess.ExecuteNonQuery(TestHelper.GetEmbeddedResourceFile(s), CommandType.Text);
@@ -152,7 +152,7 @@ namespace DotNetHelper.Database.Tests.SQLServerTests
         }
         public bool CompareEmployees(List<Employee> one, List<Employee> two)
         {
-            var index = 0;
+            const int index = 0;
              foreach(var employee in one)
             {
                 if (!CompareEmployees(employee, two[index]))

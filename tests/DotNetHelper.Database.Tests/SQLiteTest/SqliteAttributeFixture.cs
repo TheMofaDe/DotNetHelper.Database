@@ -90,9 +90,11 @@ namespace DotNetHelper.Database.Tests.SQLiteTest
         [OneTimeSetUp]
         public void RunBeforeAnyTests()
         {
+            if (File.Exists(TestHelper.LocalDatabaseFile))
+                File.Delete(TestHelper.LocalDatabaseFile);
 
             var assemblyResources = Assembly.GetExecutingAssembly().GetManifestResourceNames(); //example DotNetHelper.Database.Tests.Scripts.Sqlite.sql
-            var sqls = assemblyResources.Where(str => str.Contains($"{DatabaseAccess.SqlSyntaxHelper.DataBaseType}")).ToList();
+            var sqls = assemblyResources.Where(str => str.Contains($"{DatabaseAccess.DatabaseType}")).ToList();
             sqls.ForEach(delegate (string s)
             {
                 var result = DatabaseAccess.ExecuteNonQuery(TestHelper.GetEmbeddedResourceFile(s), CommandType.Text);

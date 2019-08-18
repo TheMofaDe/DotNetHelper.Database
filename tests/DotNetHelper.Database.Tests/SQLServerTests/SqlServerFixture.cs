@@ -36,7 +36,7 @@ namespace DotNetHelper.Database.Tests.SQLServerTests
         public void RunBeforeAnyTests()
         {
             var assemblyResources = Assembly.GetExecutingAssembly().GetManifestResourceNames(); //example DotNetHelper.Database.Tests.Scripts.sqlserver.sql
-            var sqls = assemblyResources.Where(str => str.EndsWith($"{DatabaseAccess.SqlSyntaxHelper.DataBaseType}.sql",StringComparison.OrdinalIgnoreCase)).ToList();
+            var sqls = assemblyResources.Where(str => str.EndsWith($"{DatabaseAccess.DatabaseType}.sql",StringComparison.OrdinalIgnoreCase)).ToList();
             sqls.ForEach(delegate(string s)
             {
                var result = DatabaseAccess.ExecuteNonQuery(TestHelper.GetEmbeddedResourceFile(s), CommandType.Text);
@@ -70,9 +70,10 @@ namespace DotNetHelper.Database.Tests.SQLServerTests
         public void Test_ExecuteNonQuery_AddsNewEmployee()
         {
             var newEmployee = MockEmployee.Hashset.Take(2).Last();
-            var sql = DatabaseAccess.ObjectToSql.BuildQuery<Employee>(null, ActionType.Insert);
-            var dbParameters = DatabaseAccess.ObjectToSql.BuildDbParameterList(newEmployee,(s, o) => DatabaseAccess.GetNewParameter(s,o),null,null,null);
-            var outputtedResult = DatabaseAccess.ExecuteNonQuery(sql,CommandType.Text,dbParameters);
+            //var sql = DatabaseAccess.ObjectToSql.BuildQuery<Employee>(null, ActionType.Insert);
+            //var dbParameters = DatabaseAccess.ObjectToSql.BuildDbParameterList(newEmployee,(s, o) => DatabaseAccess.GetNewParameter(s,o),null,null,null);
+            //var outputtedResult = DatabaseAccess.ExecuteNonQuery(sql,CommandType.Text,dbParameters);
+            var outputtedResult = DatabaseAccess.Execute(newEmployee, ActionType.Insert);
             Assert.AreEqual(outputtedResult, 1, "Something went wrong add new employee record");
         }
 

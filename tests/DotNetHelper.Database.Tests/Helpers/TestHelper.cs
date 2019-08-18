@@ -7,7 +7,27 @@ namespace DotNetHelper.Database.Tests.Helpers
     {
         public static string SQLServerConnectionString { get; set; } = GetCS();
 
-        public static string LocalDatabaseFile { get; } = $"{Path.Combine(Environment.CurrentDirectory, "data.db")}";
+        public static string GetCurrentDirectory
+        {
+            get
+            {
+#if NET452
+                if (Environment.MachineName == "DESKTOP-MEON7CL")
+                {
+                    return $@"C:\Temp";
+                }
+                else
+                {
+                    return $"{Environment.CurrentDirectory}";
+                }
+
+#else
+            return $"{Environment.CurrentDirectory}";
+#endif
+            }
+        }
+
+        public static string LocalDatabaseFile { get; } = $"{Path.Combine(GetCurrentDirectory, "data.db")}";
         public static string SqliteConnectionString { get; set; } = $"Data Source={LocalDatabaseFile};";
         private static string GetCS()
         {
