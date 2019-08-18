@@ -54,7 +54,7 @@ namespace DotNetHelper.Database.Extension
         }
 
 
-        private static T DataRecordToT<T>(IDataReader reader, Dictionary<string, int> readerFieldLookup, Func<string,Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer) where T : class
+        private static T DataRecordToT<T>(IDataReader reader, Dictionary<string, int> readerFieldLookup, Func<string, Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer) where T : class
         {
 
             if (typeof(T).IsTypeDynamic())
@@ -73,24 +73,24 @@ namespace DotNetHelper.Database.Extension
                 var memberWrappers = ExtFastMember.GetMemberWrappers<T>(true);
                 readerFieldLookup.ForEach(delegate (KeyValuePair<string, int> pair)
                 {
-                    var memberWrapper = memberWrappers.FirstOrDefault(w =>w.GetNameFromCustomAttributeOrDefault() == pair.Key);
+                    var memberWrapper = memberWrappers.FirstOrDefault(w => w.GetNameFromCustomAttributeOrDefault() == pair.Key);
                     if (memberWrapper != null)
                     {
                         var value = reader.GetValue(pair.Value);
-                            DeserializeMemberValueIfNeeded(memberWrapper, ref value, xmlDeserializer, jsonDeserializer, csvDeserializer);
-                         try
-                         {
-                             ExtFastMember.SetMemberValue(newInstance, memberWrapper.Name, value);
-                         }
-                         catch (InvalidOperationException) { } // These are properties or field without a setter
-                         catch (ArgumentOutOfRangeException) { }
+                        DeserializeMemberValueIfNeeded(memberWrapper, ref value, xmlDeserializer, jsonDeserializer, csvDeserializer);
+                        try
+                        {
+                            ExtFastMember.SetMemberValue(newInstance, memberWrapper.Name, value);
+                        }
+                        catch (InvalidOperationException) { } // These are properties or field without a setter
+                        catch (ArgumentOutOfRangeException) { }
 
                     }
                     else
                     {
                         // Datareader return a columns that doesn't exist in type so skip it
                     }
-                 
+
                 });
                 return newInstance;
             }
@@ -111,7 +111,7 @@ namespace DotNetHelper.Database.Extension
             {
                 return new List<T>() { };
             }
-            var pocoList = new List<T>(){};
+            var pocoList = new List<T>() { };
 
             // Cache the field names in the reader for use in our while loop for efficiency.
             var readerFieldLookup = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase); // store name and ordinal
@@ -132,7 +132,7 @@ namespace DotNetHelper.Database.Extension
 
             while (reader.Read())
             {
-                pocoList.Add(DataRecordToT<T>(reader,readerFieldLookup,xmlDeserializer,jsonDeserializer,csvDeserializer));
+                pocoList.Add(DataRecordToT<T>(reader, readerFieldLookup, xmlDeserializer, jsonDeserializer, csvDeserializer));
             }
             reader.Close();
             reader.Dispose();
@@ -146,7 +146,7 @@ namespace DotNetHelper.Database.Extension
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="reader"></param>
-        
+
         /// <returns></returns>
         public static List<T> MapToList<T>(this IDataReader reader) where T : class
         {
@@ -218,7 +218,7 @@ namespace DotNetHelper.Database.Extension
         /// <param name="xmlDeserializer">Func that will be used to deserialize a database value</param>
         /// <param name="jsonDeserializer">Func that will be used to deserialize a database value</param>
         /// <param name="csvDeserializer">Func that will be used to deserialize a database value</param>
-        private static void DeserializeMemberValueIfNeeded(MemberWrapper member,ref object value, Func<string, Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer)
+        private static void DeserializeMemberValueIfNeeded(MemberWrapper member, ref object value, Func<string, Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer)
         {
             var sqlAttribute = member.GetCustomAttribute<SqlColumnAttribute>();
             if (sqlAttribute != null && sqlAttribute.SerializableType != SerializableType.NONE)
@@ -226,8 +226,8 @@ namespace DotNetHelper.Database.Extension
                 switch (sqlAttribute.SerializableType)
                 {
                     case SerializableType.XML:
-                        if(xmlDeserializer == null) throw new ArgumentNullException(nameof(xmlDeserializer),ExceptionHelper.NullDeSerializer(sqlAttribute.SerializableType,member.Name));
-                        value = xmlDeserializer.Invoke(value as string,member.Type);
+                        if (xmlDeserializer == null) throw new ArgumentNullException(nameof(xmlDeserializer), ExceptionHelper.NullDeSerializer(sqlAttribute.SerializableType, member.Name));
+                        value = xmlDeserializer.Invoke(value as string, member.Type);
                         break;
                     case SerializableType.JSON:
                         if (jsonDeserializer == null) throw new ArgumentNullException(nameof(jsonDeserializer), ExceptionHelper.NullDeSerializer(sqlAttribute.SerializableType, member.Name));
@@ -249,7 +249,7 @@ namespace DotNetHelper.Database.Extension
             var dt = new DataTable();
             if (source.Count() == 0)
             {
-                if(source is IEnumerable<IDynamicMetaObjectProvider>) 
+                if (source is IEnumerable<IDynamicMetaObjectProvider>)
                     return dt;
                 // IF THIS IS NOT DYNAMIC WE CAN AT LEAST APPLY THE DATA TABLE SCHEMA
             }
@@ -264,7 +264,7 @@ namespace DotNetHelper.Database.Extension
             }
 
             var keyColumns = new List<DataColumn>() { };
-            members.ForEach(delegate(MemberWrapper member)
+            members.ForEach(delegate (MemberWrapper member)
             {
                 var dc = new DataColumn(member.GetNameFromCustomAttributeOrDefault(), member.Type);
 
@@ -278,7 +278,7 @@ namespace DotNetHelper.Database.Extension
             });
             dt.PrimaryKey = keyColumns.ToArray();
 
-            source.AsList().ForEach(delegate(T obj)
+            source.AsList().ForEach(delegate (T obj)
             {
                 var row = dt.NewRow();
                 members.ForEach(w => row[w.Name] = w.GetValue(obj));

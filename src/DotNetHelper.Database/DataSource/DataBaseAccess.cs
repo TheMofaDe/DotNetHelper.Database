@@ -17,7 +17,7 @@ namespace DotNetHelper.Database.DataSource
     /// </summary>
     /// <typeparam name="C">An implementation of IDBConnection</typeparam>
     /// <typeparam name="P">The corresponding DbParameter class to ties with the specified IDBConnection </typeparam>
-    public class DatabaseAccess<C, P> : IDatabaseAccess where C : class, IDbConnection, IDisposable,  new() where P : DbParameter, new()  
+    public class DatabaseAccess<C, P> : IDatabaseAccess where C : class, IDbConnection, IDisposable, new() where P : DbParameter, new()
     {
         /// <summary>
         /// The connection string to the database
@@ -40,26 +40,26 @@ namespace DotNetHelper.Database.DataSource
         /// </summary>
         public DataBaseType DatabaseType => ObjectToSql.DatabaseType;
 
-      //  private SqlSyntaxHelper SqlSyntaxHelper { get; }
+        //  private SqlSyntaxHelper SqlSyntaxHelper { get; }
 
-    //    private object Lock { get; } = new object();
+        //    private object Lock { get; } = new object();
 
         public DatabaseAccess(DataBaseType type)
         {
-         //   SqlSyntaxHelper = new SqlSyntaxHelper(type);
+            //   SqlSyntaxHelper = new SqlSyntaxHelper(type);
             ObjectToSql = new ObjectToSql.Services.ObjectToSql(type);
         }
         public DatabaseAccess(DataBaseType type, string connectionString)
         {
             ConnectionString = connectionString;
-          //  SqlSyntaxHelper = new SqlSyntaxHelper(type);
+            //  SqlSyntaxHelper = new SqlSyntaxHelper(type);
             ObjectToSql = new ObjectToSql.Services.ObjectToSql(type);
         }
         public DatabaseAccess(DataBaseType type, string connectionString, TimeSpan commandTimeOut)
         {
             ConnectionString = connectionString;
             CommandTimeOut = commandTimeOut;
-         //   SqlSyntaxHelper = new SqlSyntaxHelper(type);
+            //   SqlSyntaxHelper = new SqlSyntaxHelper(type);
             ObjectToSql = new ObjectToSql.Services.ObjectToSql(type);
         }
         public DatabaseAccess(DataBaseType type, string connectionString, TimeSpan commandTimeOut, TimeSpan connectionTimeOut)
@@ -67,7 +67,7 @@ namespace DotNetHelper.Database.DataSource
             ConnectionString = connectionString;
             CommandTimeOut = commandTimeOut;
             ConnectionTimeOut = connectionTimeOut;
-         //   SqlSyntaxHelper = new SqlSyntaxHelper(type);
+            //   SqlSyntaxHelper = new SqlSyntaxHelper(type);
             ObjectToSql = new ObjectToSql.Services.ObjectToSql(type);
         }
 
@@ -200,7 +200,7 @@ namespace DotNetHelper.Database.DataSource
         {
             using (var connection = GetNewConnection(true))
             {
-               return ExecuteTransaction(connection,sqls, rollbackOnException, throwException);
+                return ExecuteTransaction(connection, sqls, rollbackOnException, throwException);
             }
         }
 
@@ -394,7 +394,7 @@ namespace DotNetHelper.Database.DataSource
         /// <param name="csvDeserializer"></param>
         /// <param name="parameters"></param>
         /// <returns>The sql result mapped to a list of </returns>
-        public List<T> Get<T>(string sql, CommandType commandType, Func<string,Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer, List<DbParameter> parameters = null) where T : class
+        public List<T> Get<T>(string sql, CommandType commandType, Func<string, Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer, List<DbParameter> parameters = null) where T : class
         {
             return GetDataReader(sql, commandType).MapToList<T>(xmlDeserializer, jsonDeserializer, csvDeserializer);
         }
@@ -413,7 +413,7 @@ namespace DotNetHelper.Database.DataSource
         /// <returns>The sql result mapped to a list of </returns>
         public List<T> Get<T>(C connection, string sql, CommandType commandType, Func<string, Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer, List<DbParameter> parameters = null) where T : class
         {
-            return GetDataReader(connection,sql, commandType,parameters).MapToList<T>(xmlDeserializer, jsonDeserializer, csvDeserializer);
+            return GetDataReader(connection, sql, commandType, parameters).MapToList<T>(xmlDeserializer, jsonDeserializer, csvDeserializer);
         }
 
         /// <summary>
@@ -423,7 +423,7 @@ namespace DotNetHelper.Database.DataSource
         /// <returns></returns>
         public List<T> Get<T>() where T : class
         {
-           return  Get<T>(null,null,null);
+            return Get<T>(null, null, null);
         }
 
 
@@ -464,7 +464,7 @@ namespace DotNetHelper.Database.DataSource
         /// <returns># of rows affected</returns>
         public int Execute<T>(T instance, ActionType actionType) where T : class
         {
-            return Execute(instance, actionType,null, null, null, null);
+            return Execute(instance, actionType, null, null, null, null);
         }
 
         /// <summary>
@@ -511,7 +511,7 @@ namespace DotNetHelper.Database.DataSource
         /// <returns></returns>
         public T ExecuteAndGetOutput<T>(T instance, ActionType actionType, params Expression<Func<T, object>>[] outputFields) where T : class
         {
-            return ExecuteAndGetOutput(instance, actionType, null, null, null, null,null,null,outputFields);
+            return ExecuteAndGetOutput(instance, actionType, null, null, null, null, null, null, outputFields);
         }
 
         /// <summary>
@@ -534,7 +534,7 @@ namespace DotNetHelper.Database.DataSource
             , params Expression<Func<T, object>>[] outputFields) where T : class
         {
             var sqlTable = new SQLTable(DatabaseType, typeof(T));
-            var sql = ObjectToSql.BuildQueryWithOutputs<T>( actionType, sqlTable.FullNameWithBrackets, outputFields);
+            var sql = ObjectToSql.BuildQueryWithOutputs<T>(actionType, sqlTable.FullNameWithBrackets, outputFields);
             var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, xmlSerializer, jsonSerializer, csvSerializer);
             return GetDataReader(sql, CommandType.Text, parameters).MapTo<T>(xmlDeserializer, jsonDeserializer, csvDeserializer);
         }
@@ -550,7 +550,7 @@ namespace DotNetHelper.Database.DataSource
             , params Expression<Func<T, object>>[] outputFields) where T : class
         {
             var sqlTable = new SQLTable(DatabaseType, typeof(T));
-            var sql = ObjectToSql.BuildQueryWithOutputs<T>( actionType, sqlTable.FullNameWithBrackets, outputFields);
+            var sql = ObjectToSql.BuildQueryWithOutputs<T>(actionType, sqlTable.FullNameWithBrackets, outputFields);
             var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, xmlSerializer, jsonSerializer, csvSerializer);
             return GetDataReader(sql, CommandType.Text, parameters);
         }

@@ -11,7 +11,7 @@ namespace DotNetHelper.Database.Interface
 {
     public interface IDatabaseAccess
     {
-      
+
 
         /// <summary>
         /// The time in seconds to wait for the command to execute. The default is 30 seconds.

@@ -14,11 +14,11 @@ using NUnit.Framework;
 
 namespace DotNetHelper.Database.Tests.SQLiteTest
 {
-//[Parallelizable(ParallelScope.None)]
+    //[Parallelizable(ParallelScope.None)]
     public class SqliteFixture
     {
 
-        public DatabaseAccess<SqliteConnection, SqliteParameter> DatabaseAccess { get; set; } = new DatabaseAccess<SqliteConnection, SqliteParameter>(DataBaseType.Sqlite,TestHelper.SqliteConnectionString);
+        public DatabaseAccess<SqliteConnection, SqliteParameter> DatabaseAccess { get; set; } = new DatabaseAccess<SqliteConnection, SqliteParameter>(DataBaseType.Sqlite, TestHelper.SqliteConnectionString);
 
         [SetUp]
         public void Setup()
@@ -38,7 +38,7 @@ namespace DotNetHelper.Database.Tests.SQLiteTest
         {
             if (File.Exists(TestHelper.LocalDatabaseFile))
                 File.Delete(TestHelper.LocalDatabaseFile);
-          //  File.Create(TestHelper.LocalDatabaseFile);
+            //  File.Create(TestHelper.LocalDatabaseFile);
             var assemblyResources = Assembly.GetExecutingAssembly().GetManifestResourceNames(); //example DotNetHelper.Database.Tests.Scripts.sqlserver.sql
             var sqls = assemblyResources.Where(str => str.Contains($"{DatabaseAccess.DatabaseType}")).ToList();
             sqls.ForEach(delegate (string s)
@@ -55,7 +55,7 @@ namespace DotNetHelper.Database.Tests.SQLiteTest
                 File.Delete(TestHelper.LocalDatabaseFile);
         }
 
-       
+
 
 
         [Test]
@@ -87,7 +87,7 @@ namespace DotNetHelper.Database.Tests.SQLiteTest
         {
             var newEmployee = MockEmployee.Hashset.Take(3).Last();
             var outputtedResult = DatabaseAccess.Execute(newEmployee, ActionType.Insert);
-           // Assert.GreaterOrEqual(outputtedResult.IdentityField, 2, "Failed to get identity field value");
+            // Assert.GreaterOrEqual(outputtedResult.IdentityField, 2, "Failed to get identity field value");
         }
 
 
@@ -113,12 +113,12 @@ namespace DotNetHelper.Database.Tests.SQLiteTest
             Assert.AreEqual(dt.TableName, "Employee");
             Assert.AreEqual(dt.Columns["IdentityField"].AutoIncrement, true);
             Assert.AreEqual(dt.Columns["IdentityField"].AllowDBNull, false);
-           // Assert.AreEqual(dt.Columns["IdentityField"].ReadOnly, true);
-           // Assert.AreEqual(dt.Columns["FirstName"].MaxLength, 400);
+            // Assert.AreEqual(dt.Columns["IdentityField"].ReadOnly, true);
+            // Assert.AreEqual(dt.Columns["FirstName"].MaxLength, 400);
             Assert.AreEqual(dt.Rows.Count, 3);
 #endif
         }
-        
+
 
         [Test]
         [Order(5)]
@@ -130,12 +130,12 @@ namespace DotNetHelper.Database.Tests.SQLiteTest
             var dt = DatabaseAccess.GetDataTableWithKeyInfo($"SELECT * FROM Employee");
             dt.TableName = "Employee";
 
-            Assert.AreEqual(dt.TableName, "Employee","Table Name is wrong");
-            Assert.AreEqual(dt.Columns["IdentityField"].AutoIncrement, true,"Auto increment");
-            Assert.AreEqual(dt.Columns["IdentityField"].AllowDBNull, false,"allow db null");
-          //  Assert.AreEqual(dt.Columns["IdentityField"].ReadOnly, true,"identity field is not read only");
-          //  Assert.AreEqual(dt.Columns["FirstName"].MaxLength, 400,"max length not in sync");
-            Assert.Contains(dt.Columns["IdentityField"], dt.PrimaryKey,"key missings");
+            Assert.AreEqual(dt.TableName, "Employee", "Table Name is wrong");
+            Assert.AreEqual(dt.Columns["IdentityField"].AutoIncrement, true, "Auto increment");
+            Assert.AreEqual(dt.Columns["IdentityField"].AllowDBNull, false, "allow db null");
+            //  Assert.AreEqual(dt.Columns["IdentityField"].ReadOnly, true,"identity field is not read only");
+            //  Assert.AreEqual(dt.Columns["FirstName"].MaxLength, 400,"max length not in sync");
+            Assert.Contains(dt.Columns["IdentityField"], dt.PrimaryKey, "key missings");
             Assert.AreEqual(dt.Rows.Count, 3);
 #endif
 

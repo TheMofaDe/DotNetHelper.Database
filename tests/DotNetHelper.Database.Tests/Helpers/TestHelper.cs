@@ -22,7 +22,7 @@ namespace DotNetHelper.Database.Tests.Helpers
                 }
 
 #else
-            return $"{Environment.CurrentDirectory}";
+                return $"{Environment.CurrentDirectory}";
 #endif
             }
         }

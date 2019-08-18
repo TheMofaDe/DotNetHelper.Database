@@ -16,7 +16,7 @@ namespace DotNetHelper.Database.Tests.SQLServerTests
     public class SqlServerFixture
     {
 
-        public DatabaseAccess<SqlConnection,SqlParameter> DatabaseAccess { get; set; } = new DatabaseAccess<SqlConnection, SqlParameter>(DataBaseType.SqlServer,TestHelper.SQLServerConnectionString);
+        public DatabaseAccess<SqlConnection, SqlParameter> DatabaseAccess { get; set; } = new DatabaseAccess<SqlConnection, SqlParameter>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString);
 
 
         [SetUp]
@@ -36,18 +36,18 @@ namespace DotNetHelper.Database.Tests.SQLServerTests
         public void RunBeforeAnyTests()
         {
             var assemblyResources = Assembly.GetExecutingAssembly().GetManifestResourceNames(); //example DotNetHelper.Database.Tests.Scripts.sqlserver.sql
-            var sqls = assemblyResources.Where(str => str.EndsWith($"{DatabaseAccess.DatabaseType}.sql",StringComparison.OrdinalIgnoreCase)).ToList();
-            sqls.ForEach(delegate(string s)
+            var sqls = assemblyResources.Where(str => str.EndsWith($"{DatabaseAccess.DatabaseType}.sql", StringComparison.OrdinalIgnoreCase)).ToList();
+            sqls.ForEach(delegate (string s)
             {
-               var result = DatabaseAccess.ExecuteNonQuery(TestHelper.GetEmbeddedResourceFile(s), CommandType.Text);
+                var result = DatabaseAccess.ExecuteNonQuery(TestHelper.GetEmbeddedResourceFile(s), CommandType.Text);
             });
-            
+
         }
 
         [OneTimeTearDown]
         public void RunAfterAnyTests()
         {
-           
+
         }
 
 
@@ -62,7 +62,7 @@ namespace DotNetHelper.Database.Tests.SQLServerTests
             var outputtedResult = DatabaseAccess.Execute(newEmployee, ActionType.Insert);
             Assert.AreEqual(outputtedResult, 1, "Something went wrong add new employee record");
 
-            
+
         }
 
         [Test]
@@ -83,7 +83,7 @@ namespace DotNetHelper.Database.Tests.SQLServerTests
         {
             var newEmployee = MockEmployee.Hashset.Take(3).Last();
             var outputtedResult = DatabaseAccess.ExecuteAndGetOutput(newEmployee, ActionType.Insert, e => e.IdentityField);
-            Assert.GreaterOrEqual(outputtedResult.IdentityField,2,"Failed to get identity field value");
+            Assert.GreaterOrEqual(outputtedResult.IdentityField, 2, "Failed to get identity field value");
         }
 
 
@@ -123,7 +123,7 @@ namespace DotNetHelper.Database.Tests.SQLServerTests
             Assert.AreEqual(dt.Columns["IdentityField"].AllowDBNull, false);
             Assert.AreEqual(dt.Columns["IdentityField"].ReadOnly, true);
             Assert.AreEqual(dt.Columns["FirstName"].MaxLength, 400);
-            Assert.Contains(dt.Columns["IdentityField"],dt.PrimaryKey);
+            Assert.Contains(dt.Columns["IdentityField"], dt.PrimaryKey);
             Assert.AreEqual(dt.Rows.Count, 3);
         }
 
@@ -169,7 +169,7 @@ namespace DotNetHelper.Database.Tests.SQLServerTests
 
         public bool CompareEmployees(Employee one, Employee two)
         {
-            var match = 
+            var match =
                 one.LastName == two.LastName
                 && one.CreatedAt == two.CreatedAt
                 && one.DateOfBirth == two.DateOfBirth

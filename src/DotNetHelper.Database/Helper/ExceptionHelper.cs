@@ -8,7 +8,7 @@ namespace DotNetHelper.Database.Helper
 {
     internal static class ExceptionHelper
     {
-       
+
         public static string NullDeSerializer(SerializableType type, string propertyName)
         {
 

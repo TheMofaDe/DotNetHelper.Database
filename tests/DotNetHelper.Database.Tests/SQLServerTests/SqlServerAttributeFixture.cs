@@ -27,13 +27,13 @@ namespace DotNetHelper.Database.Tests.SQLServerTests
     {
 
         public SQLTable Table { get; } = new SQLTable(DataBaseType.SqlServer, typeof(EmployeeSerialize));
-       
-        public ISerializer Json { get; } = new DataSourceJson(new JsonSerializerSettings(){Formatting = Formatting.None});
+
+        public ISerializer Json { get; } = new DataSourceJson(new JsonSerializerSettings() { Formatting = Formatting.None });
         public ISerializer Csv { get; } = new DataSourceCsv(new Configuration());
-        public DatabaseAccess<SqlConnection,SqlParameter> DatabaseAccess { get; set; } = new DatabaseAccess<SqlConnection, SqlParameter>(DataBaseType.SqlServer,TestHelper.SQLServerConnectionString);
+        public DatabaseAccess<SqlConnection, SqlParameter> DatabaseAccess { get; set; } = new DatabaseAccess<SqlConnection, SqlParameter>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString);
 
 
-        public  string SerializeObject<T>( T toSerialize)
+        public string SerializeObject<T>(T toSerialize)
         {
             var xmlSerializer = new XmlSerializer(toSerialize.GetType());
 
@@ -43,7 +43,7 @@ namespace DotNetHelper.Database.Tests.SQLServerTests
                 return textWriter.ToString();
             }
         }
-        public object DeSerializeObject(string obj,Type type)
+        public object DeSerializeObject(string obj, Type type)
         {
             var ser = new XmlSerializer(type);
 
@@ -55,8 +55,8 @@ namespace DotNetHelper.Database.Tests.SQLServerTests
 
         public EmployeeSerialize GetEmployeeSerialize(int index)
         {
-             var employee = MockEmployee.Hashset.Take(index).First();
-            return  new EmployeeSerialize()
+            var employee = MockEmployee.Hashset.Take(index).First();
+            return new EmployeeSerialize()
             {
                 EmployeeAsCsv = employee
                 ,
@@ -100,7 +100,7 @@ namespace DotNetHelper.Database.Tests.SQLServerTests
         [OneTimeTearDown]
         public void RunAfterAnyTests()
         {
-           
+
         }
 
         [Test]
@@ -109,14 +109,14 @@ namespace DotNetHelper.Database.Tests.SQLServerTests
         {
 
             var obj = GetEmployeeSerialize(1);
-            var recordCount = DatabaseAccess.Execute(obj,ActionType.Insert,null,SerializeObject,Json.SerializeToString,Csv.SerializeToString);
+            var recordCount = DatabaseAccess.Execute(obj, ActionType.Insert, null, SerializeObject, Json.SerializeToString, Csv.SerializeToString);
         }
 
         [Test]
         public void Test_Get_Throws_NullArgument_When_No_Deserializer_Func_Is_Not_Provided()
         {
             var obj = GetEmployeeSerialize(1);
-            Assert.That(() => DatabaseAccess.Execute(obj,ActionType.Insert),
+            Assert.That(() => DatabaseAccess.Execute(obj, ActionType.Insert),
                 Throws.Exception
                     .TypeOf<ArgumentNullException>());
         }
@@ -126,17 +126,17 @@ namespace DotNetHelper.Database.Tests.SQLServerTests
         public void Test_Object_With_Serialized_Value_Pull_From_DataBase_Deserialize()
         {
             var mockObj = GetEmployeeSerialize(1);
-            var objs = DatabaseAccess.Get<EmployeeSerialize>(DeSerializeObject,(s, type) => Json.Deserialize(s,type),(s, type) => Csv.Deserialize(s,type)  );
+            var objs = DatabaseAccess.Get<EmployeeSerialize>(DeSerializeObject, (s, type) => Json.Deserialize(s, type), (s, type) => Csv.Deserialize(s, type));
             var obj = objs.First();
 
-  
+
             Assert.IsTrue(CompareEmployees(obj.EmployeeAsCsv, mockObj.EmployeeAsCsv));
             Assert.IsTrue(CompareEmployees(obj.EmployeeAsJson, mockObj.EmployeeAsJson));
             Assert.IsTrue(CompareEmployees(obj.EmployeeAsXml, mockObj.EmployeeAsXml));
             Assert.IsTrue(CompareEmployees(obj.EmployeeListAsCsv, mockObj.EmployeeListAsCsv));
             Assert.IsTrue(CompareEmployees(obj.EmployeeListAsJson, mockObj.EmployeeListAsJson));
             Assert.IsTrue(CompareEmployees(obj.EmployeeListAsXml, mockObj.EmployeeListAsXml));
-         
+
 
         }
 
@@ -153,13 +153,13 @@ namespace DotNetHelper.Database.Tests.SQLServerTests
         public bool CompareEmployees(List<Employee> one, List<Employee> two)
         {
             const int index = 0;
-             foreach(var employee in one)
+            foreach (var employee in one)
             {
                 if (!CompareEmployees(employee, two[index]))
                     return false;
             }
 
-             return true;
+            return true;
         }
 
     }

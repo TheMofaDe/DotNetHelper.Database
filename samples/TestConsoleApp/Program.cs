@@ -29,7 +29,7 @@ namespace TestConsoleApp
 
         public string FavoriteColor { get; set; }
         public DateTime CreatedAt { get; } = new DateTime();
-        
+
     }
     class Program
     {
@@ -38,7 +38,7 @@ namespace TestConsoleApp
         {
             Console.WriteLine("Hello World!");
 
-           
+
         }
 
     }
