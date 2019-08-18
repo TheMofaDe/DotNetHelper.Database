@@ -1,5 +1,5 @@
 variables:
-  DOTNET_SDK_VERSION: '2.2.105'
+  DOTNET_SDK_VERSION: '2.2.105' # see on when you can upgrade https://github.com/cake-build/cake/issues/2497
   DOTNET_PACKAGE_TYPE: 'sdk'
   RUBY_VERSION: '2.5'
 
