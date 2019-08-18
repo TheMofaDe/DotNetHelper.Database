@@ -15,18 +15,24 @@ items:
   - DotNetHelper.Database.DatabaseAccessFactory.DatabaseType
   - DotNetHelper.Database.DatabaseAccessFactory.DbProviderFactory
   - DotNetHelper.Database.DatabaseAccessFactory.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType)
+  - DotNetHelper.Database.DatabaseAccessFactory.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
   - DotNetHelper.Database.DatabaseAccessFactory.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
   - DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   - DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   - DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutputAsDataReader``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   - DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutputAsDataReader``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  - DotNetHelper.Database.DatabaseAccessFactory.ExecuteNonQuery(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
   - DotNetHelper.Database.DatabaseAccessFactory.ExecuteNonQuery(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
+  - DotNetHelper.Database.DatabaseAccessFactory.ExecuteScalar(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   - DotNetHelper.Database.DatabaseAccessFactory.ExecuteScalar(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   - DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
+  - DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Data.Common.DbConnection,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
   - DotNetHelper.Database.DatabaseAccessFactory.Get``1
+  - DotNetHelper.Database.DatabaseAccessFactory.Get``1(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Collections.Generic.List{System.Data.Common.DbParameter})
   - DotNetHelper.Database.DatabaseAccessFactory.Get``1(System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object})
   - DotNetHelper.Database.DatabaseAccessFactory.Get``1(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   - DotNetHelper.Database.DatabaseAccessFactory.Get``1(System.String,System.Data.CommandType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Collections.Generic.List{System.Data.Common.DbParameter})
+  - DotNetHelper.Database.DatabaseAccessFactory.GetDataReader(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   - DotNetHelper.Database.DatabaseAccessFactory.GetDataReader(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   - DotNetHelper.Database.DatabaseAccessFactory.GetDataTable(System.String)
   - DotNetHelper.Database.DatabaseAccessFactory.GetDataTable(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
@@ -38,8 +44,6 @@ items:
   - DotNetHelper.Database.DatabaseAccessFactory.GetNewCommandAndTransaction(System.Data.IDbConnection)
   - DotNetHelper.Database.DatabaseAccessFactory.GetNewConnection(System.Boolean)
   - DotNetHelper.Database.DatabaseAccessFactory.GetNewParameter(System.String,System.Object)
-  - DotNetHelper.Database.DatabaseAccessFactory.ObjectToSql
-  - DotNetHelper.Database.DatabaseAccessFactory.SqlSyntaxHelper
   langs:
   - csharp
   - vb
@@ -54,7 +58,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: DatabaseAccessFactory
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 22
+    startLine: 21
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -81,41 +85,6 @@ items:
   modifiers.vb:
   - Public
   - Class
-- uid: DotNetHelper.Database.DatabaseAccessFactory.DbProviderFactory
-  commentId: P:DotNetHelper.Database.DatabaseAccessFactory.DbProviderFactory
-  id: DbProviderFactory
-  parent: DotNetHelper.Database.DatabaseAccessFactory
-  langs:
-  - csharp
-  - vb
-  name: DbProviderFactory
-  nameWithType: DatabaseAccessFactory.DbProviderFactory
-  fullName: DotNetHelper.Database.DatabaseAccessFactory.DbProviderFactory
-  type: Property
-  source:
-    remote:
-      path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
-    id: DbProviderFactory
-    path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 24
-  assemblies:
-  - DotNetHelper.Database
-  namespace: DotNetHelper.Database
-  syntax:
-    content: public DbProviderFactory DbProviderFactory { get; }
-    parameters: []
-    return:
-      type: System.Data.Common.DbProviderFactory
-    content.vb: Public ReadOnly Property DbProviderFactory As DbProviderFactory
-  overload: DotNetHelper.Database.DatabaseAccessFactory.DbProviderFactory*
-  modifiers.csharp:
-  - public
-  - get
-  modifiers.vb:
-  - Public
-  - ReadOnly
 - uid: DotNetHelper.Database.DatabaseAccessFactory.CommandTimeOut
   commentId: P:DotNetHelper.Database.DatabaseAccessFactory.CommandTimeOut
   id: CommandTimeOut
@@ -134,10 +103,12 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: CommandTimeOut
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 25
+    startLine: 27
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
+  summary: "\nThe time in seconds to wait for the command to execute. The default is 30 seconds.\n"
+  example: []
   syntax:
     content: public TimeSpan CommandTimeOut { get; set; }
     parameters: []
@@ -171,10 +142,12 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ConnectionTimeOut
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 26
+    startLine: 31
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
+  summary: "\nThe time (in seconds) to wait for a connection to open. The default value is 15 seconds.\n"
+  example: []
   syntax:
     content: public TimeSpan ConnectionTimeOut { get; set; }
     parameters: []
@@ -208,10 +181,12 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: DatabaseType
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 27
+    startLine: 39
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
+  summary: "\nThe type of database. This property is only used to control how sql is generated\n"
+  example: []
   syntax:
     content: public DataBaseType DatabaseType { get; }
     parameters: []
@@ -227,74 +202,35 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: DotNetHelper.Database.DatabaseAccessFactory.ObjectToSql
-  commentId: P:DotNetHelper.Database.DatabaseAccessFactory.ObjectToSql
-  id: ObjectToSql
+- uid: DotNetHelper.Database.DatabaseAccessFactory.DbProviderFactory
+  commentId: P:DotNetHelper.Database.DatabaseAccessFactory.DbProviderFactory
+  id: DbProviderFactory
   parent: DotNetHelper.Database.DatabaseAccessFactory
   langs:
   - csharp
   - vb
-  name: ObjectToSql
-  nameWithType: DatabaseAccessFactory.ObjectToSql
-  fullName: DotNetHelper.Database.DatabaseAccessFactory.ObjectToSql
+  name: DbProviderFactory
+  nameWithType: DatabaseAccessFactory.DbProviderFactory
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.DbProviderFactory
   type: Property
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
       branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
-    id: ObjectToSql
+    id: DbProviderFactory
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 28
+    startLine: 41
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
   syntax:
-    content: public ObjectToSql ObjectToSql { get; }
+    content: public DbProviderFactory DbProviderFactory { get; }
     parameters: []
     return:
-      type: DotNetHelper.ObjectToSql.Services.ObjectToSql
-    content.vb: Public ReadOnly Property ObjectToSql As ObjectToSql
-  overload: DotNetHelper.Database.DatabaseAccessFactory.ObjectToSql*
-  implements:
-  - DotNetHelper.Database.Interface.IDatabaseAccess.ObjectToSql
-  modifiers.csharp:
-  - public
-  - get
-  modifiers.vb:
-  - Public
-  - ReadOnly
-- uid: DotNetHelper.Database.DatabaseAccessFactory.SqlSyntaxHelper
-  commentId: P:DotNetHelper.Database.DatabaseAccessFactory.SqlSyntaxHelper
-  id: SqlSyntaxHelper
-  parent: DotNetHelper.Database.DatabaseAccessFactory
-  langs:
-  - csharp
-  - vb
-  name: SqlSyntaxHelper
-  nameWithType: DatabaseAccessFactory.SqlSyntaxHelper
-  fullName: DotNetHelper.Database.DatabaseAccessFactory.SqlSyntaxHelper
-  type: Property
-  source:
-    remote:
-      path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
-    id: SqlSyntaxHelper
-    path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 29
-  assemblies:
-  - DotNetHelper.Database
-  namespace: DotNetHelper.Database
-  syntax:
-    content: public SqlSyntaxHelper SqlSyntaxHelper { get; }
-    parameters: []
-    return:
-      type: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
-    content.vb: Public ReadOnly Property SqlSyntaxHelper As SqlSyntaxHelper
-  overload: DotNetHelper.Database.DatabaseAccessFactory.SqlSyntaxHelper*
-  implements:
-  - DotNetHelper.Database.Interface.IDatabaseAccess.SqlSyntaxHelper
+      type: System.Data.Common.DbProviderFactory
+    content.vb: Public ReadOnly Property DbProviderFactory As DbProviderFactory
+  overload: DotNetHelper.Database.DatabaseAccessFactory.DbProviderFactory*
   modifiers.csharp:
   - public
   - get
@@ -319,7 +255,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: .ctor
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 33
+    startLine: 44
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -354,7 +290,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: .ctor
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 40
+    startLine: 50
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -389,7 +325,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: .ctor
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 48
+    startLine: 57
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -424,7 +360,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: .ctor
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 54
+    startLine: 62
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -461,18 +397,18 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewConnection
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 64
+    startLine: 71
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
   syntax:
-    content: public IDbConnection GetNewConnection(bool openConnection)
+    content: public DbConnection GetNewConnection(bool openConnection)
     parameters:
     - id: openConnection
       type: System.Boolean
     return:
-      type: System.Data.IDbConnection
-    content.vb: Public Function GetNewConnection(openConnection As Boolean) As IDbConnection
+      type: System.Data.Common.DbConnection
+    content.vb: Public Function GetNewConnection(openConnection As Boolean) As DbConnection
   overload: DotNetHelper.Database.DatabaseAccessFactory.GetNewConnection*
   modifiers.csharp:
   - public
@@ -496,23 +432,30 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewCommand
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 72
+    startLine: 89
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
+  summary: "\ncreates a new dbcommand from the connection\n"
+  example: []
   syntax:
     content: public IDbCommand GetNewCommand(IDbConnection connection, string sql, CommandType commandType = CommandType.Text, IEnumerable<IDataParameter> parameters = null)
     parameters:
     - id: connection
       type: System.Data.IDbConnection
+      description: ''
     - id: sql
       type: System.String
+      description: ''
     - id: commandType
       type: System.Data.CommandType
+      description: Specifies how a command string is interpreted.
     - id: parameters
       type: System.Collections.Generic.IEnumerable{System.Data.IDataParameter}
+      description: ''
     return:
       type: System.Data.IDbCommand
+      description: ''
     content.vb: Public Function GetNewCommand(connection As IDbConnection, sql As String, commandType As CommandType = CommandType.Text, parameters As IEnumerable(Of IDataParameter) = Nothing) As IDbCommand
   overload: DotNetHelper.Database.DatabaseAccessFactory.GetNewCommand*
   implements:
@@ -542,17 +485,21 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewCommandAndTransaction
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 85
+    startLine: 108
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
+  summary: "\n\n"
+  example: []
   syntax:
     content: public (IDbCommand command, IDbTransaction transaction)GetNewCommandAndTransaction(IDbConnection connection)
     parameters:
     - id: connection
       type: System.Data.IDbConnection
+      description: ''
     return:
       type: System.ValueTuple{System.Data.IDbCommand,System.Data.IDbTransaction}
+      description: ''
     content.vb: Public Function GetNewCommandAndTransaction(connection As IDbConnection) As(command As IDbCommand, transaction As IDbTransaction)
   overload: DotNetHelper.Database.DatabaseAccessFactory.GetNewCommandAndTransaction*
   implements:
@@ -579,7 +526,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteNonQuery
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 107
+    startLine: 130
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -593,7 +540,7 @@ items:
       description: ''
     - id: commandType
       type: System.Data.CommandType
-      description: ''
+      description: Specifies how a command string is interpreted.
     - id: parameters
       type: System.Collections.Generic.IEnumerable{System.Data.IDataParameter}
       description: ''
@@ -605,6 +552,9 @@ items:
   exceptions:
   - type: System.InvalidOperationException
     commentId: T:System.InvalidOperationException
+  see:
+  - linkId: DotNetHelper.Database.DatabaseAccessFactory.ExecuteNonQuery(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
+    commentId: M:DotNetHelper.Database.DatabaseAccessFactory.ExecuteNonQuery(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
   implements:
   - DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteNonQuery(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
   nameWithType.vb: DatabaseAccessFactory.ExecuteNonQuery(String, CommandType, IEnumerable(Of IDataParameter))
@@ -614,6 +564,57 @@ items:
   - Public
   fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.ExecuteNonQuery(System.String, System.Data.CommandType, System.Collections.Generic.IEnumerable(Of System.Data.IDataParameter))
   name.vb: ExecuteNonQuery(String, CommandType, IEnumerable(Of IDataParameter))
+- uid: DotNetHelper.Database.DatabaseAccessFactory.ExecuteNonQuery(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.ExecuteNonQuery(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
+  id: ExecuteNonQuery(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
+  parent: DotNetHelper.Database.DatabaseAccessFactory
+  langs:
+  - csharp
+  - vb
+  name: ExecuteNonQuery(DbConnection, String, CommandType, IEnumerable<IDataParameter>)
+  nameWithType: DatabaseAccessFactory.ExecuteNonQuery(DbConnection, String, CommandType, IEnumerable<IDataParameter>)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.ExecuteNonQuery(System.Data.Common.DbConnection, System.String, System.Data.CommandType, System.Collections.Generic.IEnumerable<System.Data.IDataParameter>)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+    id: ExecuteNonQuery
+    path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
+    startLine: 147
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database
+  summary: "\nExecute an SQL Command against the specified <code data-dev-comment-type=\"typeparamref\" class=\"typeparamref\">C</code>  and returns the number of rows affected\n"
+  example: []
+  syntax:
+    content: public int ExecuteNonQuery(DbConnection dbConnection, string sql, CommandType commandType, IEnumerable<IDataParameter> parameters = null)
+    parameters:
+    - id: dbConnection
+      type: System.Data.Common.DbConnection
+      description: ''
+    - id: sql
+      type: System.String
+      description: ''
+    - id: commandType
+      type: System.Data.CommandType
+      description: Specifies how a command string is interpreted.
+    - id: parameters
+      type: System.Collections.Generic.IEnumerable{System.Data.IDataParameter}
+      description: ''
+    return:
+      type: System.Int32
+      description: ''
+    content.vb: Public Function ExecuteNonQuery(dbConnection As DbConnection, sql As String, commandType As CommandType, parameters As IEnumerable(Of IDataParameter) = Nothing) As Integer
+  overload: DotNetHelper.Database.DatabaseAccessFactory.ExecuteNonQuery*
+  nameWithType.vb: DatabaseAccessFactory.ExecuteNonQuery(DbConnection, String, CommandType, IEnumerable(Of IDataParameter))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.ExecuteNonQuery(System.Data.Common.DbConnection, System.String, System.Data.CommandType, System.Collections.Generic.IEnumerable(Of System.Data.IDataParameter))
+  name.vb: ExecuteNonQuery(DbConnection, String, CommandType, IEnumerable(Of IDataParameter))
 - uid: DotNetHelper.Database.DatabaseAccessFactory.ExecuteScalar(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   commentId: M:DotNetHelper.Database.DatabaseAccessFactory.ExecuteScalar(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   id: ExecuteScalar(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
@@ -632,7 +633,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteScalar
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 125
+    startLine: 161
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -646,7 +647,7 @@ items:
       description: ''
     - id: commandType
       type: System.Data.CommandType
-      description: ''
+      description: Specifies how a command string is interpreted.
     - id: parameters
       type: System.Collections.Generic.List{System.Data.Common.DbParameter}
       description: ''
@@ -664,6 +665,57 @@ items:
   - Public
   fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.ExecuteScalar(System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
   name.vb: ExecuteScalar(String, CommandType, List(Of DbParameter))
+- uid: DotNetHelper.Database.DatabaseAccessFactory.ExecuteScalar(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.ExecuteScalar(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  id: ExecuteScalar(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  parent: DotNetHelper.Database.DatabaseAccessFactory
+  langs:
+  - csharp
+  - vb
+  name: ExecuteScalar(DbConnection, String, CommandType, List<DbParameter>)
+  nameWithType: DatabaseAccessFactory.ExecuteScalar(DbConnection, String, CommandType, List<DbParameter>)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.ExecuteScalar(System.Data.Common.DbConnection, System.String, System.Data.CommandType, System.Collections.Generic.List<System.Data.Common.DbParameter>)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+    id: ExecuteScalar
+    path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
+    startLine: 177
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database
+  summary: "\nExecutes the sql and return the 1st column of the 1st row as an object\n"
+  example: []
+  syntax:
+    content: public object ExecuteScalar(DbConnection connection, string sql, CommandType commandType, List<DbParameter> parameters = null)
+    parameters:
+    - id: connection
+      type: System.Data.Common.DbConnection
+      description: ''
+    - id: sql
+      type: System.String
+      description: ''
+    - id: commandType
+      type: System.Data.CommandType
+      description: Specifies how a command string is interpreted.
+    - id: parameters
+      type: System.Collections.Generic.List{System.Data.Common.DbParameter}
+      description: ''
+    return:
+      type: System.Object
+      description: ''
+    content.vb: Public Function ExecuteScalar(connection As DbConnection, sql As String, commandType As CommandType, parameters As List(Of DbParameter) = Nothing) As Object
+  overload: DotNetHelper.Database.DatabaseAccessFactory.ExecuteScalar*
+  nameWithType.vb: DatabaseAccessFactory.ExecuteScalar(DbConnection, String, CommandType, List(Of DbParameter))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.ExecuteScalar(System.Data.Common.DbConnection, System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
+  name.vb: ExecuteScalar(DbConnection, String, CommandType, List(Of DbParameter))
 - uid: DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
   commentId: M:DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
   id: ExecuteTransaction(System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
@@ -682,21 +734,27 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteTransaction
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 135
+    startLine: 192
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
+  summary: "\nExecutes a list of sql as in a single transaction \n"
+  example: []
   syntax:
     content: public int ExecuteTransaction(List<string> sqls, bool rollbackOnException, bool throwException = true)
     parameters:
     - id: sqls
       type: System.Collections.Generic.List{System.String}
+      description: ''
     - id: rollbackOnException
       type: System.Boolean
+      description: ''
     - id: throwException
       type: System.Boolean
+      description: ''
     return:
       type: System.Int32
+      description: ''
     content.vb: Public Function ExecuteTransaction(sqls As List(Of String), rollbackOnException As Boolean, throwException As Boolean = True) As Integer
   overload: DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction*
   implements:
@@ -708,6 +766,108 @@ items:
   - Public
   fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Collections.Generic.List(Of System.String), System.Boolean, System.Boolean)
   name.vb: ExecuteTransaction(List(Of String), Boolean, Boolean)
+- uid: DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Data.Common.DbConnection,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Data.Common.DbConnection,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
+  id: ExecuteTransaction(System.Data.Common.DbConnection,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
+  parent: DotNetHelper.Database.DatabaseAccessFactory
+  langs:
+  - csharp
+  - vb
+  name: ExecuteTransaction(DbConnection, List<String>, Boolean, Boolean)
+  nameWithType: DatabaseAccessFactory.ExecuteTransaction(DbConnection, List<String>, Boolean, Boolean)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Data.Common.DbConnection, System.Collections.Generic.List<System.String>, System.Boolean, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+    id: ExecuteTransaction
+    path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
+    startLine: 208
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database
+  summary: "\nExecutes a list of sql as in a single transaction. \n"
+  example: []
+  syntax:
+    content: public int ExecuteTransaction(DbConnection connection, List<string> sqls, bool rollbackOnException, bool throwException = true)
+    parameters:
+    - id: connection
+      type: System.Data.Common.DbConnection
+      description: ''
+    - id: sqls
+      type: System.Collections.Generic.List{System.String}
+      description: ''
+    - id: rollbackOnException
+      type: System.Boolean
+      description: ''
+    - id: throwException
+      type: System.Boolean
+      description: ''
+    return:
+      type: System.Int32
+      description: ''
+    content.vb: Public Function ExecuteTransaction(connection As DbConnection, sqls As List(Of String), rollbackOnException As Boolean, throwException As Boolean = True) As Integer
+  overload: DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction*
+  nameWithType.vb: DatabaseAccessFactory.ExecuteTransaction(DbConnection, List(Of String), Boolean, Boolean)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Data.Common.DbConnection, System.Collections.Generic.List(Of System.String), System.Boolean, System.Boolean)
+  name.vb: ExecuteTransaction(DbConnection, List(Of String), Boolean, Boolean)
+- uid: DotNetHelper.Database.DatabaseAccessFactory.GetDataReader(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.GetDataReader(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  id: GetDataReader(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  parent: DotNetHelper.Database.DatabaseAccessFactory
+  langs:
+  - csharp
+  - vb
+  name: GetDataReader(DbConnection, String, CommandType, List<DbParameter>)
+  nameWithType: DatabaseAccessFactory.GetDataReader(DbConnection, String, CommandType, List<DbParameter>)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.GetDataReader(System.Data.Common.DbConnection, System.String, System.Data.CommandType, System.Collections.Generic.List<System.Data.Common.DbParameter>)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+    id: GetDataReader
+    path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
+    startLine: 246
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database
+  summary: "\nexecute the sql and return the result as a IDataReader\n"
+  example: []
+  syntax:
+    content: public IDataReader GetDataReader(DbConnection connection, string sql, CommandType commandType, List<DbParameter> parameters = null)
+    parameters:
+    - id: connection
+      type: System.Data.Common.DbConnection
+      description: ''
+    - id: sql
+      type: System.String
+      description: ''
+    - id: commandType
+      type: System.Data.CommandType
+      description: Specifies how a command string is interpreted.
+    - id: parameters
+      type: System.Collections.Generic.List{System.Data.Common.DbParameter}
+      description: ''
+    return:
+      type: System.Data.IDataReader
+      description: ''
+    content.vb: Public Function GetDataReader(connection As DbConnection, sql As String, commandType As CommandType, parameters As List(Of DbParameter) = Nothing) As IDataReader
+  overload: DotNetHelper.Database.DatabaseAccessFactory.GetDataReader*
+  nameWithType.vb: DatabaseAccessFactory.GetDataReader(DbConnection, String, CommandType, List(Of DbParameter))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.GetDataReader(System.Data.Common.DbConnection, System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
+  name.vb: GetDataReader(DbConnection, String, CommandType, List(Of DbParameter))
 - uid: DotNetHelper.Database.DatabaseAccessFactory.GetDataReader(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   commentId: M:DotNetHelper.Database.DatabaseAccessFactory.GetDataReader(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   id: GetDataReader(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
@@ -726,21 +886,27 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataReader
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 167
+    startLine: 261
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
+  summary: "\nexecute the sql and return the result as a IDataReader\n"
+  example: []
   syntax:
     content: public IDataReader GetDataReader(string sql, CommandType commandType, List<DbParameter> parameters = null)
     parameters:
     - id: sql
       type: System.String
+      description: ''
     - id: commandType
       type: System.Data.CommandType
+      description: Specifies how a command string is interpreted.
     - id: parameters
       type: System.Collections.Generic.List{System.Data.Common.DbParameter}
+      description: ''
     return:
       type: System.Data.IDataReader
+      description: ''
     content.vb: Public Function GetDataReader(sql As String, commandType As CommandType, parameters As List(Of DbParameter) = Nothing) As IDataReader
   overload: DotNetHelper.Database.DatabaseAccessFactory.GetDataReader*
   implements:
@@ -770,7 +936,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTable
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 182
+    startLine: 274
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -784,7 +950,7 @@ items:
       description: ''
     - id: commandType
       type: System.Data.CommandType
-      description: ''
+      description: Specifies how a command string is interpreted.
     - id: parameters
       type: System.Collections.Generic.List{System.Data.Common.DbParameter}
       description: ''
@@ -820,7 +986,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTable
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 195
+    startLine: 287
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -861,7 +1027,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTableWithSchema
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 207
+    startLine: 299
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -875,7 +1041,7 @@ items:
       description: ''
     - id: commandType
       type: System.Data.CommandType
-      description: ''
+      description: Specifies how a command string is interpreted.
     - id: parameters
       type: System.Collections.Generic.List{System.Data.Common.DbParameter}
       description: ''
@@ -911,7 +1077,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTableWithKeyInfo
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 229
+    startLine: 321
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -925,7 +1091,7 @@ items:
       description: ''
     - id: commandType
       type: System.Data.CommandType
-      description: ''
+      description: Specifies how a command string is interpreted.
     - id: parameters
       type: System.Collections.Generic.List{System.Data.Common.DbParameter}
       description: ''
@@ -961,7 +1127,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTableWithSchema
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 247
+    startLine: 339
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1002,7 +1168,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTableWithKeyInfo
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 257
+    startLine: 349
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1043,7 +1209,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewParameter
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 262
+    startLine: 354
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1080,14 +1246,17 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: CanConnect
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 271
+    startLine: 366
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
+  summary: "\nAttempts to open a connection to the database using the connection string provided in the constructor. \n"
+  example: []
   syntax:
     content: public bool CanConnect()
     return:
       type: System.Boolean
+      description: ''
     content.vb: Public Function CanConnect As Boolean
   overload: DotNetHelper.Database.DatabaseAccessFactory.CanConnect*
   implements:
@@ -1114,7 +1283,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 297
+    startLine: 392
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1130,7 +1299,7 @@ items:
       description: ''
     - id: commandType
       type: System.Data.CommandType
-      description: ''
+      description: Specifies how a command string is interpreted.
     - id: xmlDeserializer
       type: System.Func{System.String,System.Type,System.Object}
       description: ''
@@ -1160,6 +1329,71 @@ items:
   - Public
   fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.Get(Of T)(System.String, System.Data.CommandType, System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Collections.Generic.List(Of System.Data.Common.DbParameter))
   name.vb: Get(Of T)(String, CommandType, Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object), List(Of DbParameter))
+- uid: DotNetHelper.Database.DatabaseAccessFactory.Get``1(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Collections.Generic.List{System.Data.Common.DbParameter})
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.Get``1(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Collections.Generic.List{System.Data.Common.DbParameter})
+  id: Get``1(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Collections.Generic.List{System.Data.Common.DbParameter})
+  parent: DotNetHelper.Database.DatabaseAccessFactory
+  langs:
+  - csharp
+  - vb
+  name: Get<T>(DbConnection, String, CommandType, Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>, List<DbParameter>)
+  nameWithType: DatabaseAccessFactory.Get<T>(DbConnection, String, CommandType, Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>, List<DbParameter>)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.Get<T>(System.Data.Common.DbConnection, System.String, System.Data.CommandType, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>, System.Collections.Generic.List<System.Data.Common.DbParameter>)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+    id: Get
+    path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
+    startLine: 409
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database
+  summary: "\nExecutes the specified sql and maps the results a list of objects\n"
+  example: []
+  syntax:
+    content: >-
+      public List<T> Get<T>(DbConnection connection, string sql, CommandType commandType, Func<string, Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer, List<DbParameter> parameters = null)
+          where T : class
+    parameters:
+    - id: connection
+      type: System.Data.Common.DbConnection
+      description: ''
+    - id: sql
+      type: System.String
+      description: ''
+    - id: commandType
+      type: System.Data.CommandType
+      description: Specifies how a command string is interpreted.
+    - id: xmlDeserializer
+      type: System.Func{System.String,System.Type,System.Object}
+      description: ''
+    - id: jsonDeserializer
+      type: System.Func{System.String,System.Type,System.Object}
+      description: ''
+    - id: csvDeserializer
+      type: System.Func{System.String,System.Type,System.Object}
+      description: ''
+    - id: parameters
+      type: System.Collections.Generic.List{System.Data.Common.DbParameter}
+      description: ''
+    typeParameters:
+    - id: T
+      description: ''
+    return:
+      type: System.Collections.Generic.List{{T}}
+      description: 'The sql result mapped to a list of '
+    content.vb: Public Function Get(Of T As Class)(connection As DbConnection, sql As String, commandType As CommandType, xmlDeserializer As Func(Of String, Type, Object), jsonDeserializer As Func(Of String, Type, Object), csvDeserializer As Func(Of String, Type, Object), parameters As List(Of DbParameter) = Nothing) As List(Of T)
+  overload: DotNetHelper.Database.DatabaseAccessFactory.Get*
+  nameWithType.vb: DatabaseAccessFactory.Get(Of T)(DbConnection, String, CommandType, Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object), List(Of DbParameter))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.Get(Of T)(System.Data.Common.DbConnection, System.String, System.Data.CommandType, System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Collections.Generic.List(Of System.Data.Common.DbParameter))
+  name.vb: Get(Of T)(DbConnection, String, CommandType, Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object), List(Of DbParameter))
 - uid: DotNetHelper.Database.DatabaseAccessFactory.Get``1
   commentId: M:DotNetHelper.Database.DatabaseAccessFactory.Get``1
   id: Get``1
@@ -1178,18 +1412,22 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 302
+    startLine: 419
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
+  summary: "\nreturn a list of type of T from the database. \n"
+  example: []
   syntax:
     content: >-
       public List<T> Get<T>()
           where T : class
     typeParameters:
     - id: T
+      description: ''
     return:
       type: System.Collections.Generic.List{{T}}
+      description: ''
     content.vb: Public Function Get(Of T As Class) As List(Of T)
   overload: DotNetHelper.Database.DatabaseAccessFactory.Get*
   implements:
@@ -1219,10 +1457,12 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 306
+    startLine: 434
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
+  summary: "\nreturn a list of type of T from the database. \n"
+  example: []
   syntax:
     content: >-
       public List<T> Get<T>(Func<string, Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer)
@@ -1230,14 +1470,19 @@ items:
     parameters:
     - id: xmlDeserializer
       type: System.Func{System.String,System.Type,System.Object}
+      description: Func to invoke on properties that mark with [SqlColumnAttribute(SerializableType = SerializableType.XML)]
     - id: jsonDeserializer
       type: System.Func{System.String,System.Type,System.Object}
+      description: Func to invoke on properties that mark with [SqlColumnAttribute(SerializableType = SerializableType.JSON)]
     - id: csvDeserializer
       type: System.Func{System.String,System.Type,System.Object}
+      description: Func to invoke on properties that mark with [SqlColumnAttribute(SerializableType = SerializableType.CSV)]
     typeParameters:
     - id: T
+      description: ''
     return:
       type: System.Collections.Generic.List{{T}}
+      description: ''
     content.vb: Public Function Get(Of T As Class)(xmlDeserializer As Func(Of String, Type, Object), jsonDeserializer As Func(Of String, Type, Object), csvDeserializer As Func(Of String, Type, Object)) As List(Of T)
   overload: DotNetHelper.Database.DatabaseAccessFactory.Get*
   implements:
@@ -1267,10 +1512,12 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 312
+    startLine: 448
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
+  summary: "\nExecutes the sql and map the results to a list of type of T\n"
+  example: []
   syntax:
     content: >-
       public List<T> Get<T>(string sql, CommandType commandType, List<DbParameter> parameters = null)
@@ -1278,14 +1525,19 @@ items:
     parameters:
     - id: sql
       type: System.String
+      description: ''
     - id: commandType
       type: System.Data.CommandType
+      description: Specifies how a command string is interpreted.
     - id: parameters
       type: System.Collections.Generic.List{System.Data.Common.DbParameter}
+      description: ''
     typeParameters:
     - id: T
+      description: ''
     return:
       type: System.Collections.Generic.List{{T}}
+      description: ''
     content.vb: Public Function Get(Of T As Class)(sql As String, commandType As CommandType, parameters As List(Of DbParameter) = Nothing) As List(Of T)
   overload: DotNetHelper.Database.DatabaseAccessFactory.Get*
   implements:
@@ -1315,10 +1567,12 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Execute
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 317
+    startLine: 460
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
+  summary: "\nCreates the specified SQL from the object then executes the sql and return the number of rows affected. \n"
+  example: []
   syntax:
     content: >-
       public int Execute<T>(T instance, ActionType actionType)
@@ -1326,12 +1580,16 @@ items:
     parameters:
     - id: instance
       type: '{T}'
+      description: the object to create sql from
     - id: actionType
       type: DotNetHelper.ObjectToSql.Enum.ActionType
+      description: type of sql to generate
     typeParameters:
     - id: T
+      description: ''
     return:
       type: System.Int32
+      description: '# of rows affected'
     content.vb: Public Function Execute(Of T As Class)(instance As T, actionType As ActionType) As Integer
   overload: DotNetHelper.Database.DatabaseAccessFactory.Execute*
   implements:
@@ -1343,6 +1601,61 @@ items:
   - Public
   fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType)
   name.vb: Execute(Of T)(T, ActionType)
+- uid: DotNetHelper.Database.DatabaseAccessFactory.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
+  id: Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
+  parent: DotNetHelper.Database.DatabaseAccessFactory
+  langs:
+  - csharp
+  - vb
+  name: Execute<T>(T, ActionType, String)
+  nameWithType: DatabaseAccessFactory.Execute<T>(T, ActionType, String)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.Execute<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+    id: Execute
+    path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
+    startLine: 473
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database
+  summary: "\nCreates the specified SQL from the object then executes the sql and return the number of rows affected. \n"
+  example: []
+  syntax:
+    content: >-
+      public int Execute<T>(T instance, ActionType actionType, string tableName)
+          where T : class
+    parameters:
+    - id: instance
+      type: '{T}'
+      description: 'the object to create sql from '
+    - id: actionType
+      type: DotNetHelper.ObjectToSql.Enum.ActionType
+      description: type of sql to generate
+    - id: tableName
+      type: System.String
+      description: 'Table name to use when generating sql '
+    typeParameters:
+    - id: T
+      description: ''
+    return:
+      type: System.Int32
+      description: ''
+    content.vb: Public Function Execute(Of T As Class)(instance As T, actionType As ActionType, tableName As String) As Integer
+  overload: DotNetHelper.Database.DatabaseAccessFactory.Execute*
+  implements:
+  - DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1({T},DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
+  nameWithType.vb: DatabaseAccessFactory.Execute(Of T)(T, ActionType, String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String)
+  name.vb: Execute(Of T)(T, ActionType, String)
 - uid: DotNetHelper.Database.DatabaseAccessFactory.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
   commentId: M:DotNetHelper.Database.DatabaseAccessFactory.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
   id: Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
@@ -1361,10 +1674,12 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Execute
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 322
+    startLine: 489
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
+  summary: "\nCreates the specified SQL from the object then executes the sql and return the number of rows affected. \n"
+  example: []
   syntax:
     content: >-
       public int Execute<T>(T instance, ActionType actionType, string tableName, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer)
@@ -1372,20 +1687,28 @@ items:
     parameters:
     - id: instance
       type: '{T}'
+      description: 'the object to create sql from '
     - id: actionType
       type: DotNetHelper.ObjectToSql.Enum.ActionType
+      description: type of sql to generate
     - id: tableName
       type: System.String
+      description: 'Table name to use when generating sql '
     - id: xmlSerializer
       type: System.Func{System.Object,System.String}
+      description: For when your storing values in the database as xml. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.XML)]
     - id: jsonSerializer
       type: System.Func{System.Object,System.String}
+      description: For when your storing values in the database as json. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.JSON)]
     - id: csvSerializer
       type: System.Func{System.Object,System.String}
+      description: For when your storing values in the database as csv. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.CSV)]
     typeParameters:
     - id: T
+      description: ''
     return:
       type: System.Int32
+      description: ''
     content.vb: Public Function Execute(Of T As Class)(instance As T, actionType As ActionType, tableName As String, xmlSerializer As Func(Of Object, String), jsonSerializer As Func(Of Object, String), csvSerializer As Func(Of Object, String)) As Integer
   overload: DotNetHelper.Database.DatabaseAccessFactory.Execute*
   implements:
@@ -1415,10 +1738,12 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutput
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 331
+    startLine: 507
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
+  summary: "\nCreates the specified SQL from the object then executes the sql and applies the reflected values to the instance provided. This is useful when dealing with identity fields  \n"
+  example: []
   syntax:
     content: >-
       public T ExecuteAndGetOutput<T>(T instance, ActionType actionType, params Expression<Func<T, object>>[] outputFields)
@@ -1426,14 +1751,19 @@ items:
     parameters:
     - id: instance
       type: '{T}'
+      description: 'the object to create sql from '
     - id: actionType
       type: DotNetHelper.ObjectToSql.Enum.ActionType
+      description: type of sql to generate
     - id: outputFields
       type: System.Linq.Expressions.Expression{System.Func{{T},System.Object}}[]
+      description: 'the fields to return that will reflect the values after the sql is executed  '
     typeParameters:
     - id: T
+      description: ''
     return:
       type: '{T}'
+      description: ''
     content.vb: Public Function ExecuteAndGetOutput(Of T As Class)(instance As T, actionType As ActionType, ParamArray outputFields As Expression(Of Func(Of T, Object))()) As T
   overload: DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutput*
   implements:
@@ -1463,10 +1793,12 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutput
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 336
+    startLine: 526
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
+  summary: "\nCreates the sql and applies the reflected values tothe specified SQL from the object then executes t the instance provided. This is useful when dealing with identity fields  \n"
+  example: []
   syntax:
     content: >-
       public T ExecuteAndGetOutput<T>(T instance, ActionType actionType, Func<string, Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer, params Expression<Func<T, object>>[] outputFields)
@@ -1474,26 +1806,37 @@ items:
     parameters:
     - id: instance
       type: '{T}'
+      description: 'the object to create sql from '
     - id: actionType
       type: DotNetHelper.ObjectToSql.Enum.ActionType
+      description: type of sql to generate
     - id: xmlDeserializer
       type: System.Func{System.String,System.Type,System.Object}
+      description: Func to invoke on properties that mark with [SqlColumnAttribute(SerializableType = SerializableType.XML)]
     - id: jsonDeserializer
       type: System.Func{System.String,System.Type,System.Object}
+      description: Func to invoke on properties that mark with [SqlColumnAttribute(SerializableType = SerializableType.JSON)]
     - id: csvDeserializer
       type: System.Func{System.String,System.Type,System.Object}
+      description: Func to invoke on properties that mark with [SqlColumnAttribute(SerializableType = SerializableType.CSV)]
     - id: xmlSerializer
       type: System.Func{System.Object,System.String}
+      description: For when your storing values in the database as xml. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.XML)]
     - id: jsonSerializer
       type: System.Func{System.Object,System.String}
+      description: For when your storing values in the database as json. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.JSON)]
     - id: csvSerializer
       type: System.Func{System.Object,System.String}
+      description: For when your storing values in the database as csv. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.CSV)]
     - id: outputFields
       type: System.Linq.Expressions.Expression{System.Func{{T},System.Object}}[]
+      description: ''
     typeParameters:
     - id: T
+      description: ''
     return:
       type: '{T}'
+      description: ''
     content.vb: Public Function ExecuteAndGetOutput(Of T As Class)(instance As T, actionType As ActionType, xmlDeserializer As Func(Of String, Type, Object), jsonDeserializer As Func(Of String, Type, Object), csvDeserializer As Func(Of String, Type, Object), xmlSerializer As Func(Of Object, String), jsonSerializer As Func(Of Object, String), csvSerializer As Func(Of Object, String), ParamArray outputFields As Expression(Of Func(Of T, Object))()) As T
   overload: DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutput*
   implements:
@@ -1523,7 +1866,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutputAsDataReader
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 348
+    startLine: 538
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1571,7 +1914,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutputAsDataReader
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 353
+    startLine: 543
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1916,24 +2259,6 @@ references:
   name: DotNetHelper.Database.Interface
   nameWithType: DotNetHelper.Database.Interface
   fullName: DotNetHelper.Database.Interface
-- uid: DotNetHelper.Database.DatabaseAccessFactory.DbProviderFactory*
-  commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.DbProviderFactory
-  name: DbProviderFactory
-  nameWithType: DatabaseAccessFactory.DbProviderFactory
-  fullName: DotNetHelper.Database.DatabaseAccessFactory.DbProviderFactory
-- uid: System.Data.Common.DbProviderFactory
-  commentId: T:System.Data.Common.DbProviderFactory
-  parent: System.Data.Common
-  isExternal: true
-  name: DbProviderFactory
-  nameWithType: DbProviderFactory
-  fullName: System.Data.Common.DbProviderFactory
-- uid: System.Data.Common
-  commentId: N:System.Data.Common
-  isExternal: true
-  name: System.Data.Common
-  nameWithType: System.Data.Common
-  fullName: System.Data.Common
 - uid: DotNetHelper.Database.DatabaseAccessFactory.CommandTimeOut*
   commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.CommandTimeOut
   name: CommandTimeOut
@@ -1987,54 +2312,24 @@ references:
   name: DotNetHelper.ObjectToSql.Enum
   nameWithType: DotNetHelper.ObjectToSql.Enum
   fullName: DotNetHelper.ObjectToSql.Enum
-- uid: DotNetHelper.Database.DatabaseAccessFactory.ObjectToSql*
-  commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.ObjectToSql
-  name: ObjectToSql
-  nameWithType: DatabaseAccessFactory.ObjectToSql
-  fullName: DotNetHelper.Database.DatabaseAccessFactory.ObjectToSql
-- uid: DotNetHelper.Database.Interface.IDatabaseAccess.ObjectToSql
-  commentId: P:DotNetHelper.Database.Interface.IDatabaseAccess.ObjectToSql
-  parent: DotNetHelper.Database.Interface.IDatabaseAccess
-  name: ObjectToSql
-  nameWithType: IDatabaseAccess.ObjectToSql
-  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.ObjectToSql
-- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql
-  commentId: T:DotNetHelper.ObjectToSql.Services.ObjectToSql
-  parent: DotNetHelper.ObjectToSql.Services
+- uid: DotNetHelper.Database.DatabaseAccessFactory.DbProviderFactory*
+  commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.DbProviderFactory
+  name: DbProviderFactory
+  nameWithType: DatabaseAccessFactory.DbProviderFactory
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.DbProviderFactory
+- uid: System.Data.Common.DbProviderFactory
+  commentId: T:System.Data.Common.DbProviderFactory
+  parent: System.Data.Common
   isExternal: true
-  name: ObjectToSql
-  nameWithType: ObjectToSql
-  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql
-- uid: DotNetHelper.ObjectToSql.Services
-  commentId: N:DotNetHelper.ObjectToSql.Services
+  name: DbProviderFactory
+  nameWithType: DbProviderFactory
+  fullName: System.Data.Common.DbProviderFactory
+- uid: System.Data.Common
+  commentId: N:System.Data.Common
   isExternal: true
-  name: DotNetHelper.ObjectToSql.Services
-  nameWithType: DotNetHelper.ObjectToSql.Services
-  fullName: DotNetHelper.ObjectToSql.Services
-- uid: DotNetHelper.Database.DatabaseAccessFactory.SqlSyntaxHelper*
-  commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.SqlSyntaxHelper
-  name: SqlSyntaxHelper
-  nameWithType: DatabaseAccessFactory.SqlSyntaxHelper
-  fullName: DotNetHelper.Database.DatabaseAccessFactory.SqlSyntaxHelper
-- uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlSyntaxHelper
-  commentId: P:DotNetHelper.Database.Interface.IDatabaseAccess.SqlSyntaxHelper
-  parent: DotNetHelper.Database.Interface.IDatabaseAccess
-  name: SqlSyntaxHelper
-  nameWithType: IDatabaseAccess.SqlSyntaxHelper
-  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlSyntaxHelper
-- uid: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
-  commentId: T:DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
-  parent: DotNetHelper.ObjectToSql.Helper
-  isExternal: true
-  name: SqlSyntaxHelper
-  nameWithType: SqlSyntaxHelper
-  fullName: DotNetHelper.ObjectToSql.Helper.SqlSyntaxHelper
-- uid: DotNetHelper.ObjectToSql.Helper
-  commentId: N:DotNetHelper.ObjectToSql.Helper
-  isExternal: true
-  name: DotNetHelper.ObjectToSql.Helper
-  nameWithType: DotNetHelper.ObjectToSql.Helper
-  fullName: DotNetHelper.ObjectToSql.Helper
+  name: System.Data.Common
+  nameWithType: System.Data.Common
+  fullName: System.Data.Common
 - uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor*
   commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.#ctor
   name: DatabaseAccessFactory
@@ -2059,19 +2354,13 @@ references:
   name: Boolean
   nameWithType: Boolean
   fullName: System.Boolean
-- uid: System.Data.IDbConnection
-  commentId: T:System.Data.IDbConnection
-  parent: System.Data
+- uid: System.Data.Common.DbConnection
+  commentId: T:System.Data.Common.DbConnection
+  parent: System.Data.Common
   isExternal: true
-  name: IDbConnection
-  nameWithType: IDbConnection
-  fullName: System.Data.IDbConnection
-- uid: System.Data
-  commentId: N:System.Data
-  isExternal: true
-  name: System.Data
-  nameWithType: System.Data
-  fullName: System.Data
+  name: DbConnection
+  nameWithType: DbConnection
+  fullName: System.Data.Common.DbConnection
 - uid: DotNetHelper.Database.DatabaseAccessFactory.GetNewCommand*
   commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.GetNewCommand
   name: GetNewCommand
@@ -2189,6 +2478,13 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Data.IDbConnection
+  commentId: T:System.Data.IDbConnection
+  parent: System.Data
+  isExternal: true
+  name: IDbConnection
+  nameWithType: IDbConnection
+  fullName: System.Data.IDbConnection
 - uid: System.Data.CommandType
   commentId: T:System.Data.CommandType
   parent: System.Data
@@ -2247,6 +2543,12 @@ references:
   name: IDbCommand
   nameWithType: IDbCommand
   fullName: System.Data.IDbCommand
+- uid: System.Data
+  commentId: N:System.Data
+  isExternal: true
+  name: System.Data
+  nameWithType: System.Data
+  fullName: System.Data
 - uid: System.Collections.Generic.IEnumerable`1
   commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
@@ -2396,6 +2698,9 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: DotNetHelper.Database.DatabaseAccessFactory.ExecuteNonQuery(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.ExecuteNonQuery(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
+  isExternal: true
 - uid: System.InvalidOperationException
   commentId: T:System.InvalidOperationException
   isExternal: true
@@ -2841,6 +3146,13 @@ references:
   name: GetDataReader
   nameWithType: DatabaseAccessFactory.GetDataReader
   fullName: DotNetHelper.Database.DatabaseAccessFactory.GetDataReader
+- uid: System.Data.IDataReader
+  commentId: T:System.Data.IDataReader
+  parent: System.Data
+  isExternal: true
+  name: IDataReader
+  nameWithType: IDataReader
+  fullName: System.Data.IDataReader
 - uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataReader(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.GetDataReader(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   parent: DotNetHelper.Database.Interface.IDatabaseAccess
@@ -2937,13 +3249,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Data.IDataReader
-  commentId: T:System.Data.IDataReader
-  parent: System.Data
-  isExternal: true
-  name: IDataReader
-  nameWithType: IDataReader
-  fullName: System.Data.IDataReader
 - uid: DotNetHelper.Database.DatabaseAccessFactory.GetDataTable*
   commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.GetDataTable
   name: GetDataTable
@@ -4398,6 +4703,145 @@ references:
   name: T
   nameWithType: T
   fullName: T
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1({T},DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
+  parent: DotNetHelper.Database.Interface.IDatabaseAccess
+  definition: DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
+  name: Execute<T>(T, ActionType, String)
+  nameWithType: IDatabaseAccess.Execute<T>(T, ActionType, String)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.Execute<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String)
+  nameWithType.vb: IDatabaseAccess.Execute(Of T)(T, ActionType, String)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String)
+  name.vb: Execute(Of T)(T, ActionType, String)
+  spec.csharp:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
+    name: Execute<T>
+    nameWithType: IDatabaseAccess.Execute<T>
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.Execute<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: DotNetHelper.ObjectToSql.Enum.ActionType
+    name: ActionType
+    nameWithType: ActionType
+    fullName: DotNetHelper.ObjectToSql.Enum.ActionType
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
+    name: Execute(Of T)
+    nameWithType: IDatabaseAccess.Execute(Of T)
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.Execute(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: DotNetHelper.ObjectToSql.Enum.ActionType
+    name: ActionType
+    nameWithType: ActionType
+    fullName: DotNetHelper.ObjectToSql.Enum.ActionType
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
+  isExternal: true
+  name: Execute<T>(T, ActionType, String)
+  nameWithType: IDatabaseAccess.Execute<T>(T, ActionType, String)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.Execute<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String)
+  nameWithType.vb: IDatabaseAccess.Execute(Of T)(T, ActionType, String)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String)
+  name.vb: Execute(Of T)(T, ActionType, String)
+  spec.csharp:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
+    name: Execute<T>
+    nameWithType: IDatabaseAccess.Execute<T>
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.Execute<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: DotNetHelper.ObjectToSql.Enum.ActionType
+    name: ActionType
+    nameWithType: ActionType
+    fullName: DotNetHelper.ObjectToSql.Enum.ActionType
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
+    name: Execute(Of T)
+    nameWithType: IDatabaseAccess.Execute(Of T)
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.Execute(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: DotNetHelper.ObjectToSql.Enum.ActionType
+    name: ActionType
+    nameWithType: ActionType
+    fullName: DotNetHelper.ObjectToSql.Enum.ActionType
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1({T},DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
   commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
   parent: DotNetHelper.Database.Interface.IDatabaseAccess
