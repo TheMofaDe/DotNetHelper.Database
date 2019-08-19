@@ -358,7 +358,7 @@ namespace DotNetHelper.Database.DataSource
             return GetDataTableWithKeyInfo(sql, CommandType.Text, null);
         }
 
-        public P GetNewParameter(string parameterName, object value)
+        public DbParameter GetNewParameter(string parameterName, object value)
         {
             var parameter = new P { ParameterName = parameterName, Value = value };
             return parameter;

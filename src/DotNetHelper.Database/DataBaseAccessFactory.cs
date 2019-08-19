@@ -2,6 +2,7 @@
 #if SUPPORTDBFACTORIES
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.Common;
 using System.Globalization;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using DotNetHelper.Database.DataSource;
 using DotNetHelper.Database.Extension;
+using DotNetHelper.Database.Helper;
 using DotNetHelper.Database.Interface;
 using DotNetHelper.ObjectToSql.Enum;
 using DotNetHelper.ObjectToSql.Helper;
@@ -21,7 +23,10 @@ namespace DotNetHelper.Database
     /// </summary>
     public class DatabaseAccessFactory : IDatabaseAccess
     {
-        
+        /// <summary>
+        /// The connection string to the database
+        /// </summary>
+        private string ConnectionString { get; }
         /// <summary>
         /// The time in seconds to wait for the command to execute. The default is 30 seconds.
         /// </summary>
@@ -42,36 +47,60 @@ namespace DotNetHelper.Database
         public DbProviderFactory DbProviderFactory { get; private set; }
        
       //  private object Lock { get; } = new object();
-        public DatabaseAccessFactory(DbProviderFactory dbProviderFactory, DataBaseType type)
+        public DatabaseAccessFactory(DbProviderFactory dbProviderFactory, DataBaseType type, TimeSpan? commandTimeOut = null, TimeSpan? connectionTimeOut = null)
         {
             DbProviderFactory = dbProviderFactory;
             ObjectToSql = new ObjectToSql.Services.ObjectToSql(type);
         }
 
-        public DatabaseAccessFactory(string providerInvariantName, DataBaseType type)
+        public DatabaseAccessFactory(string providerInvariantName, DataBaseType type, TimeSpan? commandTimeOut = null, TimeSpan? connectionTimeOut = null)
         {
             DbProviderFactory = DbProviderFactories.GetFactory(providerInvariantName);
             ObjectToSql = new ObjectToSql.Services.ObjectToSql(type);
+            ConnectionString = GetConnectionStringByProvider(providerInvariantName);
         }
 
 
-        public DatabaseAccessFactory(DataBaseType type, TimeSpan commandTimeOut)
+        public DatabaseAccessFactory(DataBaseType type, TimeSpan? commandTimeOut = null, TimeSpan? connectionTimeOut = null)
         {
-            CommandTimeOut = commandTimeOut;
+            CommandTimeOut = commandTimeOut.GetValueOrDefault(CommandTimeOut);
+            ConnectionTimeOut = connectionTimeOut.GetValueOrDefault(ConnectionTimeOut);
             ObjectToSql = new ObjectToSql.Services.ObjectToSql(type);
+            DbProviderFactory = DbProviderFactories.GetFactory(DBProviderHelper.Map[type]);
+            ConnectionString = GetConnectionStringByProvider(DBProviderHelper.Map[type]);
+
+
         }
-        public DatabaseAccessFactory(DataBaseType type, TimeSpan commandTimeOut, TimeSpan connectionTimeOut)
+
+
+        // Retrieve a connection string by specifying the providerName.
+        // Assumes one connection string per provider in the config file.
+         string GetConnectionStringByProvider(string providerName)
         {
-            CommandTimeOut = commandTimeOut;
-            ConnectionTimeOut = connectionTimeOut;
-            ObjectToSql = new ObjectToSql.Services.ObjectToSql(type);
+            // Return null on failure.
+            string returnValue = null;
+
+            // Get the collection of connection strings.
+            var settings = ConfigurationManager.ConnectionStrings;
+
+            // Walk through the collection and return the first 
+            // connection string matching the providerName.
+            if (settings != null)
+            {
+                foreach (ConnectionStringSettings cs in settings)
+                {
+                    if (cs.ProviderName == providerName)
+                        returnValue = cs.ConnectionString;
+                    break;
+                }
+            }
+            return returnValue;
         }
-
-
 
         public DbConnection GetNewConnection(bool openConnection)
         {
             var connection = DbProviderFactory.CreateConnection();
+            connection.ConnectionString = ConnectionString;
             if (openConnection)
                 connection.Open();
             return connection;

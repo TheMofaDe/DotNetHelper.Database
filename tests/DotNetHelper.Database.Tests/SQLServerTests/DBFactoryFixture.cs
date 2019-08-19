@@ -1,5 +1,8 @@
+#if NET452
+
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -15,16 +18,15 @@ using NUnit.Framework;
 
 namespace DotNetHelper.Database.Tests.SQLServerTests
 {
-    public class DatabaseAccessFixture : BaseTest
+    public class DatabaseAccessFixture11 : BaseTest
     {
 
-        public IDatabaseAccess DatabaseAccess { get; set; } = new DatabaseAccess<SqlConnection, SqlParameter>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString);
+        public IDatabaseAccess DatabaseAccess { get; set; } = new DatabaseAccessFactory(DataBaseType.SqlServer);
 
 
-        public DatabaseAccessFixture()
+        public DatabaseAccessFixture11()
         {
-         
-
+           
         }
 
         [SetUp]
@@ -187,8 +189,6 @@ namespace DotNetHelper.Database.Tests.SQLServerTests
 
 
 
-
-
         [Test]
         [Order(9)]
         public void Test_Transaction()
@@ -207,7 +207,6 @@ namespace DotNetHelper.Database.Tests.SQLServerTests
             Assert.AreEqual(recordAffected, 6);
             Assert.IsTrue(list.TrueForAll(e => e == "8/20/2019 7:48:18 AM"), "ExecuteTransaction didn't execute the update statement succesfully");
         }
-
 
 
 
@@ -233,7 +232,7 @@ namespace DotNetHelper.Database.Tests.SQLServerTests
 
         [Test]
         [Order(2)]
-        public void Test_Object_With_Serialized_Value_Pull_From_DataBase_Deserialize()  
+        public void Test_Object_With_Serialized_Value_Pull_From_DataBase_Deserialize()
         {
             var mockObj = GetEmployeeSerialize(1);
             var objs = DatabaseAccess.Get<EmployeeSerialize>(DeSerializeObject, (s, type) => Json.Deserialize(s, type), (s, type) => Csv.Deserialize(s, type));
@@ -258,3 +257,4 @@ namespace DotNetHelper.Database.Tests.SQLServerTests
 
     }
 }
+#endif

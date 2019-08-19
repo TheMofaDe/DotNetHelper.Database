@@ -19,32 +19,32 @@ namespace DotNetHelper.Database.Extension
 
 
 
-        /// <summary>
-        /// Reads all available bytes from reader
-        /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="ordinal"></param>
-        /// <returns></returns>
-        public static byte[] GetBytes(this IDataReader reader, int ordinal)
-        {
-            byte[] result = null;
+        ///// <summary>
+        ///// Reads all available bytes from reader
+        ///// </summary>
+        ///// <param name="reader"></param>
+        ///// <param name="ordinal"></param>
+        ///// <returns></returns>
+        //public static byte[] GetBytes(this IDataReader reader, int ordinal)
+        //{
+        //    byte[] result = null;
 
-            if (!reader.IsDBNull(ordinal))
-            {
-                var size = reader.GetBytes(ordinal, 0, null, 0, 0); //get the length of data 
-                result = new byte[size];
-                var bufferSize = 1024;
-                long bytesRead = 0;
-                var curPos = 0;
-                while (bytesRead < size)
-                {
-                    bytesRead += reader.GetBytes(ordinal, curPos, result, curPos, bufferSize);
-                    curPos += bufferSize;
-                }
-            }
+        //    if (!reader.IsDBNull(ordinal))
+        //    {
+        //        var size = reader.GetBytes(ordinal, 0, null, 0, 0); //get the length of data 
+        //        result = new byte[size];
+        //        var bufferSize = 1024;
+        //        long bytesRead = 0;
+        //        var curPos = 0;
+        //        while (bytesRead < size)
+        //        {
+        //            bytesRead += reader.GetBytes(ordinal, curPos, result, curPos, bufferSize);
+        //            curPos += bufferSize;
+        //        }
+        //    }
 
-            return result;
-        }
+        //    return result;
+        //}
 
         public static bool? HasRows(this IDataReader reader)
         {
@@ -123,7 +123,15 @@ namespace DotNetHelper.Database.Extension
             {
                 while (reader.Read())
                 {
-                    pocoList.Add(reader.GetString(0) as T);
+                    if (reader.IsDBNull(0))
+                    {
+                        pocoList.Add(null);
+                    }
+                    else
+                    {
+                        var value = reader.GetValue(0).ToString();
+                        pocoList.Add(value as T);
+                    }
                 }
                 reader.Close();
                 reader.Dispose();
@@ -179,7 +187,15 @@ namespace DotNetHelper.Database.Extension
             {
                 while (reader.Read())
                 {
-                    return reader.GetString(0) as T;
+                    if (reader.IsDBNull(0))
+                    {
+                        return null;
+                    }
+                    else
+                    {
+                        var value = reader.GetValue(0).ToString();
+                       return (value as T);
+                    }
                 }
                 reader.Close();
                 reader.Dispose();
@@ -205,6 +221,8 @@ namespace DotNetHelper.Database.Extension
         {
             return reader.MapTo<T>(null, null, null);
         }
+
+    
 
 
 

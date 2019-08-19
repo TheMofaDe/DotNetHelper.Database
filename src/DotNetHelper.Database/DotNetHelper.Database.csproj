@@ -31,8 +31,8 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net45' OR '$(TargetFramework)' == 'net452'  ">
-
-  </ItemGroup>
+    <Reference Include="System.Configuration" />
+    </ItemGroup>
 
   <ItemGroup>
     <Compile Remove="Helper\ConnectionStringBuilder.cs" />
