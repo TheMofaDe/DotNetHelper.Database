@@ -2,11 +2,6 @@ variables:
   DOTNET_SDK_VERSION: '2.2.105' # see on when you can upgrade https://github.com/cake-build/cake/issues/2497
   DOTNET_PACKAGE_TYPE: 'sdk'
   RUBY_VERSION: '2.5'
-  CODECOV_TOKEN: '$(CODECOV_TOKEN)'
-  ENABLED_UNIT_TESTS: '$(ENABLED_UNIT_TESTS)'
-  NUGET_API_KEY: '$(NUGET_API_KEY)'
-  NUGET_API_URL: '$(NUGET_API_URL)'
-  ENABLED_PUBLISH_NUGET: '$(ENABLED_PUBLISH_NUGET)'
 
 jobs:
 - template: build/tmpl/jobs.yml
