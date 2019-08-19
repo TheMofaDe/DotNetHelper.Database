@@ -37,7 +37,7 @@ Task("Test")
         new OpenCoverSettings(){
             LogLevel = OpenCoverLogLevel.Info,
 			OldStyle = false,
-			MergeOutput = false
+			MergeOutput = true
         }     
         .WithFilter("+[*]*")
 		.WithFilter("-[*.Tests*]*")

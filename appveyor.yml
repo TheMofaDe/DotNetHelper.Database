@@ -14,6 +14,6 @@ dotnet_csproj:
   informational_version: '{version}'
 build_script:
 - ps: .\build.ps1 --target="AppVeyor"
-test: off
+test: on
 services:
   - mssql2014
