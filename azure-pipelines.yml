@@ -13,7 +13,7 @@ jobs:
 - template: build/tmpl/jobs.yml
   parameters:
     name: Linux
-    vmImage: 'Ubuntu 16.04'
+    vmImage: 'Ubuntu 18.04'
 
 - template: build/tmpl/jobs.yml
   parameters:
