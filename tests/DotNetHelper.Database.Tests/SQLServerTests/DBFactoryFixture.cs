@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
+using CsvHelper.Configuration;
 using DotNetHelper.Database.DataSource;
 using DotNetHelper.Database.Extension;
 using DotNetHelper.Database.Interface;
@@ -21,7 +22,7 @@ namespace DotNetHelper.Database.Tests.SQLServerTests
     public class DatabaseAccessFixture11 : BaseTest
     {
 
-        public IDatabaseAccess DatabaseAccess { get; set; } = new DatabaseAccessFactory(DataBaseType.SqlServer);
+        public IDatabaseAccess DatabaseAccess { get; set; } = new DatabaseAccessFactory(DataBaseType.SqlServer,TestHelper.SQLServerConnectionString);
 
 
         public DatabaseAccessFixture11()

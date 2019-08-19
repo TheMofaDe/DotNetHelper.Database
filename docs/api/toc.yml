@@ -28,6 +28,11 @@
     name: IDataParameterExtension
   - uid: DotNetHelper.Database.Extension.TypeExtension
     name: TypeExtension
+- uid: DotNetHelper.Database.Helper
+  name: DotNetHelper.Database.Helper
+  items:
+  - uid: DotNetHelper.Database.Helper.DBProviderHelper
+    name: DBProviderHelper
 - uid: DotNetHelper.Database.Interface
   name: DotNetHelper.Database.Interface
   items:

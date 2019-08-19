@@ -1216,16 +1216,18 @@ items:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
   syntax:
-    content: public P GetNewParameter(string parameterName, object value)
+    content: public DbParameter GetNewParameter(string parameterName, object value)
     parameters:
     - id: parameterName
       type: System.String
     - id: value
       type: System.Object
     return:
-      type: '{P}'
-    content.vb: Public Function GetNewParameter(parameterName As String, value As Object) As P
+      type: System.Data.Common.DbParameter
+    content.vb: Public Function GetNewParameter(parameterName As String, value As Object) As DbParameter
   overload: DotNetHelper.Database.DataSource.DatabaseAccess`2.GetNewParameter*
+  implements:
+  - DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(System.String,System.Object)
   nameWithType.vb: DatabaseAccess(Of C, P).GetNewParameter(String, Object)
   modifiers.csharp:
   - public
@@ -3702,17 +3704,74 @@ references:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.GetNewParameter
   nameWithType.vb: DatabaseAccess(Of C, P).GetNewParameter
   fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).GetNewParameter
-- uid: '{P}'
-  commentId: '!:P'
-  definition: P
-  name: P
-  nameWithType: P
-  fullName: P
-- uid: P
-  commentId: '!:P'
-  name: P
-  nameWithType: P
-  fullName: P
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(System.String,System.Object)
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(System.String,System.Object)
+  parent: DotNetHelper.Database.Interface.IDatabaseAccess
+  isExternal: true
+  name: GetNewParameter(String, Object)
+  nameWithType: IDatabaseAccess.GetNewParameter(String, Object)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(System.String, System.Object)
+  spec.csharp:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(System.String,System.Object)
+    name: GetNewParameter
+    nameWithType: IDatabaseAccess.GetNewParameter
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(System.String,System.Object)
+    name: GetNewParameter
+    nameWithType: IDatabaseAccess.GetNewParameter
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Data.Common.DbParameter
+  commentId: T:System.Data.Common.DbParameter
+  parent: System.Data.Common
+  isExternal: true
+  name: DbParameter
+  nameWithType: DbParameter
+  fullName: System.Data.Common.DbParameter
+- uid: System.Data.Common
+  commentId: N:System.Data.Common
+  isExternal: true
+  name: System.Data.Common
+  nameWithType: System.Data.Common
+  fullName: System.Data.Common
 - uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.CanConnect*
   commentId: Overload:DotNetHelper.Database.DataSource.DatabaseAccess`2.CanConnect
   name: CanConnect

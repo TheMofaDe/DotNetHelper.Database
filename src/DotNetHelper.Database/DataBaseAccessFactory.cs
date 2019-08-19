@@ -51,25 +51,16 @@ namespace DotNetHelper.Database
         {
             DbProviderFactory = dbProviderFactory;
             ObjectToSql = new ObjectToSql.Services.ObjectToSql(type);
+            ConnectionString = GetConnectionStringByProvider(DBProviderHelper.Map[type]);
         }
 
-        public DatabaseAccessFactory(string providerInvariantName, DataBaseType type, TimeSpan? commandTimeOut = null, TimeSpan? connectionTimeOut = null)
-        {
-            DbProviderFactory = DbProviderFactories.GetFactory(providerInvariantName);
-            ObjectToSql = new ObjectToSql.Services.ObjectToSql(type);
-            ConnectionString = GetConnectionStringByProvider(providerInvariantName);
-        }
-
-
-        public DatabaseAccessFactory(DataBaseType type, TimeSpan? commandTimeOut = null, TimeSpan? connectionTimeOut = null)
+        public DatabaseAccessFactory(DataBaseType type, string connectionString = null, TimeSpan? commandTimeOut = null, TimeSpan? connectionTimeOut = null)
         {
             CommandTimeOut = commandTimeOut.GetValueOrDefault(CommandTimeOut);
             ConnectionTimeOut = connectionTimeOut.GetValueOrDefault(ConnectionTimeOut);
             ObjectToSql = new ObjectToSql.Services.ObjectToSql(type);
             DbProviderFactory = DbProviderFactories.GetFactory(DBProviderHelper.Map[type]);
-            ConnectionString = GetConnectionStringByProvider(DBProviderHelper.Map[type]);
-
-
+            ConnectionString = connectionString ?? GetConnectionStringByProvider(DBProviderHelper.Map[type]);
         }
 
 

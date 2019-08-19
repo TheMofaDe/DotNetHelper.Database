@@ -13,30 +13,33 @@ references:
   commentId: T:DotNetHelper.Database.DatabaseAccessFactory
   fullName: DotNetHelper.Database.DatabaseAccessFactory
   nameWithType: DatabaseAccessFactory
-- uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.TimeSpan)
-  name: DatabaseAccessFactory(DataBaseType, TimeSpan)
-  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory__ctor_DotNetHelper_ObjectToSql_Enum_DataBaseType_System_TimeSpan_
-  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.TimeSpan)
-  fullName: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.TimeSpan)
-  nameWithType: DatabaseAccessFactory.DatabaseAccessFactory(DataBaseType, TimeSpan)
-- uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.TimeSpan,System.TimeSpan)
-  name: DatabaseAccessFactory(DataBaseType, TimeSpan, TimeSpan)
-  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory__ctor_DotNetHelper_ObjectToSql_Enum_DataBaseType_System_TimeSpan_System_TimeSpan_
-  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.TimeSpan,System.TimeSpan)
-  fullName: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.TimeSpan, System.TimeSpan)
-  nameWithType: DatabaseAccessFactory.DatabaseAccessFactory(DataBaseType, TimeSpan, TimeSpan)
-- uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.Data.Common.DbProviderFactory,DotNetHelper.ObjectToSql.Enum.DataBaseType)
-  name: DatabaseAccessFactory(DbProviderFactory, DataBaseType)
-  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory__ctor_System_Data_Common_DbProviderFactory_DotNetHelper_ObjectToSql_Enum_DataBaseType_
-  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.Data.Common.DbProviderFactory,DotNetHelper.ObjectToSql.Enum.DataBaseType)
-  fullName: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(System.Data.Common.DbProviderFactory, DotNetHelper.ObjectToSql.Enum.DataBaseType)
-  nameWithType: DatabaseAccessFactory.DatabaseAccessFactory(DbProviderFactory, DataBaseType)
-- uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.String,DotNetHelper.ObjectToSql.Enum.DataBaseType)
-  name: DatabaseAccessFactory(String, DataBaseType)
-  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory__ctor_System_String_DotNetHelper_ObjectToSql_Enum_DataBaseType_
-  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.String,DotNetHelper.ObjectToSql.Enum.DataBaseType)
-  fullName: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(System.String, DotNetHelper.ObjectToSql.Enum.DataBaseType)
-  nameWithType: DatabaseAccessFactory.DatabaseAccessFactory(String, DataBaseType)
+- uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
+  name: DatabaseAccessFactory(DataBaseType, Nullable<TimeSpan>, Nullable<TimeSpan>)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory__ctor_DotNetHelper_ObjectToSql_Enum_DataBaseType_System_Nullable_System_TimeSpan__System_Nullable_System_TimeSpan__
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
+  name.vb: DatabaseAccessFactory(DataBaseType, Nullable(Of TimeSpan), Nullable(Of TimeSpan))
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.Nullable<System.TimeSpan>, System.Nullable<System.TimeSpan>)
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.Nullable(Of System.TimeSpan), System.Nullable(Of System.TimeSpan))
+  nameWithType: DatabaseAccessFactory.DatabaseAccessFactory(DataBaseType, Nullable<TimeSpan>, Nullable<TimeSpan>)
+  nameWithType.vb: DatabaseAccessFactory.DatabaseAccessFactory(DataBaseType, Nullable(Of TimeSpan), Nullable(Of TimeSpan))
+- uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.Data.Common.DbProviderFactory,DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
+  name: DatabaseAccessFactory(DbProviderFactory, DataBaseType, Nullable<TimeSpan>, Nullable<TimeSpan>)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory__ctor_System_Data_Common_DbProviderFactory_DotNetHelper_ObjectToSql_Enum_DataBaseType_System_Nullable_System_TimeSpan__System_Nullable_System_TimeSpan__
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.Data.Common.DbProviderFactory,DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
+  name.vb: DatabaseAccessFactory(DbProviderFactory, DataBaseType, Nullable(Of TimeSpan), Nullable(Of TimeSpan))
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(System.Data.Common.DbProviderFactory, DotNetHelper.ObjectToSql.Enum.DataBaseType, System.Nullable<System.TimeSpan>, System.Nullable<System.TimeSpan>)
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(System.Data.Common.DbProviderFactory, DotNetHelper.ObjectToSql.Enum.DataBaseType, System.Nullable(Of System.TimeSpan), System.Nullable(Of System.TimeSpan))
+  nameWithType: DatabaseAccessFactory.DatabaseAccessFactory(DbProviderFactory, DataBaseType, Nullable<TimeSpan>, Nullable<TimeSpan>)
+  nameWithType.vb: DatabaseAccessFactory.DatabaseAccessFactory(DbProviderFactory, DataBaseType, Nullable(Of TimeSpan), Nullable(Of TimeSpan))
+- uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.String,DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
+  name: DatabaseAccessFactory(String, DataBaseType, Nullable<TimeSpan>, Nullable<TimeSpan>)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory__ctor_System_String_DotNetHelper_ObjectToSql_Enum_DataBaseType_System_Nullable_System_TimeSpan__System_Nullable_System_TimeSpan__
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.String,DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
+  name.vb: DatabaseAccessFactory(String, DataBaseType, Nullable(Of TimeSpan), Nullable(Of TimeSpan))
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(System.String, DotNetHelper.ObjectToSql.Enum.DataBaseType, System.Nullable<System.TimeSpan>, System.Nullable<System.TimeSpan>)
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(System.String, DotNetHelper.ObjectToSql.Enum.DataBaseType, System.Nullable(Of System.TimeSpan), System.Nullable(Of System.TimeSpan))
+  nameWithType: DatabaseAccessFactory.DatabaseAccessFactory(String, DataBaseType, Nullable<TimeSpan>, Nullable<TimeSpan>)
+  nameWithType.vb: DatabaseAccessFactory.DatabaseAccessFactory(String, DataBaseType, Nullable(Of TimeSpan), Nullable(Of TimeSpan))
 - uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor*
   name: DatabaseAccessFactory
   href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory__ctor_
@@ -1090,19 +1093,6 @@ references:
   commentId: T:DotNetHelper.Database.Extension.ExtDataReader
   fullName: DotNetHelper.Database.Extension.ExtDataReader
   nameWithType: ExtDataReader
-- uid: DotNetHelper.Database.Extension.ExtDataReader.GetBytes(System.Data.IDataReader,System.Int32)
-  name: GetBytes(IDataReader, Int32)
-  href: api/DotNetHelper.Database.Extension.ExtDataReader.html#DotNetHelper_Database_Extension_ExtDataReader_GetBytes_System_Data_IDataReader_System_Int32_
-  commentId: M:DotNetHelper.Database.Extension.ExtDataReader.GetBytes(System.Data.IDataReader,System.Int32)
-  fullName: DotNetHelper.Database.Extension.ExtDataReader.GetBytes(System.Data.IDataReader, System.Int32)
-  nameWithType: ExtDataReader.GetBytes(IDataReader, Int32)
-- uid: DotNetHelper.Database.Extension.ExtDataReader.GetBytes*
-  name: GetBytes
-  href: api/DotNetHelper.Database.Extension.ExtDataReader.html#DotNetHelper_Database_Extension_ExtDataReader_GetBytes_
-  commentId: Overload:DotNetHelper.Database.Extension.ExtDataReader.GetBytes
-  isSpec: "True"
-  fullName: DotNetHelper.Database.Extension.ExtDataReader.GetBytes
-  nameWithType: ExtDataReader.GetBytes
 - uid: DotNetHelper.Database.Extension.ExtDataReader.HasRows(System.Data.IDataReader)
   name: HasRows(IDataReader)
   href: api/DotNetHelper.Database.Extension.ExtDataReader.html#DotNetHelper_Database_Extension_ExtDataReader_HasRows_System_Data_IDataReader_
@@ -1316,6 +1306,31 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.Database.Extension.TypeExtension.IsTypeDynamic
   nameWithType: TypeExtension.IsTypeDynamic
+- uid: DotNetHelper.Database.Helper
+  name: DotNetHelper.Database.Helper
+  href: api/DotNetHelper.Database.Helper.html
+  commentId: N:DotNetHelper.Database.Helper
+  fullName: DotNetHelper.Database.Helper
+  nameWithType: DotNetHelper.Database.Helper
+- uid: DotNetHelper.Database.Helper.DBProviderHelper
+  name: DBProviderHelper
+  href: api/DotNetHelper.Database.Helper.DBProviderHelper.html
+  commentId: T:DotNetHelper.Database.Helper.DBProviderHelper
+  fullName: DotNetHelper.Database.Helper.DBProviderHelper
+  nameWithType: DBProviderHelper
+- uid: DotNetHelper.Database.Helper.DBProviderHelper.Map
+  name: Map
+  href: api/DotNetHelper.Database.Helper.DBProviderHelper.html#DotNetHelper_Database_Helper_DBProviderHelper_Map
+  commentId: P:DotNetHelper.Database.Helper.DBProviderHelper.Map
+  fullName: DotNetHelper.Database.Helper.DBProviderHelper.Map
+  nameWithType: DBProviderHelper.Map
+- uid: DotNetHelper.Database.Helper.DBProviderHelper.Map*
+  name: Map
+  href: api/DotNetHelper.Database.Helper.DBProviderHelper.html#DotNetHelper_Database_Helper_DBProviderHelper_Map_
+  commentId: Overload:DotNetHelper.Database.Helper.DBProviderHelper.Map
+  isSpec: "True"
+  fullName: DotNetHelper.Database.Helper.DBProviderHelper.Map
+  nameWithType: DBProviderHelper.Map
 - uid: DotNetHelper.Database.Interface
   name: DotNetHelper.Database.Interface
   href: api/DotNetHelper.Database.Interface.html
@@ -1698,6 +1713,19 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommandAndTransaction
   nameWithType: IDatabaseAccess.GetNewCommandAndTransaction
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(System.String,System.Object)
+  name: GetNewParameter(String, Object)
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_GetNewParameter_System_String_System_Object_
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(System.String,System.Object)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(System.String, System.Object)
+  nameWithType: IDatabaseAccess.GetNewParameter(String, Object)
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter*
+  name: GetNewParameter
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_GetNewParameter_
+  commentId: Overload:DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter
+  isSpec: "True"
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter
+  nameWithType: IDatabaseAccess.GetNewParameter
 - uid: DotNetHelper.Database.Models
   name: DotNetHelper.Database.Models
   href: api/DotNetHelper.Database.Models.html

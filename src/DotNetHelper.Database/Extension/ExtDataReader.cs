@@ -194,7 +194,7 @@ namespace DotNetHelper.Database.Extension
                     else
                     {
                         var value = reader.GetValue(0).ToString();
-                       return (value as T);
+                        return (value as T);
                     }
                 }
                 reader.Close();
@@ -222,7 +222,7 @@ namespace DotNetHelper.Database.Extension
             return reader.MapTo<T>(null, null, null);
         }
 
-    
+
 
 
 

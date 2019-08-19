@@ -5,7 +5,6 @@ items:
   id: ExtDataReader
   parent: DotNetHelper.Database.Extension
   children:
-  - DotNetHelper.Database.Extension.ExtDataReader.GetBytes(System.Data.IDataReader,System.Int32)
   - DotNetHelper.Database.Extension.ExtDataReader.HasRows(System.Data.IDataReader)
   - DotNetHelper.Database.Extension.ExtDataReader.MapTo``1(System.Data.IDataReader)
   - DotNetHelper.Database.Extension.ExtDataReader.MapTo``1(System.Data.IDataReader,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object})
@@ -50,54 +49,6 @@ items:
   modifiers.vb:
   - Public
   - Module
-- uid: DotNetHelper.Database.Extension.ExtDataReader.GetBytes(System.Data.IDataReader,System.Int32)
-  commentId: M:DotNetHelper.Database.Extension.ExtDataReader.GetBytes(System.Data.IDataReader,System.Int32)
-  id: GetBytes(System.Data.IDataReader,System.Int32)
-  isExtensionMethod: true
-  parent: DotNetHelper.Database.Extension.ExtDataReader
-  langs:
-  - csharp
-  - vb
-  name: GetBytes(IDataReader, Int32)
-  nameWithType: ExtDataReader.GetBytes(IDataReader, Int32)
-  fullName: DotNetHelper.Database.Extension.ExtDataReader.GetBytes(System.Data.IDataReader, System.Int32)
-  type: Method
-  source:
-    remote:
-      path: src/DotNetHelper.Database/Extension/ExtDataReader.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
-    id: GetBytes
-    path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
-    startLine: 27
-  assemblies:
-  - DotNetHelper.Database
-  namespace: DotNetHelper.Database.Extension
-  summary: "\nReads all available bytes from reader\n"
-  example: []
-  syntax:
-    content: public static byte[] GetBytes(this IDataReader reader, int ordinal)
-    parameters:
-    - id: reader
-      type: System.Data.IDataReader
-      description: ''
-    - id: ordinal
-      type: System.Int32
-      description: ''
-    return:
-      type: System.Byte[]
-      description: ''
-    content.vb: >-
-      <ExtensionAttribute>
-
-      Public Shared Function GetBytes(reader As IDataReader, ordinal As Integer) As Byte()
-  overload: DotNetHelper.Database.Extension.ExtDataReader.GetBytes*
-  modifiers.csharp:
-  - public
-  - static
-  modifiers.vb:
-  - Public
-  - Shared
 - uid: DotNetHelper.Database.Extension.ExtDataReader.HasRows(System.Data.IDataReader)
   commentId: M:DotNetHelper.Database.Extension.ExtDataReader.HasRows(System.Data.IDataReader)
   id: HasRows(System.Data.IDataReader)
@@ -212,7 +163,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: MapToList
     path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
-    startLine: 150
+    startLine: 158
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
@@ -265,7 +216,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: MapTo
     path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
-    startLine: 165
+    startLine: 173
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
@@ -319,7 +270,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: MapTo
     path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
-    startLine: 203
+    startLine: 219
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
@@ -372,7 +323,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: MapToDataTable
     path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
-    startLine: 245
+    startLine: 263
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
@@ -699,11 +650,11 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: DotNetHelper.Database.Extension.ExtDataReader.GetBytes*
-  commentId: Overload:DotNetHelper.Database.Extension.ExtDataReader.GetBytes
-  name: GetBytes
-  nameWithType: ExtDataReader.GetBytes
-  fullName: DotNetHelper.Database.Extension.ExtDataReader.GetBytes
+- uid: DotNetHelper.Database.Extension.ExtDataReader.HasRows*
+  commentId: Overload:DotNetHelper.Database.Extension.ExtDataReader.HasRows
+  name: HasRows
+  nameWithType: ExtDataReader.HasRows
+  fullName: DotNetHelper.Database.Extension.ExtDataReader.HasRows
 - uid: System.Data.IDataReader
   commentId: T:System.Data.IDataReader
   parent: System.Data
@@ -711,50 +662,6 @@ references:
   name: IDataReader
   nameWithType: IDataReader
   fullName: System.Data.IDataReader
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
-  isExternal: true
-  name: Int32
-  nameWithType: Int32
-  fullName: System.Int32
-- uid: System.Byte[]
-  isExternal: true
-  name: Byte[]
-  nameWithType: Byte[]
-  fullName: System.Byte[]
-  nameWithType.vb: Byte()
-  fullName.vb: System.Byte()
-  name.vb: Byte()
-  spec.csharp:
-  - uid: System.Byte
-    name: Byte
-    nameWithType: Byte
-    fullName: System.Byte
-    isExternal: true
-  - name: '[]'
-    nameWithType: '[]'
-    fullName: '[]'
-  spec.vb:
-  - uid: System.Byte
-    name: Byte
-    nameWithType: Byte
-    fullName: System.Byte
-    isExternal: true
-  - name: ()
-    nameWithType: ()
-    fullName: ()
-- uid: System.Data
-  commentId: N:System.Data
-  isExternal: true
-  name: System.Data
-  nameWithType: System.Data
-  fullName: System.Data
-- uid: DotNetHelper.Database.Extension.ExtDataReader.HasRows*
-  commentId: Overload:DotNetHelper.Database.Extension.ExtDataReader.HasRows
-  name: HasRows
-  nameWithType: ExtDataReader.HasRows
-  fullName: DotNetHelper.Database.Extension.ExtDataReader.HasRows
 - uid: System.Nullable{System.Boolean}
   commentId: T:System.Nullable{System.Boolean}
   parent: System
@@ -799,6 +706,12 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Data
+  commentId: N:System.Data
+  isExternal: true
+  name: System.Data
+  nameWithType: System.Data
+  fullName: System.Data
 - uid: System.Nullable`1
   commentId: T:System.Nullable`1
   isExternal: true

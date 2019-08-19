@@ -1,0 +1,22 @@
+### YamlMime:ManagedReference
+items:
+- uid: DotNetHelper.Database.Helper
+  commentId: N:DotNetHelper.Database.Helper
+  id: DotNetHelper.Database.Helper
+  children:
+  - DotNetHelper.Database.Helper.DBProviderHelper
+  langs:
+  - csharp
+  - vb
+  name: DotNetHelper.Database.Helper
+  nameWithType: DotNetHelper.Database.Helper
+  fullName: DotNetHelper.Database.Helper
+  type: Namespace
+  assemblies:
+  - DotNetHelper.Database
+references:
+- uid: DotNetHelper.Database.Helper.DBProviderHelper
+  commentId: T:DotNetHelper.Database.Helper.DBProviderHelper
+  name: DBProviderHelper
+  nameWithType: DBProviderHelper
+  fullName: DotNetHelper.Database.Helper.DBProviderHelper

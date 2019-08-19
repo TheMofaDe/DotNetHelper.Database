@@ -147,6 +147,15 @@
                         </ul>  </li>
                     <li class="">
                       <span class="expand-stub"></span>
+                      <a href="DotNetHelper.Database.Helper.html" title="DotNetHelper.Database.Helper" class="">DotNetHelper.Database.Helper</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DotNetHelper.Database.Helper.DBProviderHelper.html" title="DBProviderHelper" class="">DBProviderHelper</a>
+                          </li>
+                        </ul>  </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
                       <a href="DotNetHelper.Database.Interface.html" title="DotNetHelper.Database.Interface" class="">DotNetHelper.Database.Interface</a>
                         
                         <ul class="nav level2">
@@ -238,18 +247,18 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory__ctor_DotNetHelper_ObjectToSql_Enum_DataBaseType_System_TimeSpan_.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.%23ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType%2CSystem.TimeSpan)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory__ctor_DotNetHelper_ObjectToSql_Enum_DataBaseType_System_Nullable_System_TimeSpan__System_Nullable_System_TimeSpan__.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.%23ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType%2CSystem.Nullable%7BSystem.TimeSpan%7D%2CSystem.Nullable%7BSystem.TimeSpan%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L58">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L64">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory__ctor_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.#ctor*"></a>
-  <h4 id="DotNetHelper_Database_DatabaseAccessFactory__ctor_DotNetHelper_ObjectToSql_Enum_DataBaseType_System_TimeSpan_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.TimeSpan)">DatabaseAccessFactory(DataBaseType, TimeSpan)</h4>
+  <h4 id="DotNetHelper_Database_DatabaseAccessFactory__ctor_DotNetHelper_ObjectToSql_Enum_DataBaseType_System_Nullable_System_TimeSpan__System_Nullable_System_TimeSpan__" data-uid="DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})">DatabaseAccessFactory(DataBaseType, Nullable&lt;TimeSpan&gt;, Nullable&lt;TimeSpan&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DatabaseAccessFactory(DataBaseType type, TimeSpan commandTimeOut)</code></pre>
+    <pre><code class="lang-csharp hljs">public DatabaseAccessFactory(DataBaseType type, TimeSpan? commandTimeOut = default(TimeSpan? ), TimeSpan? connectionTimeOut = default(TimeSpan? ))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -267,49 +276,12 @@
         <td></td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></td>
-        <td><span class="parametername">commandTimeOut</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory__ctor_DotNetHelper_ObjectToSql_Enum_DataBaseType_System_TimeSpan_System_TimeSpan_.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.%23ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType%2CSystem.TimeSpan%2CSystem.TimeSpan)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L63">View Source</a>
-  </span>
-  <a id="DotNetHelper_Database_DatabaseAccessFactory__ctor_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.#ctor*"></a>
-  <h4 id="DotNetHelper_Database_DatabaseAccessFactory__ctor_DotNetHelper_ObjectToSql_Enum_DataBaseType_System_TimeSpan_System_TimeSpan_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.TimeSpan,System.TimeSpan)">DatabaseAccessFactory(DataBaseType, TimeSpan, TimeSpan)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DatabaseAccessFactory(DataBaseType type, TimeSpan commandTimeOut, TimeSpan connectionTimeOut)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">DotNetHelper.ObjectToSql.Enum.DataBaseType</span></td>
-        <td><span class="parametername">type</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.timespan">TimeSpan</a>&gt;</td>
         <td><span class="parametername">commandTimeOut</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.timespan">TimeSpan</a>&gt;</td>
         <td><span class="parametername">connectionTimeOut</span></td>
         <td></td>
       </tr>
@@ -317,18 +289,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory__ctor_System_Data_Common_DbProviderFactory_DotNetHelper_ObjectToSql_Enum_DataBaseType_.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.%23ctor(System.Data.Common.DbProviderFactory%2CDotNetHelper.ObjectToSql.Enum.DataBaseType)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory__ctor_System_Data_Common_DbProviderFactory_DotNetHelper_ObjectToSql_Enum_DataBaseType_System_Nullable_System_TimeSpan__System_Nullable_System_TimeSpan__.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.%23ctor(System.Data.Common.DbProviderFactory%2CDotNetHelper.ObjectToSql.Enum.DataBaseType%2CSystem.Nullable%7BSystem.TimeSpan%7D%2CSystem.Nullable%7BSystem.TimeSpan%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L45">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L50">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory__ctor_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.#ctor*"></a>
-  <h4 id="DotNetHelper_Database_DatabaseAccessFactory__ctor_System_Data_Common_DbProviderFactory_DotNetHelper_ObjectToSql_Enum_DataBaseType_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.Data.Common.DbProviderFactory,DotNetHelper.ObjectToSql.Enum.DataBaseType)">DatabaseAccessFactory(DbProviderFactory, DataBaseType)</h4>
+  <h4 id="DotNetHelper_Database_DatabaseAccessFactory__ctor_System_Data_Common_DbProviderFactory_DotNetHelper_ObjectToSql_Enum_DataBaseType_System_Nullable_System_TimeSpan__System_Nullable_System_TimeSpan__" data-uid="DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.Data.Common.DbProviderFactory,DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})">DatabaseAccessFactory(DbProviderFactory, DataBaseType, Nullable&lt;TimeSpan&gt;, Nullable&lt;TimeSpan&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DatabaseAccessFactory(DbProviderFactory dbProviderFactory, DataBaseType type)</code></pre>
+    <pre><code class="lang-csharp hljs">public DatabaseAccessFactory(DbProviderFactory dbProviderFactory, DataBaseType type, TimeSpan? commandTimeOut = default(TimeSpan? ), TimeSpan? connectionTimeOut = default(TimeSpan? ))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -350,22 +322,32 @@
         <td><span class="parametername">type</span></td>
         <td></td>
       </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.timespan">TimeSpan</a>&gt;</td>
+        <td><span class="parametername">commandTimeOut</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.timespan">TimeSpan</a>&gt;</td>
+        <td><span class="parametername">connectionTimeOut</span></td>
+        <td></td>
+      </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory__ctor_System_String_DotNetHelper_ObjectToSql_Enum_DataBaseType_.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.%23ctor(System.String%2CDotNetHelper.ObjectToSql.Enum.DataBaseType)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory__ctor_System_String_DotNetHelper_ObjectToSql_Enum_DataBaseType_System_Nullable_System_TimeSpan__System_Nullable_System_TimeSpan__.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.%23ctor(System.String%2CDotNetHelper.ObjectToSql.Enum.DataBaseType%2CSystem.Nullable%7BSystem.TimeSpan%7D%2CSystem.Nullable%7BSystem.TimeSpan%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L51">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L56">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory__ctor_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.#ctor*"></a>
-  <h4 id="DotNetHelper_Database_DatabaseAccessFactory__ctor_System_String_DotNetHelper_ObjectToSql_Enum_DataBaseType_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.String,DotNetHelper.ObjectToSql.Enum.DataBaseType)">DatabaseAccessFactory(String, DataBaseType)</h4>
+  <h4 id="DotNetHelper_Database_DatabaseAccessFactory__ctor_System_String_DotNetHelper_ObjectToSql_Enum_DataBaseType_System_Nullable_System_TimeSpan__System_Nullable_System_TimeSpan__" data-uid="DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.String,DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})">DatabaseAccessFactory(String, DataBaseType, Nullable&lt;TimeSpan&gt;, Nullable&lt;TimeSpan&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DatabaseAccessFactory(string providerInvariantName, DataBaseType type)</code></pre>
+    <pre><code class="lang-csharp hljs">public DatabaseAccessFactory(string providerInvariantName, DataBaseType type, TimeSpan? commandTimeOut = default(TimeSpan? ), TimeSpan? connectionTimeOut = default(TimeSpan? ))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -387,6 +369,16 @@
         <td><span class="parametername">type</span></td>
         <td></td>
       </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.timespan">TimeSpan</a>&gt;</td>
+        <td><span class="parametername">commandTimeOut</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.timespan">TimeSpan</a>&gt;</td>
+        <td><span class="parametername">connectionTimeOut</span></td>
+        <td></td>
+      </tr>
     </tbody>
   </table>
   <h3 id="properties">Properties
@@ -396,7 +388,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_CommandTimeOut.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.CommandTimeOut%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L28">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L33">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_CommandTimeOut_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.CommandTimeOut*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_CommandTimeOut" data-uid="DotNetHelper.Database.DatabaseAccessFactory.CommandTimeOut">CommandTimeOut</h4>
@@ -427,7 +419,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_ConnectionTimeOut.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.ConnectionTimeOut%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L32">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L37">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_ConnectionTimeOut_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.ConnectionTimeOut*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_ConnectionTimeOut" data-uid="DotNetHelper.Database.DatabaseAccessFactory.ConnectionTimeOut">ConnectionTimeOut</h4>
@@ -458,7 +450,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_DatabaseType.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.DatabaseType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L40">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L45">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_DatabaseType_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.DatabaseType*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_DatabaseType" data-uid="DotNetHelper.Database.DatabaseAccessFactory.DatabaseType">DatabaseType</h4>
@@ -489,7 +481,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_DbProviderFactory.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.DbProviderFactory%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L42">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L47">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_DbProviderFactory_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.DbProviderFactory*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_DbProviderFactory" data-uid="DotNetHelper.Database.DatabaseAccessFactory.DbProviderFactory">DbProviderFactory</h4>
@@ -521,7 +513,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_CanConnect.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.CanConnect%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L367">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L396">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_CanConnect_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.CanConnect*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_CanConnect" data-uid="DotNetHelper.Database.DatabaseAccessFactory.CanConnect">CanConnect()</h4>
@@ -552,7 +544,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_Execute__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.Execute%60%601(%60%600%2CDotNetHelper.ObjectToSql.Enum.ActionType)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L461">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L490">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_Execute_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.Execute*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_Execute__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType)">Execute&lt;T&gt;(T, ActionType)</h4>
@@ -624,7 +616,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_Execute__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_String_.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.Execute%60%601(%60%600%2CDotNetHelper.ObjectToSql.Enum.ActionType%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L474">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L503">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_Execute_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.Execute*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_Execute__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_String_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)">Execute&lt;T&gt;(T, ActionType, String)</h4>
@@ -701,7 +693,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_Execute__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_String_System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.Execute%60%601(%60%600%2CDotNetHelper.ObjectToSql.Enum.ActionType%2CSystem.String%2CSystem.Func%7BSystem.Object%2CSystem.String%7D%2CSystem.Func%7BSystem.Object%2CSystem.String%7D%2CSystem.Func%7BSystem.Object%2CSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L490">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L519">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_Execute_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.Execute*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_Execute__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_String_System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__" data-uid="DotNetHelper.Database.DatabaseAccessFactory.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})">Execute&lt;T&gt;(T, ActionType, String, Func&lt;Object, String&gt;, Func&lt;Object, String&gt;, Func&lt;Object, String&gt;)</h4>
@@ -796,7 +788,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_ExecuteAndGetOutput__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Linq_Expressions_Expression_System_Func___0_System_Object_____.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutput%60%601(%60%600%2CDotNetHelper.ObjectToSql.Enum.ActionType%2CSystem.Func%7BSystem.String%2CSystem.Type%2CSystem.Object%7D%2CSystem.Func%7BSystem.String%2CSystem.Type%2CSystem.Object%7D%2CSystem.Func%7BSystem.String%2CSystem.Type%2CSystem.Object%7D%2CSystem.Func%7BSystem.Object%2CSystem.String%7D%2CSystem.Func%7BSystem.Object%2CSystem.String%7D%2CSystem.Func%7BSystem.Object%2CSystem.String%7D%2CSystem.Linq.Expressions.Expression%7BSystem.Func%7B%60%600%2CSystem.Object%7D%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L527">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L556">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_ExecuteAndGetOutput_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutput*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_ExecuteAndGetOutput__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Linq_Expressions_Expression_System_Func___0_System_Object_____" data-uid="DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])">ExecuteAndGetOutput&lt;T&gt;(T, ActionType, Func&lt;String, Type, Object&gt;, Func&lt;String, Type, Object&gt;, Func&lt;String, Type, Object&gt;, Func&lt;Object, String&gt;, Func&lt;Object, String&gt;, Func&lt;Object, String&gt;, Expression&lt;Func&lt;T, Object&gt;&gt;[])</h4>
@@ -908,7 +900,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_ExecuteAndGetOutput__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_Linq_Expressions_Expression_System_Func___0_System_Object_____.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutput%60%601(%60%600%2CDotNetHelper.ObjectToSql.Enum.ActionType%2CSystem.Linq.Expressions.Expression%7BSystem.Func%7B%60%600%2CSystem.Object%7D%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L508">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L537">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_ExecuteAndGetOutput_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutput*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_ExecuteAndGetOutput__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_Linq_Expressions_Expression_System_Func___0_System_Object_____" data-uid="DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])">ExecuteAndGetOutput&lt;T&gt;(T, ActionType, Expression&lt;Func&lt;T, Object&gt;&gt;[])</h4>
@@ -985,7 +977,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_ExecuteAndGetOutputAsDataReader__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Linq_Expressions_Expression_System_Func___0_System_Object_____.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutputAsDataReader%60%601(%60%600%2CDotNetHelper.ObjectToSql.Enum.ActionType%2CSystem.Func%7BSystem.Object%2CSystem.String%7D%2CSystem.Func%7BSystem.Object%2CSystem.String%7D%2CSystem.Func%7BSystem.Object%2CSystem.String%7D%2CSystem.Linq.Expressions.Expression%7BSystem.Func%7B%60%600%2CSystem.Object%7D%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L544">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L573">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_ExecuteAndGetOutputAsDataReader_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutputAsDataReader*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_ExecuteAndGetOutputAsDataReader__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Linq_Expressions_Expression_System_Func___0_System_Object_____" data-uid="DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutputAsDataReader``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])">ExecuteAndGetOutputAsDataReader&lt;T&gt;(T, ActionType, Func&lt;Object, String&gt;, Func&lt;Object, String&gt;, Func&lt;Object, String&gt;, Expression&lt;Func&lt;T, Object&gt;&gt;[])</h4>
@@ -1073,7 +1065,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_ExecuteAndGetOutputAsDataReader__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_Linq_Expressions_Expression_System_Func___0_System_Object_____.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutputAsDataReader%60%601(%60%600%2CDotNetHelper.ObjectToSql.Enum.ActionType%2CSystem.Linq.Expressions.Expression%7BSystem.Func%7B%60%600%2CSystem.Object%7D%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L539">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L568">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_ExecuteAndGetOutputAsDataReader_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutputAsDataReader*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_ExecuteAndGetOutputAsDataReader__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_Linq_Expressions_Expression_System_Func___0_System_Object_____" data-uid="DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutputAsDataReader``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])">ExecuteAndGetOutputAsDataReader&lt;T&gt;(T, ActionType, Expression&lt;Func&lt;T, Object&gt;&gt;[])</h4>
@@ -1146,7 +1138,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_ExecuteNonQuery_System_Data_Common_DbConnection_System_String_System_Data_CommandType_System_Collections_Generic_IEnumerable_System_Data_IDataParameter__.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.ExecuteNonQuery(System.Data.Common.DbConnection%2CSystem.String%2CSystem.Data.CommandType%2CSystem.Collections.Generic.IEnumerable%7BSystem.Data.IDataParameter%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L148">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L177">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_ExecuteNonQuery_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.ExecuteNonQuery*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_ExecuteNonQuery_System_Data_Common_DbConnection_System_String_System_Data_CommandType_System_Collections_Generic_IEnumerable_System_Data_IDataParameter__" data-uid="DotNetHelper.Database.DatabaseAccessFactory.ExecuteNonQuery(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})">ExecuteNonQuery(DbConnection, String, CommandType, IEnumerable&lt;IDataParameter&gt;)</h4>
@@ -1210,7 +1202,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_ExecuteNonQuery_System_String_System_Data_CommandType_System_Collections_Generic_IEnumerable_System_Data_IDataParameter__.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.ExecuteNonQuery(System.String%2CSystem.Data.CommandType%2CSystem.Collections.Generic.IEnumerable%7BSystem.Data.IDataParameter%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L131">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L160">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_ExecuteNonQuery_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.ExecuteNonQuery*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_ExecuteNonQuery_System_String_System_Data_CommandType_System_Collections_Generic_IEnumerable_System_Data_IDataParameter__" data-uid="DotNetHelper.Database.DatabaseAccessFactory.ExecuteNonQuery(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})">ExecuteNonQuery(String, CommandType, IEnumerable&lt;IDataParameter&gt;)</h4>
@@ -1284,7 +1276,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_ExecuteScalar_System_Data_Common_DbConnection_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.ExecuteScalar(System.Data.Common.DbConnection%2CSystem.String%2CSystem.Data.CommandType%2CSystem.Collections.Generic.List%7BSystem.Data.Common.DbParameter%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L178">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L207">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_ExecuteScalar_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.ExecuteScalar*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_ExecuteScalar_System_Data_Common_DbConnection_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__" data-uid="DotNetHelper.Database.DatabaseAccessFactory.ExecuteScalar(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})">ExecuteScalar(DbConnection, String, CommandType, List&lt;DbParameter&gt;)</h4>
@@ -1348,7 +1340,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_ExecuteScalar_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.ExecuteScalar(System.String%2CSystem.Data.CommandType%2CSystem.Collections.Generic.List%7BSystem.Data.Common.DbParameter%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L162">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L191">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_ExecuteScalar_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.ExecuteScalar*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_ExecuteScalar_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__" data-uid="DotNetHelper.Database.DatabaseAccessFactory.ExecuteScalar(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})">ExecuteScalar(String, CommandType, List&lt;DbParameter&gt;)</h4>
@@ -1407,7 +1399,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_ExecuteTransaction_System_Collections_Generic_List_System_String__System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Collections.Generic.List%7BSystem.String%7D%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L193">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L222">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_ExecuteTransaction_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_ExecuteTransaction_System_Collections_Generic_List_System_String__System_Boolean_System_Boolean_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)">ExecuteTransaction(List&lt;String&gt;, Boolean, Boolean)</h4>
@@ -1465,7 +1457,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_ExecuteTransaction_System_Data_Common_DbConnection_System_Collections_Generic_List_System_String__System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Data.Common.DbConnection%2CSystem.Collections.Generic.List%7BSystem.String%7D%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L209">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L238">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_ExecuteTransaction_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_ExecuteTransaction_System_Data_Common_DbConnection_System_Collections_Generic_List_System_String__System_Boolean_System_Boolean_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Data.Common.DbConnection,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)">ExecuteTransaction(DbConnection, List&lt;String&gt;, Boolean, Boolean)</h4>
@@ -1528,7 +1520,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_Get__1.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.Get%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L420">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L449">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_Get_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.Get*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_Get__1" data-uid="DotNetHelper.Database.DatabaseAccessFactory.Get``1">Get&lt;T&gt;()</h4>
@@ -1575,7 +1567,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_Get__1_System_Data_Common_DbConnection_System_String_System_Data_CommandType_System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__System_Collections_Generic_List_System_Data_Common_DbParameter__.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.Get%60%601(System.Data.Common.DbConnection%2CSystem.String%2CSystem.Data.CommandType%2CSystem.Func%7BSystem.String%2CSystem.Type%2CSystem.Object%7D%2CSystem.Func%7BSystem.String%2CSystem.Type%2CSystem.Object%7D%2CSystem.Func%7BSystem.String%2CSystem.Type%2CSystem.Object%7D%2CSystem.Collections.Generic.List%7BSystem.Data.Common.DbParameter%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L410">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L439">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_Get_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.Get*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_Get__1_System_Data_Common_DbConnection_System_String_System_Data_CommandType_System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__System_Collections_Generic_List_System_Data_Common_DbParameter__" data-uid="DotNetHelper.Database.DatabaseAccessFactory.Get``1(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Collections.Generic.List{System.Data.Common.DbParameter})">Get&lt;T&gt;(DbConnection, String, CommandType, Func&lt;String, Type, Object&gt;, Func&lt;String, Type, Object&gt;, Func&lt;String, Type, Object&gt;, List&lt;DbParameter&gt;)</h4>
@@ -1671,7 +1663,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_Get__1_System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.Get%60%601(System.Func%7BSystem.String%2CSystem.Type%2CSystem.Object%7D%2CSystem.Func%7BSystem.String%2CSystem.Type%2CSystem.Object%7D%2CSystem.Func%7BSystem.String%2CSystem.Type%2CSystem.Object%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L435">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L464">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_Get_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.Get*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_Get__1_System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__" data-uid="DotNetHelper.Database.DatabaseAccessFactory.Get``1(System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object})">Get&lt;T&gt;(Func&lt;String, Type, Object&gt;, Func&lt;String, Type, Object&gt;, Func&lt;String, Type, Object&gt;)</h4>
@@ -1748,7 +1740,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_Get__1_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.Get%60%601(System.String%2CSystem.Data.CommandType%2CSystem.Collections.Generic.List%7BSystem.Data.Common.DbParameter%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L449">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L478">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_Get_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.Get*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_Get__1_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__" data-uid="DotNetHelper.Database.DatabaseAccessFactory.Get``1(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})">Get&lt;T&gt;(String, CommandType, List&lt;DbParameter&gt;)</h4>
@@ -1823,7 +1815,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_Get__1_System_String_System_Data_CommandType_System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__System_Collections_Generic_List_System_Data_Common_DbParameter__.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.Get%60%601(System.String%2CSystem.Data.CommandType%2CSystem.Func%7BSystem.String%2CSystem.Type%2CSystem.Object%7D%2CSystem.Func%7BSystem.String%2CSystem.Type%2CSystem.Object%7D%2CSystem.Func%7BSystem.String%2CSystem.Type%2CSystem.Object%7D%2CSystem.Collections.Generic.List%7BSystem.Data.Common.DbParameter%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L393">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L422">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_Get_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.Get*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_Get__1_System_String_System_Data_CommandType_System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__System_Func_System_String_System_Type_System_Object__System_Collections_Generic_List_System_Data_Common_DbParameter__" data-uid="DotNetHelper.Database.DatabaseAccessFactory.Get``1(System.String,System.Data.CommandType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Collections.Generic.List{System.Data.Common.DbParameter})">Get&lt;T&gt;(String, CommandType, Func&lt;String, Type, Object&gt;, Func&lt;String, Type, Object&gt;, Func&lt;String, Type, Object&gt;, List&lt;DbParameter&gt;)</h4>
@@ -1914,7 +1906,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_GetDataReader_System_Data_Common_DbConnection_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.GetDataReader(System.Data.Common.DbConnection%2CSystem.String%2CSystem.Data.CommandType%2CSystem.Collections.Generic.List%7BSystem.Data.Common.DbParameter%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L247">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L276">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_GetDataReader_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.GetDataReader*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_GetDataReader_System_Data_Common_DbConnection_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__" data-uid="DotNetHelper.Database.DatabaseAccessFactory.GetDataReader(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})">GetDataReader(DbConnection, String, CommandType, List&lt;DbParameter&gt;)</h4>
@@ -1978,7 +1970,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_GetDataReader_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.GetDataReader(System.String%2CSystem.Data.CommandType%2CSystem.Collections.Generic.List%7BSystem.Data.Common.DbParameter%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L262">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L291">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_GetDataReader_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.GetDataReader*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_GetDataReader_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__" data-uid="DotNetHelper.Database.DatabaseAccessFactory.GetDataReader(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})">GetDataReader(String, CommandType, List&lt;DbParameter&gt;)</h4>
@@ -2037,7 +2029,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_GetDataTable_System_String_.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.GetDataTable(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L288">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L317">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_GetDataTable_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.GetDataTable*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_GetDataTable_System_String_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.GetDataTable(System.String)">GetDataTable(String)</h4>
@@ -2085,7 +2077,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_GetDataTable_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.GetDataTable(System.String%2CSystem.Data.CommandType%2CSystem.Collections.Generic.List%7BSystem.Data.Common.DbParameter%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L275">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L304">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_GetDataTable_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.GetDataTable*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_GetDataTable_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__" data-uid="DotNetHelper.Database.DatabaseAccessFactory.GetDataTable(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})">GetDataTable(String, CommandType, List&lt;DbParameter&gt;)</h4>
@@ -2144,7 +2136,7 @@
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_GetDataTableWithKeyInfo_System_String_.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithKeyInfo(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L350">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L379">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_GetDataTableWithKeyInfo_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithKeyInfo*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_GetDataTableWithKeyInfo_System_String_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithKeyInfo(System.String)">GetDataTableWithKeyInfo(String)</h4>
@@ -2193,7 +2185,7 @@ If working with a large dataSet and you don't need the dataTable which columns a
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_GetDataTableWithKeyInfo_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithKeyInfo(System.String%2CSystem.Data.CommandType%2CSystem.Collections.Generic.List%7BSystem.Data.Common.DbParameter%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L322">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L351">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_GetDataTableWithKeyInfo_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithKeyInfo*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_GetDataTableWithKeyInfo_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__" data-uid="DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithKeyInfo(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})">GetDataTableWithKeyInfo(String, CommandType, List&lt;DbParameter&gt;)</h4>
@@ -2253,7 +2245,7 @@ If working with a large dataSet and you don't need the dataTable which columns a
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_GetDataTableWithSchema_System_String_.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithSchema(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L340">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L369">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_GetDataTableWithSchema_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithSchema*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_GetDataTableWithSchema_System_String_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithSchema(System.String)">GetDataTableWithSchema(String)</h4>
@@ -2301,7 +2293,7 @@ If working with a large dataSet and you don't need the dataTable which columns a
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_GetDataTableWithSchema_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithSchema(System.String%2CSystem.Data.CommandType%2CSystem.Collections.Generic.List%7BSystem.Data.Common.DbParameter%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L300">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L329">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_GetDataTableWithSchema_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithSchema*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_GetDataTableWithSchema_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__" data-uid="DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithSchema(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})">GetDataTableWithSchema(String, CommandType, List&lt;DbParameter&gt;)</h4>
@@ -2360,7 +2352,7 @@ If working with a large dataSet and you don't need the dataTable which columns a
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_GetNewCommand_System_Data_IDbConnection_System_String_System_Data_CommandType_System_Collections_Generic_IEnumerable_System_Data_IDataParameter__.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.GetNewCommand(System.Data.IDbConnection%2CSystem.String%2CSystem.Data.CommandType%2CSystem.Collections.Generic.IEnumerable%7BSystem.Data.IDataParameter%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L90">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L119">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_GetNewCommand_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.GetNewCommand*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_GetNewCommand_System_Data_IDbConnection_System_String_System_Data_CommandType_System_Collections_Generic_IEnumerable_System_Data_IDataParameter__" data-uid="DotNetHelper.Database.DatabaseAccessFactory.GetNewCommand(System.Data.IDbConnection,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})">GetNewCommand(IDbConnection, String, CommandType, IEnumerable&lt;IDataParameter&gt;)</h4>
@@ -2424,7 +2416,7 @@ If working with a large dataSet and you don't need the dataTable which columns a
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_GetNewCommandAndTransaction_System_Data_IDbConnection_.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.GetNewCommandAndTransaction(System.Data.IDbConnection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L109">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L138">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_GetNewCommandAndTransaction_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.GetNewCommandAndTransaction*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_GetNewCommandAndTransaction_System_Data_IDbConnection_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.GetNewCommandAndTransaction(System.Data.IDbConnection)">GetNewCommandAndTransaction(IDbConnection)</h4>
@@ -2471,7 +2463,7 @@ If working with a large dataSet and you don't need the dataTable which columns a
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_GetNewConnection_System_Boolean_.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.GetNewConnection(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L72">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L100">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_GetNewConnection_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.GetNewConnection*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_GetNewConnection_System_Boolean_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.GetNewConnection(System.Boolean)">GetNewConnection(Boolean)</h4>
@@ -2518,7 +2510,7 @@ If working with a large dataSet and you don't need the dataTable which columns a
     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory_GetNewParameter_System_String_System_Object_.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory.GetNewParameter(System.String%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L355">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L384">View Source</a>
   </span>
   <a id="DotNetHelper_Database_DatabaseAccessFactory_GetNewParameter_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.GetNewParameter*"></a>
   <h4 id="DotNetHelper_Database_DatabaseAccessFactory_GetNewParameter_System_String_System_Object_" data-uid="DotNetHelper.Database.DatabaseAccessFactory.GetNewParameter(System.String,System.Object)">GetNewParameter(String, Object)</h4>
@@ -2580,7 +2572,7 @@ If working with a large dataSet and you don't need the dataTable which columns a
                     <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_DatabaseAccessFactory.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.DatabaseAccessFactory%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L22" class="contribution-link">View Source</a>
+                    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/DataBaseAccessFactory.cs/#L24" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

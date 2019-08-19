@@ -23,7 +23,7 @@ namespace DotNetHelper.Database.Tests.SQLServerTests
 
         public DatabaseAccessFixture()
         {
-         
+
 
         }
 
@@ -233,7 +233,7 @@ namespace DotNetHelper.Database.Tests.SQLServerTests
 
         [Test]
         [Order(2)]
-        public void Test_Object_With_Serialized_Value_Pull_From_DataBase_Deserialize()  
+        public void Test_Object_With_Serialized_Value_Pull_From_DataBase_Deserialize()
         {
             var mockObj = GetEmployeeSerialize(1);
             var objs = DatabaseAccess.Get<EmployeeSerialize>(DeSerializeObject, (s, type) => Json.Deserialize(s, type), (s, type) => Csv.Deserialize(s, type));

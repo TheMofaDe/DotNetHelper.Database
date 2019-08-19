@@ -5,10 +5,9 @@ items:
   id: DatabaseAccessFactory
   parent: DotNetHelper.Database
   children:
-  - DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.TimeSpan)
-  - DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.TimeSpan,System.TimeSpan)
-  - DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.Data.Common.DbProviderFactory,DotNetHelper.ObjectToSql.Enum.DataBaseType)
-  - DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.String,DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  - DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
+  - DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.Data.Common.DbProviderFactory,DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
+  - DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.String,DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
   - DotNetHelper.Database.DatabaseAccessFactory.CanConnect
   - DotNetHelper.Database.DatabaseAccessFactory.CommandTimeOut
   - DotNetHelper.Database.DatabaseAccessFactory.ConnectionTimeOut
@@ -58,7 +57,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: DatabaseAccessFactory
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 21
+    startLine: 23
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -103,7 +102,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: CommandTimeOut
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 27
+    startLine: 32
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -142,7 +141,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ConnectionTimeOut
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 31
+    startLine: 36
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -181,7 +180,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: DatabaseType
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 39
+    startLine: 44
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -220,7 +219,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: DbProviderFactory
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 41
+    startLine: 46
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -237,16 +236,16 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.Data.Common.DbProviderFactory,DotNetHelper.ObjectToSql.Enum.DataBaseType)
-  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.Data.Common.DbProviderFactory,DotNetHelper.ObjectToSql.Enum.DataBaseType)
-  id: '#ctor(System.Data.Common.DbProviderFactory,DotNetHelper.ObjectToSql.Enum.DataBaseType)'
+- uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.Data.Common.DbProviderFactory,DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.Data.Common.DbProviderFactory,DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
+  id: '#ctor(System.Data.Common.DbProviderFactory,DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})'
   parent: DotNetHelper.Database.DatabaseAccessFactory
   langs:
   - csharp
   - vb
-  name: DatabaseAccessFactory(DbProviderFactory, DataBaseType)
-  nameWithType: DatabaseAccessFactory.DatabaseAccessFactory(DbProviderFactory, DataBaseType)
-  fullName: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(System.Data.Common.DbProviderFactory, DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  name: DatabaseAccessFactory(DbProviderFactory, DataBaseType, Nullable<TimeSpan>, Nullable<TimeSpan>)
+  nameWithType: DatabaseAccessFactory.DatabaseAccessFactory(DbProviderFactory, DataBaseType, Nullable<TimeSpan>, Nullable<TimeSpan>)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(System.Data.Common.DbProviderFactory, DotNetHelper.ObjectToSql.Enum.DataBaseType, System.Nullable<System.TimeSpan>, System.Nullable<System.TimeSpan>)
   type: Constructor
   source:
     remote:
@@ -255,33 +254,40 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: .ctor
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 44
+    startLine: 49
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
   syntax:
-    content: public DatabaseAccessFactory(DbProviderFactory dbProviderFactory, DataBaseType type)
+    content: public DatabaseAccessFactory(DbProviderFactory dbProviderFactory, DataBaseType type, TimeSpan? commandTimeOut = default(TimeSpan? ), TimeSpan? connectionTimeOut = default(TimeSpan? ))
     parameters:
     - id: dbProviderFactory
       type: System.Data.Common.DbProviderFactory
     - id: type
       type: DotNetHelper.ObjectToSql.Enum.DataBaseType
-    content.vb: Public Sub New(dbProviderFactory As DbProviderFactory, type As DataBaseType)
+    - id: commandTimeOut
+      type: System.Nullable{System.TimeSpan}
+    - id: connectionTimeOut
+      type: System.Nullable{System.TimeSpan}
+    content.vb: Public Sub New(dbProviderFactory As DbProviderFactory, type As DataBaseType, commandTimeOut As TimeSpan? = Nothing, connectionTimeOut As TimeSpan? = Nothing)
   overload: DotNetHelper.Database.DatabaseAccessFactory.#ctor*
+  nameWithType.vb: DatabaseAccessFactory.DatabaseAccessFactory(DbProviderFactory, DataBaseType, Nullable(Of TimeSpan), Nullable(Of TimeSpan))
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.String,DotNetHelper.ObjectToSql.Enum.DataBaseType)
-  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.String,DotNetHelper.ObjectToSql.Enum.DataBaseType)
-  id: '#ctor(System.String,DotNetHelper.ObjectToSql.Enum.DataBaseType)'
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(System.Data.Common.DbProviderFactory, DotNetHelper.ObjectToSql.Enum.DataBaseType, System.Nullable(Of System.TimeSpan), System.Nullable(Of System.TimeSpan))
+  name.vb: DatabaseAccessFactory(DbProviderFactory, DataBaseType, Nullable(Of TimeSpan), Nullable(Of TimeSpan))
+- uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.String,DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.String,DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
+  id: '#ctor(System.String,DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})'
   parent: DotNetHelper.Database.DatabaseAccessFactory
   langs:
   - csharp
   - vb
-  name: DatabaseAccessFactory(String, DataBaseType)
-  nameWithType: DatabaseAccessFactory.DatabaseAccessFactory(String, DataBaseType)
-  fullName: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(System.String, DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  name: DatabaseAccessFactory(String, DataBaseType, Nullable<TimeSpan>, Nullable<TimeSpan>)
+  nameWithType: DatabaseAccessFactory.DatabaseAccessFactory(String, DataBaseType, Nullable<TimeSpan>, Nullable<TimeSpan>)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(System.String, DotNetHelper.ObjectToSql.Enum.DataBaseType, System.Nullable<System.TimeSpan>, System.Nullable<System.TimeSpan>)
   type: Constructor
   source:
     remote:
@@ -290,95 +296,70 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: .ctor
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 50
+    startLine: 55
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
   syntax:
-    content: public DatabaseAccessFactory(string providerInvariantName, DataBaseType type)
+    content: public DatabaseAccessFactory(string providerInvariantName, DataBaseType type, TimeSpan? commandTimeOut = default(TimeSpan? ), TimeSpan? connectionTimeOut = default(TimeSpan? ))
     parameters:
     - id: providerInvariantName
       type: System.String
     - id: type
       type: DotNetHelper.ObjectToSql.Enum.DataBaseType
-    content.vb: Public Sub New(providerInvariantName As String, type As DataBaseType)
-  overload: DotNetHelper.Database.DatabaseAccessFactory.#ctor*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.TimeSpan)
-  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.TimeSpan)
-  id: '#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.TimeSpan)'
-  parent: DotNetHelper.Database.DatabaseAccessFactory
-  langs:
-  - csharp
-  - vb
-  name: DatabaseAccessFactory(DataBaseType, TimeSpan)
-  nameWithType: DatabaseAccessFactory.DatabaseAccessFactory(DataBaseType, TimeSpan)
-  fullName: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.TimeSpan)
-  type: Constructor
-  source:
-    remote:
-      path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
-    id: .ctor
-    path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 57
-  assemblies:
-  - DotNetHelper.Database
-  namespace: DotNetHelper.Database
-  syntax:
-    content: public DatabaseAccessFactory(DataBaseType type, TimeSpan commandTimeOut)
-    parameters:
-    - id: type
-      type: DotNetHelper.ObjectToSql.Enum.DataBaseType
     - id: commandTimeOut
-      type: System.TimeSpan
-    content.vb: Public Sub New(type As DataBaseType, commandTimeOut As TimeSpan)
-  overload: DotNetHelper.Database.DatabaseAccessFactory.#ctor*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.TimeSpan,System.TimeSpan)
-  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.TimeSpan,System.TimeSpan)
-  id: '#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.TimeSpan,System.TimeSpan)'
-  parent: DotNetHelper.Database.DatabaseAccessFactory
-  langs:
-  - csharp
-  - vb
-  name: DatabaseAccessFactory(DataBaseType, TimeSpan, TimeSpan)
-  nameWithType: DatabaseAccessFactory.DatabaseAccessFactory(DataBaseType, TimeSpan, TimeSpan)
-  fullName: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.TimeSpan, System.TimeSpan)
-  type: Constructor
-  source:
-    remote:
-      path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
-    id: .ctor
-    path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 62
-  assemblies:
-  - DotNetHelper.Database
-  namespace: DotNetHelper.Database
-  syntax:
-    content: public DatabaseAccessFactory(DataBaseType type, TimeSpan commandTimeOut, TimeSpan connectionTimeOut)
-    parameters:
-    - id: type
-      type: DotNetHelper.ObjectToSql.Enum.DataBaseType
-    - id: commandTimeOut
-      type: System.TimeSpan
+      type: System.Nullable{System.TimeSpan}
     - id: connectionTimeOut
-      type: System.TimeSpan
-    content.vb: Public Sub New(type As DataBaseType, commandTimeOut As TimeSpan, connectionTimeOut As TimeSpan)
+      type: System.Nullable{System.TimeSpan}
+    content.vb: Public Sub New(providerInvariantName As String, type As DataBaseType, commandTimeOut As TimeSpan? = Nothing, connectionTimeOut As TimeSpan? = Nothing)
   overload: DotNetHelper.Database.DatabaseAccessFactory.#ctor*
+  nameWithType.vb: DatabaseAccessFactory.DatabaseAccessFactory(String, DataBaseType, Nullable(Of TimeSpan), Nullable(Of TimeSpan))
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(System.String, DotNetHelper.ObjectToSql.Enum.DataBaseType, System.Nullable(Of System.TimeSpan), System.Nullable(Of System.TimeSpan))
+  name.vb: DatabaseAccessFactory(String, DataBaseType, Nullable(Of TimeSpan), Nullable(Of TimeSpan))
+- uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
+  id: '#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})'
+  parent: DotNetHelper.Database.DatabaseAccessFactory
+  langs:
+  - csharp
+  - vb
+  name: DatabaseAccessFactory(DataBaseType, Nullable<TimeSpan>, Nullable<TimeSpan>)
+  nameWithType: DatabaseAccessFactory.DatabaseAccessFactory(DataBaseType, Nullable<TimeSpan>, Nullable<TimeSpan>)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.Nullable<System.TimeSpan>, System.Nullable<System.TimeSpan>)
+  type: Constructor
+  source:
+    remote:
+      path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+    id: .ctor
+    path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
+    startLine: 63
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database
+  syntax:
+    content: public DatabaseAccessFactory(DataBaseType type, TimeSpan? commandTimeOut = default(TimeSpan? ), TimeSpan? connectionTimeOut = default(TimeSpan? ))
+    parameters:
+    - id: type
+      type: DotNetHelper.ObjectToSql.Enum.DataBaseType
+    - id: commandTimeOut
+      type: System.Nullable{System.TimeSpan}
+    - id: connectionTimeOut
+      type: System.Nullable{System.TimeSpan}
+    content.vb: Public Sub New(type As DataBaseType, commandTimeOut As TimeSpan? = Nothing, connectionTimeOut As TimeSpan? = Nothing)
+  overload: DotNetHelper.Database.DatabaseAccessFactory.#ctor*
+  nameWithType.vb: DatabaseAccessFactory.DatabaseAccessFactory(DataBaseType, Nullable(Of TimeSpan), Nullable(Of TimeSpan))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.Nullable(Of System.TimeSpan), System.Nullable(Of System.TimeSpan))
+  name.vb: DatabaseAccessFactory(DataBaseType, Nullable(Of TimeSpan), Nullable(Of TimeSpan))
 - uid: DotNetHelper.Database.DatabaseAccessFactory.GetNewConnection(System.Boolean)
   commentId: M:DotNetHelper.Database.DatabaseAccessFactory.GetNewConnection(System.Boolean)
   id: GetNewConnection(System.Boolean)
@@ -397,7 +378,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewConnection
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 71
+    startLine: 99
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -432,7 +413,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewCommand
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 89
+    startLine: 118
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -485,7 +466,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewCommandAndTransaction
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 108
+    startLine: 137
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -526,7 +507,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteNonQuery
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 130
+    startLine: 159
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -582,7 +563,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteNonQuery
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 147
+    startLine: 176
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -633,7 +614,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteScalar
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 161
+    startLine: 190
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -683,7 +664,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteScalar
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 177
+    startLine: 206
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -734,7 +715,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteTransaction
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 192
+    startLine: 221
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -784,7 +765,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteTransaction
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 208
+    startLine: 237
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -835,7 +816,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataReader
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 246
+    startLine: 275
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -886,7 +867,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataReader
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 261
+    startLine: 290
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -936,7 +917,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTable
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 274
+    startLine: 303
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -986,7 +967,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTable
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 287
+    startLine: 316
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1027,7 +1008,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTableWithSchema
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 299
+    startLine: 328
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1077,7 +1058,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTableWithKeyInfo
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 321
+    startLine: 350
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1127,7 +1108,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTableWithSchema
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 339
+    startLine: 368
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1168,7 +1149,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTableWithKeyInfo
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 349
+    startLine: 378
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1209,7 +1190,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewParameter
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 354
+    startLine: 383
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1224,6 +1205,8 @@ items:
       type: System.Data.Common.DbParameter
     content.vb: Public Function GetNewParameter(parameterName As String, value As Object) As DbParameter
   overload: DotNetHelper.Database.DatabaseAccessFactory.GetNewParameter*
+  implements:
+  - DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(System.String,System.Object)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -1246,7 +1229,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: CanConnect
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 366
+    startLine: 395
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1283,7 +1266,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 392
+    startLine: 421
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1347,7 +1330,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 409
+    startLine: 438
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1412,7 +1395,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 419
+    startLine: 448
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1457,7 +1440,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 434
+    startLine: 463
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1512,7 +1495,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 448
+    startLine: 477
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1567,7 +1550,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Execute
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 460
+    startLine: 489
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1619,7 +1602,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Execute
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 473
+    startLine: 502
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1674,7 +1657,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Execute
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 489
+    startLine: 518
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1738,7 +1721,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutput
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 507
+    startLine: 536
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1793,7 +1776,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutput
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 526
+    startLine: 555
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1866,7 +1849,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutputAsDataReader
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 538
+    startLine: 567
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1914,7 +1897,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutputAsDataReader
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 543
+    startLine: 572
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -2335,6 +2318,89 @@ references:
   name: DatabaseAccessFactory
   nameWithType: DatabaseAccessFactory.DatabaseAccessFactory
   fullName: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory
+- uid: System.Nullable{System.TimeSpan}
+  commentId: T:System.Nullable{System.TimeSpan}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<TimeSpan>
+  nameWithType: Nullable<TimeSpan>
+  fullName: System.Nullable<System.TimeSpan>
+  nameWithType.vb: Nullable(Of TimeSpan)
+  fullName.vb: System.Nullable(Of System.TimeSpan)
+  name.vb: Nullable(Of TimeSpan)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.TimeSpan
+    name: TimeSpan
+    nameWithType: TimeSpan
+    fullName: System.TimeSpan
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.TimeSpan
+    name: TimeSpan
+    nameWithType: TimeSpan
+    fullName: System.TimeSpan
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -3681,6 +3747,61 @@ references:
   name: GetNewParameter
   nameWithType: DatabaseAccessFactory.GetNewParameter
   fullName: DotNetHelper.Database.DatabaseAccessFactory.GetNewParameter
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(System.String,System.Object)
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(System.String,System.Object)
+  parent: DotNetHelper.Database.Interface.IDatabaseAccess
+  isExternal: true
+  name: GetNewParameter(String, Object)
+  nameWithType: IDatabaseAccess.GetNewParameter(String, Object)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(System.String, System.Object)
+  spec.csharp:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(System.String,System.Object)
+    name: GetNewParameter
+    nameWithType: IDatabaseAccess.GetNewParameter
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(System.String,System.Object)
+    name: GetNewParameter
+    nameWithType: IDatabaseAccess.GetNewParameter
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Data.Common.DbParameter
   commentId: T:System.Data.Common.DbParameter
   parent: System.Data.Common
