@@ -19,7 +19,7 @@
 
 
 ## Features
-+ Can dynamically build your sql statement from any *(Generic,Anonymous,Dynamic)* object but also support you providing on as well
++ Can dynamically build your sql statement from any *(Generic,Anonymous,Dynamic)* object but also support you providing one as well
 + Can  *(Insert,Update,Upsert,Delete)* any *(Generic,Anonymous,Dynamic)* object into database
 + Support Any **IDbConnection** & work with **DbFactory**
 + Support auto-serializing & deserializing columns that is as stored as CSV,JSON, & XML in the database 

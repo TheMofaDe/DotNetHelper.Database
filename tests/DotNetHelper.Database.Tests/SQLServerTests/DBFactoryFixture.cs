@@ -58,7 +58,8 @@ namespace DotNetHelper.Database.Tests.SQLServerTests
         [OneTimeTearDown]
         public void RunAfterAnyTests()
         {
-
+            DatabaseAccess.ExecuteNonQuery($"DROP TABLE [master].[dbo].[Employee]",CommandType.Text);
+            DatabaseAccess.ExecuteNonQuery($"DROP TABLE [master].[dbo].[Employee2]", CommandType.Text);
         }
 
 
