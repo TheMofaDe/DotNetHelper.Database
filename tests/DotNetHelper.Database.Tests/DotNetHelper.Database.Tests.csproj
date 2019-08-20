@@ -7,20 +7,35 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Scripts\sqlite.sql" />
-    <None Remove="Scripts\sqlite2.sql" />
-    <None Remove="Scripts\sqlserver.sql" />
+    <Compile Remove="SQLiteTest\**" />
+    <Compile Remove="SQLServerTests\**" />
+    <EmbeddedResource Remove="SQLiteTest\**" />
+    <EmbeddedResource Remove="SQLServerTests\**" />
+    <None Remove="SQLiteTest\**" />
+    <None Remove="SQLServerTests\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Scripts\Sqlite2.sql" />
-    <EmbeddedResource Include="Scripts\Sqlite.sql" />
-    <EmbeddedResource Include="Scripts\sqlserver.sql" />
+    <None Remove="Scripts\sqlite_cleanup_1.sql" />
+    <None Remove="Scripts\sqlite_cleanup_2.sql" />
+    <None Remove="Scripts\sqlite_init_1.sql" />
+    <None Remove="Scripts\sqlite_init_2.sql" />
+    <None Remove="Scripts\sqlserver_cleanup_1.sql" />
+    <None Remove="Scripts\sqlserver_init_1.sql" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DotNetHelper.Serialization.Csv" Version="1.0.10" />
-    <PackageReference Include="DotNetHelper.Serialization.Json" Version="1.0.12" />
+    <EmbeddedResource Include="Scripts\sqlite_cleanup_1.sql" />
+    <EmbeddedResource Include="Scripts\sqlite_cleanup_2.sql" />
+    <EmbeddedResource Include="Scripts\sqlite_init_2.sql" />
+    <EmbeddedResource Include="Scripts\sqlite_init_1.sql" />
+    <EmbeddedResource Include="Scripts\sqlserver_cleanup_1.sql" />
+    <EmbeddedResource Include="Scripts\sqlserver_init_1.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DotNetHelper.Serialization.Csv" Version="1.0.19" />
+    <PackageReference Include="DotNetHelper.Serialization.Json" Version="1.0.19" />
     <PackageReference Include="nunit" Version="3.12.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.13.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
@@ -34,7 +49,7 @@
   <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.2'">
     <PackageReference Include="Microsoft.Data.Sqlite">
       <!--Microsoft.EntityFrameworkCore.Sqlite-->
-      <Version>3.0.0-preview6.19304.10</Version>
+      <Version>3.0.0-preview8.19405.11</Version>
     </PackageReference>
   </ItemGroup>
 
@@ -56,5 +71,8 @@
     <DefineConstants>$(DefineConstants);SUPPORTSQLITE</DefineConstants>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net45' OR '$(TargetFramework)' == 'net452'  OR '$(TargetFramework)' == 'netstandard2.1' ">
+    <DefineConstants>$(DefineConstants);SUPPORTDBFACTORIES</DefineConstants>
+  </PropertyGroup>
 
 </Project>

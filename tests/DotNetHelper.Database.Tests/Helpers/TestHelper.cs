@@ -5,7 +5,7 @@ namespace DotNetHelper.Database.Tests.Helpers
 {
     public static class TestHelper
     {
-        public static string SQLServerConnectionString { get; set; } = GetCS();
+
 
         public static string GetCurrentDirectory
         {
@@ -20,7 +20,6 @@ namespace DotNetHelper.Database.Tests.Helpers
                 {
                     return $"{Environment.CurrentDirectory}";
                 }
-
 #else
                 return $"{Environment.CurrentDirectory}";
 #endif
@@ -40,12 +39,13 @@ namespace DotNetHelper.Database.Tests.Helpers
                 return $@"Server=(local)\SQL2014;Database=master;UID=sa;PWD=Password12!";
             }
         }
+        public static string SQLServerConnectionString { get; set; } = GetCS();
 
         public static string GetEmbeddedResourceFile(string filename)
         {
             var a = System.Reflection.Assembly.GetExecutingAssembly();
             using (var s = a.GetManifestResourceStream(filename))
-            using (var r = new System.IO.StreamReader(s))
+            using (var r = new StreamReader(s))
             {
                 string result = r.ReadToEnd();
                 return result;

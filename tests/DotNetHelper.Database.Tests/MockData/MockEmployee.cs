@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using DotNetHelper.Database.Tests.Models;
 
 namespace DotNetHelper.Database.Tests.MockData

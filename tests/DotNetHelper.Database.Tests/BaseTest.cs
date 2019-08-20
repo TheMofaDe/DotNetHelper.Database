@@ -1,52 +1,84 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Xml.Serialization;
 using CsvHelper.Configuration;
+using DotNetHelper.Database.Interface;
+using DotNetHelper.Database.Tests.Helpers;
 using DotNetHelper.Database.Tests.MockData;
 using DotNetHelper.Database.Tests.Models;
+using DotNetHelper.Database.Tests.Services;
 using DotNetHelper.Serialization.Abstractions.Interface;
 using DotNetHelper.Serialization.Csv;
 using DotNetHelper.Serialization.Json;
 using Newtonsoft.Json;
+using NUnit.Framework;
 
 namespace DotNetHelper.Database.Tests
 {
+
+
+    public enum ScriptType
+    {
+        Initialize
+        ,CleanUp
+    }
     public class BaseTest
     {
-        public string WorkingDirectory { get; }
-
-        public BaseTest()
-        {
-            WorkingDirectory = $"{Environment.CurrentDirectory}";
-        }
+        private readonly IDatabaseAccess _databaseAccess;
 
         public ISerializer Json { get; } = new DataSourceJson(new JsonSerializerSettings() { Formatting = Formatting.None });
         public ISerializer Csv { get; } = new DataSourceCsv(new Configuration());
+        public ISerializer Xml { get; } = new DataSourceXML();
 
 
-        public string SerializeObject<T>(T toSerialize)
+
+        public BaseTest(IDatabaseAccess databaseAccess)
         {
-            var xmlSerializer = new XmlSerializer(toSerialize.GetType());
-
-            using (var textWriter = new StringWriter())
-            {
-                xmlSerializer.Serialize(textWriter, toSerialize);
-                return textWriter.ToString();
-            }
+            _databaseAccess = databaseAccess;
         }
-        public object DeSerializeObject(string obj, Type type)
+
+  
+
+        public void EnsureExpectedExceptionIsThrown<T>(Action action) where T : Exception
         {
-            var ser = new XmlSerializer(type);
-
-            using (var sr = new StringReader(obj))
-            {
-                return ser.Deserialize(sr);
-            }
+            Assert.That(action.Invoke, Throws.Exception.TypeOf<T>());
         }
+
+
+        public List<string> GetDBScripts(ScriptType scriptType) 
+        {
+            var assemblyResources = Assembly.GetExecutingAssembly().GetManifestResourceNames();
+            var keyword = scriptType == ScriptType.CleanUp ? "cleanup" : "init";
+            var sqls = assemblyResources.Where(str => str.StartsWith($"DotNetHelper.Database.Tests.Scripts.{_databaseAccess.DatabaseType}_{keyword}", StringComparison.OrdinalIgnoreCase)).ToList();
+            return sqls;
+        }
+
+        public void CleanUp()
+        {
+            var sqls = GetDBScripts(ScriptType.CleanUp);
+            sqls.ForEach(delegate (string s)
+            {
+                try
+                {
+                    var result = _databaseAccess.ExecuteNonQuery(TestHelper.GetEmbeddedResourceFile(s), CommandType.Text);
+                }
+                catch (Exception w)
+                {
+
+                }
+
+            });
+        }
+
+
+
+
+
+
 
 
         public EmployeeSerialize GetEmployeeSerialize(int index)

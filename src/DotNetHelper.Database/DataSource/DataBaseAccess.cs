@@ -44,11 +44,7 @@ namespace DotNetHelper.Database.DataSource
 
         //    private object Lock { get; } = new object();
 
-        public DatabaseAccess(DataBaseType type)
-        {
-            //   SqlSyntaxHelper = new SqlSyntaxHelper(type);
-            ObjectToSql = new ObjectToSql.Services.ObjectToSql(type);
-        }
+     
         public DatabaseAccess(DataBaseType type, string connectionString)
         {
             ConnectionString = connectionString;
