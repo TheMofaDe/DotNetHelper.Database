@@ -163,6 +163,94 @@ namespace DotNetHelper.Database.Tests
             Assert.AreEqual(employees.First().IdentityField, 2, "Identity Value is out of sync");
         }
 
+
+        [Test]
+
+        public void Test_Anonymous_Object_Execute_INSERT_UPDATE_UPSERT_DELETE()
+        {
+
+            // TODO :: REMOVE FILTER
+            if (DatabaseAccess.DatabaseType == DataBaseType.Sqlite) return;
+            // INSERT A EMPLOYEE WITH THEIR FAVORITE COLOR TO BE GREEN
+            var newEmployee = new
+            {
+                FirstName = "John 2",
+                LastName = "Doe 2",
+                DOB = new DateTime(1994, 07, 22),
+                FavoriteColor = "Green",
+                CreatedAt = DateTime.Now
+            };
+            var insertedRecordCount = DatabaseAccess.Execute(newEmployee, ActionType.Insert,"Employee");
+            Assert.AreEqual(insertedRecordCount, 1, "Something went wrong add new employee record");
+
+            // RETRIEVE EMPLOYEE FROM DATABASE SO WHEN CAN HAVE THE ID
+            var employees = DatabaseAccess.Get<Employee>();
+            Assert.AreEqual(employees.Count, 1, "Invalid # of employees was return");
+              
+            // CHANGE EMPLOYEE FAVORITE COLOR
+            var employee = new
+            {
+                FirstName = employees.First().FirstName,
+                LastName = employees.First().LastName,
+                DOB = employees.First().DateOfBirth,
+                FavoriteColor = "RED",
+                IdentityField = employees.First().IdentityField
+            };
+            var recordsAffected = DatabaseAccess.Execute(employee, ActionType.Update,"Employee",o => o.IdentityField);
+            Assert.AreEqual(recordsAffected, 1, "Invalid # of records affected");
+
+            // VERFIY DATA WAS SAVED CORRECTLY 
+            Assert.AreEqual(DatabaseAccess.Get<Employee>().First().FavoriteColor, "RED", "Employee favorite color wasn't stored correctly");
+
+
+            // PERFORM A UPSERT --> UPDATE SENARIO
+            employees = DatabaseAccess.Get<Employee>();
+            recordsAffected = DatabaseAccess.Execute( new
+            {
+                FirstName = employees.First().FirstName,
+                LastName = employees.First().LastName,
+                DOB = employees.First().DateOfBirth,
+                FavoriteColor = "PURPLE",
+                IdentityField = employees.First().IdentityField
+            }, ActionType.Upsert, "Employee", o => o.IdentityField);
+            Assert.AreEqual(recordsAffected, 1, "Invalid # of records affected");
+            Assert.AreEqual(DatabaseAccess.Get<Employee>().First().FavoriteColor, "PURPLE", "Invalid # of records affected");
+
+
+            // PERFORM A DELETE
+            employees = DatabaseAccess.Get<Employee>();
+            recordsAffected = DatabaseAccess.Execute(new
+            {
+                FirstName = employees.First().FirstName,
+                LastName = employees.First().LastName,
+                DOB = employees.First().DateOfBirth,
+                FavoriteColor = "PURPLE",
+                IdentityField = employees.First().IdentityField
+            }, ActionType.Delete, "Employee", o => o.IdentityField);
+            Assert.AreEqual(recordsAffected, 1, "Invalid # of records affected");
+            Assert.AreEqual(DatabaseAccess.Get<Employee>().Count, 0, "Failed to delete employee");
+
+
+            // PERFORM A UPSERT --> INSERT SENARIO
+            var employee2 = new // have to not 
+            {
+                FirstName = employees.First().FirstName,
+                LastName = employees.First().LastName,
+                DOB = employees.First().DateOfBirth,
+                FavoriteColor = "RED",
+                CreatedAt = DateTime.Now
+
+            };
+
+            // TODO :: COME BACK AND FINISH IMPLEMENTATION FOR SQLITE AND SQLSERVER
+            //recordsAffected = DatabaseAccess.Execute(employee2, ActionType.Upsert, "Employee");
+            //Assert.AreEqual(recordsAffected, 1, "Invalid # of records affected");
+            //employees = DatabaseAccess.Get<Employee>();
+            //Assert.AreEqual(employees.Count, 1, "Failed to upsert employee insert secnario");
+            //Assert.AreEqual(employees.First().IdentityField, 2, "Identity Value is out of sync");
+        }
+
+
         [Test]
         public void Test_Insert_Employee_And_Output_Identity_Field()
         {
