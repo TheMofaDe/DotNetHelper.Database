@@ -511,7 +511,7 @@ namespace DotNetHelper.Database
         {
             var type = typeof(T);
             // var sql = (type.IsTypeAnonymousType() || type.IsTypeDynamic()) ? ObjectToSql.BuildQuery(actionType,instance, tableName ?? new SQLTable(DatabaseType, type).FullNameWithBrackets) : ObjectToSql.BuildQuery<T>( actionType, tableName ?? new SQLTable(DatabaseType, type).FullNameWithBrackets);
-            var sql = ObjectToSql.BuildQuery(actionType, instance, tableName ?? new SQLTable(DatabaseType, type).FullNameWithBrackets);
+            var sql = ObjectToSql.BuildQuery<T>(actionType, tableName ?? new SQLTable(DatabaseType, type).FullNameWithBrackets);
             var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, xmlSerializer, jsonSerializer, csvSerializer);
             return ExecuteNonQuery(sql, CommandType.Text, parameters);
         }

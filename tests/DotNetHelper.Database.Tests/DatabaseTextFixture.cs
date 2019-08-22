@@ -170,7 +170,7 @@ namespace DotNetHelper.Database.Tests
         {
 
             // TODO :: REMOVE FILTER
-            if (DatabaseAccess.DatabaseType == DataBaseType.Sqlite) return;
+           // if (DatabaseAccess.DatabaseType == DataBaseType.Sqlite) return;
             // INSERT A EMPLOYEE WITH THEIR FAVORITE COLOR TO BE GREEN
             var newEmployee = new
             {
@@ -212,6 +212,7 @@ namespace DotNetHelper.Database.Tests
                 DOB = employees.First().DateOfBirth,
                 FavoriteColor = "PURPLE",
                 IdentityField = employees.First().IdentityField
+                , CreatedAt = DateTime.Now
             }, ActionType.Upsert, "Employee", o => o.IdentityField);
             Assert.AreEqual(recordsAffected, 1, "Invalid # of records affected");
             Assert.AreEqual(DatabaseAccess.Get<Employee>().First().FavoriteColor, "PURPLE", "Invalid # of records affected");
@@ -242,8 +243,10 @@ namespace DotNetHelper.Database.Tests
 
             };
 
-            // TODO :: COME BACK AND FINISH IMPLEMENTATION FOR SQLITE AND SQLSERVER
-            //recordsAffected = DatabaseAccess.Execute(employee2, ActionType.Upsert, "Employee");
+
+            // TODO :: SEPARATE TO OWN UNIT TEST BUT YOU CAN'T DO UPSERT WITH AN ANYMOUNS OBJECT INTO A TABLE THAT HAVE A IDENTITY FIELD BECAUSE INSERT
+            // REQUIRED IDENTITY KEY TO NOT BE PART OF THE OBJECT AND UPDATE NEED THE KEY SO IT KNOW HOW TO BUILD THE WHERE CLAUSE
+            //recordsAffected = DatabaseAccess.Execute(employee2, ActionType.Upsert, "Employee",);
             //Assert.AreEqual(recordsAffected, 1, "Invalid # of records affected");
             //employees = DatabaseAccess.Get<Employee>();
             //Assert.AreEqual(employees.Count, 1, "Failed to upsert employee insert secnario");

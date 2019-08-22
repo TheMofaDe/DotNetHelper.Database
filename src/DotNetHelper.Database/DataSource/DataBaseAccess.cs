@@ -490,7 +490,7 @@ namespace DotNetHelper.Database.DataSource
         public int Execute<T>(T instance, ActionType actionType, string tableName, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer) where T : class
         {
             // var sql = (type.IsTypeAnonymousType() || type.IsTypeDynamic()) ? ObjectToSql.BuildQuery(actionType,instance, tableName ?? new SQLTable(DatabaseType, type).FullNameWithBrackets) : ObjectToSql.BuildQuery<T>( actionType, tableName ?? new SQLTable(DatabaseType, type).FullNameWithBrackets);
-            var sql = ObjectToSql.BuildQuery(actionType, instance, tableName ?? new SQLTable(DatabaseType, instance.GetType()).FullNameWithBrackets);
+            var sql = ObjectToSql.BuildQuery(actionType,instance,tableName ?? new SQLTable(DatabaseType, instance.GetType()).FullNameWithBrackets);
             var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, xmlSerializer, jsonSerializer, csvSerializer);
             return ExecuteNonQuery(sql, CommandType.Text, parameters);
         }

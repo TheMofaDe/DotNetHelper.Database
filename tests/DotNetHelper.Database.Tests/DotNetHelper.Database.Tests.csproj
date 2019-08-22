@@ -34,7 +34,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DotNetHelper.ObjectToSql" Version="1.0.93" />
     <PackageReference Include="DotNetHelper.Serialization.Csv" Version="1.0.19" />
     <PackageReference Include="DotNetHelper.Serialization.Json" Version="1.0.19" />
     <PackageReference Include="nunit" Version="3.12.0" />
