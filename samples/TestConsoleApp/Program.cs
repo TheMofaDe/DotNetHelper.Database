@@ -26,20 +26,15 @@ namespace TestConsoleApp
 
         [SqlColumn(MapTo = "DOB")]  // This property is actually name DOB in the database
         public DateTime DateOfBirth { get; set; }
-
         public string FavoriteColor { get; set; }
         public DateTime CreatedAt { get; } = new DateTime();
 
     }
     class Program
     {
-
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-
-
         }
-
     }
 }

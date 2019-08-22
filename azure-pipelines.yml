@@ -4,12 +4,9 @@ variables:
   RUBY_VERSION: '2.5'
   global_variable: value    # this is available to all jobs
 
+
+
 jobs:
-
-  steps:
-  - bash: echo $(global_variable)
-  - bash: echo $GLOBAL_VARIABLE
-
 - template: build/tmpl/jobs.yml
   parameters:
     name: macOS
@@ -26,3 +23,6 @@ jobs:
     name: Windows
     vmImage: 'VS2017-Win2016'
 
+  steps:
+  - bash: echo $(global_variable)
+  - bash: echo $GLOBAL_VARIABLE

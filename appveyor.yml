@@ -3,7 +3,7 @@ branches:
   only:
   - master
   - release
-image: Visual Studio 2017
+image: Visual Studio 2019
 dotnet_csproj:
   patch: true
   file: '**\*.csproj'
@@ -14,6 +14,6 @@ dotnet_csproj:
   informational_version: '{version}'
 build_script:
 - ps: .\build.ps1 --target="AppVeyor"
-test: on
+test: off
 services:
   - mssql2014

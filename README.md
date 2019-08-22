@@ -29,8 +29,6 @@
 + Map **IDataReader** To List
 + Map **DataRow** To A Class
 
-
-
 ## Example 
 
 ##### For this example my table in the database will look like this
@@ -45,48 +43,52 @@ CREATE TABLE [master].[dbo].[Employee](
 );
 ```
 
-##### My generic object class will look like this 
+##### My employee class will look like this 
 ```csharp
 public class Employee
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)] // Marks this property as an identity field 
         [Key]  // marks this property as a primary key... 
         public int IdentityField { get; set; }
-
         [NotMapped] // This property will be ignore when performing database actions
         public string FullName => FirstName + " " + LastName;
-
         [SqlColumn(MapTo = "DOB")]  // This property is actually name DOB in the database
         public DateTime DateOfBirth { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string FavoriteColor { get; set; }
         public DateTime CreatedAt { get; } = new DateTime();
-        
     }
 ```
 
-##### Now lets add some new employees from code using dynamic,anonymous & generic objects
 
 
 
+##### How to insert an employee using a generic class
 ```csharp
- dynamic dynamicEmployee = new ExpandoObject(); // A DYNAMIC EMPLOYEE
-                    dynamicEmployee.FirstName = "Joe Sister";
-                    dynamicEmployee.LastName = "Dynamic";
-                    dynamicEmployee.DOB = DateTime.Today.AddDays(-2);
-
-            var employee = new Employee() {DateOfBirth = DateTime.Today, FavoriteColor = "Blue", FirstName = "Joe" , LastName = "Generic"}; // A GENERIC EMPLOYEE
-            var anonymousEmployee = new {FirstName = "Joe Brother", DOB = DateTime.Today.AddDays(-1) , LastName = "Anonymous"}; // A ANONYMOUS EMPLOYEE
-
-            var dbAccess = new DatabaseAccess<SqlConnection, SqlParameter>(DataBaseType.SqlServer, "Server=localhost;Initial Catalog=master;Integrated Security=True"); // Specify database provider to ensure syntax is correct
-
-            // Lets add our 3 employees to the database now
-            var recordAffected = dbAccess.Execute(employee, ActionType.Insert); // ActionType is a enum of Insert,Update,Delete,Upsert
-            recordAffected += dbAccess.Execute(anonymousEmployee, ActionType.Insert,"Employee"); // you need to specify the table name when using anonymous objects
-            recordAffected += dbAccess.Execute<ExpandoObject>(dynamicEmployee, ActionType.Insert,"Employee");  // you need to specify the table name when using dynamic objects
-
+ var employee = new Employee() {
+  DateOfBirth = DateTime.Today
+, FavoriteColor = "Blue"
+, FirstName = "Joe" 
+, LastName = "Generic"
+}; 
+ var dbAccess = new DatabaseAccess<SqlConnection, SqlParameter>(DataBaseType.SqlServer, "ConnectionString");
+ var recordAffected = dbAccess.Execute(employee, ActionType.Insert); // ActionType is a enum of Insert,Update,Delete,Upsert
+```   
+##### How to insert an employee using a dynamic object
+```csharp
+dynamic dynamicEmployee = new ExpandoObject(); // A DYNAMIC EMPLOYEE
+dynamicEmployee.FirstName = "Joe Sister";
+dynamicEmployee.LastName = "Dynamic";
+dynamicEmployee.DOB = DateTime.Today.AddDays(-2);
 ```
+##### How to insert an employee using a generic class
+```csharp
+var anonymousEmployee = new {FirstName = "Joe Brother", DOB = DateTime.Today.AddDays(-1) , LastName = "Anonymous"}; // A ANONYMOUS EMPLOYEE
+var dbAccess = new DatabaseAccess<SqlConnection, SqlParameter>(DataBaseType.SqlServer, "ConionString"); // Specify database provider to ensure syntax is correct
+var recordAffected += dbAccess.Execute(anonymousEmployee, ActionType.Insert,"Employee"); // you need to specify the table name when using anonymous objects
+```
+     
 
 ##### Finish Product 
 ![alt text][logo]
