@@ -12,6 +12,8 @@ items:
   - DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType)
   - DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
   - DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  - DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  - DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   - DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   - DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   - DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutputAsDataReader``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
@@ -1072,6 +1074,119 @@ items:
   nameWithType.vb: IDatabaseAccess.Execute(Of T)(T, ActionType, String, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
   fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String))
   name.vb: Execute(Of T)(T, ActionType, String, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  id: Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  parent: DotNetHelper.Database.Interface.IDatabaseAccess
+  langs:
+  - csharp
+  - vb
+  name: Execute<T>(T, ActionType, String, Expression<Func<T, Object>>[])
+  nameWithType: IDatabaseAccess.Execute<T>(T, ActionType, String, Expression<Func<T, Object>>[])
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.Execute<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.Database/Interface/IDatabaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+    id: Execute
+    path: ../src/DotNetHelper.Database/Interface/IDatabaseAccess.cs
+    startLine: 227
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Interface
+  summary: "\nCreates the specified SQL from the object then executes the sql and return the number of rows affected. \n"
+  example: []
+  syntax:
+    content: >-
+      int Execute<T>(T instance, ActionType actionType, string tableName, params Expression<Func<T, object>>[] keyFields)
+          where T : class
+    parameters:
+    - id: instance
+      type: '{T}'
+      description: 'the object to create sql from '
+    - id: actionType
+      type: DotNetHelper.ObjectToSql.Enum.ActionType
+      description: type of sql to generate
+    - id: tableName
+      type: System.String
+      description: 'Table name to use when generating sql '
+    - id: keyFields
+      type: System.Linq.Expressions.Expression{System.Func{{T},System.Object}}[]
+      description: ''
+    typeParameters:
+    - id: T
+      description: ''
+    return:
+      type: System.Int32
+      description: ''
+    content.vb: Function Execute(Of T As Class)(instance As T, actionType As ActionType, tableName As String, ParamArray keyFields As Expression(Of Func(Of T, Object))()) As Integer
+  overload: DotNetHelper.Database.Interface.IDatabaseAccess.Execute*
+  nameWithType.vb: IDatabaseAccess.Execute(Of T)(T, ActionType, String, Expression(Of Func(Of T, Object))())
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  name.vb: Execute(Of T)(T, ActionType, String, Expression(Of Func(Of T, Object))())
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  id: Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  parent: DotNetHelper.Database.Interface.IDatabaseAccess
+  langs:
+  - csharp
+  - vb
+  name: Execute<T>(T, ActionType, String, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
+  nameWithType: IDatabaseAccess.Execute<T>(T, ActionType, String, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.Execute<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.Database/Interface/IDatabaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+    id: Execute
+    path: ../src/DotNetHelper.Database/Interface/IDatabaseAccess.cs
+    startLine: 243
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Interface
+  summary: "\nCreates the specified SQL from the object then executes the sql and return the number of rows affected. \n"
+  example: []
+  syntax:
+    content: >-
+      int Execute<T>(T instance, ActionType actionType, string tableName, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer, params Expression<Func<T, object>>[] keyFields)
+          where T : class
+    parameters:
+    - id: instance
+      type: '{T}'
+      description: 'the object to create sql from '
+    - id: actionType
+      type: DotNetHelper.ObjectToSql.Enum.ActionType
+      description: type of sql to generate
+    - id: tableName
+      type: System.String
+      description: 'Table name to use when generating sql '
+    - id: xmlSerializer
+      type: System.Func{System.Object,System.String}
+      description: For when your storing values in the database as xml. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.XML)]
+    - id: jsonSerializer
+      type: System.Func{System.Object,System.String}
+      description: For when your storing values in the database as json. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.JSON)]
+    - id: csvSerializer
+      type: System.Func{System.Object,System.String}
+      description: For when your storing values in the database as csv. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.CSV)]
+    - id: keyFields
+      type: System.Linq.Expressions.Expression{System.Func{{T},System.Object}}[]
+      description: Override attributes and specified which properties are keys from an expression
+    typeParameters:
+    - id: T
+      description: ''
+    return:
+      type: System.Int32
+      description: ''
+    content.vb: Function Execute(Of T As Class)(instance As T, actionType As ActionType, tableName As String, xmlSerializer As Func(Of Object, String), jsonSerializer As Func(Of Object, String), csvSerializer As Func(Of Object, String), ParamArray keyFields As Expression(Of Func(Of T, Object))()) As Integer
+  overload: DotNetHelper.Database.Interface.IDatabaseAccess.Execute*
+  nameWithType.vb: IDatabaseAccess.Execute(Of T)(T, ActionType, String, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  name.vb: Execute(Of T)(T, ActionType, String, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
 - uid: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   id: ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
@@ -1090,7 +1205,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutput
     path: ../src/DotNetHelper.Database/Interface/IDatabaseAccess.cs
-    startLine: 225
+    startLine: 256
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Interface
@@ -1139,7 +1254,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutput
     path: ../src/DotNetHelper.Database/Interface/IDatabaseAccess.cs
-    startLine: 241
+    startLine: 272
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Interface
@@ -1206,7 +1321,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutputAsDataReader
     path: ../src/DotNetHelper.Database/Interface/IDatabaseAccess.cs
-    startLine: 246
+    startLine: 277
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Interface
@@ -1248,7 +1363,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutputAsDataReader
     path: ../src/DotNetHelper.Database/Interface/IDatabaseAccess.cs
-    startLine: 248
+    startLine: 279
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Interface
@@ -2061,11 +2176,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutput*
-  commentId: Overload:DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutput
-  name: ExecuteAndGetOutput
-  nameWithType: IDatabaseAccess.ExecuteAndGetOutput
-  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutput
 - uid: System.Linq.Expressions.Expression{System.Func{{T},System.Object}}[]
   isExternal: true
   name: Expression<Func<T, Object>>[]
@@ -2148,6 +2258,11 @@ references:
   - name: ()
     nameWithType: ()
     fullName: ()
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutput*
+  commentId: Overload:DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutput
+  name: ExecuteAndGetOutput
+  nameWithType: IDatabaseAccess.ExecuteAndGetOutput
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutput
 - uid: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutputAsDataReader*
   commentId: Overload:DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutputAsDataReader
   name: ExecuteAndGetOutputAsDataReader

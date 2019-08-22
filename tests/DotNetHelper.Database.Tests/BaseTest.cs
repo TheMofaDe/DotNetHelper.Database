@@ -24,7 +24,7 @@ namespace DotNetHelper.Database.Tests
     public enum ScriptType
     {
         Initialize
-        ,CleanUp
+        , CleanUp
     }
     public class BaseTest
     {
@@ -41,7 +41,7 @@ namespace DotNetHelper.Database.Tests
             _databaseAccess = databaseAccess;
         }
 
-  
+
 
         public void EnsureExpectedExceptionIsThrown<T>(Action action) where T : Exception
         {
@@ -49,7 +49,7 @@ namespace DotNetHelper.Database.Tests
         }
 
 
-        public List<string> GetDBScripts(ScriptType scriptType) 
+        public List<string> GetDBScripts(ScriptType scriptType)
         {
             var assemblyResources = Assembly.GetExecutingAssembly().GetManifestResourceNames();
             var keyword = scriptType == ScriptType.CleanUp ? "cleanup" : "init";

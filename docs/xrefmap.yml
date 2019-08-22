@@ -13,15 +13,15 @@ references:
   commentId: T:DotNetHelper.Database.DatabaseAccessFactory
   fullName: DotNetHelper.Database.DatabaseAccessFactory
   nameWithType: DatabaseAccessFactory
-- uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
-  name: DatabaseAccessFactory(DataBaseType, Nullable<TimeSpan>, Nullable<TimeSpan>)
-  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory__ctor_DotNetHelper_ObjectToSql_Enum_DataBaseType_System_Nullable_System_TimeSpan__System_Nullable_System_TimeSpan__
-  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
-  name.vb: DatabaseAccessFactory(DataBaseType, Nullable(Of TimeSpan), Nullable(Of TimeSpan))
-  fullName: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.Nullable<System.TimeSpan>, System.Nullable<System.TimeSpan>)
-  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.Nullable(Of System.TimeSpan), System.Nullable(Of System.TimeSpan))
-  nameWithType: DatabaseAccessFactory.DatabaseAccessFactory(DataBaseType, Nullable<TimeSpan>, Nullable<TimeSpan>)
-  nameWithType.vb: DatabaseAccessFactory.DatabaseAccessFactory(DataBaseType, Nullable(Of TimeSpan), Nullable(Of TimeSpan))
+- uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.String,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
+  name: DatabaseAccessFactory(DataBaseType, String, Nullable<TimeSpan>, Nullable<TimeSpan>)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory__ctor_DotNetHelper_ObjectToSql_Enum_DataBaseType_System_String_System_Nullable_System_TimeSpan__System_Nullable_System_TimeSpan__
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.String,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
+  name.vb: DatabaseAccessFactory(DataBaseType, String, Nullable(Of TimeSpan), Nullable(Of TimeSpan))
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.String, System.Nullable<System.TimeSpan>, System.Nullable<System.TimeSpan>)
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.String, System.Nullable(Of System.TimeSpan), System.Nullable(Of System.TimeSpan))
+  nameWithType: DatabaseAccessFactory.DatabaseAccessFactory(DataBaseType, String, Nullable<TimeSpan>, Nullable<TimeSpan>)
+  nameWithType.vb: DatabaseAccessFactory.DatabaseAccessFactory(DataBaseType, String, Nullable(Of TimeSpan), Nullable(Of TimeSpan))
 - uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.Data.Common.DbProviderFactory,DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
   name: DatabaseAccessFactory(DbProviderFactory, DataBaseType, Nullable<TimeSpan>, Nullable<TimeSpan>)
   href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory__ctor_System_Data_Common_DbProviderFactory_DotNetHelper_ObjectToSql_Enum_DataBaseType_System_Nullable_System_TimeSpan__System_Nullable_System_TimeSpan__
@@ -31,15 +31,6 @@ references:
   fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(System.Data.Common.DbProviderFactory, DotNetHelper.ObjectToSql.Enum.DataBaseType, System.Nullable(Of System.TimeSpan), System.Nullable(Of System.TimeSpan))
   nameWithType: DatabaseAccessFactory.DatabaseAccessFactory(DbProviderFactory, DataBaseType, Nullable<TimeSpan>, Nullable<TimeSpan>)
   nameWithType.vb: DatabaseAccessFactory.DatabaseAccessFactory(DbProviderFactory, DataBaseType, Nullable(Of TimeSpan), Nullable(Of TimeSpan))
-- uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.String,DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
-  name: DatabaseAccessFactory(String, DataBaseType, Nullable<TimeSpan>, Nullable<TimeSpan>)
-  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory__ctor_System_String_DotNetHelper_ObjectToSql_Enum_DataBaseType_System_Nullable_System_TimeSpan__System_Nullable_System_TimeSpan__
-  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.String,DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
-  name.vb: DatabaseAccessFactory(String, DataBaseType, Nullable(Of TimeSpan), Nullable(Of TimeSpan))
-  fullName: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(System.String, DotNetHelper.ObjectToSql.Enum.DataBaseType, System.Nullable<System.TimeSpan>, System.Nullable<System.TimeSpan>)
-  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(System.String, DotNetHelper.ObjectToSql.Enum.DataBaseType, System.Nullable(Of System.TimeSpan), System.Nullable(Of System.TimeSpan))
-  nameWithType: DatabaseAccessFactory.DatabaseAccessFactory(String, DataBaseType, Nullable<TimeSpan>, Nullable<TimeSpan>)
-  nameWithType.vb: DatabaseAccessFactory.DatabaseAccessFactory(String, DataBaseType, Nullable(Of TimeSpan), Nullable(Of TimeSpan))
 - uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor*
   name: DatabaseAccessFactory
   href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory__ctor_
@@ -146,6 +137,24 @@ references:
   fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String))
   nameWithType: DatabaseAccessFactory.Execute<T>(T, ActionType, String, Func<Object, String>, Func<Object, String>, Func<Object, String>)
   nameWithType.vb: DatabaseAccessFactory.Execute(Of T)(T, ActionType, String, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
+- uid: DotNetHelper.Database.DatabaseAccessFactory.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name: Execute<T>(T, ActionType, String, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_Execute__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_String_System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Linq_Expressions_Expression_System_Func___0_System_Object_____
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name.vb: Execute(Of T)(T, ActionType, String, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.Execute<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  nameWithType: DatabaseAccessFactory.Execute<T>(T, ActionType, String, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
+  nameWithType.vb: DatabaseAccessFactory.Execute(Of T)(T, ActionType, String, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
+- uid: DotNetHelper.Database.DatabaseAccessFactory.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name: Execute<T>(T, ActionType, String, Expression<Func<T, Object>>[])
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_Execute__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name.vb: Execute(Of T)(T, ActionType, String, Expression(Of Func(Of T, Object))())
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.Execute<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  nameWithType: DatabaseAccessFactory.Execute<T>(T, ActionType, String, Expression<Func<T, Object>>[])
+  nameWithType.vb: DatabaseAccessFactory.Execute(Of T)(T, ActionType, String, Expression(Of Func(Of T, Object))())
 - uid: DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutput*
   name: ExecuteAndGetOutput
   href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_ExecuteAndGetOutput_
@@ -484,14 +493,6 @@ references:
   fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P)
   nameWithType: DatabaseAccess<C, P>
   nameWithType.vb: DatabaseAccess(Of C, P)
-- uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
-  name: DatabaseAccess(DataBaseType)
-  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2__ctor_DotNetHelper_ObjectToSql_Enum_DataBaseType_
-  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`2.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType)
-  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.DatabaseAccess(DotNetHelper.ObjectToSql.Enum.DataBaseType)
-  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).DatabaseAccess(DotNetHelper.ObjectToSql.Enum.DataBaseType)
-  nameWithType: DatabaseAccess<C, P>.DatabaseAccess(DataBaseType)
-  nameWithType.vb: DatabaseAccess(Of C, P).DatabaseAccess(DataBaseType)
 - uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.String)
   name: DatabaseAccess(DataBaseType, String)
   href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2__ctor_DotNetHelper_ObjectToSql_Enum_DataBaseType_System_String_
@@ -629,6 +630,24 @@ references:
   fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String))
   nameWithType: DatabaseAccess<C, P>.Execute<T>(T, ActionType, String, Func<Object, String>, Func<Object, String>, Func<Object, String>)
   nameWithType.vb: DatabaseAccess(Of C, P).Execute(Of T)(T, ActionType, String, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name: Execute<T>(T, ActionType, String, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
+  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_Execute__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_String_System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Linq_Expressions_Expression_System_Func___0_System_Object_____
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`2.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name.vb: Execute(Of T)(T, ActionType, String, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.Execute<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  nameWithType: DatabaseAccess<C, P>.Execute<T>(T, ActionType, String, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
+  nameWithType.vb: DatabaseAccess(Of C, P).Execute(Of T)(T, ActionType, String, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name: Execute<T>(T, ActionType, String, Expression<Func<T, Object>>[])
+  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_Execute__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`2.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name.vb: Execute(Of T)(T, ActionType, String, Expression(Of Func(Of T, Object))())
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>.Execute<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P).Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  nameWithType: DatabaseAccess<C, P>.Execute<T>(T, ActionType, String, Expression<Func<T, Object>>[])
+  nameWithType.vb: DatabaseAccess(Of C, P).Execute(Of T)(T, ActionType, String, Expression(Of Func(Of T, Object))())
 - uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteAndGetOutput*
   name: ExecuteAndGetOutput
   href: api/DotNetHelper.Database.DataSource.DatabaseAccess-2.html#DotNetHelper_Database_DataSource_DatabaseAccess_2_ExecuteAndGetOutput_
@@ -1461,6 +1480,24 @@ references:
   fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String))
   nameWithType: IDatabaseAccess.Execute<T>(T, ActionType, String, Func<Object, String>, Func<Object, String>, Func<Object, String>)
   nameWithType.vb: IDatabaseAccess.Execute(Of T)(T, ActionType, String, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name: Execute<T>(T, ActionType, String, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_Execute__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_String_System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Func_System_Object_System_String__System_Linq_Expressions_Expression_System_Func___0_System_Object_____
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name.vb: Execute(Of T)(T, ActionType, String, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.Execute<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  nameWithType: IDatabaseAccess.Execute<T>(T, ActionType, String, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
+  nameWithType.vb: IDatabaseAccess.Execute(Of T)(T, ActionType, String, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name: Execute<T>(T, ActionType, String, Expression<Func<T, Object>>[])
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_Execute__1___0_DotNetHelper_ObjectToSql_Enum_ActionType_System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name.vb: Execute(Of T)(T, ActionType, String, Expression(Of Func(Of T, Object))())
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.Execute<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  nameWithType: IDatabaseAccess.Execute<T>(T, ActionType, String, Expression<Func<T, Object>>[])
+  nameWithType.vb: IDatabaseAccess.Execute(Of T)(T, ActionType, String, Expression(Of Func(Of T, Object))())
 - uid: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutput*
   name: ExecuteAndGetOutput
   href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_ExecuteAndGetOutput_

@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 
 
+##
+##
+<br/>
+
+## [1.0.44] - 2019-08-22
+### Changed 
+- enchanced support anonymous objects
+
+
 ## [1.0.41] - 2019-08-21
 ### Added 
 - New APIs for update,upsert,delete support with anonymous objects
@@ -32,5 +41,6 @@ public static T MapTo<T>(this IDataReader reader) where T : class
 
 [1.0.40]: https://github.com/olivierlacan/keep-a-changelog/releases/tag/v1.0.40
 [1.0.41]: https://github.com/olivierlacan/keep-a-changelog/releases/tag/v1.0.41
+[1.0.44]: https://github.com/olivierlacan/keep-a-changelog/releases/tag/v1.0.44
 
 

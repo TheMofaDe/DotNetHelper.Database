@@ -225,7 +225,7 @@ namespace DotNetHelper.Database.Interface
         /// <param name="tableName">Table name to use when generating sql </param>
         /// <param name="keyFields"></param>
         /// <returns></returns>
-         int Execute<T>(T instance, ActionType actionType, string tableName, params Expression<Func<T, object>>[] keyFields) where T : class;
+        int Execute<T>(T instance, ActionType actionType, string tableName, params Expression<Func<T, object>>[] keyFields) where T : class;
 
 
 
@@ -241,20 +241,20 @@ namespace DotNetHelper.Database.Interface
         /// <param name="csvSerializer">For when your storing values in the database as csv. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.CSV)]</param>
         /// <param name="keyFields">Override attributes and specified which properties are keys from an expression</param>
         /// <returns></returns>
-         int Execute<T>(T instance, ActionType actionType, string tableName, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer, params Expression<Func<T, object>>[] keyFields) where T : class;
+        int Execute<T>(T instance, ActionType actionType, string tableName, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer, params Expression<Func<T, object>>[] keyFields) where T : class;
 
 
 
 
-            /// <summary>
-            ///  Creates the specified SQL from the object then executes the sql and applies the reflected values to the instance provided. This is useful when dealing with identity fields  
-            /// </summary>
-            /// <typeparam name="T"></typeparam>
-            /// <param name="instance">the object to create sql from </param>
-            /// <param name="actionType">type of sql to generate</param>
-            /// <param name="outputFields">the fields to return that will reflect the values after the sql is executed  </param>
-            /// <returns></returns>
-            T ExecuteAndGetOutput<T>(T instance, ActionType actionType, params Expression<Func<T, object>>[] outputFields) where T : class;
+        /// <summary>
+        ///  Creates the specified SQL from the object then executes the sql and applies the reflected values to the instance provided. This is useful when dealing with identity fields  
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="instance">the object to create sql from </param>
+        /// <param name="actionType">type of sql to generate</param>
+        /// <param name="outputFields">the fields to return that will reflect the values after the sql is executed  </param>
+        /// <returns></returns>
+        T ExecuteAndGetOutput<T>(T instance, ActionType actionType, params Expression<Func<T, object>>[] outputFields) where T : class;
 
         /// <summary>
         ///  Creates the sql and applies the reflected values tothe specified SQL from the object then executes t the instance provided. This is useful when dealing with identity fields  

@@ -9,7 +9,7 @@ namespace DotNetHelper.Database.Tests.Services
     public class DataSourceXML : ISerializer
     {
 
-     
+
 
         public DataSourceXML()
         {

@@ -26,11 +26,11 @@ namespace DotNetHelper.Database.Tests
         private static List<IDatabaseAccess> GetTestObjects()
         {
             // ReSharper disable once UseObjectOrCollectionInitializer
-            var list = new List<IDatabaseAccess>(){};
-         
+            var list = new List<IDatabaseAccess>() { };
+
             list.Add(new DatabaseAccess<SqlConnection, SqlParameter>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString));
-            list.Add(new DatabaseAccess<SqlConnection, SqlParameter>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString,TimeSpan.FromSeconds(35)));
-            list.Add(new DatabaseAccess<SqlConnection, SqlParameter>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString,TimeSpan.FromSeconds(40),TimeSpan.FromSeconds(40)));
+            list.Add(new DatabaseAccess<SqlConnection, SqlParameter>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString, TimeSpan.FromSeconds(35)));
+            list.Add(new DatabaseAccess<SqlConnection, SqlParameter>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString, TimeSpan.FromSeconds(40), TimeSpan.FromSeconds(40)));
 
 #if SUPPORTSQLITE
             list.Add(new DatabaseAccess<SqliteConnection, SqliteParameter>(DataBaseType.Sqlite, TestHelper.SqliteConnectionString));
@@ -54,7 +54,7 @@ namespace DotNetHelper.Database.Tests
         }
 
 
-  
+
 
         [SetUp]
         public void Setup()
@@ -78,7 +78,7 @@ namespace DotNetHelper.Database.Tests
         [OneTimeSetUp]
         public void RunBeforeAnyTests()
         {
-          
+
         }
 
         [OneTimeTearDown]
@@ -117,7 +117,7 @@ namespace DotNetHelper.Database.Tests
         public void Test_Execute_INSERT_UPDATE_UPSERT_DELETE()
         {
 
-     
+
             // INSERT A EMPLOYEE WITH THEIR FAVORITE COLOR TO BE GREEN
             var newEmployee = MockEmployee.Hashset.Take(2).Last();
             newEmployee.FavoriteColor = "GREEN";
@@ -130,7 +130,7 @@ namespace DotNetHelper.Database.Tests
 
             // VERFIY DATA WAS SAVED CORRECTLY 
             var employee = employees.First();
-            Assert.AreEqual(employee.FavoriteColor, "GREEN","Employee favorite color wasn't stored correctly");
+            Assert.AreEqual(employee.FavoriteColor, "GREEN", "Employee favorite color wasn't stored correctly");
 
             // CHANGE EMPLOYEE FAVORITE COLOR
             employee.FavoriteColor = "RED";
@@ -170,7 +170,7 @@ namespace DotNetHelper.Database.Tests
         {
 
             // TODO :: REMOVE FILTER
-           // if (DatabaseAccess.DatabaseType == DataBaseType.Sqlite) return;
+            // if (DatabaseAccess.DatabaseType == DataBaseType.Sqlite) return;
             // INSERT A EMPLOYEE WITH THEIR FAVORITE COLOR TO BE GREEN
             var newEmployee = new
             {
@@ -180,13 +180,13 @@ namespace DotNetHelper.Database.Tests
                 FavoriteColor = "Green",
                 CreatedAt = DateTime.Now
             };
-            var insertedRecordCount = DatabaseAccess.Execute(newEmployee, ActionType.Insert,"Employee");
+            var insertedRecordCount = DatabaseAccess.Execute(newEmployee, ActionType.Insert, "Employee");
             Assert.AreEqual(insertedRecordCount, 1, "Something went wrong add new employee record");
 
             // RETRIEVE EMPLOYEE FROM DATABASE SO WHEN CAN HAVE THE ID
             var employees = DatabaseAccess.Get<Employee>();
             Assert.AreEqual(employees.Count, 1, "Invalid # of employees was return");
-              
+
             // CHANGE EMPLOYEE FAVORITE COLOR
             var employee = new
             {
@@ -196,7 +196,7 @@ namespace DotNetHelper.Database.Tests
                 FavoriteColor = "RED",
                 IdentityField = employees.First().IdentityField
             };
-            var recordsAffected = DatabaseAccess.Execute(employee, ActionType.Update,"Employee",o => o.IdentityField);
+            var recordsAffected = DatabaseAccess.Execute(employee, ActionType.Update, "Employee", o => o.IdentityField);
             Assert.AreEqual(recordsAffected, 1, "Invalid # of records affected");
 
             // VERFIY DATA WAS SAVED CORRECTLY 
@@ -205,14 +205,15 @@ namespace DotNetHelper.Database.Tests
 
             // PERFORM A UPSERT --> UPDATE SENARIO
             employees = DatabaseAccess.Get<Employee>();
-            recordsAffected = DatabaseAccess.Execute( new
+            recordsAffected = DatabaseAccess.Execute(new
             {
                 FirstName = employees.First().FirstName,
                 LastName = employees.First().LastName,
                 DOB = employees.First().DateOfBirth,
                 FavoriteColor = "PURPLE",
                 IdentityField = employees.First().IdentityField
-                , CreatedAt = DateTime.Now
+                ,
+                CreatedAt = DateTime.Now
             }, ActionType.Upsert, "Employee", o => o.IdentityField);
             Assert.AreEqual(recordsAffected, 1, "Invalid # of records affected");
             Assert.AreEqual(DatabaseAccess.Get<Employee>().First().FavoriteColor, "PURPLE", "Invalid # of records affected");
@@ -262,7 +263,7 @@ namespace DotNetHelper.Database.Tests
             {
                 EnsureExpectedExceptionIsThrown<NotImplementedException>(delegate
                 {
-                   DatabaseAccess.ExecuteAndGetOutput(MockEmployee.Hashset.Take(3).Last(), ActionType.Insert, e => e.IdentityField);
+                    DatabaseAccess.ExecuteAndGetOutput(MockEmployee.Hashset.Take(3).Last(), ActionType.Insert, e => e.IdentityField);
                 });
                 return;
             }
@@ -448,7 +449,7 @@ namespace DotNetHelper.Database.Tests
 
 
         [Test]
-   
+
         public void Test_Object_With_Serialize_Attribute_Insert_Without_Error()
         {
 

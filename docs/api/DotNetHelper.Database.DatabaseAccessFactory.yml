@@ -5,9 +5,8 @@ items:
   id: DatabaseAccessFactory
   parent: DotNetHelper.Database
   children:
-  - DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
+  - DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.String,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
   - DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.Data.Common.DbProviderFactory,DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
-  - DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.String,DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
   - DotNetHelper.Database.DatabaseAccessFactory.CanConnect
   - DotNetHelper.Database.DatabaseAccessFactory.CommandTimeOut
   - DotNetHelper.Database.DatabaseAccessFactory.ConnectionTimeOut
@@ -16,6 +15,8 @@ items:
   - DotNetHelper.Database.DatabaseAccessFactory.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType)
   - DotNetHelper.Database.DatabaseAccessFactory.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
   - DotNetHelper.Database.DatabaseAccessFactory.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  - DotNetHelper.Database.DatabaseAccessFactory.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  - DotNetHelper.Database.DatabaseAccessFactory.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   - DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   - DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   - DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutputAsDataReader``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
@@ -278,16 +279,16 @@ items:
   - Public
   fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(System.Data.Common.DbProviderFactory, DotNetHelper.ObjectToSql.Enum.DataBaseType, System.Nullable(Of System.TimeSpan), System.Nullable(Of System.TimeSpan))
   name.vb: DatabaseAccessFactory(DbProviderFactory, DataBaseType, Nullable(Of TimeSpan), Nullable(Of TimeSpan))
-- uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.String,DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
-  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.String,DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
-  id: '#ctor(System.String,DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})'
+- uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.String,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.String,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
+  id: '#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.String,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})'
   parent: DotNetHelper.Database.DatabaseAccessFactory
   langs:
   - csharp
   - vb
-  name: DatabaseAccessFactory(String, DataBaseType, Nullable<TimeSpan>, Nullable<TimeSpan>)
-  nameWithType: DatabaseAccessFactory.DatabaseAccessFactory(String, DataBaseType, Nullable<TimeSpan>, Nullable<TimeSpan>)
-  fullName: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(System.String, DotNetHelper.ObjectToSql.Enum.DataBaseType, System.Nullable<System.TimeSpan>, System.Nullable<System.TimeSpan>)
+  name: DatabaseAccessFactory(DataBaseType, String, Nullable<TimeSpan>, Nullable<TimeSpan>)
+  nameWithType: DatabaseAccessFactory.DatabaseAccessFactory(DataBaseType, String, Nullable<TimeSpan>, Nullable<TimeSpan>)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.String, System.Nullable<System.TimeSpan>, System.Nullable<System.TimeSpan>)
   type: Constructor
   source:
     remote:
@@ -296,70 +297,30 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: .ctor
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 55
+    startLine: 56
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
   syntax:
-    content: public DatabaseAccessFactory(string providerInvariantName, DataBaseType type, TimeSpan? commandTimeOut = default(TimeSpan? ), TimeSpan? connectionTimeOut = default(TimeSpan? ))
+    content: public DatabaseAccessFactory(DataBaseType type, string connectionString = null, TimeSpan? commandTimeOut = default(TimeSpan? ), TimeSpan? connectionTimeOut = default(TimeSpan? ))
     parameters:
-    - id: providerInvariantName
+    - id: type
+      type: DotNetHelper.ObjectToSql.Enum.DataBaseType
+    - id: connectionString
       type: System.String
-    - id: type
-      type: DotNetHelper.ObjectToSql.Enum.DataBaseType
     - id: commandTimeOut
       type: System.Nullable{System.TimeSpan}
     - id: connectionTimeOut
       type: System.Nullable{System.TimeSpan}
-    content.vb: Public Sub New(providerInvariantName As String, type As DataBaseType, commandTimeOut As TimeSpan? = Nothing, connectionTimeOut As TimeSpan? = Nothing)
+    content.vb: Public Sub New(type As DataBaseType, connectionString As String = Nothing, commandTimeOut As TimeSpan? = Nothing, connectionTimeOut As TimeSpan? = Nothing)
   overload: DotNetHelper.Database.DatabaseAccessFactory.#ctor*
-  nameWithType.vb: DatabaseAccessFactory.DatabaseAccessFactory(String, DataBaseType, Nullable(Of TimeSpan), Nullable(Of TimeSpan))
+  nameWithType.vb: DatabaseAccessFactory.DatabaseAccessFactory(DataBaseType, String, Nullable(Of TimeSpan), Nullable(Of TimeSpan))
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(System.String, DotNetHelper.ObjectToSql.Enum.DataBaseType, System.Nullable(Of System.TimeSpan), System.Nullable(Of System.TimeSpan))
-  name.vb: DatabaseAccessFactory(String, DataBaseType, Nullable(Of TimeSpan), Nullable(Of TimeSpan))
-- uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
-  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
-  id: '#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})'
-  parent: DotNetHelper.Database.DatabaseAccessFactory
-  langs:
-  - csharp
-  - vb
-  name: DatabaseAccessFactory(DataBaseType, Nullable<TimeSpan>, Nullable<TimeSpan>)
-  nameWithType: DatabaseAccessFactory.DatabaseAccessFactory(DataBaseType, Nullable<TimeSpan>, Nullable<TimeSpan>)
-  fullName: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.Nullable<System.TimeSpan>, System.Nullable<System.TimeSpan>)
-  type: Constructor
-  source:
-    remote:
-      path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
-    id: .ctor
-    path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 63
-  assemblies:
-  - DotNetHelper.Database
-  namespace: DotNetHelper.Database
-  syntax:
-    content: public DatabaseAccessFactory(DataBaseType type, TimeSpan? commandTimeOut = default(TimeSpan? ), TimeSpan? connectionTimeOut = default(TimeSpan? ))
-    parameters:
-    - id: type
-      type: DotNetHelper.ObjectToSql.Enum.DataBaseType
-    - id: commandTimeOut
-      type: System.Nullable{System.TimeSpan}
-    - id: connectionTimeOut
-      type: System.Nullable{System.TimeSpan}
-    content.vb: Public Sub New(type As DataBaseType, commandTimeOut As TimeSpan? = Nothing, connectionTimeOut As TimeSpan? = Nothing)
-  overload: DotNetHelper.Database.DatabaseAccessFactory.#ctor*
-  nameWithType.vb: DatabaseAccessFactory.DatabaseAccessFactory(DataBaseType, Nullable(Of TimeSpan), Nullable(Of TimeSpan))
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.Nullable(Of System.TimeSpan), System.Nullable(Of System.TimeSpan))
-  name.vb: DatabaseAccessFactory(DataBaseType, Nullable(Of TimeSpan), Nullable(Of TimeSpan))
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.String, System.Nullable(Of System.TimeSpan), System.Nullable(Of System.TimeSpan))
+  name.vb: DatabaseAccessFactory(DataBaseType, String, Nullable(Of TimeSpan), Nullable(Of TimeSpan))
 - uid: DotNetHelper.Database.DatabaseAccessFactory.GetNewConnection(System.Boolean)
   commentId: M:DotNetHelper.Database.DatabaseAccessFactory.GetNewConnection(System.Boolean)
   id: GetNewConnection(System.Boolean)
@@ -378,7 +339,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewConnection
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 99
+    startLine: 90
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -413,7 +374,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewCommand
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 118
+    startLine: 109
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -466,7 +427,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewCommandAndTransaction
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 137
+    startLine: 128
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -507,7 +468,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteNonQuery
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 159
+    startLine: 150
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -563,7 +524,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteNonQuery
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 176
+    startLine: 167
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -614,7 +575,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteScalar
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 190
+    startLine: 181
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -664,7 +625,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteScalar
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 206
+    startLine: 197
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -715,7 +676,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteTransaction
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 221
+    startLine: 212
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -765,7 +726,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteTransaction
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 237
+    startLine: 228
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -816,7 +777,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataReader
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 275
+    startLine: 266
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -867,7 +828,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataReader
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 290
+    startLine: 281
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -917,7 +878,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTable
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 303
+    startLine: 294
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -967,7 +928,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTable
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 316
+    startLine: 307
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1008,7 +969,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTableWithSchema
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 328
+    startLine: 319
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1058,7 +1019,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTableWithKeyInfo
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 350
+    startLine: 341
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1108,7 +1069,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTableWithSchema
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 368
+    startLine: 359
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1149,7 +1110,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTableWithKeyInfo
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 378
+    startLine: 369
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1190,7 +1151,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewParameter
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 383
+    startLine: 374
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1229,7 +1190,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: CanConnect
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 395
+    startLine: 386
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1266,7 +1227,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 421
+    startLine: 412
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1330,7 +1291,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 438
+    startLine: 429
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1395,7 +1356,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 448
+    startLine: 439
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1440,7 +1401,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 463
+    startLine: 454
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1495,7 +1456,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 477
+    startLine: 468
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1550,7 +1511,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Execute
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 489
+    startLine: 480
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1602,7 +1563,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Execute
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 502
+    startLine: 493
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1657,7 +1618,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Execute
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 518
+    startLine: 509
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1721,7 +1682,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutput
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 536
+    startLine: 527
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1776,7 +1737,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutput
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 555
+    startLine: 546
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1849,7 +1810,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutputAsDataReader
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 567
+    startLine: 558
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1897,7 +1858,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutputAsDataReader
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 572
+    startLine: 563
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1933,6 +1894,131 @@ items:
   - Public
   fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.ExecuteAndGetOutputAsDataReader(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
   name.vb: ExecuteAndGetOutputAsDataReader(Of T)(T, ActionType, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
+- uid: DotNetHelper.Database.DatabaseAccessFactory.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  id: Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  parent: DotNetHelper.Database.DatabaseAccessFactory
+  langs:
+  - csharp
+  - vb
+  name: Execute<T>(T, ActionType, String, Expression<Func<T, Object>>[])
+  nameWithType: DatabaseAccessFactory.Execute<T>(T, ActionType, String, Expression<Func<T, Object>>[])
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.Execute<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+    id: Execute
+    path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
+    startLine: 584
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database
+  summary: "\nCreates the specified SQL from the object then executes the sql and return the number of rows affected. \n"
+  example: []
+  syntax:
+    content: >-
+      public int Execute<T>(T instance, ActionType actionType, string tableName, params Expression<Func<T, object>>[] keyFields)
+          where T : class
+    parameters:
+    - id: instance
+      type: '{T}'
+      description: 'the object to create sql from '
+    - id: actionType
+      type: DotNetHelper.ObjectToSql.Enum.ActionType
+      description: type of sql to generate
+    - id: tableName
+      type: System.String
+      description: 'Table name to use when generating sql '
+    - id: keyFields
+      type: System.Linq.Expressions.Expression{System.Func{{T},System.Object}}[]
+      description: ''
+    typeParameters:
+    - id: T
+      description: ''
+    return:
+      type: System.Int32
+      description: ''
+    content.vb: Public Function Execute(Of T As Class)(instance As T, actionType As ActionType, tableName As String, ParamArray keyFields As Expression(Of Func(Of T, Object))()) As Integer
+  overload: DotNetHelper.Database.DatabaseAccessFactory.Execute*
+  implements:
+  - DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1({T},DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{{T},System.Object}}[])
+  nameWithType.vb: DatabaseAccessFactory.Execute(Of T)(T, ActionType, String, Expression(Of Func(Of T, Object))())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  name.vb: Execute(Of T)(T, ActionType, String, Expression(Of Func(Of T, Object))())
+- uid: DotNetHelper.Database.DatabaseAccessFactory.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  id: Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  parent: DotNetHelper.Database.DatabaseAccessFactory
+  langs:
+  - csharp
+  - vb
+  name: Execute<T>(T, ActionType, String, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
+  nameWithType: DatabaseAccessFactory.Execute<T>(T, ActionType, String, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.Execute<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+    id: Execute
+    path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
+    startLine: 605
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database
+  summary: "\nCreates the specified SQL from the object then executes the sql and return the number of rows affected. \n"
+  example: []
+  syntax:
+    content: >-
+      public int Execute<T>(T instance, ActionType actionType, string tableName, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer, params Expression<Func<T, object>>[] keyFields)
+          where T : class
+    parameters:
+    - id: instance
+      type: '{T}'
+      description: 'the object to create sql from '
+    - id: actionType
+      type: DotNetHelper.ObjectToSql.Enum.ActionType
+      description: type of sql to generate
+    - id: tableName
+      type: System.String
+      description: 'Table name to use when generating sql '
+    - id: xmlSerializer
+      type: System.Func{System.Object,System.String}
+      description: For when your storing values in the database as xml. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.XML)]
+    - id: jsonSerializer
+      type: System.Func{System.Object,System.String}
+      description: For when your storing values in the database as json. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.JSON)]
+    - id: csvSerializer
+      type: System.Func{System.Object,System.String}
+      description: For when your storing values in the database as csv. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.CSV)]
+    - id: keyFields
+      type: System.Linq.Expressions.Expression{System.Func{{T},System.Object}}[]
+      description: Override attributes and specified which properties are keys from an expression
+    typeParameters:
+    - id: T
+      description: ''
+    return:
+      type: System.Int32
+      description: ''
+    content.vb: Public Function Execute(Of T As Class)(instance As T, actionType As ActionType, tableName As String, xmlSerializer As Func(Of Object, String), jsonSerializer As Func(Of Object, String), csvSerializer As Func(Of Object, String), ParamArray keyFields As Expression(Of Func(Of T, Object))()) As Integer
+  overload: DotNetHelper.Database.DatabaseAccessFactory.Execute*
+  implements:
+  - DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1({T},DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{{T},System.Object}}[])
+  nameWithType.vb: DatabaseAccessFactory.Execute(Of T)(T, ActionType, String, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  name.vb: Execute(Of T)(T, ActionType, String, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
 references:
 - uid: DotNetHelper.Database
   commentId: N:DotNetHelper.Database
@@ -7625,6 +7711,920 @@ references:
     name: ActionType
     nameWithType: ActionType
     fullName: DotNetHelper.ObjectToSql.Enum.ActionType
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    nameWithType: Expression
+    fullName: System.Linq.Expressions.Expression
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1({T},DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{{T},System.Object}}[])
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  parent: DotNetHelper.Database.Interface.IDatabaseAccess
+  definition: DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name: Execute<T>(T, ActionType, String, Expression<Func<T, Object>>[])
+  nameWithType: IDatabaseAccess.Execute<T>(T, ActionType, String, Expression<Func<T, Object>>[])
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.Execute<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  nameWithType.vb: IDatabaseAccess.Execute(Of T)(T, ActionType, String, Expression(Of Func(Of T, Object))())
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  name.vb: Execute(Of T)(T, ActionType, String, Expression(Of Func(Of T, Object))())
+  spec.csharp:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+    name: Execute<T>
+    nameWithType: IDatabaseAccess.Execute<T>
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.Execute<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: DotNetHelper.ObjectToSql.Enum.ActionType
+    name: ActionType
+    nameWithType: ActionType
+    fullName: DotNetHelper.ObjectToSql.Enum.ActionType
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    nameWithType: Expression
+    fullName: System.Linq.Expressions.Expression
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+    name: Execute(Of T)
+    nameWithType: IDatabaseAccess.Execute(Of T)
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.Execute(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: DotNetHelper.ObjectToSql.Enum.ActionType
+    name: ActionType
+    nameWithType: ActionType
+    fullName: DotNetHelper.ObjectToSql.Enum.ActionType
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    nameWithType: Expression
+    fullName: System.Linq.Expressions.Expression
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  isExternal: true
+  name: Execute<T>(T, ActionType, String, Expression<Func<T, Object>>[])
+  nameWithType: IDatabaseAccess.Execute<T>(T, ActionType, String, Expression<Func<T, Object>>[])
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.Execute<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  nameWithType.vb: IDatabaseAccess.Execute(Of T)(T, ActionType, String, Expression(Of Func(Of T, Object))())
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  name.vb: Execute(Of T)(T, ActionType, String, Expression(Of Func(Of T, Object))())
+  spec.csharp:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+    name: Execute<T>
+    nameWithType: IDatabaseAccess.Execute<T>
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.Execute<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: DotNetHelper.ObjectToSql.Enum.ActionType
+    name: ActionType
+    nameWithType: ActionType
+    fullName: DotNetHelper.ObjectToSql.Enum.ActionType
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    nameWithType: Expression
+    fullName: System.Linq.Expressions.Expression
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+    name: Execute(Of T)
+    nameWithType: IDatabaseAccess.Execute(Of T)
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.Execute(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: DotNetHelper.ObjectToSql.Enum.ActionType
+    name: ActionType
+    nameWithType: ActionType
+    fullName: DotNetHelper.ObjectToSql.Enum.ActionType
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    nameWithType: Expression
+    fullName: System.Linq.Expressions.Expression
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1({T},DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{{T},System.Object}}[])
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  parent: DotNetHelper.Database.Interface.IDatabaseAccess
+  definition: DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  name: Execute<T>(T, ActionType, String, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
+  nameWithType: IDatabaseAccess.Execute<T>(T, ActionType, String, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.Execute<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  nameWithType.vb: IDatabaseAccess.Execute(Of T)(T, ActionType, String, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  name.vb: Execute(Of T)(T, ActionType, String, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
+  spec.csharp:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+    name: Execute<T>
+    nameWithType: IDatabaseAccess.Execute<T>
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.Execute<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: DotNetHelper.ObjectToSql.Enum.ActionType
+    name: ActionType
+    nameWithType: ActionType
+    fullName: DotNetHelper.ObjectToSql.Enum.ActionType
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    nameWithType: Expression
+    fullName: System.Linq.Expressions.Expression
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+    name: Execute(Of T)
+    nameWithType: IDatabaseAccess.Execute(Of T)
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.Execute(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: DotNetHelper.ObjectToSql.Enum.ActionType
+    name: ActionType
+    nameWithType: ActionType
+    fullName: DotNetHelper.ObjectToSql.Enum.ActionType
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    nameWithType: Expression
+    fullName: System.Linq.Expressions.Expression
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  isExternal: true
+  name: Execute<T>(T, ActionType, String, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
+  nameWithType: IDatabaseAccess.Execute<T>(T, ActionType, String, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.Execute<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  nameWithType.vb: IDatabaseAccess.Execute(Of T)(T, ActionType, String, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  name.vb: Execute(Of T)(T, ActionType, String, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
+  spec.csharp:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+    name: Execute<T>
+    nameWithType: IDatabaseAccess.Execute<T>
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.Execute<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: DotNetHelper.ObjectToSql.Enum.ActionType
+    name: ActionType
+    nameWithType: ActionType
+    fullName: DotNetHelper.ObjectToSql.Enum.ActionType
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    nameWithType: Expression
+    fullName: System.Linq.Expressions.Expression
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+    name: Execute(Of T)
+    nameWithType: IDatabaseAccess.Execute(Of T)
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.Execute(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: DotNetHelper.ObjectToSql.Enum.ActionType
+    name: ActionType
+    nameWithType: ActionType
+    fullName: DotNetHelper.ObjectToSql.Enum.ActionType
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
     isExternal: true
   - name: ', '
     nameWithType: ', '

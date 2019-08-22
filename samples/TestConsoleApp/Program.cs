@@ -21,8 +21,8 @@ namespace TestConsoleApp
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-       // [NotMapped] // This property will be ignore when performing database actions
-       // public string FullName => FirstName + " " + LastName;
+        // [NotMapped] // This property will be ignore when performing database actions
+        // public string FullName => FirstName + " " + LastName;
 
         [SqlColumn(MapTo = "DOB")]  // This property is actually name DOB in the database
         public DateTime DateOfBirth { get; set; }
