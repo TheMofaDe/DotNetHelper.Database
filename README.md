@@ -21,13 +21,21 @@
 ## Features
 + Can dynamically build your sql statement from any *(Generic,Anonymous,Dynamic)* object but also support you providing one as well
 + Can  *(Insert,Update,Upsert,Delete)* any *(Generic,Anonymous,Dynamic)* object into database
-+ Support Any **IDbConnection** & work with **DbFactory**
++ Support Any **DbConnection** & work with **DbFactory**
 + Support auto-serializing & deserializing columns that is as stored as CSV,JSON, & XML in the database 
   + You implement the serialization so we don't have to depend on libraries like newtonsoft.json 
 + Map List To **DataTable**
 + Map **DataTable** To List
 + Map **IDataReader** To List
 + Map **DataRow** To A Class
+
+## Supports 
++   SqlServer
++   Sqlite
++   MySql
+
+
+
 
 ## Example 
 
@@ -72,7 +80,7 @@ public class Employee
 , FirstName = "Joe" 
 , LastName = "Generic"
 }; 
- var dbAccess = new DatabaseAccess<SqlConnection, SqlParameter>(DataBaseType.SqlServer, "ConnectionString");
+ var dbAccess = new DatabaseAccess<SqlConnection>(DataBaseType.SqlServer, "ConnectionString");
  var recordAffected = dbAccess.Execute(employee, ActionType.Insert); // ActionType is a enum of Insert,Update,Delete,Upsert
 ```   
 ##### How to insert an employee using a dynamic object
@@ -81,12 +89,14 @@ dynamic dynamicEmployee = new ExpandoObject(); // A DYNAMIC EMPLOYEE
 dynamicEmployee.FirstName = "Joe Sister";
 dynamicEmployee.LastName = "Dynamic";
 dynamicEmployee.DOB = DateTime.Today.AddDays(-2);
+var dbAccess = new DatabaseAccess<SqlConnection>(DataBaseType.SqlServer, "ConnectionString"); // Specify database provider to ensure syntax is correct
+var recordAffected = dbAccess.Execute(dynamicEmployee, ActionType.Insert,"Employee"); // you need to specify the table name when using dynamic objects
 ```
 ##### How to insert an employee using a generic class
 ```csharp
-var anonymousEmployee = new {FirstName = "Joe Brother", DOB = DateTime.Today.AddDays(-1) , LastName = "Anonymous"}; // A ANONYMOUS EMPLOYEE
-var dbAccess = new DatabaseAccess<SqlConnection, SqlParameter>(DataBaseType.SqlServer, "ConionString"); // Specify database provider to ensure syntax is correct
-var recordAffected += dbAccess.Execute(anonymousEmployee, ActionType.Insert,"Employee"); // you need to specify the table name when using anonymous objects
+var anonymousEmployee = new {FirstName = "Joe Brother", DOB = DateTime.Today.AddDays(-1) , LastName = "Anonymous"}; 
+var dbAccess = new DatabaseAccess<SqlConnection>(DataBaseType.SqlServer, "ConnectionString"); // Specify database provider to ensure syntax is correct
+var recordAffected = dbAccess.Execute(anonymousEmployee, ActionType.Insert,"Employee"); // you need to specify the table name when using anonymous objects
 ```
      
 
