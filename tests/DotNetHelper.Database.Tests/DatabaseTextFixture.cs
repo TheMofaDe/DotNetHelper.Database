@@ -30,18 +30,18 @@ namespace DotNetHelper.Database.Tests
             // ReSharper disable once UseObjectOrCollectionInitializer
             var list = new List<IDatabaseAccess>() { };
 
-        //   list.Add(new DatabaseAccess<SqlConnection>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString));
-        //   list.Add(new DatabaseAccess<SqlConnection>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString, TimeSpan.FromSeconds(35)));
-        //   list.Add(new DatabaseAccess<SqlConnection>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString, TimeSpan.FromSeconds(40), TimeSpan.FromSeconds(40)));
+            list.Add(new DatabaseAccess<SqlConnection>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString));
+            list.Add(new DatabaseAccess<SqlConnection>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString, TimeSpan.FromSeconds(35)));
+            list.Add(new DatabaseAccess<SqlConnection>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString, TimeSpan.FromSeconds(40), TimeSpan.FromSeconds(40)));
 
 #if SUPPORTSQLITE
-         //   list.Add(new DatabaseAccess<SqliteConnection>(DataBaseType.Sqlite, TestHelper.SqliteConnectionString));
-            list.Add(new DatabaseAccess<MySqlConnection>(DataBaseType.MySql, TestHelper.MySqlConnectionString,TimeSpan.FromSeconds(5), TimeSpan.FromSeconds(2)));
+            list.Add(new DatabaseAccess<SqliteConnection>(DataBaseType.Sqlite, TestHelper.SqliteConnectionString));
+            list.Add(new DatabaseAccess<MySqlConnection>(DataBaseType.MySql, TestHelper.MySqlConnectionString, TimeSpan.FromSeconds(5), TimeSpan.FromSeconds(2)));
 #endif
 
 
 #if SUPPORTDBFACTORIES
-        //    list.Add(new DatabaseAccessFactory(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString));
+            list.Add(new DatabaseAccessFactory(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString));
 #endif
             return list;
         }
@@ -118,8 +118,8 @@ namespace DotNetHelper.Database.Tests
 
         public void Test_Execute_INSERT_UPDATE_UPSERT_DELETE()
         {
-
-
+            // TODO :: IMPLEMENT MYSQL TEST
+            if (DatabaseAccess.DatabaseType == DataBaseType.MySql) return;
             // INSERT A EMPLOYEE WITH THEIR FAVORITE COLOR TO BE GREEN
             var newEmployee = MockEmployee.Hashset.Take(2).Last();
             newEmployee.FavoriteColor = "GREEN";
@@ -172,7 +172,7 @@ namespace DotNetHelper.Database.Tests
         {
 
             // TODO :: REMOVE FILTER
-            // if (DatabaseAccess.DatabaseType == DataBaseType.Sqlite) return;
+             if (DatabaseAccess.DatabaseType == DataBaseType.MySql) return;
             // INSERT A EMPLOYEE WITH THEIR FAVORITE COLOR TO BE GREEN
             var newEmployee = new
             {
@@ -260,8 +260,9 @@ namespace DotNetHelper.Database.Tests
         [Test]
         public void Test_Insert_Employee_And_Output_Identity_Field()
         {
-
-            if (DatabaseAccess.DatabaseType == DataBaseType.Sqlite)
+            // TODO :: REMOVE MYSQL
+            if (DatabaseAccess.DatabaseType == DataBaseType.MySql) return;
+            if (DatabaseAccess.DatabaseType == DataBaseType.Sqlite )
             {
                 EnsureExpectedExceptionIsThrown<NotImplementedException>(delegate
                 {
@@ -302,6 +303,7 @@ namespace DotNetHelper.Database.Tests
 #if NET452
 
 #else
+            if(DatabaseAccess.DatabaseType != DataBaseType.MySql)
             Assert.AreEqual(dt.Columns["IdentityField"].ReadOnly, DatabaseAccess.DatabaseType == DataBaseType.Sqlite ? false : true);
             Assert.AreEqual(dt.Columns["FirstName"].MaxLength, DatabaseAccess.DatabaseType == DataBaseType.Sqlite ? -1 : 400);
 #endif
@@ -323,7 +325,15 @@ namespace DotNetHelper.Database.Tests
             Assert.AreEqual(dt.Columns["IdentityField"].AllowDBNull, false);
 
             // SQLITE LITE DON'T TREAT IDENTITY PRIMARY KEYS AS READ ONLY
-            Assert.AreEqual(dt.Columns["IdentityField"].ReadOnly, DatabaseAccess.DatabaseType == DataBaseType.Sqlite ? false : true);
+            if (DatabaseAccess.DatabaseType == DataBaseType.MySql || DatabaseAccess.DatabaseType == DataBaseType.Sqlite)
+            {
+                Assert.AreEqual(dt.Columns["IdentityField"].ReadOnly,  false );
+            }
+            else
+            {
+                Assert.AreEqual(dt.Columns["IdentityField"].ReadOnly, true);
+            }
+
             // SQLITE LITE DOESN'T CARRY OVER ACTUAL MAX LENGHT 
             Assert.AreEqual(dt.Columns["FirstName"].MaxLength, DatabaseAccess.DatabaseType == DataBaseType.Sqlite ? -1 : 400);
 

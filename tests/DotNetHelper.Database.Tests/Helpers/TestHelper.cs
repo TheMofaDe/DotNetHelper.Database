@@ -55,15 +55,20 @@ namespace DotNetHelper.Database.Tests.Helpers
                 csBuilder.Password = "password";
                 csBuilder.UserID = "test";
                 csBuilder.Server = "172.19.27.154";//"172.17.0.2";
-              //  csBuilder.Database = "Test";
-
+                csBuilder.Database = "sys";
                 return csBuilder.GetConnectionString(true);
 #endif
                 return null;
             }
             else
             {
-                return $@"Server=(local)\SQL2014;Database=master;UID=sa;PWD=Password12!";
+                var csBuilder = new MySqlConnectionStringBuilder();
+                csBuilder.Port = 3306;
+                csBuilder.Password = "Password12!";
+                csBuilder.UserID = "root";
+                csBuilder.Server = "localhost";//"172.17.0.2";
+                csBuilder.Database = "sys";
+                return csBuilder.GetConnectionString(true);
             }
         }
         public static string MySqlConnectionString { get; set; } = GetMySqlCS();

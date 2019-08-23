@@ -11,12 +11,10 @@ namespace DotNetHelper.Database.Helper
 
         public static string NullDeSerializer(SerializableType type, string propertyName)
         {
-
             return $"The property {propertyName} is marked with the Serializable attribute of type {type} but no implementation of a Deserializer was provided";
         }
         public static string NullSerializer(SerializableType type, string propertyName)
         {
-
             return $"The property {propertyName} is marked with the Serializable attribute of type {type} but no implementation of a Serializer was provided";
         }
 

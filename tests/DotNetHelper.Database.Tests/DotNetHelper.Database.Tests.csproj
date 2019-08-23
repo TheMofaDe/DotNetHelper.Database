@@ -46,7 +46,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\DotNetHelper.ObjectToSql\src\DotNetHelper.ObjectToSql\DotNetHelper.ObjectToSql.csproj" />
     <ProjectReference Include="..\..\src\DotNetHelper.Database\DotNetHelper.Database.csproj" />
   </ItemGroup>
 
