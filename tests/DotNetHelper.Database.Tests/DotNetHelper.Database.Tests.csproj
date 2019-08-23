@@ -16,6 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Scripts\mysql_cleanup_1.sql" />
+    <None Remove="Scripts\mysql_init_1.sql" />
     <None Remove="Scripts\sqlite_cleanup_1.sql" />
     <None Remove="Scripts\sqlite_cleanup_2.sql" />
     <None Remove="Scripts\sqlite_init_1.sql" />
@@ -29,7 +31,9 @@
     <EmbeddedResource Include="Scripts\sqlite_cleanup_2.sql" />
     <EmbeddedResource Include="Scripts\sqlite_init_2.sql" />
     <EmbeddedResource Include="Scripts\sqlite_init_1.sql" />
+    <EmbeddedResource Include="Scripts\mysql_cleanup_1.sql" />
     <EmbeddedResource Include="Scripts\sqlserver_cleanup_1.sql" />
+    <EmbeddedResource Include="Scripts\mysql_init_1.sql" />
     <EmbeddedResource Include="Scripts\sqlserver_init_1.sql" />
   </ItemGroup>
 
@@ -42,6 +46,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\DotNetHelper.ObjectToSql\src\DotNetHelper.ObjectToSql\DotNetHelper.ObjectToSql.csproj" />
     <ProjectReference Include="..\..\src\DotNetHelper.Database\DotNetHelper.Database.csproj" />
   </ItemGroup>
 
@@ -50,6 +55,9 @@
     <PackageReference Include="Microsoft.Data.Sqlite">
       <!--Microsoft.EntityFrameworkCore.Sqlite-->
       <Version>3.0.0-preview8.19405.11</Version>
+    </PackageReference>
+    <PackageReference Include="MySql.Data">
+      <Version>8.0.17</Version>
     </PackageReference>
   </ItemGroup>
 
@@ -61,7 +69,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net452'">
+    <PackageReference Include="MySql.Data">
+      <Version>8.0.17</Version>
+    </PackageReference>
   </ItemGroup>
 
 

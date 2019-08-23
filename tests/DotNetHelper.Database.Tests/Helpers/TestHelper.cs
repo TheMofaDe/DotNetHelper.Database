@@ -1,5 +1,8 @@
 ﻿using System;
 using System.IO;
+#if SUPPORTSQLITE
+using MySql.Data.MySqlClient;
+#endif
 
 namespace DotNetHelper.Database.Tests.Helpers
 {
@@ -40,6 +43,32 @@ namespace DotNetHelper.Database.Tests.Helpers
             }
         }
         public static string SQLServerConnectionString { get; set; } = GetCS();
+
+
+        private static string GetMySqlCS()
+        {
+            if (Environment.MachineName == "DESKTOP-MEON7CL" || Environment.MachineName == "JMCNEAL-W8")
+            {
+#if SUPPORTSQLITE
+                var csBuilder = new MySqlConnectionStringBuilder();
+                csBuilder.Port = 3306;
+                csBuilder.Password = "password";
+                csBuilder.UserID = "test";
+                csBuilder.Server = "172.19.27.154";//"172.17.0.2";
+              //  csBuilder.Database = "Test";
+
+                return csBuilder.GetConnectionString(true);
+#endif
+                return null;
+            }
+            else
+            {
+                return $@"Server=(local)\SQL2014;Database=master;UID=sa;PWD=Password12!";
+            }
+        }
+        public static string MySqlConnectionString { get; set; } = GetMySqlCS();
+
+
 
         public static string GetEmbeddedResourceFile(string filename)
         {

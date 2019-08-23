@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetHelper.Database", "sr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestConsoleApp", "samples\TestConsoleApp\TestConsoleApp.csproj", "{7D14B389-4630-4C0E-AED9-E7DC9BE306F2}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetHelper.ObjectToSql", "..\DotNetHelper.ObjectToSql\src\DotNetHelper.ObjectToSql\DotNetHelper.ObjectToSql.csproj", "{BDB9FAB9-6A2A-4A63-B6D1-3EEB28314838}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{7D14B389-4630-4C0E-AED9-E7DC9BE306F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D14B389-4630-4C0E-AED9-E7DC9BE306F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D14B389-4630-4C0E-AED9-E7DC9BE306F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDB9FAB9-6A2A-4A63-B6D1-3EEB28314838}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDB9FAB9-6A2A-4A63-B6D1-3EEB28314838}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDB9FAB9-6A2A-4A63-B6D1-3EEB28314838}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDB9FAB9-6A2A-4A63-B6D1-3EEB28314838}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -17,3 +17,6 @@ build_script:
 test: off
 services:
   - mssql2014
+  - mysql
+#  - postgresql
+#  - mongodb

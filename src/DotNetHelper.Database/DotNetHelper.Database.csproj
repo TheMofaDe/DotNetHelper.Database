@@ -35,15 +35,9 @@
     </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="DataSource\DataBaseAccessTest.cs" />
+    <Compile Remove="Helper\AlphabetHelper.cs" />
     <Compile Remove="Helper\ConnectionStringBuilder.cs" />
-  </ItemGroup>
-
-
-
-
-  <ItemGroup>
-    <PackageReference Include="DotNetHelper.ObjectToSql" Version="1.0.94" />
-    <!--<ProjectReference Include="..\..\..\DotNetHelper.ObjectToSql\src\DotNetHelper.ObjectToSql\DotNetHelper.ObjectToSql.csproj" />-->  
   </ItemGroup>
 
 
@@ -62,6 +56,13 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup>
+
+
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\DotNetHelper.ObjectToSql\src\DotNetHelper.ObjectToSql\DotNetHelper.ObjectToSql.csproj" />
   </ItemGroup>
 
 

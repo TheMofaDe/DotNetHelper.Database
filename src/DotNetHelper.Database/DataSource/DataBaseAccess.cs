@@ -15,9 +15,8 @@ namespace DotNetHelper.Database.DataSource
     /// <summary>
     /// A powerful & simple class for dealing with simple CRUD operation that doesn't required you to write sql but also provided an overload to pass sql if needed
     /// </summary>
-    /// <typeparam name="C">An implementation of IDBConnection</typeparam>
-    /// <typeparam name="P">The corresponding DbParameter class to ties with the specified IDBConnection </typeparam>
-    public class DatabaseAccess<C, P> : IDatabaseAccess where C : class, IDbConnection, IDisposable, new() where P : DbParameter, new()
+    /// <typeparam name="TDbConnection">An implementation of IDBConnection</typeparam>
+    public class DatabaseAccess<TDbConnection> : IDatabaseAccess, IDisposable where TDbConnection : DbConnection, new()
     {
         /// <summary>
         /// The connection string to the database
@@ -40,30 +39,42 @@ namespace DotNetHelper.Database.DataSource
         /// </summary>
         public DataBaseType DatabaseType => ObjectToSql.DatabaseType;
 
-        //  private SqlSyntaxHelper SqlSyntaxHelper { get; }
-
-        //    private object Lock { get; } = new object();
-
-
+    
+        /// <summary>
+        /// /
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="connectionString"></param>
         public DatabaseAccess(DataBaseType type, string connectionString)
         {
             ConnectionString = connectionString;
-            //  SqlSyntaxHelper = new SqlSyntaxHelper(type);
             ObjectToSql = new ObjectToSql.Services.ObjectToSql(type);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="connectionString"></param>
+        /// <param name="commandTimeOut"></param>
         public DatabaseAccess(DataBaseType type, string connectionString, TimeSpan commandTimeOut)
         {
             ConnectionString = connectionString;
             CommandTimeOut = commandTimeOut;
-            //   SqlSyntaxHelper = new SqlSyntaxHelper(type);
             ObjectToSql = new ObjectToSql.Services.ObjectToSql(type);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="connectionString"></param>
+        /// <param name="commandTimeOut"></param>
+        /// <param name="connectionTimeOut"></param>
         public DatabaseAccess(DataBaseType type, string connectionString, TimeSpan commandTimeOut, TimeSpan connectionTimeOut)
         {
             ConnectionString = connectionString;
             CommandTimeOut = commandTimeOut;
             ConnectionTimeOut = connectionTimeOut;
-            //   SqlSyntaxHelper = new SqlSyntaxHelper(type);
             ObjectToSql = new ObjectToSql.Services.ObjectToSql(type);
         }
 
@@ -73,12 +84,24 @@ namespace DotNetHelper.Database.DataSource
         /// </summary>
         /// <param name="openConnection"></param>
         /// <returns></returns>
-        public C GetNewConnection(bool openConnection)
+        public TDbConnection GetNewConnection(bool openConnection)
         {
-            var connection = new C { ConnectionString = ConnectionString };
+            var connection = new TDbConnection() { ConnectionString = ConnectionString };
             if (openConnection)
                 connection.Open();
             return connection;
+        }
+
+        /// <summary>
+        /// This is hack for creating dbparameters
+        /// </summary>
+        private DbCommand ParameterBuilder { get; } = new TDbConnection().CreateCommand();
+        public DbParameter GetNewParameter(string parameterName, object value)
+        {
+            var parameter = ParameterBuilder.CreateParameter();
+            parameter.ParameterName = parameterName;
+            parameter.Value = value;
+            return parameter;
         }
 
         /// <summary>
@@ -89,7 +112,7 @@ namespace DotNetHelper.Database.DataSource
         /// <param name="commandType">Specifies how a command string is interpreted.</param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public IDbCommand GetNewCommand(IDbConnection connection, string sql, CommandType commandType = CommandType.Text, IEnumerable<IDataParameter> parameters = null)
+        public DbCommand GetNewCommand(DbConnection connection, string sql, CommandType commandType = CommandType.Text, IEnumerable<DbParameter> parameters = null)
         {
             var command = connection.CreateCommand();
             command.CommandText = sql;
@@ -108,7 +131,7 @@ namespace DotNetHelper.Database.DataSource
         /// </summary>
         /// <param name="connection"></param>
         /// <returns></returns>
-        public (IDbCommand command, IDbTransaction transaction) GetNewCommandAndTransaction(IDbConnection connection)
+        public (DbCommand command, DbTransaction transaction) GetNewCommandAndTransaction(DbConnection connection)
         {
             var command = connection.CreateCommand();
             var isValidInt32 = int.TryParse(CommandTimeOut.TotalSeconds.ToString(CultureInfo.CurrentCulture), out var timeoutInSeconds);
@@ -128,9 +151,9 @@ namespace DotNetHelper.Database.DataSource
         /// <param name="commandType">Specifies how a command string is interpreted.</param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        /// See <see cref="ExecuteNonQuery(C , string , CommandType , IEnumerable&lt;IDataParameter&gt;)"/> to perform this this action with a specified connection.
+        /// See <see cref="ExecuteNonQuery(TDbConnection , string , CommandType , IEnumerable&lt;DbParameter&gt;)"/> to perform this this action with a specified connection.
         /// <exception cref="System.InvalidOperationException"> </exception>
-        public int ExecuteNonQuery(string sql, CommandType commandType, IEnumerable<IDataParameter> parameters = null)
+        public int ExecuteNonQuery(string sql, CommandType commandType, IEnumerable<DbParameter> parameters = null)
         {
             using (var connection = GetNewConnection(true))
             {
@@ -140,14 +163,14 @@ namespace DotNetHelper.Database.DataSource
         }
 
         /// <summary>
-        /// Execute an SQL Command against the specified <typeparamref name="C"/>  and returns the number of rows affected
+        /// Execute an SQL Command against the specified <typeparamref name="TDbConnection"/>  and returns the number of rows affected
         /// </summary>
         /// <param name="connection"></param>
         /// <param name="sql"></param>
         /// <param name="commandType">Specifies how a command string is interpreted.</param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public int ExecuteNonQuery(C connection, string sql, CommandType commandType, IEnumerable<IDataParameter> parameters = null)
+        public int ExecuteNonQuery(TDbConnection connection, string sql, CommandType commandType, IEnumerable<DbParameter> parameters = null)
         {
             var command = GetNewCommand(connection, sql, commandType, parameters);
             return command.ExecuteNonQuery();
@@ -177,7 +200,7 @@ namespace DotNetHelper.Database.DataSource
         /// <param name="commandType">Specifies how a command string is interpreted.</param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public object ExecuteScalar(C connection, string sql, CommandType commandType, List<DbParameter> parameters = null)
+        public object ExecuteScalar(TDbConnection connection, string sql, CommandType commandType, List<DbParameter> parameters = null)
         {
             var command = GetNewCommand(connection, sql, commandType, parameters);
             return command.ExecuteScalar();
@@ -208,7 +231,7 @@ namespace DotNetHelper.Database.DataSource
         /// <param name="rollbackOnException"></param>
         /// <param name="throwException"></param>
         /// <returns></returns>
-        public int ExecuteTransaction(C connection, List<string> sqls, bool rollbackOnException, bool throwException = true)
+        public int ExecuteTransaction(TDbConnection connection, List<string> sqls, bool rollbackOnException, bool throwException = true)
         {
             var recordAffected = 0;
             if (sqls == null || !sqls.Any()) return recordAffected;
@@ -239,14 +262,14 @@ namespace DotNetHelper.Database.DataSource
         }
 
         /// <summary>
-        /// execute the sql and return the result as a IDataReader
+        /// execute the sql and return the result as a DbDataReader
         /// </summary>
         /// <param name="connection"></param>
         /// <param name="sql"></param>
         /// <param name="commandType">Specifies how a command string is interpreted.</param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public IDataReader GetDataReader(C connection, string sql, CommandType commandType, List<DbParameter> parameters = null)
+        public DbDataReader GetDataReader(TDbConnection connection, string sql, CommandType commandType, List<DbParameter> parameters = null)
         {
             var command = GetNewCommand(connection, sql, commandType, parameters);
             var reader = command.ExecuteReader(CommandBehavior.CloseConnection);
@@ -255,13 +278,13 @@ namespace DotNetHelper.Database.DataSource
 
 
         /// <summary>
-        /// execute the sql and return the result as a IDataReader
+        /// execute the sql and return the result as a DbDataReader
         /// </summary>
         /// <param name="sql"></param>
         /// <param name="commandType">Specifies how a command string is interpreted.</param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public IDataReader GetDataReader(string sql, CommandType commandType, List<DbParameter> parameters = null)
+        public DbDataReader GetDataReader(string sql, CommandType commandType, List<DbParameter> parameters = null)
         {
             var connection = GetNewConnection(true);
             return GetDataReader(connection, sql, commandType, parameters);
@@ -277,7 +300,7 @@ namespace DotNetHelper.Database.DataSource
         public DataTable GetDataTable(string selectSql, CommandType commandType, List<DbParameter> parameters = null)
         {
             var reader = GetDataReader(selectSql, commandType, parameters);
-            var dt = new DataTable() { };
+            var dt = new DataTable();
             dt.Load(reader);
             return dt;
         }
@@ -341,7 +364,7 @@ namespace DotNetHelper.Database.DataSource
         /// <returns></returns>
         public DataTable GetDataTableWithSchema(string sql)
         {
-            return GetDataTableWithSchema(sql, CommandType.Text, null);
+            return GetDataTableWithSchema(sql, CommandType.Text);
         }
         /// <summary>
         /// Applies the schema/metadata of the sql to a dataTable and populate it with the result set.
@@ -351,14 +374,9 @@ namespace DotNetHelper.Database.DataSource
         /// <returns></returns>
         public DataTable GetDataTableWithKeyInfo(string sql)
         {
-            return GetDataTableWithKeyInfo(sql, CommandType.Text, null);
+            return GetDataTableWithKeyInfo(sql, CommandType.Text);
         }
 
-        public DbParameter GetNewParameter(string parameterName, object value)
-        {
-            var parameter = new P { ParameterName = parameterName, Value = value };
-            return parameter;
-        }
 
         /// <summary>
         /// Attempts to open a connection to the database using the connection string provided in the constructor. 
@@ -368,7 +386,7 @@ namespace DotNetHelper.Database.DataSource
         {
             try
             {
-                using (var connection = GetNewConnection(true))
+                using (GetNewConnection(true))
                 {
                     return true;
                 }
@@ -392,7 +410,7 @@ namespace DotNetHelper.Database.DataSource
         /// <returns>The sql result mapped to a list of </returns>
         public List<T> Get<T>(string sql, CommandType commandType, Func<string, Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer, List<DbParameter> parameters = null) where T : class
         {
-            return GetDataReader(sql, commandType).MapToList<T>(xmlDeserializer, jsonDeserializer, csvDeserializer);
+            return GetDataReader(sql, commandType, parameters).MapToList<T>(xmlDeserializer, jsonDeserializer, csvDeserializer);
         }
 
         /// <summary>
@@ -407,7 +425,7 @@ namespace DotNetHelper.Database.DataSource
         /// <param name="csvDeserializer"></param>
         /// <param name="parameters"></param>
         /// <returns>The sql result mapped to a list of </returns>
-        public List<T> Get<T>(C connection, string sql, CommandType commandType, Func<string, Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer, List<DbParameter> parameters = null) where T : class
+        public List<T> Get<T>(TDbConnection connection, string sql, CommandType commandType, Func<string, Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer, List<DbParameter> parameters = null) where T : class
         {
             return GetDataReader(connection, sql, commandType, parameters).MapToList<T>(xmlDeserializer, jsonDeserializer, csvDeserializer);
         }
@@ -435,7 +453,7 @@ namespace DotNetHelper.Database.DataSource
         public List<T> Get<T>(Func<string, Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer) where T : class
         {
             var sqlTable = new SQLTable(DatabaseType, typeof(T));
-            return Get<T>($"SELECT * FROM {sqlTable.FullNameWithBrackets}", CommandType.Text, xmlDeserializer, jsonDeserializer, csvDeserializer, null);
+            return Get<T>($"SELECT * FROM {sqlTable.FullNameWithBrackets}", CommandType.Text, xmlDeserializer, jsonDeserializer, csvDeserializer);
         }
 
         /// <summary>
@@ -509,7 +527,7 @@ namespace DotNetHelper.Database.DataSource
         /// <returns></returns>
         public int Execute<T>(T instance, ActionType actionType, string tableName, params Expression<Func<T, object>>[] keyFields) where T : class
         {
-            var sql = ObjectToSql.BuildQuery<T>(actionType, tableName ?? new SQLTable(DatabaseType, instance.GetType()).FullNameWithBrackets, keyFields);
+            var sql = ObjectToSql.BuildQuery(actionType, tableName ?? new SQLTable(DatabaseType, instance.GetType()).FullNameWithBrackets, keyFields);
             var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, null, null, null);
             return ExecuteNonQuery(sql, CommandType.Text, parameters);
         }
@@ -529,7 +547,7 @@ namespace DotNetHelper.Database.DataSource
         /// <returns></returns>
         public int Execute<T>(T instance, ActionType actionType, string tableName, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer, params Expression<Func<T, object>>[] keyFields) where T : class
         {
-            var sql = ObjectToSql.BuildQuery<T>(actionType, tableName ?? new SQLTable(DatabaseType, instance.GetType()).FullNameWithBrackets, keyFields);
+            var sql = ObjectToSql.BuildQuery(actionType, tableName ?? new SQLTable(DatabaseType, instance.GetType()).FullNameWithBrackets, keyFields);
             var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, xmlSerializer, jsonSerializer, csvSerializer);
             return ExecuteNonQuery(sql, CommandType.Text, parameters);
         }
@@ -568,28 +586,53 @@ namespace DotNetHelper.Database.DataSource
             , params Expression<Func<T, object>>[] outputFields) where T : class
         {
             var sqlTable = new SQLTable(DatabaseType, instance.GetType());
-            var sql = ObjectToSql.BuildQueryWithOutputs<T>(actionType, sqlTable.FullNameWithBrackets, outputFields);
+            var sql = ObjectToSql.BuildQueryWithOutputs(actionType, sqlTable.FullNameWithBrackets, outputFields);
             var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, xmlSerializer, jsonSerializer, csvSerializer);
             return GetDataReader(sql, CommandType.Text, parameters).MapTo<T>(xmlDeserializer, jsonDeserializer, csvDeserializer);
         }
 
 
-        public IDataReader ExecuteAndGetOutputAsDataReader<T>(T instance, ActionType actionType, params Expression<Func<T, object>>[] outputFields) where T : class
+        public DbDataReader ExecuteAndGetOutputAsDataReader<T>(T instance, ActionType actionType, params Expression<Func<T, object>>[] outputFields) where T : class
         {
             return ExecuteAndGetOutputAsDataReader(instance, actionType, null, null, null, outputFields);
         }
 
-        public IDataReader ExecuteAndGetOutputAsDataReader<T>(T instance, ActionType actionType
+        public DbDataReader ExecuteAndGetOutputAsDataReader<T>(T instance, ActionType actionType
             , Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer
             , params Expression<Func<T, object>>[] outputFields) where T : class
         {
             var sqlTable = new SQLTable(DatabaseType, instance.GetType());
-            var sql = ObjectToSql.BuildQueryWithOutputs<T>(actionType, sqlTable.FullNameWithBrackets, outputFields);
+            var sql = ObjectToSql.BuildQueryWithOutputs(actionType, sqlTable.FullNameWithBrackets, outputFields);
             var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, xmlSerializer, jsonSerializer, csvSerializer);
             return GetDataReader(sql, CommandType.Text, parameters);
         }
 
 
+        // Flag: Has Dispose already been called?
+        private bool _disposed;
 
+        // Public implementation of Dispose pattern callable by consumers.
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        // Protected implementation of Dispose pattern.
+        protected virtual void Dispose(bool disposing)
+        {
+            if (_disposed)
+                return;
+
+            if (disposing)
+            {
+                // Free any other managed objects here.
+            }
+            ParameterBuilder.Dispose();
+
+            // Free any unmanaged objects here.
+            //
+            _disposed = true;
+        }
     }
 }

@@ -29,7 +29,7 @@ namespace DotNetHelper.Database.Interface
         DataBaseType DatabaseType { get; }
 
 
-        DbParameter GetNewParameter(string parameterName, object value);
+      //  DbParameter GetNewParameter(string parameterName, object value);
 
         /// <summary>
         /// creates a new dbcommand from the connection
@@ -39,9 +39,9 @@ namespace DotNetHelper.Database.Interface
         /// <param name="commandType">Specifies how a command string is interpreted.</param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        IDbCommand GetNewCommand(IDbConnection connection, string sql, CommandType commandType = CommandType.Text, IEnumerable<IDataParameter> parameters = null);
+        DbCommand GetNewCommand(DbConnection connection, string sql, CommandType commandType = CommandType.Text, IEnumerable<DbParameter> parameters = null);
 
-        (IDbCommand command, IDbTransaction transaction) GetNewCommandAndTransaction(IDbConnection connection);
+        (DbCommand command, DbTransaction transaction) GetNewCommandAndTransaction(DbConnection connection);
 
         /// <summary>
         /// Execute an SQL Command and returns the number of rows affected
@@ -50,9 +50,9 @@ namespace DotNetHelper.Database.Interface
         /// <param name="commandType">Specifies how a command string is interpreted.</param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        /// See <see cref="DatabaseAccess{C,P}.ExecuteNonQuery(C,string,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})"/> to perform this this action with a specified connection.
+        /// See <see cref="DatabaseAccess{C,P}.ExecuteNonQuery(C,string,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.DbParameter})"/> to perform this this action with a specified connection.
         /// <exception cref="System.InvalidOperationException"> </exception>
-        int ExecuteNonQuery(string sql, CommandType commandType, IEnumerable<IDataParameter> parameters = null);
+        int ExecuteNonQuery(string sql, CommandType commandType, IEnumerable<DbParameter> parameters = null);
 
 
 
@@ -78,13 +78,13 @@ namespace DotNetHelper.Database.Interface
 
 
         /// <summary>
-        /// execute the sql and return the result as a IDataReader
+        /// execute the sql and return the result as a DbDataReader
         /// </summary>
         /// <param name="sql"></param>
         /// <param name="commandType">Specifies how a command string is interpreted.</param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        IDataReader GetDataReader(string sql, CommandType commandType, List<DbParameter> parameters = null);
+        DbDataReader GetDataReader(string sql, CommandType commandType, List<DbParameter> parameters = null);
 
         /// <summary>
         /// execute the sql and load the results into a dataTable
@@ -275,9 +275,9 @@ namespace DotNetHelper.Database.Interface
             , Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer
             , params Expression<Func<T, object>>[] outputFields) where T : class;
 
-        IDataReader ExecuteAndGetOutputAsDataReader<T>(T instance, ActionType actionType, params Expression<Func<T, object>>[] outputFields) where T : class;
+        DbDataReader ExecuteAndGetOutputAsDataReader<T>(T instance, ActionType actionType, params Expression<Func<T, object>>[] outputFields) where T : class;
 
-        IDataReader ExecuteAndGetOutputAsDataReader<T>(T instance, ActionType actionType
+        DbDataReader ExecuteAndGetOutputAsDataReader<T>(T instance, ActionType actionType
             , Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer
             , params Expression<Func<T, object>>[] outputFields) where T : class;
     }

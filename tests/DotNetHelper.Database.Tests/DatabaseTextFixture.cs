@@ -10,8 +10,10 @@ using DotNetHelper.Database.Tests.Helpers;
 using DotNetHelper.Database.Tests.MockData;
 using DotNetHelper.Database.Tests.Models;
 using DotNetHelper.ObjectToSql.Enum;
+
 #if SUPPORTSQLITE
 using Microsoft.Data.Sqlite;
+using MySql.Data.MySqlClient;
 #endif
 using NUnit.Framework;
 
@@ -28,18 +30,18 @@ namespace DotNetHelper.Database.Tests
             // ReSharper disable once UseObjectOrCollectionInitializer
             var list = new List<IDatabaseAccess>() { };
 
-            list.Add(new DatabaseAccess<SqlConnection, SqlParameter>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString));
-            list.Add(new DatabaseAccess<SqlConnection, SqlParameter>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString, TimeSpan.FromSeconds(35)));
-            list.Add(new DatabaseAccess<SqlConnection, SqlParameter>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString, TimeSpan.FromSeconds(40), TimeSpan.FromSeconds(40)));
+        //   list.Add(new DatabaseAccess<SqlConnection>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString));
+        //   list.Add(new DatabaseAccess<SqlConnection>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString, TimeSpan.FromSeconds(35)));
+        //   list.Add(new DatabaseAccess<SqlConnection>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString, TimeSpan.FromSeconds(40), TimeSpan.FromSeconds(40)));
 
 #if SUPPORTSQLITE
-            list.Add(new DatabaseAccess<SqliteConnection, SqliteParameter>(DataBaseType.Sqlite, TestHelper.SqliteConnectionString));
-            list.Add(new DatabaseAccess<SqliteConnection, SqliteParameter>(DataBaseType.Sqlite, TestHelper.SqliteConnectionString,TimeSpan.FromSeconds(35)));
-            list.Add(new DatabaseAccess<SqliteConnection, SqliteParameter>(DataBaseType.Sqlite, TestHelper.SqliteConnectionString,TimeSpan.FromSeconds(40),TimeSpan.FromSeconds(40)));
+         //   list.Add(new DatabaseAccess<SqliteConnection>(DataBaseType.Sqlite, TestHelper.SqliteConnectionString));
+            list.Add(new DatabaseAccess<MySqlConnection>(DataBaseType.MySql, TestHelper.MySqlConnectionString,TimeSpan.FromSeconds(5), TimeSpan.FromSeconds(2)));
 #endif
 
+
 #if SUPPORTDBFACTORIES
-            list.Add(new DatabaseAccessFactory(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString));
+        //    list.Add(new DatabaseAccessFactory(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString));
 #endif
             return list;
         }
