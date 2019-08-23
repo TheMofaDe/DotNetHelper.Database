@@ -3,7 +3,7 @@ branches:
   only:
   - master
   - release
-image: Visual Studio 2019
+image: Visual Studio 2017
 dotnet_csproj:
   patch: true
   file: '**\*.csproj'
@@ -18,5 +18,3 @@ test: off
 services:
   - mssql2014
   - mysql
-#  - postgresql
-#  - mongodb

@@ -109,10 +109,12 @@ Teardown<BuildParameters>((context, parameters) =>
 
         if(context.Successful)
         {
+			 Information("Finished running tasks. Build Status = Success");
+        }else{
+			 Information("Finished running tasks. Build Status = Failure");
+		}
 
-        }
-
-        Information("Finished running tasks.");
+       
     }
     catch (Exception exception)
     {
