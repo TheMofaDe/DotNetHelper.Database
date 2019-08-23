@@ -7,9 +7,9 @@
 - uid: DotNetHelper.Database.DataSource
   name: DotNetHelper.Database.DataSource
   items:
-  - uid: DotNetHelper.Database.DataSource.DatabaseAccess`2
-    name: DatabaseAccess<C, P>
-    name.vb: DatabaseAccess(Of C, P)
+  - uid: DotNetHelper.Database.DataSource.DatabaseAccess`1
+    name: DatabaseAccess<TDbConnection>
+    name.vb: DatabaseAccess(Of TDbConnection)
 - uid: DotNetHelper.Database.EventHandler
   name: DotNetHelper.Database.EventHandler
   items:
@@ -36,8 +36,6 @@
 - uid: DotNetHelper.Database.Interface
   name: DotNetHelper.Database.Interface
   items:
-  - uid: DotNetHelper.Database.Interface.IColumnSerializer
-    name: IColumnSerializer
   - uid: DotNetHelper.Database.Interface.IDatabaseAccess
     name: IDatabaseAccess
 - uid: DotNetHelper.Database.Models

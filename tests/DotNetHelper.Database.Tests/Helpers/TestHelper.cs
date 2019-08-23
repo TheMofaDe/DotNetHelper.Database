@@ -47,9 +47,10 @@ namespace DotNetHelper.Database.Tests.Helpers
 
         private static string GetMySqlCS()
         {
+#if SUPPORTSQLITE
             if (Environment.MachineName == "DESKTOP-MEON7CL" || Environment.MachineName == "JMCNEAL-W8")
             {
-#if SUPPORTSQLITE
+
                 var csBuilder = new MySqlConnectionStringBuilder();
                 csBuilder.Port = 3306;
                 csBuilder.Password = "password";
@@ -57,8 +58,6 @@ namespace DotNetHelper.Database.Tests.Helpers
                 csBuilder.Server = "172.19.27.154";//"172.17.0.2";
                 csBuilder.Database = "sys";
                 return csBuilder.GetConnectionString(true);
-#endif
-                return null;
             }
             else
             {
@@ -70,6 +69,9 @@ namespace DotNetHelper.Database.Tests.Helpers
                 csBuilder.Database = "sys";
                 return csBuilder.GetConnectionString(true);
             }
+#endif
+
+            return null;
         }
         public static string MySqlConnectionString { get; set; } = GetMySqlCS();
 

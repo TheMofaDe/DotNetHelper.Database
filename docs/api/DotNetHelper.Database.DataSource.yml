@@ -4,7 +4,7 @@ items:
   commentId: N:DotNetHelper.Database.DataSource
   id: DotNetHelper.Database.DataSource
   children:
-  - DotNetHelper.Database.DataSource.DatabaseAccess`2
+  - DotNetHelper.Database.DataSource.DatabaseAccess`1
   langs:
   - csharp
   - vb
@@ -15,51 +15,39 @@ items:
   assemblies:
   - DotNetHelper.Database
 references:
-- uid: DotNetHelper.Database.DataSource.DatabaseAccess`2
-  commentId: T:DotNetHelper.Database.DataSource.DatabaseAccess`2
-  name: DatabaseAccess<C, P>
-  nameWithType: DatabaseAccess<C, P>
-  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<C, P>
-  nameWithType.vb: DatabaseAccess(Of C, P)
-  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of C, P)
-  name.vb: DatabaseAccess(Of C, P)
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`1
+  commentId: T:DotNetHelper.Database.DataSource.DatabaseAccess`1
+  name: DatabaseAccess<TDbConnection>
+  nameWithType: DatabaseAccess<TDbConnection>
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<TDbConnection>
+  nameWithType.vb: DatabaseAccess(Of TDbConnection)
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection)
+  name.vb: DatabaseAccess(Of TDbConnection)
   spec.csharp:
-  - uid: DotNetHelper.Database.DataSource.DatabaseAccess`2
+  - uid: DotNetHelper.Database.DataSource.DatabaseAccess`1
     name: DatabaseAccess
     nameWithType: DatabaseAccess
     fullName: DotNetHelper.Database.DataSource.DatabaseAccess
   - name: <
     nameWithType: <
     fullName: <
-  - name: C
-    nameWithType: C
-    fullName: C
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - name: P
-    nameWithType: P
-    fullName: P
+  - name: TDbConnection
+    nameWithType: TDbConnection
+    fullName: TDbConnection
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: DotNetHelper.Database.DataSource.DatabaseAccess`2
+  - uid: DotNetHelper.Database.DataSource.DatabaseAccess`1
     name: DatabaseAccess
     nameWithType: DatabaseAccess
     fullName: DotNetHelper.Database.DataSource.DatabaseAccess
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: C
-    nameWithType: C
-    fullName: C
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - name: P
-    nameWithType: P
-    fullName: P
+  - name: TDbConnection
+    nameWithType: TDbConnection
+    fullName: TDbConnection
   - name: )
     nameWithType: )
     fullName: )

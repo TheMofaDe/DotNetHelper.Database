@@ -172,7 +172,7 @@ namespace DotNetHelper.Database.Tests
         {
 
             // TODO :: REMOVE FILTER
-             if (DatabaseAccess.DatabaseType == DataBaseType.MySql) return;
+            if (DatabaseAccess.DatabaseType == DataBaseType.MySql) return;
             // INSERT A EMPLOYEE WITH THEIR FAVORITE COLOR TO BE GREEN
             var newEmployee = new
             {
@@ -262,7 +262,7 @@ namespace DotNetHelper.Database.Tests
         {
             // TODO :: REMOVE MYSQL
             if (DatabaseAccess.DatabaseType == DataBaseType.MySql) return;
-            if (DatabaseAccess.DatabaseType == DataBaseType.Sqlite )
+            if (DatabaseAccess.DatabaseType == DataBaseType.Sqlite)
             {
                 EnsureExpectedExceptionIsThrown<NotImplementedException>(delegate
                 {
@@ -303,8 +303,8 @@ namespace DotNetHelper.Database.Tests
 #if NET452
 
 #else
-            if(DatabaseAccess.DatabaseType != DataBaseType.MySql)
-            Assert.AreEqual(dt.Columns["IdentityField"].ReadOnly, DatabaseAccess.DatabaseType == DataBaseType.Sqlite ? false : true);
+            if (DatabaseAccess.DatabaseType != DataBaseType.MySql)
+                Assert.AreEqual(dt.Columns["IdentityField"].ReadOnly, DatabaseAccess.DatabaseType == DataBaseType.Sqlite ? false : true);
             Assert.AreEqual(dt.Columns["FirstName"].MaxLength, DatabaseAccess.DatabaseType == DataBaseType.Sqlite ? -1 : 400);
 #endif
             Assert.AreEqual(dt.Rows.Count, 0);
@@ -327,7 +327,7 @@ namespace DotNetHelper.Database.Tests
             // SQLITE LITE DON'T TREAT IDENTITY PRIMARY KEYS AS READ ONLY
             if (DatabaseAccess.DatabaseType == DataBaseType.MySql || DatabaseAccess.DatabaseType == DataBaseType.Sqlite)
             {
-                Assert.AreEqual(dt.Columns["IdentityField"].ReadOnly,  false );
+                Assert.AreEqual(dt.Columns["IdentityField"].ReadOnly, false);
             }
             else
             {

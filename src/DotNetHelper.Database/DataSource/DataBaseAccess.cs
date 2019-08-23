@@ -39,7 +39,7 @@ namespace DotNetHelper.Database.DataSource
         /// </summary>
         public DataBaseType DatabaseType => ObjectToSql.DatabaseType;
 
-    
+
         /// <summary>
         /// /
         /// </summary>

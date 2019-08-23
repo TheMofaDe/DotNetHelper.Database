@@ -29,7 +29,7 @@ namespace DotNetHelper.Database.Interface
         DataBaseType DatabaseType { get; }
 
 
-      //  DbParameter GetNewParameter(string parameterName, object value);
+        //  DbParameter GetNewParameter(string parameterName, object value);
 
         /// <summary>
         /// creates a new dbcommand from the connection

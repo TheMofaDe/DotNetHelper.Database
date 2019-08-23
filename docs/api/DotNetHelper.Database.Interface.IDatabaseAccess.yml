@@ -18,7 +18,7 @@ items:
   - DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   - DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutputAsDataReader``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   - DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutputAsDataReader``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  - DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteNonQuery(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
+  - DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteNonQuery(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter})
   - DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteScalar(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   - DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteTransaction(System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
   - DotNetHelper.Database.Interface.IDatabaseAccess.Get``1
@@ -32,9 +32,8 @@ items:
   - DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTableWithKeyInfo(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   - DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTableWithSchema(System.String)
   - DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTableWithSchema(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
-  - DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommand(System.Data.IDbConnection,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
-  - DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommandAndTransaction(System.Data.IDbConnection)
-  - DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(System.String,System.Object)
+  - DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommand(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter})
+  - DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommandAndTransaction(System.Data.Common.DbConnection)
   langs:
   - csharp
   - vb
@@ -165,49 +164,16 @@ items:
   - get
   modifiers.vb:
   - ReadOnly
-- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(System.String,System.Object)
-  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(System.String,System.Object)
-  id: GetNewParameter(System.String,System.Object)
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommand(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter})
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommand(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter})
+  id: GetNewCommand(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter})
   parent: DotNetHelper.Database.Interface.IDatabaseAccess
   langs:
   - csharp
   - vb
-  name: GetNewParameter(String, Object)
-  nameWithType: IDatabaseAccess.GetNewParameter(String, Object)
-  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(System.String, System.Object)
-  type: Method
-  source:
-    remote:
-      path: src/DotNetHelper.Database/Interface/IDatabaseAccess.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
-    id: GetNewParameter
-    path: ../src/DotNetHelper.Database/Interface/IDatabaseAccess.cs
-    startLine: 31
-  assemblies:
-  - DotNetHelper.Database
-  namespace: DotNetHelper.Database.Interface
-  syntax:
-    content: DbParameter GetNewParameter(string parameterName, object value)
-    parameters:
-    - id: parameterName
-      type: System.String
-    - id: value
-      type: System.Object
-    return:
-      type: System.Data.Common.DbParameter
-    content.vb: Function GetNewParameter(parameterName As String, value As Object) As DbParameter
-  overload: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter*
-- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommand(System.Data.IDbConnection,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
-  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommand(System.Data.IDbConnection,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
-  id: GetNewCommand(System.Data.IDbConnection,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
-  parent: DotNetHelper.Database.Interface.IDatabaseAccess
-  langs:
-  - csharp
-  - vb
-  name: GetNewCommand(IDbConnection, String, CommandType, IEnumerable<IDataParameter>)
-  nameWithType: IDatabaseAccess.GetNewCommand(IDbConnection, String, CommandType, IEnumerable<IDataParameter>)
-  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommand(System.Data.IDbConnection, System.String, System.Data.CommandType, System.Collections.Generic.IEnumerable<System.Data.IDataParameter>)
+  name: GetNewCommand(DbConnection, String, CommandType, IEnumerable<DbParameter>)
+  nameWithType: IDatabaseAccess.GetNewCommand(DbConnection, String, CommandType, IEnumerable<DbParameter>)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommand(System.Data.Common.DbConnection, System.String, System.Data.CommandType, System.Collections.Generic.IEnumerable<System.Data.Common.DbParameter>)
   type: Method
   source:
     remote:
@@ -223,10 +189,10 @@ items:
   summary: "\ncreates a new dbcommand from the connection\n"
   example: []
   syntax:
-    content: IDbCommand GetNewCommand(IDbConnection connection, string sql, CommandType commandType = CommandType.Text, IEnumerable<IDataParameter> parameters = null)
+    content: DbCommand GetNewCommand(DbConnection connection, string sql, CommandType commandType = CommandType.Text, IEnumerable<DbParameter> parameters = null)
     parameters:
     - id: connection
-      type: System.Data.IDbConnection
+      type: System.Data.Common.DbConnection
       description: ''
     - id: sql
       type: System.String
@@ -235,26 +201,26 @@ items:
       type: System.Data.CommandType
       description: Specifies how a command string is interpreted.
     - id: parameters
-      type: System.Collections.Generic.IEnumerable{System.Data.IDataParameter}
+      type: System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter}
       description: ''
     return:
-      type: System.Data.IDbCommand
+      type: System.Data.Common.DbCommand
       description: ''
-    content.vb: Function GetNewCommand(connection As IDbConnection, sql As String, commandType As CommandType = CommandType.Text, parameters As IEnumerable(Of IDataParameter) = Nothing) As IDbCommand
+    content.vb: Function GetNewCommand(connection As DbConnection, sql As String, commandType As CommandType = CommandType.Text, parameters As IEnumerable(Of DbParameter) = Nothing) As DbCommand
   overload: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommand*
-  nameWithType.vb: IDatabaseAccess.GetNewCommand(IDbConnection, String, CommandType, IEnumerable(Of IDataParameter))
-  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommand(System.Data.IDbConnection, System.String, System.Data.CommandType, System.Collections.Generic.IEnumerable(Of System.Data.IDataParameter))
-  name.vb: GetNewCommand(IDbConnection, String, CommandType, IEnumerable(Of IDataParameter))
-- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommandAndTransaction(System.Data.IDbConnection)
-  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommandAndTransaction(System.Data.IDbConnection)
-  id: GetNewCommandAndTransaction(System.Data.IDbConnection)
+  nameWithType.vb: IDatabaseAccess.GetNewCommand(DbConnection, String, CommandType, IEnumerable(Of DbParameter))
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommand(System.Data.Common.DbConnection, System.String, System.Data.CommandType, System.Collections.Generic.IEnumerable(Of System.Data.Common.DbParameter))
+  name.vb: GetNewCommand(DbConnection, String, CommandType, IEnumerable(Of DbParameter))
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommandAndTransaction(System.Data.Common.DbConnection)
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommandAndTransaction(System.Data.Common.DbConnection)
+  id: GetNewCommandAndTransaction(System.Data.Common.DbConnection)
   parent: DotNetHelper.Database.Interface.IDatabaseAccess
   langs:
   - csharp
   - vb
-  name: GetNewCommandAndTransaction(IDbConnection)
-  nameWithType: IDatabaseAccess.GetNewCommandAndTransaction(IDbConnection)
-  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommandAndTransaction(System.Data.IDbConnection)
+  name: GetNewCommandAndTransaction(DbConnection)
+  nameWithType: IDatabaseAccess.GetNewCommandAndTransaction(DbConnection)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommandAndTransaction(System.Data.Common.DbConnection)
   type: Method
   source:
     remote:
@@ -268,24 +234,24 @@ items:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Interface
   syntax:
-    content: (IDbCommand command, IDbTransaction transaction)GetNewCommandAndTransaction(IDbConnection connection)
+    content: (DbCommand command, DbTransaction transaction)GetNewCommandAndTransaction(DbConnection connection)
     parameters:
     - id: connection
-      type: System.Data.IDbConnection
+      type: System.Data.Common.DbConnection
     return:
-      type: System.ValueTuple{System.Data.IDbCommand,System.Data.IDbTransaction}
-    content.vb: Function GetNewCommandAndTransaction(connection As IDbConnection) As(command As IDbCommand, transaction As IDbTransaction)
+      type: System.ValueTuple{System.Data.Common.DbCommand,System.Data.Common.DbTransaction}
+    content.vb: Function GetNewCommandAndTransaction(connection As DbConnection) As(command As DbCommand, transaction As DbTransaction)
   overload: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommandAndTransaction*
-- uid: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteNonQuery(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
-  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteNonQuery(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
-  id: ExecuteNonQuery(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteNonQuery(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter})
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteNonQuery(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter})
+  id: ExecuteNonQuery(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter})
   parent: DotNetHelper.Database.Interface.IDatabaseAccess
   langs:
   - csharp
   - vb
-  name: ExecuteNonQuery(String, CommandType, IEnumerable<IDataParameter>)
-  nameWithType: IDatabaseAccess.ExecuteNonQuery(String, CommandType, IEnumerable<IDataParameter>)
-  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteNonQuery(System.String, System.Data.CommandType, System.Collections.Generic.IEnumerable<System.Data.IDataParameter>)
+  name: ExecuteNonQuery(String, CommandType, IEnumerable<DbParameter>)
+  nameWithType: IDatabaseAccess.ExecuteNonQuery(String, CommandType, IEnumerable<DbParameter>)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteNonQuery(System.String, System.Data.CommandType, System.Collections.Generic.IEnumerable<System.Data.Common.DbParameter>)
   type: Method
   source:
     remote:
@@ -301,7 +267,7 @@ items:
   summary: "\nExecute an SQL Command and returns the number of rows affected\n"
   example: []
   syntax:
-    content: int ExecuteNonQuery(string sql, CommandType commandType, IEnumerable<IDataParameter> parameters = null)
+    content: int ExecuteNonQuery(string sql, CommandType commandType, IEnumerable<DbParameter> parameters = null)
     parameters:
     - id: sql
       type: System.String
@@ -310,22 +276,19 @@ items:
       type: System.Data.CommandType
       description: Specifies how a command string is interpreted.
     - id: parameters
-      type: System.Collections.Generic.IEnumerable{System.Data.IDataParameter}
+      type: System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter}
       description: ''
     return:
       type: System.Int32
       description: ''
-    content.vb: Function ExecuteNonQuery(sql As String, commandType As CommandType, parameters As IEnumerable(Of IDataParameter) = Nothing) As Integer
+    content.vb: Function ExecuteNonQuery(sql As String, commandType As CommandType, parameters As IEnumerable(Of DbParameter) = Nothing) As Integer
   overload: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteNonQuery*
   exceptions:
   - type: System.InvalidOperationException
     commentId: T:System.InvalidOperationException
-  see:
-  - linkId: DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteNonQuery(`0,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
-    commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteNonQuery(`0,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
-  nameWithType.vb: IDatabaseAccess.ExecuteNonQuery(String, CommandType, IEnumerable(Of IDataParameter))
-  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteNonQuery(System.String, System.Data.CommandType, System.Collections.Generic.IEnumerable(Of System.Data.IDataParameter))
-  name.vb: ExecuteNonQuery(String, CommandType, IEnumerable(Of IDataParameter))
+  nameWithType.vb: IDatabaseAccess.ExecuteNonQuery(String, CommandType, IEnumerable(Of DbParameter))
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteNonQuery(System.String, System.Data.CommandType, System.Collections.Generic.IEnumerable(Of System.Data.Common.DbParameter))
+  name.vb: ExecuteNonQuery(String, CommandType, IEnumerable(Of DbParameter))
 - uid: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteScalar(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteScalar(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   id: ExecuteScalar(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
@@ -436,10 +399,10 @@ items:
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Interface
-  summary: "\nexecute the sql and return the result as a IDataReader\n"
+  summary: "\nexecute the sql and return the result as a DbDataReader\n"
   example: []
   syntax:
-    content: IDataReader GetDataReader(string sql, CommandType commandType, List<DbParameter> parameters = null)
+    content: DbDataReader GetDataReader(string sql, CommandType commandType, List<DbParameter> parameters = null)
     parameters:
     - id: sql
       type: System.String
@@ -451,9 +414,9 @@ items:
       type: System.Collections.Generic.List{System.Data.Common.DbParameter}
       description: ''
     return:
-      type: System.Data.IDataReader
+      type: System.Data.Common.DbDataReader
       description: ''
-    content.vb: Function GetDataReader(sql As String, commandType As CommandType, parameters As List(Of DbParameter) = Nothing) As IDataReader
+    content.vb: Function GetDataReader(sql As String, commandType As CommandType, parameters As List(Of DbParameter) = Nothing) As DbDataReader
   overload: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataReader*
   nameWithType.vb: IDatabaseAccess.GetDataReader(String, CommandType, List(Of DbParameter))
   fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataReader(System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
@@ -1327,7 +1290,7 @@ items:
   namespace: DotNetHelper.Database.Interface
   syntax:
     content: >-
-      IDataReader ExecuteAndGetOutputAsDataReader<T>(T instance, ActionType actionType, params Expression<Func<T, object>>[] outputFields)
+      DbDataReader ExecuteAndGetOutputAsDataReader<T>(T instance, ActionType actionType, params Expression<Func<T, object>>[] outputFields)
           where T : class
     parameters:
     - id: instance
@@ -1339,8 +1302,8 @@ items:
     typeParameters:
     - id: T
     return:
-      type: System.Data.IDataReader
-    content.vb: Function ExecuteAndGetOutputAsDataReader(Of T As Class)(instance As T, actionType As ActionType, ParamArray outputFields As Expression(Of Func(Of T, Object))()) As IDataReader
+      type: System.Data.Common.DbDataReader
+    content.vb: Function ExecuteAndGetOutputAsDataReader(Of T As Class)(instance As T, actionType As ActionType, ParamArray outputFields As Expression(Of Func(Of T, Object))()) As DbDataReader
   overload: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutputAsDataReader*
   nameWithType.vb: IDatabaseAccess.ExecuteAndGetOutputAsDataReader(Of T)(T, ActionType, Expression(Of Func(Of T, Object))())
   fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutputAsDataReader(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
@@ -1369,7 +1332,7 @@ items:
   namespace: DotNetHelper.Database.Interface
   syntax:
     content: >-
-      IDataReader ExecuteAndGetOutputAsDataReader<T>(T instance, ActionType actionType, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer, params Expression<Func<T, object>>[] outputFields)
+      DbDataReader ExecuteAndGetOutputAsDataReader<T>(T instance, ActionType actionType, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer, params Expression<Func<T, object>>[] outputFields)
           where T : class
     parameters:
     - id: instance
@@ -1387,8 +1350,8 @@ items:
     typeParameters:
     - id: T
     return:
-      type: System.Data.IDataReader
-    content.vb: Function ExecuteAndGetOutputAsDataReader(Of T As Class)(instance As T, actionType As ActionType, xmlSerializer As Func(Of Object, String), jsonSerializer As Func(Of Object, String), csvSerializer As Func(Of Object, String), ParamArray outputFields As Expression(Of Func(Of T, Object))()) As IDataReader
+      type: System.Data.Common.DbDataReader
+    content.vb: Function ExecuteAndGetOutputAsDataReader(Of T As Class)(instance As T, actionType As ActionType, xmlSerializer As Func(Of Object, String), jsonSerializer As Func(Of Object, String), csvSerializer As Func(Of Object, String), ParamArray outputFields As Expression(Of Func(Of T, Object))()) As DbDataReader
   overload: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutputAsDataReader*
   nameWithType.vb: IDatabaseAccess.ExecuteAndGetOutputAsDataReader(Of T)(T, ActionType, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
   fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.ExecuteAndGetOutputAsDataReader(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
@@ -1440,11 +1403,18 @@ references:
   name: DotNetHelper.ObjectToSql.Enum
   nameWithType: DotNetHelper.ObjectToSql.Enum
   fullName: DotNetHelper.ObjectToSql.Enum
-- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter*
-  commentId: Overload:DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter
-  name: GetNewParameter
-  nameWithType: IDatabaseAccess.GetNewParameter
-  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommand*
+  commentId: Overload:DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommand
+  name: GetNewCommand
+  nameWithType: IDatabaseAccess.GetNewCommand
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommand
+- uid: System.Data.Common.DbConnection
+  commentId: T:System.Data.Common.DbConnection
+  parent: System.Data.Common
+  isExternal: true
+  name: DbConnection
+  nameWithType: DbConnection
+  fullName: System.Data.Common.DbConnection
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -1452,38 +1422,6 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
-- uid: System.Object
-  commentId: T:System.Object
-  parent: System
-  isExternal: true
-  name: Object
-  nameWithType: Object
-  fullName: System.Object
-- uid: System.Data.Common.DbParameter
-  commentId: T:System.Data.Common.DbParameter
-  parent: System.Data.Common
-  isExternal: true
-  name: DbParameter
-  nameWithType: DbParameter
-  fullName: System.Data.Common.DbParameter
-- uid: System.Data.Common
-  commentId: N:System.Data.Common
-  isExternal: true
-  name: System.Data.Common
-  nameWithType: System.Data.Common
-  fullName: System.Data.Common
-- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommand*
-  commentId: Overload:DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommand
-  name: GetNewCommand
-  nameWithType: IDatabaseAccess.GetNewCommand
-  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommand
-- uid: System.Data.IDbConnection
-  commentId: T:System.Data.IDbConnection
-  parent: System.Data
-  isExternal: true
-  name: IDbConnection
-  nameWithType: IDbConnection
-  fullName: System.Data.IDbConnection
 - uid: System.Data.CommandType
   commentId: T:System.Data.CommandType
   parent: System.Data
@@ -1491,16 +1429,16 @@ references:
   name: CommandType
   nameWithType: CommandType
   fullName: System.Data.CommandType
-- uid: System.Collections.Generic.IEnumerable{System.Data.IDataParameter}
-  commentId: T:System.Collections.Generic.IEnumerable{System.Data.IDataParameter}
+- uid: System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerable`1
-  name: IEnumerable<IDataParameter>
-  nameWithType: IEnumerable<IDataParameter>
-  fullName: System.Collections.Generic.IEnumerable<System.Data.IDataParameter>
-  nameWithType.vb: IEnumerable(Of IDataParameter)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Data.IDataParameter)
-  name.vb: IEnumerable(Of IDataParameter)
+  name: IEnumerable<DbParameter>
+  nameWithType: IEnumerable<DbParameter>
+  fullName: System.Collections.Generic.IEnumerable<System.Data.Common.DbParameter>
+  nameWithType.vb: IEnumerable(Of DbParameter)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Data.Common.DbParameter)
+  name.vb: IEnumerable(Of DbParameter)
   spec.csharp:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
@@ -1510,10 +1448,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: System.Data.IDataParameter
-    name: IDataParameter
-    nameWithType: IDataParameter
-    fullName: System.Data.IDataParameter
+  - uid: System.Data.Common.DbParameter
+    name: DbParameter
+    nameWithType: DbParameter
+    fullName: System.Data.Common.DbParameter
     isExternal: true
   - name: '>'
     nameWithType: '>'
@@ -1527,21 +1465,27 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: System.Data.IDataParameter
-    name: IDataParameter
-    nameWithType: IDataParameter
-    fullName: System.Data.IDataParameter
+  - uid: System.Data.Common.DbParameter
+    name: DbParameter
+    nameWithType: DbParameter
+    fullName: System.Data.Common.DbParameter
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Data.IDbCommand
-  commentId: T:System.Data.IDbCommand
-  parent: System.Data
+- uid: System.Data.Common.DbCommand
+  commentId: T:System.Data.Common.DbCommand
+  parent: System.Data.Common
   isExternal: true
-  name: IDbCommand
-  nameWithType: IDbCommand
-  fullName: System.Data.IDbCommand
+  name: DbCommand
+  nameWithType: DbCommand
+  fullName: System.Data.Common.DbCommand
+- uid: System.Data.Common
+  commentId: N:System.Data.Common
+  isExternal: true
+  name: System.Data.Common
+  nameWithType: System.Data.Common
+  fullName: System.Data.Common
 - uid: System.Data
   commentId: N:System.Data
   isExternal: true
@@ -1598,16 +1542,16 @@ references:
   name: GetNewCommandAndTransaction
   nameWithType: IDatabaseAccess.GetNewCommandAndTransaction
   fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommandAndTransaction
-- uid: System.ValueTuple{System.Data.IDbCommand,System.Data.IDbTransaction}
-  commentId: T:System.ValueTuple{System.Data.IDbCommand,System.Data.IDbTransaction}
+- uid: System.ValueTuple{System.Data.Common.DbCommand,System.Data.Common.DbTransaction}
+  commentId: T:System.ValueTuple{System.Data.Common.DbCommand,System.Data.Common.DbTransaction}
   parent: System
   isExternal: true
-  name: ValueTuple<IDbCommand, IDbTransaction>
-  nameWithType: ValueTuple<IDbCommand, IDbTransaction>
-  fullName: System.ValueTuple<System.Data.IDbCommand, System.Data.IDbTransaction>
-  nameWithType.vb: ValueTuple(Of IDbCommand, IDbTransaction)
-  fullName.vb: System.ValueTuple(Of System.Data.IDbCommand, System.Data.IDbTransaction)
-  name.vb: ValueTuple(Of IDbCommand, IDbTransaction)
+  name: ValueTuple<DbCommand, DbTransaction>
+  nameWithType: ValueTuple<DbCommand, DbTransaction>
+  fullName: System.ValueTuple<System.Data.Common.DbCommand, System.Data.Common.DbTransaction>
+  nameWithType.vb: ValueTuple(Of DbCommand, DbTransaction)
+  fullName.vb: System.ValueTuple(Of System.Data.Common.DbCommand, System.Data.Common.DbTransaction)
+  name.vb: ValueTuple(Of DbCommand, DbTransaction)
   spec.csharp:
   - uid: System.ValueTuple`2
     name: ValueTuple
@@ -1617,18 +1561,18 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: System.Data.IDbCommand
-    name: IDbCommand
-    nameWithType: IDbCommand
-    fullName: System.Data.IDbCommand
+  - uid: System.Data.Common.DbCommand
+    name: DbCommand
+    nameWithType: DbCommand
+    fullName: System.Data.Common.DbCommand
     isExternal: true
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: System.Data.IDbTransaction
-    name: IDbTransaction
-    nameWithType: IDbTransaction
-    fullName: System.Data.IDbTransaction
+  - uid: System.Data.Common.DbTransaction
+    name: DbTransaction
+    nameWithType: DbTransaction
+    fullName: System.Data.Common.DbTransaction
     isExternal: true
   - name: '>'
     nameWithType: '>'
@@ -1642,25 +1586,22 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: System.Data.IDbCommand
-    name: IDbCommand
-    nameWithType: IDbCommand
-    fullName: System.Data.IDbCommand
+  - uid: System.Data.Common.DbCommand
+    name: DbCommand
+    nameWithType: DbCommand
+    fullName: System.Data.Common.DbCommand
     isExternal: true
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: System.Data.IDbTransaction
-    name: IDbTransaction
-    nameWithType: IDbTransaction
-    fullName: System.Data.IDbTransaction
+  - uid: System.Data.Common.DbTransaction
+    name: DbTransaction
+    nameWithType: DbTransaction
+    fullName: System.Data.Common.DbTransaction
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
-- uid: DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteNonQuery(`0,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
-  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`2.ExecuteNonQuery(`0,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})
-  isExternal: true
 - uid: System.InvalidOperationException
   commentId: T:System.InvalidOperationException
   isExternal: true
@@ -1725,6 +1666,13 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
 - uid: System.Collections.Generic.List`1
   commentId: T:System.Collections.Generic.List`1
   isExternal: true
@@ -1825,13 +1773,13 @@ references:
   name: GetDataReader
   nameWithType: IDatabaseAccess.GetDataReader
   fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataReader
-- uid: System.Data.IDataReader
-  commentId: T:System.Data.IDataReader
-  parent: System.Data
+- uid: System.Data.Common.DbDataReader
+  commentId: T:System.Data.Common.DbDataReader
+  parent: System.Data.Common
   isExternal: true
-  name: IDataReader
-  nameWithType: IDataReader
-  fullName: System.Data.IDataReader
+  name: DbDataReader
+  nameWithType: DbDataReader
+  fullName: System.Data.Common.DbDataReader
 - uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable*
   commentId: Overload:DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable
   name: GetDataTable
