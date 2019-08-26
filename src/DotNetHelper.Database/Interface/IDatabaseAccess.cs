@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
+using System.Data.SqlClient;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 using DotNetHelper.Database.DataSource;
 using DotNetHelper.ObjectToSql.Enum;
 using DotNetHelper.ObjectToSql.Helper;
@@ -12,7 +14,10 @@ namespace DotNetHelper.Database.Interface
     public interface IDatabaseAccess
     {
 
-
+        /// <summary>
+        /// The connection string to the database
+        /// </summary>
+        string ConnectionString { get; }
         /// <summary>
         /// The time in seconds to wait for the command to execute. The default is 30 seconds.
         /// </summary>
@@ -28,8 +33,13 @@ namespace DotNetHelper.Database.Interface
         /// </summary>
         DataBaseType DatabaseType { get; }
 
-
-        //  DbParameter GetNewParameter(string parameterName, object value);
+        /// <summary>
+        /// return a new instance of DBParameter  
+        /// </summary>
+        /// <param name="parameterName"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        DbParameter GetNewParameter(string parameterName, object value);
 
         /// <summary>
         /// creates a new dbcommand from the connection
@@ -50,7 +60,7 @@ namespace DotNetHelper.Database.Interface
         /// <param name="commandType">Specifies how a command string is interpreted.</param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        /// See <see cref="DatabaseAccess{C,P}.ExecuteNonQuery(C,string,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.DbParameter})"/> to perform this this action with a specified connection.
+        /// See <see cref="DatabaseAccess{C,P}.ExecuteNonQuery(C,string,System.Data.CommandType,System.Collections.Generic.IEnumerable{DbParameter})"/> to perform this this action with a specified connection.
         /// <exception cref="System.InvalidOperationException"> </exception>
         int ExecuteNonQuery(string sql, CommandType commandType, IEnumerable<DbParameter> parameters = null);
 
@@ -280,5 +290,67 @@ namespace DotNetHelper.Database.Interface
         DbDataReader ExecuteAndGetOutputAsDataReader<T>(T instance, ActionType actionType
             , Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer
             , params Expression<Func<T, object>>[] outputFields) where T : class;
+
+
+        /// <summary>
+        /// Perform a SQLBulkCopy 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="data"></param>
+        /// <param name="bulkCopyOptions">bulk copy option</param>
+        /// <returns>number of records inserted</returns>
+        long SqlServerBulkInsert<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions) where T : class;
+        /// <summary>
+        /// Perform a SQLBulkCopy 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="data"></param>
+        /// <param name="bulkCopyOptions">bulk copy option</param>
+        /// <param name="tableName">table name to insert data into</param>
+        /// <returns>number of records inserted</returns>
+        long SqlServerBulkInsert<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions,string tableName) where T : class;
+
+        /// <summary>
+        /// Perform a SQLBulkCopy 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="data"></param>
+        /// <param name="bulkCopyOptions">bulk copy option</param>
+        /// <param name="tableName">table name to insert data into</param>
+        /// <param name="batchSize">The integer value of the BatchSize property, or zero if no value has been set.</param>
+        /// <returns>number of records inserted</returns>
+        long SqlServerBulkInsert<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions,string tableName, int batchSize) where T : class;
+
+        /// <summary>
+        /// Perform a SQLBulkCopy 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="data"></param>
+        /// <param name="bulkCopyOptions">bulk copy option</param>
+        /// <returns>number of records inserted</returns>
+        Task<long> SqlServerBulkInsertAsync<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions) where T : class;
+        /// <summary>
+        /// Perform a SQLBulkCopy 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="data"></param>
+        /// <param name="bulkCopyOptions">bulk copy option</param>
+        /// <param name="tableName">table name to insert data into</param>
+        /// <returns>number of records inserted</returns>
+        Task<long> SqlServerBulkInsertAsync<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions, string tableName) where T : class;
+
+        /// <summary>
+        /// Perform a SQLBulkCopy 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="data"></param>
+        /// <param name="bulkCopyOptions">bulk copy option</param>
+        /// <param name="tableName">table name to insert data into</param>
+        /// <param name="batchSize">The integer value of the BatchSize property, or zero if no value has been set.</param>
+        /// <returns>number of records inserted</returns>
+        Task<long> SqlServerBulkInsertAsync<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions, string tableName, int batchSize) where T : class;
+
+
+
     }
 }

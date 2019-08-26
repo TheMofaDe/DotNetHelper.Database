@@ -24,8 +24,7 @@ namespace DotNetHelper.Database.Tests.Models
         public DateTime DateOfBirth { get; set; }
         [MaxLength(400)]
         public string FavoriteColor { get; set; }
-
-        public DateTime CreatedAt { get; } = new DateTime();
+        public DateTime? CreatedAt { get; set; } 
         public Employee()
         {
 
@@ -43,24 +42,24 @@ namespace DotNetHelper.Database.Tests.Models
         [Key]
         public int IdentityField { get; set; }
 
-        [SqlColumn(SerializableType = SerializableType.JSON)]
+        [SqlColumn(SerializableType = SerializableType.Json)]
         public Employee EmployeeAsJson { get; set; }
 
-        [SqlColumn(SerializableType = SerializableType.JSON)]
+        [SqlColumn(SerializableType = SerializableType.Json)]
         public List<Employee> EmployeeListAsJson { get; set; }
 
 
-        [SqlColumn(SerializableType = SerializableType.CSV)]
+        [SqlColumn(SerializableType = SerializableType.Csv)]
         public Employee EmployeeAsCsv { get; set; }
 
-        [SqlColumn(SerializableType = SerializableType.CSV)]
+        [SqlColumn(SerializableType = SerializableType.Csv)]
         public List<Employee> EmployeeListAsCsv { get; set; }
 
 
-        [SqlColumn(SerializableType = SerializableType.XML)]
+        [SqlColumn(SerializableType = SerializableType.Xml)]
         public Employee EmployeeAsXml { get; set; }
 
-        [SqlColumn(SerializableType = SerializableType.XML)]
+        [SqlColumn(SerializableType = SerializableType.Xml)]
         public List<Employee> EmployeeListAsXml { get; set; }
 
         public EmployeeSerialize()

@@ -17,6 +17,7 @@ using MySql.Data.MySqlClient;
 #endif
 using NUnit.Framework;
 
+
 namespace DotNetHelper.Database.Tests
 {
 
@@ -24,6 +25,8 @@ namespace DotNetHelper.Database.Tests
     public class DatabaseTextFixture : BaseTest
     {
         private static List<IDatabaseAccess> TestObjects { get; } = GetTestObjects();
+
+        private static bool HasConnectionIssue { get; set; }
 
         private static List<IDatabaseAccess> GetTestObjects()
         {
@@ -304,7 +307,7 @@ namespace DotNetHelper.Database.Tests
 
 #else
             if (DatabaseAccess.DatabaseType != DataBaseType.MySql)
-                Assert.AreEqual(dt.Columns["IdentityField"].ReadOnly, DatabaseAccess.DatabaseType == DataBaseType.Sqlite ? false : true);
+                Assert.AreEqual(dt.Columns["IdentityField"].ReadOnly, DatabaseAccess.DatabaseType != DataBaseType.Sqlite);
             Assert.AreEqual(dt.Columns["FirstName"].MaxLength, DatabaseAccess.DatabaseType == DataBaseType.Sqlite ? -1 : 400);
 #endif
             Assert.AreEqual(dt.Rows.Count, 0);
@@ -505,7 +508,13 @@ namespace DotNetHelper.Database.Tests
 
 
 
+        [Test]
 
+        public void Test_Bulk_Insert()
+        {
+            if (DatabaseAccess.DatabaseType != DataBaseType.SqlServer) return;
+            DatabaseAccess.SqlServerBulkInsert(MockEmployee.Hashset.ToList(),SqlBulkCopyOptions.Default);
+        }
 
 
 

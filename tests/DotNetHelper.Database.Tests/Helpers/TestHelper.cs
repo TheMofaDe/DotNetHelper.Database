@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.IO;
 #if SUPPORTSQLITE
 using MySql.Data.MySqlClient;
@@ -33,14 +34,19 @@ namespace DotNetHelper.Database.Tests.Helpers
         public static string SqliteConnectionString { get; set; } = $"Data Source={LocalDatabaseFile};";
         private static string GetCS()
         {
+            var csBuilder = new SqlConnectionStringBuilder
+            {
+                Password = "Password12!",
+                UserID = "sa",
+                DataSource = "(local)\\SQL2014",
+                InitialCatalog = "master",
+                IntegratedSecurity = false
+            };
             if (Environment.MachineName == "DESKTOP-MEON7CL" || Environment.MachineName == "JMCNEAL-W8")
             {
-                return $"Server=localhost;Initial Catalog=master;Integrated Security=True";
+                csBuilder.DataSource = "127.0.0.1"; // localhost works && 127.0.0.1 
             }
-            else
-            {
-                return $@"Server=(local)\SQL2014;Database=master;UID=sa;PWD=Password12!";
-            }
+            return csBuilder.ToString();
         }
         public static string SQLServerConnectionString { get; set; } = GetCS();
 
@@ -48,29 +54,14 @@ namespace DotNetHelper.Database.Tests.Helpers
         private static string GetMySqlCS()
         {
 #if SUPPORTSQLITE
-            if (Environment.MachineName == "DESKTOP-MEON7CL" || Environment.MachineName == "JMCNEAL-W8")
-            {
-
-                var csBuilder = new MySqlConnectionStringBuilder();
-                csBuilder.Port = 3306;
-                csBuilder.Password = "password";
-                csBuilder.UserID = "test";
-                csBuilder.Server = "172.19.27.154";//"172.17.0.2";
-                csBuilder.Database = "sys";
-                return csBuilder.GetConnectionString(true);
-            }
-            else
-            {
-                var csBuilder = new MySqlConnectionStringBuilder();
-                csBuilder.Port = 3306;
-                csBuilder.Password = "Password12!";
-                csBuilder.UserID = "root";
-                csBuilder.Server = "localhost";//"172.17.0.2";
-                csBuilder.Database = "sys";
-                return csBuilder.GetConnectionString(true);
-            }
+            var csBuilder = new MySqlConnectionStringBuilder();
+            csBuilder.Port = 3306;
+            csBuilder.Password = "Password12!";
+            csBuilder.UserID = "root";
+            csBuilder.Server = "localhost";
+            csBuilder.Database = "sys";
+            return csBuilder.GetConnectionString(true);
 #endif
-
             return null;
         }
         public static string MySqlConnectionString { get; set; } = GetMySqlCS();

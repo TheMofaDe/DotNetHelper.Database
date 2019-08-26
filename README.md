@@ -36,6 +36,10 @@
 
 
 
+## If you wish to see documentation thats more in depth go here
+
+
+
 
 ## Example 
 
@@ -85,12 +89,12 @@ public class Employee
 ```   
 ##### How to insert an employee using a dynamic object
 ```csharp
-dynamic dynamicEmployee = new ExpandoObject(); // A DYNAMIC EMPLOYEE
-dynamicEmployee.FirstName = "Joe Sister";
-dynamicEmployee.LastName = "Dynamic";
-dynamicEmployee.DOB = DateTime.Today.AddDays(-2);
+dynamic dyn = new ExpandoObject(); 
+        dyn.FirstName = "Joe Sister";
+        dyn.LastName = "Dynamic";
+        dyn.DOB = DateTime.Today;
 var dbAccess = new DatabaseAccess<SqlConnection>(DataBaseType.SqlServer, "ConnectionString"); // Specify database provider to ensure syntax is correct
-var recordAffected = dbAccess.Execute(dynamicEmployee, ActionType.Insert,"Employee"); // you need to specify the table name when using dynamic objects
+var recordAffected = dbAccess.Execute(dyn, ActionType.Insert,"Employee"); // you need to specify the table name when using dynamic objects
 ```
 ##### How to insert an employee using a generic class
 ```csharp

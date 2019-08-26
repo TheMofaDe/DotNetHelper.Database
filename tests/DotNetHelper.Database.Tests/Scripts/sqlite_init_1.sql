@@ -3,7 +3,7 @@
 	[FirstName] TEXT(400) NOT NULL,
 	[LastName] TEXT(400) NOT NULL,
 	[DOB] DateTime NOT NULL,
-	[CreatedAt] DateTime NOT NULL,
+	[CreatedAt] DateTime NULL,
 	[FavoriteColor] TEXT(400) NOT NULL
 );
 

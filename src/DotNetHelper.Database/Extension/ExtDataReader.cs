@@ -11,6 +11,7 @@ using DotNetHelper.FastMember.Extension.Models;
 using DotNetHelper.ObjectToSql.Attribute;
 using DotNetHelper.ObjectToSql.Enum;
 using DotNetHelper.ObjectToSql.Extension;
+using DotNetHelper.ObjectToSql.Model;
 
 namespace DotNetHelper.Database.Extension
 {
@@ -239,19 +240,19 @@ namespace DotNetHelper.Database.Extension
         private static void DeserializeMemberValueIfNeeded(MemberWrapper member, ref object value, Func<string, Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer)
         {
             var sqlAttribute = member.GetCustomAttribute<SqlColumnAttribute>();
-            if (sqlAttribute != null && sqlAttribute.SerializableType != SerializableType.NONE)
+            if (sqlAttribute != null && sqlAttribute.SerializableType != SerializableType.None)
             {
                 switch (sqlAttribute.SerializableType)
                 {
-                    case SerializableType.XML:
+                    case SerializableType.Xml:
                         if (xmlDeserializer == null) throw new ArgumentNullException(nameof(xmlDeserializer), ExceptionHelper.NullDeSerializer(sqlAttribute.SerializableType, member.Name));
                         value = xmlDeserializer.Invoke(value as string, member.Type);
                         break;
-                    case SerializableType.JSON:
+                    case SerializableType.Json:
                         if (jsonDeserializer == null) throw new ArgumentNullException(nameof(jsonDeserializer), ExceptionHelper.NullDeSerializer(sqlAttribute.SerializableType, member.Name));
                         value = jsonDeserializer.Invoke(value as string, member.Type);
                         break;
-                    case SerializableType.CSV:
+                    case SerializableType.Csv:
                         if (csvDeserializer == null) throw new ArgumentNullException(nameof(csvDeserializer), ExceptionHelper.NullDeSerializer(sqlAttribute.SerializableType, member.Name));
                         value = csvDeserializer.Invoke(value as string, member.Type);
                         break;
@@ -263,13 +264,16 @@ namespace DotNetHelper.Database.Extension
 
         public static DataTable MapToDataTable<T>(this IEnumerable<T> source) where T : class
         {
+            return MapToDataTable(source,null);
+        }
+        public static DataTable MapToDataTable<T>(this IEnumerable<T> source,string tableName) where T : class
+        {
             source.IsNullThrow(nameof(source));
             var dt = new DataTable();
             if (source.Count() == 0)
             {
                 if (source is IEnumerable<IDynamicMetaObjectProvider>)
                     return dt;
-                // IF THIS IS NOT DYNAMIC WE CAN AT LEAST APPLY THE DATA TABLE SCHEMA
             }
             List<MemberWrapper> members;
             if (source is IEnumerable<IDynamicMetaObjectProvider> listOfDynamicObjects)
@@ -284,7 +288,9 @@ namespace DotNetHelper.Database.Extension
             var keyColumns = new List<DataColumn>() { };
             members.ForEach(delegate (MemberWrapper member)
             {
-                var dc = new DataColumn(member.GetNameFromCustomAttributeOrDefault(), member.Type);
+                //An exception of type 'System.NotSupportedException' occurred in System.Data.dll but was not handled in user code
+               // DataSet does not support System.Nullable<>.
+                var dc = new DataColumn(member.GetNameFromCustomAttributeOrDefault(), member.Type.IsNullable().underlyingType); // datacolumn doesn't support nullable type so use underlying
 
                 if (member.IsMemberAnIdentityColumn())
                     dc.AutoIncrement = true;
@@ -299,10 +305,11 @@ namespace DotNetHelper.Database.Extension
             source.AsList().ForEach(delegate (T obj)
             {
                 var row = dt.NewRow();
-                members.ForEach(w => row[w.Name] = w.GetValue(obj));
+                members.ForEach(w => row[w.GetNameFromCustomAttributeOrDefault()] = w.GetValue(obj) ?? DBNull.Value);
                 dt.Rows.Add(row);
             });
 
+            dt.TableName = tableName ??  new SqlTable(DataBaseType.SqlServer, source.First().GetType()).TableName;
             return dt;
         }
 
