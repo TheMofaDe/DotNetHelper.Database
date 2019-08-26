@@ -10,11 +10,6 @@
   - uid: DotNetHelper.Database.DataSource.DatabaseAccess`1
     name: DatabaseAccess<TDbConnection>
     name.vb: DatabaseAccess(Of TDbConnection)
-- uid: DotNetHelper.Database.EventHandler
-  name: DotNetHelper.Database.EventHandler
-  items:
-  - uid: DotNetHelper.Database.EventHandler.SqlExceptionEventArgs
-    name: SqlExceptionEventArgs
 - uid: DotNetHelper.Database.Extension
   name: DotNetHelper.Database.Extension
   items:
@@ -38,18 +33,3 @@
   items:
   - uid: DotNetHelper.Database.Interface.IDatabaseAccess
     name: IDatabaseAccess
-- uid: DotNetHelper.Database.Models
-  name: DotNetHelper.Database.Models
-  items:
-  - uid: DotNetHelper.Database.Models.FullQueryBucketEventArgs
-    name: FullQueryBucketEventArgs
-  - uid: DotNetHelper.Database.Models.QueryBucket
-    name: QueryBucket
-  - uid: DotNetHelper.Database.Models.QueryBucketEventArgs
-    name: QueryBucketEventArgs
-  - uid: DotNetHelper.Database.Models.QueryBucketManager
-    name: QueryBucketManager
-  - uid: DotNetHelper.Database.Models.QueryBucketManager.FullQueryBucketEventHandler
-    name: QueryBucketManager.FullQueryBucketEventHandler
-  - uid: DotNetHelper.Database.Models.QueryBucketManager.OnBeforeAddToBucketEventHandler
-    name: QueryBucketManager.OnBeforeAddToBucketEventHandler

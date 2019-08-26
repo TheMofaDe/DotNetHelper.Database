@@ -63,19 +63,24 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: AddRange
     path: ../src/DotNetHelper.Database/Extension/IDataParameterExtension.cs
-    startLine: 8
+    startLine: 14
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
+  summary: "\nAdds the elements of the specified collection to the end of the collection\n"
+  example: []
   syntax:
     content: public static void AddRange<T>(this IDataParameterCollection collection, IEnumerable<T> collectionToAdd)
     parameters:
     - id: collection
       type: System.Data.IDataParameterCollection
+      description: ''
     - id: collectionToAdd
       type: System.Collections.Generic.IEnumerable{{T}}
+      description: elements to add to collection
     typeParameters:
     - id: T
+      description: ''
     content.vb: >-
       <ExtensionAttribute>
 

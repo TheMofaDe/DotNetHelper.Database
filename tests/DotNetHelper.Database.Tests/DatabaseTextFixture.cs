@@ -33,6 +33,7 @@ namespace DotNetHelper.Database.Tests
             // ReSharper disable once UseObjectOrCollectionInitializer
             var list = new List<IDatabaseAccess>() { };
 
+            list.Add(new DatabaseAccess<SqlConnection>(TestHelper.SQLServerConnectionString));
             list.Add(new DatabaseAccess<SqlConnection>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString));
             list.Add(new DatabaseAccess<SqlConnection>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString, TimeSpan.FromSeconds(35)));
             list.Add(new DatabaseAccess<SqlConnection>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString, TimeSpan.FromSeconds(40), TimeSpan.FromSeconds(40)));
@@ -513,7 +514,7 @@ namespace DotNetHelper.Database.Tests
         public void Test_Bulk_Insert()
         {
             if (DatabaseAccess.DatabaseType != DataBaseType.SqlServer) return;
-            DatabaseAccess.SqlServerBulkInsert(MockEmployee.Hashset.ToList(),SqlBulkCopyOptions.Default);
+            DatabaseAccess.SqlServerBulkInsert(MockEmployee.Hashset.ToList(), SqlBulkCopyOptions.Default);
         }
 
 

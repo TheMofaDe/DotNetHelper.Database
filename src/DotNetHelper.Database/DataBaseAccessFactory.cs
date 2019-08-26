@@ -519,7 +519,7 @@ namespace DotNetHelper.Database
         public int Execute<T>(T instance, ActionType actionType, string tableName, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer) where T : class
         {
             // var sql = (type.IsTypeAnonymousType() || type.IsTypeDynamic()) ? ObjectToSql.BuildQuery(actionType,instance, tableName ?? new SqlTable(DatabaseType, type).FullNameWithBrackets) : ObjectToSql.BuildQuery<T>( actionType, tableName ?? new SqlTable(DatabaseType, type).FullNameWithBrackets);
-            var sql = ObjectToSql.BuildQuery(actionType, instance, tableName ?? new SqlTable(DatabaseType, instance.GetType()).FullNameWithBrackets);
+            var sql = ObjectToSql.BuildQuery(actionType, instance, tableName );
             var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, xmlSerializer, jsonSerializer, csvSerializer);
             return ExecuteNonQuery(sql, CommandType.Text, parameters);
         }
@@ -538,7 +538,7 @@ namespace DotNetHelper.Database
         /// <returns></returns>
         public int Execute<T>(T instance, ActionType actionType, string tableName, params Expression<Func<T, object>>[] keyFields) where T : class
         {
-            var sql = ObjectToSql.BuildQuery(actionType, tableName ?? new SqlTable(DatabaseType, instance.GetType()).FullNameWithBrackets, keyFields);
+            var sql = ObjectToSql.BuildQuery(actionType, tableName, keyFields);
             var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, null, null, null);
             return ExecuteNonQuery(sql, CommandType.Text, parameters);
         }
@@ -558,7 +558,7 @@ namespace DotNetHelper.Database
         /// <returns></returns>
         public int Execute<T>(T instance, ActionType actionType, string tableName, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer, params Expression<Func<T, object>>[] keyFields) where T : class
         {
-            var sql = ObjectToSql.BuildQuery(actionType, tableName ?? new SqlTable(DatabaseType, instance.GetType()).FullNameWithBrackets, keyFields);
+            var sql = ObjectToSql.BuildQuery(actionType, tableName, keyFields);
             var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, xmlSerializer, jsonSerializer, csvSerializer);
             return ExecuteNonQuery(sql, CommandType.Text, parameters);
         }
@@ -596,8 +596,8 @@ namespace DotNetHelper.Database
             , Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer
             , params Expression<Func<T, object>>[] outputFields) where T : class
         {
-            var sqlTable = new SqlTable(DatabaseType, instance.GetType());
-            var sql = ObjectToSql.BuildQueryWithOutputs(actionType, sqlTable.FullNameWithBrackets, outputFields);
+           
+            var sql = ObjectToSql.BuildQueryWithOutputs(actionType,null, outputFields);
             var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, xmlSerializer, jsonSerializer, csvSerializer);
             return GetDataReader(sql, CommandType.Text, parameters).MapTo<T>(xmlDeserializer, jsonDeserializer, csvDeserializer);
         }
@@ -612,8 +612,8 @@ namespace DotNetHelper.Database
             , Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer
             , params Expression<Func<T, object>>[] outputFields) where T : class
         {
-            var sqlTable = new SqlTable(DatabaseType, instance.GetType());
-            var sql = ObjectToSql.BuildQueryWithOutputs(actionType, sqlTable.FullNameWithBrackets, outputFields);
+           
+            var sql = ObjectToSql.BuildQueryWithOutputs(actionType,null, outputFields);
             var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, xmlSerializer, jsonSerializer, csvSerializer);
             return GetDataReader(sql, CommandType.Text, parameters);
         }

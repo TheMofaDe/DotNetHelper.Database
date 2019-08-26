@@ -8,8 +8,10 @@ items:
   - DotNetHelper.Database.DataSource.DatabaseAccess`1.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.String)
   - DotNetHelper.Database.DataSource.DatabaseAccess`1.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.String,System.TimeSpan)
   - DotNetHelper.Database.DataSource.DatabaseAccess`1.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.String,System.TimeSpan,System.TimeSpan)
+  - DotNetHelper.Database.DataSource.DatabaseAccess`1.#ctor(System.String)
   - DotNetHelper.Database.DataSource.DatabaseAccess`1.CanConnect
   - DotNetHelper.Database.DataSource.DatabaseAccess`1.CommandTimeOut
+  - DotNetHelper.Database.DataSource.DatabaseAccess`1.ConnectionString
   - DotNetHelper.Database.DataSource.DatabaseAccess`1.ConnectionTimeOut
   - DotNetHelper.Database.DataSource.DatabaseAccess`1.DatabaseType
   - DotNetHelper.Database.DataSource.DatabaseAccess`1.Dispose
@@ -46,6 +48,12 @@ items:
   - DotNetHelper.Database.DataSource.DatabaseAccess`1.GetNewCommandAndTransaction(System.Data.Common.DbConnection)
   - DotNetHelper.Database.DataSource.DatabaseAccess`1.GetNewConnection(System.Boolean)
   - DotNetHelper.Database.DataSource.DatabaseAccess`1.GetNewParameter(System.String,System.Object)
+  - DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+  - DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+  - DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+  - DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+  - DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+  - DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
   langs:
   - csharp
   - vb
@@ -60,7 +68,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: DatabaseAccess
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 18
+    startLine: 21
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -93,6 +101,47 @@ items:
   - Class
   fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection)
   name.vb: DatabaseAccess(Of TDbConnection)
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.ConnectionString
+  commentId: P:DotNetHelper.Database.DataSource.DatabaseAccess`1.ConnectionString
+  id: ConnectionString
+  parent: DotNetHelper.Database.DataSource.DatabaseAccess`1
+  langs:
+  - csharp
+  - vb
+  name: ConnectionString
+  nameWithType: DatabaseAccess<TDbConnection>.ConnectionString
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<TDbConnection>.ConnectionString
+  type: Property
+  source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+    id: ConnectionString
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+    startLine: 26
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.DataSource
+  summary: "\nThe connection string to the database\n"
+  example: []
+  syntax:
+    content: public string ConnectionString { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property ConnectionString As String
+  overload: DotNetHelper.Database.DataSource.DatabaseAccess`1.ConnectionString*
+  implements:
+  - DotNetHelper.Database.Interface.IDatabaseAccess.ConnectionString
+  nameWithType.vb: DatabaseAccess(Of TDbConnection).ConnectionString
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).ConnectionString
 - uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.CommandTimeOut
   commentId: P:DotNetHelper.Database.DataSource.DatabaseAccess`1.CommandTimeOut
   id: CommandTimeOut
@@ -111,7 +160,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: CommandTimeOut
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 27
+    startLine: 30
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -152,7 +201,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ConnectionTimeOut
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 31
+    startLine: 34
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -193,7 +242,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: DatabaseType
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 39
+    startLine: 42
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -216,6 +265,44 @@ items:
   - Public
   - ReadOnly
   fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).DatabaseType
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.#ctor(System.String)
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`1.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: DotNetHelper.Database.DataSource.DatabaseAccess`1
+  langs:
+  - csharp
+  - vb
+  name: DatabaseAccess(String)
+  nameWithType: DatabaseAccess<TDbConnection>.DatabaseAccess(String)
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<TDbConnection>.DatabaseAccess(System.String)
+  type: Constructor
+  source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+    id: .ctor
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+    startLine: 49
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.DataSource
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public DatabaseAccess(string connectionString)
+    parameters:
+    - id: connectionString
+      type: System.String
+      description: ''
+    content.vb: Public Sub New(connectionString As String)
+  overload: DotNetHelper.Database.DataSource.DatabaseAccess`1.#ctor*
+  nameWithType.vb: DatabaseAccess(Of TDbConnection).DatabaseAccess(String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).DatabaseAccess(System.String)
 - uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.String)
   commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`1.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.String)
   id: '#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.String)'
@@ -234,11 +321,11 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: .ctor
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 47
+    startLine: 64
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
-  summary: "\n/\n"
+  summary: "\n\n"
   example: []
   syntax:
     content: public DatabaseAccess(DataBaseType type, string connectionString)
@@ -275,7 +362,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: .ctor
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 58
+    startLine: 75
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -319,7 +406,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: .ctor
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 72
+    startLine: 89
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -366,7 +453,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewConnection
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 86
+    startLine: 103
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -407,21 +494,28 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewParameter
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 98
+    startLine: 123
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
+  summary: "\nreturn a new instance of DBParameter  \n"
+  example: []
   syntax:
     content: public DbParameter GetNewParameter(string parameterName, object value)
     parameters:
     - id: parameterName
       type: System.String
+      description: ''
     - id: value
       type: System.Object
+      description: ''
     return:
       type: System.Data.Common.DbParameter
+      description: ''
     content.vb: Public Function GetNewParameter(parameterName As String, value As Object) As DbParameter
   overload: DotNetHelper.Database.DataSource.DatabaseAccess`1.GetNewParameter*
+  implements:
+  - DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(System.String,System.Object)
   nameWithType.vb: DatabaseAccess(Of TDbConnection).GetNewParameter(String, Object)
   modifiers.csharp:
   - public
@@ -446,7 +540,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewCommand
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 114
+    startLine: 139
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -499,7 +593,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewCommandAndTransaction
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 133
+    startLine: 158
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -542,7 +636,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteNonQuery
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 155
+    startLine: 180
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -598,7 +692,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteNonQuery
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 172
+    startLine: 197
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -649,7 +743,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteScalar
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 186
+    startLine: 211
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -699,7 +793,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteScalar
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 202
+    startLine: 227
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -750,7 +844,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteTransaction
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 217
+    startLine: 242
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -800,7 +894,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteTransaction
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 233
+    startLine: 258
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -851,7 +945,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataReader
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 271
+    startLine: 296
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -902,7 +996,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataReader
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 286
+    startLine: 311
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -952,7 +1046,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTable
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 299
+    startLine: 324
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1002,7 +1096,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTable
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 312
+    startLine: 337
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1045,7 +1139,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTableWithSchema
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 324
+    startLine: 349
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1095,7 +1189,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTableWithKeyInfo
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 346
+    startLine: 371
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1145,7 +1239,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTableWithSchema
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 364
+    startLine: 389
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1188,7 +1282,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTableWithKeyInfo
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 374
+    startLine: 399
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1231,7 +1325,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: CanConnect
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 384
+    startLine: 409
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1270,7 +1364,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 410
+    startLine: 435
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1334,7 +1428,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 427
+    startLine: 452
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1399,7 +1493,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 437
+    startLine: 462
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1444,7 +1538,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 452
+    startLine: 477
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1499,7 +1593,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 466
+    startLine: 491
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1554,7 +1648,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Execute
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 478
+    startLine: 503
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1606,7 +1700,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Execute
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 491
+    startLine: 516
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1661,7 +1755,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Execute
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 507
+    startLine: 532
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1725,7 +1819,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Execute
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 527
+    startLine: 552
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1783,7 +1877,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Execute
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 547
+    startLine: 572
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1850,7 +1944,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutput
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 563
+    startLine: 588
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1905,7 +1999,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutput
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 582
+    startLine: 607
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1978,7 +2072,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutputAsDataReader
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 594
+    startLine: 619
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -2026,7 +2120,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutputAsDataReader
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 599
+    startLine: 624
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -2062,6 +2156,336 @@ items:
   - Public
   fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).ExecuteAndGetOutputAsDataReader(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
   name.vb: ExecuteAndGetOutputAsDataReader(Of T)(T, ActionType, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+  id: SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+  parent: DotNetHelper.Database.DataSource.DatabaseAccess`1
+  langs:
+  - csharp
+  - vb
+  name: SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions)
+  nameWithType: DatabaseAccess<TDbConnection>.SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions)
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<TDbConnection>.SqlServerBulkInsert<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+    id: SqlServerBulkInsert
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+    startLine: 643
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.DataSource
+  summary: "\nPerform a SQLBulkCopy \n"
+  example: []
+  syntax:
+    content: >-
+      public long SqlServerBulkInsert<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions)
+          where T : class
+    parameters:
+    - id: data
+      type: System.Collections.Generic.List{{T}}
+      description: ''
+    - id: bulkCopyOptions
+      type: System.Data.SqlClient.SqlBulkCopyOptions
+      description: bulk copy option
+    typeParameters:
+    - id: T
+      description: ''
+    return:
+      type: System.Int64
+      description: '# of records inserted'
+    content.vb: Public Function SqlServerBulkInsert(Of T As Class)(data As List(Of T), bulkCopyOptions As SqlBulkCopyOptions) As Long
+  overload: DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsert*
+  implements:
+  - DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{{T}},System.Data.SqlClient.SqlBulkCopyOptions)
+  nameWithType.vb: DatabaseAccess(Of TDbConnection).SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).SqlServerBulkInsert(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions)
+  name.vb: SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions)
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+  id: SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+  parent: DotNetHelper.Database.DataSource.DatabaseAccess`1
+  langs:
+  - csharp
+  - vb
+  name: SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions, String)
+  nameWithType: DatabaseAccess<TDbConnection>.SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions, String)
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<TDbConnection>.SqlServerBulkInsert<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+    id: SqlServerBulkInsert
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+    startLine: 657
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.DataSource
+  summary: "\nPerform a SQLBulkCopy \n"
+  example: []
+  syntax:
+    content: >-
+      public long SqlServerBulkInsert<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions, string tableName)
+          where T : class
+    parameters:
+    - id: data
+      type: System.Collections.Generic.List{{T}}
+      description: ''
+    - id: bulkCopyOptions
+      type: System.Data.SqlClient.SqlBulkCopyOptions
+      description: bulk copy option
+    - id: tableName
+      type: System.String
+      description: table name to insert data into
+    typeParameters:
+    - id: T
+      description: ''
+    return:
+      type: System.Int64
+      description: '# of records inserted'
+    content.vb: Public Function SqlServerBulkInsert(Of T As Class)(data As List(Of T), bulkCopyOptions As SqlBulkCopyOptions, tableName As String) As Long
+  overload: DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsert*
+  implements:
+  - DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{{T}},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+  nameWithType.vb: DatabaseAccess(Of TDbConnection).SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions, String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).SqlServerBulkInsert(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions, System.String)
+  name.vb: SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions, String)
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+  id: SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+  parent: DotNetHelper.Database.DataSource.DatabaseAccess`1
+  langs:
+  - csharp
+  - vb
+  name: SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions, String, Int32)
+  nameWithType: DatabaseAccess<TDbConnection>.SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions, String, Int32)
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<TDbConnection>.SqlServerBulkInsert<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions, System.String, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+    id: SqlServerBulkInsert
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+    startLine: 671
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.DataSource
+  summary: "\nPerform a SQLBulkCopy \n"
+  example: []
+  syntax:
+    content: >-
+      public long SqlServerBulkInsert<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions, string tableName, int batchSize)
+          where T : class
+    parameters:
+    - id: data
+      type: System.Collections.Generic.List{{T}}
+      description: ''
+    - id: bulkCopyOptions
+      type: System.Data.SqlClient.SqlBulkCopyOptions
+      description: bulk copy option
+    - id: tableName
+      type: System.String
+      description: table name to insert data into
+    - id: batchSize
+      type: System.Int32
+      description: The integer value of the BatchSize property, or zero if no value has been set.
+    typeParameters:
+    - id: T
+      description: ''
+    return:
+      type: System.Int64
+      description: '# of records inserted'
+    content.vb: Public Function SqlServerBulkInsert(Of T As Class)(data As List(Of T), bulkCopyOptions As SqlBulkCopyOptions, tableName As String, batchSize As Integer) As Long
+  overload: DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsert*
+  implements:
+  - DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{{T}},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+  nameWithType.vb: DatabaseAccess(Of TDbConnection).SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions, String, Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).SqlServerBulkInsert(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions, System.String, System.Int32)
+  name.vb: SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions, String, Int32)
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+  id: SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+  parent: DotNetHelper.Database.DataSource.DatabaseAccess`1
+  langs:
+  - csharp
+  - vb
+  name: SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions)
+  nameWithType: DatabaseAccess<TDbConnection>.SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions)
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<TDbConnection>.SqlServerBulkInsertAsync<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+    id: SqlServerBulkInsertAsync
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+    startLine: 703
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.DataSource
+  summary: "\nPerform a SQLBulkCopy \n"
+  example: []
+  syntax:
+    content: >-
+      public Task<long> SqlServerBulkInsertAsync<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions)
+          where T : class
+    parameters:
+    - id: data
+      type: System.Collections.Generic.List{{T}}
+      description: ''
+    - id: bulkCopyOptions
+      type: System.Data.SqlClient.SqlBulkCopyOptions
+      description: bulk copy option
+    typeParameters:
+    - id: T
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task{System.Int64}
+      description: '# of records inserted'
+    content.vb: Public Function SqlServerBulkInsertAsync(Of T As Class)(data As List(Of T), bulkCopyOptions As SqlBulkCopyOptions) As Task(Of Long)
+  overload: DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsertAsync*
+  implements:
+  - DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{{T}},System.Data.SqlClient.SqlBulkCopyOptions)
+  nameWithType.vb: DatabaseAccess(Of TDbConnection).SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).SqlServerBulkInsertAsync(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions)
+  name.vb: SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions)
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+  id: SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+  parent: DotNetHelper.Database.DataSource.DatabaseAccess`1
+  langs:
+  - csharp
+  - vb
+  name: SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions, String)
+  nameWithType: DatabaseAccess<TDbConnection>.SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions, String)
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<TDbConnection>.SqlServerBulkInsertAsync<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+    id: SqlServerBulkInsertAsync
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+    startLine: 717
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.DataSource
+  summary: "\nPerform a SQLBulkCopy \n"
+  example: []
+  syntax:
+    content: >-
+      public Task<long> SqlServerBulkInsertAsync<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions, string tableName)
+          where T : class
+    parameters:
+    - id: data
+      type: System.Collections.Generic.List{{T}}
+      description: ''
+    - id: bulkCopyOptions
+      type: System.Data.SqlClient.SqlBulkCopyOptions
+      description: bulk copy option
+    - id: tableName
+      type: System.String
+      description: table name to insert data into
+    typeParameters:
+    - id: T
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task{System.Int64}
+      description: '# of records inserted'
+    content.vb: Public Function SqlServerBulkInsertAsync(Of T As Class)(data As List(Of T), bulkCopyOptions As SqlBulkCopyOptions, tableName As String) As Task(Of Long)
+  overload: DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsertAsync*
+  implements:
+  - DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{{T}},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+  nameWithType.vb: DatabaseAccess(Of TDbConnection).SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions, String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).SqlServerBulkInsertAsync(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions, System.String)
+  name.vb: SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions, String)
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+  id: SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+  parent: DotNetHelper.Database.DataSource.DatabaseAccess`1
+  langs:
+  - csharp
+  - vb
+  name: SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions, String, Int32)
+  nameWithType: DatabaseAccess<TDbConnection>.SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions, String, Int32)
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<TDbConnection>.SqlServerBulkInsertAsync<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions, System.String, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+    id: SqlServerBulkInsertAsync
+    path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
+    startLine: 731
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.DataSource
+  summary: "\nPerform a SQLBulkCopy \n"
+  example: []
+  syntax:
+    content: >-
+      public Task<long> SqlServerBulkInsertAsync<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions, string tableName, int batchSize)
+          where T : class
+    parameters:
+    - id: data
+      type: System.Collections.Generic.List{{T}}
+      description: ''
+    - id: bulkCopyOptions
+      type: System.Data.SqlClient.SqlBulkCopyOptions
+      description: bulk copy option
+    - id: tableName
+      type: System.String
+      description: table name to insert data into
+    - id: batchSize
+      type: System.Int32
+      description: The integer value of the BatchSize property, or zero if no value has been set.
+    typeParameters:
+    - id: T
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task{System.Int64}
+      description: '# of records inserted'
+    content.vb: Public Function SqlServerBulkInsertAsync(Of T As Class)(data As List(Of T), bulkCopyOptions As SqlBulkCopyOptions, tableName As String, batchSize As Integer) As Task(Of Long)
+  overload: DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsertAsync*
+  implements:
+  - DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{{T}},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+  nameWithType.vb: DatabaseAccess(Of TDbConnection).SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions, String, Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).SqlServerBulkInsertAsync(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions, System.String, System.Int32)
+  name.vb: SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions, String, Int32)
 - uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.Dispose
   commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`1.Dispose
   id: Dispose
@@ -2080,7 +2504,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Dispose
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 614
+    startLine: 758
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -2114,7 +2538,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Dispose
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 621
+    startLine: 765
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -2449,6 +2873,26 @@ references:
   name: DotNetHelper.Database.Interface
   nameWithType: DotNetHelper.Database.Interface
   fullName: DotNetHelper.Database.Interface
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.ConnectionString*
+  commentId: Overload:DotNetHelper.Database.DataSource.DatabaseAccess`1.ConnectionString
+  name: ConnectionString
+  nameWithType: DatabaseAccess<TDbConnection>.ConnectionString
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<TDbConnection>.ConnectionString
+  nameWithType.vb: DatabaseAccess(Of TDbConnection).ConnectionString
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).ConnectionString
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.ConnectionString
+  commentId: P:DotNetHelper.Database.Interface.IDatabaseAccess.ConnectionString
+  parent: DotNetHelper.Database.Interface.IDatabaseAccess
+  name: ConnectionString
+  nameWithType: IDatabaseAccess.ConnectionString
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.ConnectionString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
 - uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.CommandTimeOut*
   commentId: Overload:DotNetHelper.Database.DataSource.DatabaseAccess`1.CommandTimeOut
   name: CommandTimeOut
@@ -2515,13 +2959,6 @@ references:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<TDbConnection>.DatabaseAccess
   nameWithType.vb: DatabaseAccess(Of TDbConnection).DatabaseAccess
   fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).DatabaseAccess
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  name: String
-  nameWithType: String
-  fullName: System.String
 - uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.GetNewConnection*
   commentId: Overload:DotNetHelper.Database.DataSource.DatabaseAccess`1.GetNewConnection
   name: GetNewConnection
@@ -2553,6 +2990,61 @@ references:
   fullName: DotNetHelper.Database.DataSource.DatabaseAccess<TDbConnection>.GetNewParameter
   nameWithType.vb: DatabaseAccess(Of TDbConnection).GetNewParameter
   fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).GetNewParameter
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(System.String,System.Object)
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(System.String,System.Object)
+  parent: DotNetHelper.Database.Interface.IDatabaseAccess
+  isExternal: true
+  name: GetNewParameter(String, Object)
+  nameWithType: IDatabaseAccess.GetNewParameter(String, Object)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(System.String, System.Object)
+  spec.csharp:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(System.String,System.Object)
+    name: GetNewParameter
+    nameWithType: IDatabaseAccess.GetNewParameter
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(System.String,System.Object)
+    name: GetNewParameter
+    nameWithType: IDatabaseAccess.GetNewParameter
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Data.Common.DbParameter
   commentId: T:System.Data.Common.DbParameter
   parent: System.Data.Common
@@ -8760,6 +9252,1227 @@ references:
   - name: ()
     nameWithType: ()
     fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsert*
+  commentId: Overload:DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsert
+  name: SqlServerBulkInsert
+  nameWithType: DatabaseAccess<TDbConnection>.SqlServerBulkInsert
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<TDbConnection>.SqlServerBulkInsert
+  nameWithType.vb: DatabaseAccess(Of TDbConnection).SqlServerBulkInsert
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).SqlServerBulkInsert
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{{T}},System.Data.SqlClient.SqlBulkCopyOptions)
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+  parent: DotNetHelper.Database.Interface.IDatabaseAccess
+  definition: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+  name: SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions)
+  nameWithType: IDatabaseAccess.SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions)
+  nameWithType.vb: IDatabaseAccess.SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions)
+  name.vb: SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions)
+  spec.csharp:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+    name: SqlServerBulkInsert<T>
+    nameWithType: IDatabaseAccess.SqlServerBulkInsert<T>
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Data.SqlClient.SqlBulkCopyOptions
+    name: SqlBulkCopyOptions
+    nameWithType: SqlBulkCopyOptions
+    fullName: System.Data.SqlClient.SqlBulkCopyOptions
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+    name: SqlServerBulkInsert(Of T)
+    nameWithType: IDatabaseAccess.SqlServerBulkInsert(Of T)
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Data.SqlClient.SqlBulkCopyOptions
+    name: SqlBulkCopyOptions
+    nameWithType: SqlBulkCopyOptions
+    fullName: System.Data.SqlClient.SqlBulkCopyOptions
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Data.SqlClient.SqlBulkCopyOptions
+  commentId: T:System.Data.SqlClient.SqlBulkCopyOptions
+  parent: System.Data.SqlClient
+  isExternal: true
+  name: SqlBulkCopyOptions
+  nameWithType: SqlBulkCopyOptions
+  fullName: System.Data.SqlClient.SqlBulkCopyOptions
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+  isExternal: true
+  name: SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions)
+  nameWithType: IDatabaseAccess.SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions)
+  nameWithType.vb: IDatabaseAccess.SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions)
+  name.vb: SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions)
+  spec.csharp:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+    name: SqlServerBulkInsert<T>
+    nameWithType: IDatabaseAccess.SqlServerBulkInsert<T>
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Data.SqlClient.SqlBulkCopyOptions
+    name: SqlBulkCopyOptions
+    nameWithType: SqlBulkCopyOptions
+    fullName: System.Data.SqlClient.SqlBulkCopyOptions
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+    name: SqlServerBulkInsert(Of T)
+    nameWithType: IDatabaseAccess.SqlServerBulkInsert(Of T)
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Data.SqlClient.SqlBulkCopyOptions
+    name: SqlBulkCopyOptions
+    nameWithType: SqlBulkCopyOptions
+    fullName: System.Data.SqlClient.SqlBulkCopyOptions
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Data.SqlClient
+  commentId: N:System.Data.SqlClient
+  isExternal: true
+  name: System.Data.SqlClient
+  nameWithType: System.Data.SqlClient
+  fullName: System.Data.SqlClient
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{{T}},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+  parent: DotNetHelper.Database.Interface.IDatabaseAccess
+  definition: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+  name: SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions, String)
+  nameWithType: IDatabaseAccess.SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions, String)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions, System.String)
+  nameWithType.vb: IDatabaseAccess.SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions, String)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions, System.String)
+  name.vb: SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions, String)
+  spec.csharp:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+    name: SqlServerBulkInsert<T>
+    nameWithType: IDatabaseAccess.SqlServerBulkInsert<T>
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Data.SqlClient.SqlBulkCopyOptions
+    name: SqlBulkCopyOptions
+    nameWithType: SqlBulkCopyOptions
+    fullName: System.Data.SqlClient.SqlBulkCopyOptions
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+    name: SqlServerBulkInsert(Of T)
+    nameWithType: IDatabaseAccess.SqlServerBulkInsert(Of T)
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Data.SqlClient.SqlBulkCopyOptions
+    name: SqlBulkCopyOptions
+    nameWithType: SqlBulkCopyOptions
+    fullName: System.Data.SqlClient.SqlBulkCopyOptions
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+  isExternal: true
+  name: SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions, String)
+  nameWithType: IDatabaseAccess.SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions, String)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions, System.String)
+  nameWithType.vb: IDatabaseAccess.SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions, String)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions, System.String)
+  name.vb: SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions, String)
+  spec.csharp:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+    name: SqlServerBulkInsert<T>
+    nameWithType: IDatabaseAccess.SqlServerBulkInsert<T>
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Data.SqlClient.SqlBulkCopyOptions
+    name: SqlBulkCopyOptions
+    nameWithType: SqlBulkCopyOptions
+    fullName: System.Data.SqlClient.SqlBulkCopyOptions
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+    name: SqlServerBulkInsert(Of T)
+    nameWithType: IDatabaseAccess.SqlServerBulkInsert(Of T)
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Data.SqlClient.SqlBulkCopyOptions
+    name: SqlBulkCopyOptions
+    nameWithType: SqlBulkCopyOptions
+    fullName: System.Data.SqlClient.SqlBulkCopyOptions
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{{T}},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+  parent: DotNetHelper.Database.Interface.IDatabaseAccess
+  definition: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+  name: SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions, String, Int32)
+  nameWithType: IDatabaseAccess.SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions, String, Int32)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions, System.String, System.Int32)
+  nameWithType.vb: IDatabaseAccess.SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions, String, Int32)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions, System.String, System.Int32)
+  name.vb: SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions, String, Int32)
+  spec.csharp:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+    name: SqlServerBulkInsert<T>
+    nameWithType: IDatabaseAccess.SqlServerBulkInsert<T>
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Data.SqlClient.SqlBulkCopyOptions
+    name: SqlBulkCopyOptions
+    nameWithType: SqlBulkCopyOptions
+    fullName: System.Data.SqlClient.SqlBulkCopyOptions
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+    name: SqlServerBulkInsert(Of T)
+    nameWithType: IDatabaseAccess.SqlServerBulkInsert(Of T)
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Data.SqlClient.SqlBulkCopyOptions
+    name: SqlBulkCopyOptions
+    nameWithType: SqlBulkCopyOptions
+    fullName: System.Data.SqlClient.SqlBulkCopyOptions
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+  isExternal: true
+  name: SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions, String, Int32)
+  nameWithType: IDatabaseAccess.SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions, String, Int32)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions, System.String, System.Int32)
+  nameWithType.vb: IDatabaseAccess.SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions, String, Int32)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions, System.String, System.Int32)
+  name.vb: SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions, String, Int32)
+  spec.csharp:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+    name: SqlServerBulkInsert<T>
+    nameWithType: IDatabaseAccess.SqlServerBulkInsert<T>
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Data.SqlClient.SqlBulkCopyOptions
+    name: SqlBulkCopyOptions
+    nameWithType: SqlBulkCopyOptions
+    fullName: System.Data.SqlClient.SqlBulkCopyOptions
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+    name: SqlServerBulkInsert(Of T)
+    nameWithType: IDatabaseAccess.SqlServerBulkInsert(Of T)
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Data.SqlClient.SqlBulkCopyOptions
+    name: SqlBulkCopyOptions
+    nameWithType: SqlBulkCopyOptions
+    fullName: System.Data.SqlClient.SqlBulkCopyOptions
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsertAsync*
+  commentId: Overload:DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsertAsync
+  name: SqlServerBulkInsertAsync
+  nameWithType: DatabaseAccess<TDbConnection>.SqlServerBulkInsertAsync
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<TDbConnection>.SqlServerBulkInsertAsync
+  nameWithType.vb: DatabaseAccess(Of TDbConnection).SqlServerBulkInsertAsync
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).SqlServerBulkInsertAsync
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{{T}},System.Data.SqlClient.SqlBulkCopyOptions)
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+  parent: DotNetHelper.Database.Interface.IDatabaseAccess
+  definition: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+  name: SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions)
+  nameWithType: IDatabaseAccess.SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions)
+  nameWithType.vb: IDatabaseAccess.SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions)
+  name.vb: SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions)
+  spec.csharp:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+    name: SqlServerBulkInsertAsync<T>
+    nameWithType: IDatabaseAccess.SqlServerBulkInsertAsync<T>
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Data.SqlClient.SqlBulkCopyOptions
+    name: SqlBulkCopyOptions
+    nameWithType: SqlBulkCopyOptions
+    fullName: System.Data.SqlClient.SqlBulkCopyOptions
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+    name: SqlServerBulkInsertAsync(Of T)
+    nameWithType: IDatabaseAccess.SqlServerBulkInsertAsync(Of T)
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Data.SqlClient.SqlBulkCopyOptions
+    name: SqlBulkCopyOptions
+    nameWithType: SqlBulkCopyOptions
+    fullName: System.Data.SqlClient.SqlBulkCopyOptions
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task{System.Int64}
+  commentId: T:System.Threading.Tasks.Task{System.Int64}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Int64>
+  nameWithType: Task<Int64>
+  fullName: System.Threading.Tasks.Task<System.Int64>
+  nameWithType.vb: Task(Of Int64)
+  fullName.vb: System.Threading.Tasks.Task(Of System.Int64)
+  name.vb: Task(Of Int64)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+  isExternal: true
+  name: SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions)
+  nameWithType: IDatabaseAccess.SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions)
+  nameWithType.vb: IDatabaseAccess.SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions)
+  name.vb: SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions)
+  spec.csharp:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+    name: SqlServerBulkInsertAsync<T>
+    nameWithType: IDatabaseAccess.SqlServerBulkInsertAsync<T>
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Data.SqlClient.SqlBulkCopyOptions
+    name: SqlBulkCopyOptions
+    nameWithType: SqlBulkCopyOptions
+    fullName: System.Data.SqlClient.SqlBulkCopyOptions
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+    name: SqlServerBulkInsertAsync(Of T)
+    nameWithType: IDatabaseAccess.SqlServerBulkInsertAsync(Of T)
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Data.SqlClient.SqlBulkCopyOptions
+    name: SqlBulkCopyOptions
+    nameWithType: SqlBulkCopyOptions
+    fullName: System.Data.SqlClient.SqlBulkCopyOptions
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{{T}},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+  parent: DotNetHelper.Database.Interface.IDatabaseAccess
+  definition: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+  name: SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions, String)
+  nameWithType: IDatabaseAccess.SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions, String)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions, System.String)
+  nameWithType.vb: IDatabaseAccess.SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions, String)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions, System.String)
+  name.vb: SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions, String)
+  spec.csharp:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+    name: SqlServerBulkInsertAsync<T>
+    nameWithType: IDatabaseAccess.SqlServerBulkInsertAsync<T>
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Data.SqlClient.SqlBulkCopyOptions
+    name: SqlBulkCopyOptions
+    nameWithType: SqlBulkCopyOptions
+    fullName: System.Data.SqlClient.SqlBulkCopyOptions
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+    name: SqlServerBulkInsertAsync(Of T)
+    nameWithType: IDatabaseAccess.SqlServerBulkInsertAsync(Of T)
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Data.SqlClient.SqlBulkCopyOptions
+    name: SqlBulkCopyOptions
+    nameWithType: SqlBulkCopyOptions
+    fullName: System.Data.SqlClient.SqlBulkCopyOptions
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+  isExternal: true
+  name: SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions, String)
+  nameWithType: IDatabaseAccess.SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions, String)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions, System.String)
+  nameWithType.vb: IDatabaseAccess.SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions, String)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions, System.String)
+  name.vb: SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions, String)
+  spec.csharp:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+    name: SqlServerBulkInsertAsync<T>
+    nameWithType: IDatabaseAccess.SqlServerBulkInsertAsync<T>
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Data.SqlClient.SqlBulkCopyOptions
+    name: SqlBulkCopyOptions
+    nameWithType: SqlBulkCopyOptions
+    fullName: System.Data.SqlClient.SqlBulkCopyOptions
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+    name: SqlServerBulkInsertAsync(Of T)
+    nameWithType: IDatabaseAccess.SqlServerBulkInsertAsync(Of T)
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Data.SqlClient.SqlBulkCopyOptions
+    name: SqlBulkCopyOptions
+    nameWithType: SqlBulkCopyOptions
+    fullName: System.Data.SqlClient.SqlBulkCopyOptions
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{{T}},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+  parent: DotNetHelper.Database.Interface.IDatabaseAccess
+  definition: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+  name: SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions, String, Int32)
+  nameWithType: IDatabaseAccess.SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions, String, Int32)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions, System.String, System.Int32)
+  nameWithType.vb: IDatabaseAccess.SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions, String, Int32)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions, System.String, System.Int32)
+  name.vb: SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions, String, Int32)
+  spec.csharp:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+    name: SqlServerBulkInsertAsync<T>
+    nameWithType: IDatabaseAccess.SqlServerBulkInsertAsync<T>
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Data.SqlClient.SqlBulkCopyOptions
+    name: SqlBulkCopyOptions
+    nameWithType: SqlBulkCopyOptions
+    fullName: System.Data.SqlClient.SqlBulkCopyOptions
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+    name: SqlServerBulkInsertAsync(Of T)
+    nameWithType: IDatabaseAccess.SqlServerBulkInsertAsync(Of T)
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Data.SqlClient.SqlBulkCopyOptions
+    name: SqlBulkCopyOptions
+    nameWithType: SqlBulkCopyOptions
+    fullName: System.Data.SqlClient.SqlBulkCopyOptions
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+  isExternal: true
+  name: SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions, String, Int32)
+  nameWithType: IDatabaseAccess.SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions, String, Int32)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions, System.String, System.Int32)
+  nameWithType.vb: IDatabaseAccess.SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions, String, Int32)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions, System.String, System.Int32)
+  name.vb: SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions, String, Int32)
+  spec.csharp:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+    name: SqlServerBulkInsertAsync<T>
+    nameWithType: IDatabaseAccess.SqlServerBulkInsertAsync<T>
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Data.SqlClient.SqlBulkCopyOptions
+    name: SqlBulkCopyOptions
+    nameWithType: SqlBulkCopyOptions
+    fullName: System.Data.SqlClient.SqlBulkCopyOptions
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+    name: SqlServerBulkInsertAsync(Of T)
+    nameWithType: IDatabaseAccess.SqlServerBulkInsertAsync(Of T)
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Data.SqlClient.SqlBulkCopyOptions
+    name: SqlBulkCopyOptions
+    nameWithType: SqlBulkCopyOptions
+    fullName: System.Data.SqlClient.SqlBulkCopyOptions
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
   - name: )
     nameWithType: )
     fullName: )

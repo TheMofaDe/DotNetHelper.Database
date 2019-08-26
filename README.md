@@ -36,55 +36,12 @@
 
 
 
-## If you wish to see documentation thats more in depth go here
-
-
-
 
 ## Example 
 
-##### For this example my table in the database will look like this
-```sql 
-CREATE TABLE [master].[dbo].[Employee](
-	[IdentityField] [int] NOT NULL IDENTITY (1,1) PRIMARY KEY,
-	[FirstName] [varchar](400) NOT NULL,
-	[LastName] [varchar](400) NOT NULL,
-	[DOB] DateTime NOT NULL,
-	[CreatedAt] DateTime NOT NULL DEFAULT GETDATE(),
-	[FavoriteColor] [varchar](400)  NULL
-);
-```
-
-##### My employee class will look like this 
-```csharp
-public class Employee
-    {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)] // Marks this property as an identity field 
-        [Key]  // marks this property as a primary key... 
-        public int IdentityField { get; set; }
-        [NotMapped] // This property will be ignore when performing database actions
-        public string FullName => FirstName + " " + LastName;
-        [SqlColumn(MapTo = "DOB")]  // This property is actually name DOB in the database
-        public DateTime DateOfBirth { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string FavoriteColor { get; set; }
-        public DateTime CreatedAt { get; } = new DateTime();
-    }
-```
-
-
-
-
 ##### How to insert an employee using a generic class
 ```csharp
- var employee = new Employee() {
-  DateOfBirth = DateTime.Today
-, FavoriteColor = "Blue"
-, FirstName = "Joe" 
-, LastName = "Generic"
-}; 
- var dbAccess = new DatabaseAccess<SqlConnection>(DataBaseType.SqlServer, "ConnectionString");
+ var dbAccess = new DatabaseAccess<SqlConnection>("ConnectionString");
  var recordAffected = dbAccess.Execute(employee, ActionType.Insert); // ActionType is a enum of Insert,Update,Delete,Upsert
 ```   
 ##### How to insert an employee using a dynamic object
@@ -93,16 +50,23 @@ dynamic dyn = new ExpandoObject();
         dyn.FirstName = "Joe Sister";
         dyn.LastName = "Dynamic";
         dyn.DOB = DateTime.Today;
-var dbAccess = new DatabaseAccess<SqlConnection>(DataBaseType.SqlServer, "ConnectionString"); // Specify database provider to ensure syntax is correct
-var recordAffected = dbAccess.Execute(dyn, ActionType.Insert,"Employee"); // you need to specify the table name when using dynamic objects
+var dbAccess = new DatabaseAccess<SqlConnection>("ConnectionString");
+var recordAffected = dbAccess.Execute(dyn, ActionType.Insert,"TableName"); // you need to specify the table name when using dynamic objects
 ```
 ##### How to insert an employee using a generic class
 ```csharp
 var anonymousEmployee = new {FirstName = "Joe Brother", DOB = DateTime.Today.AddDays(-1) , LastName = "Anonymous"}; 
-var dbAccess = new DatabaseAccess<SqlConnection>(DataBaseType.SqlServer, "ConnectionString"); // Specify database provider to ensure syntax is correct
-var recordAffected = dbAccess.Execute(anonymousEmployee, ActionType.Insert,"Employee"); // you need to specify the table name when using anonymous objects
+var dbAccess = new DatabaseAccess<SqlConnection>("ConnectionString");
+var recordAffected = dbAccess.Execute(anonymousEmployee, ActionType.Insert,"TableName"); // you need to specify the table name when using anonymous objects
 ```
-     
+
+##### How to use bulk copy with a list of objects
+~~~csharp
+var numberOfRowCopied = DatabaseAccess.SqlServerBulkInsert(listofObjects, SqlBulkCopyOptions.Default);```
+~~~        
+
+## If you wish to see documentation thats more in depth go [**here**][Docs]
+ 
 
 ##### Finish Product 
 ![alt text][logo]

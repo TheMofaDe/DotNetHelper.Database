@@ -533,7 +533,7 @@ namespace DotNetHelper.Database.DataSource
         public int Execute<T>(T instance, ActionType actionType, string tableName, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer) where T : class
         {
             // var sql = (type.IsTypeAnonymousType() || type.IsTypeDynamic()) ? ObjectToSql.BuildQuery(actionType,instance, tableName ?? new SqlTable(DatabaseType, type).FullNameWithBrackets) : ObjectToSql.BuildQuery<T>( actionType, tableName ?? new SqlTable(DatabaseType, type).FullNameWithBrackets);
-            var sql = ObjectToSql.BuildQuery(actionType, instance, tableName ?? new SqlTable(DatabaseType, instance.GetType()).FullNameWithBrackets);
+            var sql = ObjectToSql.BuildQuery(actionType, instance, tableName);
             var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, xmlSerializer, jsonSerializer, csvSerializer);
             return ExecuteNonQuery(sql, CommandType.Text, parameters);
         }
@@ -552,7 +552,7 @@ namespace DotNetHelper.Database.DataSource
         /// <returns></returns>
         public int Execute<T>(T instance, ActionType actionType, string tableName, params Expression<Func<T, object>>[] keyFields) where T : class
         {
-            var sql = ObjectToSql.BuildQuery(actionType, tableName ?? new SqlTable(DatabaseType, instance.GetType()).FullNameWithBrackets, keyFields);
+            var sql = ObjectToSql.BuildQuery(actionType, tableName, keyFields);
             var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, null, null, null);
             return ExecuteNonQuery(sql, CommandType.Text, parameters);
         }
@@ -572,7 +572,7 @@ namespace DotNetHelper.Database.DataSource
         /// <returns></returns>
         public int Execute<T>(T instance, ActionType actionType, string tableName, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer, params Expression<Func<T, object>>[] keyFields) where T : class
         {
-            var sql = ObjectToSql.BuildQuery(actionType, tableName ?? new SqlTable(DatabaseType, instance.GetType()).FullNameWithBrackets, keyFields);
+            var sql = ObjectToSql.BuildQuery(actionType, tableName, keyFields);
             var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, xmlSerializer, jsonSerializer, csvSerializer);
             return ExecuteNonQuery(sql, CommandType.Text, parameters);
         }
@@ -610,8 +610,8 @@ namespace DotNetHelper.Database.DataSource
             , Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer
             , params Expression<Func<T, object>>[] outputFields) where T : class
         {
-            var sqlTable = new SqlTable(DatabaseType, instance.GetType());
-            var sql = ObjectToSql.BuildQueryWithOutputs(actionType, sqlTable.FullNameWithBrackets, outputFields);
+
+            var sql = ObjectToSql.BuildQueryWithOutputs(actionType, null, outputFields);
             var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, xmlSerializer, jsonSerializer, csvSerializer);
             return GetDataReader(sql, CommandType.Text, parameters).MapTo<T>(xmlDeserializer, jsonDeserializer, csvDeserializer);
         }
@@ -626,8 +626,8 @@ namespace DotNetHelper.Database.DataSource
             , Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer
             , params Expression<Func<T, object>>[] outputFields) where T : class
         {
-            var sqlTable = new SqlTable(DatabaseType, instance.GetType());
-            var sql = ObjectToSql.BuildQueryWithOutputs(actionType, sqlTable.FullNameWithBrackets, outputFields);
+
+            var sql = ObjectToSql.BuildQueryWithOutputs(actionType, null, outputFields);
             var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, xmlSerializer, jsonSerializer, csvSerializer);
             return GetDataReader(sql, CommandType.Text, parameters);
         }
@@ -643,7 +643,7 @@ namespace DotNetHelper.Database.DataSource
         /// <returns># of records inserted</returns>
         public long SqlServerBulkInsert<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions) where T : class
         {
-            return SqlServerBulkInsert(data, bulkCopyOptions,null);
+            return SqlServerBulkInsert(data, bulkCopyOptions, null);
         }
 
 
@@ -657,19 +657,19 @@ namespace DotNetHelper.Database.DataSource
         /// <returns># of records inserted</returns>
         public long SqlServerBulkInsert<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions, string tableName) where T : class
         {
-            return SqlServerBulkInsert(data, bulkCopyOptions, tableName,0);
+            return SqlServerBulkInsert(data, bulkCopyOptions, tableName, 0);
         }
 
         /// <summary>
-            /// Perform a SQLBulkCopy 
-            /// </summary>
-            /// <typeparam name="T"></typeparam>
-            /// <param name="data"></param>
-            /// <param name="bulkCopyOptions">bulk copy option</param>
-            /// <param name="tableName">table name to insert data into</param>
-            /// <param name="batchSize">The integer value of the BatchSize property, or zero if no value has been set.</param>
-            /// <returns># of records inserted</returns>
-            public long SqlServerBulkInsert<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions , string tableName , int batchSize ) where T : class
+        /// Perform a SQLBulkCopy 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="data"></param>
+        /// <param name="bulkCopyOptions">bulk copy option</param>
+        /// <param name="tableName">table name to insert data into</param>
+        /// <param name="batchSize">The integer value of the BatchSize property, or zero if no value has been set.</param>
+        /// <returns># of records inserted</returns>
+        public long SqlServerBulkInsert<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions, string tableName, int batchSize) where T : class
         {
             if (DatabaseType != DataBaseType.SqlServer)
                 throw new InvalidOperationException($"This library doesn't reference a {DatabaseType}BulkCopy so its not supported.");

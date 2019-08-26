@@ -264,9 +264,9 @@ namespace DotNetHelper.Database.Extension
 
         public static DataTable MapToDataTable<T>(this IEnumerable<T> source) where T : class
         {
-            return MapToDataTable(source,null);
+            return MapToDataTable(source, null);
         }
-        public static DataTable MapToDataTable<T>(this IEnumerable<T> source,string tableName) where T : class
+        public static DataTable MapToDataTable<T>(this IEnumerable<T> source, string tableName) where T : class
         {
             source.IsNullThrow(nameof(source));
             var dt = new DataTable();
@@ -289,7 +289,7 @@ namespace DotNetHelper.Database.Extension
             members.ForEach(delegate (MemberWrapper member)
             {
                 //An exception of type 'System.NotSupportedException' occurred in System.Data.dll but was not handled in user code
-               // DataSet does not support System.Nullable<>.
+                // DataSet does not support System.Nullable<>.
                 var dc = new DataColumn(member.GetNameFromCustomAttributeOrDefault(), member.Type.IsNullable().underlyingType); // datacolumn doesn't support nullable type so use underlying
 
                 if (member.IsMemberAnIdentityColumn())
@@ -309,7 +309,7 @@ namespace DotNetHelper.Database.Extension
                 dt.Rows.Add(row);
             });
 
-            dt.TableName = tableName ??  new SqlTable(DataBaseType.SqlServer, source.First().GetType()).TableName;
+            dt.TableName = tableName ?? new SqlTable(DataBaseType.SqlServer, source.First().GetType()).TableName;
             return dt;
         }
 

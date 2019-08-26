@@ -65,11 +65,11 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: IsNullable
     path: ../src/DotNetHelper.Database/Extension/TypeExtension.cs
-    startLine: 20
+    startLine: 21
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
-  summary: "\n\n"
+  summary: "\nreturns a tuple with the first value indicating if the specified type is a Nullable type and the second value indicating the underlyingtype\nif type is not nullable the underlyingType with be the specified type provided\n"
   example: []
   syntax:
     content: public static (bool isNullableT, Type underlyingType)IsNullable(this Type type)
@@ -110,17 +110,21 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: IsTypeDynamic
     path: ../src/DotNetHelper.Database/Extension/TypeExtension.cs
-    startLine: 31
+    startLine: 36
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
+  summary: "\nreturn true if the type is assignable form IDynamicMetaObjectProvider\n"
+  example: []
   syntax:
     content: public static bool IsTypeDynamic(this Type type)
     parameters:
     - id: type
       type: System.Type
+      description: ''
     return:
       type: System.Boolean
+      description: ''
     content.vb: >-
       <ExtensionAttribute>
 
@@ -151,17 +155,21 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: IsTypeAnonymousType
     path: ../src/DotNetHelper.Database/Extension/TypeExtension.cs
-    startLine: 36
+    startLine: 46
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
+  summary: "\nreturn true if type is anonymous\n"
+  example: []
   syntax:
     content: public static bool IsTypeAnonymousType(this Type type)
     parameters:
     - id: type
       type: System.Type
+      description: ''
     return:
       type: System.Boolean
+      description: ''
     content.vb: >-
       <ExtensionAttribute>
 

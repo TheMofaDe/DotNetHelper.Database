@@ -64,6 +64,19 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.Database.DatabaseAccessFactory.CommandTimeOut
   nameWithType: DatabaseAccessFactory.CommandTimeOut
+- uid: DotNetHelper.Database.DatabaseAccessFactory.ConnectionString
+  name: ConnectionString
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_ConnectionString
+  commentId: P:DotNetHelper.Database.DatabaseAccessFactory.ConnectionString
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.ConnectionString
+  nameWithType: DatabaseAccessFactory.ConnectionString
+- uid: DotNetHelper.Database.DatabaseAccessFactory.ConnectionString*
+  name: ConnectionString
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_ConnectionString_
+  commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.ConnectionString
+  isSpec: "True"
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.ConnectionString
+  nameWithType: DatabaseAccessFactory.ConnectionString
 - uid: DotNetHelper.Database.DatabaseAccessFactory.ConnectionTimeOut
   name: ConnectionTimeOut
   href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_ConnectionTimeOut
@@ -497,6 +510,74 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.Database.DatabaseAccessFactory.GetNewParameter
   nameWithType: DatabaseAccessFactory.GetNewParameter
+- uid: DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkInsert*
+  name: SqlServerBulkInsert
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_SqlServerBulkInsert_
+  commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkInsert
+  isSpec: "True"
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkInsert
+  nameWithType: DatabaseAccessFactory.SqlServerBulkInsert
+- uid: DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+  name: SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_SqlServerBulkInsert__1_System_Collections_Generic_List___0__System_Data_SqlClient_SqlBulkCopyOptions_
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+  name.vb: SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkInsert<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions)
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkInsert(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions)
+  nameWithType: DatabaseAccessFactory.SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions)
+  nameWithType.vb: DatabaseAccessFactory.SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions)
+- uid: DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+  name: SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions, String)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_SqlServerBulkInsert__1_System_Collections_Generic_List___0__System_Data_SqlClient_SqlBulkCopyOptions_System_String_
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+  name.vb: SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions, String)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkInsert<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions, System.String)
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkInsert(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions, System.String)
+  nameWithType: DatabaseAccessFactory.SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions, String)
+  nameWithType.vb: DatabaseAccessFactory.SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions, String)
+- uid: DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+  name: SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions, String, Int32)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_SqlServerBulkInsert__1_System_Collections_Generic_List___0__System_Data_SqlClient_SqlBulkCopyOptions_System_String_System_Int32_
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+  name.vb: SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions, String, Int32)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkInsert<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions, System.String, System.Int32)
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkInsert(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions, System.String, System.Int32)
+  nameWithType: DatabaseAccessFactory.SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions, String, Int32)
+  nameWithType.vb: DatabaseAccessFactory.SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions, String, Int32)
+- uid: DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkInsertAsync*
+  name: SqlServerBulkInsertAsync
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_SqlServerBulkInsertAsync_
+  commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkInsertAsync
+  isSpec: "True"
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkInsertAsync
+  nameWithType: DatabaseAccessFactory.SqlServerBulkInsertAsync
+- uid: DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+  name: SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_SqlServerBulkInsertAsync__1_System_Collections_Generic_List___0__System_Data_SqlClient_SqlBulkCopyOptions_
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+  name.vb: SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkInsertAsync<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions)
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkInsertAsync(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions)
+  nameWithType: DatabaseAccessFactory.SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions)
+  nameWithType.vb: DatabaseAccessFactory.SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions)
+- uid: DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+  name: SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions, String)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_SqlServerBulkInsertAsync__1_System_Collections_Generic_List___0__System_Data_SqlClient_SqlBulkCopyOptions_System_String_
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+  name.vb: SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions, String)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkInsertAsync<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions, System.String)
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkInsertAsync(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions, System.String)
+  nameWithType: DatabaseAccessFactory.SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions, String)
+  nameWithType.vb: DatabaseAccessFactory.SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions, String)
+- uid: DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+  name: SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions, String, Int32)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_SqlServerBulkInsertAsync__1_System_Collections_Generic_List___0__System_Data_SqlClient_SqlBulkCopyOptions_System_String_System_Int32_
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+  name.vb: SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions, String, Int32)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkInsertAsync<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions, System.String, System.Int32)
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkInsertAsync(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions, System.String, System.Int32)
+  nameWithType: DatabaseAccessFactory.SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions, String, Int32)
+  nameWithType.vb: DatabaseAccessFactory.SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions, String, Int32)
 - uid: DotNetHelper.Database.DataSource
   name: DotNetHelper.Database.DataSource
   href: api/DotNetHelper.Database.DataSource.html
@@ -536,6 +617,14 @@ references:
   fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).DatabaseAccess(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.String, System.TimeSpan, System.TimeSpan)
   nameWithType: DatabaseAccess<TDbConnection>.DatabaseAccess(DataBaseType, String, TimeSpan, TimeSpan)
   nameWithType.vb: DatabaseAccess(Of TDbConnection).DatabaseAccess(DataBaseType, String, TimeSpan, TimeSpan)
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.#ctor(System.String)
+  name: DatabaseAccess(String)
+  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-1.html#DotNetHelper_Database_DataSource_DatabaseAccess_1__ctor_System_String_
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`1.#ctor(System.String)
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<TDbConnection>.DatabaseAccess(System.String)
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).DatabaseAccess(System.String)
+  nameWithType: DatabaseAccess<TDbConnection>.DatabaseAccess(String)
+  nameWithType.vb: DatabaseAccess(Of TDbConnection).DatabaseAccess(String)
 - uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.#ctor*
   name: DatabaseAccess
   href: api/DotNetHelper.Database.DataSource.DatabaseAccess-1.html#DotNetHelper_Database_DataSource_DatabaseAccess_1__ctor_
@@ -579,6 +668,23 @@ references:
   fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).CommandTimeOut
   nameWithType: DatabaseAccess<TDbConnection>.CommandTimeOut
   nameWithType.vb: DatabaseAccess(Of TDbConnection).CommandTimeOut
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.ConnectionString
+  name: ConnectionString
+  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-1.html#DotNetHelper_Database_DataSource_DatabaseAccess_1_ConnectionString
+  commentId: P:DotNetHelper.Database.DataSource.DatabaseAccess`1.ConnectionString
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<TDbConnection>.ConnectionString
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).ConnectionString
+  nameWithType: DatabaseAccess<TDbConnection>.ConnectionString
+  nameWithType.vb: DatabaseAccess(Of TDbConnection).ConnectionString
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.ConnectionString*
+  name: ConnectionString
+  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-1.html#DotNetHelper_Database_DataSource_DatabaseAccess_1_ConnectionString_
+  commentId: Overload:DotNetHelper.Database.DataSource.DatabaseAccess`1.ConnectionString
+  isSpec: "True"
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<TDbConnection>.ConnectionString
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).ConnectionString
+  nameWithType: DatabaseAccess<TDbConnection>.ConnectionString
+  nameWithType.vb: DatabaseAccess(Of TDbConnection).ConnectionString
 - uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.ConnectionTimeOut
   name: ConnectionTimeOut
   href: api/DotNetHelper.Database.DataSource.DatabaseAccess-1.html#DotNetHelper_Database_DataSource_DatabaseAccess_1_ConnectionTimeOut
@@ -1055,63 +1161,78 @@ references:
   fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).GetNewParameter
   nameWithType: DatabaseAccess<TDbConnection>.GetNewParameter
   nameWithType.vb: DatabaseAccess(Of TDbConnection).GetNewParameter
-- uid: DotNetHelper.Database.EventHandler
-  name: DotNetHelper.Database.EventHandler
-  href: api/DotNetHelper.Database.EventHandler.html
-  commentId: N:DotNetHelper.Database.EventHandler
-  fullName: DotNetHelper.Database.EventHandler
-  nameWithType: DotNetHelper.Database.EventHandler
-- uid: DotNetHelper.Database.EventHandler.SqlExceptionEventArgs
-  name: SqlExceptionEventArgs
-  href: api/DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.html
-  commentId: T:DotNetHelper.Database.EventHandler.SqlExceptionEventArgs
-  fullName: DotNetHelper.Database.EventHandler.SqlExceptionEventArgs
-  nameWithType: SqlExceptionEventArgs
-- uid: DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.#ctor(System.Exception)
-  name: SqlExceptionEventArgs(Exception)
-  href: api/DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.html#DotNetHelper_Database_EventHandler_SqlExceptionEventArgs__ctor_System_Exception_
-  commentId: M:DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.#ctor(System.Exception)
-  fullName: DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.SqlExceptionEventArgs(System.Exception)
-  nameWithType: SqlExceptionEventArgs.SqlExceptionEventArgs(Exception)
-- uid: DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.#ctor(System.Exception,System.String)
-  name: SqlExceptionEventArgs(Exception, String)
-  href: api/DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.html#DotNetHelper_Database_EventHandler_SqlExceptionEventArgs__ctor_System_Exception_System_String_
-  commentId: M:DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.#ctor(System.Exception,System.String)
-  fullName: DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.SqlExceptionEventArgs(System.Exception, System.String)
-  nameWithType: SqlExceptionEventArgs.SqlExceptionEventArgs(Exception, String)
-- uid: DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.#ctor*
-  name: SqlExceptionEventArgs
-  href: api/DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.html#DotNetHelper_Database_EventHandler_SqlExceptionEventArgs__ctor_
-  commentId: Overload:DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.#ctor
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsert*
+  name: SqlServerBulkInsert
+  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-1.html#DotNetHelper_Database_DataSource_DatabaseAccess_1_SqlServerBulkInsert_
+  commentId: Overload:DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsert
   isSpec: "True"
-  fullName: DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.SqlExceptionEventArgs
-  nameWithType: SqlExceptionEventArgs.SqlExceptionEventArgs
-- uid: DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.Exception
-  name: Exception
-  href: api/DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.html#DotNetHelper_Database_EventHandler_SqlExceptionEventArgs_Exception
-  commentId: P:DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.Exception
-  fullName: DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.Exception
-  nameWithType: SqlExceptionEventArgs.Exception
-- uid: DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.Exception*
-  name: Exception
-  href: api/DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.html#DotNetHelper_Database_EventHandler_SqlExceptionEventArgs_Exception_
-  commentId: Overload:DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.Exception
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<TDbConnection>.SqlServerBulkInsert
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).SqlServerBulkInsert
+  nameWithType: DatabaseAccess<TDbConnection>.SqlServerBulkInsert
+  nameWithType.vb: DatabaseAccess(Of TDbConnection).SqlServerBulkInsert
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+  name: SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions)
+  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-1.html#DotNetHelper_Database_DataSource_DatabaseAccess_1_SqlServerBulkInsert__1_System_Collections_Generic_List___0__System_Data_SqlClient_SqlBulkCopyOptions_
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+  name.vb: SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions)
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<TDbConnection>.SqlServerBulkInsert<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions)
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).SqlServerBulkInsert(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions)
+  nameWithType: DatabaseAccess<TDbConnection>.SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions)
+  nameWithType.vb: DatabaseAccess(Of TDbConnection).SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions)
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+  name: SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions, String)
+  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-1.html#DotNetHelper_Database_DataSource_DatabaseAccess_1_SqlServerBulkInsert__1_System_Collections_Generic_List___0__System_Data_SqlClient_SqlBulkCopyOptions_System_String_
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+  name.vb: SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions, String)
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<TDbConnection>.SqlServerBulkInsert<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions, System.String)
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).SqlServerBulkInsert(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions, System.String)
+  nameWithType: DatabaseAccess<TDbConnection>.SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions, String)
+  nameWithType.vb: DatabaseAccess(Of TDbConnection).SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions, String)
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+  name: SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions, String, Int32)
+  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-1.html#DotNetHelper_Database_DataSource_DatabaseAccess_1_SqlServerBulkInsert__1_System_Collections_Generic_List___0__System_Data_SqlClient_SqlBulkCopyOptions_System_String_System_Int32_
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+  name.vb: SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions, String, Int32)
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<TDbConnection>.SqlServerBulkInsert<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions, System.String, System.Int32)
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).SqlServerBulkInsert(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions, System.String, System.Int32)
+  nameWithType: DatabaseAccess<TDbConnection>.SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions, String, Int32)
+  nameWithType.vb: DatabaseAccess(Of TDbConnection).SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions, String, Int32)
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsertAsync*
+  name: SqlServerBulkInsertAsync
+  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-1.html#DotNetHelper_Database_DataSource_DatabaseAccess_1_SqlServerBulkInsertAsync_
+  commentId: Overload:DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsertAsync
   isSpec: "True"
-  fullName: DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.Exception
-  nameWithType: SqlExceptionEventArgs.Exception
-- uid: DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.Sql
-  name: Sql
-  href: api/DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.html#DotNetHelper_Database_EventHandler_SqlExceptionEventArgs_Sql
-  commentId: P:DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.Sql
-  fullName: DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.Sql
-  nameWithType: SqlExceptionEventArgs.Sql
-- uid: DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.Sql*
-  name: Sql
-  href: api/DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.html#DotNetHelper_Database_EventHandler_SqlExceptionEventArgs_Sql_
-  commentId: Overload:DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.Sql
-  isSpec: "True"
-  fullName: DotNetHelper.Database.EventHandler.SqlExceptionEventArgs.Sql
-  nameWithType: SqlExceptionEventArgs.Sql
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<TDbConnection>.SqlServerBulkInsertAsync
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).SqlServerBulkInsertAsync
+  nameWithType: DatabaseAccess<TDbConnection>.SqlServerBulkInsertAsync
+  nameWithType.vb: DatabaseAccess(Of TDbConnection).SqlServerBulkInsertAsync
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+  name: SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions)
+  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-1.html#DotNetHelper_Database_DataSource_DatabaseAccess_1_SqlServerBulkInsertAsync__1_System_Collections_Generic_List___0__System_Data_SqlClient_SqlBulkCopyOptions_
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+  name.vb: SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions)
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<TDbConnection>.SqlServerBulkInsertAsync<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions)
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).SqlServerBulkInsertAsync(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions)
+  nameWithType: DatabaseAccess<TDbConnection>.SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions)
+  nameWithType.vb: DatabaseAccess(Of TDbConnection).SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions)
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+  name: SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions, String)
+  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-1.html#DotNetHelper_Database_DataSource_DatabaseAccess_1_SqlServerBulkInsertAsync__1_System_Collections_Generic_List___0__System_Data_SqlClient_SqlBulkCopyOptions_System_String_
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+  name.vb: SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions, String)
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<TDbConnection>.SqlServerBulkInsertAsync<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions, System.String)
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).SqlServerBulkInsertAsync(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions, System.String)
+  nameWithType: DatabaseAccess<TDbConnection>.SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions, String)
+  nameWithType.vb: DatabaseAccess(Of TDbConnection).SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions, String)
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+  name: SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions, String, Int32)
+  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-1.html#DotNetHelper_Database_DataSource_DatabaseAccess_1_SqlServerBulkInsertAsync__1_System_Collections_Generic_List___0__System_Data_SqlClient_SqlBulkCopyOptions_System_String_System_Int32_
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`1.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+  name.vb: SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions, String, Int32)
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<TDbConnection>.SqlServerBulkInsertAsync<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions, System.String, System.Int32)
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).SqlServerBulkInsertAsync(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions, System.String, System.Int32)
+  nameWithType: DatabaseAccess<TDbConnection>.SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions, String, Int32)
+  nameWithType.vb: DatabaseAccess(Of TDbConnection).SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions, String, Int32)
 - uid: DotNetHelper.Database.Extension
   name: DotNetHelper.Database.Extension
   href: api/DotNetHelper.Database.Extension.html
@@ -1210,6 +1331,15 @@ references:
   fullName.vb: DotNetHelper.Database.Extension.ExtDataReader.MapToDataTable(Of T)(System.Collections.Generic.IEnumerable(Of T))
   nameWithType: ExtDataReader.MapToDataTable<T>(IEnumerable<T>)
   nameWithType.vb: ExtDataReader.MapToDataTable(Of T)(IEnumerable(Of T))
+- uid: DotNetHelper.Database.Extension.ExtDataReader.MapToDataTable``1(System.Collections.Generic.IEnumerable{``0},System.String)
+  name: MapToDataTable<T>(IEnumerable<T>, String)
+  href: api/DotNetHelper.Database.Extension.ExtDataReader.html#DotNetHelper_Database_Extension_ExtDataReader_MapToDataTable__1_System_Collections_Generic_IEnumerable___0__System_String_
+  commentId: M:DotNetHelper.Database.Extension.ExtDataReader.MapToDataTable``1(System.Collections.Generic.IEnumerable{``0},System.String)
+  name.vb: MapToDataTable(Of T)(IEnumerable(Of T), String)
+  fullName: DotNetHelper.Database.Extension.ExtDataReader.MapToDataTable<T>(System.Collections.Generic.IEnumerable<T>, System.String)
+  fullName.vb: DotNetHelper.Database.Extension.ExtDataReader.MapToDataTable(Of T)(System.Collections.Generic.IEnumerable(Of T), System.String)
+  nameWithType: ExtDataReader.MapToDataTable<T>(IEnumerable<T>, String)
+  nameWithType.vb: ExtDataReader.MapToDataTable(Of T)(IEnumerable(Of T), String)
 - uid: DotNetHelper.Database.Extension.ExtDataReader.MapToList*
   name: MapToList
   href: api/DotNetHelper.Database.Extension.ExtDataReader.html#DotNetHelper_Database_Extension_ExtDataReader_MapToList_
@@ -1432,6 +1562,19 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.Database.Interface.IDatabaseAccess.CommandTimeOut
   nameWithType: IDatabaseAccess.CommandTimeOut
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.ConnectionString
+  name: ConnectionString
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_ConnectionString
+  commentId: P:DotNetHelper.Database.Interface.IDatabaseAccess.ConnectionString
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.ConnectionString
+  nameWithType: IDatabaseAccess.ConnectionString
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.ConnectionString*
+  name: ConnectionString
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_ConnectionString_
+  commentId: Overload:DotNetHelper.Database.Interface.IDatabaseAccess.ConnectionString
+  isSpec: "True"
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.ConnectionString
+  nameWithType: IDatabaseAccess.ConnectionString
 - uid: DotNetHelper.Database.Interface.IDatabaseAccess.ConnectionTimeOut
   name: ConnectionTimeOut
   href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_ConnectionTimeOut
@@ -1762,297 +1905,87 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewCommandAndTransaction
   nameWithType: IDatabaseAccess.GetNewCommandAndTransaction
-- uid: DotNetHelper.Database.Models
-  name: DotNetHelper.Database.Models
-  href: api/DotNetHelper.Database.Models.html
-  commentId: N:DotNetHelper.Database.Models
-  fullName: DotNetHelper.Database.Models
-  nameWithType: DotNetHelper.Database.Models
-- uid: DotNetHelper.Database.Models.FullQueryBucketEventArgs
-  name: FullQueryBucketEventArgs
-  href: api/DotNetHelper.Database.Models.FullQueryBucketEventArgs.html
-  commentId: T:DotNetHelper.Database.Models.FullQueryBucketEventArgs
-  fullName: DotNetHelper.Database.Models.FullQueryBucketEventArgs
-  nameWithType: FullQueryBucketEventArgs
-- uid: DotNetHelper.Database.Models.FullQueryBucketEventArgs.#ctor(System.Collections.Generic.List{DotNetHelper.Database.Models.QueryBucket})
-  name: FullQueryBucketEventArgs(List<QueryBucket>)
-  href: api/DotNetHelper.Database.Models.FullQueryBucketEventArgs.html#DotNetHelper_Database_Models_FullQueryBucketEventArgs__ctor_System_Collections_Generic_List_DotNetHelper_Database_Models_QueryBucket__
-  commentId: M:DotNetHelper.Database.Models.FullQueryBucketEventArgs.#ctor(System.Collections.Generic.List{DotNetHelper.Database.Models.QueryBucket})
-  name.vb: FullQueryBucketEventArgs(List(Of QueryBucket))
-  fullName: DotNetHelper.Database.Models.FullQueryBucketEventArgs.FullQueryBucketEventArgs(System.Collections.Generic.List<DotNetHelper.Database.Models.QueryBucket>)
-  fullName.vb: DotNetHelper.Database.Models.FullQueryBucketEventArgs.FullQueryBucketEventArgs(System.Collections.Generic.List(Of DotNetHelper.Database.Models.QueryBucket))
-  nameWithType: FullQueryBucketEventArgs.FullQueryBucketEventArgs(List<QueryBucket>)
-  nameWithType.vb: FullQueryBucketEventArgs.FullQueryBucketEventArgs(List(Of QueryBucket))
-- uid: DotNetHelper.Database.Models.FullQueryBucketEventArgs.#ctor*
-  name: FullQueryBucketEventArgs
-  href: api/DotNetHelper.Database.Models.FullQueryBucketEventArgs.html#DotNetHelper_Database_Models_FullQueryBucketEventArgs__ctor_
-  commentId: Overload:DotNetHelper.Database.Models.FullQueryBucketEventArgs.#ctor
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(System.String,System.Object)
+  name: GetNewParameter(String, Object)
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_GetNewParameter_System_String_System_Object_
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(System.String,System.Object)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(System.String, System.Object)
+  nameWithType: IDatabaseAccess.GetNewParameter(String, Object)
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter*
+  name: GetNewParameter
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_GetNewParameter_
+  commentId: Overload:DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter
   isSpec: "True"
-  fullName: DotNetHelper.Database.Models.FullQueryBucketEventArgs.FullQueryBucketEventArgs
-  nameWithType: FullQueryBucketEventArgs.FullQueryBucketEventArgs
-- uid: DotNetHelper.Database.Models.FullQueryBucketEventArgs.BucketOfQueries
-  name: BucketOfQueries
-  href: api/DotNetHelper.Database.Models.FullQueryBucketEventArgs.html#DotNetHelper_Database_Models_FullQueryBucketEventArgs_BucketOfQueries
-  commentId: P:DotNetHelper.Database.Models.FullQueryBucketEventArgs.BucketOfQueries
-  fullName: DotNetHelper.Database.Models.FullQueryBucketEventArgs.BucketOfQueries
-  nameWithType: FullQueryBucketEventArgs.BucketOfQueries
-- uid: DotNetHelper.Database.Models.FullQueryBucketEventArgs.BucketOfQueries*
-  name: BucketOfQueries
-  href: api/DotNetHelper.Database.Models.FullQueryBucketEventArgs.html#DotNetHelper_Database_Models_FullQueryBucketEventArgs_BucketOfQueries_
-  commentId: Overload:DotNetHelper.Database.Models.FullQueryBucketEventArgs.BucketOfQueries
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter
+  nameWithType: IDatabaseAccess.GetNewParameter
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert*
+  name: SqlServerBulkInsert
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_SqlServerBulkInsert_
+  commentId: Overload:DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert
   isSpec: "True"
-  fullName: DotNetHelper.Database.Models.FullQueryBucketEventArgs.BucketOfQueries
-  nameWithType: FullQueryBucketEventArgs.BucketOfQueries
-- uid: DotNetHelper.Database.Models.QueryBucket
-  name: QueryBucket
-  href: api/DotNetHelper.Database.Models.QueryBucket.html
-  commentId: T:DotNetHelper.Database.Models.QueryBucket
-  fullName: DotNetHelper.Database.Models.QueryBucket
-  nameWithType: QueryBucket
-- uid: DotNetHelper.Database.Models.QueryBucket.ConnectionDisposeTime
-  name: ConnectionDisposeTime
-  href: api/DotNetHelper.Database.Models.QueryBucket.html#DotNetHelper_Database_Models_QueryBucket_ConnectionDisposeTime
-  commentId: P:DotNetHelper.Database.Models.QueryBucket.ConnectionDisposeTime
-  fullName: DotNetHelper.Database.Models.QueryBucket.ConnectionDisposeTime
-  nameWithType: QueryBucket.ConnectionDisposeTime
-- uid: DotNetHelper.Database.Models.QueryBucket.ConnectionDisposeTime*
-  name: ConnectionDisposeTime
-  href: api/DotNetHelper.Database.Models.QueryBucket.html#DotNetHelper_Database_Models_QueryBucket_ConnectionDisposeTime_
-  commentId: Overload:DotNetHelper.Database.Models.QueryBucket.ConnectionDisposeTime
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert
+  nameWithType: IDatabaseAccess.SqlServerBulkInsert
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+  name: SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions)
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_SqlServerBulkInsert__1_System_Collections_Generic_List___0__System_Data_SqlClient_SqlBulkCopyOptions_
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+  name.vb: SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions)
+  nameWithType: IDatabaseAccess.SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions)
+  nameWithType.vb: IDatabaseAccess.SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions)
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+  name: SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions, String)
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_SqlServerBulkInsert__1_System_Collections_Generic_List___0__System_Data_SqlClient_SqlBulkCopyOptions_System_String_
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+  name.vb: SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions, String)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions, System.String)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions, System.String)
+  nameWithType: IDatabaseAccess.SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions, String)
+  nameWithType.vb: IDatabaseAccess.SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions, String)
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+  name: SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions, String, Int32)
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_SqlServerBulkInsert__1_System_Collections_Generic_List___0__System_Data_SqlClient_SqlBulkCopyOptions_System_String_System_Int32_
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+  name.vb: SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions, String, Int32)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions, System.String, System.Int32)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsert(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions, System.String, System.Int32)
+  nameWithType: IDatabaseAccess.SqlServerBulkInsert<T>(List<T>, SqlBulkCopyOptions, String, Int32)
+  nameWithType.vb: IDatabaseAccess.SqlServerBulkInsert(Of T)(List(Of T), SqlBulkCopyOptions, String, Int32)
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync*
+  name: SqlServerBulkInsertAsync
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_SqlServerBulkInsertAsync_
+  commentId: Overload:DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync
   isSpec: "True"
-  fullName: DotNetHelper.Database.Models.QueryBucket.ConnectionDisposeTime
-  nameWithType: QueryBucket.ConnectionDisposeTime
-- uid: DotNetHelper.Database.Models.QueryBucket.ConnectionStartTime
-  name: ConnectionStartTime
-  href: api/DotNetHelper.Database.Models.QueryBucket.html#DotNetHelper_Database_Models_QueryBucket_ConnectionStartTime
-  commentId: P:DotNetHelper.Database.Models.QueryBucket.ConnectionStartTime
-  fullName: DotNetHelper.Database.Models.QueryBucket.ConnectionStartTime
-  nameWithType: QueryBucket.ConnectionStartTime
-- uid: DotNetHelper.Database.Models.QueryBucket.ConnectionStartTime*
-  name: ConnectionStartTime
-  href: api/DotNetHelper.Database.Models.QueryBucket.html#DotNetHelper_Database_Models_QueryBucket_ConnectionStartTime_
-  commentId: Overload:DotNetHelper.Database.Models.QueryBucket.ConnectionStartTime
-  isSpec: "True"
-  fullName: DotNetHelper.Database.Models.QueryBucket.ConnectionStartTime
-  nameWithType: QueryBucket.ConnectionStartTime
-- uid: DotNetHelper.Database.Models.QueryBucket.DatabaseType
-  name: DatabaseType
-  href: api/DotNetHelper.Database.Models.QueryBucket.html#DotNetHelper_Database_Models_QueryBucket_DatabaseType
-  commentId: P:DotNetHelper.Database.Models.QueryBucket.DatabaseType
-  fullName: DotNetHelper.Database.Models.QueryBucket.DatabaseType
-  nameWithType: QueryBucket.DatabaseType
-- uid: DotNetHelper.Database.Models.QueryBucket.DatabaseType*
-  name: DatabaseType
-  href: api/DotNetHelper.Database.Models.QueryBucket.html#DotNetHelper_Database_Models_QueryBucket_DatabaseType_
-  commentId: Overload:DotNetHelper.Database.Models.QueryBucket.DatabaseType
-  isSpec: "True"
-  fullName: DotNetHelper.Database.Models.QueryBucket.DatabaseType
-  nameWithType: QueryBucket.DatabaseType
-- uid: DotNetHelper.Database.Models.QueryBucket.ExecutedSuccessfully
-  name: ExecutedSuccessfully
-  href: api/DotNetHelper.Database.Models.QueryBucket.html#DotNetHelper_Database_Models_QueryBucket_ExecutedSuccessfully
-  commentId: P:DotNetHelper.Database.Models.QueryBucket.ExecutedSuccessfully
-  fullName: DotNetHelper.Database.Models.QueryBucket.ExecutedSuccessfully
-  nameWithType: QueryBucket.ExecutedSuccessfully
-- uid: DotNetHelper.Database.Models.QueryBucket.ExecutedSuccessfully*
-  name: ExecutedSuccessfully
-  href: api/DotNetHelper.Database.Models.QueryBucket.html#DotNetHelper_Database_Models_QueryBucket_ExecutedSuccessfully_
-  commentId: Overload:DotNetHelper.Database.Models.QueryBucket.ExecutedSuccessfully
-  isSpec: "True"
-  fullName: DotNetHelper.Database.Models.QueryBucket.ExecutedSuccessfully
-  nameWithType: QueryBucket.ExecutedSuccessfully
-- uid: DotNetHelper.Database.Models.QueryBucket.Query
-  name: Query
-  href: api/DotNetHelper.Database.Models.QueryBucket.html#DotNetHelper_Database_Models_QueryBucket_Query
-  commentId: P:DotNetHelper.Database.Models.QueryBucket.Query
-  fullName: DotNetHelper.Database.Models.QueryBucket.Query
-  nameWithType: QueryBucket.Query
-- uid: DotNetHelper.Database.Models.QueryBucket.Query*
-  name: Query
-  href: api/DotNetHelper.Database.Models.QueryBucket.html#DotNetHelper_Database_Models_QueryBucket_Query_
-  commentId: Overload:DotNetHelper.Database.Models.QueryBucket.Query
-  isSpec: "True"
-  fullName: DotNetHelper.Database.Models.QueryBucket.Query
-  nameWithType: QueryBucket.Query
-- uid: DotNetHelper.Database.Models.QueryBucket.ReadableQuery
-  name: ReadableQuery
-  href: api/DotNetHelper.Database.Models.QueryBucket.html#DotNetHelper_Database_Models_QueryBucket_ReadableQuery
-  commentId: P:DotNetHelper.Database.Models.QueryBucket.ReadableQuery
-  fullName: DotNetHelper.Database.Models.QueryBucket.ReadableQuery
-  nameWithType: QueryBucket.ReadableQuery
-- uid: DotNetHelper.Database.Models.QueryBucket.ReadableQuery*
-  name: ReadableQuery
-  href: api/DotNetHelper.Database.Models.QueryBucket.html#DotNetHelper_Database_Models_QueryBucket_ReadableQuery_
-  commentId: Overload:DotNetHelper.Database.Models.QueryBucket.ReadableQuery
-  isSpec: "True"
-  fullName: DotNetHelper.Database.Models.QueryBucket.ReadableQuery
-  nameWithType: QueryBucket.ReadableQuery
-- uid: DotNetHelper.Database.Models.QueryBucket.Server
-  name: Server
-  href: api/DotNetHelper.Database.Models.QueryBucket.html#DotNetHelper_Database_Models_QueryBucket_Server
-  commentId: P:DotNetHelper.Database.Models.QueryBucket.Server
-  fullName: DotNetHelper.Database.Models.QueryBucket.Server
-  nameWithType: QueryBucket.Server
-- uid: DotNetHelper.Database.Models.QueryBucket.Server*
-  name: Server
-  href: api/DotNetHelper.Database.Models.QueryBucket.html#DotNetHelper_Database_Models_QueryBucket_Server_
-  commentId: Overload:DotNetHelper.Database.Models.QueryBucket.Server
-  isSpec: "True"
-  fullName: DotNetHelper.Database.Models.QueryBucket.Server
-  nameWithType: QueryBucket.Server
-- uid: DotNetHelper.Database.Models.QueryBucketEventArgs
-  name: QueryBucketEventArgs
-  href: api/DotNetHelper.Database.Models.QueryBucketEventArgs.html
-  commentId: T:DotNetHelper.Database.Models.QueryBucketEventArgs
-  fullName: DotNetHelper.Database.Models.QueryBucketEventArgs
-  nameWithType: QueryBucketEventArgs
-- uid: DotNetHelper.Database.Models.QueryBucketEventArgs.#ctor(DotNetHelper.Database.Models.QueryBucket)
-  name: QueryBucketEventArgs(QueryBucket)
-  href: api/DotNetHelper.Database.Models.QueryBucketEventArgs.html#DotNetHelper_Database_Models_QueryBucketEventArgs__ctor_DotNetHelper_Database_Models_QueryBucket_
-  commentId: M:DotNetHelper.Database.Models.QueryBucketEventArgs.#ctor(DotNetHelper.Database.Models.QueryBucket)
-  fullName: DotNetHelper.Database.Models.QueryBucketEventArgs.QueryBucketEventArgs(DotNetHelper.Database.Models.QueryBucket)
-  nameWithType: QueryBucketEventArgs.QueryBucketEventArgs(QueryBucket)
-- uid: DotNetHelper.Database.Models.QueryBucketEventArgs.#ctor*
-  name: QueryBucketEventArgs
-  href: api/DotNetHelper.Database.Models.QueryBucketEventArgs.html#DotNetHelper_Database_Models_QueryBucketEventArgs__ctor_
-  commentId: Overload:DotNetHelper.Database.Models.QueryBucketEventArgs.#ctor
-  isSpec: "True"
-  fullName: DotNetHelper.Database.Models.QueryBucketEventArgs.QueryBucketEventArgs
-  nameWithType: QueryBucketEventArgs.QueryBucketEventArgs
-- uid: DotNetHelper.Database.Models.QueryBucketEventArgs.QueryBucket
-  name: QueryBucket
-  href: api/DotNetHelper.Database.Models.QueryBucketEventArgs.html#DotNetHelper_Database_Models_QueryBucketEventArgs_QueryBucket
-  commentId: P:DotNetHelper.Database.Models.QueryBucketEventArgs.QueryBucket
-  fullName: DotNetHelper.Database.Models.QueryBucketEventArgs.QueryBucket
-  nameWithType: QueryBucketEventArgs.QueryBucket
-- uid: DotNetHelper.Database.Models.QueryBucketEventArgs.QueryBucket*
-  name: QueryBucket
-  href: api/DotNetHelper.Database.Models.QueryBucketEventArgs.html#DotNetHelper_Database_Models_QueryBucketEventArgs_QueryBucket_
-  commentId: Overload:DotNetHelper.Database.Models.QueryBucketEventArgs.QueryBucket
-  isSpec: "True"
-  fullName: DotNetHelper.Database.Models.QueryBucketEventArgs.QueryBucket
-  nameWithType: QueryBucketEventArgs.QueryBucket
-- uid: DotNetHelper.Database.Models.QueryBucketManager
-  name: QueryBucketManager
-  href: api/DotNetHelper.Database.Models.QueryBucketManager.html
-  commentId: T:DotNetHelper.Database.Models.QueryBucketManager
-  fullName: DotNetHelper.Database.Models.QueryBucketManager
-  nameWithType: QueryBucketManager
-- uid: DotNetHelper.Database.Models.QueryBucketManager.#ctor
-  name: QueryBucketManager()
-  href: api/DotNetHelper.Database.Models.QueryBucketManager.html#DotNetHelper_Database_Models_QueryBucketManager__ctor
-  commentId: M:DotNetHelper.Database.Models.QueryBucketManager.#ctor
-  fullName: DotNetHelper.Database.Models.QueryBucketManager.QueryBucketManager()
-  nameWithType: QueryBucketManager.QueryBucketManager()
-- uid: DotNetHelper.Database.Models.QueryBucketManager.#ctor*
-  name: QueryBucketManager
-  href: api/DotNetHelper.Database.Models.QueryBucketManager.html#DotNetHelper_Database_Models_QueryBucketManager__ctor_
-  commentId: Overload:DotNetHelper.Database.Models.QueryBucketManager.#ctor
-  isSpec: "True"
-  fullName: DotNetHelper.Database.Models.QueryBucketManager.QueryBucketManager
-  nameWithType: QueryBucketManager.QueryBucketManager
-- uid: DotNetHelper.Database.Models.QueryBucketManager.AddBucket(DotNetHelper.Database.Models.QueryBucket)
-  name: AddBucket(QueryBucket)
-  href: api/DotNetHelper.Database.Models.QueryBucketManager.html#DotNetHelper_Database_Models_QueryBucketManager_AddBucket_DotNetHelper_Database_Models_QueryBucket_
-  commentId: M:DotNetHelper.Database.Models.QueryBucketManager.AddBucket(DotNetHelper.Database.Models.QueryBucket)
-  fullName: DotNetHelper.Database.Models.QueryBucketManager.AddBucket(DotNetHelper.Database.Models.QueryBucket)
-  nameWithType: QueryBucketManager.AddBucket(QueryBucket)
-- uid: DotNetHelper.Database.Models.QueryBucketManager.AddBucket*
-  name: AddBucket
-  href: api/DotNetHelper.Database.Models.QueryBucketManager.html#DotNetHelper_Database_Models_QueryBucketManager_AddBucket_
-  commentId: Overload:DotNetHelper.Database.Models.QueryBucketManager.AddBucket
-  isSpec: "True"
-  fullName: DotNetHelper.Database.Models.QueryBucketManager.AddBucket
-  nameWithType: QueryBucketManager.AddBucket
-- uid: DotNetHelper.Database.Models.QueryBucketManager.BeforeAddToBucket
-  name: BeforeAddToBucket
-  href: api/DotNetHelper.Database.Models.QueryBucketManager.html#DotNetHelper_Database_Models_QueryBucketManager_BeforeAddToBucket
-  commentId: E:DotNetHelper.Database.Models.QueryBucketManager.BeforeAddToBucket
-  fullName: DotNetHelper.Database.Models.QueryBucketManager.BeforeAddToBucket
-  nameWithType: QueryBucketManager.BeforeAddToBucket
-- uid: DotNetHelper.Database.Models.QueryBucketManager.Dispose
-  name: Dispose()
-  href: api/DotNetHelper.Database.Models.QueryBucketManager.html#DotNetHelper_Database_Models_QueryBucketManager_Dispose
-  commentId: M:DotNetHelper.Database.Models.QueryBucketManager.Dispose
-  fullName: DotNetHelper.Database.Models.QueryBucketManager.Dispose()
-  nameWithType: QueryBucketManager.Dispose()
-- uid: DotNetHelper.Database.Models.QueryBucketManager.Dispose*
-  name: Dispose
-  href: api/DotNetHelper.Database.Models.QueryBucketManager.html#DotNetHelper_Database_Models_QueryBucketManager_Dispose_
-  commentId: Overload:DotNetHelper.Database.Models.QueryBucketManager.Dispose
-  isSpec: "True"
-  fullName: DotNetHelper.Database.Models.QueryBucketManager.Dispose
-  nameWithType: QueryBucketManager.Dispose
-- uid: DotNetHelper.Database.Models.QueryBucketManager.FullBucketReached
-  name: FullBucketReached
-  href: api/DotNetHelper.Database.Models.QueryBucketManager.html#DotNetHelper_Database_Models_QueryBucketManager_FullBucketReached
-  commentId: E:DotNetHelper.Database.Models.QueryBucketManager.FullBucketReached
-  fullName: DotNetHelper.Database.Models.QueryBucketManager.FullBucketReached
-  nameWithType: QueryBucketManager.FullBucketReached
-- uid: DotNetHelper.Database.Models.QueryBucketManager.FullQueryBucketEventHandler
-  name: QueryBucketManager.FullQueryBucketEventHandler
-  href: api/DotNetHelper.Database.Models.QueryBucketManager.FullQueryBucketEventHandler.html
-  commentId: T:DotNetHelper.Database.Models.QueryBucketManager.FullQueryBucketEventHandler
-  fullName: DotNetHelper.Database.Models.QueryBucketManager.FullQueryBucketEventHandler
-  nameWithType: QueryBucketManager.FullQueryBucketEventHandler
-- uid: DotNetHelper.Database.Models.QueryBucketManager.IncludeReadableQuery
-  name: IncludeReadableQuery
-  href: api/DotNetHelper.Database.Models.QueryBucketManager.html#DotNetHelper_Database_Models_QueryBucketManager_IncludeReadableQuery
-  commentId: P:DotNetHelper.Database.Models.QueryBucketManager.IncludeReadableQuery
-  fullName: DotNetHelper.Database.Models.QueryBucketManager.IncludeReadableQuery
-  nameWithType: QueryBucketManager.IncludeReadableQuery
-- uid: DotNetHelper.Database.Models.QueryBucketManager.IncludeReadableQuery*
-  name: IncludeReadableQuery
-  href: api/DotNetHelper.Database.Models.QueryBucketManager.html#DotNetHelper_Database_Models_QueryBucketManager_IncludeReadableQuery_
-  commentId: Overload:DotNetHelper.Database.Models.QueryBucketManager.IncludeReadableQuery
-  isSpec: "True"
-  fullName: DotNetHelper.Database.Models.QueryBucketManager.IncludeReadableQuery
-  nameWithType: QueryBucketManager.IncludeReadableQuery
-- uid: DotNetHelper.Database.Models.QueryBucketManager.MaxBucketSize
-  name: MaxBucketSize
-  href: api/DotNetHelper.Database.Models.QueryBucketManager.html#DotNetHelper_Database_Models_QueryBucketManager_MaxBucketSize
-  commentId: P:DotNetHelper.Database.Models.QueryBucketManager.MaxBucketSize
-  fullName: DotNetHelper.Database.Models.QueryBucketManager.MaxBucketSize
-  nameWithType: QueryBucketManager.MaxBucketSize
-- uid: DotNetHelper.Database.Models.QueryBucketManager.MaxBucketSize*
-  name: MaxBucketSize
-  href: api/DotNetHelper.Database.Models.QueryBucketManager.html#DotNetHelper_Database_Models_QueryBucketManager_MaxBucketSize_
-  commentId: Overload:DotNetHelper.Database.Models.QueryBucketManager.MaxBucketSize
-  isSpec: "True"
-  fullName: DotNetHelper.Database.Models.QueryBucketManager.MaxBucketSize
-  nameWithType: QueryBucketManager.MaxBucketSize
-- uid: DotNetHelper.Database.Models.QueryBucketManager.OnBeforeAdd(DotNetHelper.Database.Models.QueryBucketEventArgs)
-  name: OnBeforeAdd(QueryBucketEventArgs)
-  href: api/DotNetHelper.Database.Models.QueryBucketManager.html#DotNetHelper_Database_Models_QueryBucketManager_OnBeforeAdd_DotNetHelper_Database_Models_QueryBucketEventArgs_
-  commentId: M:DotNetHelper.Database.Models.QueryBucketManager.OnBeforeAdd(DotNetHelper.Database.Models.QueryBucketEventArgs)
-  fullName: DotNetHelper.Database.Models.QueryBucketManager.OnBeforeAdd(DotNetHelper.Database.Models.QueryBucketEventArgs)
-  nameWithType: QueryBucketManager.OnBeforeAdd(QueryBucketEventArgs)
-- uid: DotNetHelper.Database.Models.QueryBucketManager.OnBeforeAdd*
-  name: OnBeforeAdd
-  href: api/DotNetHelper.Database.Models.QueryBucketManager.html#DotNetHelper_Database_Models_QueryBucketManager_OnBeforeAdd_
-  commentId: Overload:DotNetHelper.Database.Models.QueryBucketManager.OnBeforeAdd
-  isSpec: "True"
-  fullName: DotNetHelper.Database.Models.QueryBucketManager.OnBeforeAdd
-  nameWithType: QueryBucketManager.OnBeforeAdd
-- uid: DotNetHelper.Database.Models.QueryBucketManager.OnBeforeAddToBucketEventHandler
-  name: QueryBucketManager.OnBeforeAddToBucketEventHandler
-  href: api/DotNetHelper.Database.Models.QueryBucketManager.OnBeforeAddToBucketEventHandler.html
-  commentId: T:DotNetHelper.Database.Models.QueryBucketManager.OnBeforeAddToBucketEventHandler
-  fullName: DotNetHelper.Database.Models.QueryBucketManager.OnBeforeAddToBucketEventHandler
-  nameWithType: QueryBucketManager.OnBeforeAddToBucketEventHandler
-- uid: DotNetHelper.Database.Models.QueryBucketManager.OnFullBucket(DotNetHelper.Database.Models.FullQueryBucketEventArgs)
-  name: OnFullBucket(FullQueryBucketEventArgs)
-  href: api/DotNetHelper.Database.Models.QueryBucketManager.html#DotNetHelper_Database_Models_QueryBucketManager_OnFullBucket_DotNetHelper_Database_Models_FullQueryBucketEventArgs_
-  commentId: M:DotNetHelper.Database.Models.QueryBucketManager.OnFullBucket(DotNetHelper.Database.Models.FullQueryBucketEventArgs)
-  fullName: DotNetHelper.Database.Models.QueryBucketManager.OnFullBucket(DotNetHelper.Database.Models.FullQueryBucketEventArgs)
-  nameWithType: QueryBucketManager.OnFullBucket(FullQueryBucketEventArgs)
-- uid: DotNetHelper.Database.Models.QueryBucketManager.OnFullBucket*
-  name: OnFullBucket
-  href: api/DotNetHelper.Database.Models.QueryBucketManager.html#DotNetHelper_Database_Models_QueryBucketManager_OnFullBucket_
-  commentId: Overload:DotNetHelper.Database.Models.QueryBucketManager.OnFullBucket
-  isSpec: "True"
-  fullName: DotNetHelper.Database.Models.QueryBucketManager.OnFullBucket
-  nameWithType: QueryBucketManager.OnFullBucket
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync
+  nameWithType: IDatabaseAccess.SqlServerBulkInsertAsync
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+  name: SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions)
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_SqlServerBulkInsertAsync__1_System_Collections_Generic_List___0__System_Data_SqlClient_SqlBulkCopyOptions_
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
+  name.vb: SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions)
+  nameWithType: IDatabaseAccess.SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions)
+  nameWithType.vb: IDatabaseAccess.SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions)
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+  name: SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions, String)
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_SqlServerBulkInsertAsync__1_System_Collections_Generic_List___0__System_Data_SqlClient_SqlBulkCopyOptions_System_String_
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
+  name.vb: SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions, String)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions, System.String)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions, System.String)
+  nameWithType: IDatabaseAccess.SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions, String)
+  nameWithType.vb: IDatabaseAccess.SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions, String)
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+  name: SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions, String, Int32)
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_SqlServerBulkInsertAsync__1_System_Collections_Generic_List___0__System_Data_SqlClient_SqlBulkCopyOptions_System_String_System_Int32_
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
+  name.vb: SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions, String, Int32)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync<T>(System.Collections.Generic.List<T>, System.Data.SqlClient.SqlBulkCopyOptions, System.String, System.Int32)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.SqlServerBulkInsertAsync(Of T)(System.Collections.Generic.List(Of T), System.Data.SqlClient.SqlBulkCopyOptions, System.String, System.Int32)
+  nameWithType: IDatabaseAccess.SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions, String, Int32)
+  nameWithType.vb: IDatabaseAccess.SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions, String, Int32)
 - uid: TSD
   name: TSD
   href: tutorials/index.html

@@ -308,7 +308,7 @@ namespace DotNetHelper.Database.Interface
         /// <param name="bulkCopyOptions">bulk copy option</param>
         /// <param name="tableName">table name to insert data into</param>
         /// <returns>number of records inserted</returns>
-        long SqlServerBulkInsert<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions,string tableName) where T : class;
+        long SqlServerBulkInsert<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions, string tableName) where T : class;
 
         /// <summary>
         /// Perform a SQLBulkCopy 
@@ -319,7 +319,7 @@ namespace DotNetHelper.Database.Interface
         /// <param name="tableName">table name to insert data into</param>
         /// <param name="batchSize">The integer value of the BatchSize property, or zero if no value has been set.</param>
         /// <returns>number of records inserted</returns>
-        long SqlServerBulkInsert<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions,string tableName, int batchSize) where T : class;
+        long SqlServerBulkInsert<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions, string tableName, int batchSize) where T : class;
 
         /// <summary>
         /// Perform a SQLBulkCopy 

@@ -24,7 +24,7 @@ namespace DotNetHelper.Database.Tests.Models
         public DateTime DateOfBirth { get; set; }
         [MaxLength(400)]
         public string FavoriteColor { get; set; }
-        public DateTime? CreatedAt { get; set; } 
+        public DateTime? CreatedAt { get; set; }
         public Employee()
         {
 
