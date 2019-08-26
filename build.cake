@@ -1,4 +1,4 @@
-// Install modules
+ // Install modules
 #module nuget:?package=Cake.DotNetTool.Module&version=0.3.0
 
 // Install addins.

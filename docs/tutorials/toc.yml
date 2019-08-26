@@ -2,15 +2,12 @@
 # HREF : on item click redirect lnk
 - name: Home
   href: index.md
-- name: Attributes 
-  href: Attributes/attribute.md
+- name: Supported Database 
+  href: databases.md
   # topicUid: Tutorial.Attibutes
   topicHref: Attributes/attribute.md
-- name: Generating SQL 
+- name: Crud Operations 
   items:
-    - name: "Object To Sql"
+    - name: "Simple CRUD"
       href: ../
-      topicHref: GenerateSQL/object2sql.md
-    - name: "DataTable To Sql"
-      href: ../
-      topicHref: GenerateSQL/datatable2sql.md           
+      topicHref: CrudOperations/crud.md

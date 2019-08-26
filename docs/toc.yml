@@ -4,8 +4,8 @@
 # UID  : reference file by unique identifier in header of markdown file
 - name: Home
   href: ~/index.html
-#- name: Tutorials
-#  href: ~/tutorials/index.html
+- name: Tutorials
+  href: ~/tutorials/index.html
 - name: API
   href: ~/api/DotNetHelper.Database.html  # if your project contains a dash it will need to be replace with a underscore on this line only
 - name: Change Log

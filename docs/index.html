@@ -50,6 +50,9 @@
                           <a href="index.html" title="Home">Home</a>
                       </li>
                       <li>
+                          <a href="tutorials/index.html" title="Tutorials">Tutorials</a>
+                      </li>
+                      <li>
                           <a href="api/DotNetHelper.Database.html" title="API">API</a>
                       </li>
                       <li>
@@ -86,13 +89,13 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="dotnethelperdatabase">DotNetHelper.Database</h1>
 
-<h4 id="dotnethelperdatabase-is-a-lightweight-orm-that-works-with-genericsdynamic--anonyous-objects-for-adonet-">*DotNetHelper.Database is a lightweight ORM that works with generics,dynamic, &amp; anonyous objects for ADO.NET *</h4>
+<h4 id="dotnethelperdatabase-is-a-orm-that-support-crud--upsert-operations-with-any-genericdynamic--anonyous-objects-for-net"><em>DotNetHelper.Database is a ORM that support CRUD + upsert operations with any generic,dynamic, &amp; anonyous objects for .NET</em></h4>
 <p>|| <a href="https://github.com/TheMofaDe/DotNetHelper.Database"><strong>View on Github</strong></a> ||</p>
 <h2 id="features">Features</h2>
 <ul>
-<li>Can dynamically build your sql statement from any <em>(Generic,Anonymous,Dynamic)</em> object but also support you providing on as well</li>
+<li>Can dynamically build your sql statement from any <em>(Generic,Anonymous,Dynamic)</em> object but also support you providing one as well</li>
 <li>Can  <em>(Insert,Update,Upsert,Delete)</em> any <em>(Generic,Anonymous,Dynamic)</em> object into database</li>
-<li>Support Any <strong>IDbConnection</strong> &amp; work with <strong>DbFactory</strong></li>
+<li>Support Any <strong>DbConnection</strong> &amp; work with <strong>DbFactory</strong></li>
 <li>Support auto-serializing &amp; deserializing columns that is as stored as CSV,JSON, &amp; XML in the database
 <ul>
 <li>You implement the serialization so we don't have to depend on libraries like newtonsoft.json</li>
@@ -103,58 +106,32 @@
 <li>Map <strong>IDataReader</strong> To List</li>
 <li>Map <strong>DataRow</strong> To A Class</li>
 </ul>
-<h2 id="supported-databases">Supported Databases</h2>
+<h2 id="supports">Supports</h2>
 <ul>
-<li>SQLSERVER</li>
-<li>SQLITE</li>
-<li>More to come</li>
+<li>SqlServer</li>
+<li>Sqlite</li>
+<li>MySql</li>
 </ul>
 <h2 id="example">Example</h2>
-<h5 id="for-this-example-my-table-in-the-database-will-look-like-this">For this example my table in the database will look like this</h5>
-<pre><code class="lang-sql">CREATE TABLE [master].[dbo].[Employee](
-	[IdentityField] [int] NOT NULL IDENTITY (1,1) PRIMARY KEY,
-	[FirstName] [varchar](400) NOT NULL,
-	[LastName] [varchar](400) NOT NULL,
-	[DOB] DateTime NOT NULL,
-	[CreatedAt] DateTime NOT NULL DEFAULT GETDATE(),
-	[FavoriteColor] [varchar](400)  NULL
-);
+<h5 id="how-to-insert-an-employee-using-a-generic-class">How to insert an employee using a generic class</h5>
+<pre><code class="lang-csharp"> var dbAccess = new DatabaseAccess&lt;SqlConnection&gt;(&quot;ConnectionString&quot;);
+ var recordAffected = dbAccess.Execute(employee, ActionType.Insert); // ActionType is a enum of Insert,Update,Delete,Upsert
 </code></pre>
-<h5 id="my-generic-object-class-will-look-like-this">My generic object class will look like this</h5>
-<pre><code class="lang-csharp">public class Employee
-    {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)] // Marks this property as an identity field 
-        [Key]  // marks this property as a primary key... 
-        public int IdentityField { get; set; }
-
-        [NotMapped] // This property will be ignore when performing database actions
-        public string FullName =&gt; FirstName + &quot; &quot; + LastName;
-
-        [SqlColumn(MapTo = &quot;DOB&quot;)]  // This property is actually name DOB in the database
-        public DateTime DateOfBirth { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string FavoriteColor { get; set; }
-        public DateTime CreatedAt { get; } = new DateTime();
-        
-    }
+<h5 id="how-to-insert-an-employee-using-a-dynamic-object">How to insert an employee using a dynamic object</h5>
+<pre><code class="lang-csharp">dynamic dyn = new ExpandoObject(); 
+        dyn.FirstName = &quot;Joe Sister&quot;;
+        dyn.LastName = &quot;Dynamic&quot;;
+        dyn.DOB = DateTime.Today;
+var dbAccess = new DatabaseAccess&lt;SqlConnection&gt;(&quot;ConnectionString&quot;);
+var recordAffected = dbAccess.Execute(dyn, ActionType.Insert,&quot;TableName&quot;); // you need to specify the table name when using dynamic objects
 </code></pre>
-<h5 id="now-lets-add-some-new-employees-from-code-using-dynamicanonymous--generic-objects">Now lets add some new employees from code using dynamic,anonymous &amp; generic objects</h5>
-<pre><code class="lang-csharp"> dynamic dynamicEmployee = new ExpandoObject(); // A DYNAMIC EMPLOYEE
-                    dynamicEmployee.FirstName = &quot;Joe Sister&quot;;
-                    dynamicEmployee.LastName = &quot;Dynamic&quot;;
-                    dynamicEmployee.DOB = DateTime.Today.AddDays(-2);
-
-            var employee = new Employee() {DateOfBirth = DateTime.Today, FavoriteColor = &quot;Blue&quot;, FirstName = &quot;Joe&quot; , LastName = &quot;Generic&quot;}; // A GENERIC EMPLOYEE
-            var anonymousEmployee = new {FirstName = &quot;Joe Brother&quot;, DOB = DateTime.Today.AddDays(-1) , LastName = &quot;Anonymous&quot;}; // A ANONYMOUS EMPLOYEE
-
-            var dbAccess = new DatabaseAccess&lt;SqlConnection, SqlParameter&gt;(DataBaseType.SqlServer, &quot;Server=localhost;Initial Catalog=master;Integrated Security=True&quot;); // Specify database provider to ensure syntax is correct
-
-            // Lets add our 3 employees to the database note 
-            var recordAffected = dbAccess.Execute(employee, ActionType.Insert); // ActionType is a enum of Insert,Update,Delete,Upsert
-            recordAffected += dbAccess.Execute(anonymousEmployee, ActionType.Insert,&quot;Employee&quot;); // you need to specify the table name when using anonymous objects
-            recordAffected += dbAccess.Execute&lt;ExpandoObject&gt;(dynamicEmployee, ActionType.Insert,&quot;Employee&quot;);  // you need to specify the table name when using dynamic objects
-
+<h5 id="how-to-insert-an-employee-using-a-generic-class-1">How to insert an employee using a generic class</h5>
+<pre><code class="lang-csharp">var anonymousEmployee = new {FirstName = &quot;Joe Brother&quot;, DOB = DateTime.Today.AddDays(-1) , LastName = &quot;Anonymous&quot;}; 
+var dbAccess = new DatabaseAccess&lt;SqlConnection&gt;(&quot;ConnectionString&quot;);
+var recordAffected = dbAccess.Execute(anonymousEmployee, ActionType.Insert,&quot;TableName&quot;); // you need to specify the table name when using anonymous objects
+</code></pre>
+<h5 id="how-to-use-bulk-copy-with-a-list-of-objects">How to use bulk copy with a list of objects</h5>
+<pre><code class="lang-csharp">var numberOfRowCopied = DatabaseAccess.SqlServerBulkInsert(listofObjects, SqlBulkCopyOptions.Default);```
 </code></pre>
 <h5 id="finish-product">Finish Product</h5>
 <p><img src="images/snippet1.gif" alt="alt text" title="Snippet 1"></p>

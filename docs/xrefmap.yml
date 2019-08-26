@@ -1987,5 +1987,5 @@ references:
   nameWithType: IDatabaseAccess.SqlServerBulkInsertAsync<T>(List<T>, SqlBulkCopyOptions, String, Int32)
   nameWithType.vb: IDatabaseAccess.SqlServerBulkInsertAsync(Of T)(List(Of T), SqlBulkCopyOptions, String, Int32)
 - uid: TSD
-  name: TSD
+  name: This project have 3 goals
   href: tutorials/index.html

@@ -1,7 +1,7 @@
 # DotNetHelper.Database
 
 
-#### *DotNetHelper.Database is a lightweight ORM that works with generics,dynamic, & anonyous objects for ADO.NET * 
+#### *DotNetHelper.Database is a ORM that support CRUD + upsert operations with any generic,dynamic, & anonyous objects for .NET * 
 
 || [**Documentation**][Docs] • [**API**][Docs-API] • [**Tutorials**][Docs-Tutorials] ||  [**Change Log**][Changelogs] • || [**View on Github**][Github]|| 
 
@@ -64,8 +64,6 @@ var recordAffected = dbAccess.Execute(anonymousEmployee, ActionType.Insert,"Tabl
 ~~~csharp
 var numberOfRowCopied = DatabaseAccess.SqlServerBulkInsert(listofObjects, SqlBulkCopyOptions.Default);```
 ~~~        
-
-## If you wish to see documentation thats more in depth go [**here**][Docs]
  
 
 ##### Finish Product 
