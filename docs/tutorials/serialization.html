@@ -5,20 +5,20 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>SAMPLE ARTICLE | DotNetHelper.Database </title>
+    <title>Working with CSV,JSON,XML Columns | DotNetHelper.Database </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="SAMPLE ARTICLE | DotNetHelper.Database ">
+    <meta name="title" content="Working with CSV,JSON,XML Columns | DotNetHelper.Database ">
     <meta name="generator" content="docfx 2.44.0.0">
     
-    <link rel="shortcut icon" href="../../logo/favicon.ico">
-    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../styles/docfx.css">
-    <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="shortcut icon" href="../logo/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <meta property="docfx:navrel" content="toc.html">
-    <meta property="docfx:tocrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
     
-    <meta property="docfx:rel" content="../../">
+    <meta property="docfx:rel" content="../">
     
   </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
@@ -34,8 +34,8 @@
                 <span class="icon-bar"></span>
               </button>
               
-              <a class="navbar-brand" href="../../index.html">
-                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -47,13 +47,13 @@
                 
                 <ul class="nav level1 navbar-nav">
                       <li>
-                          <a href="../../index.html" title="Home">Home</a>
+                          <a href="../index.html" title="Home">Home</a>
                       </li>
                       <li>
-                          <a href="../index.html" title="Tutorials">Tutorials</a>
+                          <a href="index.html" title="Tutorials">Tutorials</a>
                       </li>
                       <li>
-                          <a href="../../api/DotNetHelper.Database.html" title="API">API</a>
+                          <a href="../api/DotNetHelper.Database.html" title="API">API</a>
                       </li>
                       <li>
                           <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/CHANGELOG.md" title="Change Log">Change Log</a>
@@ -99,21 +99,21 @@
                   
                   <ul class="nav level1">
                     <li class="">
-                      <a href="../index.html" title="Home" class="">Home</a>
+                      <a href="index.html" title="Home" class="">Home</a>
                     </li>
                     <li class="">
-                      <a href="../databases.html" title="Switching Between Database Implementation" class="">Switching Between Database Implementation</a>
+                      <a href="databases.html" title="Switching Between Database Implementation" class="">Switching Between Database Implementation</a>
                     </li>
-                    <li class="">
-                      <a href="../serialization.html" title="Dealing With Json Cson Xml Columns" class="">Dealing With Json Cson Xml Columns</a>
+                    <li class="active">
+                      <a href="serialization.html" title="Dealing With Json Cson Xml Columns" class="active">Dealing With Json Cson Xml Columns</a>
                     </li>
                     <li class="">
                       <span class="expand-stub"></span>
-                      <a href="../CrudOperations/crud.html" title="Crud Operations" class="">Crud Operations</a>
+                      <a href="CrudOperations/crud.html" title="Crud Operations" class="">Crud Operations</a>
                         
                         <ul class="nav level2">
                           <li class="">
-                            <a href="../CrudOperations/crud.html" title="Simple CRUD" class="">Simple CRUD</a>
+                            <a href="CrudOperations/crud.html" title="Simple CRUD" class="">Simple CRUD</a>
                           </li>
                         </ul>  </li>
                   </ul>        </div>
@@ -124,8 +124,48 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h2 id="sample-article">SAMPLE ARTICLE</h2>
+<h2 id="working-with-csvjsonxml-columns">Working with CSV,JSON,XML Columns</h2>
 
+<p>Sometimes we find ourselves storing xml,json, or csv values in our database table.
+Whether your doing it to be lazy or doing it for a good cause. This libraries supports it</p>
+<p><em>Role Class In .NET Project</em></p>
+<pre><code class="lang-csharp">public class Role {
+    public int RoleId {get;set;}
+    public string Role {get;set;}
+}
+</code></pre>
+<p><em>Employee Class In .NET Project</em></p>
+<pre><code class="lang-csharp">public class Employee {
+     
+    [SqlColumn(SerializableType = SerializableType.Json)] 
+    public List&lt;Role&gt; Roles { get; set; }
+    public string FirstName { get; set;}
+    public string LastName { get; set; }
+    public int Id { get; set; }
+}
+</code></pre>
+<p>You can assign an attribute to a property to indicate that it need to be serialize before inserting into the database and deserialize to a class when mapping to an object. This is done in the above snippet using</p>
+<pre><code class="lang-csharp"> [SqlColumn(SerializableType = SerializableType.Json)] 
+</code></pre>
+<h4 id="what-if-i-need-to-customize-how-serialization--deserialization-works">What if I need to customize how serialization &amp; deserialization works?</h4>
+<p>This library allows you to implement your own serialization &amp; deserialization<br>
+by doing so we won't need to depend on libraries like Newtonsoft.Json, CSVHelper. This
+is a win because now your not force to use a specific version or limited on when you can upgrade version.</p>
+<h4 id="lets-review-how-to-do-this">Lets Review how to do this</h4>
+<p><em>Api Definition in DatabaseAccess Class</em></p>
+<pre><code class="lang-csharp">int Execute&lt;T&gt;(T instance, ActionType actionType, string tableName, Func&lt;object, string&gt; xmlSerializer, Func&lt;object, string&gt; jsonSerializer, Func&lt;object, string&gt; csvSerializer) where T : class;
+</code></pre>
+<p>Lets create a new instance of our employee class above</p>
+<pre><code class="lang-csharp">var employee = new Employee();
+</code></pre>
+<p>Now we need an instance of DatabaseAccess</p>
+<pre><code class="lang-csharp">var dbAccess = new DatabaseAccess&lt;SqlConnection&gt;(&quot;ConnectionString&quot;);
+</code></pre>
+<p>Now we can insert the employee and its property <strong>Roles</strong> will be inserted in our employee table in a the column Roles<br>
+but its value will be in Json format</p>
+<pre><code class="lang-csharp"> dbAccess.Execute(employee, ActionType.Insert, null,o =&gt; JsonConvert.SerializeObject(o),null,null );
+</code></pre>
+<p>There you have it.</p>
 </article>
           </div>
           
@@ -134,7 +174,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/docs/tutorials/GenerateSql/datatable2sql.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/docs/tutorials/serialization.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -160,8 +200,8 @@
       </footer>
     </div>
     
-    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../styles/main.js"></script>
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
   </body>
 </html>

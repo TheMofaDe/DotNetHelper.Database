@@ -2,12 +2,19 @@
 # HREF : on item click redirect lnk
 - name: Home
   href: index.md
-- name: Supported Database 
+- name: Switching Between Database Implementation 
   href: databases.md
-  # topicUid: Tutorial.Attibutes
-  topicHref: Attributes/attribute.md
+  topicHref: databases.md
+- name: Dealing With Json Cson Xml Columns
+  href: serialization.md
+  topicHref: serialization.md
 - name: Crud Operations 
+  topicHref: CrudOperations/crud.md
+  href: ../
   items:
     - name: "Simple CRUD"
       href: ../
       topicHref: CrudOperations/crud.md
+#    - name: "Advance CRUD"
+#      href: ../
+#      topicHref: CrudOperations/advancecrud.md

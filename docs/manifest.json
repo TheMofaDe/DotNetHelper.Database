@@ -222,7 +222,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "rF1sKViv9zwY4a7AJ1wjUA=="
+          "hash": "80RkOuDcMKwH0DvWKq604A=="
         }
       },
       "is_incremental": false,
@@ -261,7 +261,19 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/Attributes/attribute.html",
-          "hash": "POvZiL32iTdQQJDcWD6owA=="
+          "hash": "BH+LSDrFaXSLJDCzqtqs0w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tutorials/CrudOperations/advancecrud.md",
+      "output": {
+        ".html": {
+          "relative_path": "tutorials/CrudOperations/advancecrud.html",
+          "hash": "EC3UPlhMGFzUTophAmmrFA=="
         }
       },
       "is_incremental": false,
@@ -273,7 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/CrudOperations/crud.html",
-          "hash": "7wS0W+9uFTSg7Xh2ujWuTw=="
+          "hash": "CzbnJhoWOXt/IzBzecV4AQ=="
         }
       },
       "is_incremental": false,
@@ -285,19 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/GenerateSql/datatable2sql.html",
-          "hash": "0rswcKNA2wfK0vQEBqtHfg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "tutorials/GenerateSql/object2sql.md",
-      "output": {
-        ".html": {
-          "relative_path": "tutorials/GenerateSql/object2sql.html",
-          "hash": "qtEOSjszeoje/1d2y57kDg=="
+          "hash": "iFfkrU5cobAjsyob5IBaww=="
         }
       },
       "is_incremental": false,
@@ -309,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/databases.html",
-          "hash": "x+eqmR45PeVtOXxyN+TbTw=="
+          "hash": "5nNKDN95FFpOHORBdZQWNw=="
         }
       },
       "is_incremental": false,
@@ -321,7 +321,19 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/index.html",
-          "hash": "xNVVYL+IjlLjHL1RZgMcJQ=="
+          "hash": "P3io73heQGsO781cBkwJtQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tutorials/serialization.md",
+      "output": {
+        ".html": {
+          "relative_path": "tutorials/serialization.html",
+          "hash": "SpGja1qXuXRomaALugLSCw=="
         }
       },
       "is_incremental": false,
@@ -333,7 +345,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/toc.html",
-          "hash": "evXB4swpbpEM03x9NmUCFQ=="
+          "hash": "JtMHQIULS17qa3n4tAp/0Q=="
         }
       },
       "is_incremental": false,
@@ -356,11 +368,12 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": true,
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 7,
-          "skipped_file_count": 7
+          "total_file_count": 0,
+          "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
@@ -368,12 +381,11 @@
           "total_file_count": 14,
           "skipped_file_count": 14
         },
-        "ResourceDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
+          "total_file_count": 8,
+          "skipped_file_count": 7
         }
       }
     },

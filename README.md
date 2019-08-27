@@ -62,7 +62,7 @@ var recordAffected = dbAccess.Execute(anonymousEmployee, ActionType.Insert,"Tabl
 
 ##### How to use bulk copy with a list of objects
 ~~~csharp
-var numberOfRowCopied = DatabaseAccess.SqlServerBulkInsert(listofObjects, SqlBulkCopyOptions.Default);```
+var numberOfRowCopied = dbAccess.SqlServerBulkInsert(listofObjects, SqlBulkCopyOptions.Default);```
 ~~~        
  
 
@@ -100,7 +100,7 @@ For more information, please refer to the [Officials Docs][Docs]
 [Docs-API]: https://themofade.github.io/DotNetHelper.Database/api/DotNetHelper.Database.html
 [Docs-Tutorials]: https://themofade.github.io/DotNetHelper.Database/tutorials/index.html
 [Docs-samples]: https://dotnet.github.io/docfx/
-[Changelogs]: https://dotnet.github.io/docfx/
+[Changelogs]: https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/CHANGELOG.md
 
 
 <!-- BADGES. -->

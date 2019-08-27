@@ -7,4 +7,9 @@ uid: TSD
   * Support Anonymous, Dynamic, & Generic Objects
   * Support as many database as possible without sacificing simplicity
 
-#### Use the Table Of Content to the left to find very detail documentation on this library
+
+## Introduction 
+
+You will find many articles in the table of content to your left that will go into detail how to use 
+the apis available to you in this library 
+    
