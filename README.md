@@ -20,7 +20,7 @@
 
 ## Features
 + Can dynamically build your sql statement from any *(Generic,Anonymous,Dynamic)* object but also support you providing one as well
-+ Can  *(Insert,Update,Upsert,Delete)* any *(Generic,Anonymous,Dynamic)* object into database
++ Can  *(Insert, Update, Upsert, Delete)* any *(Generic,Anonymous,Dynamic)* object into a database
 + Support Any **DbConnection** & work with **DbFactory**
 + Support auto-serializing & deserializing columns that is stored as CSV,JSON, & XML in the database 
   + You implement the serialization so we don't have to depend on libraries like newtonsoft.json 
@@ -39,7 +39,7 @@
 
 ## Example 
 
-##### How to insert an employee using a generic class
+##### How to insert an employee using a class
 ```csharp
  var dbAccess = new DatabaseAccess<SqlConnection>("ConnectionString");
  var recordAffected = dbAccess.Execute(employee, ActionType.Insert); // ActionType is a enum of Insert,Update,Delete,Upsert
@@ -53,7 +53,7 @@ dynamic dyn = new ExpandoObject();
 var dbAccess = new DatabaseAccess<SqlConnection>("ConnectionString");
 var recordAffected = dbAccess.Execute(dyn, ActionType.Insert,"TableName"); // you need to specify the table name when using dynamic objects
 ```
-##### How to insert an employee using a generic class
+##### How to insert an employee using a anonymous object
 ```csharp
 var anonymousEmployee = new {FirstName = "Joe Brother", DOB = DateTime.Today.AddDays(-1) , LastName = "Anonymous"}; 
 var dbAccess = new DatabaseAccess<SqlConnection>("ConnectionString");
