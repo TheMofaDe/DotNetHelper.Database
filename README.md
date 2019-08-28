@@ -3,7 +3,7 @@
 
 #### *DotNetHelper.Database is a ORM that support CRUD + upsert operations with any generic,dynamic, & anonyous objects for .NET * 
 
-|| [**Documentation**][Docs] • [**API**][Docs-API] • [**Tutorials**][Docs-Tutorials] ||  [**Change Log**][Changelogs] • || [**View on Github**][Github]|| 
+|| [**Documentation**][Docs] â€¢ [**API**][Docs-API] â€¢ [**Tutorials**][Docs-Tutorials] ||  [**Change Log**][Changelogs] â€¢ || [**View on Github**][Github]|| 
 
 | Package  | Tests | Code Coverage |
 | :-----:  | :---: | :------: |
@@ -22,7 +22,7 @@
 + Can dynamically build your sql statement from any *(Generic,Anonymous,Dynamic)* object but also support you providing one as well
 + Can  *(Insert,Update,Upsert,Delete)* any *(Generic,Anonymous,Dynamic)* object into database
 + Support Any **DbConnection** & work with **DbFactory**
-+ Support auto-serializing & deserializing columns that is as stored as CSV,JSON, & XML in the database 
++ Support auto-serializing & deserializing columns that is stored as CSV,JSON, & XML in the database 
   + You implement the serialization so we don't have to depend on libraries like newtonsoft.json 
 + Map List To **DataTable**
 + Map **DataTable** To List
