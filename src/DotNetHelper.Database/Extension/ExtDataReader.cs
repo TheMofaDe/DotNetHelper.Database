@@ -47,6 +47,16 @@ namespace DotNetHelper.Database.Extension
         //    return result;
         //}
 
+        private static Dictionary<string, int> GetColumnDefinitionFromIDataReader(IDataReader reader)
+        {
+            var readerFieldLookup = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase); // store name and ordinal
+            for (var i = 0; i < reader.FieldCount; i++)
+            {
+                readerFieldLookup.Add(reader.GetName(i), i);
+            }
+            return readerFieldLookup;
+        }
+
         public static bool? HasRows(this IDataReader reader)
         {
             if (reader is DbDataReader a)
@@ -54,17 +64,39 @@ namespace DotNetHelper.Database.Extension
             return null;
         }
 
-
+        /// <summary>
+        /// Reads the current row in the dataReader and map it to  a instance of T
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="reader"></param>
+        /// <param name="readerFieldLookup">A dictionary that contains the columns definition</param>
+        /// <param name="xmlDeserializer">A </param>
+        /// <param name="jsonDeserializer"></param>
+        /// <param name="csvDeserializer"></param>
+        /// <returns></returns>
         private static T DataRecordToT<T>(IDataReader reader, Dictionary<string, int> readerFieldLookup, Func<string, Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer) where T : class
         {
+            var tType = typeof(T);
+            if (tType == typeof(string))
+            {
+                if (reader.IsDBNull(0))
+                {
+                    return null;
+                }
+                else
+                {
+                    var value = reader.GetValue(0).ToString();
+                    return value as T;
+                }
+            }
 
-            if (typeof(T).IsTypeDynamic())
+            if (tType.IsTypeDynamic() || tType == typeof(object))
             {
                 var dynamicInstance = new ExpandoObject();
                 readerFieldLookup.ForEach(delegate (KeyValuePair<string, int> pair)
                 {
                     var value = reader.GetValue(pair.Value);
-                    ExtFastMember.SetMemberValue(dynamicInstance, pair.Key, value);
+                    ExtFastMember.SetMemberValue(dynamicInstance, pair.Key, value == DBNull.Value ? null : value);
                 });
                 return dynamicInstance as T;
             }
@@ -114,30 +146,7 @@ namespace DotNetHelper.Database.Extension
             }
             var pocoList = new List<T>() { };
 
-            // Cache the field names in the reader for use in our while loop for efficiency.
-            var readerFieldLookup = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase); // store name and ordinal
-            for (var i = 0; i < reader.FieldCount; i++)
-            {
-                readerFieldLookup.Add(reader.GetName(i), i);
-            }
-            if (typeof(T) == typeof(string))
-            {
-                while (reader.Read())
-                {
-                    if (reader.IsDBNull(0))
-                    {
-                        pocoList.Add(null);
-                    }
-                    else
-                    {
-                        var value = reader.GetValue(0).ToString();
-                        pocoList.Add(value as T);
-                    }
-                }
-                reader.Close();
-                reader.Dispose();
-                return pocoList;
-            }
+            var readerFieldLookup = GetColumnDefinitionFromIDataReader(reader);
 
             while (reader.Read())
             {
@@ -178,35 +187,11 @@ namespace DotNetHelper.Database.Extension
             {
                 return null;
             }
-            // Cache the field names in the reader for use in our while loop for efficiency.
-            var readerFieldLookup = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase); // store name and ordinal
-            for (var i = 0; i < reader.FieldCount; i++)
-            {
-                readerFieldLookup.Add(reader.GetName(i), i);
-            }
-            if (typeof(T) == typeof(string))
-            {
-                while (reader.Read())
-                {
-                    if (reader.IsDBNull(0))
-                    {
-                        return null;
-                    }
-                    else
-                    {
-                        var value = reader.GetValue(0).ToString();
-                        return (value as T);
-                    }
-                }
-                reader.Close();
-                reader.Dispose();
-            }
-
+            var readerFieldLookup = GetColumnDefinitionFromIDataReader(reader);
             while (reader.Read())
             {
                 return (DataRecordToT<T>(reader, readerFieldLookup, xmlDeserializer, jsonDeserializer, csvDeserializer));
             }
-
             return null;
         }
 
@@ -226,7 +211,7 @@ namespace DotNetHelper.Database.Extension
 
 
 
-
+        
         // TODO :: REFERENCE EXTENSION METHOD IN NEW OBJECT TO SQL VERSION
         /// <summary>
         /// Deserialize the value using the corresponding deserializer func if the <paramref name="member"/> is decorated with <c>[SqlColumn]</c> attribute and
