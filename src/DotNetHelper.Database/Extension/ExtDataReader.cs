@@ -211,7 +211,7 @@ namespace DotNetHelper.Database.Extension
 
 
 
-        
+
         // TODO :: REFERENCE EXTENSION METHOD IN NEW OBJECT TO SQL VERSION
         /// <summary>
         /// Deserialize the value using the corresponding deserializer func if the <paramref name="member"/> is decorated with <c>[SqlColumn]</c> attribute and

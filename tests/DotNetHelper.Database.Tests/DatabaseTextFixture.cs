@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using DotNetHelper.Database.DataSource;
 using DotNetHelper.Database.Extension;
 using DotNetHelper.Database.Interface;
@@ -10,7 +12,7 @@ using DotNetHelper.Database.Tests.Helpers;
 using DotNetHelper.Database.Tests.MockData;
 using DotNetHelper.Database.Tests.Models;
 using DotNetHelper.ObjectToSql.Enum;
-
+using DotNetHelper.ObjectToSql.Model;
 #if SUPPORTSQLITE
 using Microsoft.Data.Sqlite;
 using MySql.Data.MySqlClient;
@@ -46,6 +48,7 @@ namespace DotNetHelper.Database.Tests
 
 #if SUPPORTDBFACTORIES
             list.Add(new DatabaseAccessFactory(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString));
+            list.Add(new DatabaseAccessFactory(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString, TimeSpan.FromSeconds(40), TimeSpan.FromSeconds(40)));
 #endif
             return list;
         }
@@ -508,16 +511,55 @@ namespace DotNetHelper.Database.Tests
         }
 
 
-
         [Test]
-
-        public void Test_Bulk_Insert()
+        public void Test_GetDataTable()
         {
-            if (DatabaseAccess.DatabaseType != DataBaseType.SqlServer) return;
-            DatabaseAccess.SqlServerBulkInsert(MockEmployee.Hashset.ToList(), SqlBulkCopyOptions.Default);
+#if NET452
+
+#else
+            var mockObj = GetEmployeeSerialize(1);
+            DatabaseAccess.Execute(mockObj, ActionType.Insert, null, Xml.SerializeToString, Json.SerializeToString, Csv.SerializeToString, s => s.IdentityField);
+            var dt = DatabaseAccess.GetDataTable($"SELECT * FROM {new SqlTable(DatabaseAccess.DatabaseType, mockObj.GetType()).TableName}", CommandType.Text);
+            Assert.IsNotNull(dt);
+            Assert.AreEqual(dt.Rows.Count, 1);
+#endif
         }
 
 
+
+        [Test]
+        public void Test_Bulk_Insert()
+        {
+            if (DatabaseAccess.DatabaseType != DataBaseType.SqlServer) return;
+            var recordCount = DatabaseAccess.SqlServerBulkCopy(MockEmployee.Hashset.ToList(), SqlBulkCopyOptions.Default);
+            Assert.AreEqual(recordCount, MockEmployee.Hashset.Count);
+        }
+
+        [Test]
+        public void Test_Bulk_Insert_Async()
+        {
+            if (DatabaseAccess.DatabaseType != DataBaseType.SqlServer) return;
+            long recordCount = 0;
+            Task.Run(async delegate
+            {
+                recordCount = await DatabaseAccess.SqlServerBulkCopyAsync(MockEmployee.Hashset.ToList(), SqlBulkCopyOptions.Default);
+            }).Wait(CancellationToken.None);
+
+            Assert.AreEqual(recordCount, MockEmployee.Hashset.Count);
+        }
+
+
+        [Test]
+
+        public void Test_Ensure_Disposal()
+        {
+
+            var db = new DatabaseAccess<SqlConnection>(DataBaseType.Oracle, "");
+            using (db)
+            {
+
+            }
+        }
 
     }
 }

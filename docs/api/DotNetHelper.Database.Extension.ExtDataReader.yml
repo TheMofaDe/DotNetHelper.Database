@@ -69,7 +69,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: HasRows
     path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
-    startLine: 49
+    startLine: 59
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
@@ -110,7 +110,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: MapToList
     path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
-    startLine: 108
+    startLine: 140
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
@@ -164,7 +164,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: MapToList
     path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
-    startLine: 159
+    startLine: 168
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
@@ -217,7 +217,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: MapTo
     path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
-    startLine: 174
+    startLine: 183
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
@@ -271,7 +271,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: MapTo
     path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
-    startLine: 220
+    startLine: 205
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
@@ -324,7 +324,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: MapToDataTable
     path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
-    startLine: 264
+    startLine: 249
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
@@ -372,7 +372,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: MapToDataTable
     path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
-    startLine: 268
+    startLine: 253
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension

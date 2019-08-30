@@ -626,9 +626,9 @@ namespace DotNetHelper.Database
         /// <param name="data"></param>
         /// <param name="bulkCopyOptions">bulk copy option</param>
         /// <returns># of records inserted</returns>
-        public long SqlServerBulkInsert<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions) where T : class
+        public long SqlServerBulkCopy<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions) where T : class
         {
-            return SqlServerBulkInsert(data, bulkCopyOptions, null);
+            return SqlServerBulkCopy(data, bulkCopyOptions, null);
         }
 
 
@@ -640,9 +640,9 @@ namespace DotNetHelper.Database
         /// <param name="bulkCopyOptions">bulk copy option</param>
         /// <param name="tableName">table name to insert data into</param>
         /// <returns># of records inserted</returns>
-        public long SqlServerBulkInsert<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions, string tableName) where T : class
+        public long SqlServerBulkCopy<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions, string tableName) where T : class
         {
-            return SqlServerBulkInsert(data, bulkCopyOptions, tableName, 0);
+            return SqlServerBulkCopy(data, bulkCopyOptions, tableName, 0);
         }
 
         /// <summary>
@@ -654,7 +654,7 @@ namespace DotNetHelper.Database
         /// <param name="tableName">table name to insert data into</param>
         /// <param name="batchSize">The integer value of the BatchSize property, or zero if no value has been set.</param>
         /// <returns># of records inserted</returns>
-        public long SqlServerBulkInsert<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions, string tableName, int batchSize) where T : class
+        public long SqlServerBulkCopy<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions, string tableName, int batchSize) where T : class
         {
             if (DatabaseType != DataBaseType.SqlServer)
                 throw new InvalidOperationException($"This library doesn't reference a {DatabaseType}BulkCopy so its not supported.");
@@ -686,9 +686,9 @@ namespace DotNetHelper.Database
         /// <param name="data"></param>
         /// <param name="bulkCopyOptions">bulk copy option</param>
         /// <returns># of records inserted</returns>
-        public async Task<long> SqlServerBulkInsertAsync<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions) where T : class
+        public async Task<long> SqlServerBulkCopyAsync<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions) where T : class
         {
-            return SqlServerBulkInsert(data, bulkCopyOptions, null);
+            return SqlServerBulkCopy(data, bulkCopyOptions, null);
         }
 
 
@@ -700,9 +700,9 @@ namespace DotNetHelper.Database
         /// <param name="bulkCopyOptions">bulk copy option</param>
         /// <param name="tableName">table name to insert data into</param>
         /// <returns># of records inserted</returns>
-        public async Task<long> SqlServerBulkInsertAsync<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions, string tableName) where T : class
+        public async Task<long> SqlServerBulkCopyAsync<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions, string tableName) where T : class
         {
-            return SqlServerBulkInsert(data, bulkCopyOptions, tableName, 0);
+            return SqlServerBulkCopy(data, bulkCopyOptions, tableName, 0);
         }
 
         /// <summary>
@@ -714,7 +714,7 @@ namespace DotNetHelper.Database
         /// <param name="tableName">table name to insert data into</param>
         /// <param name="batchSize">The integer value of the BatchSize property, or zero if no value has been set.</param>
         /// <returns># of records inserted</returns>
-        public async Task<long> SqlServerBulkInsertAsync<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions, string tableName, int batchSize) where T : class
+        public async Task<long> SqlServerBulkCopyAsync<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions, string tableName, int batchSize) where T : class
         {
             if (DatabaseType != DataBaseType.SqlServer)
                 throw new InvalidOperationException($"This library doesn't reference a {DatabaseType}BulkCopy so its not supported.");

@@ -18,7 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper.Database.DataSource.DatabaseAccess-1.html",
-          "hash": "rFMM6oc61M4sQDT++2GDZA=="
+          "hash": "L9bBYocxDknWaN7zkPdXMA=="
         }
       },
       "is_incremental": false,
@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper.Database.DataSource.html",
-          "hash": "ErYkEnkqVmVAMvDxanxfug=="
+          "hash": "yc7xqYMq4Ke8KOeKJaHXZg=="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper.Database.DatabaseAccessFactory.html",
-          "hash": "YChGNi1gKcIXHx44B9P3vg=="
+          "hash": "r+dyCCJRjKWnzrgtV/LgDg=="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper.Database.Extension.ExtDataReader.html",
-          "hash": "IbdLMYb7HkhZGI5tTvLDUQ=="
+          "hash": "QlvVgsl8Eg2wjIGS7FFBVg=="
         }
       },
       "is_incremental": false,
@@ -114,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper.Database.Extension.html",
-          "hash": "abxpcmBlJowsghXeFu0nbg=="
+          "hash": "MgjW8+we9HI805lwcW7MWA=="
         }
       },
       "is_incremental": false,
@@ -150,7 +150,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper.Database.Interface.IDatabaseAccess.html",
-          "hash": "j9Co4ItaRUzu9WATMA9MnQ=="
+          "hash": "xTBkk0fe7hBlrMYMpgf5eA=="
         }
       },
       "is_incremental": false,
@@ -162,7 +162,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper.Database.Interface.html",
-          "hash": "a1Zh2LriNQIjFtCmwduFew=="
+          "hash": "Ix/T4b8+bYjt9rziKjgpGg=="
         }
       },
       "is_incremental": false,
@@ -174,7 +174,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper.Database.html",
-          "hash": "YDHbXKM3qie0yvZZv6b0Kg=="
+          "hash": "tFsX7oEeyBV+bqnogQF6KQ=="
         }
       },
       "is_incremental": false,
@@ -261,7 +261,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/Attributes/attribute.html",
-          "hash": "BH+LSDrFaXSLJDCzqtqs0w=="
+          "hash": "e0Xo4NcuZSuSjp2plBRHTA=="
         }
       },
       "is_incremental": false,
@@ -269,11 +269,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "tutorials/CrudOperations/advancecrud.md",
+      "source_relative_path": "tutorials/CrudOperations/bulkcopy.md",
       "output": {
         ".html": {
-          "relative_path": "tutorials/CrudOperations/advancecrud.html",
-          "hash": "EC3UPlhMGFzUTophAmmrFA=="
+          "relative_path": "tutorials/CrudOperations/bulkcopy.html",
+          "hash": "Boqqzk85JptQPFYUu73yeQ=="
         }
       },
       "is_incremental": false,
@@ -285,7 +285,31 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/CrudOperations/crud.html",
-          "hash": "CzbnJhoWOXt/IzBzecV4AQ=="
+          "hash": "rJQ3Y1ofGTJHp5VV+hxujQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tutorials/Extensions/datareader.md",
+      "output": {
+        ".html": {
+          "relative_path": "tutorials/Extensions/datareader.html",
+          "hash": "p4IFn+zZBUyBl2WnTox0gA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tutorials/Extensions/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "tutorials/Extensions/index.html",
+          "hash": "VB8lFdcjQl37jp/RftBLWw=="
         }
       },
       "is_incremental": false,
@@ -297,7 +321,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/GenerateSql/datatable2sql.html",
-          "hash": "iFfkrU5cobAjsyob5IBaww=="
+          "hash": "b5Z0XZwarav/GO6KS8+9Yw=="
         }
       },
       "is_incremental": false,
@@ -309,7 +333,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/databases.html",
-          "hash": "5nNKDN95FFpOHORBdZQWNw=="
+          "hash": "BhGJ/VFQRGnSCFQ57OHjnQ=="
         }
       },
       "is_incremental": false,
@@ -321,7 +345,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/index.html",
-          "hash": "P3io73heQGsO781cBkwJtQ=="
+          "hash": "R4IqPozyoZp7BGIluCYlJA=="
         }
       },
       "is_incremental": false,
@@ -333,7 +357,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/serialization.html",
-          "hash": "SpGja1qXuXRomaALugLSCw=="
+          "hash": "lF3NweGJFpwBB7uZVYBIHA=="
         }
       },
       "is_incremental": false,
@@ -345,7 +369,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/toc.html",
-          "hash": "JtMHQIULS17qa3n4tAp/0Q=="
+          "hash": "B7lB2aTZVpiZu6Jp8fLWWg=="
         }
       },
       "is_incremental": false,
@@ -361,16 +385,16 @@
         "skipped_file_count": 0
       },
       "processors": {
-        "TocDocumentProcessor": {
+        "ResourceDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
           "total_file_count": 0,
           "skipped_file_count": 0
         },
-        "ResourceDocumentProcessor": {
+        "TocDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
           "total_file_count": 0,
           "skipped_file_count": 0
@@ -384,7 +408,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 8,
+          "total_file_count": 10,
           "skipped_file_count": 7
         }
       }

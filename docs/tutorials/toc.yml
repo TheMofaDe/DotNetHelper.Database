@@ -15,6 +15,16 @@
     - name: "Simple CRUD"
       href: ../
       topicHref: CrudOperations/crud.md
+    - name: "Bulk Copy"
+      href: ../
+      topicHref: CrudOperations/bulkcopy.md
+- name: Extension Methods 
+  topicHref: Extensions/index.md
+  href: ../
+  items:
+    - name: "IDataReader"
+      href: ../
+      topicHref: Extensions/datareader.md
 #    - name: "Advance CRUD"
 #      href: ../
 #      topicHref: CrudOperations/advancecrud.md

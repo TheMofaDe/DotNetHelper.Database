@@ -6,7 +6,8 @@ uid: TSD
   * Simplify CRUD operation using the (OOP) object oriented programming principle
   * Support Anonymous, Dynamic, & Generic Objects
   * Support as many database as possible without sacificing simplicity
-
+  * Mapping between DataTables,DataRows,Strongly Type Classes,Dynamic Object
+    
 
 ## Introduction 
 

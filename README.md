@@ -62,7 +62,7 @@ var recordAffected = dbAccess.Execute(anonymousEmployee, ActionType.Insert,"Tabl
 
 ##### How to use bulk copy with a list of objects
 ~~~csharp
-var numberOfRowCopied = dbAccess.SqlServerBulkInsert(listofObjects, SqlBulkCopyOptions.Default);```
+var numberOfRowCopied = dbAccess.SqlServerBulkCopy(listofObjects, SqlBulkCopyOptions.Default);```
 ~~~        
  
 
