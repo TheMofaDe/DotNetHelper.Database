@@ -4,6 +4,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Unreleased
 ##
+### Changed 
+*   Renamed method DatabaseAccess.SqlServerBulkInsert to DatabaseAccess.SqlServerBulkCopy
+*   Fix bug where MapToList didn't working correctly for dynamic objects
 ##
 <br/>
 
