@@ -1,147 +1,15 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-  
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>CRUD Operations | DotNetHelper.Database </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="CRUD Operations | DotNetHelper.Database ">
-    <meta name="generator" content="docfx 2.44.0.0">
-    
-    <link rel="shortcut icon" href="../../logo/favicon.ico">
-    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../styles/docfx.css">
-    <link rel="stylesheet" href="../../styles/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <meta property="docfx:navrel" content="toc.html">
-    <meta property="docfx:tocrel" content="../toc.html">
-    
-    <meta property="docfx:rel" content="../../">
-    
-  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
-        
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              
-              <a class="navbar-brand" href="../../index.html">
-                <img id="logo" class="svg" src="../../logo.svg" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
-              </form>
-                
-                <ul class="nav level1 navbar-nav">
-                      <li>
-                          <a href="../../index.html" title="Home">Home</a>
-                      </li>
-                      <li>
-                          <a href="../index.html" title="Tutorials">Tutorials</a>
-                      </li>
-                      <li>
-                          <a href="../../api/DotNetHelper.Database.html" title="API">API</a>
-                      </li>
-                      <li>
-                          <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/CHANGELOG.md" title="Change Log">Change Log</a>
-                      </li>
-                      <li>
-                          <a href="https://github.com/TheMofaDe/DotNetHelper.Database" title="Github">Github</a>
-                      </li>
-                </ul>    </div>
-          </div>
-        </nav>
-        
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
-          </div>
-        </div>
-      </header>
-      <div class="container body-content">
-        
-        <div id="search-results">
-          <div class="search-list"></div>
-          <div class="sr-items">
-            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
-          </div>
-          <ul id="pagination"></ul>
-        </div>
-      </div>
-      <div role="main" class="container body-content hide-when-search">
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div>
-              <div class="sidefilter">
-                <form class="toc-filter">
-                  <span class="glyphicon glyphicon-filter filter-icon"></span>
-                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
-                </form>
-              </div>
-              <div class="sidetoc">
-                <div class="toc" id="toc">
-                  
-                  <ul class="nav level1">
-                    <li class="">
-                      <a href="../index.html" title="Home" class="">Home</a>
-                    </li>
-                    <li class="">
-                      <a href="../databases.html" title="Switching Between Database Implementation" class="">Switching Between Database Implementation</a>
-                    </li>
-                    <li class="">
-                      <a href="../serialization.html" title="Dealing With Json Cson Xml Columns" class="">Dealing With Json Cson Xml Columns</a>
-                    </li>
-                    <li class="active">
-                      <span class="expand-stub"></span>
-                      <a href="../CrudOperations/crud.html" title="Crud Operations" class="active">Crud Operations</a>
-                        
-                        <ul class="nav level2">
-                          <li class="active">
-                            <a href="../CrudOperations/crud.html" title="Simple CRUD" class="active">Simple CRUD</a>
-                          </li>
-                          <li class="">
-                            <a href="../CrudOperations/bulkcopy.html" title="Bulk Copy" class="">Bulk Copy</a>
-                          </li>
-                        </ul>  </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="../Extensions/index.html" title="Extension Methods" class="">Extension Methods</a>
-                        
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="../Extensions/datareader.html" title="IDataReader" class="">IDataReader</a>
-                          </li>
-                        </ul>  </li>
-                  </ul>        </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="">
-<h2 id="crud-operations">CRUD Operations</h2>
+<head>
+    <title>CRUD Operations</title>
+</head>
+<body>
 
+    <h2 id="crud-operations">CRUD Operations</h2>
 <p>This article will explain everyting related to inserting objects into a database using this library.</p>
 <p>*Lets go over some prerequisites</p>
 <p><em>Employee Table In Database</em></p>
-<pre><code class="lang-sql">CREATE TABLE [master].[dbo].[Employee](
+<pre><code class="language-sql">CREATE TABLE [master].[dbo].[Employee](
 	[IdentityField] [int] NOT NULL IDENTITY (1,1) PRIMARY KEY,
 	[FirstName] [varchar](400) NOT NULL,
 	[LastName] [varchar](400) NOT NULL,
@@ -151,7 +19,7 @@
 );
 </code></pre>
 <p><em>Employee Class In .NET Project</em></p>
-<pre><code class="lang-csharp"> public class Employee {
+<pre><code class="language-csharp"> public class Employee {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)] // Tells the library this column is a identity column
         [Key] // Tells the library this column is a primary key
         public int IdentityField { get; set; }
@@ -170,81 +38,46 @@
 </code></pre>
 <h2 id="getting-started-with-inserts">Getting Started With Inserts</h2>
 <p>Now I will show you how to insert an a employee object into your database</p>
-<p>The first thing you will need to do is intialize a new instance of <strong>DatabaseAccess</strong><br>
+<p>The first thing you will need to do is intialize a new instance of <strong>DatabaseAccess</strong><br />
 To initialize a new instance of <strong>DatabaseAccess</strong> you must specify a type of DBConnection your database support.</p>
-<pre><code class="lang-csharp">var dbAccess = new DatabaseAccess&lt;SqlConnection&gt;(&quot;ConnectionString&quot;);
+<pre><code class="language-csharp">var dbAccess = new DatabaseAccess&lt;SqlConnection&gt;(&quot;ConnectionString&quot;);
 </code></pre>
-<p>For this example im going to use the common <em>SqlConnection</em> type as showned above.<br>
+<p>For this example im going to use the common <em>SqlConnection</em> type as showned above.<br />
 If your wondering why this is required. It is because this library supports multiple database
 and not every database use the same syntax. So the DBConnection that you use will control how sql is generated.</p>
-<pre><code class="lang-csharp">var employee = new Employee(); // create an new employee
+<pre><code class="language-csharp">var employee = new Employee(); // create an new employee
     employee.FirstName = &quot;John&quot;;
     employee.LastName = &quot;Doe&quot;;
     employee.DateOfBirth = DateTime.Now;
                
 var recordAffected = dbAccess.Execute(employee, ActionType.Insert); // ActionType is a enum of Insert,Update,Delete,Upsert
 </code></pre>
-<p><strong>Wow well was simply and easy</strong></p>
-<br>
+<p><strong>That was simply and east</strong></p>
+<br/>
 <h2 id="getting-started-with-deletes">Getting Started With Deletes</h2>
 <p>This section assumes you read the above section. Now that we added an employee we need to remove him because we don't like him
 here how you would go about doing such a thing</p>
-<pre><code class="lang-csharp"> var employees = dbAccess.Get&lt;Employee&gt;(); // returns a list of T which in this cause is a list of Employee
+<pre><code class="language-csharp"> var employees = dbAccess.Get&lt;Employee&gt;(); // returns a list of T which in this cause is a list of Employee
 </code></pre>
 <p>Now our employees object contains one employee in it. Lets delete him</p>
-<pre><code class="lang-csharp">var recordAffected = dbAccess.Execute(employees.First(), ActionType.Delete); 
+<pre><code class="language-csharp">var recordAffected = dbAccess.Execute(employees.First(), ActionType.Delete); 
 </code></pre>
-<p><strong>Wow well was simply and easy</strong></p>
-<br>
+<p><strong>That was simply and east</strong></p>
+<br/>
 <h2 id="getting-started-with-upserts">Getting Started With Upserts</h2>
-<p>This section assumes you read the above section.<br>
+<p>This section assumes you read the above section.<br />
 Oops maybe deleting that employee was a mistake lets we add him using an upsert</p>
-<pre><code class="lang-csharp">var recordAffected = dbAccess.Execute(employee, ActionType.Upsert); 
+<pre><code class="language-csharp">var recordAffected = dbAccess.Execute(employee, ActionType.Upsert); 
 </code></pre>
-<p><strong>Wow well was simply and easy</strong></p>
+<p><strong>That was simply and east</strong></p>
 <h2 id="getting-started-with-update">Getting Started With Update</h2>
-<p>This section assumes you read the above section.<br>
+<p>This section assumes you read the above section.<br />
 Turns out our test employee John real name isn't John its Patrick so lets update him</p>
-<pre><code class="lang-csharp">employee.FirstName = &quot;Patrick&quot;;
+<pre><code class="language-csharp">employee.FirstName = &quot;Patrick&quot;;
 var recordAffected = dbAccess.Execute(employee, ActionType.Update); 
 </code></pre>
-<p><strong>Wow well was simply and easy</strong></p>
-</article>
-          </div>
-          
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <div class="contribution">
-                <ul class="nav">
-                  <li>
-                    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/docs/tutorials/CrudOperations/crud.md/#L1" class="contribution-link">Improve this Doc</a>
-                  </li>
-                </ul>
-              </div>
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
-              </nav>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-            Copyright © 2019  <strong>Joseph McNeal Jr</strong>
-            
-          </div>
-        </div>
-      </footer>
-    </div>
-    
-    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../styles/main.js"></script>
-  </body>
+<p><strong>That was simply and east</strong></p>
+
+
+</body>
 </html>

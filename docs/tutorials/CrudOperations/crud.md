@@ -64,7 +64,7 @@ var recordAffected = dbAccess.Execute(employee, ActionType.Insert); // ActionTyp
 ~~~
 
 
-**Wow well was simply and easy**
+**That was simply and east**
 
 <br/>
 
@@ -83,7 +83,7 @@ Now our employees object contains one employee in it. Lets delete him
 var recordAffected = dbAccess.Execute(employees.First(), ActionType.Delete); 
 ~~~ 
 
-**Wow well was simply and easy**
+**That was simply and east**
 
 <br/>
 
@@ -98,7 +98,7 @@ Oops maybe deleting that employee was a mistake lets we add him using an upsert
 var recordAffected = dbAccess.Execute(employee, ActionType.Upsert); 
 ~~~ 
 
-**Wow well was simply and easy**
+**That was simply and east**
 
 
 ## Getting Started With Update
@@ -111,4 +111,4 @@ employee.FirstName = "Patrick";
 var recordAffected = dbAccess.Execute(employee, ActionType.Update); 
 ~~~ 
 
-**Wow well was simply and easy**
+**That was simply and east**
