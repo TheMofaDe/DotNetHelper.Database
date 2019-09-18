@@ -5,15 +5,17 @@ using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using DotNetHelper.Database.DataSource;
 using DotNetHelper.ObjectToSql.Enum;
-using DotNetHelper.ObjectToSql.Helper;
 
 namespace DotNetHelper.Database.Interface
 {
     public interface IDatabaseAccess
     {
 
+        /// <summary>
+        /// The service that is used to generate sql
+        /// </summary>
+        ObjectToSql.Services.ObjectToSql c { get; }
         /// <summary>
         /// The connection string to the database
         /// </summary>

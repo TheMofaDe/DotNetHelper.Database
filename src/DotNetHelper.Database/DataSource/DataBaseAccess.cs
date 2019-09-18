@@ -36,7 +36,7 @@ namespace DotNetHelper.Database.DataSource
         /// <summary>
         /// The service that is used to generate sql
         /// </summary>
-        private ObjectToSql.Services.ObjectToSql ObjectToSql { get; }
+        public ObjectToSql.Services.ObjectToSql ObjectToSql { get; }
         /// <summary>
         /// The type of database. This property is only used to control how sql is generated
         /// </summary>
