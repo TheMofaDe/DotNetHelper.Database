@@ -129,6 +129,34 @@ namespace DotNetHelper.Database.DataSource
             return parameter;
         }
 
+
+
+        /// <summary>
+        /// return a new list of DBParameter where the parameters are created from each property name & value  
+        /// </summary>
+        /// <param name="obj">the object to build DbParameters from</param>
+        /// <returns></returns>
+        public List<DbParameter> GetNewParameter<T>(T obj) where T : class
+        {
+            return GetNewParameter(obj,null,null,null);
+        }
+
+
+        /// <summary>
+        /// return a new list of DBParameter where the parameters are created from each property name & value  
+        /// </summary>
+        /// <param name="obj">the object to build DbParameters from</param>
+        /// <param name="xmlSerializer">For when your storing values in the database as xml. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.XML)]</param>
+        /// <param name="jsonSerializer">For when your storing values in the database as json. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.JSON)]</param>
+        /// <param name="csvSerializer">For when your storing values in the database as csv. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.CSV)]</param>
+        /// <returns></returns>
+        public List<DbParameter> GetNewParameter<T>(T obj, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer) where T : class
+        {
+            return ObjectToSql.BuildDbParameterList(obj, GetNewParameter,xmlSerializer,jsonSerializer,csvSerializer);
+        }
+
+
+
         /// <summary>
         /// creates a new dbcommand from the connection
         /// </summary>

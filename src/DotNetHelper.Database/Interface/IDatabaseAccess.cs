@@ -42,14 +42,34 @@ namespace DotNetHelper.Database.Interface
         DbParameter GetNewParameter(string parameterName, object value);
 
         /// <summary>
-        /// creates a new dbcommand from the connection
+        /// return a new list of DBParameter where the parameters are created from each property name & value  
         /// </summary>
-        /// <param name="connection"></param>
-        /// <param name="sql"></param>
-        /// <param name="commandType">Specifies how a command string is interpreted.</param>
-        /// <param name="parameters"></param>
+        /// <param name="obj">the object to build DbParameters from</param>
         /// <returns></returns>
-        DbCommand GetNewCommand(DbConnection connection, string sql, CommandType commandType = CommandType.Text, IEnumerable<DbParameter> parameters = null);
+        List<DbParameter> GetNewParameter<T>(T obj) where T : class;
+
+
+        /// <summary>
+        /// return a new list of DBParameter where the parameters are created from each property name & value  
+        /// </summary>
+        /// <param name="obj">the object to build DbParameters from</param>
+        /// <param name="xmlSerializer">For when your storing values in the database as xml. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.XML)]</param>
+        /// <param name="jsonSerializer">For when your storing values in the database as json. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.JSON)]</param>
+        /// <param name="csvSerializer">For when your storing values in the database as csv. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.CSV)]</param>
+        /// <returns></returns>
+        List<DbParameter> GetNewParameter<T>(T obj, Func<object, string> xmlSerializer,
+            Func<object, string> jsonSerializer, Func<object, string> csvSerializer) where T : class;
+
+
+            /// <summary>
+            /// creates a new dbcommand from the connection
+            /// </summary>
+            /// <param name="connection"></param>
+            /// <param name="sql"></param>
+            /// <param name="commandType">Specifies how a command string is interpreted.</param>
+            /// <param name="parameters"></param>
+            /// <returns></returns>
+            DbCommand GetNewCommand(DbConnection connection, string sql, CommandType commandType = CommandType.Text, IEnumerable<DbParameter> parameters = null);
 
         (DbCommand command, DbTransaction transaction) GetNewCommandAndTransaction(DbConnection connection);
 
