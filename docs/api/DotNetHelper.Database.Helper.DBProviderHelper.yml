@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Helper/DBProviderHelper.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: DBProviderHelper
     path: ../src/DotNetHelper.Database/Helper/DBProviderHelper.cs
@@ -58,7 +58,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Helper/DBProviderHelper.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Map
     path: ../src/DotNetHelper.Database/Helper/DBProviderHelper.cs

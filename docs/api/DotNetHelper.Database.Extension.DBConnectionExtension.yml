@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: DBConnectionExtension
     path: ../src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
@@ -61,7 +61,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: OpenSafely
     path: ../src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
@@ -100,7 +100,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: CloseSafely
     path: ../src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
@@ -139,7 +139,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: DatabaseAccess
     path: ../src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs

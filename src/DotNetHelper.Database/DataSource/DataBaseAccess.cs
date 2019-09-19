@@ -81,7 +81,7 @@ namespace DotNetHelper.Database.DataSource
         internal DatabaseAccess(TDbConnection connection, DataBaseType? type = null)
         {
             connection.IsNullThrow(nameof(connection), new ArgumentNullException(nameof(connection), "DBConnection Object can't be null'"));
-           
+
             ConnectionString = connection.ConnectionString;
             UseSingleConnection = true;
             var dbType = type ?? DatabaseTypeHelper.GetDataBaseTypeFromDBConnectionType<TDbConnection>();

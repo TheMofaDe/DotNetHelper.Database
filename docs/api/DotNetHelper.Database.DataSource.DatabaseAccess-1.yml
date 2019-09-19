@@ -62,7 +62,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: DatabaseAccess
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
@@ -113,7 +113,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ConnectionString
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
@@ -154,7 +154,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: CommandTimeOut
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
@@ -195,7 +195,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ObjectToSql
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
@@ -236,7 +236,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: DatabaseType
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
@@ -277,7 +277,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: UseSingleConnection
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
@@ -314,7 +314,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: .ctor
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
@@ -352,11 +352,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: .ctor
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 97
+    startLine: 100
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -393,11 +393,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: .ctor
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 109
+    startLine: 112
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -437,11 +437,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewConnection
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 139
+    startLine: 142
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -478,11 +478,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewParameter
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 163
+    startLine: 170
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -524,11 +524,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewParameter
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 178
+    startLine: 185
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -568,11 +568,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewParameter
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 192
+    startLine: 199
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -618,11 +618,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewCommand
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 207
+    startLine: 214
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -671,11 +671,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewCommandAndTransaction
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 226
+    startLine: 233
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -714,11 +714,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteNonQuery
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 248
+    startLine: 255
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -770,11 +770,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteNonQuery
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 265
+    startLine: 272
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -821,11 +821,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteScalar
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 279
+    startLine: 286
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -871,11 +871,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteTransaction
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 312
+    startLine: 319
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -921,11 +921,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataReader
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 406
+    startLine: 413
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -971,11 +971,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTable
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 421
+    startLine: 428
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1021,11 +1021,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTable
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 434
+    startLine: 441
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1064,11 +1064,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTableWithSchema
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 446
+    startLine: 453
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1114,11 +1114,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTableWithKeyInfo
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 468
+    startLine: 475
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1164,11 +1164,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTableWithSchema
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 486
+    startLine: 493
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1207,11 +1207,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTableWithKeyInfo
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 496
+    startLine: 503
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1250,11 +1250,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: CanConnect
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 506
+    startLine: 513
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1289,11 +1289,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 532
+    startLine: 539
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1353,11 +1353,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 559
+    startLine: 566
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1398,11 +1398,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 574
+    startLine: 581
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1453,11 +1453,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 588
+    startLine: 595
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1508,11 +1508,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Execute
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 600
+    startLine: 607
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1560,11 +1560,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Execute
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 613
+    startLine: 620
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1615,11 +1615,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Execute
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 629
+    startLine: 636
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1679,11 +1679,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Execute
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 649
+    startLine: 656
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1737,11 +1737,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Execute
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 669
+    startLine: 676
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1804,11 +1804,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutput
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 685
+    startLine: 692
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1859,11 +1859,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutput
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 704
+    startLine: 711
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1932,11 +1932,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutputAsDataReader
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 716
+    startLine: 723
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1980,11 +1980,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutputAsDataReader
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 721
+    startLine: 728
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -2034,11 +2034,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: SqlServerBulkCopy
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 740
+    startLine: 747
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -2086,11 +2086,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: SqlServerBulkCopy
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 754
+    startLine: 761
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -2141,11 +2141,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: SqlServerBulkCopy
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 768
+    startLine: 775
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -2199,11 +2199,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: SqlServerBulkCopyAsync
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 800
+    startLine: 807
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -2251,11 +2251,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: SqlServerBulkCopyAsync
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 814
+    startLine: 821
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -2306,11 +2306,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: SqlServerBulkCopyAsync
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 828
+    startLine: 835
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -2364,11 +2364,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Dispose
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 854
+    startLine: 861
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -2398,11 +2398,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-      branch: Feature-SingleSQLConnection
+      branch: master
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Dispose
     path: ../src/DotNetHelper.Database/DataSource/DataBaseAccess.cs
-    startLine: 861
+    startLine: 868
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
