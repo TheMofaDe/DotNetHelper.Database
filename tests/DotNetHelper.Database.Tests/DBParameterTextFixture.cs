@@ -68,7 +68,7 @@ namespace DotNetHelper.Database.Tests
         [SetUp]
         public void Setup()
         {
-          
+
         }
 
 
@@ -88,21 +88,21 @@ namespace DotNetHelper.Database.Tests
         [OneTimeTearDown]
         public void RunAfterAnyTests()
         {
-       
+
         }
 
 
         [Test]
         public void TestAnonyousObjectToParameterHasCorrectValues()
         {
-            var parameters = new {Name = "Bro", Id = 2};
+            var parameters = new { Name = "Bro", Id = 2 };
             var dbParams = DatabaseAccess.GetNewParameter(parameters);
 
-            Assert.AreEqual(dbParams.Count,2);
-            Assert.AreEqual(dbParams.First().ParameterName,"@Id");
+            Assert.AreEqual(dbParams.Count, 2);
+            Assert.AreEqual(dbParams.First().ParameterName, "@Id");
             Assert.AreEqual(dbParams.Last().ParameterName, "@Name");
 
-            Assert.AreEqual(dbParams.First().Value,2);
+            Assert.AreEqual(dbParams.First().Value, 2);
             Assert.AreEqual(dbParams.Last().Value, "Bro");
 
         }
@@ -117,7 +117,7 @@ namespace DotNetHelper.Database.Tests
             parameters.Name = "Bro";
 
 
-           List<DbParameter> dbParams = DatabaseAccess.GetNewParameter(parameters);
+            List<DbParameter> dbParams = DatabaseAccess.GetNewParameter(parameters);
 
             Assert.AreEqual(dbParams.Count, 2);
             Assert.AreEqual(dbParams.First().ParameterName, "@Id");

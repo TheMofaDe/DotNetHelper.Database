@@ -64,15 +64,15 @@ namespace DotNetHelper.Database.Interface
             Func<object, string> jsonSerializer, Func<object, string> csvSerializer) where T : class;
 
 
-            /// <summary>
-            /// creates a new dbcommand from the connection
-            /// </summary>
-            /// <param name="connection"></param>
-            /// <param name="sql"></param>
-            /// <param name="commandType">Specifies how a command string is interpreted.</param>
-            /// <param name="parameters"></param>
-            /// <returns></returns>
-            DbCommand GetNewCommand(DbConnection connection, string sql, CommandType commandType = CommandType.Text, IEnumerable<DbParameter> parameters = null);
+        /// <summary>
+        /// creates a new dbcommand from the connection
+        /// </summary>
+        /// <param name="connection"></param>
+        /// <param name="sql"></param>
+        /// <param name="commandType">Specifies how a command string is interpreted.</param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        DbCommand GetNewCommand(DbConnection connection, string sql, CommandType commandType = CommandType.Text, IEnumerable<DbParameter> parameters = null);
 
         (DbCommand command, DbTransaction transaction) GetNewCommandAndTransaction(DbConnection connection);
 

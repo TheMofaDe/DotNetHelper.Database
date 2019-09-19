@@ -142,10 +142,10 @@ namespace DotNetHelper.Database.DataSource
             TDbConnection connection;
             if (UseSingleConnection)
             {
-                connection = SingleConnection ?? (SingleConnection = new TDbConnection() {ConnectionString = ConnectionString});
+                connection = SingleConnection ?? (SingleConnection = new TDbConnection() { ConnectionString = ConnectionString });
             }
             else
-            {  
+            {
                 connection = new TDbConnection() { ConnectionString = ConnectionString };
             }
             if (openConnection)
@@ -178,7 +178,7 @@ namespace DotNetHelper.Database.DataSource
         /// <returns></returns>
         public List<DbParameter> GetNewParameter<T>(T obj) where T : class
         {
-            return GetNewParameter(obj,null,null,null);
+            return GetNewParameter(obj, null, null, null);
         }
 
 
@@ -192,7 +192,7 @@ namespace DotNetHelper.Database.DataSource
         /// <returns></returns>
         public List<DbParameter> GetNewParameter<T>(T obj, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer) where T : class
         {
-            return ObjectToSql.BuildDbParameterList(obj, GetNewParameter,xmlSerializer,jsonSerializer,csvSerializer);
+            return ObjectToSql.BuildDbParameterList(obj, GetNewParameter, xmlSerializer, jsonSerializer, csvSerializer);
         }
 
 
@@ -283,7 +283,7 @@ namespace DotNetHelper.Database.DataSource
             {
                 var command = GetNewCommand(connection, sql, commandType, parameters);
                 return command.ExecuteScalar();
-               // return ExecuteScalar(connection, sql, commandType, parameters);
+                // return ExecuteScalar(connection, sql, commandType, parameters);
             }
         }
 

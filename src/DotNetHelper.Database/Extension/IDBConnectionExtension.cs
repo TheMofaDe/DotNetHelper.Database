@@ -36,7 +36,7 @@ namespace DotNetHelper.Database.Extension
 
         public static IDatabaseAccess DatabaseAccess<T>(this T connection, DataBaseType? dataBaseType = null) where T : DbConnection, new()
         {
-            return new DatabaseAccess<T>(connection,dataBaseType);
+            return new DatabaseAccess<T>(connection, dataBaseType);
         }
 
     }
