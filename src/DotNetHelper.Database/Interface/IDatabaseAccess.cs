@@ -15,7 +15,7 @@ namespace DotNetHelper.Database.Interface
         /// <summary>
         /// The service that is used to generate sql
         /// </summary>
-        ObjectToSql.Services.ObjectToSql c { get; }
+        ObjectToSql.Services.ObjectToSql ObjectToSql { get; }
         /// <summary>
         /// The connection string to the database
         /// </summary>
@@ -28,7 +28,8 @@ namespace DotNetHelper.Database.Interface
         /// <summary>
         /// The time (in seconds) to wait for a connection to open. The default value is 15 seconds.
         /// </summary>
-        TimeSpan ConnectionTimeOut { get; set; }
+        // TimeSpan ConnectionTimeOut { get; set; }
+        // TODO :: FIND A WAY TO INTERGRATE THIS
 
         /// <summary>
         /// The type of database. This property is only used to control how sql is generated
@@ -82,7 +83,6 @@ namespace DotNetHelper.Database.Interface
         /// <param name="commandType">Specifies how a command string is interpreted.</param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        /// See <see cref="DatabaseAccess{C,P}.ExecuteNonQuery(C,string,System.Data.CommandType,System.Collections.Generic.IEnumerable{DbParameter})"/> to perform this this action with a specified connection.
         /// <exception cref="System.InvalidOperationException"> </exception>
         int ExecuteNonQuery(string sql, CommandType commandType, IEnumerable<DbParameter> parameters = null);
 

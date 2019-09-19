@@ -29,10 +29,13 @@ namespace DotNetHelper.Database.DataSource
         /// The time in seconds to wait for the command to execute. The default is 30 seconds.
         /// </summary>
         public TimeSpan CommandTimeOut { get; set; } = TimeSpan.FromSeconds(30);
-        /// <summary>
-        /// The time (in seconds) to wait for a connection to open. The default value is 15 seconds.
-        /// </summary>
-        public TimeSpan ConnectionTimeOut { get; set; } = TimeSpan.FromSeconds(15);
+        ///// <summary>
+        ///// The time (in seconds) to wait for a connection to open. The default value is 15 seconds.
+        ///// </summary>
+        //public TimeSpan ConnectionTimeOut { get; set; } = TimeSpan.FromSeconds(15);
+        // // TODO :: FIND A WAY TO INTEGRATE THIS
+
+
         /// <summary>
         /// The service that is used to generate sql
         /// </summary>
@@ -41,6 +44,20 @@ namespace DotNetHelper.Database.DataSource
         /// The type of database. This property is only used to control how sql is generated
         /// </summary>
         public DataBaseType DatabaseType => ObjectToSql.DatabaseType;
+
+
+
+        public bool UseSingleConnection { get; set; }
+        private TDbConnection SingleConnection { get; set; }
+
+
+
+        /// <summary>
+        /// This is hack for creating dbparameter. 
+        /// </summary>
+        private DbCommand ParameterBuilder { get; }
+        //UseSingleConnection ? SingleConnection.CreateCommand() : new TDbConnection().CreateCommand();
+
 
 
         /// <summary>
@@ -55,7 +72,23 @@ namespace DotNetHelper.Database.DataSource
                 throw new InvalidOperationException($"Couldn't determine the databasetype from the type {typeof(TDbConnection).Name}. Please use a different constructor " +
                                                     $"to initialize this object");
             ObjectToSql = new ObjectToSql.Services.ObjectToSql(dbType.Value);
+            ParameterBuilder = GetNewConnection(false).CreateCommand();
         }
+
+        /// <summary>
+        /// Initialize a new DatabaseAccess. This method is internal to force users to use the extension method
+        /// </summary>
+        internal DatabaseAccess(TDbConnection connection, DataBaseType? type = null)
+        {
+            ConnectionString = connection.ConnectionString;
+            var dbType = type ?? DatabaseTypeHelper.GetDataBaseTypeFromDBConnectionType<TDbConnection>();
+            if (dbType == null)
+                throw new InvalidOperationException($"Couldn't determine the databasetype from the type {typeof(TDbConnection).Name}. Please use a different constructor " +
+                                                    $"to initialize this object");
+            ObjectToSql = new ObjectToSql.Services.ObjectToSql(type ?? dbType.Value);
+            ParameterBuilder = GetNewConnection(false).CreateCommand();
+        }
+
 
         /// <summary>
         /// 
@@ -66,6 +99,7 @@ namespace DotNetHelper.Database.DataSource
         {
             ConnectionString = connectionString;
             ObjectToSql = new ObjectToSql.Services.ObjectToSql(type);
+            ParameterBuilder = GetNewConnection(false).CreateCommand();
         }
         /// <summary>
         /// 
@@ -78,22 +112,24 @@ namespace DotNetHelper.Database.DataSource
             ConnectionString = connectionString;
             CommandTimeOut = commandTimeOut;
             ObjectToSql = new ObjectToSql.Services.ObjectToSql(type);
+            ParameterBuilder = GetNewConnection(false).CreateCommand();
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="type"></param>
-        /// <param name="connectionString"></param>
-        /// <param name="commandTimeOut"></param>
-        /// <param name="connectionTimeOut"></param>
-        public DatabaseAccess(DataBaseType type, string connectionString, TimeSpan commandTimeOut, TimeSpan connectionTimeOut)
-        {
-            ConnectionString = connectionString;
-            CommandTimeOut = commandTimeOut;
-            ConnectionTimeOut = connectionTimeOut;
-            ObjectToSql = new ObjectToSql.Services.ObjectToSql(type);
-        }
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        ///// <param name="type"></param>
+        ///// <param name="connectionString"></param>
+        ///// <param name="commandTimeOut"></param>
+        ///// <param name="connectionTimeOut"></param>
+        //public DatabaseAccess(DataBaseType type, string connectionString, TimeSpan commandTimeOut, TimeSpan connectionTimeOut)
+        //{
+        //    ConnectionString = connectionString;
+        //    CommandTimeOut = commandTimeOut;
+        //    ConnectionTimeOut = connectionTimeOut;
+        //    ObjectToSql = new ObjectToSql.Services.ObjectToSql(type);
+        //}
+        // TODO :: FIND A WAY TO INTEGRATE THIS
 
 
         /// <summary>
@@ -103,16 +139,20 @@ namespace DotNetHelper.Database.DataSource
         /// <returns></returns>
         public TDbConnection GetNewConnection(bool openConnection)
         {
-            var connection = new TDbConnection() { ConnectionString = ConnectionString };
+            TDbConnection connection;
+            if (UseSingleConnection)
+            {
+                connection = SingleConnection ?? (SingleConnection = new TDbConnection() {ConnectionString = ConnectionString});
+            }
+            else
+            {  
+                connection = new TDbConnection() { ConnectionString = ConnectionString };
+            }
             if (openConnection)
-                connection.Open();
+                connection.OpenSafely();
             return connection;
         }
 
-        /// <summary>
-        /// This is hack for creating dbparameter. 
-        /// </summary>
-        private DbCommand ParameterBuilder { get; } = new TDbConnection().CreateCommand();
 
 
         /// <summary>
@@ -241,24 +281,26 @@ namespace DotNetHelper.Database.DataSource
         {
             using (var connection = GetNewConnection(true))
             {
-                return ExecuteScalar(connection, sql, commandType, parameters);
+                var command = GetNewCommand(connection, sql, commandType, parameters);
+                return command.ExecuteScalar();
+               // return ExecuteScalar(connection, sql, commandType, parameters);
             }
         }
 
-        /// <summary>
-        /// Executes the sql and return the 1st column of the 1st row as an object
-        /// </summary>
-        /// <param name="connection"></param>
-        /// <param name="sql"></param>
-        /// <param name="commandType">Specifies how a command string is interpreted.</param>
-        /// <param name="parameters"></param>
-        /// <returns></returns>
-        public object ExecuteScalar(TDbConnection connection, string sql, CommandType commandType, List<DbParameter> parameters = null)
-        {
-            var command = GetNewCommand(connection, sql, commandType, parameters);
-            return command.ExecuteScalar();
+        ///// <summary>
+        ///// Executes the sql and return the 1st column of the 1st row as an object
+        ///// </summary>
+        ///// <param name="connection"></param>
+        ///// <param name="sql"></param>
+        ///// <param name="commandType">Specifies how a command string is interpreted.</param>
+        ///// <param name="parameters"></param>
+        ///// <returns></returns>
+        //public object ExecuteScalar(TDbConnection connection, string sql, CommandType commandType, List<DbParameter> parameters = null)
+        //{
+        //    var command = GetNewCommand(connection, sql, commandType, parameters);
+        //    return command.ExecuteScalar();
 
-        }
+        //}
 
 
         /// <summary>
@@ -272,62 +314,87 @@ namespace DotNetHelper.Database.DataSource
         {
             using (var connection = GetNewConnection(true))
             {
-                return ExecuteTransaction(connection, sqls, rollbackOnException, throwException);
-            }
-        }
+                var recordAffected = 0;
+                if (sqls == null || !sqls.Any()) return recordAffected;
 
-        /// <summary>
-        /// Executes a list of sql as in a single transaction. 
-        /// </summary>
-        /// <param name="connection"></param>
-        /// <param name="sqls"></param>
-        /// <param name="rollbackOnException"></param>
-        /// <param name="throwException"></param>
-        /// <returns></returns>
-        public int ExecuteTransaction(TDbConnection connection, List<string> sqls, bool rollbackOnException, bool throwException = true)
-        {
-            var recordAffected = 0;
-            if (sqls == null || !sqls.Any()) return recordAffected;
-
-            var obj = GetNewCommandAndTransaction(connection);
-            var command = obj.command;
-            var transaction = obj.transaction;
-            try
-            {
-                sqls.ForEach(delegate (string s)
+                var obj = GetNewCommandAndTransaction(connection);
+                var command = obj.command;
+                var transaction = obj.transaction;
+                try
                 {
-                    command.CommandText = s;
-                    recordAffected += command.ExecuteNonQuery();
-                });
-                transaction.Commit();
-            }
-            catch (Exception)
-            {
-                if (rollbackOnException)
-                    transaction.Rollback();
-                if (throwException)
-                {
-                    throw;
+                    sqls.ForEach(delegate (string s)
+                    {
+                        command.CommandText = s;
+                        recordAffected += command.ExecuteNonQuery();
+                    });
+                    transaction.Commit();
                 }
+                catch (Exception)
+                {
+                    if (rollbackOnException)
+                        transaction.Rollback();
+                    if (throwException)
+                    {
+                        throw;
+                    }
+                }
+
+                return recordAffected;
             }
-
-            return recordAffected;
         }
 
-        /// <summary>
-        /// execute the sql and return the result as a DbDataReader
-        /// </summary>
-        /// <param name="connection"></param>
-        /// <param name="sql"></param>
-        /// <param name="commandType">Specifies how a command string is interpreted.</param>
-        /// <param name="parameters"></param>
-        /// <returns></returns>
-        public DbDataReader GetDataReader(TDbConnection connection, string sql, CommandType commandType, List<DbParameter> parameters = null)
-        {
-            var command = GetNewCommand(connection, sql, commandType, parameters);
-            var reader = command.ExecuteReader(CommandBehavior.CloseConnection);
-            return reader;
-        }
+        ///// <summary>
+        ///// Executes a list of sql as in a single transaction. 
+        ///// </summary>
+        ///// <param name="connection"></param>
+        ///// <param name="sqls"></param>
+        ///// <param name="rollbackOnException"></param>
+        ///// <param name="throwException"></param>
+        ///// <returns></returns>
+        //public int ExecuteTransaction(TDbConnection connection, List<string> sqls, bool rollbackOnException, bool throwException = true)
+        //{
+        //    var recordAffected = 0;
+        //    if (sqls == null || !sqls.Any()) return recordAffected;
+
+        //    var obj = GetNewCommandAndTransaction(connection);
+        //    var command = obj.command;
+        //    var transaction = obj.transaction;
+        //    try
+        //    {
+        //        sqls.ForEach(delegate (string s)
+        //        {
+        //            command.CommandText = s;
+        //            recordAffected += command.ExecuteNonQuery();
+        //        });
+        //        transaction.Commit();
+        //    }
+        //    catch (Exception)
+        //    {
+        //        if (rollbackOnException)
+        //            transaction.Rollback();
+        //        if (throwException)
+        //        {
+        //            throw;
+        //        }
+        //    }
+
+        //    return recordAffected;
+        //}
+
+        ///// <summary>
+        ///// execute the sql and return the result as a DbDataReader
+        ///// </summary>
+        ///// <param name="connection"></param>
+        ///// <param name="sql"></param>
+        ///// <param name="commandType">Specifies how a command string is interpreted.</param>
+        ///// <param name="parameters"></param>
+        ///// <returns></returns>
+        //public DbDataReader GetDataReader(TDbConnection connection, string sql, CommandType commandType, List<DbParameter> parameters = null)
+        //{
+        //    var command = GetNewCommand(connection, sql, commandType, parameters);
+        //    var reader = command.ExecuteReader(CommandBehavior.CloseConnection);
+        //    return reader;
+        //}
 
 
         /// <summary>
@@ -340,7 +407,9 @@ namespace DotNetHelper.Database.DataSource
         public DbDataReader GetDataReader(string sql, CommandType commandType, List<DbParameter> parameters = null)
         {
             var connection = GetNewConnection(true);
-            return GetDataReader(connection, sql, commandType, parameters);
+            var command = GetNewCommand(connection, sql, commandType, parameters);
+            var reader = command.ExecuteReader(CommandBehavior.CloseConnection);
+            return reader;
         }
 
         /// <summary>
@@ -466,22 +535,22 @@ namespace DotNetHelper.Database.DataSource
             return GetDataReader(sql, commandType, parameters).MapToList<T>(xmlDeserializer, jsonDeserializer, csvDeserializer);
         }
 
-        /// <summary>
-        /// Executes the specified sql and maps the results a list of objects
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="connection"></param>
-        /// <param name="sql"></param>
-        /// <param name="commandType">Specifies how a command string is interpreted.</param>
-        /// <param name="xmlDeserializer"></param>
-        /// <param name="jsonDeserializer"></param>
-        /// <param name="csvDeserializer"></param>
-        /// <param name="parameters"></param>
-        /// <returns>The sql result mapped to a list of </returns>
-        public List<T> Get<T>(TDbConnection connection, string sql, CommandType commandType, Func<string, Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer, List<DbParameter> parameters = null) where T : class
-        {
-            return GetDataReader(connection, sql, commandType, parameters).MapToList<T>(xmlDeserializer, jsonDeserializer, csvDeserializer);
-        }
+        ///// <summary>
+        ///// Executes the specified sql and maps the results a list of objects
+        ///// </summary>
+        ///// <typeparam name="T"></typeparam>
+        ///// <param name="connection"></param>
+        ///// <param name="sql"></param>
+        ///// <param name="commandType">Specifies how a command string is interpreted.</param>
+        ///// <param name="xmlDeserializer"></param>
+        ///// <param name="jsonDeserializer"></param>
+        ///// <param name="csvDeserializer"></param>
+        ///// <param name="parameters"></param>
+        ///// <returns>The sql result mapped to a list of </returns>
+        //public List<T> Get<T>(TDbConnection connection, string sql, CommandType commandType, Func<string, Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer, List<DbParameter> parameters = null) where T : class
+        //{
+        //    return GetDataReader(connection, sql, commandType, parameters).MapToList<T>(xmlDeserializer, jsonDeserializer, csvDeserializer);
+        //}
 
         /// <summary>
         /// return a list of type of T from the database. 
@@ -770,7 +839,6 @@ namespace DotNetHelper.Database.DataSource
                 {
                     bulk.ColumnMappings.Add(dc.ColumnName, dc.ColumnName);
                 }
-
                 bulk.BatchSize = batchSize;
                 bulk.NotifyAfter = dt.Rows.Count;
                 bulk.SqlRowsCopied += (s, e) => rowsCopied = e.RowsCopied;

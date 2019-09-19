@@ -38,17 +38,21 @@ namespace DotNetHelper.Database.Tests
             list.Add(new DatabaseAccess<SqlConnection>(TestHelper.SQLServerConnectionString));
             list.Add(new DatabaseAccess<SqlConnection>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString));
             list.Add(new DatabaseAccess<SqlConnection>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString, TimeSpan.FromSeconds(35)));
-            list.Add(new DatabaseAccess<SqlConnection>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString, TimeSpan.FromSeconds(40), TimeSpan.FromSeconds(40)));
+            list.Add(new DatabaseAccess<SqlConnection>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString, TimeSpan.FromSeconds(40)));
+            list.Add(new SqlConnection(TestHelper.SQLServerConnectionString).DatabaseAccess());
+
 
 #if SUPPORTSQLITE
             list.Add(new DatabaseAccess<SqliteConnection>(DataBaseType.Sqlite, TestHelper.SqliteConnectionString));
-            list.Add(new DatabaseAccess<MySqlConnection>(DataBaseType.MySql, TestHelper.MySqlConnectionString, TimeSpan.FromSeconds(5), TimeSpan.FromSeconds(2)));
+            list.Add(new DatabaseAccess<MySqlConnection>(DataBaseType.MySql, TestHelper.MySqlConnectionString, TimeSpan.FromSeconds(5)));
+            list.Add(new SqliteConnection(TestHelper.SqliteConnectionString).DatabaseAccess());
+            list.Add(new MySqlConnection(TestHelper.MySqlConnectionString).DatabaseAccess());
 #endif
 
 
 #if SUPPORTDBFACTORIES
             list.Add(new DatabaseAccessFactory(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString));
-            list.Add(new DatabaseAccessFactory(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString, TimeSpan.FromSeconds(40), TimeSpan.FromSeconds(40)));
+            list.Add(new DatabaseAccessFactory(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString, TimeSpan.FromSeconds(40)));
 #endif
             return list;
         }

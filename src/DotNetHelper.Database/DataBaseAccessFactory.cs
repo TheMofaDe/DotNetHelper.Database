@@ -35,7 +35,7 @@ namespace DotNetHelper.Database
         /// <summary>
         /// The time (in seconds) to wait for a connection to open. The default value is 15 seconds.
         /// </summary>
-        public TimeSpan ConnectionTimeOut { get; set; } = TimeSpan.FromSeconds(15);
+       // public TimeSpan ConnectionTimeOut { get; set; } = TimeSpan.FromSeconds(15);
         /// <summary>
         /// The service that is used to generate sql
         /// </summary>
@@ -48,19 +48,19 @@ namespace DotNetHelper.Database
         public DbProviderFactory DbProviderFactory { get; private set; }
        
       //  private object Lock { get; } = new object();
-        public DatabaseAccessFactory(DbProviderFactory dbProviderFactory, DataBaseType type, TimeSpan? commandTimeOut = null, TimeSpan? connectionTimeOut = null)
+        public DatabaseAccessFactory(DbProviderFactory dbProviderFactory, DataBaseType type, TimeSpan? commandTimeOut = null)
         {
             CommandTimeOut = commandTimeOut.GetValueOrDefault(CommandTimeOut);
-            ConnectionTimeOut = connectionTimeOut.GetValueOrDefault(ConnectionTimeOut);
+          //  ConnectionTimeOut = connectionTimeOut.GetValueOrDefault(ConnectionTimeOut);
             DbProviderFactory = dbProviderFactory;
             ObjectToSql = new ObjectToSql.Services.ObjectToSql(type);
             ConnectionString = GetConnectionStringByProvider(DBProviderHelper.Map[type]);
         }
 
-        public DatabaseAccessFactory(DataBaseType type, string connectionString = null, TimeSpan? commandTimeOut = null, TimeSpan? connectionTimeOut = null)
+        public DatabaseAccessFactory(DataBaseType type, string connectionString = null, TimeSpan? commandTimeOut = null)
         {
             CommandTimeOut = commandTimeOut.GetValueOrDefault(CommandTimeOut);
-            ConnectionTimeOut = connectionTimeOut.GetValueOrDefault(ConnectionTimeOut);
+         //  ConnectionTimeOut = connectionTimeOut.GetValueOrDefault(ConnectionTimeOut);
             ObjectToSql = new ObjectToSql.Services.ObjectToSql(type);
             DbProviderFactory = DbProviderFactories.GetFactory(DBProviderHelper.Map[type]);
             ConnectionString = connectionString ?? GetConnectionStringByProvider(DBProviderHelper.Map[type]);
