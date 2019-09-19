@@ -18,7 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper.Database.DataSource.DatabaseAccess-1.html",
-          "hash": "L9bBYocxDknWaN7zkPdXMA=="
+          "hash": "0NqUe4s4QCR2XboxtJb3fg=="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper.Database.DatabaseAccessFactory.html",
-          "hash": "r+dyCCJRjKWnzrgtV/LgDg=="
+          "hash": "7j7v0r76Q74vXO+DHECPuQ=="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper.Database.Extension.DBConnectionExtension.html",
-          "hash": "cZ6JhPlBsRbKhSu9H/sgVA=="
+          "hash": "I5A9flcP79GsMxNtfnibBQ=="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper.Database.Extension.ExtDataReader.html",
-          "hash": "QlvVgsl8Eg2wjIGS7FFBVg=="
+          "hash": "2q9HOwIc9WgaMetavP4ugA=="
         }
       },
       "is_incremental": false,
@@ -78,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper.Database.Extension.ExtDataTable.html",
-          "hash": "OEVLqX7pU9WZcFHlzFTRpg=="
+          "hash": "mRijsum2tOQQ6NSpMTwNrA=="
         }
       },
       "is_incremental": false,
@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper.Database.Extension.IDataParameterExtension.html",
-          "hash": "8sNHmb42iTqmoUnx0LDNVQ=="
+          "hash": "Xcw2Ty4GXBXgnIabtYPmxA=="
         }
       },
       "is_incremental": false,
@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper.Database.Extension.TypeExtension.html",
-          "hash": "UXneNvblNQSkbYVQ1WpEwQ=="
+          "hash": "68e9CioEd24FXYc/pYSMtw=="
         }
       },
       "is_incremental": false,
@@ -126,7 +126,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper.Database.Helper.DBProviderHelper.html",
-          "hash": "9b+fnwkSk65fkJjPyshUjQ=="
+          "hash": "64Qkcm8nXBqOy+/sHdj7SA=="
         }
       },
       "is_incremental": false,
@@ -138,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper.Database.Helper.html",
-          "hash": "LdMQoiWoxD8qs9QaXt7dDg=="
+          "hash": "oytXf+G0BWNXB/NEpKCg0Q=="
         }
       },
       "is_incremental": false,
@@ -150,7 +150,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper.Database.Interface.IDatabaseAccess.html",
-          "hash": "xTBkk0fe7hBlrMYMpgf5eA=="
+          "hash": "q1QZ3r4HSi/wQBl4es0/YA=="
         }
       },
       "is_incremental": false,
@@ -392,24 +392,24 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build",
-          "total_file_count": 14,
-          "skipped_file_count": 14
-        },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build",
-          "total_file_count": 10,
-          "skipped_file_count": 9
-        },
         "TocDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
           "total_file_count": 0,
           "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 14,
+          "skipped_file_count": 5
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 10,
+          "skipped_file_count": 10
         }
       }
     },

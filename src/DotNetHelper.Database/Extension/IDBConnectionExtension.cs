@@ -1,4 +1,9 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
+using System.Data.Common;
+using DotNetHelper.Database.DataSource;
+using DotNetHelper.Database.Interface;
+using DotNetHelper.ObjectToSql.Enum;
 
 namespace DotNetHelper.Database.Extension
 {
@@ -27,6 +32,11 @@ namespace DotNetHelper.Database.Extension
             {
 
             }
+        }
+
+        public static IDatabaseAccess DatabaseAccess<T>(this T connection, DataBaseType? dataBaseType = null) where T : DbConnection, new()
+        {
+            return new DatabaseAccess<T>(connection, dataBaseType);
         }
 
     }

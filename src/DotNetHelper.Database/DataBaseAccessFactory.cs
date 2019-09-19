@@ -35,11 +35,11 @@ namespace DotNetHelper.Database
         /// <summary>
         /// The time (in seconds) to wait for a connection to open. The default value is 15 seconds.
         /// </summary>
-        public TimeSpan ConnectionTimeOut { get; set; } = TimeSpan.FromSeconds(15);
+       // public TimeSpan ConnectionTimeOut { get; set; } = TimeSpan.FromSeconds(15);
         /// <summary>
         /// The service that is used to generate sql
         /// </summary>
-        private ObjectToSql.Services.ObjectToSql ObjectToSql { get; }
+        public ObjectToSql.Services.ObjectToSql ObjectToSql { get; }
         /// <summary>
         /// The type of database. This property is only used to control how sql is generated
         /// </summary>
@@ -48,19 +48,19 @@ namespace DotNetHelper.Database
         public DbProviderFactory DbProviderFactory { get; private set; }
        
       //  private object Lock { get; } = new object();
-        public DatabaseAccessFactory(DbProviderFactory dbProviderFactory, DataBaseType type, TimeSpan? commandTimeOut = null, TimeSpan? connectionTimeOut = null)
+        public DatabaseAccessFactory(DbProviderFactory dbProviderFactory, DataBaseType type, TimeSpan? commandTimeOut = null)
         {
             CommandTimeOut = commandTimeOut.GetValueOrDefault(CommandTimeOut);
-            ConnectionTimeOut = connectionTimeOut.GetValueOrDefault(ConnectionTimeOut);
+          //  ConnectionTimeOut = connectionTimeOut.GetValueOrDefault(ConnectionTimeOut);
             DbProviderFactory = dbProviderFactory;
             ObjectToSql = new ObjectToSql.Services.ObjectToSql(type);
             ConnectionString = GetConnectionStringByProvider(DBProviderHelper.Map[type]);
         }
 
-        public DatabaseAccessFactory(DataBaseType type, string connectionString = null, TimeSpan? commandTimeOut = null, TimeSpan? connectionTimeOut = null)
+        public DatabaseAccessFactory(DataBaseType type, string connectionString = null, TimeSpan? commandTimeOut = null)
         {
             CommandTimeOut = commandTimeOut.GetValueOrDefault(CommandTimeOut);
-            ConnectionTimeOut = connectionTimeOut.GetValueOrDefault(ConnectionTimeOut);
+         //  ConnectionTimeOut = connectionTimeOut.GetValueOrDefault(ConnectionTimeOut);
             ObjectToSql = new ObjectToSql.Services.ObjectToSql(type);
             DbProviderFactory = DbProviderFactories.GetFactory(DBProviderHelper.Map[type]);
             ConnectionString = connectionString ?? GetConnectionStringByProvider(DBProviderHelper.Map[type]);
@@ -112,6 +112,30 @@ namespace DotNetHelper.Database
             parameter.ParameterName = parameterName;
             parameter.Value = value;
             return parameter;
+        }
+
+        /// <summary>
+        /// return a new list of DBParameter where the parameters are created from each property name & value  
+        /// </summary>
+        /// <param name="obj">the object to build DbParameters from</param>
+        /// <returns></returns>
+        public List<DbParameter> GetNewParameter<T>(T obj) where T : class
+        {
+            return GetNewParameter(obj, null, null, null);
+        }
+
+
+        /// <summary>
+        /// return a new list of DBParameter where the parameters are created from each property name & value  
+        /// </summary>
+        /// <param name="obj">the object to build DbParameters from</param>
+        /// <param name="xmlSerializer">For when your storing values in the database as xml. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.XML)]</param>
+        /// <param name="jsonSerializer">For when your storing values in the database as json. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.JSON)]</param>
+        /// <param name="csvSerializer">For when your storing values in the database as csv. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.CSV)]</param>
+        /// <returns></returns>
+        public List<DbParameter> GetNewParameter<T>(T obj, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer) where T : class
+        {
+            return ObjectToSql.BuildDbParameterList(obj, GetNewParameter, xmlSerializer, jsonSerializer, csvSerializer);
         }
 
 

@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/TypeExtension.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: TypeExtension
     path: ../src/DotNetHelper.Database/Extension/TypeExtension.cs
@@ -61,7 +61,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/TypeExtension.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: IsNullable
     path: ../src/DotNetHelper.Database/Extension/TypeExtension.cs
@@ -106,7 +106,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/TypeExtension.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: IsTypeDynamic
     path: ../src/DotNetHelper.Database/Extension/TypeExtension.cs
@@ -151,7 +151,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/TypeExtension.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: IsTypeAnonymousType
     path: ../src/DotNetHelper.Database/Extension/TypeExtension.cs

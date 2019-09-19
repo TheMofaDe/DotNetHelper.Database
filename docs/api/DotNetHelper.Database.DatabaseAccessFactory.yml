@@ -5,12 +5,11 @@ items:
   id: DatabaseAccessFactory
   parent: DotNetHelper.Database
   children:
-  - DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.String,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
-  - DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.Data.Common.DbProviderFactory,DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
+  - DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.String,System.Nullable{System.TimeSpan})
+  - DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.Data.Common.DbProviderFactory,DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan})
   - DotNetHelper.Database.DatabaseAccessFactory.CanConnect
   - DotNetHelper.Database.DatabaseAccessFactory.CommandTimeOut
   - DotNetHelper.Database.DatabaseAccessFactory.ConnectionString
-  - DotNetHelper.Database.DatabaseAccessFactory.ConnectionTimeOut
   - DotNetHelper.Database.DatabaseAccessFactory.DatabaseType
   - DotNetHelper.Database.DatabaseAccessFactory.DbProviderFactory
   - DotNetHelper.Database.DatabaseAccessFactory.Dispose
@@ -47,6 +46,9 @@ items:
   - DotNetHelper.Database.DatabaseAccessFactory.GetNewCommandAndTransaction(System.Data.Common.DbConnection)
   - DotNetHelper.Database.DatabaseAccessFactory.GetNewConnection(System.Boolean)
   - DotNetHelper.Database.DatabaseAccessFactory.GetNewParameter(System.String,System.Object)
+  - DotNetHelper.Database.DatabaseAccessFactory.GetNewParameter``1(``0)
+  - DotNetHelper.Database.DatabaseAccessFactory.GetNewParameter``1(``0,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  - DotNetHelper.Database.DatabaseAccessFactory.ObjectToSql
   - DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkCopy``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
   - DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkCopy``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String)
   - DotNetHelper.Database.DatabaseAccessFactory.SqlServerBulkCopy``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions,System.String,System.Int32)
@@ -63,7 +65,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: DatabaseAccessFactory
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
@@ -108,7 +110,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ConnectionString
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
@@ -147,7 +149,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: CommandTimeOut
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
@@ -172,45 +174,45 @@ items:
   - set
   modifiers.vb:
   - Public
-- uid: DotNetHelper.Database.DatabaseAccessFactory.ConnectionTimeOut
-  commentId: P:DotNetHelper.Database.DatabaseAccessFactory.ConnectionTimeOut
-  id: ConnectionTimeOut
+- uid: DotNetHelper.Database.DatabaseAccessFactory.ObjectToSql
+  commentId: P:DotNetHelper.Database.DatabaseAccessFactory.ObjectToSql
+  id: ObjectToSql
   parent: DotNetHelper.Database.DatabaseAccessFactory
   langs:
   - csharp
   - vb
-  name: ConnectionTimeOut
-  nameWithType: DatabaseAccessFactory.ConnectionTimeOut
-  fullName: DotNetHelper.Database.DatabaseAccessFactory.ConnectionTimeOut
+  name: ObjectToSql
+  nameWithType: DatabaseAccessFactory.ObjectToSql
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.ObjectToSql
   type: Property
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
-    id: ConnectionTimeOut
+    id: ObjectToSql
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 37
+    startLine: 41
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
-  summary: "\nThe time (in seconds) to wait for a connection to open. The default value is 15 seconds.\n"
+  summary: "\nThe service that is used to generate sql\n"
   example: []
   syntax:
-    content: public TimeSpan ConnectionTimeOut { get; set; }
+    content: public ObjectToSql ObjectToSql { get; }
     parameters: []
     return:
-      type: System.TimeSpan
-    content.vb: Public Property ConnectionTimeOut As TimeSpan
-  overload: DotNetHelper.Database.DatabaseAccessFactory.ConnectionTimeOut*
+      type: DotNetHelper.ObjectToSql.Services.ObjectToSql
+    content.vb: Public ReadOnly Property ObjectToSql As ObjectToSql
+  overload: DotNetHelper.Database.DatabaseAccessFactory.ObjectToSql*
   implements:
-  - DotNetHelper.Database.Interface.IDatabaseAccess.ConnectionTimeOut
+  - DotNetHelper.Database.Interface.IDatabaseAccess.ObjectToSql
   modifiers.csharp:
   - public
   - get
-  - set
   modifiers.vb:
   - Public
+  - ReadOnly
 - uid: DotNetHelper.Database.DatabaseAccessFactory.DatabaseType
   commentId: P:DotNetHelper.Database.DatabaseAccessFactory.DatabaseType
   id: DatabaseType
@@ -225,7 +227,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: DatabaseType
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
@@ -264,7 +266,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: DbProviderFactory
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
@@ -285,21 +287,21 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.Data.Common.DbProviderFactory,DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
-  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.Data.Common.DbProviderFactory,DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
-  id: '#ctor(System.Data.Common.DbProviderFactory,DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})'
+- uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.Data.Common.DbProviderFactory,DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan})
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.#ctor(System.Data.Common.DbProviderFactory,DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan})
+  id: '#ctor(System.Data.Common.DbProviderFactory,DotNetHelper.ObjectToSql.Enum.DataBaseType,System.Nullable{System.TimeSpan})'
   parent: DotNetHelper.Database.DatabaseAccessFactory
   langs:
   - csharp
   - vb
-  name: DatabaseAccessFactory(DbProviderFactory, DataBaseType, Nullable<TimeSpan>, Nullable<TimeSpan>)
-  nameWithType: DatabaseAccessFactory.DatabaseAccessFactory(DbProviderFactory, DataBaseType, Nullable<TimeSpan>, Nullable<TimeSpan>)
-  fullName: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(System.Data.Common.DbProviderFactory, DotNetHelper.ObjectToSql.Enum.DataBaseType, System.Nullable<System.TimeSpan>, System.Nullable<System.TimeSpan>)
+  name: DatabaseAccessFactory(DbProviderFactory, DataBaseType, Nullable<TimeSpan>)
+  nameWithType: DatabaseAccessFactory.DatabaseAccessFactory(DbProviderFactory, DataBaseType, Nullable<TimeSpan>)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(System.Data.Common.DbProviderFactory, DotNetHelper.ObjectToSql.Enum.DataBaseType, System.Nullable<System.TimeSpan>)
   type: Constructor
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: .ctor
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
@@ -308,7 +310,7 @@ items:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
   syntax:
-    content: public DatabaseAccessFactory(DbProviderFactory dbProviderFactory, DataBaseType type, TimeSpan? commandTimeOut = default(TimeSpan? ), TimeSpan? connectionTimeOut = default(TimeSpan? ))
+    content: public DatabaseAccessFactory(DbProviderFactory dbProviderFactory, DataBaseType type, TimeSpan? commandTimeOut = default(TimeSpan? ))
     parameters:
     - id: dbProviderFactory
       type: System.Data.Common.DbProviderFactory
@@ -316,32 +318,30 @@ items:
       type: DotNetHelper.ObjectToSql.Enum.DataBaseType
     - id: commandTimeOut
       type: System.Nullable{System.TimeSpan}
-    - id: connectionTimeOut
-      type: System.Nullable{System.TimeSpan}
-    content.vb: Public Sub New(dbProviderFactory As DbProviderFactory, type As DataBaseType, commandTimeOut As TimeSpan? = Nothing, connectionTimeOut As TimeSpan? = Nothing)
+    content.vb: Public Sub New(dbProviderFactory As DbProviderFactory, type As DataBaseType, commandTimeOut As TimeSpan? = Nothing)
   overload: DotNetHelper.Database.DatabaseAccessFactory.#ctor*
-  nameWithType.vb: DatabaseAccessFactory.DatabaseAccessFactory(DbProviderFactory, DataBaseType, Nullable(Of TimeSpan), Nullable(Of TimeSpan))
+  nameWithType.vb: DatabaseAccessFactory.DatabaseAccessFactory(DbProviderFactory, DataBaseType, Nullable(Of TimeSpan))
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(System.Data.Common.DbProviderFactory, DotNetHelper.ObjectToSql.Enum.DataBaseType, System.Nullable(Of System.TimeSpan), System.Nullable(Of System.TimeSpan))
-  name.vb: DatabaseAccessFactory(DbProviderFactory, DataBaseType, Nullable(Of TimeSpan), Nullable(Of TimeSpan))
-- uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.String,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
-  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.String,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})
-  id: '#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.String,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})'
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(System.Data.Common.DbProviderFactory, DotNetHelper.ObjectToSql.Enum.DataBaseType, System.Nullable(Of System.TimeSpan))
+  name.vb: DatabaseAccessFactory(DbProviderFactory, DataBaseType, Nullable(Of TimeSpan))
+- uid: DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.String,System.Nullable{System.TimeSpan})
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.String,System.Nullable{System.TimeSpan})
+  id: '#ctor(DotNetHelper.ObjectToSql.Enum.DataBaseType,System.String,System.Nullable{System.TimeSpan})'
   parent: DotNetHelper.Database.DatabaseAccessFactory
   langs:
   - csharp
   - vb
-  name: DatabaseAccessFactory(DataBaseType, String, Nullable<TimeSpan>, Nullable<TimeSpan>)
-  nameWithType: DatabaseAccessFactory.DatabaseAccessFactory(DataBaseType, String, Nullable<TimeSpan>, Nullable<TimeSpan>)
-  fullName: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.String, System.Nullable<System.TimeSpan>, System.Nullable<System.TimeSpan>)
+  name: DatabaseAccessFactory(DataBaseType, String, Nullable<TimeSpan>)
+  nameWithType: DatabaseAccessFactory.DatabaseAccessFactory(DataBaseType, String, Nullable<TimeSpan>)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.String, System.Nullable<System.TimeSpan>)
   type: Constructor
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: .ctor
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
@@ -350,7 +350,7 @@ items:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
   syntax:
-    content: public DatabaseAccessFactory(DataBaseType type, string connectionString = null, TimeSpan? commandTimeOut = default(TimeSpan? ), TimeSpan? connectionTimeOut = default(TimeSpan? ))
+    content: public DatabaseAccessFactory(DataBaseType type, string connectionString = null, TimeSpan? commandTimeOut = default(TimeSpan? ))
     parameters:
     - id: type
       type: DotNetHelper.ObjectToSql.Enum.DataBaseType
@@ -358,17 +358,15 @@ items:
       type: System.String
     - id: commandTimeOut
       type: System.Nullable{System.TimeSpan}
-    - id: connectionTimeOut
-      type: System.Nullable{System.TimeSpan}
-    content.vb: Public Sub New(type As DataBaseType, connectionString As String = Nothing, commandTimeOut As TimeSpan? = Nothing, connectionTimeOut As TimeSpan? = Nothing)
+    content.vb: Public Sub New(type As DataBaseType, connectionString As String = Nothing, commandTimeOut As TimeSpan? = Nothing)
   overload: DotNetHelper.Database.DatabaseAccessFactory.#ctor*
-  nameWithType.vb: DatabaseAccessFactory.DatabaseAccessFactory(DataBaseType, String, Nullable(Of TimeSpan), Nullable(Of TimeSpan))
+  nameWithType.vb: DatabaseAccessFactory.DatabaseAccessFactory(DataBaseType, String, Nullable(Of TimeSpan))
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.String, System.Nullable(Of System.TimeSpan), System.Nullable(Of System.TimeSpan))
-  name.vb: DatabaseAccessFactory(DataBaseType, String, Nullable(Of TimeSpan), Nullable(Of TimeSpan))
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.DatabaseAccessFactory(DotNetHelper.ObjectToSql.Enum.DataBaseType, System.String, System.Nullable(Of System.TimeSpan))
+  name.vb: DatabaseAccessFactory(DataBaseType, String, Nullable(Of TimeSpan))
 - uid: DotNetHelper.Database.DatabaseAccessFactory.GetNewConnection(System.Boolean)
   commentId: M:DotNetHelper.Database.DatabaseAccessFactory.GetNewConnection(System.Boolean)
   id: GetNewConnection(System.Boolean)
@@ -383,7 +381,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewConnection
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
@@ -418,7 +416,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewParameter
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
@@ -448,6 +446,100 @@ items:
   - public
   modifiers.vb:
   - Public
+- uid: DotNetHelper.Database.DatabaseAccessFactory.GetNewParameter``1(``0)
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.GetNewParameter``1(``0)
+  id: GetNewParameter``1(``0)
+  parent: DotNetHelper.Database.DatabaseAccessFactory
+  langs:
+  - csharp
+  - vb
+  name: GetNewParameter<T>(T)
+  nameWithType: DatabaseAccessFactory.GetNewParameter<T>(T)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.GetNewParameter<T>(T)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
+      branch: Feature-SingleSQLConnection
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+    id: GetNewParameter
+    path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
+    startLine: 121
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database
+  syntax:
+    content: >-
+      public List<DbParameter> GetNewParameter<T>(T obj)
+          where T : class
+    parameters:
+    - id: obj
+      type: '{T}'
+    typeParameters:
+    - id: T
+    return:
+      type: System.Collections.Generic.List{System.Data.Common.DbParameter}
+    content.vb: Public Function GetNewParameter(Of T As Class)(obj As T) As List(Of DbParameter)
+  overload: DotNetHelper.Database.DatabaseAccessFactory.GetNewParameter*
+  implements:
+  - DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter``1({T})
+  nameWithType.vb: DatabaseAccessFactory.GetNewParameter(Of T)(T)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.GetNewParameter(Of T)(T)
+  name.vb: GetNewParameter(Of T)(T)
+- uid: DotNetHelper.Database.DatabaseAccessFactory.GetNewParameter``1(``0,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.GetNewParameter``1(``0,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  id: GetNewParameter``1(``0,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  parent: DotNetHelper.Database.DatabaseAccessFactory
+  langs:
+  - csharp
+  - vb
+  name: GetNewParameter<T>(T, Func<Object, String>, Func<Object, String>, Func<Object, String>)
+  nameWithType: DatabaseAccessFactory.GetNewParameter<T>(T, Func<Object, String>, Func<Object, String>, Func<Object, String>)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.GetNewParameter<T>(T, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
+      branch: Feature-SingleSQLConnection
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+    id: GetNewParameter
+    path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
+    startLine: 135
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database
+  syntax:
+    content: >-
+      public List<DbParameter> GetNewParameter<T>(T obj, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer)
+          where T : class
+    parameters:
+    - id: obj
+      type: '{T}'
+    - id: xmlSerializer
+      type: System.Func{System.Object,System.String}
+    - id: jsonSerializer
+      type: System.Func{System.Object,System.String}
+    - id: csvSerializer
+      type: System.Func{System.Object,System.String}
+    typeParameters:
+    - id: T
+    return:
+      type: System.Collections.Generic.List{System.Data.Common.DbParameter}
+    content.vb: Public Function GetNewParameter(Of T As Class)(obj As T, xmlSerializer As Func(Of Object, String), jsonSerializer As Func(Of Object, String), csvSerializer As Func(Of Object, String)) As List(Of DbParameter)
+  overload: DotNetHelper.Database.DatabaseAccessFactory.GetNewParameter*
+  implements:
+  - DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter``1({T},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  nameWithType.vb: DatabaseAccessFactory.GetNewParameter(Of T)(T, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.GetNewParameter(Of T)(T, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String))
+  name.vb: GetNewParameter(Of T)(T, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
 - uid: DotNetHelper.Database.DatabaseAccessFactory.GetNewCommand(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter})
   commentId: M:DotNetHelper.Database.DatabaseAccessFactory.GetNewCommand(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter})
   id: GetNewCommand(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter})
@@ -462,11 +554,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewCommand
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 125
+    startLine: 149
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -515,11 +607,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewCommandAndTransaction
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 144
+    startLine: 168
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -556,11 +648,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteNonQuery
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 166
+    startLine: 190
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -609,11 +701,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteNonQuery
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 183
+    startLine: 207
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -660,11 +752,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteScalar
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 197
+    startLine: 221
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -710,11 +802,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteScalar
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 213
+    startLine: 237
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -761,11 +853,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteTransaction
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 228
+    startLine: 252
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -811,11 +903,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteTransaction
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 244
+    startLine: 268
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -862,11 +954,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataReader
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 282
+    startLine: 306
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -913,11 +1005,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataReader
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 297
+    startLine: 321
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -963,11 +1055,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTable
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 310
+    startLine: 334
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1013,11 +1105,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTable
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 323
+    startLine: 347
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1054,11 +1146,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTableWithSchema
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 335
+    startLine: 359
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1104,11 +1196,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTableWithKeyInfo
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 357
+    startLine: 381
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1154,11 +1246,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTableWithSchema
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 375
+    startLine: 399
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1195,11 +1287,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTableWithKeyInfo
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 385
+    startLine: 409
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1236,11 +1328,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: CanConnect
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 395
+    startLine: 419
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1273,11 +1365,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 421
+    startLine: 445
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1337,11 +1429,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 438
+    startLine: 462
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1402,11 +1494,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 448
+    startLine: 472
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1447,11 +1539,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 463
+    startLine: 487
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1502,11 +1594,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 477
+    startLine: 501
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1557,11 +1649,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Execute
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 489
+    startLine: 513
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1609,11 +1701,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Execute
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 502
+    startLine: 526
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1664,11 +1756,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Execute
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 518
+    startLine: 542
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1728,11 +1820,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Execute
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 538
+    startLine: 562
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1786,11 +1878,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Execute
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 558
+    startLine: 582
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1853,11 +1945,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutput
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 574
+    startLine: 598
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1908,11 +2000,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutput
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 593
+    startLine: 617
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1981,11 +2073,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutputAsDataReader
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 605
+    startLine: 629
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -2029,11 +2121,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutputAsDataReader
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 610
+    startLine: 634
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -2083,11 +2175,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: SqlServerBulkCopy
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 628
+    startLine: 652
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -2135,11 +2227,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: SqlServerBulkCopy
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 642
+    startLine: 666
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -2190,11 +2282,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: SqlServerBulkCopy
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 656
+    startLine: 680
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -2248,11 +2340,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: SqlServerBulkCopyAsync
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 688
+    startLine: 712
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -2300,11 +2392,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: SqlServerBulkCopyAsync
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 702
+    startLine: 726
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -2355,11 +2447,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: SqlServerBulkCopyAsync
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 716
+    startLine: 740
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -2413,11 +2505,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Dispose
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 743
+    startLine: 767
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -2443,11 +2535,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/DataBaseAccessFactory.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Dispose
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 750
+    startLine: 774
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -2809,17 +2901,30 @@ references:
   name: TimeSpan
   nameWithType: TimeSpan
   fullName: System.TimeSpan
-- uid: DotNetHelper.Database.DatabaseAccessFactory.ConnectionTimeOut*
-  commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.ConnectionTimeOut
-  name: ConnectionTimeOut
-  nameWithType: DatabaseAccessFactory.ConnectionTimeOut
-  fullName: DotNetHelper.Database.DatabaseAccessFactory.ConnectionTimeOut
-- uid: DotNetHelper.Database.Interface.IDatabaseAccess.ConnectionTimeOut
-  commentId: P:DotNetHelper.Database.Interface.IDatabaseAccess.ConnectionTimeOut
+- uid: DotNetHelper.Database.DatabaseAccessFactory.ObjectToSql*
+  commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.ObjectToSql
+  name: ObjectToSql
+  nameWithType: DatabaseAccessFactory.ObjectToSql
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.ObjectToSql
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.ObjectToSql
+  commentId: P:DotNetHelper.Database.Interface.IDatabaseAccess.ObjectToSql
   parent: DotNetHelper.Database.Interface.IDatabaseAccess
-  name: ConnectionTimeOut
-  nameWithType: IDatabaseAccess.ConnectionTimeOut
-  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.ConnectionTimeOut
+  name: ObjectToSql
+  nameWithType: IDatabaseAccess.ObjectToSql
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.ObjectToSql
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  commentId: T:DotNetHelper.ObjectToSql.Services.ObjectToSql
+  parent: DotNetHelper.ObjectToSql.Services
+  isExternal: true
+  name: ObjectToSql
+  nameWithType: ObjectToSql
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql
+- uid: DotNetHelper.ObjectToSql.Services
+  commentId: N:DotNetHelper.ObjectToSql.Services
+  isExternal: true
+  name: DotNetHelper.ObjectToSql.Services
+  nameWithType: DotNetHelper.ObjectToSql.Services
+  fullName: DotNetHelper.ObjectToSql.Services
 - uid: DotNetHelper.Database.DatabaseAccessFactory.DatabaseType*
   commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.DatabaseType
   name: DatabaseType
@@ -3036,6 +3141,689 @@ references:
   name: DbParameter
   nameWithType: DbParameter
   fullName: System.Data.Common.DbParameter
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter``1({T})
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter``1(``0)
+  parent: DotNetHelper.Database.Interface.IDatabaseAccess
+  definition: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter``1(``0)
+  name: GetNewParameter<T>(T)
+  nameWithType: IDatabaseAccess.GetNewParameter<T>(T)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter<T>(T)
+  nameWithType.vb: IDatabaseAccess.GetNewParameter(Of T)(T)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(Of T)(T)
+  name.vb: GetNewParameter(Of T)(T)
+  spec.csharp:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter``1(``0)
+    name: GetNewParameter<T>
+    nameWithType: IDatabaseAccess.GetNewParameter<T>
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter``1(``0)
+    name: GetNewParameter(Of T)
+    nameWithType: IDatabaseAccess.GetNewParameter(Of T)
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Collections.Generic.List{System.Data.Common.DbParameter}
+  commentId: T:System.Collections.Generic.List{System.Data.Common.DbParameter}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<DbParameter>
+  nameWithType: List<DbParameter>
+  fullName: System.Collections.Generic.List<System.Data.Common.DbParameter>
+  nameWithType.vb: List(Of DbParameter)
+  fullName.vb: System.Collections.Generic.List(Of System.Data.Common.DbParameter)
+  name.vb: List(Of DbParameter)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Data.Common.DbParameter
+    name: DbParameter
+    nameWithType: DbParameter
+    fullName: System.Data.Common.DbParameter
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Data.Common.DbParameter
+    name: DbParameter
+    nameWithType: DbParameter
+    fullName: System.Data.Common.DbParameter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter``1(``0)
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter``1(``0)
+  name: GetNewParameter<T>(T)
+  nameWithType: IDatabaseAccess.GetNewParameter<T>(T)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter<T>(T)
+  nameWithType.vb: IDatabaseAccess.GetNewParameter(Of T)(T)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(Of T)(T)
+  name.vb: GetNewParameter(Of T)(T)
+  spec.csharp:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter``1(``0)
+    name: GetNewParameter<T>
+    nameWithType: IDatabaseAccess.GetNewParameter<T>
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter``1(``0)
+    name: GetNewParameter(Of T)
+    nameWithType: IDatabaseAccess.GetNewParameter(Of T)
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter``1({T},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter``1(``0,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  parent: DotNetHelper.Database.Interface.IDatabaseAccess
+  definition: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter``1(``0,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  name: GetNewParameter<T>(T, Func<Object, String>, Func<Object, String>, Func<Object, String>)
+  nameWithType: IDatabaseAccess.GetNewParameter<T>(T, Func<Object, String>, Func<Object, String>, Func<Object, String>)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter<T>(T, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>)
+  nameWithType.vb: IDatabaseAccess.GetNewParameter(Of T)(T, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(Of T)(T, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String))
+  name.vb: GetNewParameter(Of T)(T, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
+  spec.csharp:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter``1(``0,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+    name: GetNewParameter<T>
+    nameWithType: IDatabaseAccess.GetNewParameter<T>
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter``1(``0,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+    name: GetNewParameter(Of T)
+    nameWithType: IDatabaseAccess.GetNewParameter(Of T)
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func{System.Object,System.String}
+  commentId: T:System.Func{System.Object,System.String}
+  parent: System
+  definition: System.Func`2
+  name: Func<Object, String>
+  nameWithType: Func<Object, String>
+  fullName: System.Func<System.Object, System.String>
+  nameWithType.vb: Func(Of Object, String)
+  fullName.vb: System.Func(Of System.Object, System.String)
+  name.vb: Func(Of Object, String)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter``1(``0,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter``1(``0,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  isExternal: true
+  name: GetNewParameter<T>(T, Func<Object, String>, Func<Object, String>, Func<Object, String>)
+  nameWithType: IDatabaseAccess.GetNewParameter<T>(T, Func<Object, String>, Func<Object, String>, Func<Object, String>)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter<T>(T, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>)
+  nameWithType.vb: IDatabaseAccess.GetNewParameter(Of T)(T, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(Of T)(T, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String))
+  name.vb: GetNewParameter(Of T)(T, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
+  spec.csharp:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter``1(``0,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+    name: GetNewParameter<T>
+    nameWithType: IDatabaseAccess.GetNewParameter<T>
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter``1(``0,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+    name: GetNewParameter(Of T)
+    nameWithType: IDatabaseAccess.GetNewParameter(Of T)
+    fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetNewParameter(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: DotNetHelper.Database.DatabaseAccessFactory.GetNewCommand*
   commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.GetNewCommand
   name: GetNewCommand
@@ -3256,12 +4044,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
-  isExternal: true
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
 - uid: DotNetHelper.Database.DatabaseAccessFactory.GetNewCommandAndTransaction*
   commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.GetNewCommandAndTransaction
   name: GetNewCommandAndTransaction
@@ -3575,89 +4357,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Collections.Generic.List{System.Data.Common.DbParameter}
-  commentId: T:System.Collections.Generic.List{System.Data.Common.DbParameter}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  name: List<DbParameter>
-  nameWithType: List<DbParameter>
-  fullName: System.Collections.Generic.List<System.Data.Common.DbParameter>
-  nameWithType.vb: List(Of DbParameter)
-  fullName.vb: System.Collections.Generic.List(Of System.Data.Common.DbParameter)
-  name.vb: List(Of DbParameter)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: System.Data.Common.DbParameter
-    name: DbParameter
-    nameWithType: DbParameter
-    fullName: System.Data.Common.DbParameter
-    isExternal: true
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: System.Data.Common.DbParameter
-    name: DbParameter
-    nameWithType: DbParameter
-    fullName: System.Data.Common.DbParameter
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Collections.Generic.List`1
-  commentId: T:System.Collections.Generic.List`1
-  isExternal: true
-  name: List<T>
-  nameWithType: List<T>
-  fullName: System.Collections.Generic.List<T>
-  nameWithType.vb: List(Of T)
-  fullName.vb: System.Collections.Generic.List(Of T)
-  name.vb: List(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
   - name: )
     nameWithType: )
     fullName: )
@@ -5286,12 +5985,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: '{T}'
-  commentId: '!:T'
-  definition: T
-  name: T
-  nameWithType: T
-  fullName: T
 - uid: DotNetHelper.ObjectToSql.Enum.ActionType
   commentId: T:DotNetHelper.ObjectToSql.Enum.ActionType
   parent: DotNetHelper.ObjectToSql.Enum
@@ -5352,10 +6045,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: T
-  name: T
-  nameWithType: T
-  fullName: T
 - uid: DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1({T},DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
   commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
   parent: DotNetHelper.Database.Interface.IDatabaseAccess
@@ -5727,66 +6416,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Func{System.Object,System.String}
-  commentId: T:System.Func{System.Object,System.String}
-  parent: System
-  definition: System.Func`2
-  name: Func<Object, String>
-  nameWithType: Func<Object, String>
-  fullName: System.Func<System.Object, System.String>
-  nameWithType.vb: Func(Of Object, String)
-  fullName.vb: System.Func(Of System.Object, System.String)
-  name.vb: Func(Of Object, String)
-  spec.csharp:
-  - uid: System.Func`2
-    name: Func
-    nameWithType: Func
-    fullName: System.Func
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Func`2
-    name: Func
-    nameWithType: Func
-    fullName: System.Func
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
   commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
   isExternal: true
@@ -6015,57 +6644,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Func`2
-  commentId: T:System.Func`2
-  isExternal: true
-  name: Func<T, TResult>
-  nameWithType: Func<T, TResult>
-  fullName: System.Func<T, TResult>
-  nameWithType.vb: Func(Of T, TResult)
-  fullName.vb: System.Func(Of T, TResult)
-  name.vb: Func(Of T, TResult)
-  spec.csharp:
-  - uid: System.Func`2
-    name: Func
-    nameWithType: Func
-    fullName: System.Func
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - name: TResult
-    nameWithType: TResult
-    fullName: TResult
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Func`2
-    name: Func
-    nameWithType: Func
-    fullName: System.Func
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - name: TResult
-    nameWithType: TResult
-    fullName: TResult
   - name: )
     nameWithType: )
     fullName: )

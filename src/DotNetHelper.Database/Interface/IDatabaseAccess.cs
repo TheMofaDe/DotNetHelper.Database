@@ -5,15 +5,17 @@ using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using DotNetHelper.Database.DataSource;
 using DotNetHelper.ObjectToSql.Enum;
-using DotNetHelper.ObjectToSql.Helper;
 
 namespace DotNetHelper.Database.Interface
 {
     public interface IDatabaseAccess
     {
 
+        /// <summary>
+        /// The service that is used to generate sql
+        /// </summary>
+        ObjectToSql.Services.ObjectToSql ObjectToSql { get; }
         /// <summary>
         /// The connection string to the database
         /// </summary>
@@ -26,7 +28,8 @@ namespace DotNetHelper.Database.Interface
         /// <summary>
         /// The time (in seconds) to wait for a connection to open. The default value is 15 seconds.
         /// </summary>
-        TimeSpan ConnectionTimeOut { get; set; }
+        // TimeSpan ConnectionTimeOut { get; set; }
+        // TODO :: FIND A WAY TO INTERGRATE THIS
 
         /// <summary>
         /// The type of database. This property is only used to control how sql is generated
@@ -40,6 +43,26 @@ namespace DotNetHelper.Database.Interface
         /// <param name="value"></param>
         /// <returns></returns>
         DbParameter GetNewParameter(string parameterName, object value);
+
+        /// <summary>
+        /// return a new list of DBParameter where the parameters are created from each property name & value  
+        /// </summary>
+        /// <param name="obj">the object to build DbParameters from</param>
+        /// <returns></returns>
+        List<DbParameter> GetNewParameter<T>(T obj) where T : class;
+
+
+        /// <summary>
+        /// return a new list of DBParameter where the parameters are created from each property name & value  
+        /// </summary>
+        /// <param name="obj">the object to build DbParameters from</param>
+        /// <param name="xmlSerializer">For when your storing values in the database as xml. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.XML)]</param>
+        /// <param name="jsonSerializer">For when your storing values in the database as json. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.JSON)]</param>
+        /// <param name="csvSerializer">For when your storing values in the database as csv. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.CSV)]</param>
+        /// <returns></returns>
+        List<DbParameter> GetNewParameter<T>(T obj, Func<object, string> xmlSerializer,
+            Func<object, string> jsonSerializer, Func<object, string> csvSerializer) where T : class;
+
 
         /// <summary>
         /// creates a new dbcommand from the connection
@@ -60,7 +83,6 @@ namespace DotNetHelper.Database.Interface
         /// <param name="commandType">Specifies how a command string is interpreted.</param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        /// See <see cref="DatabaseAccess{C,P}.ExecuteNonQuery(C,string,System.Data.CommandType,System.Collections.Generic.IEnumerable{DbParameter})"/> to perform this this action with a specified connection.
         /// <exception cref="System.InvalidOperationException"> </exception>
         int ExecuteNonQuery(string sql, CommandType commandType, IEnumerable<DbParameter> parameters = null);
 

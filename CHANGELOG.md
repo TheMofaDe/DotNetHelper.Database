@@ -4,11 +4,34 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Unreleased
 ##
+
+
+
+<br/>
+
+## [1.0.60] - 2019-09-19
+### Added
+- Add boolean property UseSingleConnection to DataAccess class that will use the same SqlConnection for all execution
+~~~csharp
+public bool UseSingleConnection { get; set; }
+~~~
+- Add extension method for DBConnection objects to gain access to a DataAccessClass
+~~~csharp
+ public static IDatabaseAccess DatabaseAccess<T>(this T connection, DataBaseType? dataBaseType = null) where T : DbConnection, new()
+ {
+     return new DatabaseAccess<T>(connection,dataBaseType);
+ }
+~~~ 
+
 ### Changed 
 *   Renamed method DatabaseAccess.SqlServerBulkInsert to DatabaseAccess.SqlServerBulkCopy
 *   Fix bug where MapToList didn't working correctly for dynamic objects
-##
+
+### Removed 
+*   Removed paramter ConnectionTimeOut from the DataAccess constructor and interface due to DBConnection.ConnectionTimeOut being a read-only field
+
 <br/>
+
 
 ## [1.0.54] - 2019-08-26
 ### Added
@@ -61,5 +84,6 @@ public static T MapTo<T>(this IDataReader reader) where T : class
 [1.0.41]: https://github.com/olivierlacan/keep-a-changelog/releases/tag/v1.0.41
 [1.0.44]: https://github.com/olivierlacan/keep-a-changelog/releases/tag/v1.0.44
 [1.0.54]: https://github.com/olivierlacan/keep-a-changelog/releases/tag/v1.0.54
+[1.0.60]: https://github.com/olivierlacan/keep-a-changelog/releases/tag/v1.0.60
 
 

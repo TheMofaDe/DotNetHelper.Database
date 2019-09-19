@@ -6,6 +6,7 @@ items:
   parent: DotNetHelper.Database.Extension
   children:
   - DotNetHelper.Database.Extension.DBConnectionExtension.CloseSafely(System.Data.IDbConnection)
+  - DotNetHelper.Database.Extension.DBConnectionExtension.DatabaseAccess``1(``0,System.Nullable{DotNetHelper.ObjectToSql.Enum.DataBaseType})
   - DotNetHelper.Database.Extension.DBConnectionExtension.OpenSafely(System.Data.IDbConnection)
   langs:
   - csharp
@@ -17,11 +18,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: DBConnectionExtension
     path: ../src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
-    startLine: 4
+    startLine: 9
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
@@ -60,11 +61,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: OpenSafely
     path: ../src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
-    startLine: 6
+    startLine: 11
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
@@ -99,11 +100,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: CloseSafely
     path: ../src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
-    startLine: 19
+    startLine: 24
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
@@ -123,6 +124,56 @@ items:
   modifiers.vb:
   - Public
   - Shared
+- uid: DotNetHelper.Database.Extension.DBConnectionExtension.DatabaseAccess``1(``0,System.Nullable{DotNetHelper.ObjectToSql.Enum.DataBaseType})
+  commentId: M:DotNetHelper.Database.Extension.DBConnectionExtension.DatabaseAccess``1(``0,System.Nullable{DotNetHelper.ObjectToSql.Enum.DataBaseType})
+  id: DatabaseAccess``1(``0,System.Nullable{DotNetHelper.ObjectToSql.Enum.DataBaseType})
+  isExtensionMethod: true
+  parent: DotNetHelper.Database.Extension.DBConnectionExtension
+  langs:
+  - csharp
+  - vb
+  name: DatabaseAccess<T>(T, Nullable<DataBaseType>)
+  nameWithType: DBConnectionExtension.DatabaseAccess<T>(T, Nullable<DataBaseType>)
+  fullName: DotNetHelper.Database.Extension.DBConnectionExtension.DatabaseAccess<T>(T, System.Nullable<DotNetHelper.ObjectToSql.Enum.DataBaseType>)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
+      branch: Feature-SingleSQLConnection
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+    id: DatabaseAccess
+    path: ../src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
+    startLine: 36
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Extension
+  syntax:
+    content: >-
+      public static IDatabaseAccess DatabaseAccess<T>(this T connection, DataBaseType? dataBaseType = default(DataBaseType? ))
+          where T : DbConnection, new()
+    parameters:
+    - id: connection
+      type: '{T}'
+    - id: dataBaseType
+      type: System.Nullable{DotNetHelper.ObjectToSql.Enum.DataBaseType}
+    typeParameters:
+    - id: T
+    return:
+      type: DotNetHelper.Database.Interface.IDatabaseAccess
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function DatabaseAccess(Of T As {DbConnection, New})(connection As T, dataBaseType As DataBaseType? = Nothing) As IDatabaseAccess
+  overload: DotNetHelper.Database.Extension.DBConnectionExtension.DatabaseAccess*
+  nameWithType.vb: DBConnectionExtension.DatabaseAccess(Of T)(T, Nullable(Of DataBaseType))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: DotNetHelper.Database.Extension.DBConnectionExtension.DatabaseAccess(Of T)(T, System.Nullable(Of DotNetHelper.ObjectToSql.Enum.DataBaseType))
+  name.vb: DatabaseAccess(Of T)(T, Nullable(Of DataBaseType))
 references:
 - uid: DotNetHelper.Database.Extension
   commentId: N:DotNetHelper.Database.Extension
@@ -444,3 +495,112 @@ references:
   name: CloseSafely
   nameWithType: DBConnectionExtension.CloseSafely
   fullName: DotNetHelper.Database.Extension.DBConnectionExtension.CloseSafely
+- uid: DotNetHelper.Database.Extension.DBConnectionExtension.DatabaseAccess*
+  commentId: Overload:DotNetHelper.Database.Extension.DBConnectionExtension.DatabaseAccess
+  name: DatabaseAccess
+  nameWithType: DBConnectionExtension.DatabaseAccess
+  fullName: DotNetHelper.Database.Extension.DBConnectionExtension.DatabaseAccess
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Nullable{DotNetHelper.ObjectToSql.Enum.DataBaseType}
+  commentId: T:System.Nullable{DotNetHelper.ObjectToSql.Enum.DataBaseType}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<DataBaseType>
+  nameWithType: Nullable<DataBaseType>
+  fullName: System.Nullable<DotNetHelper.ObjectToSql.Enum.DataBaseType>
+  nameWithType.vb: Nullable(Of DataBaseType)
+  fullName.vb: System.Nullable(Of DotNetHelper.ObjectToSql.Enum.DataBaseType)
+  name.vb: Nullable(Of DataBaseType)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: DotNetHelper.ObjectToSql.Enum.DataBaseType
+    name: DataBaseType
+    nameWithType: DataBaseType
+    fullName: DotNetHelper.ObjectToSql.Enum.DataBaseType
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: DotNetHelper.ObjectToSql.Enum.DataBaseType
+    name: DataBaseType
+    nameWithType: DataBaseType
+    fullName: DotNetHelper.ObjectToSql.Enum.DataBaseType
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess
+  commentId: T:DotNetHelper.Database.Interface.IDatabaseAccess
+  parent: DotNetHelper.Database.Interface
+  name: IDatabaseAccess
+  nameWithType: IDatabaseAccess
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.Database.Interface
+  commentId: N:DotNetHelper.Database.Interface
+  name: DotNetHelper.Database.Interface
+  nameWithType: DotNetHelper.Database.Interface
+  fullName: DotNetHelper.Database.Interface

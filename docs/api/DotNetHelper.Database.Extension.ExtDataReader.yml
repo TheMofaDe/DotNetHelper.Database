@@ -22,7 +22,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/ExtDataReader.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExtDataReader
     path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
@@ -65,7 +65,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/ExtDataReader.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: HasRows
     path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
@@ -106,7 +106,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/ExtDataReader.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: MapToList
     path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
@@ -160,7 +160,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/ExtDataReader.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: MapToList
     path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
@@ -213,7 +213,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/ExtDataReader.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: MapTo
     path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
@@ -267,7 +267,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/ExtDataReader.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: MapTo
     path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
@@ -320,7 +320,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/ExtDataReader.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: MapToDataTable
     path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
@@ -368,7 +368,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/ExtDataReader.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: MapToDataTable
     path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs

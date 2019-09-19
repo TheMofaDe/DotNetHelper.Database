@@ -52,6 +52,9 @@
                           <a href="../index.html" title="Home">Home</a>
                       </li>
                       <li>
+                          <a href="../tutorials/index.html" title="Tutorials">Tutorials</a>
+                      </li>
+                      <li>
                           <a href="DotNetHelper.Database.html" title="API">API</a>
                       </li>
                       <li>
@@ -207,10 +210,10 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_Extension_DBConnectionExtension_CloseSafely_System_Data_IDbConnection_.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.Extension.DBConnectionExtension.CloseSafely(System.Data.IDbConnection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/Feature-SingleSQLConnection/apiSpec/new?filename=DotNetHelper_Database_Extension_DBConnectionExtension_CloseSafely_System_Data_IDbConnection_.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.Extension.DBConnectionExtension.CloseSafely(System.Data.IDbConnection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs/#L20">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/Feature-SingleSQLConnection/src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs/#L25">View Source</a>
   </span>
   <a id="DotNetHelper_Database_Extension_DBConnectionExtension_CloseSafely_" data-uid="DotNetHelper.Database.Extension.DBConnectionExtension.CloseSafely*"></a>
   <h4 id="DotNetHelper_Database_Extension_DBConnectionExtension_CloseSafely_System_Data_IDbConnection_" data-uid="DotNetHelper.Database.Extension.DBConnectionExtension.CloseSafely(System.Data.IDbConnection)">CloseSafely(IDbConnection)</h4>
@@ -239,10 +242,78 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_Extension_DBConnectionExtension_OpenSafely_System_Data_IDbConnection_.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.Extension.DBConnectionExtension.OpenSafely(System.Data.IDbConnection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/Feature-SingleSQLConnection/apiSpec/new?filename=DotNetHelper_Database_Extension_DBConnectionExtension_DatabaseAccess__1___0_System_Nullable_DotNetHelper_ObjectToSql_Enum_DataBaseType__.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.Extension.DBConnectionExtension.DatabaseAccess%60%601(%60%600%2CSystem.Nullable%7BDotNetHelper.ObjectToSql.Enum.DataBaseType%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs/#L7">View Source</a>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/Feature-SingleSQLConnection/src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs/#L37">View Source</a>
+  </span>
+  <a id="DotNetHelper_Database_Extension_DBConnectionExtension_DatabaseAccess_" data-uid="DotNetHelper.Database.Extension.DBConnectionExtension.DatabaseAccess*"></a>
+  <h4 id="DotNetHelper_Database_Extension_DBConnectionExtension_DatabaseAccess__1___0_System_Nullable_DotNetHelper_ObjectToSql_Enum_DataBaseType__" data-uid="DotNetHelper.Database.Extension.DBConnectionExtension.DatabaseAccess``1(``0,System.Nullable{DotNetHelper.ObjectToSql.Enum.DataBaseType})">DatabaseAccess&lt;T&gt;(T, Nullable&lt;DataBaseType&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IDatabaseAccess DatabaseAccess&lt;T&gt;(this T connection, DataBaseType? dataBaseType = default(DataBaseType? ))
+    where T : DbConnection, new()</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">connection</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<span class="xref">DotNetHelper.ObjectToSql.Enum.DataBaseType</span>&gt;</td>
+        <td><span class="parametername">dataBaseType</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DotNetHelper.Database.Interface.IDatabaseAccess.html">IDatabaseAccess</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/Feature-SingleSQLConnection/apiSpec/new?filename=DotNetHelper_Database_Extension_DBConnectionExtension_OpenSafely_System_Data_IDbConnection_.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.Extension.DBConnectionExtension.OpenSafely(System.Data.IDbConnection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/Feature-SingleSQLConnection/src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs/#L12">View Source</a>
   </span>
   <a id="DotNetHelper_Database_Extension_DBConnectionExtension_OpenSafely_" data-uid="DotNetHelper.Database.Extension.DBConnectionExtension.OpenSafely*"></a>
   <h4 id="DotNetHelper_Database_Extension_DBConnectionExtension_OpenSafely_System_Data_IDbConnection_" data-uid="DotNetHelper.Database.Extension.DBConnectionExtension.OpenSafely(System.Data.IDbConnection)">OpenSafely(IDbConnection)</h4>
@@ -277,10 +348,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/master/apiSpec/new?filename=DotNetHelper_Database_Extension_DBConnectionExtension.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.Extension.DBConnectionExtension%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/new/Feature-SingleSQLConnection/apiSpec/new?filename=DotNetHelper_Database_Extension_DBConnectionExtension.md&amp;value=---%0Auid%3A%20DotNetHelper.Database.Extension.DBConnectionExtension%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs/#L5" class="contribution-link">View Source</a>
+                    <a href="https://github.com/TheMofaDe/DotNetHelper.Database/blob/Feature-SingleSQLConnection/src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs/#L10" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

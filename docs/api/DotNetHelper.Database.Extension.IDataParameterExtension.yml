@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/IDataParameterExtension.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: IDataParameterExtension
     path: ../src/DotNetHelper.Database/Extension/IDataParameterExtension.cs
@@ -59,7 +59,7 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/IDataParameterExtension.cs
-      branch: master
+      branch: Feature-SingleSQLConnection
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: AddRange
     path: ../src/DotNetHelper.Database/Extension/IDataParameterExtension.cs
