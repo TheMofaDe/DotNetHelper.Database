@@ -80,7 +80,10 @@ namespace DotNetHelper.Database.DataSource
         /// </summary>
         internal DatabaseAccess(TDbConnection connection, DataBaseType? type = null)
         {
+            connection.IsNullThrow(nameof(connection), new ArgumentNullException(nameof(connection), "DBConnection Object can't be null'"));
+           
             ConnectionString = connection.ConnectionString;
+            UseSingleConnection = true;
             var dbType = type ?? DatabaseTypeHelper.GetDataBaseTypeFromDBConnectionType<TDbConnection>();
             if (dbType == null)
                 throw new InvalidOperationException($"Couldn't determine the databasetype from the type {typeof(TDbConnection).Name}. Please use a different constructor " +
@@ -142,6 +145,10 @@ namespace DotNetHelper.Database.DataSource
             TDbConnection connection;
             if (UseSingleConnection)
             {
+                if (string.IsNullOrEmpty(SingleConnection?.ConnectionString))
+                    if (SingleConnection != null)
+                        SingleConnection.ConnectionString = ConnectionString;
+
                 connection = SingleConnection ?? (SingleConnection = new TDbConnection() { ConnectionString = ConnectionString });
             }
             else

@@ -39,7 +39,7 @@ namespace DotNetHelper.Database.Tests
             list.Add(new DatabaseAccess<SqlConnection>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString));
             list.Add(new DatabaseAccess<SqlConnection>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString, TimeSpan.FromSeconds(35)));
             list.Add(new DatabaseAccess<SqlConnection>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString, TimeSpan.FromSeconds(40)));
-            list.Add(new SqlConnection(TestHelper.SQLServerConnectionString).DatabaseAccess());
+            list.Add(new SqlConnection(TestHelper.SQLServerConnectionString) { ConnectionString = TestHelper.SQLServerConnectionString }.DatabaseAccess());
 
 
 #if SUPPORTSQLITE
