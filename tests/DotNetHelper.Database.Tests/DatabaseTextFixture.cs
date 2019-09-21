@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using DotNetHelper.Database.DataSource;
@@ -121,9 +122,19 @@ namespace DotNetHelper.Database.Tests
             var newEmployee = MockEmployee.Hashset.Take(1).Last();
             var outputtedResult = DatabaseAccess.Execute(newEmployee, ActionType.Insert);
             Assert.AreEqual(outputtedResult, 1, "Something went wrong add new employee record");
-
-
         }
+
+        //[Test]
+        //public void Test_Execute_Insert_SpecialDataType()
+        //{
+        //    var obj = new TestModel();
+        //    obj.DateTimeOffset = DateTimeOffset.UtcNow;
+        //    obj.Bytes = Encoding.UTF8.GetBytes("DSfjio");
+        //    obj.Id =  Guid.Parse("C56A4180-65AA-42EC-A945-5FD21DEC0538");
+        //    var outputtedResult = DatabaseAccess.Execute(obj, ActionType.Insert);
+        //    Assert.AreEqual(outputtedResult, 1, "Something went wrong add new employee record");
+
+        //}
 
         [Test]
 

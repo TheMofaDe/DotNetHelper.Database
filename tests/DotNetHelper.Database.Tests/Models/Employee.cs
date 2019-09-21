@@ -7,6 +7,15 @@ using DotNetHelper.ObjectToSql.Enum;
 
 namespace DotNetHelper.Database.Tests.Models
 {
+
+    public class TestModel
+    {
+
+        public DateTimeOffset DateTimeOffset { get; set; }
+        public Guid Id { get; set; }
+        public byte[] Bytes { get; set; }
+    }
+
     public class Employee
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
