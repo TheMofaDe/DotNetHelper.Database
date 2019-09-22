@@ -19,7 +19,7 @@ namespace DotNetHelper.Database.DataSource
     /// A powerful & simple class for dealing with simple CRUD operation that doesn't required you to write sql but also provided an overload to pass sql if needed
     /// </summary>
     /// <typeparam name="TDbConnection">An implementation of IDBConnection</typeparam>
-    public class DatabaseAccess<TDbConnection> : IDatabaseAccess, IDisposable where TDbConnection : DbConnection, new()
+    public class DatabaseAccess<TDbConnection> : IDatabaseAccess where TDbConnection : DbConnection, new()
     {
         /// <summary>
         /// The connection string to the database

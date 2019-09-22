@@ -616,8 +616,8 @@ namespace DotNetHelper.Database.Tests
         public void Test_Ensure_Disposal()
         {
 
-            var db = new DatabaseAccess<SqlConnection>(DataBaseType.Oracle, "");
-            using (db)
+           
+            using (DatabaseAccess)
             {
 
             }

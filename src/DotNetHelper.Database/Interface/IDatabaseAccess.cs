@@ -9,7 +9,7 @@ using DotNetHelper.ObjectToSql.Enum;
 
 namespace DotNetHelper.Database.Interface
 {
-    public interface IDatabaseAccess
+    public interface IDatabaseAccess : IDisposable
     {
 
         /// <summary>
