@@ -15,4 +15,8 @@ CREATE TABLE IF NOT EXISTS `sys`.`Employee2`(
 	`EmployeeListAsXml` varchar(800)  NULL,
 	`EmployeeAsXml` varchar(800)  NULL
 );
-
+CREATE TABLE IF NOT EXISTS `sys`.`SpecialDataTypeTable`(
+	`DateTimeOffset`  varchar(800) NULL,
+	`Bytes` LONGBLOB NULL,
+	`Id` varchar(800)  NULL
+);

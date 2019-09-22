@@ -17,3 +17,11 @@ CREATE TABLE [master].[dbo].[Employee2](
 	[EmployeeListAsXml] [varchar](800)  NULL,
 	[EmployeeAsXml] [varchar](800)  NULL,
 );
+IF OBJECT_ID(N'[master].[dbo].[SpecialDataTypeTable]', N'U') IS NOT NULL BEGIN DROP TABLE [master].[dbo].[SpecialDataTypeTable] END ELSE BEGIN PRINT 'Nothing To Clean Up' END
+CREATE TABLE [master].[dbo].[SpecialDataTypeTable](
+	[DateTimeOffset] [DATETIMEOFFSET]  NULL,
+	[Bytes] varbinary(max)  NULL,
+	[Id] [uniqueidentifier]  NULL
+);
+
+    

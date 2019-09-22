@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -52,8 +53,8 @@ namespace DotNetHelper.Database.Tests
 
 
 #if SUPPORTDBFACTORIES
-            list.Add(new DatabaseAccessFactory(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString));
-            list.Add(new DatabaseAccessFactory(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString, TimeSpan.FromSeconds(40)));
+                        list.Add(new DatabaseAccessFactory(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString));
+                        list.Add(new DatabaseAccessFactory(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString, TimeSpan.FromSeconds(40)));
 #endif
             return list;
         }
@@ -73,6 +74,11 @@ namespace DotNetHelper.Database.Tests
         [SetUp]
         public void Setup()
         {
+            //if(DatabaseAccess.DatabaseType == DataBaseType.Sqlite)
+            //{
+            //    if(File.Exists(TestHelper.LocalDatabaseFile))
+            //    File.Delete(TestHelper.LocalDatabaseFile);
+            //}
             var sqls = GetDBScripts(ScriptType.Initialize);
             sqls.ForEach(delegate (string s)
             {
@@ -122,6 +128,47 @@ namespace DotNetHelper.Database.Tests
             var newEmployee = MockEmployee.Hashset.Take(1).Last();
             var outputtedResult = DatabaseAccess.Execute(newEmployee, ActionType.Insert);
             Assert.AreEqual(outputtedResult, 1, "Something went wrong add new employee record");
+        }
+
+
+
+        public  byte[] ReadFully( Stream input)
+        {
+            var ms = new MemoryStream();
+            input.CopyTo(ms);
+            return ms.ToArray();
+        }
+
+
+        [Test]
+
+        public void Test_Execute_Insert_WithSpecialDataType()
+        {
+            var obj = new SpecialDataTypeTable()
+            {
+                DateTimeOffset = DateTimeOffset.Now
+                , Id = Guid.Parse("a19ed8e6-c455-4164-afac-d4043095a4ee")
+            };
+            using (var stream = typeof(DatabaseTextFixture).Assembly.GetManifestResourceStream("DotNetHelper.Database.Tests.Assets.calendar-16.png"))
+            {
+                obj.Bytes = ReadFully(stream);
+            }
+
+
+            var outputtedResult = DatabaseAccess.Execute(obj, ActionType.Insert);
+            Assert.AreEqual(outputtedResult, 1, "Something went wrong add new employee record");
+#if DOTNETCORE // OLD VERSION OF SQLITE PACKAGE IS BROKEN
+
+            var data = DatabaseAccess.Get<SpecialDataTypeTable>().First();
+         
+
+            Assert.AreEqual(obj.Bytes, data.Bytes, $"Failed for database {DatabaseAccess.DatabaseType}");
+            if(DatabaseAccess.DatabaseType != DataBaseType.MySql) // MYSQL WORKS BUT DOESN"T KEEP THE MILLISECONDS
+            Assert.AreEqual(obj.DateTimeOffset, data.DateTimeOffset, $"Failed for database {DatabaseAccess.DatabaseType}");
+            Assert.AreEqual(obj.Id, data.Id, $"Failed for database {DatabaseAccess.DatabaseType}");
+#endif
+            
+
         }
 
         //[Test]

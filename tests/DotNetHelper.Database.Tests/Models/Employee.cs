@@ -8,9 +8,9 @@ using DotNetHelper.ObjectToSql.Enum;
 namespace DotNetHelper.Database.Tests.Models
 {
 
-    public class TestModel
+    public class SpecialDataTypeTable
     {
-
+      //  public TimeSpan TimeSpan { get; set; }
         public DateTimeOffset DateTimeOffset { get; set; }
         public Guid Id { get; set; }
         public byte[] Bytes { get; set; }

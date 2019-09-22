@@ -16,19 +16,25 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Assets\calendar-16.png" />
     <None Remove="Scripts\mysql_cleanup_1.sql" />
     <None Remove="Scripts\mysql_init_1.sql" />
     <None Remove="Scripts\sqlite_cleanup_1.sql" />
     <None Remove="Scripts\sqlite_cleanup_2.sql" />
+    <None Remove="Scripts\sqlite_cleanup_3.sql" />
     <None Remove="Scripts\sqlite_init_1.sql" />
     <None Remove="Scripts\sqlite_init_2.sql" />
+    <None Remove="Scripts\sqlite_init_3.sql" />
     <None Remove="Scripts\sqlserver_cleanup_1.sql" />
     <None Remove="Scripts\sqlserver_init_1.sql" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Assets\calendar-16.png" />
     <EmbeddedResource Include="Scripts\sqlite_cleanup_1.sql" />
+    <EmbeddedResource Include="Scripts\sqlite_cleanup_3.sql" />
     <EmbeddedResource Include="Scripts\sqlite_cleanup_2.sql" />
+    <EmbeddedResource Include="Scripts\sqlite_init_3.sql" />
     <EmbeddedResource Include="Scripts\sqlite_init_2.sql" />
     <EmbeddedResource Include="Scripts\sqlite_init_1.sql" />
     <EmbeddedResource Include="Scripts\mysql_cleanup_1.sql" />
@@ -79,7 +85,9 @@
   </ItemGroup>
 
 
-
+  <PropertyGroup Condition="'$(TargetFramework)' == 'netcoreapp2.2'  ">
+    <DefineConstants>$(DefineConstants);DOTNETCORE</DefineConstants>
+  </PropertyGroup>
 
   <PropertyGroup Condition="'$(TargetFramework)' == 'netcoreapp2.2' OR '$(TargetFramework)' == 'net452' ">
     <DefineConstants>$(DefineConstants);SUPPORTSQLITE</DefineConstants>

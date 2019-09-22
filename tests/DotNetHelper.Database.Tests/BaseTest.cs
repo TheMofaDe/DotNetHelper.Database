@@ -9,6 +9,7 @@ using DotNetHelper.Database.Tests.Helpers;
 using DotNetHelper.Database.Tests.MockData;
 using DotNetHelper.Database.Tests.Models;
 using DotNetHelper.Database.Tests.Services;
+using DotNetHelper.ObjectToSql.Enum;
 using DotNetHelper.Serialization.Abstractions.Interface;
 using DotNetHelper.Serialization.Csv;
 using DotNetHelper.Serialization.Json;
