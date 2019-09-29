@@ -6,7 +6,7 @@
     <PackageIconUrl>https://github.com/TheMofaDe/DotNetHelper.Database</PackageIconUrl>
     <RepositoryUrl>https://github.com/TheMofaDe/DotNetHelper.Database</RepositoryUrl>
     <PackageReleaseNotes>https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/CHANGELOG.md</PackageReleaseNotes>
-    <PackageTags>ORM,database,sql,generic,dynamic,anonmyous</PackageTags>
+    <PackageTags>ORM,database,sql,generic,dynamic,anonyous</PackageTags>
     <RepositoryType>git</RepositoryType>
     <Description>DotNetHelper.Database is a lightweight ORM that works with generics,dynamic, &amp; anonyous objects for ADO.NET</Description>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>

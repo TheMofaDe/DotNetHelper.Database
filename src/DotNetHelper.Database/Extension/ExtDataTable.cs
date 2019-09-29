@@ -94,7 +94,13 @@ namespace DotNetHelper.Database.Extension
             return obj;
         }
 
-
+        /// <summary>
+        /// Maps a datatable to a strongly type list
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="dataTable"></param>
+        /// <param name="useAttributeName"></param>
+        /// <returns></returns>
         public static List<T> MapToList<T>(this DataTable dataTable, bool useAttributeName = true) where T : class
         {
             dataTable.IsNullThrow(nameof(dataTable));

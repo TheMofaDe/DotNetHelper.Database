@@ -7,7 +7,13 @@ namespace DotNetHelper.Database.Extension
     internal static class ListExtension
     {
 
-
+        /// <summary>
+        /// Executes a simple for each
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="collection"></param>
+        /// <param name="action"></param>
+        /// <returns></returns>
         public static ICollection<T> ForEach<T>(this ICollection<T> collection, Action<T> action)
         {
             foreach (var item in collection)
