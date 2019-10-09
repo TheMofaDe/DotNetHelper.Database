@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -35,9 +36,25 @@ namespace DotNetHelper.Database.Extension
 
 
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        public static bool IsNullOrEmpty(this ICollection source)
+        {
+            return source == null || source.Count <= 0;
+        }
 
 
-
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        public static bool IsNullOrEmpty(this IEnumerable source)
+        {
+            return source == null || !source.GetEnumerator().MoveNext();
+        }
     }
 }

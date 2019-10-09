@@ -135,7 +135,8 @@ namespace DotNetHelper.Database
         /// <returns></returns>
         public List<DbParameter> GetNewParameter<T>(T obj, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer) where T : class
         {
-            return ObjectToSql.BuildDbParameterList(obj, GetNewParameter, xmlSerializer, jsonSerializer, csvSerializer);
+            var list = ObjectToSql.BuildDbParameterList(obj, GetNewParameter, xmlSerializer, jsonSerializer, csvSerializer);
+            return list;
         }
 
 
@@ -252,50 +253,60 @@ namespace DotNetHelper.Database
         /// <returns></returns>
         public int ExecuteTransaction(List<string> sqls, bool rollbackOnException, bool throwException = true)
         {
-            using (var connection = GetNewConnection(true))
-            {
-                return ExecuteTransaction(connection, sqls, rollbackOnException, throwException);
-            }
+            var kvps = sqls.Select(s => new KeyValuePair<string, IEnumerable<DbParameter>>(s, null)).AsList();
+            return ExecuteTransaction(kvps, rollbackOnException, throwException);
         }
 
+
         /// <summary>
-        /// Executes a list of sql as in a single transaction. 
+        /// Executes a list of sql as in a single transaction 
         /// </summary>
-        /// <param name="connection"></param>
         /// <param name="sqls"></param>
         /// <param name="rollbackOnException"></param>
         /// <param name="throwException"></param>
         /// <returns></returns>
-        public int ExecuteTransaction(DbConnection connection, List<string> sqls, bool rollbackOnException, bool throwException = true)
+        public int ExecuteTransaction(List<KeyValuePair<string, IEnumerable<DbParameter>>> sqls, bool rollbackOnException, bool throwException = true)
         {
-            var recordAffected = 0;
-            if (sqls == null || !sqls.Any()) return recordAffected;
+            using (var connection = GetNewConnection(true))
+            {
+                var recordAffected = 0;
+                if (sqls == null || !sqls.Any()) return recordAffected;
 
-            var obj = GetNewCommandAndTransaction(connection);
-            var command = obj.command;
-            var transaction = obj.transaction;
-            try
-            {
-                sqls.ForEach(delegate (string s)
+                var obj = GetNewCommandAndTransaction(connection);
+                var command = obj.command;
+                var transaction = obj.transaction;
+                try
                 {
-                    command.CommandText = s;
-                    recordAffected += command.ExecuteNonQuery();
-                });
-                transaction.Commit();
-            }
-            catch (Exception)
-            {
-                if (rollbackOnException)
-                    transaction.Rollback();
-                if (throwException)
-                {
-                    throw;
+                    sqls.ForEach(delegate (KeyValuePair<string, IEnumerable<DbParameter>> pair)
+                    {
+                        command.CommandText = pair.Key;
+                        if (pair.Value != null)
+                            command.Parameters.AddRange(pair.Value);
+                        recordAffected += command.ExecuteNonQuery();
+
+                    });
+                    transaction.Commit();
                 }
+                catch (Exception)
+                {
+                    if (rollbackOnException)
+                    {
+                        transaction.Rollback();
+                    }
+                    else
+                    {
+                        transaction.Commit();
+                    }
+                    if (throwException)
+                    {
+                        throw;
+                    }
+                }
+                return recordAffected;
             }
-
-            return recordAffected;
         }
 
+       
         /// <summary>
         /// execute the sql and return the result as a DbDataReader
         /// </summary>
@@ -542,10 +553,28 @@ namespace DotNetHelper.Database
         /// <returns></returns>
         public int Execute<T>(T instance, ActionType actionType, string tableName, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer) where T : class
         {
-            // var sql = (type.IsTypeAnonymousType() || type.IsTypeDynamic()) ? ObjectToSql.BuildQuery(actionType,instance, tableName ?? new SqlTable(DatabaseType, type).FullNameWithBrackets) : ObjectToSql.BuildQuery<T>( actionType, tableName ?? new SqlTable(DatabaseType, type).FullNameWithBrackets);
-            var sql = ObjectToSql.BuildQuery(actionType, instance, tableName );
-            var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, xmlSerializer, jsonSerializer, csvSerializer);
-            return ExecuteNonQuery(sql, CommandType.Text, parameters);
+            if (instance.GetType().IsTypeAnIEnumerable()) // getTYPE is faster than TYPEOF(T)
+            {
+                if (instance is IEnumerable<object> list)
+                {
+                    var sqls = new List<KeyValuePair<string, IEnumerable<DbParameter>>>() { };
+
+                    foreach (var item in list)
+                    {
+                        var sql = ObjectToSql.BuildQuery(actionType, item, tableName);
+                        var paramters = GetNewParameter(item);
+                        sqls.Add(new KeyValuePair<string, IEnumerable<DbParameter>>(sql,paramters));
+                    }
+                    return ExecuteTransaction(sqls, true, true);
+                }
+                throw new InvalidOperationException($"The type {typeof(T)} is not supported");
+            }
+            else
+            {
+                var sql = ObjectToSql.BuildQuery(actionType, instance, tableName);
+                var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, xmlSerializer, jsonSerializer, csvSerializer);
+                return ExecuteNonQuery(sql, CommandType.Text, parameters);
+            }
         }
 
 

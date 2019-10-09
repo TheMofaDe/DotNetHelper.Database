@@ -467,6 +467,26 @@ namespace DotNetHelper.Database.Tests
 
 
 
+        [Test]
+
+        public void Test_Execute_List_Of_Objects()
+        {
+
+#if SUPPORTDBFACTORIES
+             // TODO :: FIND OUT WHY DBFACTORY ISN'T CREATE PARAMETERS
+#else
+            MockEmployee.Hashset.First().CreatedAt = DateTime.Parse("2019-01-01");
+            var data = MockEmployee.Hashset.ToList();
+            var recordAffected = DatabaseAccess.Execute(data, ActionType.Insert);
+            var employees = DatabaseAccess.Get<Employee>();
+   
+            Assert.AreEqual(recordAffected, 3);
+            Assert.IsTrue(employees[0].CreatedAt == DateTime.Parse("2019-01-01"), "ExecuteTransaction didn't execute the update statement succesfully");
+            Assert.IsTrue(employees[1].CreatedAt == null, "ExecuteTransaction didn't execute the update statement succesfully");
+            Assert.IsTrue(employees[2].CreatedAt == null, "ExecuteTransaction didn't execute the update statement succesfully");
+#endif
+        }
+
 
 
         [Test]
@@ -509,23 +529,85 @@ namespace DotNetHelper.Database.Tests
             var createdAt = DateTime.Now;
             var transactionSql = new List<string>()
             {
-                $"UPDATE Employee SET CreatedAt = '2019-01-01' WHERE IdentityField = 1"
+                  $"UPDATE Employee SET CreatedAt = '2019-01-01' WHERE IdentityField = 1"
                 ,  $"UPDATE Employee SET CreatedAt = '2019-01-02' WHERE IdentityField = 2"
-                ,  $"UPDATE Employee SET CreatedAt = '2019-01-03' WHERE IdentityField = 3"
+                ,  $"UPDATE Employee SET CreatedAt = '2019-01-03' WHERE IdentityField = 3sdf"
             };
-            var recordAffected = DatabaseAccess.ExecuteTransaction(transactionSql, true, true);
+
+            var recordAffected = 0;
+            Assert.Throws(Is.InstanceOf<Exception>(), delegate
+            {
+                 recordAffected = DatabaseAccess.ExecuteTransaction(transactionSql, true, true);
+            });
+       
+            Assert.That(recordAffected == 0);
+
+
             var list = DatabaseAccess.GetDataReader("SELECT CreatedAt FROM Employee", CommandType.Text, null)
                 .MapToList<string>()
                 .ToList();
 
-            Assert.AreEqual(recordAffected, 3);
-            Assert.IsTrue(DateTime.Parse(list[0]) == DateTime.Parse("2019-01-01"), "ExecuteTransaction didn't execute the update statement succesfully");
-            Assert.IsTrue(DateTime.Parse(list[1]) == DateTime.Parse("2019-01-02"), "ExecuteTransaction didn't execute the update statement succesfully");
-            Assert.IsTrue(DateTime.Parse(list[2]) == DateTime.Parse("2019-01-03"), "ExecuteTransaction didn't execute the update statement succesfully");
+       
+            Assert.IsTrue(list[0] == null, "ExecuteTransaction didn't execute the update statement succesfully");
+            Assert.IsTrue(list[1] == null, "ExecuteTransaction didn't execute the update statement succesfully");
+            Assert.IsTrue(list[2] == null, "ExecuteTransaction didn't execute the update statement succesfully");
         }
 
 
 
+
+        [Test]
+
+        public void Test_Transaction_Return_Accurate_RecordAffected()
+        {
+
+            DatabaseAccess.Execute(MockEmployee.Hashset.Take(1).Last(), ActionType.Insert);
+            DatabaseAccess.Execute(MockEmployee.Hashset.Take(2).Last(), ActionType.Insert);
+            DatabaseAccess.Execute(MockEmployee.Hashset.Take(3).Last(), ActionType.Insert);
+
+            var transactionSql = new List<string>()
+            {
+                   $"UPDATE Employee SET CreatedAt = '2019-01-01' WHERE IdentityField = 1"
+                ,  $"UPDATE Employee SET CreatedAt = '2019-01-02' WHERE IdentityField = 2"
+                ,  $"UPDATE Employee SET CreatedAt = '2019-01-03' WHERE IdentityField = 3sdf"
+            };
+
+
+            var recordAffected = DatabaseAccess.ExecuteTransaction(transactionSql, false, false);
+            Assert.That(recordAffected == 2);
+
+        }
+
+
+        [Test]
+
+        public void Test_Transaction_Doesnt_Rollback()
+        {
+            DatabaseAccess.Execute(MockEmployee.Hashset.Take(1).Last(), ActionType.Insert);
+            DatabaseAccess.Execute(MockEmployee.Hashset.Take(2).Last(), ActionType.Insert);
+            DatabaseAccess.Execute(MockEmployee.Hashset.Take(3).Last(), ActionType.Insert);
+
+            var createdAt = DateTime.Now;
+            var transactionSql = new List<string>()
+            {
+                $"UPDATE Employee SET CreatedAt = '2019-01-01' WHERE IdentityField = 1"
+                ,  $"UPDATE Employee SET CreatedAt = '2019-01-02' WHERE IdentityField = 2"
+                ,  $"UPDATE Employee SET CreatedAt = '2019-01-03' WHERE IdentityField = 3sdf"
+            };
+
+
+            var recordAffected = DatabaseAccess.ExecuteTransaction(transactionSql, false, false);
+            Assert.That(recordAffected == 2);
+
+            var list = DatabaseAccess.GetDataReader("SELECT CreatedAt FROM Employee", CommandType.Text, null)
+                .MapToList<string>()
+                .ToList();
+
+
+            Assert.That(DateTime.Parse(list[0]) == DateTime.Parse("2019-01-01"), "ExecuteTransaction didn't execute the update statement succesfully");
+            Assert.That(DateTime.Parse(list[1]) == DateTime.Parse("2019-01-02"), "ExecuteTransaction didn't execute the update statement succesfully");
+            Assert.That(list[2] ==null, "ExecuteTransaction didn't execute the update statement succesfully");
+        }
 
 
 

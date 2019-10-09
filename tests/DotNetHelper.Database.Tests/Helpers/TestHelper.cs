@@ -45,6 +45,16 @@ namespace DotNetHelper.Database.Tests.Helpers
             if (Environment.MachineName == "DESKTOP-MEON7CL" || Environment.MachineName == "JMCNEAL-W8")
             {
                 csBuilder.DataSource = "127.0.0.1"; // localhost works && 127.0.0.1 
+
+                var useLocalInstance = false;
+                if (useLocalInstance)
+                {
+                    csBuilder.Password = string.Empty;
+                    csBuilder.UserID = string.Empty;
+                    csBuilder.DataSource = "localhost";
+                    csBuilder.IntegratedSecurity = true;
+                }
+
             }
             return csBuilder.ToString();
         }
