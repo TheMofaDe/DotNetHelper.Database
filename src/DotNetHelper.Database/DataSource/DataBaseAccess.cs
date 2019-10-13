@@ -404,6 +404,19 @@ namespace DotNetHelper.Database.DataSource
         }
 
         /// <summary>
+        /// execute the sql and return the result as a DbDataReader
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        public DbDataReader GetDataReader(string sql, List<DbParameter> parameters = null)
+        {
+            return GetDataReader(sql, CommandType.Text,parameters);
+        }
+
+
+
+        /// <summary>
         /// execute the sql and load the results into a dataTable
         /// </summary>
         /// <param name="selectSql"></param>
@@ -422,10 +435,11 @@ namespace DotNetHelper.Database.DataSource
         /// execute the sql and load the results into a dataTable
         /// </summary>
         /// <param name="selectSql"></param>
+        /// <param name="parameters"></param>
         /// <returns></returns>
-        public DataTable GetDataTable(string selectSql)
+        public DataTable GetDataTable(string selectSql, List<DbParameter> parameters = null)
         {
-            return GetDataTable(selectSql, CommandType.Text);
+            return GetDataTable(selectSql, CommandType.Text,parameters);
         }
 
         /// <summary>

@@ -548,9 +548,9 @@ namespace DotNetHelper.Database.Tests
                 .ToList();
 
        
-            Assert.IsTrue(list[0] == null, "ExecuteTransaction didn't execute the update statement succesfully");
-            Assert.IsTrue(list[1] == null, "ExecuteTransaction didn't execute the update statement succesfully");
-            Assert.IsTrue(list[2] == null, "ExecuteTransaction didn't execute the update statement succesfully");
+            Assert.That(list[0] == null, "ExecuteTransaction didn't execute the update statement succesfully");
+            Assert.That(list[1] == null, "ExecuteTransaction didn't execute the update statement succesfully");
+            Assert.That(list[2] == null, "ExecuteTransaction didn't execute the update statement succesfully");
         }
 
 

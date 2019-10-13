@@ -65,7 +65,7 @@
 
 
   <ItemGroup>
-    <PackageReference Include="DotNetHelper.ObjectToSql" Version="2.0.9" />
+    <PackageReference Include="DotNetHelper.ObjectToSql" Version="2.0.11" />
   </ItemGroup>
 
 

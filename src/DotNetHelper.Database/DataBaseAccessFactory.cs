@@ -356,9 +356,9 @@ namespace DotNetHelper.Database
         /// </summary>
         /// <param name="selectSql"></param>
         /// <returns></returns>
-        public DataTable GetDataTable(string selectSql)
+        public DataTable GetDataTable(string selectSql, List<DbParameter> parameters = null)
         {
-            return GetDataTable(selectSql, CommandType.Text);
+            return GetDataTable(selectSql, CommandType.Text,parameters);
         }
 
         /// <summary>
@@ -672,6 +672,7 @@ namespace DotNetHelper.Database
         }
 
 
+
         /// <summary>
         /// Perform a SQLBulkCopy 
         /// </summary>
@@ -741,7 +742,7 @@ namespace DotNetHelper.Database
         /// <returns># of records inserted</returns>
         public async Task<long> SqlServerBulkCopyAsync<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions) where T : class
         {
-            return SqlServerBulkCopy(data, bulkCopyOptions, null);
+            return await SqlServerBulkCopyAsync(data, bulkCopyOptions, null);
         }
 
 
@@ -755,7 +756,7 @@ namespace DotNetHelper.Database
         /// <returns># of records inserted</returns>
         public async Task<long> SqlServerBulkCopyAsync<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions, string tableName) where T : class
         {
-            return SqlServerBulkCopy(data, bulkCopyOptions, tableName, 0);
+            return await SqlServerBulkCopyAsync(data, bulkCopyOptions, tableName, 0);
         }
 
         /// <summary>
@@ -780,7 +781,6 @@ namespace DotNetHelper.Database
                 {
                     bulk.ColumnMappings.Add(dc.ColumnName, dc.ColumnName);
                 }
-
                 bulk.BatchSize = batchSize;
                 bulk.NotifyAfter = dt.Rows.Count;
                 bulk.SqlRowsCopied += (s, e) => rowsCopied = e.RowsCopied;

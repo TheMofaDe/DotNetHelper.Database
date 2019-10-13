@@ -132,7 +132,7 @@ namespace DotNetHelper.Database.Interface
         /// </summary>
         /// <param name="selectSql"></param>
         /// <returns></returns>
-        DataTable GetDataTable(string selectSql);
+        DataTable GetDataTable(string selectSql, List<DbParameter> parameters = null);
 
         /// <summary>
         /// Applies the schema/metadata of the sql to a dataTable and populate it with the result set
