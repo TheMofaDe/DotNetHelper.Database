@@ -7,7 +7,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 
 
+
 <br/>
+
+
+## [1.0.63] - 2019-11-08
+### Bug Fixes
+*   fix bug  when executing aganist a list of objects using the Execute method wasn't clearing dbparameters 
+
+~~~ 
+
+<br/>
+
 
 ## [1.0.60] - 2019-09-19
 ### Added
