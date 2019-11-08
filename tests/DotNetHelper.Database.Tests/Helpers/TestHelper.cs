@@ -38,7 +38,7 @@ namespace DotNetHelper.Database.Tests.Helpers
             {
                 Password = "Password12!",
                 UserID = "sa",
-                DataSource = "(local)\\SQL2014",
+                DataSource = "(local)\\SQL2016",
                 InitialCatalog = "master",
                 IntegratedSecurity = false
             };
