@@ -16,5 +16,5 @@ build_script:
 - ps: .\build.ps1 --target="AppVeyor"
 test: off
 services:
-  - mssql2016
+  - mssql2017
   - mysql

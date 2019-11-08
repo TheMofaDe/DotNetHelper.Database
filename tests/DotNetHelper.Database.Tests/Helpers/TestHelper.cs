@@ -56,6 +56,10 @@ namespace DotNetHelper.Database.Tests.Helpers
                 }
 
             }
+            else
+            {
+                return @"Server=(local)\SQL2017;Database=master;User ID=sa;Password=Password12!";
+            }
             return csBuilder.ToString();
         }
         public static string SQLServerConnectionString { get; set; } = GetCS();
