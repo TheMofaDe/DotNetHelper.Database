@@ -41,7 +41,7 @@ Task("Test")
         }     
         .WithFilter("+[*]*")
 		.WithFilter("-[*.Tests*]*")
-		.WithFilter("-[*NUnit3.*]*")
+	    .WithFilter("-[*NUnit3.*]*")
 		);
 
         }

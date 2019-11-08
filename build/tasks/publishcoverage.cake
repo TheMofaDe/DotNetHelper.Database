@@ -7,8 +7,7 @@ Task("Publish-Coverage")
 {
     
      if (FileExists(parameters.Paths.Files.TestCoverageOutputFilePath)) {
-      var token = parameters.Credentials.CodeCov.Token;
-	  token = "3b53aecc-df7e-4e5c-b804-0d6ba2081af7";
+      var token =  parameters.Credentials.CodeCov.Token;
      if(string.IsNullOrEmpty(token)) {
          throw new InvalidOperationException("Could not resolve CodeCov token.");
      }

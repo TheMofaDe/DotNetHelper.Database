@@ -1,6 +1,6 @@
 Task("Generate-Docs")
-.WithCriteria<BuildParameters>((context, parameters) => parameters.IsLocalBuild,  "Generate-Docs will only run during a local build")
 .WithCriteria<BuildParameters>((context, parameters) => parameters.IsRunningOnWindows,  "Generate-Docs will only run on windows agent.")
+.WithCriteria<BuildParameters>((context, parameters) => parameters.IsLocalBuild,  "Generate-Docs will only run during a local build")
 .Does<BuildParameters>((parameters) => 
 {
 	DocFxMetadata("./docs/docfx.json");

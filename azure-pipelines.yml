@@ -1,8 +1,7 @@
 variables:
-  DOTNET_SDK_VERSION: '2.2.105' # see on when you can upgrade https://github.com/cake-build/cake/issues/2497
+  DOTNET_SDK_VERSION: '2.2.105'
   DOTNET_PACKAGE_TYPE: 'sdk'
   RUBY_VERSION: '2.5'
-  global_variable: value    # this is available to all jobs
 
 jobs:
 - template: build/tmpl/jobs.yml
@@ -11,10 +10,10 @@ jobs:
     vmImage: 'macOS 10.13'
     installRuby: 'false'
 
-#- template: build/tmpl/jobs.yml
-#  parameters:
-#    name: Linux
-#    vmImage: 'Ubuntu 16.04'
+- template: build/tmpl/jobs.yml
+  parameters:
+    name: Linux
+    vmImage: 'Ubuntu 18.04'
 
 - template: build/tmpl/jobs.yml
   parameters:

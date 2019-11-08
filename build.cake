@@ -1,5 +1,5 @@
- // Install modules
-#module nuget:?package=Cake.DotNetTool.Module&version=0.3.0
+// Install modules
+#module nuget:?package=Cake.DotNetTool.Module&version=0.3.1
 
 // Install addins.
 #addin "nuget:?package=Cake.Gitter&version=0.11.0"
@@ -21,12 +21,12 @@
 #tool "nuget:?package=GitReleaseNotes&version=0.7.1"
 #tool "nuget:?package=ILRepack&version=2.0.16"
 #tool "nuget:?package=Codecov&version=1.7.0"
-#tool "nuget:?package=nuget.commandline&version=4.9.2"
+#tool "nuget:?package=nuget.commandline&version=5.3.1"
 #tool "nuget:?package=GitVersion.CommandLine&version=5.0.2-beta1.2"
-#tool "nuget:?package=docfx.console&version=2.44.0"
+#tool "nuget:?package=docfx.console&version=2.46.0"
 #tool "nuget:?package=WiX.Toolset.UnofficialFork&version=3.11.1"
 #tool "nuget:?package=OpenCover&version=4.7.922"
-#tool nuget:?package=ReportGenerator&version=4.2.15
+#tool "nuget:?package=ReportGenerator&version=4.3.2"
 
 // Install .NET Core Global tools.
 #tool "dotnet:?package=GitReleaseManager.Tool&version=0.8.0"
@@ -109,12 +109,10 @@ Teardown<BuildParameters>((context, parameters) =>
 
         if(context.Successful)
         {
-			 Information("Finished running tasks. Build Status = Success");
-        }else{
-			 Information("Finished running tasks. Build Status = Failure");
-		}
 
-       
+        }
+
+        Information("Finished running tasks.");
     }
     catch (Exception exception)
     {

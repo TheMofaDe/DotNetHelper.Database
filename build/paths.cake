@@ -35,7 +35,6 @@ public class BuildPaths
 
         var tfsSuffix = parameters.IsStableRelease() ? "" : "preview-";
      
-
         // Directories
         var buildDirectories = new BuildDirectories(
             artifactsDir,
