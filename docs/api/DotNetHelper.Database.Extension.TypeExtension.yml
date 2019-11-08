@@ -6,6 +6,7 @@ items:
   parent: DotNetHelper.Database.Extension
   children:
   - DotNetHelper.Database.Extension.TypeExtension.IsNullable(System.Type)
+  - DotNetHelper.Database.Extension.TypeExtension.IsTypeAnIEnumerable(System.Type)
   - DotNetHelper.Database.Extension.TypeExtension.IsTypeAnonymousType(System.Type)
   - DotNetHelper.Database.Extension.TypeExtension.IsTypeDynamic(System.Type)
   langs:
@@ -22,7 +23,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: TypeExtension
     path: ../src/DotNetHelper.Database/Extension/TypeExtension.cs
-    startLine: 11
+    startLine: 14
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
@@ -65,14 +66,14 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: IsNullable
     path: ../src/DotNetHelper.Database/Extension/TypeExtension.cs
-    startLine: 21
+    startLine: 24
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
   summary: "\nreturns a tuple with the first value indicating if the specified type is a Nullable type and the second value indicating the underlyingtype\nif type is not nullable the underlyingType with be the specified type provided\n"
   example: []
   syntax:
-    content: public static (bool isNullableT, Type underlyingType)IsNullable(this Type type)
+    content: public static (bool isNullableT, Type underlyingType) IsNullable(this Type type)
     parameters:
     - id: type
       type: System.Type
@@ -110,7 +111,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: IsTypeDynamic
     path: ../src/DotNetHelper.Database/Extension/TypeExtension.cs
-    startLine: 36
+    startLine: 39
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
@@ -155,7 +156,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: IsTypeAnonymousType
     path: ../src/DotNetHelper.Database/Extension/TypeExtension.cs
-    startLine: 46
+    startLine: 49
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
@@ -175,6 +176,51 @@ items:
 
       Public Shared Function IsTypeAnonymousType(type As Type) As Boolean
   overload: DotNetHelper.Database.Extension.TypeExtension.IsTypeAnonymousType*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: DotNetHelper.Database.Extension.TypeExtension.IsTypeAnIEnumerable(System.Type)
+  commentId: M:DotNetHelper.Database.Extension.TypeExtension.IsTypeAnIEnumerable(System.Type)
+  id: IsTypeAnIEnumerable(System.Type)
+  isExtensionMethod: true
+  parent: DotNetHelper.Database.Extension.TypeExtension
+  langs:
+  - csharp
+  - vb
+  name: IsTypeAnIEnumerable(Type)
+  nameWithType: TypeExtension.IsTypeAnIEnumerable(Type)
+  fullName: DotNetHelper.Database.Extension.TypeExtension.IsTypeAnIEnumerable(System.Type)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.Database/Extension/TypeExtension.cs
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+    id: IsTypeAnIEnumerable
+    path: ../src/DotNetHelper.Database/Extension/TypeExtension.cs
+    startLine: 64
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Extension
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public static bool IsTypeAnIEnumerable(this Type type)
+    parameters:
+    - id: type
+      type: System.Type
+      description: ''
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function IsTypeAnIEnumerable(type As Type) As Boolean
+  overload: DotNetHelper.Database.Extension.TypeExtension.IsTypeAnIEnumerable*
   modifiers.csharp:
   - public
   - static
@@ -568,3 +614,8 @@ references:
   name: IsTypeAnonymousType
   nameWithType: TypeExtension.IsTypeAnonymousType
   fullName: DotNetHelper.Database.Extension.TypeExtension.IsTypeAnonymousType
+- uid: DotNetHelper.Database.Extension.TypeExtension.IsTypeAnIEnumerable*
+  commentId: Overload:DotNetHelper.Database.Extension.TypeExtension.IsTypeAnIEnumerable
+  name: IsTypeAnIEnumerable
+  nameWithType: TypeExtension.IsTypeAnIEnumerable
+  fullName: DotNetHelper.Database.Extension.TypeExtension.IsTypeAnIEnumerable

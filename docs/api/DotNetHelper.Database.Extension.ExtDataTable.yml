@@ -220,10 +220,12 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: MapToList
     path: ../src/DotNetHelper.Database/Extension/ExtDataTable.cs
-    startLine: 97
+    startLine: 103
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
+  summary: "\nMaps a datatable to a strongly type list\n"
+  example: []
   syntax:
     content: >-
       public static List<T> MapToList<T>(this DataTable dataTable, bool useAttributeName = true)
@@ -231,12 +233,16 @@ items:
     parameters:
     - id: dataTable
       type: System.Data.DataTable
+      description: ''
     - id: useAttributeName
       type: System.Boolean
+      description: ''
     typeParameters:
     - id: T
+      description: ''
     return:
       type: System.Collections.Generic.List{{T}}
+      description: ''
     content.vb: >-
       <ExtensionAttribute>
 

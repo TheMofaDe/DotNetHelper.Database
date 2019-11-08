@@ -53,8 +53,8 @@ namespace DotNetHelper.Database.Tests
 
 
 #if SUPPORTDBFACTORIES
-                        list.Add(new DatabaseAccessFactory(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString));
-                        list.Add(new DatabaseAccessFactory(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString, TimeSpan.FromSeconds(40)));
+            list.Add(new DatabaseAccessFactory(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString));
+            list.Add(new DatabaseAccessFactory(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString, TimeSpan.FromSeconds(40)));
 #endif
             return list;
         }
@@ -112,7 +112,7 @@ namespace DotNetHelper.Database.Tests
 
 
         [Test]
-        
+
         public void Insert_All_Records_In_List()
         {
             var list = MockEmployee.Hashset;

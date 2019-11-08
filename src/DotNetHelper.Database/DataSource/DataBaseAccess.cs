@@ -415,7 +415,7 @@ namespace DotNetHelper.Database.DataSource
         /// <returns></returns>
         public DbDataReader GetDataReader(string sql, List<DbParameter> parameters = null)
         {
-            return GetDataReader(sql, CommandType.Text,parameters);
+            return GetDataReader(sql, CommandType.Text, parameters);
         }
 
 
@@ -443,7 +443,7 @@ namespace DotNetHelper.Database.DataSource
         /// <returns></returns>
         public DataTable GetDataTable(string selectSql, List<DbParameter> parameters = null)
         {
-            return GetDataTable(selectSql, CommandType.Text,parameters);
+            return GetDataTable(selectSql, CommandType.Text, parameters);
         }
 
         /// <summary>

@@ -27,8 +27,8 @@ items:
   - DotNetHelper.Database.DatabaseAccessFactory.ExecuteNonQuery(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter})
   - DotNetHelper.Database.DatabaseAccessFactory.ExecuteScalar(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   - DotNetHelper.Database.DatabaseAccessFactory.ExecuteScalar(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  - DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter}}},System.Boolean,System.Boolean)
   - DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
-  - DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Data.Common.DbConnection,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
   - DotNetHelper.Database.DatabaseAccessFactory.Get``1
   - DotNetHelper.Database.DatabaseAccessFactory.Get``1(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Collections.Generic.List{System.Data.Common.DbParameter})
   - DotNetHelper.Database.DatabaseAccessFactory.Get``1(System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object})
@@ -36,7 +36,7 @@ items:
   - DotNetHelper.Database.DatabaseAccessFactory.Get``1(System.String,System.Data.CommandType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Collections.Generic.List{System.Data.Common.DbParameter})
   - DotNetHelper.Database.DatabaseAccessFactory.GetDataReader(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   - DotNetHelper.Database.DatabaseAccessFactory.GetDataReader(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
-  - DotNetHelper.Database.DatabaseAccessFactory.GetDataTable(System.String)
+  - DotNetHelper.Database.DatabaseAccessFactory.GetDataTable(System.String,System.Collections.Generic.List{System.Data.Common.DbParameter})
   - DotNetHelper.Database.DatabaseAccessFactory.GetDataTable(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   - DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithKeyInfo(System.String)
   - DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithKeyInfo(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
@@ -74,14 +74,15 @@ items:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
   syntax:
-    content: 'public class DatabaseAccessFactory : IDatabaseAccess'
+    content: 'public class DatabaseAccessFactory : IDatabaseAccess, IDisposable'
     content.vb: >-
       Public Class DatabaseAccessFactory
-          Implements IDatabaseAccess
+          Implements IDatabaseAccess, IDisposable
   inheritance:
   - System.Object
   implements:
   - DotNetHelper.Database.Interface.IDatabaseAccess
+  - System.IDisposable
   inheritedMembers:
   - System.Object.ToString
   - System.Object.Equals(System.Object)
@@ -558,7 +559,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewCommand
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 149
+    startLine: 150
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -611,14 +612,14 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetNewCommandAndTransaction
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 168
+    startLine: 169
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
   summary: "\n\n"
   example: []
   syntax:
-    content: public (DbCommand command, DbTransaction transaction)GetNewCommandAndTransaction(DbConnection connection)
+    content: public (DbCommand command, DbTransaction transaction) GetNewCommandAndTransaction(DbConnection connection)
     parameters:
     - id: connection
       type: System.Data.Common.DbConnection
@@ -652,7 +653,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteNonQuery
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 190
+    startLine: 191
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -705,7 +706,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteNonQuery
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 207
+    startLine: 208
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -756,7 +757,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteScalar
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 221
+    startLine: 222
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -806,7 +807,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteScalar
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 237
+    startLine: 238
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -857,7 +858,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteTransaction
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 252
+    startLine: 253
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -889,16 +890,16 @@ items:
   - Public
   fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Collections.Generic.List(Of System.String), System.Boolean, System.Boolean)
   name.vb: ExecuteTransaction(List(Of String), Boolean, Boolean)
-- uid: DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Data.Common.DbConnection,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
-  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Data.Common.DbConnection,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
-  id: ExecuteTransaction(System.Data.Common.DbConnection,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
+- uid: DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter}}},System.Boolean,System.Boolean)
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter}}},System.Boolean,System.Boolean)
+  id: ExecuteTransaction(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter}}},System.Boolean,System.Boolean)
   parent: DotNetHelper.Database.DatabaseAccessFactory
   langs:
   - csharp
   - vb
-  name: ExecuteTransaction(DbConnection, List<String>, Boolean, Boolean)
-  nameWithType: DatabaseAccessFactory.ExecuteTransaction(DbConnection, List<String>, Boolean, Boolean)
-  fullName: DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Data.Common.DbConnection, System.Collections.Generic.List<System.String>, System.Boolean, System.Boolean)
+  name: ExecuteTransaction(List<KeyValuePair<String, IEnumerable<DbParameter>>>, Boolean, Boolean)
+  nameWithType: DatabaseAccessFactory.ExecuteTransaction(List<KeyValuePair<String, IEnumerable<DbParameter>>>, Boolean, Boolean)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Collections.Generic.List<System.Collections.Generic.KeyValuePair<System.String, System.Collections.Generic.IEnumerable<System.Data.Common.DbParameter>>>, System.Boolean, System.Boolean)
   type: Method
   source:
     remote:
@@ -907,20 +908,17 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteTransaction
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 268
+    startLine: 267
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
-  summary: "\nExecutes a list of sql as in a single transaction. \n"
+  summary: "\nExecutes a list of sql as in a single transaction \n"
   example: []
   syntax:
-    content: public int ExecuteTransaction(DbConnection connection, List<string> sqls, bool rollbackOnException, bool throwException = true)
+    content: public int ExecuteTransaction(List<KeyValuePair<string, IEnumerable<DbParameter>>> sqls, bool rollbackOnException, bool throwException = true)
     parameters:
-    - id: connection
-      type: System.Data.Common.DbConnection
-      description: ''
     - id: sqls
-      type: System.Collections.Generic.List{System.String}
+      type: System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter}}}
       description: ''
     - id: rollbackOnException
       type: System.Boolean
@@ -931,15 +929,15 @@ items:
     return:
       type: System.Int32
       description: ''
-    content.vb: Public Function ExecuteTransaction(connection As DbConnection, sqls As List(Of String), rollbackOnException As Boolean, throwException As Boolean = True) As Integer
+    content.vb: Public Function ExecuteTransaction(sqls As List(Of KeyValuePair(Of String, IEnumerable(Of DbParameter))), rollbackOnException As Boolean, throwException As Boolean = True) As Integer
   overload: DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction*
-  nameWithType.vb: DatabaseAccessFactory.ExecuteTransaction(DbConnection, List(Of String), Boolean, Boolean)
+  nameWithType.vb: DatabaseAccessFactory.ExecuteTransaction(List(Of KeyValuePair(Of String, IEnumerable(Of DbParameter))), Boolean, Boolean)
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Data.Common.DbConnection, System.Collections.Generic.List(Of System.String), System.Boolean, System.Boolean)
-  name.vb: ExecuteTransaction(DbConnection, List(Of String), Boolean, Boolean)
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Collections.Generic.List(Of System.Collections.Generic.KeyValuePair(Of System.String, System.Collections.Generic.IEnumerable(Of System.Data.Common.DbParameter))), System.Boolean, System.Boolean)
+  name.vb: ExecuteTransaction(List(Of KeyValuePair(Of String, IEnumerable(Of DbParameter))), Boolean, Boolean)
 - uid: DotNetHelper.Database.DatabaseAccessFactory.GetDataReader(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   commentId: M:DotNetHelper.Database.DatabaseAccessFactory.GetDataReader(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   id: GetDataReader(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
@@ -958,7 +956,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataReader
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 306
+    startLine: 320
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1009,7 +1007,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataReader
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 321
+    startLine: 335
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1059,7 +1057,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTable
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 334
+    startLine: 348
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1091,16 +1089,16 @@ items:
   - Public
   fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.GetDataTable(System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
   name.vb: GetDataTable(String, CommandType, List(Of DbParameter))
-- uid: DotNetHelper.Database.DatabaseAccessFactory.GetDataTable(System.String)
-  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.GetDataTable(System.String)
-  id: GetDataTable(System.String)
+- uid: DotNetHelper.Database.DatabaseAccessFactory.GetDataTable(System.String,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.GetDataTable(System.String,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  id: GetDataTable(System.String,System.Collections.Generic.List{System.Data.Common.DbParameter})
   parent: DotNetHelper.Database.DatabaseAccessFactory
   langs:
   - csharp
   - vb
-  name: GetDataTable(String)
-  nameWithType: DatabaseAccessFactory.GetDataTable(String)
-  fullName: DotNetHelper.Database.DatabaseAccessFactory.GetDataTable(System.String)
+  name: GetDataTable(String, List<DbParameter>)
+  nameWithType: DatabaseAccessFactory.GetDataTable(String, List<DbParameter>)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.GetDataTable(System.String, System.Collections.Generic.List<System.Data.Common.DbParameter>)
   type: Method
   source:
     remote:
@@ -1109,29 +1107,34 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTable
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 347
+    startLine: 361
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
   summary: "\nexecute the sql and load the results into a dataTable\n"
   example: []
   syntax:
-    content: public DataTable GetDataTable(string selectSql)
+    content: public DataTable GetDataTable(string selectSql, List<DbParameter> parameters = null)
     parameters:
     - id: selectSql
       type: System.String
       description: ''
+    - id: parameters
+      type: System.Collections.Generic.List{System.Data.Common.DbParameter}
     return:
       type: System.Data.DataTable
       description: ''
-    content.vb: Public Function GetDataTable(selectSql As String) As DataTable
+    content.vb: Public Function GetDataTable(selectSql As String, parameters As List(Of DbParameter) = Nothing) As DataTable
   overload: DotNetHelper.Database.DatabaseAccessFactory.GetDataTable*
   implements:
-  - DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable(System.String)
+  - DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable(System.String,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  nameWithType.vb: DatabaseAccessFactory.GetDataTable(String, List(Of DbParameter))
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.GetDataTable(System.String, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
+  name.vb: GetDataTable(String, List(Of DbParameter))
 - uid: DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithSchema(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   commentId: M:DotNetHelper.Database.DatabaseAccessFactory.GetDataTableWithSchema(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   id: GetDataTableWithSchema(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
@@ -1150,7 +1153,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTableWithSchema
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 359
+    startLine: 373
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1200,7 +1203,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTableWithKeyInfo
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 381
+    startLine: 395
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1250,7 +1253,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTableWithSchema
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 399
+    startLine: 413
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1291,7 +1294,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: GetDataTableWithKeyInfo
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 409
+    startLine: 423
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1332,7 +1335,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: CanConnect
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 419
+    startLine: 433
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1369,7 +1372,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 445
+    startLine: 459
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1433,7 +1436,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 462
+    startLine: 476
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1498,7 +1501,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 472
+    startLine: 486
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1543,7 +1546,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 487
+    startLine: 501
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1598,7 +1601,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Get
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 501
+    startLine: 515
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1653,7 +1656,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Execute
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 513
+    startLine: 527
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1705,7 +1708,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Execute
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 526
+    startLine: 540
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1760,7 +1763,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Execute
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 542
+    startLine: 556
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1824,7 +1827,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Execute
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 562
+    startLine: 594
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1882,7 +1885,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Execute
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 582
+    startLine: 614
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -1949,7 +1952,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutput
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 598
+    startLine: 630
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -2004,7 +2007,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutput
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 617
+    startLine: 649
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -2077,7 +2080,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutputAsDataReader
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 629
+    startLine: 661
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -2125,7 +2128,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExecuteAndGetOutputAsDataReader
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 634
+    startLine: 666
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -2179,7 +2182,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: SqlServerBulkCopy
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 652
+    startLine: 685
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -2231,7 +2234,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: SqlServerBulkCopy
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 666
+    startLine: 699
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -2286,7 +2289,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: SqlServerBulkCopy
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 680
+    startLine: 713
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -2344,7 +2347,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: SqlServerBulkCopyAsync
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 712
+    startLine: 745
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -2396,7 +2399,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: SqlServerBulkCopyAsync
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 726
+    startLine: 759
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -2451,7 +2454,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: SqlServerBulkCopyAsync
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 740
+    startLine: 773
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -2509,7 +2512,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Dispose
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 767
+    startLine: 799
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -2517,6 +2520,8 @@ items:
     content: public void Dispose()
     content.vb: Public Sub Dispose
   overload: DotNetHelper.Database.DatabaseAccessFactory.Dispose*
+  implements:
+  - System.IDisposable.Dispose
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -2539,7 +2544,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Dispose
     path: ../src/DotNetHelper.Database/DataBaseAccessFactory.cs
-    startLine: 774
+    startLine: 806
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database
@@ -2575,6 +2580,13 @@ references:
   name: IDatabaseAccess
   nameWithType: IDatabaseAccess
   fullName: DotNetHelper.Database.Interface.IDatabaseAccess
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
 - uid: System.Object.ToString
   commentId: M:System.Object.ToString
   parent: System.Object
@@ -4505,6 +4517,110 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter}}}
+  commentId: T:System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter}}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<KeyValuePair<String, IEnumerable<DbParameter>>>
+  nameWithType: List<KeyValuePair<String, IEnumerable<DbParameter>>>
+  fullName: System.Collections.Generic.List<System.Collections.Generic.KeyValuePair<System.String, System.Collections.Generic.IEnumerable<System.Data.Common.DbParameter>>>
+  nameWithType.vb: List(Of KeyValuePair(Of String, IEnumerable(Of DbParameter)))
+  fullName.vb: System.Collections.Generic.List(Of System.Collections.Generic.KeyValuePair(Of System.String, System.Collections.Generic.IEnumerable(Of System.Data.Common.DbParameter)))
+  name.vb: List(Of KeyValuePair(Of String, IEnumerable(Of DbParameter)))
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Data.Common.DbParameter
+    name: DbParameter
+    nameWithType: DbParameter
+    fullName: System.Data.Common.DbParameter
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Data.Common.DbParameter
+    name: DbParameter
+    nameWithType: DbParameter
+    fullName: System.Data.Common.DbParameter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: DotNetHelper.Database.DatabaseAccessFactory.GetDataReader*
   commentId: Overload:DotNetHelper.Database.DatabaseAccessFactory.GetDataReader
   name: GetDataReader
@@ -4721,15 +4837,18 @@ references:
   name: DataTable
   nameWithType: DataTable
   fullName: System.Data.DataTable
-- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable(System.String)
-  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable(System.String)
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable(System.String,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable(System.String,System.Collections.Generic.List{System.Data.Common.DbParameter})
   parent: DotNetHelper.Database.Interface.IDatabaseAccess
   isExternal: true
-  name: GetDataTable(String)
-  nameWithType: IDatabaseAccess.GetDataTable(String)
-  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable(System.String)
+  name: GetDataTable(String, List<DbParameter>)
+  nameWithType: IDatabaseAccess.GetDataTable(String, List<DbParameter>)
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable(System.String, System.Collections.Generic.List<System.Data.Common.DbParameter>)
+  nameWithType.vb: IDatabaseAccess.GetDataTable(String, List(Of DbParameter))
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable(System.String, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
+  name.vb: GetDataTable(String, List(Of DbParameter))
   spec.csharp:
-  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable(System.String)
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable(System.String,System.Collections.Generic.List{System.Data.Common.DbParameter})
     name: GetDataTable
     nameWithType: IDatabaseAccess.GetDataTable
     fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable
@@ -4741,11 +4860,30 @@ references:
     nameWithType: String
     fullName: System.String
     isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Data.Common.DbParameter
+    name: DbParameter
+    nameWithType: DbParameter
+    fullName: System.Data.Common.DbParameter
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
   - name: )
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable(System.String)
+  - uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable(System.String,System.Collections.Generic.List{System.Data.Common.DbParameter})
     name: GetDataTable
     nameWithType: IDatabaseAccess.GetDataTable
     fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable
@@ -4757,6 +4895,25 @@ references:
     nameWithType: String
     fullName: System.String
     isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Data.Common.DbParameter
+    name: DbParameter
+    nameWithType: DbParameter
+    fullName: System.Data.Common.DbParameter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
   - name: )
     nameWithType: )
     fullName: )
@@ -10995,3 +11152,34 @@ references:
   name: Dispose
   nameWithType: DatabaseAccessFactory.Dispose
   fullName: DotNetHelper.Database.DatabaseAccessFactory.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )

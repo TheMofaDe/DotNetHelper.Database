@@ -10,7 +10,7 @@ namespace DotNetHelper.Database.Tests.Models
 
     public class SpecialDataTypeTable
     {
-      //  public TimeSpan TimeSpan { get; set; }
+        //  public TimeSpan TimeSpan { get; set; }
         public DateTimeOffset DateTimeOffset { get; set; }
         public Guid Id { get; set; }
         public byte[] Bytes { get; set; }

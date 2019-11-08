@@ -53,8 +53,8 @@ namespace DotNetHelper.Database.Tests
 
 
 #if SUPPORTDBFACTORIES
-                        list.Add(new DatabaseAccessFactory(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString));
-                        list.Add(new DatabaseAccessFactory(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString, TimeSpan.FromSeconds(40)));
+            list.Add(new DatabaseAccessFactory(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString));
+            list.Add(new DatabaseAccessFactory(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString, TimeSpan.FromSeconds(40)));
 #endif
             return list;
         }
@@ -132,7 +132,7 @@ namespace DotNetHelper.Database.Tests
 
 
 
-        public  byte[] ReadFully( Stream input)
+        public byte[] ReadFully(Stream input)
         {
             var ms = new MemoryStream();
             input.CopyTo(ms);
@@ -147,7 +147,8 @@ namespace DotNetHelper.Database.Tests
             var obj = new SpecialDataTypeTable()
             {
                 DateTimeOffset = DateTimeOffset.Now
-                , Id = Guid.Parse("a19ed8e6-c455-4164-afac-d4043095a4ee")
+                ,
+                Id = Guid.Parse("a19ed8e6-c455-4164-afac-d4043095a4ee")
             };
             using (var stream = typeof(DatabaseTextFixture).Assembly.GetManifestResourceStream("DotNetHelper.Database.Tests.Assets.calendar-16.png"))
             {
@@ -167,7 +168,7 @@ namespace DotNetHelper.Database.Tests
             Assert.AreEqual(obj.DateTimeOffset, data.DateTimeOffset, $"Failed for database {DatabaseAccess.DatabaseType}");
             Assert.AreEqual(obj.Id, data.Id, $"Failed for database {DatabaseAccess.DatabaseType}");
 #endif
-            
+
 
         }
 
@@ -473,7 +474,7 @@ namespace DotNetHelper.Database.Tests
         {
 
 #if SUPPORTDBFACTORIES
-             // TODO :: FIND OUT WHY DBFACTORY ISN'T CREATE PARAMETERS
+            // TODO :: FIND OUT WHY DBFACTORY ISN'T CREATE PARAMETERS
 #else
             MockEmployee.Hashset.First().CreatedAt = DateTime.Parse("2019-01-01");
             var data = MockEmployee.Hashset.ToList();
@@ -537,9 +538,9 @@ namespace DotNetHelper.Database.Tests
             var recordAffected = 0;
             Assert.Throws(Is.InstanceOf<Exception>(), delegate
             {
-                 recordAffected = DatabaseAccess.ExecuteTransaction(transactionSql, true, true);
+                recordAffected = DatabaseAccess.ExecuteTransaction(transactionSql, true, true);
             });
-       
+
             Assert.That(recordAffected == 0);
 
 
@@ -547,7 +548,7 @@ namespace DotNetHelper.Database.Tests
                 .MapToList<string>()
                 .ToList();
 
-       
+
             Assert.That(list[0] == null, "ExecuteTransaction didn't execute the update statement succesfully");
             Assert.That(list[1] == null, "ExecuteTransaction didn't execute the update statement succesfully");
             Assert.That(list[2] == null, "ExecuteTransaction didn't execute the update statement succesfully");
@@ -606,7 +607,7 @@ namespace DotNetHelper.Database.Tests
 
             Assert.That(DateTime.Parse(list[0]) == DateTime.Parse("2019-01-01"), "ExecuteTransaction didn't execute the update statement succesfully");
             Assert.That(DateTime.Parse(list[1]) == DateTime.Parse("2019-01-02"), "ExecuteTransaction didn't execute the update statement succesfully");
-            Assert.That(list[2] ==null, "ExecuteTransaction didn't execute the update statement succesfully");
+            Assert.That(list[2] == null, "ExecuteTransaction didn't execute the update statement succesfully");
         }
 
 
@@ -698,7 +699,7 @@ namespace DotNetHelper.Database.Tests
         public void Test_Ensure_Disposal()
         {
 
-           
+
             using (DatabaseAccess)
             {
 

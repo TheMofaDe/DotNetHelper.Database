@@ -65,7 +65,7 @@ namespace DotNetHelper.Database.Tests
                 {
                     var result = _databaseAccess.ExecuteNonQuery(TestHelper.GetEmbeddedResourceFile(s), CommandType.Text);
                 }
-                catch (Exception )
+                catch (Exception)
                 {
 
                 }

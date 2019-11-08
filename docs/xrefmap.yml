@@ -274,6 +274,15 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.Database.DatabaseAccessFactory.ExecuteScalar
   nameWithType: DatabaseAccessFactory.ExecuteScalar
+- uid: DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter}}},System.Boolean,System.Boolean)
+  name: ExecuteTransaction(List<KeyValuePair<String, IEnumerable<DbParameter>>>, Boolean, Boolean)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_ExecuteTransaction_System_Collections_Generic_List_System_Collections_Generic_KeyValuePair_System_String_System_Collections_Generic_IEnumerable_System_Data_Common_DbParameter____System_Boolean_System_Boolean_
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter}}},System.Boolean,System.Boolean)
+  name.vb: ExecuteTransaction(List(Of KeyValuePair(Of String, IEnumerable(Of DbParameter))), Boolean, Boolean)
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Collections.Generic.List<System.Collections.Generic.KeyValuePair<System.String, System.Collections.Generic.IEnumerable<System.Data.Common.DbParameter>>>, System.Boolean, System.Boolean)
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Collections.Generic.List(Of System.Collections.Generic.KeyValuePair(Of System.String, System.Collections.Generic.IEnumerable(Of System.Data.Common.DbParameter))), System.Boolean, System.Boolean)
+  nameWithType: DatabaseAccessFactory.ExecuteTransaction(List<KeyValuePair<String, IEnumerable<DbParameter>>>, Boolean, Boolean)
+  nameWithType.vb: DatabaseAccessFactory.ExecuteTransaction(List(Of KeyValuePair(Of String, IEnumerable(Of DbParameter))), Boolean, Boolean)
 - uid: DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
   name: ExecuteTransaction(List<String>, Boolean, Boolean)
   href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_ExecuteTransaction_System_Collections_Generic_List_System_String__System_Boolean_System_Boolean_
@@ -283,15 +292,6 @@ references:
   fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Collections.Generic.List(Of System.String), System.Boolean, System.Boolean)
   nameWithType: DatabaseAccessFactory.ExecuteTransaction(List<String>, Boolean, Boolean)
   nameWithType.vb: DatabaseAccessFactory.ExecuteTransaction(List(Of String), Boolean, Boolean)
-- uid: DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Data.Common.DbConnection,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
-  name: ExecuteTransaction(DbConnection, List<String>, Boolean, Boolean)
-  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_ExecuteTransaction_System_Data_Common_DbConnection_System_Collections_Generic_List_System_String__System_Boolean_System_Boolean_
-  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Data.Common.DbConnection,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
-  name.vb: ExecuteTransaction(DbConnection, List(Of String), Boolean, Boolean)
-  fullName: DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Data.Common.DbConnection, System.Collections.Generic.List<System.String>, System.Boolean, System.Boolean)
-  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction(System.Data.Common.DbConnection, System.Collections.Generic.List(Of System.String), System.Boolean, System.Boolean)
-  nameWithType: DatabaseAccessFactory.ExecuteTransaction(DbConnection, List<String>, Boolean, Boolean)
-  nameWithType.vb: DatabaseAccessFactory.ExecuteTransaction(DbConnection, List(Of String), Boolean, Boolean)
 - uid: DotNetHelper.Database.DatabaseAccessFactory.ExecuteTransaction*
   name: ExecuteTransaction
   href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_ExecuteTransaction_
@@ -376,12 +376,15 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.Database.DatabaseAccessFactory.GetDataReader
   nameWithType: DatabaseAccessFactory.GetDataReader
-- uid: DotNetHelper.Database.DatabaseAccessFactory.GetDataTable(System.String)
-  name: GetDataTable(String)
-  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_GetDataTable_System_String_
-  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.GetDataTable(System.String)
-  fullName: DotNetHelper.Database.DatabaseAccessFactory.GetDataTable(System.String)
-  nameWithType: DatabaseAccessFactory.GetDataTable(String)
+- uid: DotNetHelper.Database.DatabaseAccessFactory.GetDataTable(System.String,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name: GetDataTable(String, List<DbParameter>)
+  href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_GetDataTable_System_String_System_Collections_Generic_List_System_Data_Common_DbParameter__
+  commentId: M:DotNetHelper.Database.DatabaseAccessFactory.GetDataTable(System.String,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name.vb: GetDataTable(String, List(Of DbParameter))
+  fullName: DotNetHelper.Database.DatabaseAccessFactory.GetDataTable(System.String, System.Collections.Generic.List<System.Data.Common.DbParameter>)
+  fullName.vb: DotNetHelper.Database.DatabaseAccessFactory.GetDataTable(System.String, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
+  nameWithType: DatabaseAccessFactory.GetDataTable(String, List<DbParameter>)
+  nameWithType.vb: DatabaseAccessFactory.GetDataTable(String, List(Of DbParameter))
 - uid: DotNetHelper.Database.DatabaseAccessFactory.GetDataTable(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   name: GetDataTable(String, CommandType, List<DbParameter>)
   href: api/DotNetHelper.Database.DatabaseAccessFactory.html#DotNetHelper_Database_DatabaseAccessFactory_GetDataTable_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__
@@ -890,6 +893,15 @@ references:
   fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).ExecuteScalar
   nameWithType: DatabaseAccess<TDbConnection>.ExecuteScalar
   nameWithType.vb: DatabaseAccess(Of TDbConnection).ExecuteScalar
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.ExecuteTransaction(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter}}},System.Boolean,System.Boolean)
+  name: ExecuteTransaction(List<KeyValuePair<String, IEnumerable<DbParameter>>>, Boolean, Boolean)
+  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-1.html#DotNetHelper_Database_DataSource_DatabaseAccess_1_ExecuteTransaction_System_Collections_Generic_List_System_Collections_Generic_KeyValuePair_System_String_System_Collections_Generic_IEnumerable_System_Data_Common_DbParameter____System_Boolean_System_Boolean_
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`1.ExecuteTransaction(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter}}},System.Boolean,System.Boolean)
+  name.vb: ExecuteTransaction(List(Of KeyValuePair(Of String, IEnumerable(Of DbParameter))), Boolean, Boolean)
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<TDbConnection>.ExecuteTransaction(System.Collections.Generic.List<System.Collections.Generic.KeyValuePair<System.String, System.Collections.Generic.IEnumerable<System.Data.Common.DbParameter>>>, System.Boolean, System.Boolean)
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).ExecuteTransaction(System.Collections.Generic.List(Of System.Collections.Generic.KeyValuePair(Of System.String, System.Collections.Generic.IEnumerable(Of System.Data.Common.DbParameter))), System.Boolean, System.Boolean)
+  nameWithType: DatabaseAccess<TDbConnection>.ExecuteTransaction(List<KeyValuePair<String, IEnumerable<DbParameter>>>, Boolean, Boolean)
+  nameWithType.vb: DatabaseAccess(Of TDbConnection).ExecuteTransaction(List(Of KeyValuePair(Of String, IEnumerable(Of DbParameter))), Boolean, Boolean)
 - uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.ExecuteTransaction(System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
   name: ExecuteTransaction(List<String>, Boolean, Boolean)
   href: api/DotNetHelper.Database.DataSource.DatabaseAccess-1.html#DotNetHelper_Database_DataSource_DatabaseAccess_1_ExecuteTransaction_System_Collections_Generic_List_System_String__System_Boolean_System_Boolean_
@@ -953,6 +965,15 @@ references:
   fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).Get(Of T)(System.String, System.Data.CommandType, System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Collections.Generic.List(Of System.Data.Common.DbParameter))
   nameWithType: DatabaseAccess<TDbConnection>.Get<T>(String, CommandType, Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>, List<DbParameter>)
   nameWithType.vb: DatabaseAccess(Of TDbConnection).Get(Of T)(String, CommandType, Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object), List(Of DbParameter))
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.GetDataReader(System.String,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name: GetDataReader(String, List<DbParameter>)
+  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-1.html#DotNetHelper_Database_DataSource_DatabaseAccess_1_GetDataReader_System_String_System_Collections_Generic_List_System_Data_Common_DbParameter__
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`1.GetDataReader(System.String,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name.vb: GetDataReader(String, List(Of DbParameter))
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<TDbConnection>.GetDataReader(System.String, System.Collections.Generic.List<System.Data.Common.DbParameter>)
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).GetDataReader(System.String, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
+  nameWithType: DatabaseAccess<TDbConnection>.GetDataReader(String, List<DbParameter>)
+  nameWithType.vb: DatabaseAccess(Of TDbConnection).GetDataReader(String, List(Of DbParameter))
 - uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.GetDataReader(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   name: GetDataReader(String, CommandType, List<DbParameter>)
   href: api/DotNetHelper.Database.DataSource.DatabaseAccess-1.html#DotNetHelper_Database_DataSource_DatabaseAccess_1_GetDataReader_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__
@@ -971,14 +992,15 @@ references:
   fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).GetDataReader
   nameWithType: DatabaseAccess<TDbConnection>.GetDataReader
   nameWithType.vb: DatabaseAccess(Of TDbConnection).GetDataReader
-- uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.GetDataTable(System.String)
-  name: GetDataTable(String)
-  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-1.html#DotNetHelper_Database_DataSource_DatabaseAccess_1_GetDataTable_System_String_
-  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`1.GetDataTable(System.String)
-  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<TDbConnection>.GetDataTable(System.String)
-  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).GetDataTable(System.String)
-  nameWithType: DatabaseAccess<TDbConnection>.GetDataTable(String)
-  nameWithType.vb: DatabaseAccess(Of TDbConnection).GetDataTable(String)
+- uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.GetDataTable(System.String,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name: GetDataTable(String, List<DbParameter>)
+  href: api/DotNetHelper.Database.DataSource.DatabaseAccess-1.html#DotNetHelper_Database_DataSource_DatabaseAccess_1_GetDataTable_System_String_System_Collections_Generic_List_System_Data_Common_DbParameter__
+  commentId: M:DotNetHelper.Database.DataSource.DatabaseAccess`1.GetDataTable(System.String,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name.vb: GetDataTable(String, List(Of DbParameter))
+  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<TDbConnection>.GetDataTable(System.String, System.Collections.Generic.List<System.Data.Common.DbParameter>)
+  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection).GetDataTable(System.String, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
+  nameWithType: DatabaseAccess<TDbConnection>.GetDataTable(String, List<DbParameter>)
+  nameWithType.vb: DatabaseAccess(Of TDbConnection).GetDataTable(String, List(Of DbParameter))
 - uid: DotNetHelper.Database.DataSource.DatabaseAccess`1.GetDataTable(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   name: GetDataTable(String, CommandType, List<DbParameter>)
   href: api/DotNetHelper.Database.DataSource.DatabaseAccess-1.html#DotNetHelper_Database_DataSource_DatabaseAccess_1_GetDataTable_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__
@@ -1498,6 +1520,19 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.Database.Extension.TypeExtension.IsNullable
   nameWithType: TypeExtension.IsNullable
+- uid: DotNetHelper.Database.Extension.TypeExtension.IsTypeAnIEnumerable(System.Type)
+  name: IsTypeAnIEnumerable(Type)
+  href: api/DotNetHelper.Database.Extension.TypeExtension.html#DotNetHelper_Database_Extension_TypeExtension_IsTypeAnIEnumerable_System_Type_
+  commentId: M:DotNetHelper.Database.Extension.TypeExtension.IsTypeAnIEnumerable(System.Type)
+  fullName: DotNetHelper.Database.Extension.TypeExtension.IsTypeAnIEnumerable(System.Type)
+  nameWithType: TypeExtension.IsTypeAnIEnumerable(Type)
+- uid: DotNetHelper.Database.Extension.TypeExtension.IsTypeAnIEnumerable*
+  name: IsTypeAnIEnumerable
+  href: api/DotNetHelper.Database.Extension.TypeExtension.html#DotNetHelper_Database_Extension_TypeExtension_IsTypeAnIEnumerable_
+  commentId: Overload:DotNetHelper.Database.Extension.TypeExtension.IsTypeAnIEnumerable
+  isSpec: "True"
+  fullName: DotNetHelper.Database.Extension.TypeExtension.IsTypeAnIEnumerable
+  nameWithType: TypeExtension.IsTypeAnIEnumerable
 - uid: DotNetHelper.Database.Extension.TypeExtension.IsTypeAnonymousType(System.Type)
   name: IsTypeAnonymousType(Type)
   href: api/DotNetHelper.Database.Extension.TypeExtension.html#DotNetHelper_Database_Extension_TypeExtension_IsTypeAnonymousType_System_Type_
@@ -1822,12 +1857,15 @@ references:
   isSpec: "True"
   fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataReader
   nameWithType: IDatabaseAccess.GetDataReader
-- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable(System.String)
-  name: GetDataTable(String)
-  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_GetDataTable_System_String_
-  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable(System.String)
-  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable(System.String)
-  nameWithType: IDatabaseAccess.GetDataTable(String)
+- uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable(System.String,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name: GetDataTable(String, List<DbParameter>)
+  href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_GetDataTable_System_String_System_Collections_Generic_List_System_Data_Common_DbParameter__
+  commentId: M:DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable(System.String,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  name.vb: GetDataTable(String, List(Of DbParameter))
+  fullName: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable(System.String, System.Collections.Generic.List<System.Data.Common.DbParameter>)
+  fullName.vb: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable(System.String, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
+  nameWithType: IDatabaseAccess.GetDataTable(String, List<DbParameter>)
+  nameWithType.vb: IDatabaseAccess.GetDataTable(String, List(Of DbParameter))
 - uid: DotNetHelper.Database.Interface.IDatabaseAccess.GetDataTable(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   name: GetDataTable(String, CommandType, List<DbParameter>)
   href: api/DotNetHelper.Database.Interface.IDatabaseAccess.html#DotNetHelper_Database_Interface_IDatabaseAccess_GetDataTable_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__
