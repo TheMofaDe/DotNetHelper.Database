@@ -22,7 +22,7 @@
 #tool "nuget:?package=ILRepack&version=2.0.16"
 #tool "nuget:?package=Codecov&version=1.7.0"
 #tool "nuget:?package=nuget.commandline&version=5.3.1"
-#tool "nuget:?package=GitVersion.CommandLine&version=5.0.2-beta1.2"
+#tool "nuget:?package=GitVersion.CommandLine&version=5.1.2"
 #tool "nuget:?package=docfx.console&version=2.46.0"
 #tool "nuget:?package=WiX.Toolset.UnofficialFork&version=3.11.1"
 #tool "nuget:?package=OpenCover&version=4.7.922"
