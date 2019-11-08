@@ -347,7 +347,11 @@ namespace DotNetHelper.Database.DataSource
                     {
                         command.CommandText = pair.Key;
                         if (pair.Value != null)
+                        {
+                            command?.Parameters?.Clear(); // Clear any previous parameters
                             command.Parameters.AddRange(pair.Value);
+                        }
+
                         recordAffected += command.ExecuteNonQuery();
                     });
                     transaction.Commit();
