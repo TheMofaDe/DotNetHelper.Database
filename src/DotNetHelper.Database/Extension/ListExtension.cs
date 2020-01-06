@@ -5,6 +5,10 @@ using System.Linq;
 
 namespace DotNetHelper.Database.Extension
 {
+
+	/// <summary>
+	/// A collection of extensions methods put together by Joseph McNeal Jr.
+	/// </summary>
     internal static class ListExtension
     {
 
