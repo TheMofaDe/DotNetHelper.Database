@@ -76,15 +76,13 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Configuration" />
-  </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net452'">
     <PackageReference Include="MySql.Data">
       <Version>8.0.17</Version>
     </PackageReference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
   </ItemGroup>
 
 
