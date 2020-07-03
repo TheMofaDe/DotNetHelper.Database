@@ -9,7 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using DotNetHelper.Database.DataSource;
 using DotNetHelper.Database.Extension;
-using DotNetHelper.Database.Interface;
+
 using DotNetHelper.Database.Tests.Helpers;
 using DotNetHelper.Database.Tests.MockData;
 using DotNetHelper.Database.Tests.Models;
@@ -28,14 +28,14 @@ namespace DotNetHelper.Database.Tests
     [TestFixtureSource("TestObjects")]
     public class DatabaseTextFixture : BaseTest
     {
-        private static List<IDatabaseAccess> TestObjects { get; } = GetTestObjects();
+        private static List<DatabaseAccess> TestObjects { get; } = GetTestObjects();
 
         private static bool HasConnectionIssue { get; set; }
 
-        private static List<IDatabaseAccess> GetTestObjects()
+        private static List<DatabaseAccess> GetTestObjects()
         {
             // ReSharper disable once UseObjectOrCollectionInitializer
-            var list = new List<IDatabaseAccess>() { };
+            var list = new List<DatabaseAccess>() { };
 
             list.Add(new DatabaseAccess<SqlConnection>(TestHelper.SQLServerConnectionString));
             list.Add(new DatabaseAccess<SqlConnection>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString));
@@ -60,10 +60,10 @@ namespace DotNetHelper.Database.Tests
         }
 
 
-        public IDatabaseAccess DatabaseAccess { get; }
+        public DatabaseAccess DatabaseAccess { get; }
 
 
-        public DatabaseTextFixture(IDatabaseAccess databaseAccess) : base(databaseAccess)
+        public DatabaseTextFixture(DatabaseAccess databaseAccess) : base(databaseAccess)
         {
             DatabaseAccess = databaseAccess;
         }

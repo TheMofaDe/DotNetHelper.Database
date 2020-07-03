@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net452;net45</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net452;</TargetFrameworks>
     <PackageProjectUrl>https://github.com/TheMofaDe/DotNetHelper.Database</PackageProjectUrl>
     <PackageIconUrl>https://github.com/TheMofaDe/DotNetHelper.Database</PackageIconUrl>
     <RepositoryUrl>https://github.com/TheMofaDe/DotNetHelper.Database</RepositoryUrl>
@@ -13,7 +13,8 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Joseph McNeal Jr</Authors>
     <Company>Joseph McNeal Jr</Company>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
 
@@ -30,7 +31,7 @@
   </PropertyGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'  ">
-    <PackageReference Include="System.Data.SqlClient" Version="4.6.1" /> <!-- Needed to fix bug in .NET Standard https://github.com/dotnet/corefx/issues/19748-->
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.1" /> <!-- Needed to fix bug in .NET Standard https://github.com/dotnet/corefx/issues/19748-->
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net45' OR '$(TargetFramework)' == 'net452'  ">
@@ -38,17 +39,18 @@
     </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Enum\**" />
+    <Compile Remove="Exceptions\**" />
+    <EmbeddedResource Remove="Enum\**" />
+    <EmbeddedResource Remove="Exceptions\**" />
+    <None Remove="Enum\**" />
+    <None Remove="Exceptions\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="DataSource\DataBaseAccessTest.cs" />
     <Compile Remove="Helper\AlphabetHelper.cs" />
     <Compile Remove="Helper\ConnectionStringBuilder.cs" />
-  </ItemGroup>
-
-
-
-
-  <ItemGroup>
-    <Folder Include="Enum\" />
-    <Folder Include="Exceptions\" />
   </ItemGroup>
 
 
@@ -65,7 +67,7 @@
 
 
   <ItemGroup>
-    <PackageReference Include="DotNetHelper.ObjectToSql" Version="2.0.11" />
+    <PackageReference Include="DotNetHelper.ObjectToSql" Version="2.0.13" />
   </ItemGroup>
 
 

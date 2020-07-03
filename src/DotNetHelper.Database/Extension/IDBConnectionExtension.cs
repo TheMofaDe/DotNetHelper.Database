@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
+using System.Threading;
+using System.Threading.Tasks;
 using DotNetHelper.Database.DataSource;
-using DotNetHelper.Database.Interface;
 using DotNetHelper.ObjectToSql.Enum;
 
 namespace DotNetHelper.Database.Extension
@@ -33,8 +35,21 @@ namespace DotNetHelper.Database.Extension
 
             }
         }
+        public static async Task OpenSafelyAsync(this DbConnection connection,CancellationToken cancellationToken = default)
+        {
+            if (connection.State == ConnectionState.Open || connection.State == ConnectionState.Connecting)
+            {
 
-        public static IDatabaseAccess DatabaseAccess<T>(this T connection, DataBaseType? dataBaseType = null) where T : DbConnection, new()
+            }
+            else
+            {
+                await connection.OpenAsync(cancellationToken);
+            }
+
+        }
+
+       
+        public static DatabaseAccess<T> DatabaseAccess<T>(this T connection, DataBaseType? dataBaseType = null) where T : DbConnection, new()
         {
             return new DatabaseAccess<T>(connection, dataBaseType);
         }

@@ -9,7 +9,6 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using DotNetHelper.Database.Extension;
 using DotNetHelper.Database.Helper;
-using DotNetHelper.Database.Interface;
 using DotNetHelper.ObjectToSql.Enum;
 using DotNetHelper.ObjectToSql.Model;
 
@@ -19,7 +18,7 @@ namespace DotNetHelper.Database.DataSource
     /// A powerful & simple class for dealing with simple CRUD operation that doesn't required you to write sql but also provided an overload to pass sql if needed
     /// </summary>
     /// <typeparam name="TDbConnection">An implementation of IDBConnection</typeparam>
-    public class DatabaseAccess<TDbConnection> : IDatabaseAccess where TDbConnection : DbConnection, new()
+    public class DatabaseAccess<TDbConnection> where TDbConnection : DbConnection, new()
     {
         /// <summary>
         /// The connection string to the database
@@ -118,22 +117,6 @@ namespace DotNetHelper.Database.DataSource
             ParameterBuilder = GetNewConnection(false).CreateCommand();
         }
 
-        ///// <summary>
-        ///// 
-        ///// </summary>
-        ///// <param name="type"></param>
-        ///// <param name="connectionString"></param>
-        ///// <param name="commandTimeOut"></param>
-        ///// <param name="connectionTimeOut"></param>
-        //public DatabaseAccess(DataBaseType type, string connectionString, TimeSpan commandTimeOut, TimeSpan connectionTimeOut)
-        //{
-        //    ConnectionString = connectionString;
-        //    CommandTimeOut = commandTimeOut;
-        //    ConnectionTimeOut = connectionTimeOut;
-        //    ObjectToSql = new ObjectToSql.Services.ObjectToSql(type);
-        //}
-        // TODO :: FIND A WAY TO INTEGRATE THIS
-
 
         /// <summary>
         /// creates a new connection object
@@ -160,7 +143,30 @@ namespace DotNetHelper.Database.DataSource
             return connection;
         }
 
+        /// <summary>
+        /// creates a new connection object
+        /// </summary>
+        /// <param name="openConnection"></param>
+        /// <returns></returns>
+        public async Task<TDbConnection> GetNewConnectionAsync(bool openConnection)
+        {
+            TDbConnection connection;
+            if (UseSingleConnection)
+            {
+                if (string.IsNullOrEmpty(SingleConnection?.ConnectionString))
+                    if (SingleConnection != null)
+                        SingleConnection.ConnectionString = ConnectionString;
 
+                connection = SingleConnection ??= new TDbConnection() { ConnectionString = ConnectionString };
+            }
+            else
+            {
+                connection = new TDbConnection() { ConnectionString = ConnectionString };
+            }
+            if (openConnection)
+                await connection.OpenSafelyAsync();
+            return connection;
+        }
 
         /// <summary>
         /// return a new instance of DBParameter  
@@ -212,7 +218,7 @@ namespace DotNetHelper.Database.DataSource
         /// <param name="commandType">Specifies how a command string is interpreted.</param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public DbCommand GetNewCommand(DbConnection connection, string sql, CommandType commandType = CommandType.Text, IEnumerable<DbParameter> parameters = null)
+        public DbCommand GetNewCommand(TDbConnection connection, string sql, CommandType commandType = CommandType.Text, IEnumerable<DbParameter> parameters = null)
         {
             var command = connection.CreateCommand();
             command.CommandText = sql;
@@ -231,7 +237,7 @@ namespace DotNetHelper.Database.DataSource
         /// </summary>
         /// <param name="connection"></param>
         /// <returns></returns>
-        public (DbCommand command, DbTransaction transaction) GetNewCommandAndTransaction(DbConnection connection)
+        public (DbCommand command, DbTransaction transaction) GetNewCommandAndTransaction(TDbConnection connection)
         {
             var command = connection.CreateCommand();
             var isValidInt32 = int.TryParse(CommandTimeOut.TotalSeconds.ToString(CultureInfo.CurrentCulture), out var timeoutInSeconds);
@@ -253,7 +259,7 @@ namespace DotNetHelper.Database.DataSource
         /// <returns></returns>
         /// See <see cref="ExecuteNonQuery(TDbConnection , string , CommandType , IEnumerable&lt;DbParameter&gt;)"/> to perform this this action with a specified connection.
         /// <exception cref="System.InvalidOperationException"> </exception>
-        public int ExecuteNonQuery(string sql, CommandType commandType, IEnumerable<DbParameter> parameters = null)
+        public int ExecuteNonQuery(string sql, CommandType commandType = CommandType.Text, IEnumerable<DbParameter> parameters = null)
         {
             using (var connection = GetNewConnection(true))
             {
@@ -263,19 +269,24 @@ namespace DotNetHelper.Database.DataSource
         }
 
         /// <summary>
-        /// Execute an SQL Command against the specified <typeparamref name="TDbConnection"/>  and returns the number of rows affected
+        /// Execute an SQL Command and returns the number of rows affected
         /// </summary>
-        /// <param name="connection"></param>
         /// <param name="sql"></param>
         /// <param name="commandType">Specifies how a command string is interpreted.</param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public int ExecuteNonQuery(TDbConnection connection, string sql, CommandType commandType, IEnumerable<DbParameter> parameters = null)
+        /// See <see cref="ExecuteNonQueryAsync(TDbConnection , string , CommandType , IEnumerable&lt;DbParameter&gt;)"/> to perform this this action with a specified connection.
+        /// <exception cref="System.InvalidOperationException"> </exception>
+        public async Task<int> ExecuteNonQueryAsync(string sql, CommandType commandType = CommandType.Text, IEnumerable<DbParameter> parameters = null)
         {
-            var command = GetNewCommand(connection, sql, commandType, parameters);
-            return command.ExecuteNonQuery();
-
+            using (var connection = await GetNewConnectionAsync(true))
+            {
+                var command = GetNewCommand(connection, sql, commandType, parameters);
+                return await command.ExecuteNonQueryAsync();
+            }
         }
+
+
 
         /// <summary>
         /// Executes the sql and return the 1st column of the 1st row as an object
@@ -284,30 +295,34 @@ namespace DotNetHelper.Database.DataSource
         /// <param name="commandType">Specifies how a command string is interpreted.</param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public object ExecuteScalar(string sql, CommandType commandType, List<DbParameter> parameters = null)
+        public object ExecuteScalar(string sql, CommandType commandType = CommandType.Text, List<DbParameter> parameters = null)
         {
             using (var connection = GetNewConnection(true))
             {
                 var command = GetNewCommand(connection, sql, commandType, parameters);
                 return command.ExecuteScalar();
-                // return ExecuteScalar(connection, sql, commandType, parameters);
             }
         }
 
-        ///// <summary>
-        ///// Executes the sql and return the 1st column of the 1st row as an object
-        ///// </summary>
-        ///// <param name="connection"></param>
-        ///// <param name="sql"></param>
-        ///// <param name="commandType">Specifies how a command string is interpreted.</param>
-        ///// <param name="parameters"></param>
-        ///// <returns></returns>
-        //public object ExecuteScalar(TDbConnection connection, string sql, CommandType commandType, List<DbParameter> parameters = null)
-        //{
-        //    var command = GetNewCommand(connection, sql, commandType, parameters);
-        //    return command.ExecuteScalar();
 
-        //}
+
+        /// <summary>
+        /// Executes the sql and return the 1st column of the 1st row as an object
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="commandType">Specifies how a command string is interpreted.</param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        public async Task<object> ExecuteScalarAsync(string sql, CommandType commandType = CommandType.Text, List<DbParameter> parameters = null)
+        {
+            using (var connection = await GetNewConnectionAsync(true))
+            {
+                var command = GetNewCommand(connection, sql, commandType, parameters);
+                return await command.ExecuteScalarAsync();
+            }
+        }
+
+
 
 
         /// <summary>
@@ -321,6 +336,20 @@ namespace DotNetHelper.Database.DataSource
         {
             var kvps = sqls.Select(s => new KeyValuePair<string, IEnumerable<DbParameter>>(s, null)).AsList();
             return ExecuteTransaction(kvps, rollbackOnException, throwException);
+        }
+
+
+        /// <summary>
+        /// Executes a list of sql as in a single transaction 
+        /// </summary>
+        /// <param name="sqls"></param>
+        /// <param name="rollbackOnException"></param>
+        /// <param name="throwException"></param>
+        /// <returns></returns>
+        public async Task<int> ExecuteTransactionAsync(List<string> sqls, bool rollbackOnException, bool throwException = true)
+        {
+            var kvps = sqls.Select(s => new KeyValuePair<string, IEnumerable<DbParameter>>(s, null)).AsList();
+            return await ExecuteTransactionAsync(kvps, rollbackOnException, throwException);
         }
 
 
@@ -376,20 +405,57 @@ namespace DotNetHelper.Database.DataSource
             }
         }
 
-        ///// <summary>
-        ///// execute the sql and return the result as a DbDataReader
-        ///// </summary>
-        ///// <param name="connection"></param>
-        ///// <param name="sql"></param>
-        ///// <param name="commandType">Specifies how a command string is interpreted.</param>
-        ///// <param name="parameters"></param>
-        ///// <returns></returns>
-        //public DbDataReader GetDataReader(TDbConnection connection, string sql, CommandType commandType, List<DbParameter> parameters = null)
-        //{
-        //    var command = GetNewCommand(connection, sql, commandType, parameters);
-        //    var reader = command.ExecuteReader(CommandBehavior.CloseConnection);
-        //    return reader;
-        //}
+
+        /// <summary>
+        /// Executes a list of sql as in a single transaction 
+        /// </summary>
+        /// <param name="sqls"></param>
+        /// <param name="rollbackOnException"></param>
+        /// <param name="throwException"></param>
+        /// <returns></returns>
+        public async Task<int> ExecuteTransactionAsync(List<KeyValuePair<string, IEnumerable<DbParameter>>> sqls, bool rollbackOnException, bool throwException = true)
+        {
+            using (var connection = await GetNewConnectionAsync(true))
+            {
+                var recordAffected = 0;
+                if (sqls == null || !sqls.Any()) return recordAffected;
+
+                var obj = GetNewCommandAndTransaction(connection);
+                var command = obj.command;
+                var transaction = obj.transaction;
+                try
+                {
+                    sqls.ForEach(async delegate (KeyValuePair<string, IEnumerable<DbParameter>> pair)
+                    {
+                        command.CommandText = pair.Key;
+                        if (pair.Value != null)
+                        {
+                            command?.Parameters?.Clear(); // Clear any previous parameters
+                            command.Parameters.AddRange(pair.Value);
+                        }
+                        recordAffected += await command.ExecuteNonQueryAsync();
+                    });
+                    transaction.Commit();
+                }
+                catch (Exception)
+                {
+                    if (rollbackOnException)
+                    {
+                        transaction.Rollback();
+                        recordAffected = 0;
+                    }
+                    else
+                    {
+                        transaction.Commit();
+                    }
+                    if (throwException)
+                    {
+                        throw;
+                    }
+                }
+                return recordAffected;
+            }
+        }
 
 
         /// <summary>
@@ -399,7 +465,7 @@ namespace DotNetHelper.Database.DataSource
         /// <param name="commandType">Specifies how a command string is interpreted.</param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public DbDataReader GetDataReader(string sql, CommandType commandType, List<DbParameter> parameters = null)
+        public DbDataReader GetDataReader(string sql, CommandType commandType = CommandType.Text, List<DbParameter> parameters = null)
         {
             var connection = GetNewConnection(true);
             var command = GetNewCommand(connection, sql, commandType, parameters);
@@ -411,14 +477,18 @@ namespace DotNetHelper.Database.DataSource
         /// execute the sql and return the result as a DbDataReader
         /// </summary>
         /// <param name="sql"></param>
+        /// <param name="commandType">Specifies how a command string is interpreted.</param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public DbDataReader GetDataReader(string sql, List<DbParameter> parameters = null)
+        public async Task<DbDataReader> GetDataReaderAsync(string sql, CommandType commandType= CommandType.Text, List<DbParameter> parameters = null)
         {
-            return GetDataReader(sql, CommandType.Text, parameters);
+            var connection = await GetNewConnectionAsync(true);
+            var command = GetNewCommand(connection, sql, commandType, parameters);
+            var reader = await command.ExecuteReaderAsync(CommandBehavior.CloseConnection);
+            return reader;
         }
 
-
+     
 
         /// <summary>
         /// execute the sql and load the results into a dataTable
@@ -427,7 +497,7 @@ namespace DotNetHelper.Database.DataSource
         /// <param name="commandType">Specifies how a command string is interpreted.</param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public DataTable GetDataTable(string selectSql, CommandType commandType, List<DbParameter> parameters = null)
+        public DataTable GetDataTable(string selectSql, CommandType commandType = CommandType.Text, List<DbParameter> parameters = null)
         {
             var reader = GetDataReader(selectSql, commandType, parameters);
             var dt = new DataTable();
@@ -435,15 +505,26 @@ namespace DotNetHelper.Database.DataSource
             return dt;
         }
 
+
         /// <summary>
-        /// execute the sql and load the results into a dataTable
+        /// Applies the schema/metadata of the sql to a dataTable and populate it with the result set
         /// </summary>
-        /// <param name="selectSql"></param>
+        /// <param name="sql"></param>
+        /// <param name="commandType">Specifies how a command string is interpreted.</param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public DataTable GetDataTable(string selectSql, List<DbParameter> parameters = null)
+        public DataTable GetDataTableWithSchema(string sql, CommandType commandType = CommandType.Text, List<DbParameter> parameters = null)
         {
-            return GetDataTable(selectSql, CommandType.Text, parameters);
+            var dt = new DataTable();
+            using (var connection = GetNewConnection(true))
+            {
+                var command = GetNewCommand(connection, sql, commandType, parameters);
+                var schema = command.ExecuteReader(CommandBehavior.SchemaOnly);
+                dt.Load(schema);
+                var data = command.ExecuteReader();
+                dt.Load(data);
+                return dt;
+            }
         }
 
         /// <summary>
@@ -453,13 +534,36 @@ namespace DotNetHelper.Database.DataSource
         /// <param name="commandType">Specifies how a command string is interpreted.</param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public DataTable GetDataTableWithSchema(string sql, CommandType commandType, List<DbParameter> parameters = null)
+        public async Task<DataTable> GetDataTableWithSchemaAsync(string sql, CommandType commandType = CommandType.Text, List<DbParameter> parameters = null)
+        {
+            var dt = new DataTable();
+            using (var connection = await GetNewConnectionAsync(true))
+            {
+                var command = GetNewCommand(connection, sql, commandType, parameters);
+                var schema = await command.ExecuteReaderAsync(CommandBehavior.SchemaOnly);
+                dt.Load(schema);
+                var data = await command.ExecuteReaderAsync();
+                dt.Load(data);
+                return dt;
+            }
+        }
+
+
+        /// <summary>
+        /// Applies the schema/metadata of the sql to a dataTable and populate it with the result set.
+        /// If working with a large dataSet and you don't need the dataTable which columns are primary keys then use GetDataTableWithSchema for better performance
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="commandType">Specifies how a command string is interpreted.</param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        public DataTable GetDataTableWithKeyInfo(string sql, CommandType commandType = CommandType.Text, List<DbParameter> parameters = null)
         {
             var dt = new DataTable();
             using (var connection = GetNewConnection(true))
             {
                 var command = GetNewCommand(connection, sql, commandType, parameters);
-                var schema = command.ExecuteReader(CommandBehavior.SchemaOnly);
+                var schema = command.ExecuteReader(CommandBehavior.KeyInfo);
                 dt.Load(schema);
                 var data = command.ExecuteReader();
                 dt.Load(data);
@@ -475,38 +579,20 @@ namespace DotNetHelper.Database.DataSource
         /// <param name="commandType">Specifies how a command string is interpreted.</param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public DataTable GetDataTableWithKeyInfo(string sql, CommandType commandType, List<DbParameter> parameters = null)
+        public async Task<DataTable> GetDataTableWithKeyInfoAsync(string sql, CommandType commandType = CommandType.Text, List<DbParameter> parameters = null)
         {
             var dt = new DataTable();
-            using (var connection = GetNewConnection(true))
+            using (var connection = await GetNewConnectionAsync(true))
             {
                 var command = GetNewCommand(connection, sql, commandType, parameters);
-                var schema = command.ExecuteReader(CommandBehavior.KeyInfo);
+                var schema = await command.ExecuteReaderAsync(CommandBehavior.KeyInfo);
                 dt.Load(schema);
-                var data = command.ExecuteReader();
+                var data = await command.ExecuteReaderAsync();
                 dt.Load(data);
                 return dt;
             }
         }
-        /// <summary>
-        /// Applies the schema/metadata of the sql to a dataTable and populate it with the result set
-        /// </summary>
-        /// <param name="sql"></param>
-        /// <returns></returns>
-        public DataTable GetDataTableWithSchema(string sql)
-        {
-            return GetDataTableWithSchema(sql, CommandType.Text);
-        }
-        /// <summary>
-        /// Applies the schema/metadata of the sql to a dataTable and populate it with the result set.
-        /// If working with a large dataSet and you don't need the dataTable which columns are primary keys then use GetDataTableWithSchema for better proformance
-        /// </summary>
-        /// <param name="sql"></param>
-        /// <returns></returns>
-        public DataTable GetDataTableWithKeyInfo(string sql)
-        {
-            return GetDataTableWithKeyInfo(sql, CommandType.Text);
-        }
+
 
 
         /// <summary>
@@ -529,6 +615,26 @@ namespace DotNetHelper.Database.DataSource
         }
 
         /// <summary>
+        /// Attempts to open a connection to the database using the connection string provided in the constructor. 
+        /// </summary>
+        /// <returns></returns>
+        public async Task<bool> CanConnectAsync()
+        {
+            try
+            {
+                using (await GetNewConnectionAsync(true))
+                {
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+
+        /// <summary>
         /// Executes the specified sql and maps the results a list of objects
         /// </summary>
         /// <typeparam name="T"></typeparam>
@@ -544,22 +650,23 @@ namespace DotNetHelper.Database.DataSource
             return GetDataReader(sql, commandType, parameters).MapToList<T>(xmlDeserializer, jsonDeserializer, csvDeserializer);
         }
 
-        ///// <summary>
-        ///// Executes the specified sql and maps the results a list of objects
-        ///// </summary>
-        ///// <typeparam name="T"></typeparam>
-        ///// <param name="connection"></param>
-        ///// <param name="sql"></param>
-        ///// <param name="commandType">Specifies how a command string is interpreted.</param>
-        ///// <param name="xmlDeserializer"></param>
-        ///// <param name="jsonDeserializer"></param>
-        ///// <param name="csvDeserializer"></param>
-        ///// <param name="parameters"></param>
-        ///// <returns>The sql result mapped to a list of </returns>
-        //public List<T> Get<T>(TDbConnection connection, string sql, CommandType commandType, Func<string, Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer, List<DbParameter> parameters = null) where T : class
-        //{
-        //    return GetDataReader(connection, sql, commandType, parameters).MapToList<T>(xmlDeserializer, jsonDeserializer, csvDeserializer);
-        //}
+
+        /// <summary>
+        /// Executes the specified sql and maps the results a list of objects
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="sql"></param>
+        /// <param name="commandType">Specifies how a command string is interpreted.</param>
+        /// <param name="xmlDeserializer"></param>
+        /// <param name="jsonDeserializer"></param>
+        /// <param name="csvDeserializer"></param>
+        /// <param name="parameters"></param>
+        /// <returns>The sql result mapped to a list of </returns>
+        public async Task<List<T>> GetAsync<T>(string sql, CommandType commandType, Func<string, Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer, List<DbParameter> parameters = null) where T : class
+        {
+            var data = await GetDataReaderAsync(sql, commandType, parameters);
+                return data.MapToList<T>(xmlDeserializer, jsonDeserializer, csvDeserializer);
+        }
 
         /// <summary>
         /// return a list of type of T from the database. 
@@ -571,6 +678,15 @@ namespace DotNetHelper.Database.DataSource
             return Get<T>(null, null, null);
         }
 
+        /// <summary>
+        /// return a list of type of T from the database. 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public async Task<List<T>> GetAsync<T>() where T : class
+        {
+            return await GetAsync<T>(null, null, null);
+        }
 
 
         /// <summary>
@@ -588,6 +704,20 @@ namespace DotNetHelper.Database.DataSource
         }
 
         /// <summary>
+        /// return a list of type of T from the database. 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="xmlDeserializer">Func to invoke on properties that mark with [SqlColumnAttribute(SerializableType = SerializableType.XML)]</param>
+        /// <param name="jsonDeserializer">Func to invoke on properties that mark with [SqlColumnAttribute(SerializableType = SerializableType.JSON)]</param>
+        /// <param name="csvDeserializer">Func to invoke on properties that mark with [SqlColumnAttribute(SerializableType = SerializableType.CSV)]</param>
+        /// <returns></returns>
+        public async Task<List<T>> GetAsync<T>(Func<string, Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer) where T : class
+        {
+            var sqlTable = new SqlTable(DatabaseType, typeof(T));
+            return await GetAsync<T>($"SELECT * FROM {sqlTable.FullNameWithBrackets}", CommandType.Text, xmlDeserializer, jsonDeserializer, csvDeserializer);
+        }
+
+        /// <summary>
         /// Executes the sql and map the results to a list of type of T
         /// </summary>
         /// <typeparam name="T"></typeparam>
@@ -598,6 +728,20 @@ namespace DotNetHelper.Database.DataSource
         public List<T> Get<T>(string sql, CommandType commandType, List<DbParameter> parameters = null) where T : class
         {
             return Get<T>(sql, commandType, null, null, null, parameters);
+        }
+
+
+        /// <summary>
+        /// Executes the sql and map the results to a list of type of T
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="sql"></param>
+        /// <param name="commandType">Specifies how a command string is interpreted.</param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        public async Task<List<T>> GetAsync<T>(string sql, CommandType commandType, List<DbParameter> parameters = null) where T : class
+        {
+            return await GetAsync<T>(sql, commandType, null, null, null, parameters);
         }
 
         /// <summary>
@@ -612,6 +756,19 @@ namespace DotNetHelper.Database.DataSource
             return Execute(instance, actionType, null, null, null, null);
         }
 
+
+        /// <summary>
+        /// Creates the specified SQL from the object then executes the sql and return the number of rows affected. 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="instance">the object to create sql from</param>
+        /// <param name="actionType">type of sql to generate</param>
+        /// <returns># of rows affected</returns>
+        public async Task<int> ExecuteAsync<T>(T instance, ActionType actionType) where T : class
+        {
+            return await ExecuteAsync(instance, actionType, null, null, null, null);
+        }
+
         /// <summary>
         /// Creates the specified SQL from the object then executes the sql and return the number of rows affected. 
         /// </summary>
@@ -623,6 +780,19 @@ namespace DotNetHelper.Database.DataSource
         public int Execute<T>(T instance, ActionType actionType, string tableName) where T : class
         {
             return Execute(instance, actionType, tableName, null, null, null);
+        }
+
+        /// <summary>
+        /// Creates the specified SQL from the object then executes the sql and return the number of rows affected. 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="instance">the object to create sql from </param>
+        /// <param name="actionType">type of sql to generate</param>
+        /// <param name="tableName">Table name to use when generating sql </param>
+        /// <returns></returns>
+        public async Task<int> ExecuteAsync<T>(T instance, ActionType actionType, string tableName) where T : class
+        {
+            return await ExecuteAsync(instance, actionType, tableName, null, null, null);
         }
 
         /// <summary>
@@ -672,6 +842,45 @@ namespace DotNetHelper.Database.DataSource
         /// <param name="instance">the object to create sql from </param>
         /// <param name="actionType">type of sql to generate</param>
         /// <param name="tableName">Table name to use when generating sql </param>
+        /// <param name="xmlSerializer">For when your storing values in the database as xml. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.XML)]</param>
+        /// <param name="jsonSerializer">For when your storing values in the database as json. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.JSON)]</param>
+        /// <param name="csvSerializer">For when your storing values in the database as csv. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.CSV)]</param>
+        /// <returns></returns>
+        public async Task<int> ExecuteAsync<T>(T instance, ActionType actionType, string tableName, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer) where T : class
+        {
+            if (instance.GetType().IsTypeAnIEnumerable()) // getTYPE is faster than TYPEOF(T)
+            {
+                if (instance is IEnumerable<object> list)
+                {
+                    if (list.IsNullOrEmpty()) return 0;// NOTHING TO DO
+                    var sqls = new List<KeyValuePair<string, IEnumerable<DbParameter>>>() { };
+                    foreach (var item in list)
+                    {
+                        var sql = ObjectToSql.BuildQuery(actionType, item, tableName);
+                        var parameters = GetNewParameter(item);
+                        sqls.Add(new KeyValuePair<string, IEnumerable<DbParameter>>(sql, parameters));
+                    }
+                    return await ExecuteTransactionAsync(sqls, true, true);
+                }
+                throw new InvalidOperationException($"The type {typeof(T)} is not supported");
+            }
+            else
+            {
+                var sql = ObjectToSql.BuildQuery(actionType, instance, tableName);
+                var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, xmlSerializer, jsonSerializer, csvSerializer);
+                return await ExecuteNonQueryAsync(sql, CommandType.Text, parameters);
+            }
+
+        }
+
+
+        /// <summary>
+        /// Creates the specified SQL from the object then executes the sql and return the number of rows affected. 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="instance">the object to create sql from </param>
+        /// <param name="actionType">type of sql to generate</param>
+        /// <param name="tableName">Table name to use when generating sql </param>
         /// <param name="keyFields"></param>
         /// <returns></returns>
         public int Execute<T>(T instance, ActionType actionType, string tableName, params Expression<Func<T, object>>[] keyFields) where T : class
@@ -679,6 +888,22 @@ namespace DotNetHelper.Database.DataSource
             var sql = ObjectToSql.BuildQuery(actionType, tableName, keyFields);
             var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, null, null, null);
             return ExecuteNonQuery(sql, CommandType.Text, parameters);
+        }
+
+        /// <summary>
+        /// Creates the specified SQL from the object then executes the sql and return the number of rows affected. 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="instance">the object to create sql from </param>
+        /// <param name="actionType">type of sql to generate</param>
+        /// <param name="tableName">Table name to use when generating sql </param>
+        /// <param name="keyFields"></param>
+        /// <returns></returns>
+        public async Task<int> ExecuteAsync<T>(T instance, ActionType actionType, string tableName, params Expression<Func<T, object>>[] keyFields) where T : class
+        {
+            var sql = ObjectToSql.BuildQuery(actionType, tableName, keyFields);
+            var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, null, null, null);
+            return await ExecuteNonQueryAsync(sql, CommandType.Text, parameters);
         }
 
 
@@ -701,6 +926,25 @@ namespace DotNetHelper.Database.DataSource
             return ExecuteNonQuery(sql, CommandType.Text, parameters);
         }
 
+        /// <summary>
+        /// Creates the specified SQL from the object then executes the sql and return the number of rows affected. 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="instance">the object to create sql from </param>
+        /// <param name="actionType">type of sql to generate</param>
+        /// <param name="tableName">Table name to use when generating sql </param>
+        /// <param name="xmlSerializer">For when your storing values in the database as xml. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.XML)]</param>
+        /// <param name="jsonSerializer">For when your storing values in the database as json. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.JSON)]</param>
+        /// <param name="csvSerializer">For when your storing values in the database as csv. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.CSV)]</param>
+        /// <param name="keyFields">Override attributes and specified which properties are keys from an expression</param>
+        /// <returns></returns>
+        public async Task<int> ExecuteAsync<T>(T instance, ActionType actionType, string tableName, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer, params Expression<Func<T, object>>[] keyFields) where T : class
+        {
+            var sql = ObjectToSql.BuildQuery(actionType, tableName, keyFields);
+            var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, xmlSerializer, jsonSerializer, csvSerializer);
+            return await ExecuteNonQueryAsync(sql, CommandType.Text, parameters);
+        }
+
 
         /// <summary>
         ///  Creates the specified SQL from the object then executes the sql and applies the reflected values to the instance provided. This is useful when dealing with identity fields  
@@ -713,6 +957,19 @@ namespace DotNetHelper.Database.DataSource
         public T ExecuteAndGetOutput<T>(T instance, ActionType actionType, params Expression<Func<T, object>>[] outputFields) where T : class
         {
             return ExecuteAndGetOutput(instance, actionType, null, null, null, null, null, null, outputFields);
+        }
+
+        /// <summary>
+        ///  Creates the specified SQL from the object then executes the sql and applies the reflected values to the instance provided. This is useful when dealing with identity fields  
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="instance">the object to create sql from </param>
+        /// <param name="actionType">type of sql to generate</param>
+        /// <param name="outputFields">the fields to return that will reflect the values after the sql is executed  </param>
+        /// <returns></returns>
+        public async Task<T> ExecuteAndGetOutputAsync<T>(T instance, ActionType actionType, params Expression<Func<T, object>>[] outputFields) where T : class
+        {
+            return await ExecuteAndGetOutputAsync(instance, actionType, null, null, null, null, null, null, outputFields);
         }
 
         /// <summary>
@@ -738,6 +995,33 @@ namespace DotNetHelper.Database.DataSource
             var sql = ObjectToSql.BuildQueryWithOutputs(actionType, null, outputFields);
             var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, xmlSerializer, jsonSerializer, csvSerializer);
             return GetDataReader(sql, CommandType.Text, parameters).MapTo<T>(xmlDeserializer, jsonDeserializer, csvDeserializer);
+        }
+
+
+        /// <summary>
+        ///  Creates the sql and applies the reflected values tothe specified SQL from the object then executes t the instance provided. This is useful when dealing with identity fields  
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="instance">the object to create sql from </param>
+        /// <param name="actionType">type of sql to generate</param>
+        /// <param name="xmlDeserializer">Func to invoke on properties that mark with [SqlColumnAttribute(SerializableType = SerializableType.XML)]</param>
+        /// <param name="jsonDeserializer">Func to invoke on properties that mark with [SqlColumnAttribute(SerializableType = SerializableType.JSON)]</param>
+        /// <param name="csvDeserializer">Func to invoke on properties that mark with [SqlColumnAttribute(SerializableType = SerializableType.CSV)]</param>
+        /// <param name="xmlSerializer">For when your storing values in the database as xml. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.XML)]</param>
+        /// <param name="jsonSerializer">For when your storing values in the database as json. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.JSON)]</param>
+        /// <param name="csvSerializer">For when your storing values in the database as csv. This func will be invoke to serialize any property declarated with [SqlColumnAttribute(SerializableType = SerializableType.CSV)]</param>
+        /// <param name="outputFields"></param>
+        /// <returns></returns>
+        public async Task<T> ExecuteAndGetOutputAsync<T>(T instance, ActionType actionType
+            , Func<string, Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer
+            , Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer
+            , params Expression<Func<T, object>>[] outputFields) where T : class
+        {
+
+            var sql = ObjectToSql.BuildQueryWithOutputs(actionType, null, outputFields);
+            var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, xmlSerializer, jsonSerializer, csvSerializer);
+            var data = await GetDataReaderAsync(sql, CommandType.Text, parameters);
+                return data.MapTo<T>(xmlDeserializer, jsonDeserializer, csvDeserializer);
         }
 
 

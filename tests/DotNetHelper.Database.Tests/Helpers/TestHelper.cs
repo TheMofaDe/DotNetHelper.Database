@@ -1,6 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.IO;
+using DotNetHelper.Database.DataSource;
+using DotNetHelper.Database.Extension;
+using DotNetHelper.ObjectToSql.Enum;
+using Microsoft.Data.Sqlite;
 #if SUPPORTSQLITE
 using MySql.Data.MySqlClient;
 #endif
@@ -94,6 +100,33 @@ namespace DotNetHelper.Database.Tests.Helpers
         }
 
 
+
+        private static List<DatabaseAccess<DbConnection>> GetDatabaseAccesses()
+        {
+            // ReSharper disable once UseObjectOrCollectionInitializer
+            var list = new List<DatabaseAccess<DbConnection>>() { };
+
+            list.Add(new DatabaseAccess<SqlConnection>(TestHelper.SQLServerConnectionString));
+            list.Add(new DatabaseAccess<SqlConnection>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString));
+            list.Add(new DatabaseAccess<SqlConnection>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString, TimeSpan.FromSeconds(35)));
+            list.Add(new DatabaseAccess<SqlConnection>(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString, TimeSpan.FromSeconds(40)));
+            list.Add(new SqlConnection(TestHelper.SQLServerConnectionString) { ConnectionString = TestHelper.SQLServerConnectionString }.DatabaseAccess());
+
+
+#if SUPPORTSQLITE
+            list.Add(new DatabaseAccess<SqliteConnection>(DataBaseType.Sqlite, TestHelper.SqliteConnectionString));
+            list.Add(new DatabaseAccess<MySqlConnection>(DataBaseType.MySql, TestHelper.MySqlConnectionString, TimeSpan.FromSeconds(5)));
+            list.Add(new SqliteConnection(TestHelper.SqliteConnectionString).DatabaseAccess());
+            list.Add(new MySqlConnection(TestHelper.MySqlConnectionString).DatabaseAccess());
+#endif
+
+
+#if SUPPORTDBFACTORIES
+            list.Add(new DatabaseAccessFactory(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString));
+            list.Add(new DatabaseAccessFactory(DataBaseType.SqlServer, TestHelper.SQLServerConnectionString, TimeSpan.FromSeconds(40)));
+#endif
+            return list;
+        }
     }
 
 

@@ -13,7 +13,6 @@ using System.Threading.Tasks;
 
 using DotNetHelper.Database.Extension;
 using DotNetHelper.Database.Helper;
-using DotNetHelper.Database.Interface;
 using DotNetHelper.ObjectToSql.Enum;
 using DotNetHelper.ObjectToSql.Model;
 
@@ -22,7 +21,7 @@ namespace DotNetHelper.Database
     /// <summary>
     /// A powerful & simple class for dealing CRUD operation that doesn't required you to write sql unless you prefer to do so or need to do something advance
     /// </summary>
-    public class DatabaseAccessFactory : IDatabaseAccess
+    public class DatabaseAccessFactory 
     {
         /// <summary>
         /// The connection string to the database
