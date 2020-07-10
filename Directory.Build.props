@@ -1,0 +1,38 @@
+<Project>
+  <PropertyGroup>
+    <Configuration Condition="'$(Configuration)' == ''">Debug</Configuration>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <RepoRootPath>$([MSBuild]::NormalizePath($(MSBuildThisFileDirectory)))</RepoRootPath>
+    <AzureDevOpsArtifactsStagingDirectory>$([System.Environment]::GetEnvironmentVariable('BUILD_ARTIFACTSTAGINGDIRECTORY'))</AzureDevOpsArtifactsStagingDirectory>
+    <RepoArtifactsRootPath Condition="'$(RepoArtifactsPath)' == ''">$(RepoRootPath)artifacts\</RepoArtifactsRootPath>
+    <RepoSrcPath>$(RepoRootPath)src\</RepoSrcPath>
+    <RepoTestSrcPath>$(RepoRootPath)tests\</RepoTestSrcPath>
+    <RepoSrcRelativeProjectDirectory Condition="$(MSBuildProjectDirectory.Length) >= $(RepoSrcPath.Length)">$(MSBuildProjectDirectory.Substring($(RepoSrcPath.Length)))\</RepoSrcRelativeProjectDirectory>
+  </PropertyGroup>
+
+
+
+<!-- ENVIRONMENT PROPERTIES -->
+  <PropertyGroup>
+    <InAzureDevOps>false</InAzureDevOps>
+    <InAzureDevOps Condition="'$(TF_BUILD)' == 'true'">true</InAzureDevOps>
+    <InCI>false</InCI>
+    
+    <InCI Condition="$(InAzureDevOps)">true</InCI>
+    <IsWindows>$([MSBuild]::IsOSPlatform('Windows'))</IsWindows>
+    <IsMac>$([MSBuild]::IsOSPlatform('OSX'))</IsMac>
+    <IsLinux>$([MSBuild]::IsOSPlatform('Linux'))</IsLinux>
+
+    <!-- Prefer the PR branch, then the source branch, falling back to local git if not in ADO -->
+    <GitBranch Condition="'$(SYSTEM_PULLREQUEST_TARGETBRANCH)' != ''">$(SYSTEM_PULLREQUEST_TARGETBRANCH)</GitBranch>
+    <GitBranch Condition="'$(SYSTEM_PULLREQUEST_TARGETBRANCH)' == '' and '$(BUILD_SOURCEBRANCHNAME)' != ''">$(BUILD_SOURCEBRANCHNAME)</GitBranch>
+  </PropertyGroup>
+
+
+
+  <Import
+    Condition="'$(MSBuildProjectExtension)' == '.csproj'"
+    Project="$(RepoRootPath)build\msbuild\Project.props"/>
+</Project>

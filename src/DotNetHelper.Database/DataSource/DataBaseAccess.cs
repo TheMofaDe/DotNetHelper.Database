@@ -58,15 +58,15 @@ namespace DotNetHelper.Database.DataSource
         //UseSingleConnection ? SingleConnection.CreateCommand() : new TDbConnection().CreateCommand();
 
 
-
         /// <summary>
         /// Initialize a new DatabaseAccess. 
         /// </summary>
         /// <param name="connectionString"></param>
-        public DatabaseAccess(string connectionString)
+        /// <param name="type">Specify how sql will be generated or it will be auto-determined based on DBConnection Type Name</param>
+        public DatabaseAccess(string connectionString, DataBaseType? type = null)
         {
             ConnectionString = connectionString;
-            var dbType = DatabaseTypeHelper.GetDataBaseTypeFromDBConnectionType<TDbConnection>();
+            var dbType = type ?? DatabaseTypeHelper.GetDataBaseTypeFromDBConnectionType<TDbConnection>();
             if (dbType == null)
                 throw new InvalidOperationException($"Couldn't determine the databasetype from the type {typeof(TDbConnection).Name}. Please use a different constructor " +
                                                     $"to initialize this object");
@@ -77,9 +77,11 @@ namespace DotNetHelper.Database.DataSource
         /// <summary>
         /// Initialize a new DatabaseAccess. This method is internal to force users to use the extension method
         /// </summary>
+        /// <param name="connection"></param>
+        /// <param name="type">Specify how sql will be generated or it will be auto-determined based on DBConnection Type Name</param>
         internal DatabaseAccess(TDbConnection connection, DataBaseType? type = null)
         {
-            connection.IsNullThrow(nameof(connection), new ArgumentNullException(nameof(connection), "DBConnection Object can't be null'"));
+	        connection.IsNullThrow(nameof(connection), new ArgumentNullException(nameof(connection), "DBConnection Object can't be null'"));
 
             ConnectionString = connection.ConnectionString;
             UseSingleConnection = true;
@@ -92,30 +94,6 @@ namespace DotNetHelper.Database.DataSource
         }
 
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="type"></param>
-        /// <param name="connectionString"></param>
-        public DatabaseAccess(DataBaseType type, string connectionString)
-        {
-            ConnectionString = connectionString;
-            ObjectToSql = new ObjectToSql.Services.ObjectToSql(type);
-            ParameterBuilder = GetNewConnection(false).CreateCommand();
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="type"></param>
-        /// <param name="connectionString"></param>
-        /// <param name="commandTimeOut"></param>
-        public DatabaseAccess(DataBaseType type, string connectionString, TimeSpan commandTimeOut)
-        {
-            ConnectionString = connectionString;
-            CommandTimeOut = commandTimeOut;
-            ObjectToSql = new ObjectToSql.Services.ObjectToSql(type);
-            ParameterBuilder = GetNewConnection(false).CreateCommand();
-        }
 
 
         /// <summary>

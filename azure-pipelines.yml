@@ -1,21 +1,113 @@
+trigger:
+  branches:
+    include:
+    - master
+    - fix/*
+    - feature/*
+pr:
+  branches:
+    include:
+    - master
+
 variables:
-  DOTNET_SDK_VERSION: '2.2.105'
-  DOTNET_PACKAGE_TYPE: 'sdk'
-  RUBY_VERSION: '2.5'
+- group: 'BuildSecrets' 
+- name: DOTNET_SKIP_FIRST_TIME_EXPERIENCE
+  value: 'true'
+- name: DOTNET_CLI_TELEMETRY_OPTOUT
+  value: 'true'
+  
 
-jobs:
-- template: build/tmpl/jobs.yml
-  parameters:
-    name: macOS
-    vmImage: 'macOS 10.13'
-    installRuby: 'false'
+stages:
+- stage: Build
+  displayName: 'Build'
+  jobs:
+  - job: Build
+    strategy:
+      matrix:
+        'Windows':
+          VM_IMAGE: 'windows-latest'
+#        'Linux':
+#          VM_IMAGE: 'ubuntu-latest'
+#        'macOS':
+#          VM_IMAGE: 'macOS-latest'
+    pool:
+      vmImage: $(VM_IMAGE)
+    steps:
+    - template: build/.azurepipelines/build.yml
 
-- template: build/tmpl/jobs.yml
-  parameters:
-    name: Linux
-    vmImage: 'Ubuntu 18.04'
+- stage: Test
+  displayName: 'Unit Test'
+  dependsOn: ["Build"]
+  jobs:
+  - job: Test
+    pool:
+      vmImage: windows-latest
+    steps:
+    - template: build/.azurepipelines/test.yml
+    
 
-- template: build/tmpl/jobs.yml
-  parameters:
-    name: Windows
-    vmImage: 'VS2017-Win2016'
+
+- stage: FormatCode
+  displayName: 'Format Code'
+  dependsOn: ["Test"]
+  jobs:
+  - job: FormatCode
+    pool:
+      vmImage: windows-latest
+    steps:
+    - template: build/.azurepipelines/format-code.yml
+
+
+
+
+
+
+- stage: GenerateDocs
+  displayName: 'Generate Docs'
+  dependsOn: ["FormatCode"]
+  jobs:
+  - job: GenerateDocs
+    pool:
+      vmImage: windows-latest
+    steps:
+    - template: build/.azurepipelines/docs.yml    
+
+
+
+
+
+
+
+- stage: Pack 
+  displayName: 'Pack'
+  dependsOn: ["Test"]
+  jobs:
+    - job: Pack
+      pool:
+        vmImage: windows-latest
+      steps:
+      - template: build/.azurepipelines/pack.yml    
+
+- stage: Publish
+  displayName: 'Publish'
+  dependsOn: Pack
+  condition: succeeded()
+  jobs:
+  - job: Publish
+    pool:
+      vmImage: windows-latest
+    strategy:
+      matrix:
+        Coverage:
+          TASK_NAME: 'Coverage'
+        AzurePipeline:
+            TASK_NAME: 'AzurePipeline'  
+        NuGet:
+              TASK_NAME: 'NuGet'            
+#        Documentation:
+#          TASK_NAME: 'Documentation'
+    steps:
+    - template: build/.azurepipelines/publish.yml
+      parameters:
+        taskName: $(TASK_NAME)
+

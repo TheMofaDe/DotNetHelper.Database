@@ -1,0 +1,34 @@
+<Project>
+
+<ItemGroup>
+    <PackageReference Include="GitInfo" Version="2.0.26">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+</ItemGroup>
+
+<Import  Condition="'$(MSBuildProjectExtension)' == '.csproj'"  Project="$(RepoRootPath)\build\msbuild\Cake.Integration.targets"/>
+ <!-- This target is replaced by GitInfo when restored. -->
+ <!-- <Target Name="GitVersion" /> -->
+
+ <PropertyGroup>
+    <PrepareForBuildDependsOn>WriteVersions;$(PrepareForBuildDependsOn)</PrepareForBuildDependsOn>
+  </PropertyGroup>
+
+      
+  <Target
+    Name="WriteVersions"
+    DependsOnTargets="SetVersions">
+        
+  </Target>
+
+  <Target
+    Name="SetVersions"
+    DependsOnTargets="GitVersion"
+    Returns="$(Version)"
+    Condition="'$(GitInfoImported)' == 'true' And '$(ExcludeRestorePackageImports)' != 'true'">
+
+  </Target>
+
+
+
+</Project>

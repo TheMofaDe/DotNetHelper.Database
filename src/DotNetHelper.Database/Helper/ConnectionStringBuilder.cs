@@ -23,7 +23,6 @@ namespace DotNetHelper.Database.Abstractions.Helper
                     return GetSqlServerConnectionString(datasource);
                 case DataBaseType.MySql:
                     return GetMySqlConnectionString(datasource);
-
                 case DataBaseType.Sqlite:
                     throw new NotImplementedException("You must reference the nuget package dotnethelper-sqlite to use this ");
                 //   return GetSqliteConnectionString(datasource);;

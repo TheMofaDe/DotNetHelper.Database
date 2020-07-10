@@ -9,7 +9,7 @@ using DotNetHelper.ObjectToSql.Enum;
 
 namespace DotNetHelper.Database.Extension
 {
-    public static class DBConnectionExtension
+    public static class DbConnectionExtension
     {
         public static void OpenSafely(this IDbConnection connection)
         {
@@ -53,6 +53,6 @@ namespace DotNetHelper.Database.Extension
         {
             return new DatabaseAccess<T>(connection, dataBaseType);
         }
-
+        
     }
 }

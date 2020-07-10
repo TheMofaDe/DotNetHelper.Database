@@ -1,0 +1,54 @@
+<Project>
+  <Import Project="$(RepoRootPath)build\msbuild\Version.props"/>
+
+  <PropertyGroup>
+    <DefineConstants Condition="$([MSBuild]::IsOSPlatform('OSX')) == 'true'">__MACOS__;$(DefineConstants)</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageProjectUrl>https://github.com/TheMofaDe/DotNetHelper.Database</PackageProjectUrl>
+    <PackageIconUrl>https://github.com/TheMofaDe/DotNetHelper.Database</PackageIconUrl>
+    <RepositoryUrl>https://github.com/TheMofaDe/DotNetHelper.Database</RepositoryUrl>
+    <PackageReleaseNotes>https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/CHANGELOG.md</PackageReleaseNotes>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageTags>ORM,database,sql,generic,dynamic,anonyous</PackageTags>
+    <RepositoryType>git</RepositoryType>
+    <Description>DotNetHelper.Database is a lightweight ORM that works with generics,dynamic, &amp; anonyous objects for ADO.NET</Description>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Joseph McNeal Jr</Authors>
+    <Company>Joseph McNeal Jr</Company>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <language>$(NeutralLanguage)</language>
+    <Copyright>2020 Joseph McNeal Jr</Copyright>
+
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <language>$(NeutralLanguage)</language>
+
+
+    <LangVersion>latest</LangVersion>
+
+
+  </PropertyGroup>
+
+
+  <PropertyGroup  Condition="'$(SignAssembly)' == 'true'">
+    <PublicSign>true</PublicSign>
+    <DelaySign>false</DelaySign>
+    <AssemblyOriginatorKeyFile Condition="'$(AssemblyOriginatorKeyFile)' == ''">$(MSBuildThisFileDirectory)keysign.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+
+
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)ThisAssembly.cs" />
+    <Compile
+      Condition="'$(BuildingInsideVisualStudio)' == 'true' and Exists('$(IntermediateOutputPath)$(MSBuildProjectName).AssemblyInfo$(DefaultLanguageSourceExtension)')"
+      Include="$(IntermediateOutputPath)$(MSBuildProjectName).AssemblyInfo$(DefaultLanguageSourceExtension)"
+      Visible="false" />
+  </ItemGroup>
+
+
+</Project>

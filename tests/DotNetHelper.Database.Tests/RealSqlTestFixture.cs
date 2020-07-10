@@ -79,7 +79,7 @@ namespace DotNetHelper.Database.Tests
             //    if(File.Exists(TestHelper.LocalDatabaseFile))
             //    File.Delete(TestHelper.LocalDatabaseFile);
             //}
-            var sqls = GetDBScripts(ScriptType.Initialize);
+            var sqls = GetDbScripts(ScriptType.Initialize);
             sqls.ForEach(delegate (string s)
             {
                 var result = DatabaseAccess.ExecuteNonQuery(TestHelper.GetEmbeddedResourceFile(s), CommandType.Text);

@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using CsvHelper.Configuration;
-using DotNetHelper.Database.Interface;
+using DotNetHelper.Database.DataSource;
 using DotNetHelper.Database.Tests.Helpers;
 using DotNetHelper.Database.Tests.MockData;
 using DotNetHelper.Database.Tests.Models;
 using DotNetHelper.Database.Tests.Services;
-using DotNetHelper.ObjectToSql.Enum;
 using DotNetHelper.Serialization.Abstractions.Interface;
 using DotNetHelper.Serialization.Csv;
 using DotNetHelper.Serialization.Json;
@@ -27,17 +27,16 @@ namespace DotNetHelper.Database.Tests
     }
     public class BaseTest
     {
-        private readonly IDatabaseAccess _databaseAccess;
+     //   private readonly IDatabaseAccess _databaseAccess;
 
         public ISerializer Json { get; } = new DataSourceJson(new JsonSerializerSettings() { Formatting = Formatting.None });
-        public ISerializer Csv { get; } = new DataSourceCsv(new Configuration());
+        public DataSourceCsv Csv { get; } = new DataSourceCsv(new CsvConfiguration(CultureInfo.CurrentCulture));
         public ISerializer Xml { get; } = new DataSourceXML();
 
-
-
-        public BaseTest(IDatabaseAccess databaseAccess)
+		 
+        public BaseTest()
         {
-            _databaseAccess = databaseAccess;
+          
         }
 
 
@@ -48,7 +47,7 @@ namespace DotNetHelper.Database.Tests
         }
 
 
-        public List<string> GetDBScripts(ScriptType scriptType)
+        public List<string> GetDbScripts(ScriptType scriptType)
         {
             var assemblyResources = Assembly.GetExecutingAssembly().GetManifestResourceNames();
             var keyword = scriptType == ScriptType.CleanUp ? "cleanup" : "init";
@@ -56,14 +55,14 @@ namespace DotNetHelper.Database.Tests
             return sqls;
         }
 
-        public void CleanUp()
+        public void CleanUp() 
         {
-            var sqls = GetDBScripts(ScriptType.CleanUp);
+            var sqls = GetDbScripts(ScriptType.CleanUp);
             sqls.ForEach(delegate (string s)
             {
                 try
                 {
-                    var result = _databaseAccess.ExecuteNonQuery(TestHelper.GetEmbeddedResourceFile(s), CommandType.Text);
+                    var result = databaseAccess.ExecuteNonQuery(TestHelper.GetEmbeddedResourceFile(s), CommandType.Text);
                 }
                 catch (Exception)
                 {

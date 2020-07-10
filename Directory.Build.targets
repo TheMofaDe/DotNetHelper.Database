@@ -1,0 +1,8 @@
+<Project>
+
+<!-- https://github.com/microsoft/msbuild/pull/2014 -->
+  <Import  Condition="'$(MSBuildProjectExtension)' == '.csproj'"  Project="$(RepoRootPath)build\msbuild\Version.targets"/>
+
+
+
+</Project>

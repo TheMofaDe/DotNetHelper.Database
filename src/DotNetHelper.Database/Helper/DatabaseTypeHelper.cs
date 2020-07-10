@@ -28,8 +28,12 @@ namespace DotNetHelper.Database.Helper
             {
                 return DataBaseType.MySql;
             }
+            if (typeof(T).Name == "OracleConnection")
+            {
+	            return DataBaseType.Oracle;
+            }
 
-            return null;
+			return null;
         }
 
     }

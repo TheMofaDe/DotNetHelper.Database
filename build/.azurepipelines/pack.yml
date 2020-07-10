@@ -1,0 +1,10 @@
+steps:
+- template: common-steps.yml
+  parameters:
+    includeArtifacts: true
+- pwsh: ./build.ps1 -target Pack
+  displayName: '[Run Pack]'
+- publish: $(System.DefaultWorkingDirectory)/artifacts
+  displayName: 'Upload artifacts folder'
+  condition: and(succeeded(), eq( variables['Agent.OS'], 'Windows_NT' ))
+  artifact: NugetPackage

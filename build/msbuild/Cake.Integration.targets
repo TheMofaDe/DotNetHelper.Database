@@ -1,0 +1,51 @@
+<Project>
+
+ <Import  Condition="'$(MSBuildProjectExtension)' == '.csproj' AND '$(GenerateDocumentation)' == 'true'"  Project="$(RepoRootPath)\build\msbuild\Cake.Integration.DocsFx.targets"/>
+
+<PropertyGroup>
+    <PrepareForBuildDependsOn>WriteVersionToFile;$(PrepareForBuildDependsOn)</PrepareForBuildDependsOn>
+</PropertyGroup>
+
+<Target Name="WriteVersionToFile" >
+<PropertyGroup>
+      <VersionJson>{
+&quot;GitBaseVersion&quot;:      &quot;$(GitBaseVersion)&quot;, 
+&quot;GitSemVersion&quot;:      &quot;$(GitSemVerMajor).$(GitSemVerMinor).$(GitSemVerPatch)&quot;, 
+&quot;GitCommits&quot;:      &quot;$(GitCommits)&quot;,   
+
+&quot;GitBaseVersionMajor&quot;:      &quot;$(GitBaseVersionMajor)&quot;,  
+&quot;GitBaseVersionMinor&quot;:      &quot;$(GitBaseVersionMinor)&quot;,  
+&quot;GitBaseVersionPatch&quot;:      &quot;$(GitBaseVersionPatch)&quot;,
+
+&quot;GitSemVerMajor&quot;:      &quot;$(GitSemVerMajor)&quot;,  
+&quot;GitSemVerMinor&quot;:      &quot;$(GitSemVerMinor)&quot;,  
+&quot;GitSemVerPatch&quot;:      &quot;$(GitSemVerPatch)&quot;,     
+
+&quot;AssemblyVersion&quot;:         &quot;$(AssemblyVersion)&quot;,
+&quot;FileVersion&quot;:             &quot;$(FileVersion)&quot;,
+&quot;InformationalVersion&quot;:    &quot;$(InformationalVersion)&quot;,
+&quot;PackageVersion&quot;:          &quot;$(PackageVersion)&quot;,
+&quot;Version&quot;:         &quot;$(Version)&quot;,
+&quot;VersionPrefix&quot;: &quot;$(VersionPrefix)&quot;,
+&quot;VersionSuffix&quot;:  &quot;$(VersionSuffix)&quot;,
+&quot;SemVerDashLabel &quot;: &quot;$(GitSemVerDashLabel)&quot;,
+&quot;GitTag &quot;: &quot;$(GitTag)&quot;,
+&quot;GitBaseTag &quot;: &quot;$(GitBaseTag)&quot;,
+&quot;GitIsDirty &quot;: &quot;$(GitIsDirty)&quot;
+}</VersionJson>
+<!-- <ArtifactsPath>$(RepoArtifactsPath)$(GitSemVerMajor).$(GitSemVerMinor).$(GitSemVerPatch)\$(Configuration)\</ArtifactsPath> -->
+</PropertyGroup>
+
+
+<WriteLinesToFile
+      Overwrite="true"
+      Lines="$(VersionJson)"
+      File="$(RepoArtifactsRootPath)build.version.json"
+      ContinueOnError="false"/>
+</Target>
+
+
+
+
+
+</Project>

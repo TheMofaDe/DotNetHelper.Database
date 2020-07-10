@@ -29,43 +29,21 @@ namespace DotNetHelper.Database.Tests
 {
 
     [TestFixtureSource("TestObjects")]
-    public class DatabaseTextFixture<T> : BaseTest where T : DbConnection, new()
+    public class DatabaseTextFixture
     {
-	    public Container Container { get; }
-        private static List<DatabaseAccess<DbConnection>> TestObjects { get; } = GetTestObjects();
+
 
         private static bool HasConnectionIssue { get; set; }
 
+		public DatabaseAccess<SqlConnection> DatabaseAccess { get; set; }
 
-        private static List<DatabaseAccess<T>> GetTestObjects()
+
+
+
+
+		public DatabaseTextFixture() 
         {
-
-	  
-            // ReSharper disable once UseObjectOrCollectionInitializer
-            var list = new List<DatabaseAccess<T>>() { };
-
-            var container = new SimpleInjector.Container();
-
-            // Registrations here
-            container.Register(typeof(DatabaseAccess<>),() => new DatabaseAccess<SqlConnection>(TestHelper.SQLServerConnectionString));
-#if SUPPORTSQLITE
-            container.Register(typeof(DatabaseAccess<>), () => new DatabaseAccess<SqliteConnection>(TestHelper.SqliteConnectionString));
-#endif
-            container.Register(typeof(DatabaseAccess<>), () => new DatabaseAccess<MySqlConnection>(TestHelper.MySqlConnectionString));
-
-
-            return container.GetAllInstances(typeof(DatabaseAccess<>));
-
-            return list;
-        }
-
-
- 
-
-
-        public DatabaseTextFixture() : base(databaseAccess)
-        {
-	        Container
+	       
         }
 
 
@@ -79,7 +57,7 @@ namespace DotNetHelper.Database.Tests
             //    if(File.Exists(TestHelper.LocalDatabaseFile))
             //    File.Delete(TestHelper.LocalDatabaseFile);
             //}
-            var sqls = GetDbScripts(ScriptType.Initialize);
+            var sqls = GetDBScripts(ScriptType.Initialize);
             sqls.ForEach(delegate (string s)
             {
                 var result = DatabaseAccess.ExecuteNonQuery(TestHelper.GetEmbeddedResourceFile(s), CommandType.Text);
@@ -113,7 +91,8 @@ namespace DotNetHelper.Database.Tests
 
         [Test]
         [Order(1)]
-        public void Test_CanConnect()
+        new DatabaseAccess<SqlConnection>(TestHelper.SQLServerConnectionString)
+		public void Test_CanConnect()
         {
             var canConnect = DatabaseAccess.CanConnect();
             Assert.AreEqual(canConnect, true, "Could not connect to database");

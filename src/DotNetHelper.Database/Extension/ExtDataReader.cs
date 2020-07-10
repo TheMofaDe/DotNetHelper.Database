@@ -245,17 +245,12 @@ namespace DotNetHelper.Database.Extension
             }
         }
 
-
-
-        public static DataTable MapToDataTable<T>(this IEnumerable<T> source) where T : class
-        {
-            return MapToDataTable(source, null);
-        }
-        public static DataTable MapToDataTable<T>(this IEnumerable<T> source, string tableName) where T : class
+     
+        public static DataTable MapToDataTable<T>(this IEnumerable<T> source, string tableName = null) where T : class
         {
             source.IsNullThrow(nameof(source));
             var dt = new DataTable();
-            if (source.Count() == 0)
+            if (!source.Any())
             {
                 if (source is IEnumerable<IDynamicMetaObjectProvider>)
                     return dt;
