@@ -84,8 +84,9 @@ namespace DotNetHelper.Database.Tests.Helpers
             csBuilder.Server = "localhost";
             csBuilder.Database = "sys";
             return csBuilder.GetConnectionString(true);
-#endif
+#else
 			return null;
+#endif
 		}
 
 		public static string MySqlConnectionString { get; set; } = GetMySqlCS();

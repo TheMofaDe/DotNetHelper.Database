@@ -15,7 +15,7 @@
     <PackageTags>ORM,database,sql,generic,dynamic,anonyous</PackageTags>
     <RepositoryType>git</RepositoryType>
     <Description>DotNetHelper.Database is a lightweight ORM that works with generics,dynamic, &amp; anonyous objects for ADO.NET</Description>
-    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <PackageLicenseFile>$(RepoRootPath)LICENSE.md</PackageLicenseFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Joseph McNeal Jr</Authors>
     <Company>Joseph McNeal Jr</Company>
@@ -23,14 +23,9 @@
     <NeutralLanguage>en-US</NeutralLanguage>
     <language>$(NeutralLanguage)</language>
     <Copyright>2020 Joseph McNeal Jr</Copyright>
-
     <NeutralLanguage>en-US</NeutralLanguage>
     <language>$(NeutralLanguage)</language>
-
-
     <LangVersion>latest</LangVersion>
-
-
   </PropertyGroup>
 
 

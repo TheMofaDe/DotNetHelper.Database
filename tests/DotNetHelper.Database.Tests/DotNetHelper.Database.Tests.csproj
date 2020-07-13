@@ -16,6 +16,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="BaseTest.cs" />
+    <Compile Remove="DatabaseTextFixture.cs" />
+    <Compile Remove="DBParameterTextFixture.cs" />
+    <Compile Remove="RealSqlTestFixture.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Scripts\mysql_cleanup_1.sql" />
     <None Remove="Scripts\mysql_init_1.sql" />
     <None Remove="Scripts\sqlite_cleanup_1.sql" />
@@ -25,7 +32,6 @@
     <None Remove="Scripts\sqlite_init_2.sql" />
     <None Remove="Scripts\sqlite_init_3.sql" />
     <None Remove="Scripts\sqlserver_cleanup_1.sql" />
-    <None Remove="Scripts\sqlserver_init_1.sql" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,7 +44,6 @@
     <EmbeddedResource Include="Scripts\mysql_cleanup_1.sql" />
     <EmbeddedResource Include="Scripts\sqlserver_cleanup_1.sql" />
     <EmbeddedResource Include="Scripts\mysql_init_1.sql" />
-    <EmbeddedResource Include="Scripts\sqlserver_init_1.sql" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,7 +51,7 @@
     <PackageReference Include="DotNetHelper.Serialization.Json" Version="1.0.19" />
     <PackageReference Include="MySql.Data" Version="8.0.20" />
     <PackageReference Include="nunit" Version="3.12.0" />
-    <PackageReference Include="NUnit3TestAdapter" Version="3.16.1">
+    <PackageReference Include="NUnit3TestAdapter" Version="3.17.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -59,7 +64,7 @@
   </ItemGroup>
 
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.2'">
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
     <PackageReference Include="Microsoft.Data.Sqlite">
       <!--Microsoft.EntityFrameworkCore.Sqlite-->
       <Version>3.1.5</Version>
@@ -80,11 +85,11 @@
   </ItemGroup>
 
 
-  <PropertyGroup Condition="'$(TargetFramework)' == 'netcoreapp2.2'  ">
+  <PropertyGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'  ">
     <DefineConstants>$(DefineConstants);DOTNETCORE</DefineConstants>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(TargetFramework)' == 'netcoreapp2.2' OR '$(TargetFramework)' == 'net452' ">
+  <PropertyGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1' OR '$(TargetFramework)' == 'net452' ">
     <DefineConstants>$(DefineConstants);SUPPORTSQLITE</DefineConstants>
   </PropertyGroup>
 

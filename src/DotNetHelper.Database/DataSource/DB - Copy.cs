@@ -18,7 +18,7 @@
 //    /// A powerful & simple class for dealing with simple CRUD operation that doesn't required you to write sql but also provided an overload to pass sql if needed
 //    /// </summary>
 //    /// <typeparam name="TDbConnection">An implementation of IDBConnection</typeparam>
-//    public class DatabaseAccess<TDbConnection> where TDbConnection : DbConnection, new()
+//    public class DB2<TDbConnection> where TDbConnection : DbConnection
 //    {
 //        /// <summary>
 //        /// The connection string to the database
@@ -63,7 +63,7 @@
 //        /// </summary>
 //        /// <param name="connectionString"></param>
 //        /// <param name="type">Specify how sql will be generated or it will be auto-determined based on DBConnection Type Name</param>
-//        public DatabaseAccess(string connectionString, DataBaseType? type = null)
+//        public DB2(string connectionString, DataBaseType? type = null)
 //        {
 //            ConnectionString = connectionString;
 //            var dbType = type ?? DatabaseTypeHelper.GetDataBaseTypeFromDBConnectionType<TDbConnection>();
@@ -79,7 +79,7 @@
 //        /// </summary>
 //        /// <param name="connection"></param>
 //        /// <param name="type">Specify how sql will be generated or it will be auto-determined based on DBConnection Type Name</param>
-//        internal DatabaseAccess(TDbConnection connection, DataBaseType? type = null)
+//        internal DB2(TDbConnection connection, DataBaseType? type = null)
 //        {
 //	        connection.IsNullThrow(nameof(connection), new ArgumentNullException(nameof(connection), "DBConnection Object can't be null'"));
 
@@ -96,30 +96,7 @@
 
 
 
-//        /// <summary>
-//        /// creates a new connection object
-//        /// </summary>
-//        /// <param name="openConnection"></param>
-//        /// <returns></returns>
-//        public TDbConnection GetNewConnection(bool openConnection)
-//        {
-//            TDbConnection connection;
-//            if (UseSingleConnection)
-//            {
-//                if (string.IsNullOrEmpty(SingleConnection?.ConnectionString))
-//                    if (SingleConnection != null)
-//                        SingleConnection.ConnectionString = ConnectionString;
-
-//                connection = SingleConnection ??= new TDbConnection() { ConnectionString = ConnectionString };
-//            }
-//            else
-//            {
-//                connection = new TDbConnection() { ConnectionString = ConnectionString };
-//            }
-//            if (openConnection)
-//                connection.OpenSafely();
-//            return connection;
-//        }
+  
 
 //        /// <summary>
 //        /// creates a new connection object

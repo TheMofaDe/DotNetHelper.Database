@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net452;</TargetFrameworks>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
 
@@ -43,18 +44,10 @@
 
 
 
-  <ItemGroup>
-    <None Include="..\..\LICENSE.md">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
-
-
 
 
   <ItemGroup>
-    <PackageReference Include="DotNetHelper.ObjectToSql" Version="2.0.13" />
+    <PackageReference Include="DotNetHelper.ObjectToSql" Version="2.0.17" />
   </ItemGroup>
 
 
