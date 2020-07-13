@@ -38,16 +38,21 @@ namespace DotNetHelper.Database.Extension
 			return new DB<T>(dbConnection);
 		}
 
-
-		public static void OpenSafely(this IDbConnection connection)
+        /// <summary>
+		/// 
+		/// </summary>
+		/// <param name="connection"></param>
+		/// <returns>true if the connection was force to be opened false if connection was already open</returns>
+		public static bool OpenSafely(this IDbConnection connection)
         {
             if (connection.State == ConnectionState.Open || connection.State == ConnectionState.Connecting)
             {
-
+                return false;
             }
             else
             {
                 connection.Open();
+                return true;
             }
 
         }
@@ -63,15 +68,22 @@ namespace DotNetHelper.Database.Extension
 
             }
         }
-        public static async Task OpenSafelyAsync(this DbConnection connection,CancellationToken cancellationToken = default)
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="connection"></param>
+        /// <returns>true if the connection was force to be opened false if connection was already open</returns>
+        public static async Task<bool> OpenSafelyAsync(this DbConnection connection,CancellationToken cancellationToken = default)
         {
             if (connection.State == ConnectionState.Open || connection.State == ConnectionState.Connecting)
             {
-
+                return false;
             }
             else
             {
                 await connection.OpenAsync(cancellationToken);
+                return true;
             }
 
         }

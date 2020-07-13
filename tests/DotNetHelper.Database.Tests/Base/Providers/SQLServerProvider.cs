@@ -10,7 +10,7 @@ namespace DotNetHelper.Database.Tests.Base.Providers
 	public abstract class SqlServerDatabaseProvider : DatabaseProvider
 	{
 		public virtual DB<DbConnection> Database { get; }
-		public override string GetConnectionString() => GetConnectionString("SqlServerConnectionString", "Data Source=172.17.0.3;Initial Catalog=tempdb;Integrated Security=True");
+		public override string GetConnectionString() => GetConnectionString("SqlServerConnectionString", "Data Source=localhost;Initial Catalog=tempdb;Integrated Security=False;User Id=sa;Password=Password12!");
 
 		public DbConnection GetOpenConnection(bool mars)
 		{

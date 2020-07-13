@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
+    <!-- <GeneratePackageOnBuild>true</GeneratePackageOnBuild> -->
     <PackageProjectUrl>https://github.com/TheMofaDe/DotNetHelper.Database</PackageProjectUrl>
     <PackageIconUrl>https://github.com/TheMofaDe/DotNetHelper.Database</PackageIconUrl>
     <RepositoryUrl>https://github.com/TheMofaDe/DotNetHelper.Database</RepositoryUrl>
@@ -16,7 +17,6 @@
     <RepositoryType>git</RepositoryType>
     <Description>DotNetHelper.Database is a lightweight ORM that works with generics,dynamic, &amp; anonyous objects for ADO.NET</Description>
     <PackageLicenseFile>$(RepoRootPath)LICENSE.md</PackageLicenseFile>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Joseph McNeal Jr</Authors>
     <Company>Joseph McNeal Jr</Company>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>

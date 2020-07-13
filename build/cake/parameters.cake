@@ -53,10 +53,11 @@ public class BuildParameters
          SolutionParserResult = context.ParseSolution(SolutionFile);
          foreach(var project in SolutionParserResult.Projects){ 
             var file = (IFile)context.FileSystem.GetFile(project.Path);
+            if(System.IO.File.Exists(project.Path.FullPath)){ // handles edge cases like solution items folder being consider projects in the solution file
             var projectParsed = file.ParseProjectFile(Configuration);
             SolutionProjects.Add(projectParsed);
+            }
          }
-
          var buildSystem = context.BuildSystem();
          IsLocalBuild  = buildSystem.IsLocalBuild;
          IsPullRequest = buildSystem.IsPullRequest;

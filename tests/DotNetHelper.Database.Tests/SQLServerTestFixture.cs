@@ -15,15 +15,15 @@ namespace DotNetHelper.Database.Tests
     [TestFixtureSource("TestObjects")]
     public class DatabaseTextFixture : TestBase<SqlServerDatabaseProvider>
     {
-	    //private DB<DbConnection> _database;
+		private DB<DbConnection> _database;
 
-	    //public DB<DbConnection> Database
-	    //{
-		   // get
-		   // {
-			  //  return _database ??= new DB<DbConnection>(Provider.GetClosedConnection());
-		   // }
-	    //}
+		public DB<DbConnection> Database
+		{
+			get
+			{
+				return _database ??= new DB<DbConnection>(Provider.GetClosedConnection());
+			}
+		}
 
 		public DatabaseTextFixture()
 		{
@@ -36,6 +36,34 @@ namespace DotNetHelper.Database.Tests
       	[SetUp]
         public void Setup()
         {
+			CreateTables();
+		}
+
+
+        [TearDown]
+        public void Teardown()
+        {
+			CleanUp();
+		}
+
+
+
+        [OneTimeSetUp]
+        public void RunBeforeAnyTests()
+        {
+			CreateTables();
+
+		}
+
+        [OneTimeTearDown]
+        public void RunAfterAnyTests()
+        {
+	        CleanUp();
+
+        }
+
+		private void CreateTables()
+		{
 			var sqls = new List<string>()
 			{
 				$@"IF OBJECT_ID(N'[master].[dbo].[Employee]', N'U') IS NOT NULL BEGIN DROP TABLE [master].[dbo].[Employee] END ELSE BEGIN PRINT 'Nothing To Clean Up' END
@@ -65,31 +93,9 @@ CREATE TABLE [master].[dbo].[SpecialDataTypeTable](
 	[Id] [uniqueidentifier]  NULL
 );"
 			};
-			//var recordAffected = Database.ExecuteTransaction(sqls, true, true);
+			var recordAffected = Database.ExecuteTransaction(sqls, true, true);
+
 		}
-
-
-        [TearDown]
-        public void Teardown()
-        {
-			CleanUp();
-		}
-
-
-
-        [OneTimeSetUp]
-        public void RunBeforeAnyTests()
-        {
-
-        }
-
-        [OneTimeTearDown]
-        public void RunAfterAnyTests()
-        {
-	        CleanUp();
-
-        }
-
 
         private void CleanUp()
         {
@@ -99,15 +105,15 @@ CREATE TABLE [master].[dbo].[SpecialDataTypeTable](
 		        $@"IF OBJECT_ID(N'[master].[dbo].[Employee]', N'U') IS NOT NULL BEGIN DROP TABLE[master].[dbo].[Employee] END ELSE BEGIN PRINT 'Nothing To Clean Up' END",
 		        $@"IF OBJECT_ID(N'[master].[dbo].[SpecialDataTypeTable]', N'U') IS NOT NULL BEGIN DROP TABLE[master].[dbo].[SpecialDataTypeTable] END ELSE BEGIN PRINT 'Nothing To Clean Up' END"
 	        };
-	     //   var recordAffected = Database.ExecuteTransaction(sqls, true, true);
+	        var recordAffected = Database.ExecuteTransaction(sqls, true, true);
 		}
 
 
         [Test]
         public void Test_CanConnect()
         {
-        //    var canConnect = Database.CanConnect();
-          //  Assert.AreEqual(canConnect, true, "Could not connect to database");
+            var canConnect = Database.CanConnect();
+            Assert.AreEqual(canConnect, true, "Could not connect to database");
 
         }
 
@@ -117,8 +123,8 @@ CREATE TABLE [master].[dbo].[SpecialDataTypeTable](
         public void Test_Execute_Insert_AddsNewEmployee()
         {
             var newEmployee = MockEmployee.Hashset.Take(1).Last();
-       //     var outputtedResult = Database.Execute(newEmployee, ActionType.Insert);
-        //    Assert.AreEqual(outputtedResult, 1, "Something went wrong add new employee record");
+            var outputtedResult = Database.Execute(newEmployee, ActionType.Insert);
+            Assert.AreEqual(outputtedResult, 1, "Something went wrong add new employee record");
         }
 
 
