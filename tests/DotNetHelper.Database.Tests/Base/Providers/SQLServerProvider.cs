@@ -2,35 +2,35 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
+using System.Data.SqlClient;
 using System.Text;
 using DotNetHelper.Database.DataSource;
 
 namespace DotNetHelper.Database.Tests.Base.Providers
 {
-	public abstract class SqlServerDatabaseProvider : DatabaseProvider
+	public  class SqlServerProvider : IDatabaseProvider
 	{
-		public virtual DB<DbConnection> Database { get; }
-		public override string GetConnectionString() => GetConnectionString("SqlServerConnectionString", "Data Source=localhost;Initial Catalog=tempdb;Integrated Security=False;User Id=sa;Password=Password12!");
-
-		public DbConnection GetOpenConnection(bool mars)
+		public DbConnection Instance => GetOpenConnection();
+		public string GetConnectionString() => "Data Source=localhost;Initial Catalog=master;Integrated Security=False;User Id=sa;Password=Password12!";
+		public DbConnection GetClosedConnection()
 		{
-			if (!mars)
-				return GetOpenConnection();
+			var conn = new SqlConnection(GetConnectionString());
+			if (conn.State != ConnectionState.Closed)
+				throw new InvalidOperationException("should be closed!");
+			return conn;
+		}
 
-			var scsb = Factory.CreateConnectionStringBuilder();
-			scsb.ConnectionString = GetConnectionString();
-			((dynamic)scsb).MultipleActiveResultSets = true;
-			var conn = Factory.CreateConnection();
-			conn.ConnectionString = scsb.ConnectionString;
+		public DbConnection GetOpenConnection()
+		{
+			var conn = new SqlConnection(GetConnectionString());
 			conn.Open();
 			if (conn.State != ConnectionState.Open)
 				throw new InvalidOperationException("should be open!");
 			return conn;
 		}
 
-		protected SqlServerDatabaseProvider()
+		public SqlServerProvider()
 		{
-			Database = new DB<DbConnection>(GetOpenConnection());
 		}
 	}
 }

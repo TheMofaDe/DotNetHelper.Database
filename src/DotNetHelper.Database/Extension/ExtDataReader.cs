@@ -188,11 +188,14 @@ namespace DotNetHelper.Database.Extension
                 return null;
             }
             var readerFieldLookup = GetColumnDefinitionFromIDataReader(reader);
+            T lastRecord = null;
             while (reader.Read())
             {
-                return (DataRecordToT<T>(reader, readerFieldLookup, xmlDeserializer, jsonDeserializer, csvDeserializer));
+				lastRecord = (DataRecordToT<T>(reader, readerFieldLookup, xmlDeserializer, jsonDeserializer, csvDeserializer));
             }
-            return null;
+            reader.Close();
+            reader.Dispose();
+			return lastRecord;
         }
 
 

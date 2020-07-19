@@ -39,8 +39,8 @@ namespace DotNetHelper.Database.DataSource
         /// </summary>
         public DataBaseType DatabaseType => ObjectToSql.DatabaseType;
 
-       // public bool UseSingleConnection { get; set; }
-        private TDbConnection DBConnection { get; set; }
+       // ReSharper disable once InconsistentNaming
+       private TDbConnection DBConnection { get; set; }
 
         /// <summary>
         /// This is hack for creating dbparameter. 
@@ -58,7 +58,7 @@ namespace DotNetHelper.Database.DataSource
 	        connection.IsNullThrow(nameof(DBConnection), new ArgumentNullException(nameof(DBConnection), "DBConnection Object can't be null'"));
 	        ConnectionString = connection.ConnectionString;
             DBConnection = connection;
-            var dbType = type ?? DatabaseTypeHelper.GetDataBaseTypeFromDBConnectionType<TDbConnection>();
+            var dbType = type ?? DatabaseTypeHelper.GetDataBaseTypeFromDBConnectionType<TDbConnection>(connection);
             if (dbType == null)
                 throw new InvalidOperationException($"Couldn't determine the databasetype from the type {typeof(TDbConnection).Name}. Please use a different constructor " +
                                                     $"to initialize this object");
@@ -67,12 +67,12 @@ namespace DotNetHelper.Database.DataSource
         }
 
 
-        private TDbConnection NewInstance()
-        {
-			var temp = Activator.CreateInstance<TDbConnection>();
-			temp.ConnectionString = ConnectionString;
-			return temp;
-        }
+   //     private TDbConnection NewInstance()
+   //     {
+			//var temp = Activator.CreateInstance<TDbConnection>();
+			//temp.ConnectionString = ConnectionString;
+			//return temp;
+   //     }
 		
 
     
@@ -130,8 +130,10 @@ namespace DotNetHelper.Database.DataSource
         public DbCommand GetNewCommand(TDbConnection connection, string sql, CommandType commandType = CommandType.Text, IEnumerable<DbParameter> parameters = null)
         {
             var command = connection.CreateCommand();
-            command.CommandText = sql;
-            command.Connection = connection;
+#pragma warning disable CA2100 // Review SQL queries for security vulnerabilities
+			command.CommandText = sql;
+#pragma warning restore CA2100 // Review SQL queries for security vulnerabilities
+			command.Connection = connection;
             command.CommandType = commandType;
             if (parameters != null)
                 command.Parameters.AddRange(parameters);
@@ -170,13 +172,18 @@ namespace DotNetHelper.Database.DataSource
         /// <exception cref="System.InvalidOperationException"> </exception>
         public int ExecuteNonQuery(string sql, CommandType commandType = CommandType.Text, IEnumerable<DbParameter> parameters = null)
         {
-            using (DBConnection)
-            {
-                var didConnectionOpen = DBConnection.OpenSafely();
-                var command = GetNewCommand(DBConnection, sql, commandType, parameters);
-                return command.ExecuteNonQuery();
-            }
-        }
+	        var didConnectionOpen = DBConnection.OpenSafely();
+			try
+			{
+				using var command = GetNewCommand(DBConnection, sql, commandType, parameters);
+				return command.ExecuteNonQuery();
+			}
+	        finally
+	        {
+		        if (didConnectionOpen)
+			        DBConnection.Close();
+	        }
+		}
 
         /// <summary>
         /// Execute an SQL Command and returns the number of rows affected
@@ -189,13 +196,18 @@ namespace DotNetHelper.Database.DataSource
         /// <exception cref="System.InvalidOperationException"> </exception>
         public async Task<int> ExecuteNonQueryAsync(string sql, CommandType commandType = CommandType.Text, IEnumerable<DbParameter> parameters = null)
         {
-            using (DBConnection)
-            {
-                var didConnectionOpen = await DBConnection.OpenSafelyAsync();
-                var command = GetNewCommand(DBConnection, sql, commandType, parameters);
+			var didConnectionOpen = await DBConnection.OpenSafelyAsync();
+			try
+			{
+				using var command = GetNewCommand(DBConnection, sql, commandType, parameters);
                 return await command.ExecuteNonQueryAsync();
+			}
+            finally
+            {
+	            if (didConnectionOpen)
+		            DBConnection.Close();
             }
-        }
+		}
 
 
 
@@ -208,13 +220,18 @@ namespace DotNetHelper.Database.DataSource
         /// <returns></returns>
         public object ExecuteScalar(string sql, CommandType commandType = CommandType.Text, List<DbParameter> parameters = null)
         {
-            using (DBConnection)
-            {
-                var didConnectionOpen = DBConnection.OpenSafely();
-                var command = GetNewCommand(DBConnection, sql, commandType, parameters);
+	        var didConnectionOpen = DBConnection.OpenSafely();
+	        try
+	        {
+		        using var command = GetNewCommand(DBConnection, sql, commandType, parameters);
                 return command.ExecuteScalar();
             }
-        }
+	        finally
+            {
+	            if (didConnectionOpen)
+		            DBConnection.Close();
+            }
+		}
 
 
 
@@ -227,13 +244,18 @@ namespace DotNetHelper.Database.DataSource
         /// <returns></returns>
         public async Task<object> ExecuteScalarAsync(string sql, CommandType commandType = CommandType.Text, List<DbParameter> parameters = null)
         {
-            using (DBConnection)
-            {
-                var didConnectionOpen = await DBConnection.OpenSafelyAsync();
-                var command = GetNewCommand(DBConnection, sql, commandType, parameters);
+	        var didConnectionOpen = await DBConnection.OpenSafelyAsync();
+	        try
+	        {
+		        using var command = GetNewCommand(DBConnection, sql, commandType, parameters);
                 return await command.ExecuteScalarAsync();
             }
-        }
+	        finally
+            {
+	            if (didConnectionOpen)
+		            DBConnection.Close();
+            }
+		}
 
 
 
@@ -275,21 +297,23 @@ namespace DotNetHelper.Database.DataSource
         /// <returns></returns>
         public int ExecuteTransaction(List<KeyValuePair<string, IEnumerable<DbParameter>>> sqls, bool rollbackOnException, bool throwException = true)
         {
-            using (DBConnection)
-            {
-                var didConnectionOpen = DBConnection.OpenSafely();
-                var recordAffected = 0;
+	        var didConnectionOpen = DBConnection.OpenSafely();
+	        try
+	        {
+				var recordAffected = 0;
                 if (sqls == null || !sqls.Any()) return recordAffected;
 
                 var obj = GetNewCommandAndTransaction(DBConnection);
-                var command = obj.command;
-                var transaction = obj.transaction;
+                using var command = obj.command;
+                using var transaction = obj.transaction;
                 try
                 {
                     sqls.ForEach(delegate (KeyValuePair<string, IEnumerable<DbParameter>> pair)
                     {
-                        command.CommandText = pair.Key;
-                        if (pair.Value != null)
+#pragma warning disable CA2100 // Review SQL queries for security vulnerabilities
+						command.CommandText = pair.Key;
+#pragma warning restore CA2100 // Review SQL queries for security vulnerabilities
+						if (pair.Value != null)
                         {
                             command?.Parameters?.Clear(); // Clear any previous parameters
                             command.Parameters.AddRange(pair.Value);
@@ -317,7 +341,13 @@ namespace DotNetHelper.Database.DataSource
                 }
                 return recordAffected;
             }
-        }
+	        finally
+            {
+	            if (didConnectionOpen)
+		            DBConnection.Close();
+            }
+
+		}
 
 
         /// <summary>
@@ -329,10 +359,10 @@ namespace DotNetHelper.Database.DataSource
         /// <returns></returns>
         public async Task<int> ExecuteTransactionAsync(List<KeyValuePair<string, IEnumerable<DbParameter>>> sqls, bool rollbackOnException, bool throwException = true)
         {
-            using (DBConnection)
-            {
-                var didConnectionOpen = await DBConnection.OpenSafelyAsync();
-                var recordAffected = 0;
+	        var didConnectionOpen = await DBConnection.OpenSafelyAsync();
+	        try
+	        {
+				var recordAffected = 0;
                 if (sqls == null || !sqls.Any()) return recordAffected;
 
                 var obj = GetNewCommandAndTransaction(DBConnection);
@@ -342,8 +372,10 @@ namespace DotNetHelper.Database.DataSource
                 {
                     sqls.ForEach(async delegate (KeyValuePair<string, IEnumerable<DbParameter>> pair)
                     {
-                        command.CommandText = pair.Key;
-                        if (pair.Value != null)
+#pragma warning disable CA2100 // Review SQL queries for security vulnerabilities
+						command.CommandText = pair.Key;
+#pragma warning restore CA2100 // Review SQL queries for security vulnerabilities
+						if (pair.Value != null)
                         {
                             command?.Parameters?.Clear(); // Clear any previous parameters
                             command.Parameters.AddRange(pair.Value);
@@ -370,7 +402,12 @@ namespace DotNetHelper.Database.DataSource
                 }
                 return recordAffected;
             }
-        }
+	        finally
+            {
+	            if (didConnectionOpen)
+		            DBConnection.Close();
+            }
+		}
 
 
         /// <summary>
@@ -382,12 +419,9 @@ namespace DotNetHelper.Database.DataSource
         /// <returns></returns>
         public DbDataReader GetDataReader(string sql, CommandType commandType = CommandType.Text, List<DbParameter> parameters = null)
         {
-            using (DBConnection)
-            {
-                var didConnectionOpen = DBConnection.OpenSafely();
-                var command = GetNewCommand(DBConnection, sql, commandType, parameters);
-            var reader = command.ExecuteReader(CommandBehavior.CloseConnection);
-            return reader;
+	        var didConnectionOpen = DBConnection.OpenSafely();
+	        using var command = GetNewCommand(DBConnection, sql, commandType, parameters);
+	        return command.ExecuteReader(CommandBehavior.CloseConnection);
         }
 
         /// <summary>
@@ -399,10 +433,9 @@ namespace DotNetHelper.Database.DataSource
         /// <returns></returns>
         public async Task<DbDataReader> GetDataReaderAsync(string sql, CommandType commandType= CommandType.Text, List<DbParameter> parameters = null)
         {
-                using (DBConnection)
-                {
-                    var didConnectionOpen = await DBConnection.OpenSafelyAsync();
-                    var command = GetNewCommand(DBConnection, sql, commandType, parameters);
+            
+            var didConnectionOpen = await DBConnection.OpenSafelyAsync();
+	        var command = GetNewCommand(DBConnection, sql, commandType, parameters);
             var reader = await command.ExecuteReaderAsync(CommandBehavior.CloseConnection);
             return reader;
         }
@@ -435,17 +468,22 @@ namespace DotNetHelper.Database.DataSource
         public DataTable GetDataTableWithSchema(string sql, CommandType commandType = CommandType.Text, List<DbParameter> parameters = null)
         {
             var dt = new DataTable();
-            using (DBConnection)
+            var didConnectionOpen = DBConnection.OpenSafely();
+            try
             {
-                var didConnectionOpen = DBConnection.OpenSafely();
-                var command = GetNewCommand(DBConnection, sql, commandType, parameters);
+				var command = GetNewCommand(DBConnection, sql, commandType, parameters);
                 var schema = command.ExecuteReader(CommandBehavior.SchemaOnly);
                 dt.Load(schema);
                 var data = command.ExecuteReader();
                 dt.Load(data);
                 return dt;
             }
-        }
+            finally
+            {
+	            if (didConnectionOpen)
+		            DBConnection.Close();
+            }
+		}
 
         /// <summary>
         /// Applies the schema/metadata of the sql to a dataTable and populate it with the result set
@@ -457,17 +495,22 @@ namespace DotNetHelper.Database.DataSource
         public async Task<DataTable> GetDataTableWithSchemaAsync(string sql, CommandType commandType = CommandType.Text, List<DbParameter> parameters = null)
         {
             var dt = new DataTable();
-                    using (DBConnection)
-                    {
-                        var didConnectionOpen = await DBConnection.OpenSafelyAsync();
-                        var command = GetNewCommand(DBConnection, sql, commandType, parameters);
+            var didConnectionOpen = await DBConnection.OpenSafelyAsync();
+            try
+            {
+				var command = GetNewCommand(DBConnection, sql, commandType, parameters);
                 var schema = await command.ExecuteReaderAsync(CommandBehavior.SchemaOnly);
                 dt.Load(schema);
                 var data = await command.ExecuteReaderAsync();
                 dt.Load(data);
                 return dt;
             }
-        }
+            finally
+            {
+	            if (didConnectionOpen)
+		            DBConnection.Close();
+            }
+		}
 
 
         /// <summary>
@@ -481,17 +524,23 @@ namespace DotNetHelper.Database.DataSource
         public DataTable GetDataTableWithKeyInfo(string sql, CommandType commandType = CommandType.Text, List<DbParameter> parameters = null)
         {
             var dt = new DataTable();
-                using (DBConnection)
-                {
-                    var didConnectionOpen = DBConnection.OpenSafely();
-                    var command = GetNewCommand(DBConnection, sql, commandType, parameters);
+            var didConnectionOpen = DBConnection.OpenSafely();
+            try
+            {
+				var command = GetNewCommand(DBConnection, sql, commandType, parameters);
                 var schema = command.ExecuteReader(CommandBehavior.KeyInfo);
                 dt.Load(schema);
                 var data = command.ExecuteReader();
                 dt.Load(data);
                 return dt;
             }
-        }
+
+                finally
+                {
+	                if (didConnectionOpen)
+		                DBConnection.Close();
+                }
+		}
 
         /// <summary>
         /// Applies the schema/metadata of the sql to a dataTable and populate it with the result set.
@@ -504,17 +553,23 @@ namespace DotNetHelper.Database.DataSource
         public async Task<DataTable> GetDataTableWithKeyInfoAsync(string sql, CommandType commandType = CommandType.Text, List<DbParameter> parameters = null)
         {
             var dt = new DataTable();
-                    using (DBConnection)
-                    {
-                        var didConnectionOpen = await DBConnection.OpenSafelyAsync();
-                        var command = GetNewCommand(DBConnection, sql, commandType, parameters);
+            var didConnectionOpen = await DBConnection.OpenSafelyAsync();
+            try
+            {
+				var command = GetNewCommand(DBConnection, sql, commandType, parameters);
                 var schema = await command.ExecuteReaderAsync(CommandBehavior.KeyInfo);
                 dt.Load(schema);
                 var data = await command.ExecuteReaderAsync();
                 dt.Load(data);
                 return dt;
             }
-        }
+
+                    finally
+                    {
+	                    if (didConnectionOpen)
+		                    DBConnection.Close();
+                    }
+		}
 
 
 
@@ -526,11 +581,10 @@ namespace DotNetHelper.Database.DataSource
         {
             try
             {
-            using (DBConnection)
-            {
-                var didConnectionOpen = DBConnection.OpenSafely();
-                    return true;
-                }
+	            var didConnectionOpen = DBConnection.OpenSafely();
+				if(didConnectionOpen)
+					DBConnection.CloseSafely();
+				return true;
             }
             catch (Exception ec)
             {
@@ -547,10 +601,9 @@ namespace DotNetHelper.Database.DataSource
         {
             try
             {
-                        using (DBConnection)
-                        {
-                            var didConnectionOpen = await DBConnection.OpenSafelyAsync();
-                            return true;
+                using (DBConnection) {
+	                var didConnectionOpen = await DBConnection.OpenSafelyAsync(); 
+	                return true;
                 }
             }
             catch (Exception)
@@ -920,7 +973,8 @@ namespace DotNetHelper.Database.DataSource
 
             var sql = ObjectToSql.BuildQueryWithOutputs(actionType, null, outputFields);
             var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, xmlSerializer, jsonSerializer, csvSerializer);
-            return GetDataReader(sql, CommandType.Text, parameters).MapTo<T>(xmlDeserializer, jsonDeserializer, csvDeserializer);
+            using var dataReader = GetDataReader(sql, CommandType.Text, parameters);
+            return dataReader.MapTo<T>(xmlDeserializer, jsonDeserializer, csvDeserializer);
         }
 
 
@@ -946,8 +1000,8 @@ namespace DotNetHelper.Database.DataSource
 
             var sql = ObjectToSql.BuildQueryWithOutputs(actionType, null, outputFields);
             var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, xmlSerializer, jsonSerializer, csvSerializer);
-            var data = await GetDataReaderAsync(sql, CommandType.Text, parameters);
-                return data.MapTo<T>(xmlDeserializer, jsonDeserializer, csvDeserializer);
+            using var dataReader = await GetDataReaderAsync(sql, CommandType.Text, parameters);
+                return dataReader.MapTo<T>(xmlDeserializer, jsonDeserializer, csvDeserializer);
         }
 
 
@@ -1006,9 +1060,9 @@ namespace DotNetHelper.Database.DataSource
         public long SqlServerBulkCopy<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions, string tableName, int batchSize) where T : class
         {
             if (DatabaseType != DataBaseType.SqlServer)
-                throw new InvalidOperationException($"This library doesn't reference a {DatabaseType}BulkCopy so its not supported.");
+                throw new InvalidOperationException($"This library doesn't reference a {DatabaseType} BulkCopy so its not supported.");
             var dt = data.MapToDataTable(tableName);
-            using (var bulk = new SqlBulkCopy(DBConnectionString, bulkCopyOptions))
+            using (var bulk = new SqlBulkCopy(ConnectionString, bulkCopyOptions))
             {
                 long rowsCopied = 0;
                 bulk.DestinationTableName = dt.TableName;
@@ -1068,7 +1122,7 @@ namespace DotNetHelper.Database.DataSource
             if (DatabaseType != DataBaseType.SqlServer)
                 throw new InvalidOperationException($"This library doesn't reference a {DatabaseType}BulkCopy so its not supported.");
             var dt = data.MapToDataTable(tableName);
-            using (var bulk = new SqlBulkCopy(DBConnectionString, bulkCopyOptions))
+            using (var bulk = new SqlBulkCopy(ConnectionString, bulkCopyOptions))
             {
                 long rowsCopied = 0;
                 bulk.DestinationTableName = dt.TableName;

@@ -46,6 +46,7 @@ $sScriptVersion = "1.0"
 $sCurrentUser = whoami
 $sComputerName = $env:computername
 
+$sIsWindow = $true
 #-----------------------------------------------------------[Functions]------------------------------------------------------------
 
 function Log {
@@ -96,9 +97,13 @@ function SpinUpMySqlContainer{
 
 function SpinUpSqlServerContainer{
   $containerName = "mssqlserver";
+  $imageName = "mcr.microsoft.com/mssql/server:2019-latest"
+  if($sIsWindow){
+   $imageName = "microsoft/mssql-server-windows-developer:2017-latest"
+  }
   docker stop $containerName
   docker rm $containerName
-  docker run -p 1433:1433 --name $containerName --hostname $containerName -e ACCEPT_EULA=Y -e "SA_PASSWORD=$Password" -d mcr.microsoft.com/mssql/server:2019-latest
+  docker run -p 1433:1433 --name $containerName --hostname $containerName -e ACCEPT_EULA=Y -e "SA_PASSWORD=$Password" -d $imageName
   $dockerIpAddress = docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $containerName  
   Write-Output "Docker container $containerName IpAddress is $dockerIpAddress"
 }

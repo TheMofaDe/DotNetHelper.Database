@@ -14,26 +14,27 @@ namespace DotNetHelper.Database.Helper
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        internal static DataBaseType? GetDataBaseTypeFromDBConnectionType<T>() where T : DbConnection
+        internal static DataBaseType? GetDataBaseTypeFromDBConnectionType<T>(DbConnection dbConnection = null) where T : DbConnection
         {
-            if (typeof(T).Name == "SqlConnection")
+	        var type = dbConnection?.GetType() ?? typeof(T);
+
+			if (type.Name == "SqlConnection")
             {
                 return DataBaseType.SqlServer;
             }
-            if (typeof(T).Name == "SqliteConnection")
+            if (type.Name == "SqliteConnection")
             {
                 return DataBaseType.Sqlite;
             }
-            if (typeof(T).Name == "MySqlConnection")
+            if (type.Name == "MySqlConnection")
             {
                 return DataBaseType.MySql;
             }
-            if (typeof(T).Name == "OracleConnection")
+            if (type.Name == "OracleConnection")
             {
 	            return DataBaseType.Oracle;
             }
-
-			return null;
+            return null;
         }
 
     }

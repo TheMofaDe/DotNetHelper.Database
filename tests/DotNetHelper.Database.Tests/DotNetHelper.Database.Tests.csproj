@@ -1,9 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1;net452</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.0;net452</TargetFrameworks>
 
     <IsPackable>false</IsPackable>
+    <DefineConstants>$(DefineConstants);SUPPORTSQLITE</DefineConstants>
+
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,6 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Assets\calendar-16.png" />
     <None Remove="Scripts\mysql_cleanup_1.sql" />
     <None Remove="Scripts\mysql_init_1.sql" />
     <None Remove="Scripts\sqlite_cleanup_1.sql" />
@@ -35,6 +38,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Assets\calendar-16.png" />
     <EmbeddedResource Include="Scripts\sqlite_cleanup_1.sql" />
     <EmbeddedResource Include="Scripts\sqlite_cleanup_3.sql" />
     <EmbeddedResource Include="Scripts\sqlite_cleanup_2.sql" />
@@ -49,25 +53,24 @@
   <ItemGroup>
     <PackageReference Include="DotNetHelper.Serialization.Csv" Version="1.0.23" />
     <PackageReference Include="DotNetHelper.Serialization.Json" Version="1.0.19" />
-    <PackageReference Include="MySql.Data" Version="8.0.20" />
+    <PackageReference Include="MySql.Data" Version="8.0.21" />
     <PackageReference Include="nunit" Version="3.12.0" />
-    <PackageReference Include="NUnit3TestAdapter" Version="3.17.0">
+    <PackageReference Include="NUnit3TestAdapter" Version="4.0.0-alpha.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.6.1" />
-    <PackageReference Include="SimpleInjector" Version="5.0.2" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.0-preview-20200519-01" />
+    <PackageReference Include="SimpleInjector" Version="5.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\DotNetHelper.Database\DotNetHelper.Database.csproj" />
   </ItemGroup>
 
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
+  <ItemGroup Condition="'$(TargetFramework)' == 'net5.0' OR '$(TargetFramework)' == 'netcoreapp3.0'">
     <PackageReference Include="Microsoft.Data.Sqlite">
       <!--Microsoft.EntityFrameworkCore.Sqlite-->
-      <Version>3.1.5</Version>
+      <Version>5.0.0-preview.6.20312.4</Version>
     </PackageReference>
   </ItemGroup>
 
@@ -85,14 +88,12 @@
   </ItemGroup>
 
 
-  <PropertyGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'  ">
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net5.0'  ">
     <DefineConstants>$(DefineConstants);DOTNETCORE</DefineConstants>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1' OR '$(TargetFramework)' == 'net452' ">
-    <DefineConstants>$(DefineConstants);SUPPORTSQLITE</DefineConstants>
-  </PropertyGroup>
-
+  
+   
   <PropertyGroup Condition="'$(TargetFramework)' == 'net45' OR '$(TargetFramework)' == 'net452'  OR '$(TargetFramework)' == 'netstandard2.1' ">
     <DefineConstants>$(DefineConstants);SUPPORTDBFACTORIES</DefineConstants>
   </PropertyGroup>

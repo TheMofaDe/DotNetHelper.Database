@@ -5,6 +5,7 @@ using System.Data.Common;
 using System.Threading;
 using System.Threading.Tasks;
 using DotNetHelper.Database.DataSource;
+using DotNetHelper.Database.Helper;
 using DotNetHelper.ObjectToSql.Enum;
 
 namespace DotNetHelper.Database.Extension
@@ -14,23 +15,7 @@ namespace DotNetHelper.Database.Extension
 
 	    public static ObjectToSql.Services.ObjectToSql ObjToSql<T>(this T dbConnection, bool includeNonPublicProperties = true) where T : DbConnection
 	    {
-		    if (typeof(T).Name == "SqlConnection")
-		    {
-			    return new ObjectToSql.Services.ObjectToSql(DataBaseType.SqlServer, includeNonPublicProperties);
-		    }
-		    if (typeof(T).Name == "SqliteConnection")
-		    {
-			    return new ObjectToSql.Services.ObjectToSql(DataBaseType.Sqlite, includeNonPublicProperties);
-		    }
-		    if (typeof(T).Name == "MySqlConnection")
-		    {
-			    return new ObjectToSql.Services.ObjectToSql(DataBaseType.MySql, includeNonPublicProperties);
-		    }
-		    if (typeof(T).Name == "OracleConnection")
-		    {
-			    return new ObjectToSql.Services.ObjectToSql(DataBaseType.Oracle, includeNonPublicProperties);
-		    }
-		    return new ObjectToSql.Services.ObjectToSql (DataBaseType.SqlServer, includeNonPublicProperties);
+		    return new ObjectToSql.Services.ObjectToSql (DatabaseTypeHelper.GetDataBaseTypeFromDBConnectionType<T>(dbConnection) ?? DataBaseType.SqlServer, includeNonPublicProperties);
 	    }
 
 		public static DB<T> DB<T>(this T dbConnection) where T : DbConnection, new()
