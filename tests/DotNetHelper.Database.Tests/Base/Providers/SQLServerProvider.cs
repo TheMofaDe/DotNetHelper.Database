@@ -8,7 +8,7 @@ using DotNetHelper.Database.DataSource;
 
 namespace DotNetHelper.Database.Tests.Base.Providers
 {
-	public  class SqlServerProvider : IDatabaseProvider
+	public class SqlServerProvider : IDatabaseProvider
 	{
 		public DbConnection Instance => GetOpenConnection();
 		public string GetConnectionString() => "Data Source=localhost;Initial Catalog=master;Integrated Security=False;User Id=sa;Password=Password12!";

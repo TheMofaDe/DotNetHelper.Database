@@ -23,12 +23,12 @@
 #---------------------------------------------------------[Initialisations]--------------------------------------------------------
 [CmdletBinding()]
 PARAM ( 
-    [Parameter(Mandatory=$False)][Alias('n','name')][string]$DockerInstanceName = "mysql",
-    [Parameter(Mandatory=$False)][Alias('u','user')][string]$DbUser= "test",
-    [Parameter(Mandatory=$False)][Alias('p','pw')][string]$Password = "Password12!",
-    [Parameter(Mandatory=$False)][Alias('v','version')][string]$MySqlVersion = "latest",
-    [Parameter(Mandatory=$False)][Alias('d','database')][string]$DatabaseName = "sys",
-    [switch]$Add = $false
+  [Parameter(Mandatory = $False)][Alias('n', 'name')][string]$DockerInstanceName = "mysql",
+  [Parameter(Mandatory = $False)][Alias('u', 'user')][string]$DbUser = "test",
+  [Parameter(Mandatory = $False)][Alias('p', 'pw')][string]$Password = "Password12!",
+  [Parameter(Mandatory = $False)][Alias('v', 'version')][string]$MySqlVersion = "latest",
+  [Parameter(Mandatory = $False)][Alias('d', 'database')][string]$DatabaseName = "sys",
+  [switch]$Add = $false
 )
 
 
@@ -46,24 +46,24 @@ $sScriptVersion = "1.0"
 $sCurrentUser = whoami
 $sComputerName = $env:computername
 
-$sIsWindow = $true
+
 #-----------------------------------------------------------[Functions]------------------------------------------------------------
 
 function Log {
   Param(
-    [Parameter(Mandatory=$True)]$message,
-    [Parameter(Mandatory=$False)][bool]$WriteToHost= $True
+    [Parameter(Mandatory = $True)]$message,
+    [Parameter(Mandatory = $False)][bool]$WriteToHost = $True
     
   ) 
   $sEventSourceTest = $Null
-  $sEventSourceTest = Get-EventLog -list | Where-Object {$_.logdisplayname -eq $sEventSource}
-  If ($Null -eq $sEventSourceTest){
-      Remove-EventLog -Source $sEventSource -ErrorAction SilentlyContinue
-      New-EventLog -LogName Application -Source $sEventSource -ErrorAction SilentlyContinue
+  $sEventSourceTest = Get-EventLog -list | Where-Object { $_.logdisplayname -eq $sEventSource }
+  If ($Null -eq $sEventSourceTest) {
+    Remove-EventLog -Source $sEventSource -ErrorAction SilentlyContinue
+    New-EventLog -LogName Application -Source $sEventSource -ErrorAction SilentlyContinue
   }
   Write-EventLog -LogName "Application" -Source $sEventSource -EventID 3001 -Message $message
-  if($WriteToHost){
-  Write-Host $message
+  if ($WriteToHost) {
+    Write-Host $message
   }
 }
 
@@ -71,23 +71,23 @@ function Log {
 
 function RequestElevation {
 
-# Self-elevate the script if required
-if (-Not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] 'Administrator')) {
-  if ([int](Get-CimInstance -Class Win32_OperatingSystem | Select-Object -ExpandProperty BuildNumber) -ge 6000) {
-   $CommandLine = "-File `"" + $MyInvocation.MyCommand.Path + "`" " + $MyInvocation.UnboundArguments
-   Start-Process -FilePath PowerShell.exe -Verb Runas -ArgumentList $CommandLine
-   Exit
+  # Self-elevate the script if required
+  if (-Not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] 'Administrator')) {
+    if ([int](Get-CimInstance -Class Win32_OperatingSystem | Select-Object -ExpandProperty BuildNumber) -ge 6000) {
+      $CommandLine = "-File `"" + $MyInvocation.MyCommand.Path + "`" " + $MyInvocation.UnboundArguments
+      Start-Process -FilePath PowerShell.exe -Verb Runas -ArgumentList $CommandLine
+      Exit
+    }
   }
- }
 
 }
 
-function StopAndRemoveAllDockerContainer{
+function StopAndRemoveAllDockerContainer {
   docker stop $(docker ps -a -q)
   docker rm $(docker ps -a -q)
 }
 
-function SpinUpMySqlContainer{
+function SpinUpMySqlContainer {
   docker stop $DockerInstanceName
   docker rm $DockerInstanceName
   docker run -p 3306:3306 --name $DockerInstanceName --hostname $DockerInstanceName -e MYSQL_ROOT_PASSWORD=$Password -e MYSQL_DATABASE=$DatabaseName -e MYSQL_USER=$DbUser -e MYSQL_PASSWORD=$Password -d mysql:$MySqlVersion 
@@ -95,11 +95,11 @@ function SpinUpMySqlContainer{
   Write-Output "Docker container $DockerInstanceName IpAddress is $dockerIpAddress"
 }
 
-function SpinUpSqlServerContainer{
+function SpinUpSqlServerContainer {
   $containerName = "mssqlserver";
   $imageName = "mcr.microsoft.com/mssql/server:2019-latest"
-  if($sIsWindow){
-   $imageName = "microsoft/mssql-server-windows-developer:2017-latest"
+  if ($IsWindows) {
+    $imageName = "microsoft/mssql-server-windows-developer:2017-latest"
   }
   docker stop $containerName
   docker rm $containerName

@@ -33,7 +33,7 @@ namespace DotNetHelper.Database.Tests.Base
 
 		public static TProvider Provider { get; } = DatabaseProvider<TProvider>.Instance;
 
-	
+
 		protected static CultureInfo ActiveCulture
 		{
 			get { return Thread.CurrentThread.CurrentCulture; }
@@ -99,7 +99,7 @@ namespace DotNetHelper.Database.Tests.Base
 				&& one.FavoriteColor == two.FavoriteColor
 				&& one.FirstName == two.FirstName
 				&& one.IdentityField == two.IdentityField;
-	
+
 
 			return match;
 		}

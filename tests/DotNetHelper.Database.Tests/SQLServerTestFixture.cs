@@ -21,7 +21,7 @@ using NUnit.Framework;
 namespace DotNetHelper.Database.Tests
 {
 
-	[TestFixtureSource("TestObjects")]
+
 	public class DatabaseTextFixture : TestBase<SqlServerProvider>
 	{
 		private DB<DbConnection> _database;
@@ -539,7 +539,7 @@ CREATE TABLE [master].[dbo].[SpecialDataTypeTable](
 			Database.Execute(MockEmployee.Hashset.Take(2).Last(), ActionType.Insert);
 			Database.Execute(MockEmployee.Hashset.Take(3).Last(), ActionType.Insert);
 
-		
+
 			var transactionSql = new List<string>()
 			{
 				  $"UPDATE Employee SET CreatedAt = '2019-01-01' WHERE IdentityField = 1"
@@ -560,7 +560,7 @@ CREATE TABLE [master].[dbo].[SpecialDataTypeTable](
 				.MapToList<string>()
 				.ToList();
 
-			
+
 			Assert.That(list[0] == null, $"ExecuteTransaction didn't execute the update statement succesfully {list[0]}");
 			Assert.That(list[1] == null, $"ExecuteTransaction didn't execute the update statement succesfully {list[1]}");
 			Assert.That(list[2] == null, $"ExecuteTransaction didn't execute the update statement succesfully {list[2]}");
@@ -708,7 +708,7 @@ CREATE TABLE [master].[dbo].[SpecialDataTypeTable](
 		}
 
 
-	
+
 
 	}
 }
