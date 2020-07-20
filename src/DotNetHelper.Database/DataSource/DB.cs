@@ -19,7 +19,7 @@ namespace DotNetHelper.Database.DataSource
 	/// A powerful & simple class for dealing with simple CRUD operation that doesn't required you to write sql but also provided an overload to pass sql if needed
 	/// </summary>
 	/// <typeparam name="TDbConnection">An implementation of IDBConnection</typeparam>
-	public class DB<TDbConnection> where TDbConnection : DbConnection
+	public class DB<TDbConnection> : IDisposable where TDbConnection : DbConnection
 	{
 		/// <summary>d
 		/// The connection string to the database
@@ -298,56 +298,61 @@ namespace DotNetHelper.Database.DataSource
 		public int ExecuteTransaction(List<KeyValuePair<string, IEnumerable<DbParameter>>> sqls, bool rollbackOnException, bool throwException = true)
 		{
 			var didConnectionOpen = DBConnection.OpenSafely();
-			try
+
+			var recordAffected = 0;
+			if (sqls == null || !sqls.Any())
+				return recordAffected;
+
+
+			(DbCommand command, DbTransaction transaction) = GetNewCommandAndTransaction(DBConnection);
+			using (command)
 			{
-				var recordAffected = 0;
-				if (sqls == null || !sqls.Any())
-					return recordAffected;
-
-				var obj = GetNewCommandAndTransaction(DBConnection);
-				using var command = obj.command;
-				using var transaction = obj.transaction;
-				try
+				using (transaction)
 				{
-					sqls.ForEach(delegate (KeyValuePair<string, IEnumerable<DbParameter>> pair)
+					try
 					{
-#pragma warning disable CA2100 // Review SQL queries for security vulnerabilities
-						command.CommandText = pair.Key;
-#pragma warning restore CA2100 // Review SQL queries for security vulnerabilities
-						if (pair.Value != null)
+						sqls.ForEach(delegate (KeyValuePair<string, IEnumerable<DbParameter>> pair)
 						{
-							command?.Parameters?.Clear(); // Clear any previous parameters
-							command.Parameters.AddRange(pair.Value);
-						}
-
-						recordAffected += command.ExecuteNonQuery();
-					});
-					transaction.Commit();
-				}
-				catch (Exception)
-				{
-					if (rollbackOnException)
-					{
-						transaction.Rollback();
-						recordAffected = 0;
-					}
-					else
-					{
+#pragma warning disable CA2100 // Review SQL queries for security vulnerabilities
+							command.CommandText = pair.Key;
+#pragma warning restore CA2100 // Review SQL queries for security vulnerabilities
+							if (pair.Value != null)
+							{
+								command.Parameters?.Clear(); // Clear any previous parameters
+								command.Parameters?.AddRange(pair.Value);
+							}
+							recordAffected += command.ExecuteNonQuery();
+						});
 						transaction.Commit();
 					}
-					if (throwException)
+					catch (Exception)
 					{
-						throw;
+						if (rollbackOnException)
+						{
+							transaction.Rollback();
+							recordAffected = 0;
+						}
+						else
+						{
+							transaction.Commit();
+						}
+						if (throwException)
+						{
+							throw;
+						}
 					}
+					finally
+					{
+						if (didConnectionOpen)
+							DBConnection.Close();
+						//transaction?.Dispose();
+						//command?.Dispose();
+					}
+
 				}
-				return recordAffected;
-			}
-			finally
-			{
-				if (didConnectionOpen)
-					DBConnection.Close();
 			}
 
+			return recordAffected;
 		}
 
 
@@ -422,7 +427,8 @@ namespace DotNetHelper.Database.DataSource
 		public DbDataReader GetDataReader(string sql, CommandType commandType = CommandType.Text, List<DbParameter> parameters = null)
 		{
 			var didConnectionOpen = DBConnection.OpenSafely();
-			using var command = GetNewCommand(DBConnection, sql, commandType, parameters);
+			//using var command = GetNewCommand(DBConnection, sql, commandType, parameters); // SQLITE DOESN'T ON .NET CORE DOESN"T PLAY WELL 
+			 var command = GetNewCommand(DBConnection, sql, commandType, parameters);
 			return command.ExecuteReader(CommandBehavior.CloseConnection);
 		}
 
@@ -1163,12 +1169,15 @@ namespace DotNetHelper.Database.DataSource
 			if (disposing)
 			{
 				// Free any other managed objects here.
+				ParameterBuilder?.Dispose();
+				DBConnection?.Dispose();
 			}
-			ParameterBuilder.Dispose();
 
 			// Free any unmanaged objects here.
 			//
 			_disposed = true;
 		}
+
+
 	}
 }

@@ -1,6 +1,19 @@
 <Project>
   <Import Project="$(RepoRootPath)build\msbuild\Version.props"/>
 
+  <PropertyGroup Condition="$([System.Text.RegularExpressions.Regex]::IsMatch('$(TargetFramework)', '^net\d'))">
+    <DefineConstants>$(DefineConstants);NETFRAMEWORK</DefineConstants>
+    <NETFRAMEWORK>true</NETFRAMEWORK>
+  </PropertyGroup>
+  <PropertyGroup Condition="$([System.Text.RegularExpressions.Regex]::IsMatch('$(TargetFramework)', '^netstandard\d'))">
+    <DefineConstants>$(DefineConstants);NETSTANDARD</DefineConstants>
+    <NETSTANDARD>true</NETSTANDARD>
+  </PropertyGroup>
+  <PropertyGroup Condition="$([System.Text.RegularExpressions.Regex]::IsMatch('$(TargetFramework)', '^netcoreapp\d'))">
+    <DefineConstants>$(DefineConstants);NETCORE</DefineConstants>
+    <NETCORE>true</NETCORE>
+  </PropertyGroup>
+
   <PropertyGroup>
     <DefineConstants Condition="$([MSBuild]::IsOSPlatform('OSX')) == 'true'">__MACOS__;$(DefineConstants)</DefineConstants>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
@@ -22,7 +35,7 @@
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <NeutralLanguage>en-US</NeutralLanguage>
     <language>$(NeutralLanguage)</language>
-    <Copyright>2020 Joseph McNeal Jr</Copyright>
+    <Copyright>$([System.DateTime]::Now.ToString('yyyy')) Joseph McNeal Jr</Copyright>
     <NeutralLanguage>en-US</NeutralLanguage>
     <language>$(NeutralLanguage)</language>
     <LangVersion>latest</LangVersion>

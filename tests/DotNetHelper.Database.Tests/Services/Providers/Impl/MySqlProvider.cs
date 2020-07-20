@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
-using System.Data.SqlClient;
-using System.Text;
 using MySql.Data.MySqlClient;
 
-namespace DotNetHelper.Database.Tests.Base.Providers
+namespace DotNetHelper.Database.Tests.Services.Providers.Impl
 {
 	public class MySqlProvider : IDatabaseProvider
 	{
 
-		public DbConnection Instance => GetOpenConnection();
 		public string GetConnectionString() => GetMySqlConnectionString();
 
 		string GetMySqlConnectionString()
@@ -46,6 +42,7 @@ namespace DotNetHelper.Database.Tests.Base.Providers
 
 		public MySqlProvider()
 		{
+
 		}
 	}
 }

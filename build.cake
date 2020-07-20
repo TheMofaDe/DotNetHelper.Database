@@ -11,11 +11,12 @@
 #tool "nuget:?package=docfx.console&version=2.55.0"
 #tool "nuget:?package=nuget.commandline&version=5.4.0"
 #tool "nuget:?package=ReportGenerator&version=4.6.1"
-#tool "nuget:?package=NUnit.ConsoleRunner&version=3.11.1"
-#tool "nuget:?package=NunitXml.TestLogger&version=2.1.62"
+//#tool "nuget:?package=NUnit.ConsoleRunner&version=3.11.1"
+//#tool "nuget:?package=NunitXml.TestLogger&version=2.1.62"
 
 // Install .NET Core Global tools.
 #tool "dotnet:?package=Codecov.Tool&version=1.10.0"
+
 
 // Load other scripts.
 #load "./build/cake/utils.cake"

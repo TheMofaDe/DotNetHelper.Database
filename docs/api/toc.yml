@@ -7,14 +7,14 @@
 - uid: DotNetHelper.Database.DataSource
   name: DotNetHelper.Database.DataSource
   items:
-  - uid: DotNetHelper.Database.DataSource.DatabaseAccess`1
-    name: DatabaseAccess<TDbConnection>
-    name.vb: DatabaseAccess(Of TDbConnection)
+  - uid: DotNetHelper.Database.DataSource.DB`1
+    name: DB<TDbConnection>
+    name.vb: DB(Of TDbConnection)
 - uid: DotNetHelper.Database.Extension
   name: DotNetHelper.Database.Extension
   items:
-  - uid: DotNetHelper.Database.Extension.DBConnectionExtension
-    name: DBConnectionExtension
+  - uid: DotNetHelper.Database.Extension.DbConnectionExtension
+    name: DbConnectionExtension
   - uid: DotNetHelper.Database.Extension.ExtDataReader
     name: ExtDataReader
   - uid: DotNetHelper.Database.Extension.ExtDataTable
@@ -28,8 +28,3 @@
   items:
   - uid: DotNetHelper.Database.Helper.DBProviderHelper
     name: DBProviderHelper
-- uid: DotNetHelper.Database.Interface
-  name: DotNetHelper.Database.Interface
-  items:
-  - uid: DotNetHelper.Database.Interface.IDatabaseAccess
-    name: IDatabaseAccess

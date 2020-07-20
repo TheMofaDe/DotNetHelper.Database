@@ -1,17 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
-using System.Text;
-using DotNetHelper.Database.DataSource;
 
-namespace DotNetHelper.Database.Tests.Base.Providers
+namespace DotNetHelper.Database.Tests.Services.Providers.Impl
 {
 	public class SqlServerProvider : IDatabaseProvider
 	{
-		public DbConnection Instance => GetOpenConnection();
+
+#if IsRunningOnAppVeyor
+		public string GetConnectionString() => "Server=(local)\SQL2017;Initial Catalog=master;Integrated Security=False;User Id=sa;Password=Password12!";
+#else
 		public string GetConnectionString() => "Data Source=localhost;Initial Catalog=master;Integrated Security=False;User Id=sa;Password=Password12!";
+#endif
 		public DbConnection GetClosedConnection()
 		{
 			var conn = new SqlConnection(GetConnectionString());
@@ -31,6 +32,7 @@ namespace DotNetHelper.Database.Tests.Base.Providers
 
 		public SqlServerProvider()
 		{
+
 		}
 	}
 }

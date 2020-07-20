@@ -1,17 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
-using System.Text;
-#if NET452
+using System.IO;
 using Microsoft.Data.Sqlite;
 
-namespace DotNetHelper.Database.Tests.Base.Providers
+namespace DotNetHelper.Database.Tests.Services.Providers.Impl
 {
 	public class SqliteProvider : IDatabaseProvider
 	{
-		public DbConnection Instance => GetOpenConnection();
-		public string GetConnectionString() => "Data Source=:memory:";
+
+		public string GetConnectionString() => $"Data Source={Path.Combine(Directory.GetCurrentDirectory(), "data.db")};";
 		public DbConnection GetClosedConnection()
 		{
 			var conn = new SqliteConnection(GetConnectionString());
@@ -29,11 +27,10 @@ namespace DotNetHelper.Database.Tests.Base.Providers
 			return conn;
 		}
 
-		protected SqliteProvider()
+		public SqliteProvider()
 		{
 		}
-		
+
 	}
 
 }
-#endif

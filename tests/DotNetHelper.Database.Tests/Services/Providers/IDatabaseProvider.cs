@@ -1,11 +1,9 @@
-﻿using System;
-using System.Data.Common;
+﻿using System.Data.Common;
 
-namespace DotNetHelper.Database.Tests.Base.Providers
+namespace DotNetHelper.Database.Tests.Services.Providers
 {
 	public interface IDatabaseProvider
 	{
-		DbConnection Instance { get; }
 		string GetConnectionString();
 		DbConnection GetClosedConnection();
 		DbConnection GetOpenConnection();

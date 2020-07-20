@@ -1,6 +1,7 @@
 <Project>
   <PropertyGroup>
     <Configuration Condition="'$(Configuration)' == ''">Debug</Configuration>
+    <APPVEYOR Condition="'$(APPVEYOR)' == ''">false</APPVEYOR>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -15,12 +16,17 @@
 
 
 <!-- ENVIRONMENT PROPERTIES -->
+
+<PropertyGroup Condition="$(APPVEYOR)">
+  <DefineConstants>$(DefineConstants);IsRunningOnAppVeyor</DefineConstants>
+</PropertyGroup>
+
   <PropertyGroup>
     <InAzureDevOps>false</InAzureDevOps>
-    <InAzureDevOps Condition="'$(TF_BUILD)' == 'true'">true</InAzureDevOps>
+    <InAzureDevOps Condition="'$(TF_BUILD)' == 'True'">true</InAzureDevOps>
     <InCI>false</InCI>
-    
-    <InCI Condition="$(InAzureDevOps)">true</InCI>
+    <InCI Condition="'$(InAzureDevOps)' == 'True' or '$(APPVEYOR)' == 'True'" >true</InCI>
+
     <IsWindows>$([MSBuild]::IsOSPlatform('Windows'))</IsWindows>
     <IsMac>$([MSBuild]::IsOSPlatform('OSX'))</IsMac>
     <IsLinux>$([MSBuild]::IsOSPlatform('Linux'))</IsLinux>

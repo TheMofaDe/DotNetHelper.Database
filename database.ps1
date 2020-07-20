@@ -82,6 +82,27 @@ function RequestElevation {
 
 }
 
+
+function IsDockerRunning(){
+
+  Try
+  {
+     $process = Get-Process 'com.docker.proxy'
+     Write-Output $process
+     return $true;
+  }
+  Catch
+  {
+      #net start docker
+      #net start com.docker.service
+      #$ErrorMessage = $_.Exception.Message
+      #$FailedItem = $_.Exception.ItemName
+      return $false;
+      Break
+  }
+}
+
+
 function StopAndRemoveAllDockerContainer {
   docker stop $(docker ps -a -q)
   docker rm $(docker ps -a -q)
@@ -108,7 +129,15 @@ function SpinUpSqlServerContainer {
   Write-Output "Docker container $containerName IpAddress is $dockerIpAddress"
 }
 
+
+Write-Output "Running on $IsWindows"
+
+if(IsDockerRunning){
+  # docker start
+}
+
+
 StopAndRemoveAllDockerContainer
 
-SpinUpMySqlContainer
+#SpinUpMySqlContainer
 SpinUpSqlServerContainer
