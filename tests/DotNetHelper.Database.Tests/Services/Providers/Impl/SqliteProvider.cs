@@ -9,7 +9,8 @@ namespace DotNetHelper.Database.Tests.Services.Providers.Impl
 	public class SqliteProvider : IDatabaseProvider
 	{
 
-		public string GetConnectionString() => $"Data Source={Path.Combine(Directory.GetCurrentDirectory(), "data.db")};";
+		//public string GetConnectionString() => $"Data Source={Path.Combine(Directory.GetCurrentDirectory(), "data.db")};";
+		public string GetConnectionString() => $"Data Source=:memory:";
 		public DbConnection GetClosedConnection()
 		{
 			var conn = new SqliteConnection(GetConnectionString());

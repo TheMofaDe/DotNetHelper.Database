@@ -26,7 +26,7 @@ PARAM (
   [Parameter(Mandatory = $False)][Alias('n', 'name')][string]$DockerInstanceName = "mysql",
   [Parameter(Mandatory = $False)][Alias('u', 'user')][string]$DbUser = "test",
   [Parameter(Mandatory = $False)][Alias('p', 'pw')][string]$Password = "Password12!",
-  [Parameter(Mandatory = $False)][Alias('v', 'version')][string]$MySqlVersion = "latest",
+  [Parameter(Mandatory = $False)][Alias('v', 'version')][string]$MySqlVersion = "5.7.31",
   [Parameter(Mandatory = $False)][Alias('d', 'database')][string]$DatabaseName = "sys",
   [switch]$Add = $false
 )
@@ -130,7 +130,7 @@ function SpinUpSqlServerContainer {
 }
 
 
-Write-Output "Running on $IsWindows"
+Write-Output "Running on windows --> $IsWindows"
 
 if(IsDockerRunning){
   # docker start
@@ -139,5 +139,5 @@ if(IsDockerRunning){
 
 StopAndRemoveAllDockerContainer
 
-#SpinUpMySqlContainer
+SpinUpMySqlContainer
 SpinUpSqlServerContainer
