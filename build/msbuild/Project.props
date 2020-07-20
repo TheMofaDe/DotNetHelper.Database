@@ -20,24 +20,22 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <!-- <GeneratePackageOnBuild>true</GeneratePackageOnBuild> -->
     <PackageProjectUrl>https://github.com/TheMofaDe/DotNetHelper.Database</PackageProjectUrl>
-    <PackageIconUrl>https://github.com/TheMofaDe/DotNetHelper.Database</PackageIconUrl>
+    <!-- <PackageIconUrl>https://github.com/TheMofaDe/DotNetHelper.Database</PackageIconUrl> -->
     <RepositoryUrl>https://github.com/TheMofaDe/DotNetHelper.Database</RepositoryUrl>
     <PackageReleaseNotes>https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/CHANGELOG.md</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageTags>ORM,database,sql,generic,dynamic,anonyous</PackageTags>
     <RepositoryType>git</RepositoryType>
     <Description>DotNetHelper.Database is a lightweight ORM that works with generics,dynamic, &amp; anonyous objects for ADO.NET</Description>
-    <PackageLicenseFile>$(RepoRootPath)LICENSE.md</PackageLicenseFile>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <RepositoryCommit>$(GitCommit)</RepositoryCommit>
+    <RepositoryBranch>$(GitBranch)</RepositoryBranch>
     <Authors>Joseph McNeal Jr</Authors>
     <Company>Joseph McNeal Jr</Company>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <NeutralLanguage>en-US</NeutralLanguage>
     <language>$(NeutralLanguage)</language>
     <Copyright>$([System.DateTime]::Now.ToString('yyyy')) Joseph McNeal Jr</Copyright>
-    <NeutralLanguage>en-US</NeutralLanguage>
-    <language>$(NeutralLanguage)</language>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
@@ -51,6 +49,7 @@
 
 
   <ItemGroup>
+    <None Include="..\..\LICENSE.md" Pack="true" PackagePath="LICENSE.md"/>
     <Compile Include="$(MSBuildThisFileDirectory)ThisAssembly.cs" />
     <Compile
       Condition="'$(BuildingInsideVisualStudio)' == 'true' and Exists('$(IntermediateOutputPath)$(MSBuildProjectName).AssemblyInfo$(DefaultLanguageSourceExtension)')"

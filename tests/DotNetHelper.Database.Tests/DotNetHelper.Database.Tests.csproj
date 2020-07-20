@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net452;netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.1</TargetFrameworks>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
@@ -27,21 +27,19 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="coverlet.collector" Version="1.3.0">
-      <PrivateAssets>all</PrivateAssets>
+    <PackageReference Include="coverlet.msbuild" Version="2.9.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
 
   <ItemGroup Condition="'$(NETCORE)' == 'true' or '$(NETSTANDARD)' == 'true'">
-    <PackageReference Include="Microsoft.Data.Sqlite">
-      <Version>5.0.0-preview.6.20312.4</Version>
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="5.0.0-preview.6.20312.4">
     </PackageReference>
   </ItemGroup>
 
   <ItemGroup Condition="'$(NETFRAMEWORK)' == 'true' ">
-    <PackageReference Include="Microsoft.Data.Sqlite">
-      <Version>2.0.0-preview1-final</Version>
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="2.0.0-preview1-final">
     </PackageReference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />

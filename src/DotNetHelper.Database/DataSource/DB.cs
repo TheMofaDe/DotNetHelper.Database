@@ -428,7 +428,7 @@ namespace DotNetHelper.Database.DataSource
 		{
 			var didConnectionOpen = DBConnection.OpenSafely();
 			//using var command = GetNewCommand(DBConnection, sql, commandType, parameters); // SQLITE DOESN'T ON .NET CORE DOESN"T PLAY WELL 
-			 var command = GetNewCommand(DBConnection, sql, commandType, parameters);
+			var command = GetNewCommand(DBConnection, sql, commandType, parameters);
 			return command.ExecuteReader(CommandBehavior.CloseConnection);
 		}
 

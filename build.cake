@@ -3,20 +3,16 @@
 
 // Install addins.
 #addin "nuget:?package=Cake.Codecov&version=0.8.0"
-#addin "nuget:?package=Cake.Json&version=4.0.0"
+#addin "nuget:?package=Cake.Json&version=5.2.0"
 #addin "nuget:?package=Cake.Incubator&version=5.1.0"
 #addin "nuget:?package=Cake.DocFx&version=0.13.1"
-#addin "nuget:?package=Newtonsoft.Json&version=12.0.1"
+#addin "nuget:?package=Newtonsoft.Json&version=12.0.2"
 // Install tools.
-#tool "nuget:?package=docfx.console&version=2.55.0"
-#tool "nuget:?package=nuget.commandline&version=5.4.0"
+#tool "nuget:?package=docfx.console&version=2.56.1"
+#tool "nuget:?package=nuget.commandline&version=5.6.0"
 #tool "nuget:?package=ReportGenerator&version=4.6.1"
 //#tool "nuget:?package=NUnit.ConsoleRunner&version=3.11.1"
 //#tool "nuget:?package=NunitXml.TestLogger&version=2.1.62"
-
-// Install .NET Core Global tools.
-#tool "dotnet:?package=Codecov.Tool&version=1.10.0"
-
 
 // Load other scripts.
 #load "./build/cake/utils.cake"

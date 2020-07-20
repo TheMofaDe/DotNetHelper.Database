@@ -25,17 +25,17 @@ using FactAttribute = DotNetHelper.Database.Tests.SkippableFactAttribute;
 namespace DotNetHelper.Database.Tests
 {
 	public abstract partial class BaseTestSuite<TDatabaseProvider> : IClassFixture<TDatabaseProvider> where TDatabaseProvider : class, IDatabaseProvider
-		{
+	{
 		protected DB<DbConnection> Database { get; private set; }
 
 		protected BaseTestSuite(TDatabaseProvider databaseProvider)
 		{
 			Database = new DB<DbConnection>(databaseProvider.GetClosedConnection());
 
-			Console.WriteLine("Using Provider: {0}", databaseProvider.GetType().FullName);
-			Console.WriteLine("Using Connectionstring: {0}", databaseProvider.GetConnectionString());
-			Console.WriteLine(".NET: " + Environment.Version);
-			Console.WriteLine("Current Directory " + Directory.GetCurrentDirectory());
+			//Console.WriteLine("Using Provider: {0}", databaseProvider.GetType().FullName);
+			//Console.WriteLine("Using Connectionstring: {0}", databaseProvider.GetConnectionString());
+			//Console.WriteLine(".NET: " + Environment.Version);
+			//Console.WriteLine("Current Directory " + Directory.GetCurrentDirectory());
 		}
 
 		protected static CultureInfo ActiveCulture
@@ -130,7 +130,8 @@ namespace DotNetHelper.Database.Tests
 			var obj = new SpecialDataTypeTable()
 			{
 				DateTimeOffset = DateTimeOffset.Now
-				, Id = Guid.Parse("a19ed8e6-c455-4164-afac-d4043095a4ee")
+				,
+				Id = Guid.Parse("a19ed8e6-c455-4164-afac-d4043095a4ee")
 			};
 			using (var stream = typeof(IDatabaseProvider).Assembly.GetManifestResourceStream("DotNetHelper.Database.Tests.Assets.calendar-16.png"))
 			{
@@ -305,7 +306,7 @@ namespace DotNetHelper.Database.Tests
 			// TODO :: REMOVE MYSQL
 			if (Database.DatabaseType == DataBaseType.MySql)
 				return;
-	
+
 
 			var newEmployee = MockEmployee.Hashset.Take(3).Last();
 			var outputtedResult = Database.ExecuteAndGetOutput(newEmployee, ActionType.Insert, e => e.IdentityField);
@@ -429,7 +430,7 @@ namespace DotNetHelper.Database.Tests
 			Database.Execute(MockEmployee.Hashset.Take(2).Last(), ActionType.Insert);
 			Database.Execute(MockEmployee.Hashset.Take(3).Last(), ActionType.Insert);
 
-			var dataReader = Database.GetDataReader("SELECT * FROM Employee");
+			//    var dataReader = Database.GetDataReader("SELECT * FROM Employee");
 			var list = Database.Get<Employee>();
 			Assert.Equal(3, list.Count);
 			Assert.True(CompareEmployees(list[0], MockEmployee.Hashset.Take(1).Last()));
@@ -452,7 +453,7 @@ namespace DotNetHelper.Database.Tests
 			var recordAffected = Database.Execute(data, ActionType.Insert);
 			var employees = Database.Get<Employee>();
 
-			Assert.Equal(3,recordAffected);
+			Assert.Equal(3, recordAffected);
 			Assert.True(employees[0].CreatedAt == DateTime.Parse("2019-01-01"), "ExecuteTransaction didn't execute the update statement succesfully");
 			Assert.True(employees[1].CreatedAt == null, "ExecuteTransaction didn't execute the update statement succesfully");
 			Assert.True(employees[2].CreatedAt == null, "ExecuteTransaction didn't execute the update statement succesfully");
@@ -635,7 +636,7 @@ namespace DotNetHelper.Database.Tests
 			Database.Execute(mockObj, ActionType.Insert, null, Xml.SerializeToString, Json.SerializeToString, Csv.SerializeToString, s => s.IdentityField);
 			var dt = Database.GetDataTable($"SELECT * FROM {new SqlTable(Database.DatabaseType, mockObj.GetType()).TableName}", CommandType.Text);
 			Assert.NotNull(dt);
-			Assert.Equal(1,dt.Rows.Count);
+			Assert.Equal(1, dt.Rows.Count);
 #endif
 		}
 

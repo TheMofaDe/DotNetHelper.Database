@@ -51,11 +51,10 @@ namespace DotNetHelper.Database.Tests
 
 		public override void Test_Insert_Employee_And_Output_Identity_Field()
 		{
-
-			    Assert.Throws<NotImplementedException>(delegate
-				{
-					Database.ExecuteAndGetOutput(MockEmployee.Hashset.Take(3).Last(), ActionType.Insert, e => e.IdentityField);
-				});
+			Assert.Throws<NotImplementedException>(delegate
+			{
+				Database.ExecuteAndGetOutput(MockEmployee.Hashset.Take(3).Last(), ActionType.Insert, e => e.IdentityField);
+			});
 		}
 
 

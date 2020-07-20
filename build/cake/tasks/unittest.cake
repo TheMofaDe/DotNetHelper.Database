@@ -44,7 +44,7 @@ var unitTestTask = Task("UnitTest")
 
             
                 if (!parameters.IsRunningOnMacOS) {
-                    //settings.TestAdapterPath = new DirectoryPath(".");
+                    settings.TestAdapterPath = new DirectoryPath(".");
                     //settings.Logger = $"nunit;LogFilePath={resultsPath}"; // TODO :: enable if your using NUnit as your testing framework
                 }
 
