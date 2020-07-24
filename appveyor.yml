@@ -1,10 +1,15 @@
 image: Visual Studio 2019
 
 assembly_info:
-  patch: false
+    patch: false
+
+init:
+    - net start MSSQL$SQL2019
+services:
+    - mysql
 
 build_script:
-  - pwsh: ./build.ps1 -script build.cake -target Default
+    - pwsh: ./build.ps1 -script build.cake -target Default
 
 test: off
 skip_tags: true
