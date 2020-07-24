@@ -9,7 +9,7 @@ namespace DotNetHelper.Database.Tests.Services.Providers.Impl
 	{
 
 #if IsRunningOnAppVeyor
-		public string GetConnectionString() => "Server=(local)\SQL2017;Initial Catalog=master;Integrated Security=False;User Id=sa;Password=Password12!";
+		public string GetConnectionString() => "Server=(local)\\SQL2017;Initial Catalog=master;Integrated Security=False;User Id=sa;Password=Password12!";
 #else
 		public string GetConnectionString() => "Data Source=localhost;Initial Catalog=master;Integrated Security=False;User Id=sa;Password=Password12!";
 #endif

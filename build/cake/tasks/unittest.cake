@@ -65,7 +65,10 @@ var unitTestTask = Task("UnitTest")
             MaxDegreeOfParallelism = -1,
             CancellationToken = default
         };
-        Parallel.Invoke(options, actions.ToArray());
+         foreach(var action in actions){
+             action.Invoke();
+         }
+       // Parallel.Invoke(options, actions.ToArray());
     }
 
      foreach (var coverageFile in parameters.Paths.Directories.CoverageResults) {
