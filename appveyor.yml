@@ -3,9 +3,8 @@ image: Visual Studio 2019
 assembly_info:
     patch: false
 
-init:
-    - net start MSSQL$SQL2019
 services:
+    - mssql2017
     - mysql
 
 build_script:
