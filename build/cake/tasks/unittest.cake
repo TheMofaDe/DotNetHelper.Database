@@ -16,6 +16,15 @@ var unitTestTask = Task("UnitTest")
 
         foreach(var framework in project.TargetFrameworkVersions){
 
+
+            
+            if(!parameters.IsRunningOnWindows && framework == "net452"){
+                // will always throw 
+                //System.TypeLoadException: Could not load type of field 'Xunit.Runner.VisualStudio.VsExecutionSink:recorder' (4) due to: 
+                //Could not load file or assembly 'Microsoft.VisualStudio.TestPlatform.ObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a' 
+            
+
+            }else{
             frameworks.Add(framework);
             
             actions.Add(() =>
@@ -55,6 +64,7 @@ var unitTestTask = Task("UnitTest")
                 DotNetCoreTest(project.ProjectFilePath.FullPath, settings);
         
             });
+            }
 
         }
    } 
@@ -65,15 +75,14 @@ var unitTestTask = Task("UnitTest")
             MaxDegreeOfParallelism = -1,
             CancellationToken = default
         };
-         foreach(var action in actions){
-             action.Invoke();
-         }
-       // Parallel.Invoke(options, actions.ToArray());
+       //  foreach(var action in actions){
+         //    action.Invoke();
+        // }
+        Parallel.Invoke(options, actions.ToArray());
     }
-
-     foreach (var coverageFile in parameters.Paths.Directories.CoverageResults) {
-        ReportGenerator(coverageFile,parameters.Paths.Directories.TestResultsOutput + "/" + "htmlreports");
-     }
+    foreach (var coverageFile in parameters.Paths.Directories.CoverageResults) {
+         ReportGenerator(coverageFile,parameters.Paths.Directories.TestResultsOutput + "/" + "htmlreports");
+    }
 })
 .ReportError(exception =>
 {
