@@ -134,6 +134,10 @@ Write-Output "Running on windows --> $IsWindows"
 
 if(IsDockerRunning){
   # docker start
+}else{
+# https://stackoverflow.com/questions/52621129/restart-docker-windows-10-command-line/55212066#55212066
+# net start docker
+# net start com.docker.service
 }
 
 

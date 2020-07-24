@@ -20,10 +20,10 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <PackageProjectUrl>https://github.com/TheMofaDe/DotNetHelper.Database</PackageProjectUrl>
+    <PackageProjectUrl>$(GitRepositoryUrl)</PackageProjectUrl>
     <!-- <PackageIconUrl>https://github.com/TheMofaDe/DotNetHelper.Database</PackageIconUrl> -->
-    <RepositoryUrl>https://github.com/TheMofaDe/DotNetHelper.Database</RepositoryUrl>
-    <PackageReleaseNotes>https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/CHANGELOG.md</PackageReleaseNotes>
+    <RepositoryUrl>$(GitRepositoryUrl)</RepositoryUrl>
+    <PackageReleaseNotes>$(GitRepositoryUrl)/blob/master/CHANGELOG.md</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageTags>ORM,database,sql,generic,dynamic,anonyous</PackageTags>
     <RepositoryType>git</RepositoryType>

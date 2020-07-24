@@ -430,7 +430,7 @@ namespace DotNetHelper.Database.DataSource
 			//using var command = GetNewCommand(DBConnection, sql, commandType, parameters); // SQLITE DOESN'T ON .NET CORE DOESN"T PLAY WELL 
 			var command = GetNewCommand(DBConnection, sql, commandType, parameters);
 			var dbDataReader = command.ExecuteReader(commandBehavior);
-			if(commandBehavior == CommandBehavior.CloseConnection)
+			if (commandBehavior == CommandBehavior.CloseConnection)
 				command.Dispose();
 			return dbDataReader;
 		}
@@ -464,7 +464,7 @@ namespace DotNetHelper.Database.DataSource
 		/// <returns></returns>
 		public DataTable GetDataTable(string selectSql, CommandType commandType = CommandType.Text, List<DbParameter> parameters = null)
 		{
-			var reader = GetDataReader(selectSql, commandType, parameters,CommandBehavior.Default);
+			var reader = GetDataReader(selectSql, commandType, parameters, CommandBehavior.Default);
 			var dt = new DataTable();
 			dt.Load(reader);
 			return dt;
@@ -640,7 +640,7 @@ namespace DotNetHelper.Database.DataSource
 		/// <returns>The sql result mapped to a list of </returns>
 		public List<T> Get<T>(string sql, CommandType commandType, Func<string, Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer, List<DbParameter> parameters = null) where T : class
 		{
-			return GetDataReader(sql, commandType, parameters,CommandBehavior.Default).MapToList<T>(xmlDeserializer, jsonDeserializer, csvDeserializer);
+			return GetDataReader(sql, commandType, parameters, CommandBehavior.Default).MapToList<T>(xmlDeserializer, jsonDeserializer, csvDeserializer);
 		}
 
 
@@ -989,7 +989,7 @@ namespace DotNetHelper.Database.DataSource
 
 			var sql = ObjectToSql.BuildQueryWithOutputs(actionType, null, outputFields);
 			var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, xmlSerializer, jsonSerializer, csvSerializer);
-			using var dataReader = GetDataReader(sql, CommandType.Text, parameters,CommandBehavior.Default);
+			using var dataReader = GetDataReader(sql, CommandType.Text, parameters, CommandBehavior.Default);
 			return dataReader.MapTo<T>(xmlDeserializer, jsonDeserializer, csvDeserializer);
 		}
 
@@ -1016,7 +1016,7 @@ namespace DotNetHelper.Database.DataSource
 
 			var sql = ObjectToSql.BuildQueryWithOutputs(actionType, null, outputFields);
 			var parameters = ObjectToSql.BuildDbParameterList(instance, GetNewParameter, xmlSerializer, jsonSerializer, csvSerializer);
-			using var dataReader = await GetDataReaderAsync(sql, CommandType.Text, parameters,CommandBehavior.Default);
+			using var dataReader = await GetDataReaderAsync(sql, CommandType.Text, parameters, CommandBehavior.Default);
 			return dataReader.MapTo<T>(xmlDeserializer, jsonDeserializer, csvDeserializer);
 		}
 
@@ -1079,8 +1079,8 @@ namespace DotNetHelper.Database.DataSource
 				throw new InvalidOperationException($"This library doesn't reference a {DatabaseType} BulkCopy so its not supported.");
 			if (DBConnection is SqlConnection sqlConnection)
 			{
-				using(var transaction = sqlConnection.BeginTransaction())
-				using (var bulk = new SqlBulkCopy(sqlConnection, bulkCopyOptions,transaction))
+				using (var transaction = sqlConnection.BeginTransaction())
+				using (var bulk = new SqlBulkCopy(sqlConnection, bulkCopyOptions, transaction))
 				{
 					var dt = data.MapToDataTable(tableName);
 					long rowsCopied = 0;
@@ -1145,30 +1145,31 @@ namespace DotNetHelper.Database.DataSource
 		{
 			if (DatabaseType != DataBaseType.SqlServer)
 				throw new InvalidOperationException($"This library doesn't reference a {DatabaseType}BulkCopy so its not supported.");
-			if(DBConnection is SqlConnection sqlConnection){
+			if (DBConnection is SqlConnection sqlConnection)
+			{
 
 				using (var transaction = sqlConnection.BeginTransaction())
-				using (var bulk = new SqlBulkCopy(sqlConnection, bulkCopyOptions,transaction))
-			{
-				var dt = data.MapToDataTable(tableName);
-				long rowsCopied = 0;
-				bulk.DestinationTableName = dt.TableName;
-				foreach (DataColumn dc in dt.Columns)
+				using (var bulk = new SqlBulkCopy(sqlConnection, bulkCopyOptions, transaction))
 				{
-					bulk.ColumnMappings.Add(dc.ColumnName, dc.ColumnName);
+					var dt = data.MapToDataTable(tableName);
+					long rowsCopied = 0;
+					bulk.DestinationTableName = dt.TableName;
+					foreach (DataColumn dc in dt.Columns)
+					{
+						bulk.ColumnMappings.Add(dc.ColumnName, dc.ColumnName);
+					}
+					bulk.BatchSize = batchSize;
+					bulk.NotifyAfter = dt.Rows.Count;
+					bulk.SqlRowsCopied += (s, e) => rowsCopied = e.RowsCopied;
+					await bulk.WriteToServerAsync(dt);
+					return rowsCopied;
 				}
-				bulk.BatchSize = batchSize;
-				bulk.NotifyAfter = dt.Rows.Count;
-				bulk.SqlRowsCopied += (s, e) => rowsCopied = e.RowsCopied;
-				await bulk.WriteToServerAsync(dt);
-				return rowsCopied;
+			}
+			else
+			{
+				throw new InvalidCastException($"Could not cast {DBConnection.GetType()} to a SQLConnection");
 			}
 		}
-		else
-		{
-			throw new InvalidCastException($"Could not cast {DBConnection.GetType()} to a SQLConnection");
-		}
-}
 
 
 		// Flag: Has Dispose already been called?

@@ -34,6 +34,7 @@ namespace DotNetHelper.Database.Helper
 			{
 				return DataBaseType.Oracle;
 			}
+
 			return null;
 		}
 

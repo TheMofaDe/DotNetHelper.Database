@@ -414,7 +414,7 @@ namespace DotNetHelper.Database.Tests
 			Database.Execute(MockEmployee.Hashset.Take(2).Last(), ActionType.Insert);
 			Database.Execute(MockEmployee.Hashset.Take(3).Last(), ActionType.Insert);
 
-			var list = Database.GetDataReader($"SELECT * FROM Employee", CommandType.Text,null,CommandBehavior.Default).MapToList<Employee>(null, null, null);
+			var list = Database.GetDataReader($"SELECT * FROM Employee", CommandType.Text, null, CommandBehavior.Default).MapToList<Employee>(null, null, null);
 			Assert.Equal(3, list.Count);
 			Assert.True(CompareEmployees(list[0], MockEmployee.Hashset.Take(1).Last()));
 			Assert.True(CompareEmployees(list[1], MockEmployee.Hashset.Take(2).Last()));
@@ -480,7 +480,7 @@ namespace DotNetHelper.Database.Tests
 					};
 			var recordAffected = Database.ExecuteTransaction(transactionSql, true, true);
 			var list = Database.Get<string>("SELECT CreatedAt FROM Employee", CommandType.Text, null);
-				
+
 
 			Assert.Equal(3, recordAffected);
 			Assert.True(DateTime.Parse(list[0]) == DateTime.Parse("2019-01-01"), "ExecuteTransaction didn't execute the update statement succesfully");

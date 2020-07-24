@@ -45,8 +45,8 @@ items:
   - DotNetHelper.Database.DataSource.DB`1.GetAsync``1(System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object})
   - DotNetHelper.Database.DataSource.DB`1.GetAsync``1(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   - DotNetHelper.Database.DataSource.DB`1.GetAsync``1(System.String,System.Data.CommandType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Collections.Generic.List{System.Data.Common.DbParameter})
-  - DotNetHelper.Database.DataSource.DB`1.GetDataReader(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
-  - DotNetHelper.Database.DataSource.DB`1.GetDataReaderAsync(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  - DotNetHelper.Database.DataSource.DB`1.GetDataReader(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter},System.Data.CommandBehavior)
+  - DotNetHelper.Database.DataSource.DB`1.GetDataReaderAsync(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter},System.Data.CommandBehavior)
   - DotNetHelper.Database.DataSource.DB`1.GetDataTable(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   - DotNetHelper.Database.DataSource.DB`1.GetDataTableWithKeyInfo(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   - DotNetHelper.Database.DataSource.DB`1.GetDataTableWithKeyInfoAsync(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
@@ -927,16 +927,16 @@ items:
   - Public
   fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).ExecuteTransactionAsync(System.Collections.Generic.List(Of System.Collections.Generic.KeyValuePair(Of System.String, System.Collections.Generic.IEnumerable(Of System.Data.Common.DbParameter))), System.Boolean, System.Boolean)
   name.vb: ExecuteTransactionAsync(List(Of KeyValuePair(Of String, IEnumerable(Of DbParameter))), Boolean, Boolean)
-- uid: DotNetHelper.Database.DataSource.DB`1.GetDataReader(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
-  commentId: M:DotNetHelper.Database.DataSource.DB`1.GetDataReader(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
-  id: GetDataReader(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+- uid: DotNetHelper.Database.DataSource.DB`1.GetDataReader(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter},System.Data.CommandBehavior)
+  commentId: M:DotNetHelper.Database.DataSource.DB`1.GetDataReader(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter},System.Data.CommandBehavior)
+  id: GetDataReader(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter},System.Data.CommandBehavior)
   parent: DotNetHelper.Database.DataSource.DB`1
   langs:
   - csharp
   - vb
-  name: GetDataReader(String, CommandType, List<DbParameter>)
-  nameWithType: DB<TDbConnection>.GetDataReader(String, CommandType, List<DbParameter>)
-  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.GetDataReader(System.String, System.Data.CommandType, System.Collections.Generic.List<System.Data.Common.DbParameter>)
+  name: GetDataReader(String, CommandType, List<DbParameter>, CommandBehavior)
+  nameWithType: DB<TDbConnection>.GetDataReader(String, CommandType, List<DbParameter>, CommandBehavior)
+  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.GetDataReader(System.String, System.Data.CommandType, System.Collections.Generic.List<System.Data.Common.DbParameter>, System.Data.CommandBehavior)
   type: Method
   source:
     remote:
@@ -952,7 +952,7 @@ items:
   summary: "\nexecute the sql and return the result as a DbDataReader\n"
   example: []
   syntax:
-    content: public DbDataReader GetDataReader(string sql, CommandType commandType = CommandType.Text, List<DbParameter> parameters = null)
+    content: public DbDataReader GetDataReader(string sql, CommandType commandType = CommandType.Text, List<DbParameter> parameters = null, CommandBehavior commandBehavior = CommandBehavior.CloseConnection)
     parameters:
     - id: sql
       type: System.String
@@ -963,28 +963,30 @@ items:
     - id: parameters
       type: System.Collections.Generic.List{System.Data.Common.DbParameter}
       description: ''
+    - id: commandBehavior
+      type: System.Data.CommandBehavior
     return:
       type: System.Data.Common.DbDataReader
       description: ''
-    content.vb: Public Function GetDataReader(sql As String, commandType As CommandType = CommandType.Text, parameters As List(Of DbParameter) = Nothing) As DbDataReader
+    content.vb: Public Function GetDataReader(sql As String, commandType As CommandType = CommandType.Text, parameters As List(Of DbParameter) = Nothing, commandBehavior As CommandBehavior = CommandBehavior.CloseConnection) As DbDataReader
   overload: DotNetHelper.Database.DataSource.DB`1.GetDataReader*
-  nameWithType.vb: DB(Of TDbConnection).GetDataReader(String, CommandType, List(Of DbParameter))
+  nameWithType.vb: DB(Of TDbConnection).GetDataReader(String, CommandType, List(Of DbParameter), CommandBehavior)
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).GetDataReader(System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
-  name.vb: GetDataReader(String, CommandType, List(Of DbParameter))
-- uid: DotNetHelper.Database.DataSource.DB`1.GetDataReaderAsync(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
-  commentId: M:DotNetHelper.Database.DataSource.DB`1.GetDataReaderAsync(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
-  id: GetDataReaderAsync(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
+  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).GetDataReader(System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter), System.Data.CommandBehavior)
+  name.vb: GetDataReader(String, CommandType, List(Of DbParameter), CommandBehavior)
+- uid: DotNetHelper.Database.DataSource.DB`1.GetDataReaderAsync(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter},System.Data.CommandBehavior)
+  commentId: M:DotNetHelper.Database.DataSource.DB`1.GetDataReaderAsync(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter},System.Data.CommandBehavior)
+  id: GetDataReaderAsync(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter},System.Data.CommandBehavior)
   parent: DotNetHelper.Database.DataSource.DB`1
   langs:
   - csharp
   - vb
-  name: GetDataReaderAsync(String, CommandType, List<DbParameter>)
-  nameWithType: DB<TDbConnection>.GetDataReaderAsync(String, CommandType, List<DbParameter>)
-  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.GetDataReaderAsync(System.String, System.Data.CommandType, System.Collections.Generic.List<System.Data.Common.DbParameter>)
+  name: GetDataReaderAsync(String, CommandType, List<DbParameter>, CommandBehavior)
+  nameWithType: DB<TDbConnection>.GetDataReaderAsync(String, CommandType, List<DbParameter>, CommandBehavior)
+  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.GetDataReaderAsync(System.String, System.Data.CommandType, System.Collections.Generic.List<System.Data.Common.DbParameter>, System.Data.CommandBehavior)
   type: Method
   source:
     remote:
@@ -993,14 +995,14 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: GetDataReaderAsync
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 440
+    startLine: 444
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
   summary: "\nexecute the sql and return the result as a DbDataReader\n"
   example: []
   syntax:
-    content: public Task<DbDataReader> GetDataReaderAsync(string sql, CommandType commandType = CommandType.Text, List<DbParameter> parameters = null)
+    content: public Task<DbDataReader> GetDataReaderAsync(string sql, CommandType commandType = CommandType.Text, List<DbParameter> parameters = null, CommandBehavior commandBehavior = CommandBehavior.CloseConnection)
     parameters:
     - id: sql
       type: System.String
@@ -1011,18 +1013,20 @@ items:
     - id: parameters
       type: System.Collections.Generic.List{System.Data.Common.DbParameter}
       description: ''
+    - id: commandBehavior
+      type: System.Data.CommandBehavior
     return:
       type: System.Threading.Tasks.Task{System.Data.Common.DbDataReader}
       description: ''
-    content.vb: Public Function GetDataReaderAsync(sql As String, commandType As CommandType = CommandType.Text, parameters As List(Of DbParameter) = Nothing) As Task(Of DbDataReader)
+    content.vb: Public Function GetDataReaderAsync(sql As String, commandType As CommandType = CommandType.Text, parameters As List(Of DbParameter) = Nothing, commandBehavior As CommandBehavior = CommandBehavior.CloseConnection) As Task(Of DbDataReader)
   overload: DotNetHelper.Database.DataSource.DB`1.GetDataReaderAsync*
-  nameWithType.vb: DB(Of TDbConnection).GetDataReaderAsync(String, CommandType, List(Of DbParameter))
+  nameWithType.vb: DB(Of TDbConnection).GetDataReaderAsync(String, CommandType, List(Of DbParameter), CommandBehavior)
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).GetDataReaderAsync(System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
-  name.vb: GetDataReaderAsync(String, CommandType, List(Of DbParameter))
+  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).GetDataReaderAsync(System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter), System.Data.CommandBehavior)
+  name.vb: GetDataReaderAsync(String, CommandType, List(Of DbParameter), CommandBehavior)
 - uid: DotNetHelper.Database.DataSource.DB`1.GetDataTable(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   commentId: M:DotNetHelper.Database.DataSource.DB`1.GetDataTable(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
   id: GetDataTable(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
@@ -1041,7 +1045,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: GetDataTable
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 458
+    startLine: 464
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1089,7 +1093,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: GetDataTableWithSchema
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 474
+    startLine: 480
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1137,7 +1141,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: GetDataTableWithSchemaAsync
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 501
+    startLine: 507
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1185,7 +1189,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: GetDataTableWithKeyInfo
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 530
+    startLine: 536
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1233,7 +1237,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: GetDataTableWithKeyInfoAsync
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 559
+    startLine: 565
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1281,7 +1285,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: CanConnect
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 586
+    startLine: 592
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1318,7 +1322,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: CanConnectAsync
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 606
+    startLine: 612
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1355,7 +1359,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: Get
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 634
+    startLine: 640
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1417,7 +1421,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: GetAsync
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 651
+    startLine: 657
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1479,7 +1483,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: Get
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 662
+    startLine: 668
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1522,7 +1526,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: GetAsync
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 672
+    startLine: 678
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1565,7 +1569,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: Get
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 686
+    startLine: 692
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1618,7 +1622,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: GetAsync
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 700
+    startLine: 706
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1671,7 +1675,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: Get
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 714
+    startLine: 720
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1724,7 +1728,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: GetAsync
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 728
+    startLine: 734
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1777,7 +1781,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: Execute
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 740
+    startLine: 746
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1827,7 +1831,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: ExecuteAsync
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 753
+    startLine: 759
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1877,7 +1881,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: Execute
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 766
+    startLine: 772
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1930,7 +1934,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: ExecuteAsync
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 779
+    startLine: 785
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -1983,7 +1987,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: Execute
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 795
+    startLine: 801
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -2045,7 +2049,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: ExecuteAsync
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 836
+    startLine: 842
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -2107,7 +2111,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: Execute
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 874
+    startLine: 880
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -2163,7 +2167,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: ExecuteAsync
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 890
+    startLine: 896
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -2219,7 +2223,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: Execute
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 910
+    startLine: 916
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -2284,7 +2288,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: ExecuteAsync
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 929
+    startLine: 935
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -2349,7 +2353,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: ExecuteAndGetOutput
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 945
+    startLine: 951
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -2402,7 +2406,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: ExecuteAndGetOutputAsync
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 958
+    startLine: 964
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -2455,7 +2459,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: ExecuteAndGetOutput
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 977
+    startLine: 983
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -2526,7 +2530,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: ExecuteAndGetOutputAsync
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 1004
+    startLine: 1010
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -2597,7 +2601,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: ExecuteAndGetOutputAsDataReader
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 1017
+    startLine: 1023
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -2643,7 +2647,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: ExecuteAndGetOutputAsDataReader
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 1022
+    startLine: 1028
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -2695,7 +2699,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: SqlServerBulkCopy
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 1041
+    startLine: 1047
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -2745,7 +2749,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: SqlServerBulkCopy
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 1055
+    startLine: 1061
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -2798,7 +2802,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: SqlServerBulkCopy
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 1069
+    startLine: 1075
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -2854,7 +2858,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: SqlServerBulkCopyAsync
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 1101
+    startLine: 1115
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -2904,7 +2908,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: SqlServerBulkCopyAsync
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 1115
+    startLine: 1129
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -2957,7 +2961,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: SqlServerBulkCopyAsync
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 1129
+    startLine: 1143
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -3013,7 +3017,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: Dispose
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 1155
+    startLine: 1178
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -3047,7 +3051,7 @@ items:
       repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: Dispose
     path: ../src/DotNetHelper.Database/DataSource/DB.cs
-    startLine: 1162
+    startLine: 1185
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.DataSource
@@ -4293,6 +4297,13 @@ references:
   fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.GetDataReader
   nameWithType.vb: DB(Of TDbConnection).GetDataReader
   fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).GetDataReader
+- uid: System.Data.CommandBehavior
+  commentId: T:System.Data.CommandBehavior
+  parent: System.Data
+  isExternal: true
+  name: CommandBehavior
+  nameWithType: CommandBehavior
+  fullName: System.Data.CommandBehavior
 - uid: System.Data.Common.DbDataReader
   commentId: T:System.Data.Common.DbDataReader
   parent: System.Data.Common

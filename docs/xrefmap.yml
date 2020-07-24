@@ -1147,15 +1147,15 @@ references:
   fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).GetAsync(Of T)(System.String, System.Data.CommandType, System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Collections.Generic.List(Of System.Data.Common.DbParameter))
   nameWithType: DB<TDbConnection>.GetAsync<T>(String, CommandType, Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>, List<DbParameter>)
   nameWithType.vb: DB(Of TDbConnection).GetAsync(Of T)(String, CommandType, Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object), List(Of DbParameter))
-- uid: DotNetHelper.Database.DataSource.DB`1.GetDataReader(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
-  name: GetDataReader(String, CommandType, List<DbParameter>)
-  href: api/DotNetHelper.Database.DataSource.DB-1.html#DotNetHelper_Database_DataSource_DB_1_GetDataReader_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__
-  commentId: M:DotNetHelper.Database.DataSource.DB`1.GetDataReader(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
-  name.vb: GetDataReader(String, CommandType, List(Of DbParameter))
-  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.GetDataReader(System.String, System.Data.CommandType, System.Collections.Generic.List<System.Data.Common.DbParameter>)
-  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).GetDataReader(System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
-  nameWithType: DB<TDbConnection>.GetDataReader(String, CommandType, List<DbParameter>)
-  nameWithType.vb: DB(Of TDbConnection).GetDataReader(String, CommandType, List(Of DbParameter))
+- uid: DotNetHelper.Database.DataSource.DB`1.GetDataReader(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter},System.Data.CommandBehavior)
+  name: GetDataReader(String, CommandType, List<DbParameter>, CommandBehavior)
+  href: api/DotNetHelper.Database.DataSource.DB-1.html#DotNetHelper_Database_DataSource_DB_1_GetDataReader_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__System_Data_CommandBehavior_
+  commentId: M:DotNetHelper.Database.DataSource.DB`1.GetDataReader(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter},System.Data.CommandBehavior)
+  name.vb: GetDataReader(String, CommandType, List(Of DbParameter), CommandBehavior)
+  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.GetDataReader(System.String, System.Data.CommandType, System.Collections.Generic.List<System.Data.Common.DbParameter>, System.Data.CommandBehavior)
+  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).GetDataReader(System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter), System.Data.CommandBehavior)
+  nameWithType: DB<TDbConnection>.GetDataReader(String, CommandType, List<DbParameter>, CommandBehavior)
+  nameWithType.vb: DB(Of TDbConnection).GetDataReader(String, CommandType, List(Of DbParameter), CommandBehavior)
 - uid: DotNetHelper.Database.DataSource.DB`1.GetDataReader*
   name: GetDataReader
   href: api/DotNetHelper.Database.DataSource.DB-1.html#DotNetHelper_Database_DataSource_DB_1_GetDataReader_
@@ -1165,15 +1165,15 @@ references:
   fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).GetDataReader
   nameWithType: DB<TDbConnection>.GetDataReader
   nameWithType.vb: DB(Of TDbConnection).GetDataReader
-- uid: DotNetHelper.Database.DataSource.DB`1.GetDataReaderAsync(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
-  name: GetDataReaderAsync(String, CommandType, List<DbParameter>)
-  href: api/DotNetHelper.Database.DataSource.DB-1.html#DotNetHelper_Database_DataSource_DB_1_GetDataReaderAsync_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__
-  commentId: M:DotNetHelper.Database.DataSource.DB`1.GetDataReaderAsync(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
-  name.vb: GetDataReaderAsync(String, CommandType, List(Of DbParameter))
-  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.GetDataReaderAsync(System.String, System.Data.CommandType, System.Collections.Generic.List<System.Data.Common.DbParameter>)
-  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).GetDataReaderAsync(System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
-  nameWithType: DB<TDbConnection>.GetDataReaderAsync(String, CommandType, List<DbParameter>)
-  nameWithType.vb: DB(Of TDbConnection).GetDataReaderAsync(String, CommandType, List(Of DbParameter))
+- uid: DotNetHelper.Database.DataSource.DB`1.GetDataReaderAsync(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter},System.Data.CommandBehavior)
+  name: GetDataReaderAsync(String, CommandType, List<DbParameter>, CommandBehavior)
+  href: api/DotNetHelper.Database.DataSource.DB-1.html#DotNetHelper_Database_DataSource_DB_1_GetDataReaderAsync_System_String_System_Data_CommandType_System_Collections_Generic_List_System_Data_Common_DbParameter__System_Data_CommandBehavior_
+  commentId: M:DotNetHelper.Database.DataSource.DB`1.GetDataReaderAsync(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter},System.Data.CommandBehavior)
+  name.vb: GetDataReaderAsync(String, CommandType, List(Of DbParameter), CommandBehavior)
+  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.GetDataReaderAsync(System.String, System.Data.CommandType, System.Collections.Generic.List<System.Data.Common.DbParameter>, System.Data.CommandBehavior)
+  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).GetDataReaderAsync(System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter), System.Data.CommandBehavior)
+  nameWithType: DB<TDbConnection>.GetDataReaderAsync(String, CommandType, List<DbParameter>, CommandBehavior)
+  nameWithType.vb: DB(Of TDbConnection).GetDataReaderAsync(String, CommandType, List(Of DbParameter), CommandBehavior)
 - uid: DotNetHelper.Database.DataSource.DB`1.GetDataReaderAsync*
   name: GetDataReaderAsync
   href: api/DotNetHelper.Database.DataSource.DB-1.html#DotNetHelper_Database_DataSource_DB_1_GetDataReaderAsync_
