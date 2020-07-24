@@ -16,8 +16,6 @@ var unitTestTask = Task("UnitTest")
 
         foreach(var framework in project.TargetFrameworkVersions){
 
-
-            
             if(!parameters.IsRunningOnWindows && framework == "net452"){
                 // will always throw 
                 //System.TypeLoadException: Could not load type of field 'Xunit.Runner.VisualStudio.VsExecutionSink:recorder' (4) due to: 
