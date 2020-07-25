@@ -1,4 +1,9 @@
 var publishTask = Task("Publish")
+.WithCriteria<BuildParameters>((context, parameters) => parameters.IsChangeLogUpToDate,  "Don't be lazy keep your change log up to date before publishing")
+.Does<BuildParameters>((context,parameters) =>  {
+
+     
+})
 .Finally(() =>
 {
     if (publishingError)

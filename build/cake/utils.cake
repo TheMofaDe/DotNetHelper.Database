@@ -67,6 +67,16 @@ public static bool IsBuildTagged(this ICakeContext context)
     return isTagged;
 }
 
+public static bool IsChangeLogUpToDate(this ICakeContext context){
+
+    var rootDir = (DirectoryPath)(context.Directory("."));
+    var fileInfo = new FileInfo(rootDir.CombineWithFilePath("CHANGELOG.md").ToString());
+    if(fileInfo.LastWriteTimeUtc < DateTime.UtcNow.AddDays(-1)){
+        return false;
+    }
+    return true;
+}
+
 public static bool IsEnabled(this ICakeContext context, string envVar, bool nullOrEmptyAsEnabled = true)
 {
     var value = context.EnvironmentVariable(envVar);
@@ -152,7 +162,6 @@ void PackPrepareNative(ICakeContext context, BuildParameters parameters)
         var outputPath = PackPrepareNative(context, parameters, runtime);
     }
 }
-
 
 
 DirectoryPath PackPrepareNative(ICakeContext context, BuildParameters parameters, string runtime)

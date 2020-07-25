@@ -25,6 +25,7 @@ public class BuildParameters
     public bool IsMainBranch { get; private set; }
     public bool IsTagged { get; private set; }
     public bool IsPullRequest { get; private set; }
+    public bool IsChangeLogUpToDate { get; private set;}
     public bool IsStableRelease() => !IsLocalBuild && IsMainRepo && IsMainBranch && !IsPullRequest && IsTagged;
     public bool IsPreRelease()    => !IsLocalBuild && IsMainRepo && IsMainBranch && !IsPullRequest && !IsTagged;
     public Dictionary<PlatformFamily, string[]> NativeRuntimes { get; private set; }
@@ -59,6 +60,7 @@ public class BuildParameters
             }
          }
          var buildSystem = context.BuildSystem();
+         IsChangeLogUpToDate = context.IsChangeLogUpToDate();
          IsLocalBuild  = buildSystem.IsLocalBuild;
          IsPullRequest = buildSystem.IsPullRequest;
          IsMainRepo    = context.IsOnMainRepo();

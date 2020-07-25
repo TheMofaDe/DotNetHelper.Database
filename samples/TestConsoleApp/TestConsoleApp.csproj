@@ -2,7 +2,17 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net452</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\DotNetHelper.Database\DotNetHelper.Database.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="DotNetHelper.ObjectToSql">
+      <HintPath>..\..\src\DotNetHelper.Database\bin\Debug\net452\DotNetHelper.ObjectToSql.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 
 </Project>

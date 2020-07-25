@@ -20,8 +20,6 @@ var unitTestTask = Task("UnitTest")
                 // will always throw 
                 //System.TypeLoadException: Could not load type of field 'Xunit.Runner.VisualStudio.VsExecutionSink:recorder' (4) due to: 
                 //Could not load file or assembly 'Microsoft.VisualStudio.TestPlatform.ObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a' 
-            
-
             }else{
             frameworks.Add(framework);
             
