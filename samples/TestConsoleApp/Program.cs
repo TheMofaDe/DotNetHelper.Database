@@ -41,10 +41,10 @@ namespace TestConsoleApp
 					);";
 
 				var allowRollbackOnFail = true;
-				var recordAffected = await db.ExecuteTransactionAsync(new List<string>(){dropTableSql,createTableSql}, allowRollbackOnFail);
-			
-				var employee = new Employee() {Name = "Generic Name"};
-				var outputEmployee = await db.ExecuteAndGetOutputAsync(employee, ActionType.Insert,emp => emp.Id, emp => emp.CreatedAt);
+				var recordAffected = await db.ExecuteTransactionAsync(new List<string>() { dropTableSql, createTableSql }, allowRollbackOnFail);
+
+				var employee = new Employee() { Name = "Generic Name" };
+				var outputEmployee = await db.ExecuteAndGetOutputAsync(employee, ActionType.Insert, emp => emp.Id, emp => emp.CreatedAt);
 
 				// Set the identity and database default value back to my original unchanged object
 				employee.Id = outputEmployee.Id;
