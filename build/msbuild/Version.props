@@ -18,6 +18,11 @@
       <FileVersion>$(PackageVersion)</FileVersion>
       <InformationalVersion>$(PackageVersion)</InformationalVersion>
 
+      <PackageProjectUrl>$(GitRepositoryUrl)</PackageProjectUrl>
+      <RepositoryUrl>$(GitRepositoryUrl)</RepositoryUrl>
+      <PackageReleaseNotes>$(GitRepositoryUrl)/blob/master/CHANGELOG.md</PackageReleaseNotes>
+      <RepositoryCommit>$(GitCommit)</RepositoryCommit>
+      <RepositoryBranch>$(GitBranch)</RepositoryBranch>
     <!-- <Version Condition="'$(Version)' == ''">0.0.0</Version>
     <PackageVersion Condition="'$(PackageVersion)' == ''">0.0.0</PackageVersion> -->
   </PropertyGroup>
