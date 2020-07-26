@@ -5,44 +5,20 @@
   </PropertyGroup>
 
 
-  <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netstandard2.1'">
-    <DefineConstants>$(DefineConstants);NETSTANDARD</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(TargetFramework)' == 'net45' OR '$(TargetFramework)' == 'net452'  ">
-    <DefineConstants>$(DefineConstants);NETFRAMEWORK</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(TargetFramework)' == 'net45' OR '$(TargetFramework)' == 'net452'  OR '$(TargetFramework)' == 'netstandard2.1' ">
-    <DefineConstants>$(DefineConstants);SUPPORTDBFACTORIES</DefineConstants>
-  </PropertyGroup>
-
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'  ">
     <PackageReference Include="System.Data.SqlClient" Version="4.8.1" /> <!-- Needed to fix bug in .NET Standard https://github.com/dotnet/corefx/issues/19748-->
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net45' OR '$(TargetFramework)' == 'net452'  ">
+  <ItemGroup Condition="'$(TargetFramework)' == 'net452' ">
     <Reference Include="System.Configuration" />
     </ItemGroup>
 
-  <ItemGroup>
-    <Compile Remove="Enum\**" />
-    <Compile Remove="Exceptions\**" />
-    <EmbeddedResource Remove="Enum\**" />
-    <EmbeddedResource Remove="Exceptions\**" />
-    <None Remove="Enum\**" />
-    <None Remove="Exceptions\**" />
-  </ItemGroup>
 
   <ItemGroup>
     <Compile Remove="DataSource\DataBaseAccessTest.cs" />
     <Compile Remove="Helper\AlphabetHelper.cs" />
     <Compile Remove="Helper\ConnectionStringBuilder.cs" />
   </ItemGroup>
-
-
-
-
 
 
   <ItemGroup>

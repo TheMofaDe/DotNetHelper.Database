@@ -9,7 +9,6 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using DotNetHelper.Database.Extension;
 using DotNetHelper.Database.Helper;
-using DotNetHelper.FastMember.Extension.Helpers;
 using DotNetHelper.ObjectToSql.Enum;
 using DotNetHelper.ObjectToSql.Model;
 

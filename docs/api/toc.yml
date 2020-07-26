@@ -1,9 +1,4 @@
 ### YamlMime:TableOfContent
-- uid: DotNetHelper.Database
-  name: DotNetHelper.Database
-  items:
-  - uid: DotNetHelper.Database.DatabaseAccessFactory
-    name: DatabaseAccessFactory
 - uid: DotNetHelper.Database.DataSource
   name: DotNetHelper.Database.DataSource
   items:

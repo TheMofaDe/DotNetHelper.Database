@@ -1,6 +1,7 @@
 Task("Publish-NuGet")
   //  .WithCriteria<BuildParameters>((context, parameters) => parameters.EnabledPublishNuget, "Publish-NuGet was disabled.")
     .WithCriteria<BuildParameters>((context, parameters) => parameters.IsRunningOnWindows,  "Publish-NuGet works only on Windows agents.")
+    .WithCriteria<BuildParameters>((context, parameters) => parameters.IsRunningOnMainBuildSystem,     "Publish-Nuget works only on the main BuildSystem")
   //  .WithCriteria<BuildParameters>((context, parameters) => parameters.IsReleasingCI,       "Publish-NuGet works only on Releasing CI.")
     .WithCriteria<BuildParameters>((context, parameters) => parameters.IsStableRelease() || parameters.IsPreRelease(), "Publish-NuGet works only for releases.")
     .WithCriteria<BuildParameters>((context, parameters) => parameters.IsChangeLogUpToDate,  "Don't be lazy keep your change log up to date before publishing")

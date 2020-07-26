@@ -122,6 +122,7 @@ function SpinUpSqlServerContainer {
   if ($IsWindows) {
     $imageName = "microsoft/mssql-server-windows-developer:2017-latest"
   }
+  $imageName = "microsoft/mssql-server-windows-developer:2017-latest"
   docker stop $containerName
   docker rm $containerName
   docker run -p 1433:1433 --name $containerName --hostname $containerName -e ACCEPT_EULA=Y -e "SA_PASSWORD=$Password" -d $imageName

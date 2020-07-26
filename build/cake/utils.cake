@@ -59,6 +59,31 @@ public static bool IsOnMainBranch(this ICakeContext context)
     return !string.IsNullOrWhiteSpace(repositoryBranch) && StringComparer.OrdinalIgnoreCase.Equals("master", repositoryBranch);
 }
 
+
+public static bool IsOnMainBuildSystem(this ICakeContext context)
+{
+    // TODO :: START
+    var buildSystem = context.BuildSystem();
+    if (buildSystem.IsRunningOnAppVeyor)
+    {
+        return true;
+    }
+    else if (buildSystem.IsRunningOnTravisCI)
+    {
+      return false;
+    }
+    else if (buildSystem.IsRunningOnAzurePipelines || buildSystem.IsRunningOnAzurePipelinesHosted)
+    {
+        return false;
+    }
+    else if (buildSystem.IsRunningOnGitHubActions)
+    {
+       return false;
+    }
+    return false;
+    // TODO :: END-
+}
+
 public static bool IsBuildTagged(this ICakeContext context)
 {
     var sha = ExecGitCmd(context, "rev-parse --verify HEAD").Single();

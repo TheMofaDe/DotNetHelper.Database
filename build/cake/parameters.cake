@@ -4,7 +4,7 @@ public class BuildParameters
     private readonly ICakeContext _context;
     // TODO :: START
     public const string MainRepoOwner  = "TheMoFaDe";
-    public const string MainRepoName = "DotNet.Solution.Template";
+    public const string MainRepoName = "DotNetHelper.Database";
     public string SolutionFile { get; } = ""; // You can leave empty if only one solution file exist in the root folder
     // TODO :: END
     public SolutionParserResult SolutionParserResult {get;}
@@ -26,6 +26,7 @@ public class BuildParameters
     public bool IsTagged { get; private set; }
     public bool IsPullRequest { get; private set; }
     public bool IsChangeLogUpToDate { get; private set;}
+    public bool IsRunningOnMainBuildSystem { get; private set;}
     public bool IsStableRelease() => !IsLocalBuild && IsMainRepo && IsMainBranch && !IsPullRequest && IsTagged;
     public bool IsPreRelease()    => !IsLocalBuild && IsMainRepo && IsMainBranch && !IsPullRequest && !IsTagged;
     public Dictionary<PlatformFamily, string[]> NativeRuntimes { get; private set; }
@@ -76,6 +77,7 @@ public class BuildParameters
          IsRunningOnAzurePipeline = buildSystem.IsRunningOnAzurePipelines || buildSystem.IsRunningOnAzurePipelinesHosted;
          IsRunningOnGitHubActions = buildSystem.IsRunningOnGitHubActions;
 
+        IsRunningOnMainBuildSystem = context.IsOnMainBuildSystem();
 
          NativeRuntimes = new Dictionary<PlatformFamily, string[]>
         {
