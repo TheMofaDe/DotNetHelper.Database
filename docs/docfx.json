@@ -42,11 +42,11 @@
     ],
     "globalMetadata": {
       "_appTitle": "DotNetHelper.Database",
-      //"_gitContribute": {
-      //  "repo": "https://github.com/TheMofaDe/DotNetHelper.Database",
-      //  "branch": "master",
-      //  "apiSpecFolder": "docs-ref-overwrite"
-      //},
+      "_gitContribute": {
+        "repo": "https://github.com/TheMofaDe/DotNetHelper.Database",
+        "branch": "master",
+        "apiSpecFolder": "docs-ref-overwrite"
+      },
       "_disableContribution": false,
       "_disableBreadcrumb": false,
       "_appFaviconPath": "logo/favicon.ico",

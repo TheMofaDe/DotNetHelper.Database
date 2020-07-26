@@ -1,8 +1,38 @@
 <Project>
 
 <!-- https://github.com/microsoft/msbuild/pull/2014 -->
-  <Import  Condition="'$(MSBuildProjectExtension)' == '.csproj'"  Project="$(RepoRootPath)build\msbuild\Version.targets"/>
+<ItemGroup>
+    <PackageReference Include="GitInfo" Version="2.0.29">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+</ItemGroup>
 
+<PropertyGroup>
+    <PrepareForBuildDependsOn>$(PrepareForBuildDependsOn);SetVersionMetadata</PrepareForBuildDependsOn>
+    <GitInfoReportImportance>Low</GitInfoReportImportance>
+</PropertyGroup>
+
+
+  <Target
+    Name="SetVersionMetadata"
+    DependsOnTargets="GitVersion"
+    Condition="'$(GitInfoImported)' == 'true'">
+
+<PropertyGroup>
+    <PackageProjectUrl>$(GitRepositoryUrl)</PackageProjectUrl>
+    <RepositoryUrl>$(GitRepositoryUrl)</RepositoryUrl>
+    <PackageReleaseNotes>$(GitRepositoryUrl)/blob/master/CHANGELOG.md</PackageReleaseNotes>
+    <RepositoryCommit>$(GitCommit)</RepositoryCommit>
+    <RepositoryBranch>$(GitBranch)</RepositoryBranch>
+    <AssemblyVersion>$(GitBaseVersionMajor).$(GitBaseVersionMinor).$(GitBaseVersionPatch)</AssemblyVersion>
+    <PackageVersion>$(GitSemVerMajor).$(GitSemVerMinor).$(GitSemVerPatch)</PackageVersion>
+    <Version>$(PackageVersion)</Version>
+    <FileVersion>$(PackageVersion)</FileVersion>
+    <InformationalVersion>$(PackageVersion)</InformationalVersion>
+</PropertyGroup>
+</Target>
+
+<Import  Condition="'$(MSBuildProjectExtension)' == '.csproj'"  Project="$(RepoRootPath)\build\msbuild\Cake.Integration.targets"/>
 
 
 </Project>

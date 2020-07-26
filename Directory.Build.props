@@ -1,41 +1,56 @@
 <Project>
+
+
+  <!-- SETUP DEFAULT VALUES  --> 
   <PropertyGroup>
     <Configuration Condition="'$(Configuration)' == ''">Debug</Configuration>
+    <InCI>false</InCI>
     <APPVEYOR Condition="'$(APPVEYOR)' == ''">false</APPVEYOR>
+    <InAzureDevOps>false</InAzureDevOps>
+    <Version Condition="'$(Version)' == ''">0.0.0</Version>
+    <PackageVersion Condition="'$(PackageVersion)' == ''">0.0.0</PackageVersion>
   </PropertyGroup>
 
+  <!-- SETUP DEFAULT CONSTANTS  -->
+  <PropertyGroup Condition="$([System.Text.RegularExpressions.Regex]::IsMatch('$(TargetFramework)', '^net\d'))">
+    <DefineConstants>$(DefineConstants);NETFRAMEWORK</DefineConstants>
+    <NETFRAMEWORK>true</NETFRAMEWORK>
+  </PropertyGroup>
+  <PropertyGroup Condition="$([System.Text.RegularExpressions.Regex]::IsMatch('$(TargetFramework)', '^netstandard\d'))">
+    <DefineConstants>$(DefineConstants);NETSTANDARD</DefineConstants>
+    <NETSTANDARD>true</NETSTANDARD>
+  </PropertyGroup>
+  <PropertyGroup Condition="$([System.Text.RegularExpressions.Regex]::IsMatch('$(TargetFramework)', '^netcoreapp\d'))">
+    <DefineConstants>$(DefineConstants);NETCORE</DefineConstants>
+    <NETCORE>true</NETCORE>
+  </PropertyGroup>
+  <PropertyGroup Condition="$(APPVEYOR)">
+    <DefineConstants>$(DefineConstants);IsRunningOnAppVeyor</DefineConstants>
+  </PropertyGroup>
+
+  <!-- SETUP SOME BUILD PROPERTIES THAT WILL BE USE BY MSBUILD AND CAKE  -->
   <PropertyGroup>
+    <IsWindows>$([MSBuild]::IsOSPlatform('Windows'))</IsWindows>
+    <IsMac>$([MSBuild]::IsOSPlatform('OSX'))</IsMac>
+    <IsLinux>$([MSBuild]::IsOSPlatform('Linux'))</IsLinux>
+
     <RepoRootPath>$([MSBuild]::NormalizePath($(MSBuildThisFileDirectory)))</RepoRootPath>
-    <AzureDevOpsArtifactsStagingDirectory>$([System.Environment]::GetEnvironmentVariable('BUILD_ARTIFACTSTAGINGDIRECTORY'))</AzureDevOpsArtifactsStagingDirectory>
     <RepoArtifactsRootPath Condition="'$(RepoArtifactsPath)' == ''">$(RepoRootPath)artifacts\</RepoArtifactsRootPath>
     <RepoSrcPath>$(RepoRootPath)src\</RepoSrcPath>
     <RepoTestSrcPath>$(RepoRootPath)tests\</RepoTestSrcPath>
     <RepoSrcRelativeProjectDirectory Condition="$(MSBuildProjectDirectory.Length) >= $(RepoSrcPath.Length)">$(MSBuildProjectDirectory.Substring($(RepoSrcPath.Length)))\</RepoSrcRelativeProjectDirectory>
   </PropertyGroup>
 
-
-
-<!-- ENVIRONMENT PROPERTIES -->
-
-<PropertyGroup Condition="$(APPVEYOR)">
-  <DefineConstants>$(DefineConstants);IsRunningOnAppVeyor</DefineConstants>
-</PropertyGroup>
-
+  <!-- CI PROPERTIES -->
   <PropertyGroup>
-    <InAzureDevOps>false</InAzureDevOps>
+    <AzureDevOpsArtifactsStagingDirectory>$([System.Environment]::GetEnvironmentVariable('BUILD_ARTIFACTSTAGINGDIRECTORY'))</AzureDevOpsArtifactsStagingDirectory>
     <InAzureDevOps Condition="'$(TF_BUILD)' == 'True'">true</InAzureDevOps>
-    <InCI>false</InCI>
-    <InCI Condition="'$(InAzureDevOps)' == 'True' or '$(APPVEYOR)' == 'True'" >true</InCI>
-
-    <IsWindows>$([MSBuild]::IsOSPlatform('Windows'))</IsWindows>
-    <IsMac>$([MSBuild]::IsOSPlatform('OSX'))</IsMac>
-    <IsLinux>$([MSBuild]::IsOSPlatform('Linux'))</IsLinux>
+    <InCI Condition="'$(InAzureDevOps)' == 'True' or '$(APPVEYOR)' == 'True'" >true</InCI>  
 
     <!-- Prefer the PR branch, then the source branch, falling back to local git if not in ADO -->
     <GitBranch Condition="'$(SYSTEM_PULLREQUEST_TARGETBRANCH)' != ''">$(SYSTEM_PULLREQUEST_TARGETBRANCH)</GitBranch>
     <GitBranch Condition="'$(SYSTEM_PULLREQUEST_TARGETBRANCH)' == '' and '$(BUILD_SOURCEBRANCHNAME)' != ''">$(BUILD_SOURCEBRANCHNAME)</GitBranch>
   </PropertyGroup>
-
 
 
   <Import

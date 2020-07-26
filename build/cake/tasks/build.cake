@@ -15,7 +15,7 @@ var buildTask = Task("Build")
         var settings = new DotNetCoreBuildSettings {
             Configuration = parameters.Configuration,
             MSBuildSettings = msbuildSettings,
-            NoRestore = false,
+            NoRestore = true,
             
         };
         DotNetCoreBuild(project.ProjectFilePath.FullPath, settings);  

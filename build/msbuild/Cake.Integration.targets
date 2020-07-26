@@ -3,7 +3,7 @@
  <Import  Condition="'$(MSBuildProjectExtension)' == '.csproj' AND '$(GenerateDocumentation)' == 'true'"  Project="$(RepoRootPath)\build\msbuild\Cake.Integration.DocsFx.targets"/>
 
 <PropertyGroup>
-    <PrepareForBuildDependsOn>WriteVersionToFile;$(PrepareForBuildDependsOn)</PrepareForBuildDependsOn>
+    <PrepareForBuildDependsOn>$(PrepareForBuildDependsOn);WriteVersionToFile</PrepareForBuildDependsOn>
 </PropertyGroup>
 
 <Target Name="WriteVersionToFile" >

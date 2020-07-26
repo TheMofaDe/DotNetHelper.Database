@@ -1,5 +1,4 @@
 var generateDocsTask = Task("Generate-Docs")
-
 .WithCriteria<BuildParameters>((context, parameters) => context.IsRunningOnWindows(),  "Generate-Docs will only run on windows agent.")
 .WithCriteria<BuildParameters>((context, parameters) => parameters.IsLocalBuild,  "Generate-Docs will only run during a local build")
 .Does<BuildParameters>((parameters) => 

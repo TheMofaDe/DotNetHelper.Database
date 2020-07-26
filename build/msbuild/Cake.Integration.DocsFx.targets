@@ -1,8 +1,8 @@
 <Project>
-<Target Name="DocFxCreator"   DependsOnTargets="WriteVersionToFile"  >
+<Target Name="DocFxCreator"   DependsOnTargets="SetVersionMetadata"  >
 
 <PropertyGroup>
-    <PrepareForBuildDependsOn Condition="'$(GenerateDocumentation)' == 'true'">DocFxCreator;$(PrepareForBuildDependsOn)</PrepareForBuildDependsOn>
+    <PrepareForBuildDependsOn Condition="'$(GenerateDocumentation)' == 'true'">$(PrepareForBuildDependsOn);DocFxCreator</PrepareForBuildDependsOn>
 </PropertyGroup>
 
 <!-- If You need to modify doxcfx value use tools like https://codebeautify.org/xml-escape-unescape to prettify the code  -->
@@ -73,7 +73,7 @@
         &quot;_appTitle&quot;:&quot;$(Product)&quot;,
         &quot;_gitContribute&quot;:{
            &quot;repo&quot;:&quot;$(RepositoryUrl)&quot;,
-           &quot;branch&quot;:&quot;master&quot;,
+           &quot;branch&quot;:&quot;$(GitBranch)&quot;,
            &quot;apiSpecFolder&quot;:&quot;docs-ref-overwrite&quot;
         },
         &quot;_disableContribution&quot;:false,
@@ -120,9 +120,9 @@
 - name: API
   href: api/$(ProjectName).html  # if your project contains a dash it will need to be replace with a underscore on this line only
 - name: Change Log
-  href: https://github.com/TheMofaDe/$(Product)/blob/master/CHANGELOG.md
+  href: $(GitRepositoryUrl)/blob/master/CHANGELOG.md
 - name: Github
-  href: https://github.com/TheMofaDe/$(Product)
+  href: $(GitRepositoryUrl)
 </DocsFxTableOfContent>
 </PropertyGroup>
 

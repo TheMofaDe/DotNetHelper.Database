@@ -1,51 +1,41 @@
 <Project>
-  <Import Project="$(RepoRootPath)build\msbuild\Version.props"/>
 
-  <PropertyGroup Condition="$([System.Text.RegularExpressions.Regex]::IsMatch('$(TargetFramework)', '^net\d'))">
-    <DefineConstants>$(DefineConstants);NETFRAMEWORK</DefineConstants>
-    <NETFRAMEWORK>true</NETFRAMEWORK>
-  </PropertyGroup>
-  <PropertyGroup Condition="$([System.Text.RegularExpressions.Regex]::IsMatch('$(TargetFramework)', '^netstandard\d'))">
-    <DefineConstants>$(DefineConstants);NETSTANDARD</DefineConstants>
-    <NETSTANDARD>true</NETSTANDARD>
-  </PropertyGroup>
-  <PropertyGroup Condition="$([System.Text.RegularExpressions.Regex]::IsMatch('$(TargetFramework)', '^netcoreapp\d'))">
-    <DefineConstants>$(DefineConstants);NETCORE</DefineConstants>
-    <NETCORE>true</NETCORE>
-  </PropertyGroup>
-
-  <PropertyGroup>
-    <DefineConstants Condition="$([MSBuild]::IsOSPlatform('OSX')) == 'true'">__MACOS__;$(DefineConstants)</DefineConstants>
+  <!-- PROJECTS DEFAULT PROPERTIES -->
+<PropertyGroup>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-  </PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
 
-  <PropertyGroup>
-    <PackageProjectUrl>$(GitRepositoryUrl)</PackageProjectUrl>
-    <!-- <PackageIconUrl>https://github.com/TheMofaDe/DotNetHelper.Database</PackageIconUrl> -->
-    <RepositoryUrl>$(GitRepositoryUrl)</RepositoryUrl>
-    <PackageReleaseNotes>$(GitRepositoryUrl)/blob/master/CHANGELOG.md</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageTags>ORM,database,sql,generic,dynamic,anonyous</PackageTags>
     <RepositoryType>git</RepositoryType>
     <Description>DotNetHelper.Database is a lightweight ORM that works with generics,dynamic, &amp; anonyous objects for ADO.NET</Description>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
-    <RepositoryCommit>$(GitCommit)</RepositoryCommit>
-    <RepositoryBranch>$(GitBranch)</RepositoryBranch>
     <Authors>Joseph McNeal Jr</Authors>
     <Company>Joseph McNeal Jr</Company>
     <NeutralLanguage>en-US</NeutralLanguage>
     <language>$(NeutralLanguage)</language>
     <Copyright>$([System.DateTime]::Now.ToString('yyyy')) Joseph McNeal Jr</Copyright>
-    <LangVersion>latest</LangVersion>
-  </PropertyGroup>
+    
+    <PackageProjectUrl>AUTO-POPULATE</PackageProjectUrl>
+    <RepositoryUrl>AUTO-POPULATE</RepositoryUrl>
+    <PackageReleaseNotes>AUTO-POPULATE</PackageReleaseNotes>
+    <RepositoryCommit>AUTO-POPULATE</RepositoryCommit>
+    <RepositoryBranch>AUTO-POPULATE</RepositoryBranch>
+    <AssemblyVersion>0.0.0</AssemblyVersion>
+    <PackageVersion>0.0.0</PackageVersion>
+    <Version>0.0.0</Version>
+    <FileVersion>0.0.0</FileVersion>
+    <InformationalVersion>0.0.0</InformationalVersion>
+</PropertyGroup>
 
 
-  <PropertyGroup  Condition="'$(SignAssembly)' == 'true'">
+  <!-- ASSEMBLY SIGNING PROPERTIES -->
+  <PropertyGroup Condition="'$(SignAssembly)' == 'true'">
     <PublicSign>true</PublicSign>
     <DelaySign>false</DelaySign>
     <AssemblyOriginatorKeyFile Condition="'$(AssemblyOriginatorKeyFile)' == ''">$(MSBuildThisFileDirectory)keysign.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
-
 
 
   <ItemGroup>
