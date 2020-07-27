@@ -173,6 +173,7 @@ items:
   syntax:
     content: >-
       public static T MapTo<T>(this DataRow row, bool useAttributeName = true)
+
           where T : class
     parameters:
     - id: row
@@ -229,6 +230,7 @@ items:
   syntax:
     content: >-
       public static List<T> MapToList<T>(this DataTable dataTable, bool useAttributeName = true)
+
           where T : class
     parameters:
     - id: dataTable

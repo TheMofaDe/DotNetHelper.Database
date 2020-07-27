@@ -31,7 +31,7 @@ public class BuildParameters
     public bool IsPreRelease()    => !IsLocalBuild && IsMainRepo && IsMainBranch && !IsPullRequest && !IsTagged;
     public Dictionary<PlatformFamily, string[]> NativeRuntimes { get; private set; }
     public BuildCredentials Credentials {get;}
-    public BuildVersion Version {get;set;} = new BuildVersion();
+    public BuildMetadata Version {get;set;} = new BuildMetadata();
     public BuildPaths Paths => BuildPaths.GetPaths(_context,Version.SemVersion);
 
  

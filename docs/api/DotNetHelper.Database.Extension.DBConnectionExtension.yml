@@ -73,7 +73,8 @@ items:
   namespace: DotNetHelper.Database.Extension
   syntax:
     content: >-
-      public static ObjectToSql.Services.ObjectToSql ObjToSql<T>(this T dbConnection, bool includeNonPublicProperties = true)
+      public static ObjectToSql ObjToSql<T>(this T dbConnection, bool includeNonPublicProperties = true)
+
           where T : DbConnection
     parameters:
     - id: dbConnection
@@ -83,11 +84,11 @@ items:
     typeParameters:
     - id: T
     return:
-      type: ObjectToSql.Services.ObjectToSql
+      type: DotNetHelper.ObjectToSql.Services.ObjectToSql
     content.vb: >-
       <ExtensionAttribute>
 
-      Public Shared Function ObjToSql(Of T As DbConnection)(dbConnection As T, includeNonPublicProperties As Boolean = True) As ObjectToSql.Services.ObjectToSql
+      Public Shared Function ObjToSql(Of T As DbConnection)(dbConnection As T, includeNonPublicProperties As Boolean = True) As ObjectToSql
   overload: DotNetHelper.Database.Extension.DbConnectionExtension.ObjToSql*
   nameWithType.vb: DbConnectionExtension.ObjToSql(Of T)(T, Boolean)
   modifiers.csharp:
@@ -124,6 +125,7 @@ items:
   syntax:
     content: >-
       public static DB<T> DB<T>(this T dbConnection)
+
           where T : DbConnection, new()
     parameters:
     - id: dbConnection
@@ -593,15 +595,23 @@ references:
   name: Boolean
   nameWithType: Boolean
   fullName: System.Boolean
-- uid: ObjectToSql.Services.ObjectToSql
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  commentId: T:DotNetHelper.ObjectToSql.Services.ObjectToSql
+  parent: DotNetHelper.ObjectToSql.Services
   isExternal: true
-  name: ObjectToSql.Services.ObjectToSql
-  nameWithType: ObjectToSql.Services.ObjectToSql
-  fullName: ObjectToSql.Services.ObjectToSql
+  name: ObjectToSql
+  nameWithType: ObjectToSql
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql
 - uid: T
   name: T
   nameWithType: T
   fullName: T
+- uid: DotNetHelper.ObjectToSql.Services
+  commentId: N:DotNetHelper.ObjectToSql.Services
+  isExternal: true
+  name: DotNetHelper.ObjectToSql.Services
+  nameWithType: DotNetHelper.ObjectToSql.Services
+  fullName: DotNetHelper.ObjectToSql.Services
 - uid: DotNetHelper.Database.Extension.DbConnectionExtension.DB*
   commentId: Overload:DotNetHelper.Database.Extension.DbConnectionExtension.DB
   name: DB

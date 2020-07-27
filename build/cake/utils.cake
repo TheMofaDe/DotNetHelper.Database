@@ -172,7 +172,7 @@ public static void SetVersionFromJsonFile(this ICakeContext context,  BuildParam
 
          var jsonFile = parameters.Paths.Directories.ArtifactsRoot.GetFilePath("build.version.json");
          if(context.FileExists(jsonFile))
-         parameters.Version = context.DeserializeJsonFromFile<BuildVersion>(jsonFile); 
+         parameters.Version = context.DeserializeJsonFromFile<BuildMetadata>(jsonFile); 
 
 }
 

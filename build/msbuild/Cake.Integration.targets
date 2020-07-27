@@ -3,24 +3,21 @@
  <Import  Condition="'$(MSBuildProjectExtension)' == '.csproj' AND '$(GenerateDocumentation)' == 'true'"  Project="$(RepoRootPath)\build\msbuild\Cake.Integration.DocsFx.targets"/>
 
 <PropertyGroup>
-    <PrepareForBuildDependsOn>$(PrepareForBuildDependsOn);WriteVersionToFile</PrepareForBuildDependsOn>
+    <PrepareForBuildDependsOn Condition="'$(ExcludeRestorePackageImports)' != 'true'" >$(PrepareForBuildDependsOn);WriteVersionToFile</PrepareForBuildDependsOn>
 </PropertyGroup>
 
-<Target Name="WriteVersionToFile" >
+<Target Name="WriteVersionToFile" Condition="'$(ExcludeRestorePackageImports)' != 'true'"  >
 <PropertyGroup>
       <VersionJson>{
 &quot;GitBaseVersion&quot;:      &quot;$(GitBaseVersion)&quot;, 
 &quot;GitSemVersion&quot;:      &quot;$(GitSemVerMajor).$(GitSemVerMinor).$(GitSemVerPatch)&quot;, 
 &quot;GitCommits&quot;:      &quot;$(GitCommits)&quot;,   
-
 &quot;GitBaseVersionMajor&quot;:      &quot;$(GitBaseVersionMajor)&quot;,  
 &quot;GitBaseVersionMinor&quot;:      &quot;$(GitBaseVersionMinor)&quot;,  
 &quot;GitBaseVersionPatch&quot;:      &quot;$(GitBaseVersionPatch)&quot;,
-
 &quot;GitSemVerMajor&quot;:      &quot;$(GitSemVerMajor)&quot;,  
 &quot;GitSemVerMinor&quot;:      &quot;$(GitSemVerMinor)&quot;,  
 &quot;GitSemVerPatch&quot;:      &quot;$(GitSemVerPatch)&quot;,     
-
 &quot;AssemblyVersion&quot;:         &quot;$(AssemblyVersion)&quot;,
 &quot;FileVersion&quot;:             &quot;$(FileVersion)&quot;,
 &quot;InformationalVersion&quot;:    &quot;$(InformationalVersion)&quot;,
@@ -31,7 +28,12 @@
 &quot;SemVerDashLabel &quot;: &quot;$(GitSemVerDashLabel)&quot;,
 &quot;GitTag &quot;: &quot;$(GitTag)&quot;,
 &quot;GitBaseTag &quot;: &quot;$(GitBaseTag)&quot;,
-&quot;GitIsDirty &quot;: &quot;$(GitIsDirty)&quot;
+&quot;GitIsDirty &quot;: &quot;$(GitIsDirty)&quot;,
+&quot;PackageProjectUrl&quot;:      &quot;$(GitRepositoryUrl)&quot;, 
+&quot;RepositoryUrl&quot;:      &quot;$(GitRepositoryUrl)&quot;, 
+&quot;PackageReleaseNotes&quot;:      &quot;$(GitRepositoryUrl)/blob/master/CHANGELOG.md&quot;,   
+&quot;RepositoryCommit&quot;:      &quot;$(GitCommit)&quot;,  
+&quot;RepositoryBranch&quot;:      &quot;$(GitBranch)&quot;
 }</VersionJson>
 <!-- <ArtifactsPath>$(RepoArtifactsPath)$(GitSemVerMajor).$(GitSemVerMinor).$(GitSemVerPatch)\$(Configuration)\</ArtifactsPath> -->
 </PropertyGroup>
@@ -43,9 +45,6 @@
       File="$(RepoArtifactsRootPath)build.version.json"
       ContinueOnError="false"/>
 </Target>
-
-
-
 
 
 </Project>

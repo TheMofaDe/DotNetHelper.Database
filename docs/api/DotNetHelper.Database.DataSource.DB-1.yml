@@ -5,7 +5,7 @@ items:
   id: DB`1
   parent: DotNetHelper.Database.DataSource
   children:
-  - DotNetHelper.Database.DataSource.DB`1.#ctor(`0,System.Nullable{DataBaseType})
+  - DotNetHelper.Database.DataSource.DB`1.#ctor(`0,System.Nullable{DotNetHelper.ObjectToSql.Enum.DataBaseType})
   - DotNetHelper.Database.DataSource.DB`1.CanConnect
   - DotNetHelper.Database.DataSource.DB`1.CanConnectAsync
   - DotNetHelper.Database.DataSource.DB`1.CommandTimeOut
@@ -13,22 +13,22 @@ items:
   - DotNetHelper.Database.DataSource.DB`1.DatabaseType
   - DotNetHelper.Database.DataSource.DB`1.Dispose
   - DotNetHelper.Database.DataSource.DB`1.Dispose(System.Boolean)
-  - DotNetHelper.Database.DataSource.DB`1.Execute``1(``0,ActionType)
-  - DotNetHelper.Database.DataSource.DB`1.Execute``1(``0,ActionType,System.String)
-  - DotNetHelper.Database.DataSource.DB`1.Execute``1(``0,ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
-  - DotNetHelper.Database.DataSource.DB`1.Execute``1(``0,ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  - DotNetHelper.Database.DataSource.DB`1.Execute``1(``0,ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  - DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutput``1(``0,ActionType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  - DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutput``1(``0,ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  - DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutputAsDataReader``1(``0,ActionType,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  - DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutputAsDataReader``1(``0,ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  - DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutputAsync``1(``0,ActionType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  - DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutputAsync``1(``0,ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  - DotNetHelper.Database.DataSource.DB`1.ExecuteAsync``1(``0,ActionType)
-  - DotNetHelper.Database.DataSource.DB`1.ExecuteAsync``1(``0,ActionType,System.String)
-  - DotNetHelper.Database.DataSource.DB`1.ExecuteAsync``1(``0,ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
-  - DotNetHelper.Database.DataSource.DB`1.ExecuteAsync``1(``0,ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  - DotNetHelper.Database.DataSource.DB`1.ExecuteAsync``1(``0,ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  - DotNetHelper.Database.DataSource.DB`1.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType)
+  - DotNetHelper.Database.DataSource.DB`1.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
+  - DotNetHelper.Database.DataSource.DB`1.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  - DotNetHelper.Database.DataSource.DB`1.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  - DotNetHelper.Database.DataSource.DB`1.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  - DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  - DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  - DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutputAsDataReader``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  - DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutputAsDataReader``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  - DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutputAsync``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  - DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutputAsync``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  - DotNetHelper.Database.DataSource.DB`1.ExecuteAsync``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType)
+  - DotNetHelper.Database.DataSource.DB`1.ExecuteAsync``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
+  - DotNetHelper.Database.DataSource.DB`1.ExecuteAsync``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  - DotNetHelper.Database.DataSource.DB`1.ExecuteAsync``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  - DotNetHelper.Database.DataSource.DB`1.ExecuteAsync``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   - DotNetHelper.Database.DataSource.DB`1.ExecuteNonQuery(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter})
   - DotNetHelper.Database.DataSource.DB`1.ExecuteNonQueryAsync(System.String,System.Data.CommandType,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter})
   - DotNetHelper.Database.DataSource.DB`1.ExecuteScalar(System.String,System.Data.CommandType,System.Collections.Generic.List{System.Data.Common.DbParameter})
@@ -88,6 +88,7 @@ items:
     - id: TDbConnection
     content.vb: >-
       Public Class DB(Of TDbConnection As DbConnection)
+
           Implements IDisposable
   inheritance:
   - System.Object
@@ -216,11 +217,11 @@ items:
   summary: "\nThe service that is used to generate sql\n"
   example: []
   syntax:
-    content: public ObjectToSql.Services.ObjectToSql ObjectToSql { get; }
+    content: public ObjectToSql ObjectToSql { get; }
     parameters: []
     return:
-      type: ObjectToSql.Services.ObjectToSql
-    content.vb: Public ReadOnly Property ObjectToSql As ObjectToSql.Services.ObjectToSql
+      type: DotNetHelper.ObjectToSql.Services.ObjectToSql
+    content.vb: Public ReadOnly Property ObjectToSql As ObjectToSql
   overload: DotNetHelper.Database.DataSource.DB`1.ObjectToSql*
   nameWithType.vb: DB(Of TDbConnection).ObjectToSql
   modifiers.csharp:
@@ -258,7 +259,7 @@ items:
     content: public DataBaseType DatabaseType { get; }
     parameters: []
     return:
-      type: DataBaseType
+      type: DotNetHelper.ObjectToSql.Enum.DataBaseType
     content.vb: Public ReadOnly Property DatabaseType As DataBaseType
   overload: DotNetHelper.Database.DataSource.DB`1.DatabaseType*
   nameWithType.vb: DB(Of TDbConnection).DatabaseType
@@ -269,16 +270,16 @@ items:
   - Public
   - ReadOnly
   fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).DatabaseType
-- uid: DotNetHelper.Database.DataSource.DB`1.#ctor(`0,System.Nullable{DataBaseType})
-  commentId: M:DotNetHelper.Database.DataSource.DB`1.#ctor(`0,System.Nullable{DataBaseType})
-  id: '#ctor(`0,System.Nullable{DataBaseType})'
+- uid: DotNetHelper.Database.DataSource.DB`1.#ctor(`0,System.Nullable{DotNetHelper.ObjectToSql.Enum.DataBaseType})
+  commentId: M:DotNetHelper.Database.DataSource.DB`1.#ctor(`0,System.Nullable{DotNetHelper.ObjectToSql.Enum.DataBaseType})
+  id: '#ctor(`0,System.Nullable{DotNetHelper.ObjectToSql.Enum.DataBaseType})'
   parent: DotNetHelper.Database.DataSource.DB`1
   langs:
   - csharp
   - vb
   name: DB(TDbConnection, Nullable<DataBaseType>)
   nameWithType: DB<TDbConnection>.DB(TDbConnection, Nullable<DataBaseType>)
-  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.DB(TDbConnection, System.Nullable<DataBaseType>)
+  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.DB(TDbConnection, System.Nullable<DotNetHelper.ObjectToSql.Enum.DataBaseType>)
   type: Constructor
   source:
     remote:
@@ -300,7 +301,7 @@ items:
       type: '{TDbConnection}'
       description: ''
     - id: type
-      type: System.Nullable{DataBaseType}
+      type: System.Nullable{DotNetHelper.ObjectToSql.Enum.DataBaseType}
       description: Specify how sql will be generated or it will be auto-determined based on DBConnection Type Name
     content.vb: Public Sub New(connection As TDbConnection, type As DataBaseType? = Nothing)
   overload: DotNetHelper.Database.DataSource.DB`1.#ctor*
@@ -309,7 +310,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).DB(TDbConnection, System.Nullable(Of DataBaseType))
+  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).DB(TDbConnection, System.Nullable(Of DotNetHelper.ObjectToSql.Enum.DataBaseType))
   name.vb: DB(TDbConnection, Nullable(Of DataBaseType))
 - uid: DotNetHelper.Database.DataSource.DB`1.GetNewParameter(System.String,System.Object)
   commentId: M:DotNetHelper.Database.DataSource.DB`1.GetNewParameter(System.String,System.Object)
@@ -380,6 +381,7 @@ items:
   syntax:
     content: >-
       public List<DbParameter> GetNewParameter<T>(T obj)
+
           where T : class
     parameters:
     - id: obj
@@ -422,6 +424,7 @@ items:
   syntax:
     content: >-
       public List<DbParameter> GetNewParameter<T>(T obj, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer)
+
           where T : class
     parameters:
     - id: obj
@@ -1368,6 +1371,7 @@ items:
   syntax:
     content: >-
       public List<T> Get<T>(string sql, CommandType commandType, Func<string, Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer, List<DbParameter> parameters = null)
+
           where T : class
     parameters:
     - id: sql
@@ -1430,6 +1434,7 @@ items:
   syntax:
     content: >-
       public Task<List<T>> GetAsync<T>(string sql, CommandType commandType, Func<string, Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer, List<DbParameter> parameters = null)
+
           where T : class
     parameters:
     - id: sql
@@ -1492,6 +1497,7 @@ items:
   syntax:
     content: >-
       public List<T> Get<T>()
+
           where T : class
     typeParameters:
     - id: T
@@ -1535,6 +1541,7 @@ items:
   syntax:
     content: >-
       public Task<List<T>> GetAsync<T>()
+
           where T : class
     typeParameters:
     - id: T
@@ -1578,6 +1585,7 @@ items:
   syntax:
     content: >-
       public List<T> Get<T>(Func<string, Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer)
+
           where T : class
     parameters:
     - id: xmlDeserializer
@@ -1631,6 +1639,7 @@ items:
   syntax:
     content: >-
       public Task<List<T>> GetAsync<T>(Func<string, Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer)
+
           where T : class
     parameters:
     - id: xmlDeserializer
@@ -1684,6 +1693,7 @@ items:
   syntax:
     content: >-
       public List<T> Get<T>(string sql, CommandType commandType, List<DbParameter> parameters = null)
+
           where T : class
     parameters:
     - id: sql
@@ -1737,6 +1747,7 @@ items:
   syntax:
     content: >-
       public Task<List<T>> GetAsync<T>(string sql, CommandType commandType, List<DbParameter> parameters = null)
+
           where T : class
     parameters:
     - id: sql
@@ -1763,16 +1774,16 @@ items:
   - Public
   fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).GetAsync(Of T)(System.String, System.Data.CommandType, System.Collections.Generic.List(Of System.Data.Common.DbParameter))
   name.vb: GetAsync(Of T)(String, CommandType, List(Of DbParameter))
-- uid: DotNetHelper.Database.DataSource.DB`1.Execute``1(``0,ActionType)
-  commentId: M:DotNetHelper.Database.DataSource.DB`1.Execute``1(``0,ActionType)
-  id: Execute``1(``0,ActionType)
+- uid: DotNetHelper.Database.DataSource.DB`1.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType)
+  commentId: M:DotNetHelper.Database.DataSource.DB`1.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType)
+  id: Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType)
   parent: DotNetHelper.Database.DataSource.DB`1
   langs:
   - csharp
   - vb
   name: Execute<T>(T, ActionType)
   nameWithType: DB<TDbConnection>.Execute<T>(T, ActionType)
-  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.Execute<T>(T, ActionType)
+  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.Execute<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType)
   type: Method
   source:
     remote:
@@ -1790,13 +1801,14 @@ items:
   syntax:
     content: >-
       public int Execute<T>(T instance, ActionType actionType)
+
           where T : class
     parameters:
     - id: instance
       type: '{T}'
       description: the object to create sql from
     - id: actionType
-      type: ActionType
+      type: DotNetHelper.ObjectToSql.Enum.ActionType
       description: type of sql to generate
     typeParameters:
     - id: T
@@ -1811,18 +1823,18 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).Execute(Of T)(T, ActionType)
+  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType)
   name.vb: Execute(Of T)(T, ActionType)
-- uid: DotNetHelper.Database.DataSource.DB`1.ExecuteAsync``1(``0,ActionType)
-  commentId: M:DotNetHelper.Database.DataSource.DB`1.ExecuteAsync``1(``0,ActionType)
-  id: ExecuteAsync``1(``0,ActionType)
+- uid: DotNetHelper.Database.DataSource.DB`1.ExecuteAsync``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType)
+  commentId: M:DotNetHelper.Database.DataSource.DB`1.ExecuteAsync``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType)
+  id: ExecuteAsync``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType)
   parent: DotNetHelper.Database.DataSource.DB`1
   langs:
   - csharp
   - vb
   name: ExecuteAsync<T>(T, ActionType)
   nameWithType: DB<TDbConnection>.ExecuteAsync<T>(T, ActionType)
-  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.ExecuteAsync<T>(T, ActionType)
+  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.ExecuteAsync<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType)
   type: Method
   source:
     remote:
@@ -1840,13 +1852,14 @@ items:
   syntax:
     content: >-
       public Task<int> ExecuteAsync<T>(T instance, ActionType actionType)
+
           where T : class
     parameters:
     - id: instance
       type: '{T}'
       description: the object to create sql from
     - id: actionType
-      type: ActionType
+      type: DotNetHelper.ObjectToSql.Enum.ActionType
       description: type of sql to generate
     typeParameters:
     - id: T
@@ -1861,18 +1874,18 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).ExecuteAsync(Of T)(T, ActionType)
+  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).ExecuteAsync(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType)
   name.vb: ExecuteAsync(Of T)(T, ActionType)
-- uid: DotNetHelper.Database.DataSource.DB`1.Execute``1(``0,ActionType,System.String)
-  commentId: M:DotNetHelper.Database.DataSource.DB`1.Execute``1(``0,ActionType,System.String)
-  id: Execute``1(``0,ActionType,System.String)
+- uid: DotNetHelper.Database.DataSource.DB`1.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
+  commentId: M:DotNetHelper.Database.DataSource.DB`1.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
+  id: Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
   parent: DotNetHelper.Database.DataSource.DB`1
   langs:
   - csharp
   - vb
   name: Execute<T>(T, ActionType, String)
   nameWithType: DB<TDbConnection>.Execute<T>(T, ActionType, String)
-  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.Execute<T>(T, ActionType, System.String)
+  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.Execute<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String)
   type: Method
   source:
     remote:
@@ -1890,13 +1903,14 @@ items:
   syntax:
     content: >-
       public int Execute<T>(T instance, ActionType actionType, string tableName)
+
           where T : class
     parameters:
     - id: instance
       type: '{T}'
       description: 'the object to create sql from '
     - id: actionType
-      type: ActionType
+      type: DotNetHelper.ObjectToSql.Enum.ActionType
       description: type of sql to generate
     - id: tableName
       type: System.String
@@ -1914,18 +1928,18 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).Execute(Of T)(T, ActionType, System.String)
+  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String)
   name.vb: Execute(Of T)(T, ActionType, String)
-- uid: DotNetHelper.Database.DataSource.DB`1.ExecuteAsync``1(``0,ActionType,System.String)
-  commentId: M:DotNetHelper.Database.DataSource.DB`1.ExecuteAsync``1(``0,ActionType,System.String)
-  id: ExecuteAsync``1(``0,ActionType,System.String)
+- uid: DotNetHelper.Database.DataSource.DB`1.ExecuteAsync``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
+  commentId: M:DotNetHelper.Database.DataSource.DB`1.ExecuteAsync``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
+  id: ExecuteAsync``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String)
   parent: DotNetHelper.Database.DataSource.DB`1
   langs:
   - csharp
   - vb
   name: ExecuteAsync<T>(T, ActionType, String)
   nameWithType: DB<TDbConnection>.ExecuteAsync<T>(T, ActionType, String)
-  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.ExecuteAsync<T>(T, ActionType, System.String)
+  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.ExecuteAsync<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String)
   type: Method
   source:
     remote:
@@ -1943,13 +1957,14 @@ items:
   syntax:
     content: >-
       public Task<int> ExecuteAsync<T>(T instance, ActionType actionType, string tableName)
+
           where T : class
     parameters:
     - id: instance
       type: '{T}'
       description: 'the object to create sql from '
     - id: actionType
-      type: ActionType
+      type: DotNetHelper.ObjectToSql.Enum.ActionType
       description: type of sql to generate
     - id: tableName
       type: System.String
@@ -1967,18 +1982,18 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).ExecuteAsync(Of T)(T, ActionType, System.String)
+  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).ExecuteAsync(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String)
   name.vb: ExecuteAsync(Of T)(T, ActionType, String)
-- uid: DotNetHelper.Database.DataSource.DB`1.Execute``1(``0,ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
-  commentId: M:DotNetHelper.Database.DataSource.DB`1.Execute``1(``0,ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
-  id: Execute``1(``0,ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+- uid: DotNetHelper.Database.DataSource.DB`1.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  commentId: M:DotNetHelper.Database.DataSource.DB`1.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  id: Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
   parent: DotNetHelper.Database.DataSource.DB`1
   langs:
   - csharp
   - vb
   name: Execute<T>(T, ActionType, String, Func<Object, String>, Func<Object, String>, Func<Object, String>)
   nameWithType: DB<TDbConnection>.Execute<T>(T, ActionType, String, Func<Object, String>, Func<Object, String>, Func<Object, String>)
-  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.Execute<T>(T, ActionType, System.String, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>)
+  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.Execute<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>)
   type: Method
   source:
     remote:
@@ -1996,13 +2011,14 @@ items:
   syntax:
     content: >-
       public int Execute<T>(T instance, ActionType actionType, string tableName, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer)
+
           where T : class
     parameters:
     - id: instance
       type: '{T}'
       description: 'the object to create sql from '
     - id: actionType
-      type: ActionType
+      type: DotNetHelper.ObjectToSql.Enum.ActionType
       description: type of sql to generate
     - id: tableName
       type: System.String
@@ -2029,18 +2045,18 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).Execute(Of T)(T, ActionType, System.String, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String))
+  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String))
   name.vb: Execute(Of T)(T, ActionType, String, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
-- uid: DotNetHelper.Database.DataSource.DB`1.ExecuteAsync``1(``0,ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
-  commentId: M:DotNetHelper.Database.DataSource.DB`1.ExecuteAsync``1(``0,ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
-  id: ExecuteAsync``1(``0,ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+- uid: DotNetHelper.Database.DataSource.DB`1.ExecuteAsync``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  commentId: M:DotNetHelper.Database.DataSource.DB`1.ExecuteAsync``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
+  id: ExecuteAsync``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String})
   parent: DotNetHelper.Database.DataSource.DB`1
   langs:
   - csharp
   - vb
   name: ExecuteAsync<T>(T, ActionType, String, Func<Object, String>, Func<Object, String>, Func<Object, String>)
   nameWithType: DB<TDbConnection>.ExecuteAsync<T>(T, ActionType, String, Func<Object, String>, Func<Object, String>, Func<Object, String>)
-  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.ExecuteAsync<T>(T, ActionType, System.String, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>)
+  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.ExecuteAsync<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>)
   type: Method
   source:
     remote:
@@ -2058,13 +2074,14 @@ items:
   syntax:
     content: >-
       public Task<int> ExecuteAsync<T>(T instance, ActionType actionType, string tableName, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer)
+
           where T : class
     parameters:
     - id: instance
       type: '{T}'
       description: 'the object to create sql from '
     - id: actionType
-      type: ActionType
+      type: DotNetHelper.ObjectToSql.Enum.ActionType
       description: type of sql to generate
     - id: tableName
       type: System.String
@@ -2091,18 +2108,18 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).ExecuteAsync(Of T)(T, ActionType, System.String, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String))
+  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).ExecuteAsync(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String))
   name.vb: ExecuteAsync(Of T)(T, ActionType, String, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String))
-- uid: DotNetHelper.Database.DataSource.DB`1.Execute``1(``0,ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  commentId: M:DotNetHelper.Database.DataSource.DB`1.Execute``1(``0,ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  id: Execute``1(``0,ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+- uid: DotNetHelper.Database.DataSource.DB`1.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  commentId: M:DotNetHelper.Database.DataSource.DB`1.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  id: Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   parent: DotNetHelper.Database.DataSource.DB`1
   langs:
   - csharp
   - vb
   name: Execute<T>(T, ActionType, String, Expression<Func<T, Object>>[])
   nameWithType: DB<TDbConnection>.Execute<T>(T, ActionType, String, Expression<Func<T, Object>>[])
-  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.Execute<T>(T, ActionType, System.String, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.Execute<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
   type: Method
   source:
     remote:
@@ -2120,13 +2137,14 @@ items:
   syntax:
     content: >-
       public int Execute<T>(T instance, ActionType actionType, string tableName, params Expression<Func<T, object>>[] keyFields)
+
           where T : class
     parameters:
     - id: instance
       type: '{T}'
       description: 'the object to create sql from '
     - id: actionType
-      type: ActionType
+      type: DotNetHelper.ObjectToSql.Enum.ActionType
       description: type of sql to generate
     - id: tableName
       type: System.String
@@ -2147,18 +2165,18 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).Execute(Of T)(T, ActionType, System.String, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
   name.vb: Execute(Of T)(T, ActionType, String, Expression(Of Func(Of T, Object))())
-- uid: DotNetHelper.Database.DataSource.DB`1.ExecuteAsync``1(``0,ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  commentId: M:DotNetHelper.Database.DataSource.DB`1.ExecuteAsync``1(``0,ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  id: ExecuteAsync``1(``0,ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+- uid: DotNetHelper.Database.DataSource.DB`1.ExecuteAsync``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  commentId: M:DotNetHelper.Database.DataSource.DB`1.ExecuteAsync``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  id: ExecuteAsync``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   parent: DotNetHelper.Database.DataSource.DB`1
   langs:
   - csharp
   - vb
   name: ExecuteAsync<T>(T, ActionType, String, Expression<Func<T, Object>>[])
   nameWithType: DB<TDbConnection>.ExecuteAsync<T>(T, ActionType, String, Expression<Func<T, Object>>[])
-  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.ExecuteAsync<T>(T, ActionType, System.String, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.ExecuteAsync<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
   type: Method
   source:
     remote:
@@ -2176,13 +2194,14 @@ items:
   syntax:
     content: >-
       public Task<int> ExecuteAsync<T>(T instance, ActionType actionType, string tableName, params Expression<Func<T, object>>[] keyFields)
+
           where T : class
     parameters:
     - id: instance
       type: '{T}'
       description: 'the object to create sql from '
     - id: actionType
-      type: ActionType
+      type: DotNetHelper.ObjectToSql.Enum.ActionType
       description: type of sql to generate
     - id: tableName
       type: System.String
@@ -2203,18 +2222,18 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).ExecuteAsync(Of T)(T, ActionType, System.String, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).ExecuteAsync(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
   name.vb: ExecuteAsync(Of T)(T, ActionType, String, Expression(Of Func(Of T, Object))())
-- uid: DotNetHelper.Database.DataSource.DB`1.Execute``1(``0,ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  commentId: M:DotNetHelper.Database.DataSource.DB`1.Execute``1(``0,ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  id: Execute``1(``0,ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+- uid: DotNetHelper.Database.DataSource.DB`1.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  commentId: M:DotNetHelper.Database.DataSource.DB`1.Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  id: Execute``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   parent: DotNetHelper.Database.DataSource.DB`1
   langs:
   - csharp
   - vb
   name: Execute<T>(T, ActionType, String, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
   nameWithType: DB<TDbConnection>.Execute<T>(T, ActionType, String, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
-  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.Execute<T>(T, ActionType, System.String, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.Execute<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
   type: Method
   source:
     remote:
@@ -2232,13 +2251,14 @@ items:
   syntax:
     content: >-
       public int Execute<T>(T instance, ActionType actionType, string tableName, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer, params Expression<Func<T, object>>[] keyFields)
+
           where T : class
     parameters:
     - id: instance
       type: '{T}'
       description: 'the object to create sql from '
     - id: actionType
-      type: ActionType
+      type: DotNetHelper.ObjectToSql.Enum.ActionType
       description: type of sql to generate
     - id: tableName
       type: System.String
@@ -2268,18 +2288,18 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).Execute(Of T)(T, ActionType, System.String, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).Execute(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
   name.vb: Execute(Of T)(T, ActionType, String, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
-- uid: DotNetHelper.Database.DataSource.DB`1.ExecuteAsync``1(``0,ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  commentId: M:DotNetHelper.Database.DataSource.DB`1.ExecuteAsync``1(``0,ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  id: ExecuteAsync``1(``0,ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+- uid: DotNetHelper.Database.DataSource.DB`1.ExecuteAsync``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  commentId: M:DotNetHelper.Database.DataSource.DB`1.ExecuteAsync``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  id: ExecuteAsync``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.String,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   parent: DotNetHelper.Database.DataSource.DB`1
   langs:
   - csharp
   - vb
   name: ExecuteAsync<T>(T, ActionType, String, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
   nameWithType: DB<TDbConnection>.ExecuteAsync<T>(T, ActionType, String, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
-  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.ExecuteAsync<T>(T, ActionType, System.String, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.ExecuteAsync<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
   type: Method
   source:
     remote:
@@ -2297,13 +2317,14 @@ items:
   syntax:
     content: >-
       public Task<int> ExecuteAsync<T>(T instance, ActionType actionType, string tableName, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer, params Expression<Func<T, object>>[] keyFields)
+
           where T : class
     parameters:
     - id: instance
       type: '{T}'
       description: 'the object to create sql from '
     - id: actionType
-      type: ActionType
+      type: DotNetHelper.ObjectToSql.Enum.ActionType
       description: type of sql to generate
     - id: tableName
       type: System.String
@@ -2333,18 +2354,18 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).ExecuteAsync(Of T)(T, ActionType, System.String, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).ExecuteAsync(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.String, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
   name.vb: ExecuteAsync(Of T)(T, ActionType, String, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
-- uid: DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutput``1(``0,ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  commentId: M:DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutput``1(``0,ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  id: ExecuteAndGetOutput``1(``0,ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+- uid: DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  commentId: M:DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  id: ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   parent: DotNetHelper.Database.DataSource.DB`1
   langs:
   - csharp
   - vb
   name: ExecuteAndGetOutput<T>(T, ActionType, Expression<Func<T, Object>>[])
   nameWithType: DB<TDbConnection>.ExecuteAndGetOutput<T>(T, ActionType, Expression<Func<T, Object>>[])
-  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.ExecuteAndGetOutput<T>(T, ActionType, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.ExecuteAndGetOutput<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
   type: Method
   source:
     remote:
@@ -2362,13 +2383,14 @@ items:
   syntax:
     content: >-
       public T ExecuteAndGetOutput<T>(T instance, ActionType actionType, params Expression<Func<T, object>>[] outputFields)
+
           where T : class
     parameters:
     - id: instance
       type: '{T}'
       description: 'the object to create sql from '
     - id: actionType
-      type: ActionType
+      type: DotNetHelper.ObjectToSql.Enum.ActionType
       description: type of sql to generate
     - id: outputFields
       type: System.Linq.Expressions.Expression{System.Func{{T},System.Object}}[]
@@ -2386,18 +2408,18 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).ExecuteAndGetOutput(Of T)(T, ActionType, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).ExecuteAndGetOutput(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
   name.vb: ExecuteAndGetOutput(Of T)(T, ActionType, Expression(Of Func(Of T, Object))())
-- uid: DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutputAsync``1(``0,ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  commentId: M:DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutputAsync``1(``0,ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  id: ExecuteAndGetOutputAsync``1(``0,ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+- uid: DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutputAsync``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  commentId: M:DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutputAsync``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  id: ExecuteAndGetOutputAsync``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   parent: DotNetHelper.Database.DataSource.DB`1
   langs:
   - csharp
   - vb
   name: ExecuteAndGetOutputAsync<T>(T, ActionType, Expression<Func<T, Object>>[])
   nameWithType: DB<TDbConnection>.ExecuteAndGetOutputAsync<T>(T, ActionType, Expression<Func<T, Object>>[])
-  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.ExecuteAndGetOutputAsync<T>(T, ActionType, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.ExecuteAndGetOutputAsync<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
   type: Method
   source:
     remote:
@@ -2415,13 +2437,14 @@ items:
   syntax:
     content: >-
       public Task<T> ExecuteAndGetOutputAsync<T>(T instance, ActionType actionType, params Expression<Func<T, object>>[] outputFields)
+
           where T : class
     parameters:
     - id: instance
       type: '{T}'
       description: 'the object to create sql from '
     - id: actionType
-      type: ActionType
+      type: DotNetHelper.ObjectToSql.Enum.ActionType
       description: type of sql to generate
     - id: outputFields
       type: System.Linq.Expressions.Expression{System.Func{{T},System.Object}}[]
@@ -2439,18 +2462,18 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).ExecuteAndGetOutputAsync(Of T)(T, ActionType, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).ExecuteAndGetOutputAsync(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
   name.vb: ExecuteAndGetOutputAsync(Of T)(T, ActionType, Expression(Of Func(Of T, Object))())
-- uid: DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutput``1(``0,ActionType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  commentId: M:DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutput``1(``0,ActionType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  id: ExecuteAndGetOutput``1(``0,ActionType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+- uid: DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  commentId: M:DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  id: ExecuteAndGetOutput``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   parent: DotNetHelper.Database.DataSource.DB`1
   langs:
   - csharp
   - vb
   name: ExecuteAndGetOutput<T>(T, ActionType, Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
   nameWithType: DB<TDbConnection>.ExecuteAndGetOutput<T>(T, ActionType, Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
-  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.ExecuteAndGetOutput<T>(T, ActionType, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.ExecuteAndGetOutput<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
   type: Method
   source:
     remote:
@@ -2468,13 +2491,14 @@ items:
   syntax:
     content: >-
       public T ExecuteAndGetOutput<T>(T instance, ActionType actionType, Func<string, Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer, params Expression<Func<T, object>>[] outputFields)
+
           where T : class
     parameters:
     - id: instance
       type: '{T}'
       description: 'the object to create sql from '
     - id: actionType
-      type: ActionType
+      type: DotNetHelper.ObjectToSql.Enum.ActionType
       description: type of sql to generate
     - id: xmlDeserializer
       type: System.Func{System.String,System.Type,System.Object}
@@ -2510,18 +2534,18 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).ExecuteAndGetOutput(Of T)(T, ActionType, System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).ExecuteAndGetOutput(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
   name.vb: ExecuteAndGetOutput(Of T)(T, ActionType, Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
-- uid: DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutputAsync``1(``0,ActionType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  commentId: M:DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutputAsync``1(``0,ActionType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  id: ExecuteAndGetOutputAsync``1(``0,ActionType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+- uid: DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutputAsync``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  commentId: M:DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutputAsync``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  id: ExecuteAndGetOutputAsync``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.String,System.Type,System.Object},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   parent: DotNetHelper.Database.DataSource.DB`1
   langs:
   - csharp
   - vb
   name: ExecuteAndGetOutputAsync<T>(T, ActionType, Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
   nameWithType: DB<TDbConnection>.ExecuteAndGetOutputAsync<T>(T, ActionType, Func<String, Type, Object>, Func<String, Type, Object>, Func<String, Type, Object>, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
-  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.ExecuteAndGetOutputAsync<T>(T, ActionType, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.ExecuteAndGetOutputAsync<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>, System.Func<System.String, System.Type, System.Object>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
   type: Method
   source:
     remote:
@@ -2539,13 +2563,14 @@ items:
   syntax:
     content: >-
       public Task<T> ExecuteAndGetOutputAsync<T>(T instance, ActionType actionType, Func<string, Type, object> xmlDeserializer, Func<string, Type, object> jsonDeserializer, Func<string, Type, object> csvDeserializer, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer, params Expression<Func<T, object>>[] outputFields)
+
           where T : class
     parameters:
     - id: instance
       type: '{T}'
       description: 'the object to create sql from '
     - id: actionType
-      type: ActionType
+      type: DotNetHelper.ObjectToSql.Enum.ActionType
       description: type of sql to generate
     - id: xmlDeserializer
       type: System.Func{System.String,System.Type,System.Object}
@@ -2581,18 +2606,18 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).ExecuteAndGetOutputAsync(Of T)(T, ActionType, System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).ExecuteAndGetOutputAsync(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.String, System.Type, System.Object), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
   name.vb: ExecuteAndGetOutputAsync(Of T)(T, ActionType, Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of String, Type, Object), Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
-- uid: DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutputAsDataReader``1(``0,ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  commentId: M:DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutputAsDataReader``1(``0,ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  id: ExecuteAndGetOutputAsDataReader``1(``0,ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+- uid: DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutputAsDataReader``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  commentId: M:DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutputAsDataReader``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  id: ExecuteAndGetOutputAsDataReader``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   parent: DotNetHelper.Database.DataSource.DB`1
   langs:
   - csharp
   - vb
   name: ExecuteAndGetOutputAsDataReader<T>(T, ActionType, Expression<Func<T, Object>>[])
   nameWithType: DB<TDbConnection>.ExecuteAndGetOutputAsDataReader<T>(T, ActionType, Expression<Func<T, Object>>[])
-  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.ExecuteAndGetOutputAsDataReader<T>(T, ActionType, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.ExecuteAndGetOutputAsDataReader<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
   type: Method
   source:
     remote:
@@ -2608,12 +2633,13 @@ items:
   syntax:
     content: >-
       public DbDataReader ExecuteAndGetOutputAsDataReader<T>(T instance, ActionType actionType, params Expression<Func<T, object>>[] outputFields)
+
           where T : class
     parameters:
     - id: instance
       type: '{T}'
     - id: actionType
-      type: ActionType
+      type: DotNetHelper.ObjectToSql.Enum.ActionType
     - id: outputFields
       type: System.Linq.Expressions.Expression{System.Func{{T},System.Object}}[]
     typeParameters:
@@ -2627,18 +2653,18 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).ExecuteAndGetOutputAsDataReader(Of T)(T, ActionType, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).ExecuteAndGetOutputAsDataReader(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
   name.vb: ExecuteAndGetOutputAsDataReader(Of T)(T, ActionType, Expression(Of Func(Of T, Object))())
-- uid: DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutputAsDataReader``1(``0,ActionType,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  commentId: M:DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutputAsDataReader``1(``0,ActionType,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
-  id: ExecuteAndGetOutputAsDataReader``1(``0,ActionType,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+- uid: DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutputAsDataReader``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  commentId: M:DotNetHelper.Database.DataSource.DB`1.ExecuteAndGetOutputAsDataReader``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
+  id: ExecuteAndGetOutputAsDataReader``1(``0,DotNetHelper.ObjectToSql.Enum.ActionType,System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Func{System.Object,System.String},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])
   parent: DotNetHelper.Database.DataSource.DB`1
   langs:
   - csharp
   - vb
   name: ExecuteAndGetOutputAsDataReader<T>(T, ActionType, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
   nameWithType: DB<TDbConnection>.ExecuteAndGetOutputAsDataReader<T>(T, ActionType, Func<Object, String>, Func<Object, String>, Func<Object, String>, Expression<Func<T, Object>>[])
-  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.ExecuteAndGetOutputAsDataReader<T>(T, ActionType, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
+  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.ExecuteAndGetOutputAsDataReader<T>(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Func<System.Object, System.String>, System.Linq.Expressions.Expression<System.Func<T, System.Object>>[])
   type: Method
   source:
     remote:
@@ -2654,12 +2680,13 @@ items:
   syntax:
     content: >-
       public DbDataReader ExecuteAndGetOutputAsDataReader<T>(T instance, ActionType actionType, Func<object, string> xmlSerializer, Func<object, string> jsonSerializer, Func<object, string> csvSerializer, params Expression<Func<T, object>>[] outputFields)
+
           where T : class
     parameters:
     - id: instance
       type: '{T}'
     - id: actionType
-      type: ActionType
+      type: DotNetHelper.ObjectToSql.Enum.ActionType
     - id: xmlSerializer
       type: System.Func{System.Object,System.String}
     - id: jsonSerializer
@@ -2679,7 +2706,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).ExecuteAndGetOutputAsDataReader(Of T)(T, ActionType, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
+  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).ExecuteAndGetOutputAsDataReader(Of T)(T, DotNetHelper.ObjectToSql.Enum.ActionType, System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Func(Of System.Object, System.String), System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
   name.vb: ExecuteAndGetOutputAsDataReader(Of T)(T, ActionType, Func(Of Object, String), Func(Of Object, String), Func(Of Object, String), Expression(Of Func(Of T, Object))())
 - uid: DotNetHelper.Database.DataSource.DB`1.SqlServerBulkCopy``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
   commentId: M:DotNetHelper.Database.DataSource.DB`1.SqlServerBulkCopy``1(System.Collections.Generic.List{``0},System.Data.SqlClient.SqlBulkCopyOptions)
@@ -2708,6 +2735,7 @@ items:
   syntax:
     content: >-
       public long SqlServerBulkCopy<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions)
+
           where T : class
     parameters:
     - id: data
@@ -2758,6 +2786,7 @@ items:
   syntax:
     content: >-
       public long SqlServerBulkCopy<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions, string tableName)
+
           where T : class
     parameters:
     - id: data
@@ -2811,6 +2840,7 @@ items:
   syntax:
     content: >-
       public long SqlServerBulkCopy<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions, string tableName, int batchSize)
+
           where T : class
     parameters:
     - id: data
@@ -2867,6 +2897,7 @@ items:
   syntax:
     content: >-
       public Task<long> SqlServerBulkCopyAsync<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions)
+
           where T : class
     parameters:
     - id: data
@@ -2917,6 +2948,7 @@ items:
   syntax:
     content: >-
       public Task<long> SqlServerBulkCopyAsync<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions, string tableName)
+
           where T : class
     parameters:
     - id: data
@@ -2970,6 +3002,7 @@ items:
   syntax:
     content: >-
       public Task<long> SqlServerBulkCopyAsync<T>(List<T> data, SqlBulkCopyOptions bulkCopyOptions, string tableName, int batchSize)
+
           where T : class
     parameters:
     - id: data
@@ -3410,11 +3443,19 @@ references:
   fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.ObjectToSql
   nameWithType.vb: DB(Of TDbConnection).ObjectToSql
   fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).ObjectToSql
-- uid: ObjectToSql.Services.ObjectToSql
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  commentId: T:DotNetHelper.ObjectToSql.Services.ObjectToSql
+  parent: DotNetHelper.ObjectToSql.Services
   isExternal: true
-  name: ObjectToSql.Services.ObjectToSql
-  nameWithType: ObjectToSql.Services.ObjectToSql
-  fullName: ObjectToSql.Services.ObjectToSql
+  name: ObjectToSql
+  nameWithType: ObjectToSql
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql
+- uid: DotNetHelper.ObjectToSql.Services
+  commentId: N:DotNetHelper.ObjectToSql.Services
+  isExternal: true
+  name: DotNetHelper.ObjectToSql.Services
+  nameWithType: DotNetHelper.ObjectToSql.Services
+  fullName: DotNetHelper.ObjectToSql.Services
 - uid: DotNetHelper.Database.DataSource.DB`1.DatabaseType*
   commentId: Overload:DotNetHelper.Database.DataSource.DB`1.DatabaseType
   name: DatabaseType
@@ -3422,12 +3463,19 @@ references:
   fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.DatabaseType
   nameWithType.vb: DB(Of TDbConnection).DatabaseType
   fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).DatabaseType
-- uid: DataBaseType
-  commentId: '!:DataBaseType'
+- uid: DotNetHelper.ObjectToSql.Enum.DataBaseType
+  commentId: T:DotNetHelper.ObjectToSql.Enum.DataBaseType
+  parent: DotNetHelper.ObjectToSql.Enum
   isExternal: true
   name: DataBaseType
   nameWithType: DataBaseType
-  fullName: DataBaseType
+  fullName: DotNetHelper.ObjectToSql.Enum.DataBaseType
+- uid: DotNetHelper.ObjectToSql.Enum
+  commentId: N:DotNetHelper.ObjectToSql.Enum
+  isExternal: true
+  name: DotNetHelper.ObjectToSql.Enum
+  nameWithType: DotNetHelper.ObjectToSql.Enum
+  fullName: DotNetHelper.ObjectToSql.Enum
 - uid: DotNetHelper.Database.DataSource.DB`1.#ctor*
   commentId: Overload:DotNetHelper.Database.DataSource.DB`1.#ctor
   name: DB
@@ -3441,15 +3489,15 @@ references:
   name: TDbConnection
   nameWithType: TDbConnection
   fullName: TDbConnection
-- uid: System.Nullable{DataBaseType}
-  commentId: T:System.Nullable{DataBaseType}
+- uid: System.Nullable{DotNetHelper.ObjectToSql.Enum.DataBaseType}
+  commentId: T:System.Nullable{DotNetHelper.ObjectToSql.Enum.DataBaseType}
   parent: System
   definition: System.Nullable`1
   name: Nullable<DataBaseType>
   nameWithType: Nullable<DataBaseType>
-  fullName: System.Nullable<DataBaseType>
+  fullName: System.Nullable<DotNetHelper.ObjectToSql.Enum.DataBaseType>
   nameWithType.vb: Nullable(Of DataBaseType)
-  fullName.vb: System.Nullable(Of DataBaseType)
+  fullName.vb: System.Nullable(Of DotNetHelper.ObjectToSql.Enum.DataBaseType)
   name.vb: Nullable(Of DataBaseType)
   spec.csharp:
   - uid: System.Nullable`1
@@ -3460,10 +3508,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: DataBaseType
+  - uid: DotNetHelper.ObjectToSql.Enum.DataBaseType
     name: DataBaseType
     nameWithType: DataBaseType
-    fullName: DataBaseType
+    fullName: DotNetHelper.ObjectToSql.Enum.DataBaseType
     isExternal: true
   - name: '>'
     nameWithType: '>'
@@ -3477,10 +3525,10 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: DataBaseType
+  - uid: DotNetHelper.ObjectToSql.Enum.DataBaseType
     name: DataBaseType
     nameWithType: DataBaseType
-    fullName: DataBaseType
+    fullName: DotNetHelper.ObjectToSql.Enum.DataBaseType
     isExternal: true
   - name: )
     nameWithType: )
@@ -4753,11 +4801,13 @@ references:
   fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>.Execute
   nameWithType.vb: DB(Of TDbConnection).Execute
   fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection).Execute
-- uid: ActionType
+- uid: DotNetHelper.ObjectToSql.Enum.ActionType
+  commentId: T:DotNetHelper.ObjectToSql.Enum.ActionType
+  parent: DotNetHelper.ObjectToSql.Enum
   isExternal: true
   name: ActionType
   nameWithType: ActionType
-  fullName: ActionType
+  fullName: DotNetHelper.ObjectToSql.Enum.ActionType
 - uid: DotNetHelper.Database.DataSource.DB`1.ExecuteAsync*
   commentId: Overload:DotNetHelper.Database.DataSource.DB`1.ExecuteAsync
   name: ExecuteAsync

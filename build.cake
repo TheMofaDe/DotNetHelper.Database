@@ -2,7 +2,6 @@
 #module nuget:?package=Cake.DotNetTool.Module&version=0.4.0
 
 // Install addins.
-#addin "nuget:?package=Cake.Codecov&version=0.9.1"
 #addin "nuget:?package=Cake.Json&version=5.2.0"
 #addin "nuget:?package=Cake.Incubator&version=5.1.0"
 #addin "nuget:?package=Cake.DocFx&version=0.13.1"

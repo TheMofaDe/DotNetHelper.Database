@@ -25,6 +25,7 @@ Task("Publish-NuGet")
             if (FileExists(package.FullPath))
             {
                 // Push the package to nuget.org
+                Information($"Publishing package to nuget {package.FullPath}");
                 NuGetPush(package.FullPath, new NuGetPushSettings
                 {
                     ApiKey = apiKey,
