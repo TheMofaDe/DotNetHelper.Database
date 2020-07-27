@@ -112,29 +112,71 @@
 <li>Sqlite</li>
 <li>MySql</li>
 </ul>
-<h2 id="example">Example</h2>
-<h5 id="how-to-insert-an-employee-using-a-generic-class">How to insert an employee using a generic class</h5>
-<pre><code class="lang-csharp"> var dbAccess = new DatabaseAccess&lt;SqlConnection&gt;(&quot;ConnectionString&quot;);
- var recordAffected = dbAccess.Execute(employee, ActionType.Insert); // ActionType is a enum of Insert,Update,Delete,Upsert
+<h2 id="getting-started">Getting Started</h2>
+<h5 id="insertupdateupsertdelete-using-a-anonymous-object">insert,update,upsert,delete using a anonymous object</h5>
+<pre><code class="lang-csharp">using (var db = new SqlConnection().DB()) 
+{
+      // Same api can be used for Update,Upsert,Delete by changing the ActionType enum 
+      db.Execute(new {Id = 1, Name = &quot;John Doe&quot;}, ActionType.Insert,&quot;TableName&quot;); 
+}
 </code></pre>
-<h5 id="how-to-insert-an-employee-using-a-dynamic-object">How to insert an employee using a dynamic object</h5>
+<h5 id="insertupdateupsertdelete-using-a-dynamic-object">insert,update,upsert,delete using a dynamic object</h5>
 <pre><code class="lang-csharp">dynamic dyn = new ExpandoObject(); 
-        dyn.FirstName = &quot;Joe Sister&quot;;
-        dyn.LastName = &quot;Dynamic&quot;;
-        dyn.DOB = DateTime.Today;
-var dbAccess = new DatabaseAccess&lt;SqlConnection&gt;(&quot;ConnectionString&quot;);
-var recordAffected = dbAccess.Execute(dyn, ActionType.Insert,&quot;TableName&quot;); // you need to specify the table name when using dynamic objects
+        dyn.Id = 2;
+        dyn.Name = &quot;John Sister&quot;;
+using (var db = new SqlConnection().DB()) 
+{
+   // Same api can be used for Update,Upsert,Delete by changing the ActionType enum
+      db.Execute(dyn, ActionType.Insert,&quot;TableName&quot;); 
+}
 </code></pre>
-<h5 id="how-to-insert-an-employee-using-a-generic-class-1">How to insert an employee using a generic class</h5>
-<pre><code class="lang-csharp">var anonymousEmployee = new {FirstName = &quot;Joe Brother&quot;, DOB = DateTime.Today.AddDays(-1) , LastName = &quot;Anonymous&quot;}; 
-var dbAccess = new DatabaseAccess&lt;SqlConnection&gt;(&quot;ConnectionString&quot;);
-var recordAffected = dbAccess.Execute(anonymousEmployee, ActionType.Insert,&quot;TableName&quot;); // you need to specify the table name when using anonymous objects
+<h5 id="insertupdateupsertdelete-using-a-generic-class">insert,update,upsert,delete using a generic class</h5>
+<pre><code class="lang-csharp">using (var db = new SqlConnection().DB()) 
+{
+      var employee = new Employee(){ Id = 1, Name = &quot;Generic Name&quot; }  
+   // Same api can be used for Update,Upsert,Delete by changing the ActionType enum
+      db.Execute(employee, ActionType.Insert); 
+   // table name not required if Table Attribute exist otherwise type name would be used as table name
+}
 </code></pre>
-<h5 id="how-to-use-bulk-copy-with-a-list-of-objects">How to use bulk copy with a list of objects</h5>
-<pre><code class="lang-csharp">var numberOfRowCopied = dbAccess.SqlServerBulkInsert(listofObjects, SqlBulkCopyOptions.Default);```
+<h2 id="section"></h2>
+<h3 id="insert-record-and-return-database-generated-values-such-as-identity--more">Insert record and return database generated values such as Identity &amp; more</h3>
+<h5 id="lets-create-a-table">Lets create a table</h5>
+<pre><code class="lang-sql">CREATE TABLE [Employee](
+	[Id] [int] NOT NULL IDENTITY (1,1) PRIMARY KEY,
+	[Name] [varchar](400) NOT NULL,
+	[CreatedAt] DateTime NOT NULL DEFAULT GETDATE()
+);
 </code></pre>
-<h5 id="finish-product">Finish Product</h5>
-<p><img src="images/snippet1.gif" alt="alt text" title="Snippet 1"></p>
+<h5 id="lets-create-our-dto-from-our-table">Lets create our DTO from our table</h5>
+<pre><code class="lang-csharp">public class Employee {
+  
+  [SqlColumn(SetIsIdentityKey = true)] // Specify that this column is an Identity field
+  [DatabaseGenerated(DatabaseGeneratedOption.Identity)]  // or you can use data annotation attribute for same behavior
+  public int Id { get; set; }
+
+  public string Name { get; set; }
+  
+  [SqlColumn(SetIsReadOnly = true)] // If true this property will never be included when creating insert sql. This is useful for senarios where you want to use the database default value
+  [NotMapped] // or you can use data annotation attribute for same behavior
+  public DateTime CreatedAt { get; set; }
+
+}
+</code></pre>
+<h5 id="now-lets-insert-an-employee-and-get-back-all-the-database-generated-values-such-as-createdat--identity--id">now lets insert an employee and get back all the database generated values such as CreatedAt &amp; Identity  Id</h5>
+<pre><code class="lang-csharp">using (var db = new SqlConnection().DB()) 
+{
+  var employee = new Employee() {Name = &quot;Generic Name&quot;};
+  var outputEmployee = await db.ExecuteAndGetOutputAsync(employee, ActionType.Insert,emp =&gt; emp.Id, emp =&gt; emp.CreatedAt);
+  // Set the identity and database default value back to my original unchanged object
+  employee.Id = outputEmployee.Id;
+  employee.CreatedAt = outputEmployee.CreatedAt;
+
+  Console.WriteLine(employee.Id); // 1
+  Console.WriteLine(employee.CreatedAt); // 7/24/2020 7:55:45 PM
+  Console.WriteLine(employee.Name); // Generic Name
+}
+</code></pre>
 <!-- Links. -->
 <!-- Documentation Links. -->
 </article>

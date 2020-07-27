@@ -16,7 +16,7 @@
   <Target
     Name="SetVersionMetadata"
     DependsOnTargets="GitVersion"
-    Condition="'$(GitInfoImported)' == 'true'">
+    Condition="'$(GitInfoImported)' == 'true' And '$(ExcludeRestorePackageImports)' != 'true'">
 
 <PropertyGroup>
     <PackageProjectUrl>$(GitRepositoryUrl)</PackageProjectUrl>

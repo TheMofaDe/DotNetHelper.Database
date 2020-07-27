@@ -16,8 +16,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/IDataParameterExtension.cs
-      branch: Feature-Async
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: IDataParameterExtension
     path: ../src/DotNetHelper.Database/Extension/IDataParameterExtension.cs
     startLine: 6
@@ -59,8 +59,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/IDataParameterExtension.cs
-      branch: Feature-Async
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: AddRange
     path: ../src/DotNetHelper.Database/Extension/IDataParameterExtension.cs
     startLine: 14

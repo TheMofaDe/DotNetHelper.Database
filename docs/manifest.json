@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/Business/TheMoFaDe/DotNetHelper.Database/docs",
+  "source_base_path": "C:/Business/TheMoFaDe/Code/DotNetHelper.Database/docs",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -18,7 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper.Database.DataSource.DB-1.html",
-          "hash": "1NJEXpytnkMBo4wEv5kYCQ=="
+          "hash": "JaIztZNwQapyCoJqPdegVA=="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper.Database.Extension.DbConnectionExtension.html",
-          "hash": "IwtZFtIix2YE9BbuApWwQg=="
+          "hash": "6U78Y9vSuwYmtJrUVbM/2Q=="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper.Database.Extension.ExtDataReader.html",
-          "hash": "SpkSiCDIgqzP4eGlSUtBnw=="
+          "hash": "gmAuZj6RGawQAa66gRM20g=="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper.Database.Extension.ExtDataTable.html",
-          "hash": "4slN4gR0RkmamMmj09BX0A=="
+          "hash": "HKti97xDMrgOvyN+Jlrvxg=="
         }
       },
       "is_incremental": false,
@@ -78,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper.Database.Extension.IDataParameterExtension.html",
-          "hash": "/kL3mraolT6gKhuooEknRw=="
+          "hash": "iYHuYYeKRs5ht1UGn6i8KA=="
         }
       },
       "is_incremental": false,
@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper.Database.Extension.TypeExtension.html",
-          "hash": "IaUNthVJoS92wnvcKUSjXw=="
+          "hash": "V532OOAv+WgG1NC/v0NOfA=="
         }
       },
       "is_incremental": false,
@@ -114,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNetHelper.Database.Helper.DBProviderHelper.html",
-          "hash": "g/Ze9yVE7kPWtue4dQwLGw=="
+          "hash": "zdqCSRHnzSDxOpCD3tJr/A=="
         }
       },
       "is_incremental": false,
@@ -150,7 +150,7 @@
       "output": {
         "resource": {
           "relative_path": "images/icon.png",
-          "link_to_path": "C:\\Business\\TheMoFaDe\\DotNetHelper.Database\\docs/images/icon.png"
+          "link_to_path": "C:\\Business\\TheMoFaDe\\Code\\DotNetHelper.Database\\docs/images/icon.png"
         }
       },
       "is_incremental": false,
@@ -162,7 +162,7 @@
       "output": {
         "resource": {
           "relative_path": "images/snippet1.gif",
-          "link_to_path": "C:\\Business\\TheMoFaDe\\DotNetHelper.Database\\docs/images/snippet1.gif"
+          "link_to_path": "C:\\Business\\TheMoFaDe\\Code\\DotNetHelper.Database\\docs/images/snippet1.gif"
         }
       },
       "is_incremental": false,
@@ -174,7 +174,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "vJufd0SyPEJ+SmtzSSlSgA=="
+          "hash": "NhXSrRYoTXlDdzEO/+NDyg=="
         }
       },
       "is_incremental": false,
@@ -186,7 +186,7 @@
       "output": {
         "resource": {
           "relative_path": "langwordmapping/langwordMapping.yml",
-          "link_to_path": "C:\\Business\\TheMoFaDe\\DotNetHelper.Database\\docs/langwordmapping/langwordMapping.yml"
+          "link_to_path": "C:\\Business\\TheMoFaDe\\Code\\DotNetHelper.Database\\docs/langwordmapping/langwordMapping.yml"
         }
       },
       "is_incremental": false,
@@ -331,23 +331,25 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": true,
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
       },
       "processors": {
         "ConceptualDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 10,
-          "skipped_file_count": 10
+          "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 10,
-          "skipped_file_count": 10
+          "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
           "can_incremental": false,

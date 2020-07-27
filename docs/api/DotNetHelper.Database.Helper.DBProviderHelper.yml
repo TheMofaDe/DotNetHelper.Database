@@ -16,8 +16,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Helper/DBProviderHelper.cs
-      branch: Feature-Async
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: DBProviderHelper
     path: ../src/DotNetHelper.Database/Helper/DBProviderHelper.cs
     startLine: 7
@@ -58,8 +58,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Helper/DBProviderHelper.cs
-      branch: Feature-Async
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: Map
     path: ../src/DotNetHelper.Database/Helper/DBProviderHelper.cs
     startLine: 9
@@ -70,7 +70,7 @@ items:
     content: public static Dictionary<DataBaseType, string> Map { get; }
     parameters: []
     return:
-      type: System.Collections.Generic.Dictionary{DotNetHelper.ObjectToSql.Enum.DataBaseType,System.String}
+      type: System.Collections.Generic.Dictionary{DataBaseType,System.String}
     content.vb: Public Shared ReadOnly Property Map As Dictionary(Of DataBaseType, String)
   overload: DotNetHelper.Database.Helper.DBProviderHelper.Map*
   modifiers.csharp:
@@ -384,15 +384,15 @@ references:
   name: Map
   nameWithType: DBProviderHelper.Map
   fullName: DotNetHelper.Database.Helper.DBProviderHelper.Map
-- uid: System.Collections.Generic.Dictionary{DotNetHelper.ObjectToSql.Enum.DataBaseType,System.String}
-  commentId: T:System.Collections.Generic.Dictionary{DotNetHelper.ObjectToSql.Enum.DataBaseType,System.String}
+- uid: System.Collections.Generic.Dictionary{DataBaseType,System.String}
+  commentId: T:System.Collections.Generic.Dictionary{DataBaseType,System.String}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.Dictionary`2
   name: Dictionary<DataBaseType, String>
   nameWithType: Dictionary<DataBaseType, String>
-  fullName: System.Collections.Generic.Dictionary<DotNetHelper.ObjectToSql.Enum.DataBaseType, System.String>
+  fullName: System.Collections.Generic.Dictionary<DataBaseType, System.String>
   nameWithType.vb: Dictionary(Of DataBaseType, String)
-  fullName.vb: System.Collections.Generic.Dictionary(Of DotNetHelper.ObjectToSql.Enum.DataBaseType, System.String)
+  fullName.vb: System.Collections.Generic.Dictionary(Of DataBaseType, System.String)
   name.vb: Dictionary(Of DataBaseType, String)
   spec.csharp:
   - uid: System.Collections.Generic.Dictionary`2
@@ -403,10 +403,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: DotNetHelper.ObjectToSql.Enum.DataBaseType
+  - uid: DataBaseType
     name: DataBaseType
     nameWithType: DataBaseType
-    fullName: DotNetHelper.ObjectToSql.Enum.DataBaseType
+    fullName: DataBaseType
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -428,10 +428,10 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: DotNetHelper.ObjectToSql.Enum.DataBaseType
+  - uid: DataBaseType
     name: DataBaseType
     nameWithType: DataBaseType
-    fullName: DotNetHelper.ObjectToSql.Enum.DataBaseType
+    fullName: DataBaseType
     isExternal: true
   - name: ', '
     nameWithType: ', '

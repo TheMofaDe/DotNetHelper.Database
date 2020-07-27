@@ -19,8 +19,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/ExtDataTable.cs
-      branch: Feature-Async
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExtDataTable
     path: ../src/DotNetHelper.Database/Extension/ExtDataTable.cs
     startLine: 12
@@ -62,8 +62,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/ExtDataTable.cs
-      branch: Feature-Async
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: SetColumnsOrder
     path: ../src/DotNetHelper.Database/Extension/ExtDataTable.cs
     startLine: 20
@@ -111,8 +111,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/ExtDataTable.cs
-      branch: Feature-Async
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: SetColumnPosition
     path: ../src/DotNetHelper.Database/Extension/ExtDataTable.cs
     startLine: 46
@@ -160,8 +160,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/ExtDataTable.cs
-      branch: Feature-Async
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: MapTo
     path: ../src/DotNetHelper.Database/Extension/ExtDataTable.cs
     startLine: 64
@@ -216,8 +216,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/ExtDataTable.cs
-      branch: Feature-Async
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: MapToList
     path: ../src/DotNetHelper.Database/Extension/ExtDataTable.cs
     startLine: 104

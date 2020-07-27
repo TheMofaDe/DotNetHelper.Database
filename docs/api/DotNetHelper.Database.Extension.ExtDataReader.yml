@@ -21,8 +21,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/ExtDataReader.cs
-      branch: Feature-Async
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: ExtDataReader
     path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
     startLine: 17
@@ -64,8 +64,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/ExtDataReader.cs
-      branch: Feature-Async
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: HasRows
     path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
     startLine: 59
@@ -105,8 +105,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/ExtDataReader.cs
-      branch: Feature-Async
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: MapToList
     path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
     startLine: 140
@@ -159,8 +159,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/ExtDataReader.cs
-      branch: Feature-Async
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: MapToList
     path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
     startLine: 168
@@ -212,8 +212,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/ExtDataReader.cs
-      branch: Feature-Async
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: MapTo
     path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
     startLine: 183
@@ -266,8 +266,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/ExtDataReader.cs
-      branch: Feature-Async
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: MapTo
     path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
     startLine: 208
@@ -319,8 +319,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/ExtDataReader.cs
-      branch: Feature-Async
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: MapToDataTable
     path: ../src/DotNetHelper.Database/Extension/ExtDataReader.cs
     startLine: 254

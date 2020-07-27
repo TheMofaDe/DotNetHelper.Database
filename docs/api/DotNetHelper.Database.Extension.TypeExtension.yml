@@ -19,8 +19,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/TypeExtension.cs
-      branch: Feature-Async
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: TypeExtension
     path: ../src/DotNetHelper.Database/Extension/TypeExtension.cs
     startLine: 14
@@ -62,8 +62,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/TypeExtension.cs
-      branch: Feature-Async
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: IsNullable
     path: ../src/DotNetHelper.Database/Extension/TypeExtension.cs
     startLine: 24
@@ -107,8 +107,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/TypeExtension.cs
-      branch: Feature-Async
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: IsTypeDynamic
     path: ../src/DotNetHelper.Database/Extension/TypeExtension.cs
     startLine: 39
@@ -152,8 +152,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/TypeExtension.cs
-      branch: Feature-Async
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: IsTypeAnonymousType
     path: ../src/DotNetHelper.Database/Extension/TypeExtension.cs
     startLine: 49
@@ -197,8 +197,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/TypeExtension.cs
-      branch: Feature-Async
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database
+      branch: master
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
     id: IsTypeAnIEnumerable
     path: ../src/DotNetHelper.Database/Extension/TypeExtension.cs
     startLine: 64
