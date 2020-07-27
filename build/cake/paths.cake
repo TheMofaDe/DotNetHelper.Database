@@ -73,7 +73,7 @@ public class BuildDirectories
     }}
     public ReadOnlyCollection<FilePath> TestResults { get {
         var list = new List<FilePath>(){};
-        var files =  Context.GetFiles($"{TestResultsOutput.FullPath}/*.results.xml");
+        var files =  Context.GetFiles($"{TestResultsOutput.FullPath}/**/*.results.xml");
         foreach(var file in files){
             list.Add(file);
         }
@@ -81,7 +81,7 @@ public class BuildDirectories
     }}
     public ReadOnlyCollection<FilePath> NugetPackages { get {
         var list = new List<FilePath>(){};
-        var files =  Context.GetFiles($"{NugetRoot.FullPath}/*.nupkg");
+        var files =  Context.GetFiles($"{NugetRoot.FullPath}/**/*.nupkg");
         foreach(var file in files){
             list.Add(file);
         }
