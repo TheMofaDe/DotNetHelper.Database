@@ -1,0 +1,51 @@
+<Project>
+
+  <!-- PROJECTS DEFAULT PROPERTIES -->
+<PropertyGroup>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <LangVersion>latest</LangVersion>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageTags>ORM,database,sql,generic,dynamic,anonyous</PackageTags>
+    <RepositoryType>git</RepositoryType>
+    <Description>DotNetHelper.Database is a lightweight ORM that works with generics,dynamic, &amp; anonyous objects for ADO.NET</Description>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <Authors>Joseph McNeal Jr</Authors>
+    <Company>Joseph McNeal Jr</Company>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <language>$(NeutralLanguage)</language>
+    <Copyright>$([System.DateTime]::Now.ToString('yyyy')) Joseph McNeal Jr</Copyright>
+    
+    <PackageProjectUrl>THIS WILL AUTO-POPULATE</PackageProjectUrl>
+    <RepositoryUrl>THIS WILL AUTO-POPULATE</RepositoryUrl>
+    <PackageReleaseNotes>THIS WILL AUTO-POPULATE</PackageReleaseNotes>
+    <RepositoryCommit>THIS WILL AUTO-POPULATE</RepositoryCommit>
+    <RepositoryBranch>THIS WILL AUTO-POPULATE</RepositoryBranch>
+    <AssemblyVersion>0.0.0</AssemblyVersion>
+    <PackageVersion>0.0.0</PackageVersion>
+    <Version>0.0.0</Version>
+    <FileVersion>0.0.0</FileVersion>
+    <InformationalVersion>0.0.0</InformationalVersion>
+</PropertyGroup>
+
+
+  <!-- ASSEMBLY SIGNING PROPERTIES -->
+  <PropertyGroup Condition="'$(SignAssembly)' == 'true'">
+    <PublicSign>true</PublicSign>
+    <DelaySign>false</DelaySign>
+    <AssemblyOriginatorKeyFile Condition="'$(AssemblyOriginatorKeyFile)' == ''">$(MSBuildThisFileDirectory)keysign.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE.md" Pack="true" PackagePath="LICENSE.md"/>
+    <Compile Include="$(MSBuildThisFileDirectory)ThisAssembly.cs" />
+    <Compile
+      Condition="'$(BuildingInsideVisualStudio)' == 'true' and Exists('$(IntermediateOutputPath)$(MSBuildProjectName).AssemblyInfo$(DefaultLanguageSourceExtension)')"
+      Include="$(IntermediateOutputPath)$(MSBuildProjectName).AssemblyInfo$(DefaultLanguageSourceExtension)"
+      Visible="false" />
+  </ItemGroup>
+
+
+</Project>

@@ -1,0 +1,9 @@
+# https://github.com/MicrosoftDocs/azure-devops-docs/issues/6677 follow up at some point
+steps:
+- template: common-steps.yml
+- pwsh: ./build.ps1 -target Generate-Docs
+  displayName: '[Documentation Generation (DocsFX)]'
+- publish: $(System.DefaultWorkingDirectory)/artifacts
+  displayName: 'Upload artifacts folder'
+  condition: and(succeeded(), eq( variables['Agent.OS'], 'Windows_NT' ))
+  artifact: documentation

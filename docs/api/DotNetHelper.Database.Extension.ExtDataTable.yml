@@ -19,8 +19,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/ExtDataTable.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+      branch: Feature-Async
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: ExtDataTable
     path: ../src/DotNetHelper.Database/Extension/ExtDataTable.cs
     startLine: 12
@@ -62,8 +62,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/ExtDataTable.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+      branch: Feature-Async
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: SetColumnsOrder
     path: ../src/DotNetHelper.Database/Extension/ExtDataTable.cs
     startLine: 20
@@ -111,8 +111,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/ExtDataTable.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+      branch: Feature-Async
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: SetColumnPosition
     path: ../src/DotNetHelper.Database/Extension/ExtDataTable.cs
     startLine: 46
@@ -160,8 +160,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/ExtDataTable.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+      branch: Feature-Async
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: MapTo
     path: ../src/DotNetHelper.Database/Extension/ExtDataTable.cs
     startLine: 64
@@ -216,11 +216,11 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/ExtDataTable.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+      branch: Feature-Async
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: MapToList
     path: ../src/DotNetHelper.Database/Extension/ExtDataTable.cs
-    startLine: 103
+    startLine: 104
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension

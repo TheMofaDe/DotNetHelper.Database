@@ -1,99 +1,52 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net45;netcoreapp2.2;net452</TargetFrameworks>
-
+    <TargetFrameworks>netcoreapp5.0</TargetFrameworks>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="SQLiteTest\**" />
-    <Compile Remove="SQLServerTests\**" />
-    <EmbeddedResource Remove="SQLiteTest\**" />
-    <EmbeddedResource Remove="SQLServerTests\**" />
-    <None Remove="SQLiteTest\**" />
-    <None Remove="SQLServerTests\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="Assets\calendar-16.png" />
-    <None Remove="Scripts\mysql_cleanup_1.sql" />
-    <None Remove="Scripts\mysql_init_1.sql" />
-    <None Remove="Scripts\sqlite_cleanup_1.sql" />
-    <None Remove="Scripts\sqlite_cleanup_2.sql" />
-    <None Remove="Scripts\sqlite_cleanup_3.sql" />
-    <None Remove="Scripts\sqlite_init_1.sql" />
-    <None Remove="Scripts\sqlite_init_2.sql" />
-    <None Remove="Scripts\sqlite_init_3.sql" />
-    <None Remove="Scripts\sqlserver_cleanup_1.sql" />
-    <None Remove="Scripts\sqlserver_init_1.sql" />
-  </ItemGroup>
+ 
 
   <ItemGroup>
     <EmbeddedResource Include="Assets\calendar-16.png" />
-    <EmbeddedResource Include="Scripts\sqlite_cleanup_1.sql" />
-    <EmbeddedResource Include="Scripts\sqlite_cleanup_3.sql" />
-    <EmbeddedResource Include="Scripts\sqlite_cleanup_2.sql" />
-    <EmbeddedResource Include="Scripts\sqlite_init_3.sql" />
-    <EmbeddedResource Include="Scripts\sqlite_init_2.sql" />
-    <EmbeddedResource Include="Scripts\sqlite_init_1.sql" />
-    <EmbeddedResource Include="Scripts\mysql_cleanup_1.sql" />
-    <EmbeddedResource Include="Scripts\sqlserver_cleanup_1.sql" />
-    <EmbeddedResource Include="Scripts\mysql_init_1.sql" />
-    <EmbeddedResource Include="Scripts\sqlserver_init_1.sql" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="DotNetHelper.Serialization.Csv" Version="1.0.19" />
-    <PackageReference Include="DotNetHelper.Serialization.Json" Version="1.0.19" />
-    <PackageReference Include="nunit" Version="3.12.0" />
-    <PackageReference Include="NUnit3TestAdapter" Version="3.13.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\DotNetHelper.Database\DotNetHelper.Database.csproj" />
   </ItemGroup>
 
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.2'">
-    <PackageReference Include="Microsoft.Data.Sqlite">
-      <!--Microsoft.EntityFrameworkCore.Sqlite-->
-      <Version>3.0.0-preview8.19405.11</Version>
-    </PackageReference>
-    <PackageReference Include="MySql.Data">
-      <Version>8.0.17</Version>
-    </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'net452' ">
-    <PackageReference Include="Microsoft.Data.Sqlite">
-      <!--Microsoft.EntityFrameworkCore.Sqlite-->
-      <Version>2.0.0-preview1-final</Version>
-    </PackageReference>
-  </ItemGroup>
-
   <ItemGroup>
+    <PackageReference Include="DotNetHelper.Serialization.Csv" Version="1.0.23" />
+    <PackageReference Include="DotNetHelper.Serialization.Json" Version="1.0.19" />
+    <PackageReference Include="FluentAssertions" Version="5.10.3" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.0-preview-20200519-01" />
+    <PackageReference Include="MySql.Data" Version="8.0.21" />
+    <PackageReference Include="SimpleInjector" Version="5.0.3" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.msbuild" Version="2.9.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(NETCORE)' == 'true' or '$(NETSTANDARD)' == 'true'">
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="5.0.0-preview.7.20365.15">
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(NETFRAMEWORK)' == 'true' ">
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="2.0.0-preview1-final">
+    </PackageReference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net452'">
-    <PackageReference Include="MySql.Data">
-      <Version>8.0.17</Version>
-    </PackageReference>
-  </ItemGroup>
-
-
-  <PropertyGroup Condition="'$(TargetFramework)' == 'netcoreapp2.2'  ">
-    <DefineConstants>$(DefineConstants);DOTNETCORE</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(TargetFramework)' == 'netcoreapp2.2' OR '$(TargetFramework)' == 'net452' ">
-    <DefineConstants>$(DefineConstants);SUPPORTSQLITE</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(TargetFramework)' == 'net45' OR '$(TargetFramework)' == 'net452'  OR '$(TargetFramework)' == 'netstandard2.1' ">
+   
+  <PropertyGroup Condition="'$(NETFRAMEWORK)' == 'true' OR '$(NETSTANDARD)' == 'true' ">
     <DefineConstants>$(DefineConstants);SUPPORTDBFACTORIES</DefineConstants>
   </PropertyGroup>
 

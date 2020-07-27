@@ -1,41 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net452;net45</TargetFrameworks>
-    <PackageProjectUrl>https://github.com/TheMofaDe/DotNetHelper.Database</PackageProjectUrl>
-    <PackageIconUrl>https://github.com/TheMofaDe/DotNetHelper.Database</PackageIconUrl>
-    <RepositoryUrl>https://github.com/TheMofaDe/DotNetHelper.Database</RepositoryUrl>
-    <PackageReleaseNotes>https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/CHANGELOG.md</PackageReleaseNotes>
-    <PackageTags>ORM,database,sql,generic,dynamic,anonyous</PackageTags>
-    <RepositoryType>git</RepositoryType>
-    <Description>DotNetHelper.Database is a lightweight ORM that works with generics,dynamic, &amp; anonyous objects for ADO.NET</Description>
-    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Authors>Joseph McNeal Jr</Authors>
-    <Company>Joseph McNeal Jr</Company>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <TargetFrameworks>netstandard2.0;net452</TargetFrameworks>
   </PropertyGroup>
 
-
-  <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netstandard2.1'">
-    <DefineConstants>$(DefineConstants);NETSTANDARD</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(TargetFramework)' == 'net45' OR '$(TargetFramework)' == 'net452'  ">
-    <DefineConstants>$(DefineConstants);NETFRAMEWORK</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(TargetFramework)' == 'net45' OR '$(TargetFramework)' == 'net452'  OR '$(TargetFramework)' == 'netstandard2.1' ">
-    <DefineConstants>$(DefineConstants);SUPPORTDBFACTORIES</DefineConstants>
-  </PropertyGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'  ">
-    <PackageReference Include="System.Data.SqlClient" Version="4.6.1" /> <!-- Needed to fix bug in .NET Standard https://github.com/dotnet/corefx/issues/19748-->
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.1" /> <!-- Needed to fix bug in .NET Standard https://github.com/dotnet/corefx/issues/19748-->
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net45' OR '$(TargetFramework)' == 'net452'  ">
+  <ItemGroup Condition="'$(TargetFramework)' == 'net452' ">
     <Reference Include="System.Configuration" />
     </ItemGroup>
+
 
   <ItemGroup>
     <Compile Remove="DataSource\DataBaseAccessTest.cs" />
@@ -44,34 +21,8 @@
   </ItemGroup>
 
 
-
-
   <ItemGroup>
-    <Folder Include="Enum\" />
-    <Folder Include="Exceptions\" />
+    <PackageReference Include="DotNetHelper.ObjectToSql" Version="2.0.18" />
   </ItemGroup>
-
-
-
-
-  <ItemGroup>
-    <None Include="..\..\LICENSE.md">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
-
-
-
-
-  <ItemGroup>
-    <PackageReference Include="DotNetHelper.ObjectToSql" Version="2.0.11" />
-  </ItemGroup>
-
-
-
-
-
-
 
 </Project>

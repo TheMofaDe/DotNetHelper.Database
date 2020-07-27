@@ -1,0 +1,11 @@
+steps:
+- template: common-steps.yml
+  parameters:
+    cacheCakeTools: true
+    includeArtifacts: false    
+- pwsh: ./build.ps1 -target Build
+  displayName: '[Cake build]'
+- publish: $(System.DefaultWorkingDirectory)/artifacts
+  displayName: 'Upload artifacts folder'
+  condition: and(succeeded(), eq( variables['Agent.OS'], 'Windows_NT' ))
+  artifact: Build-$(VM_IMAGE)

@@ -26,38 +26,82 @@
 
 
 
+## Getting Started 
 
-## Example 
-
-##### How to insert an employee using a generic class
+##### insert,update,upsert,delete using a anonymous object 
 ```csharp
- var dbAccess = new DatabaseAccess<SqlConnection>("ConnectionString");
- var recordAffected = dbAccess.Execute(employee, ActionType.Insert); // ActionType is a enum of Insert,Update,Delete,Upsert
+using (var db = new SqlConnection().DB()) 
+{
+      // Same api can be used for Update,Upsert,Delete by changing the ActionType enum 
+      db.Execute(new {Id = 1, Name = "John Doe"}, ActionType.Insert,"TableName"); 
+}
 ```   
-##### How to insert an employee using a dynamic object
+##### insert,update,upsert,delete using a dynamic object
 ```csharp
 dynamic dyn = new ExpandoObject(); 
-        dyn.FirstName = "Joe Sister";
-        dyn.LastName = "Dynamic";
-        dyn.DOB = DateTime.Today;
-var dbAccess = new DatabaseAccess<SqlConnection>("ConnectionString");
-var recordAffected = dbAccess.Execute(dyn, ActionType.Insert,"TableName"); // you need to specify the table name when using dynamic objects
+        dyn.Id = 2;
+        dyn.Name = "John Sister";
+using (var db = new SqlConnection().DB()) 
+{
+   // Same api can be used for Update,Upsert,Delete by changing the ActionType enum
+      db.Execute(dyn, ActionType.Insert,"TableName"); 
+}
 ```
-##### How to insert an employee using a generic class
+##### insert,update,upsert,delete using a generic class
 ```csharp
-var anonymousEmployee = new {FirstName = "Joe Brother", DOB = DateTime.Today.AddDays(-1) , LastName = "Anonymous"}; 
-var dbAccess = new DatabaseAccess<SqlConnection>("ConnectionString");
-var recordAffected = dbAccess.Execute(anonymousEmployee, ActionType.Insert,"TableName"); // you need to specify the table name when using anonymous objects
+using (var db = new SqlConnection().DB()) 
+{
+      var employee = new Employee(){ Id = 1, Name = "Generic Name" }  
+   // Same api can be used for Update,Upsert,Delete by changing the ActionType enum
+      db.Execute(employee, ActionType.Insert); 
+   // table name not required if Table Attribute exist otherwise type name would be used as table name
+}
 ```
 
-##### How to use bulk copy with a list of objects
-~~~csharp
-var numberOfRowCopied = dbAccess.SqlServerBulkInsert(listofObjects, SqlBulkCopyOptions.Default);```
-~~~        
+##  
+### Insert record and return database generated values such as Identity & more
 
-##### Finish Product 
-![alt text][logo]
+##### Lets create a table
+~~~sql 
+CREATE TABLE [Employee](
+	[Id] [int] NOT NULL IDENTITY (1,1) PRIMARY KEY,
+	[Name] [varchar](400) NOT NULL,
+	[CreatedAt] DateTime NOT NULL DEFAULT GETDATE()
+);
+~~~
 
+
+##### Lets create our DTO from our table
+```csharp
+public class Employee {
+  
+  [SqlColumn(SetIsIdentityKey = true)] // Specify that this column is an Identity field
+  [DatabaseGenerated(DatabaseGeneratedOption.Identity)]  // or you can use data annotation attribute for same behavior
+  public int Id { get; set; }
+
+  public string Name { get; set; }
+  
+  [SqlColumn(SetIsReadOnly = true)] // If true this property will never be included when creating insert sql. This is useful for senarios where you want to use the database default value
+  [NotMapped] // or you can use data annotation attribute for same behavior
+  public DateTime CreatedAt { get; set; }
+
+}
+```
+##### now lets insert an employee and get back all the database generated values such as CreatedAt & Identity  Id
+```csharp
+using (var db = new SqlConnection().DB()) 
+{
+  var employee = new Employee() {Name = "Generic Name"};
+  var outputEmployee = await db.ExecuteAndGetOutputAsync(employee, ActionType.Insert,emp => emp.Id, emp => emp.CreatedAt);
+  // Set the identity and database default value back to my original unchanged object
+  employee.Id = outputEmployee.Id;
+  employee.CreatedAt = outputEmployee.CreatedAt;
+
+  Console.WriteLine(employee.Id); // 1
+  Console.WriteLine(employee.CreatedAt); // 7/24/2020 7:55:45 PM
+  Console.WriteLine(employee.Name); // Generic Name
+}
+```
 
 <!-- Links. -->
 

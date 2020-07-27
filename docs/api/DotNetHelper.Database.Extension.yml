@@ -4,7 +4,7 @@ items:
   commentId: N:DotNetHelper.Database.Extension
   id: DotNetHelper.Database.Extension
   children:
-  - DotNetHelper.Database.Extension.DBConnectionExtension
+  - DotNetHelper.Database.Extension.DbConnectionExtension
   - DotNetHelper.Database.Extension.ExtDataReader
   - DotNetHelper.Database.Extension.ExtDataTable
   - DotNetHelper.Database.Extension.IDataParameterExtension
@@ -34,11 +34,11 @@ references:
   name: IDataParameterExtension
   nameWithType: IDataParameterExtension
   fullName: DotNetHelper.Database.Extension.IDataParameterExtension
-- uid: DotNetHelper.Database.Extension.DBConnectionExtension
-  commentId: T:DotNetHelper.Database.Extension.DBConnectionExtension
-  name: DBConnectionExtension
-  nameWithType: DBConnectionExtension
-  fullName: DotNetHelper.Database.Extension.DBConnectionExtension
+- uid: DotNetHelper.Database.Extension.DbConnectionExtension
+  commentId: T:DotNetHelper.Database.Extension.DbConnectionExtension
+  name: DbConnectionExtension
+  nameWithType: DbConnectionExtension
+  fullName: DotNetHelper.Database.Extension.DbConnectionExtension
 - uid: DotNetHelper.Database.Extension.TypeExtension
   commentId: T:DotNetHelper.Database.Extension.TypeExtension
   name: TypeExtension

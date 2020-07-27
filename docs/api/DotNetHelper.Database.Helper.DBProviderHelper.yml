@@ -16,8 +16,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Helper/DBProviderHelper.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+      branch: Feature-Async
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: DBProviderHelper
     path: ../src/DotNetHelper.Database/Helper/DBProviderHelper.cs
     startLine: 7
@@ -58,8 +58,8 @@ items:
   source:
     remote:
       path: src/DotNetHelper.Database/Helper/DBProviderHelper.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+      branch: Feature-Async
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: Map
     path: ../src/DotNetHelper.Database/Helper/DBProviderHelper.cs
     startLine: 9

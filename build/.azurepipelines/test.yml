@@ -1,0 +1,9 @@
+steps:
+- template: common-steps.yml
+  parameters:
+    includeArtifacts: true
+- pwsh: ./build.ps1 -target UnitTest
+  displayName: '[Run Test]'
+  env:
+    ENABLED_UNIT_TESTS: $(ENABLED_UNIT_TESTS)
+    CODECOV_TOKEN: $(CODECOV_TOKEN)

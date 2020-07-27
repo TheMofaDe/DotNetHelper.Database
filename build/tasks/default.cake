@@ -1,1 +1,0 @@
-Task("Default").IsDependentOn("Publish");

@@ -1,34 +1,36 @@
 ### YamlMime:ManagedReference
 items:
-- uid: DotNetHelper.Database.Extension.DBConnectionExtension
-  commentId: T:DotNetHelper.Database.Extension.DBConnectionExtension
-  id: DBConnectionExtension
+- uid: DotNetHelper.Database.Extension.DbConnectionExtension
+  commentId: T:DotNetHelper.Database.Extension.DbConnectionExtension
+  id: DbConnectionExtension
   parent: DotNetHelper.Database.Extension
   children:
-  - DotNetHelper.Database.Extension.DBConnectionExtension.CloseSafely(System.Data.IDbConnection)
-  - DotNetHelper.Database.Extension.DBConnectionExtension.DatabaseAccess``1(``0,System.Nullable{DotNetHelper.ObjectToSql.Enum.DataBaseType})
-  - DotNetHelper.Database.Extension.DBConnectionExtension.OpenSafely(System.Data.IDbConnection)
+  - DotNetHelper.Database.Extension.DbConnectionExtension.CloseSafely(System.Data.IDbConnection)
+  - DotNetHelper.Database.Extension.DbConnectionExtension.DB``1(``0)
+  - DotNetHelper.Database.Extension.DbConnectionExtension.ObjToSql``1(``0,System.Boolean)
+  - DotNetHelper.Database.Extension.DbConnectionExtension.OpenSafely(System.Data.IDbConnection)
+  - DotNetHelper.Database.Extension.DbConnectionExtension.OpenSafelyAsync(System.Data.Common.DbConnection,System.Threading.CancellationToken)
   langs:
   - csharp
   - vb
-  name: DBConnectionExtension
-  nameWithType: DBConnectionExtension
-  fullName: DotNetHelper.Database.Extension.DBConnectionExtension
+  name: DbConnectionExtension
+  nameWithType: DbConnectionExtension
+  fullName: DotNetHelper.Database.Extension.DbConnectionExtension
   type: Class
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
-    id: DBConnectionExtension
+      branch: Feature-Async
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database
+    id: DbConnectionExtension
     path: ../src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
-    startLine: 9
+    startLine: 12
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
   syntax:
-    content: public static class DBConnectionExtension
-    content.vb: Public Module DBConnectionExtension
+    content: public static class DbConnectionExtension
+    content.vb: Public Module DbConnectionExtension
   inheritance:
   - System.Object
   inheritedMembers:
@@ -46,65 +48,169 @@ items:
   modifiers.vb:
   - Public
   - Module
-- uid: DotNetHelper.Database.Extension.DBConnectionExtension.OpenSafely(System.Data.IDbConnection)
-  commentId: M:DotNetHelper.Database.Extension.DBConnectionExtension.OpenSafely(System.Data.IDbConnection)
-  id: OpenSafely(System.Data.IDbConnection)
+- uid: DotNetHelper.Database.Extension.DbConnectionExtension.ObjToSql``1(``0,System.Boolean)
+  commentId: M:DotNetHelper.Database.Extension.DbConnectionExtension.ObjToSql``1(``0,System.Boolean)
+  id: ObjToSql``1(``0,System.Boolean)
   isExtensionMethod: true
-  parent: DotNetHelper.Database.Extension.DBConnectionExtension
+  parent: DotNetHelper.Database.Extension.DbConnectionExtension
   langs:
   - csharp
   - vb
-  name: OpenSafely(IDbConnection)
-  nameWithType: DBConnectionExtension.OpenSafely(IDbConnection)
-  fullName: DotNetHelper.Database.Extension.DBConnectionExtension.OpenSafely(System.Data.IDbConnection)
+  name: ObjToSql<T>(T, Boolean)
+  nameWithType: DbConnectionExtension.ObjToSql<T>(T, Boolean)
+  fullName: DotNetHelper.Database.Extension.DbConnectionExtension.ObjToSql<T>(T, System.Boolean)
   type: Method
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
-    id: OpenSafely
+      branch: Feature-Async
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database
+    id: ObjToSql
     path: ../src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
-    startLine: 11
+    startLine: 15
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
   syntax:
-    content: public static void OpenSafely(this IDbConnection connection)
+    content: >-
+      public static ObjectToSql ObjToSql<T>(this T dbConnection, bool includeNonPublicProperties = true)
+          where T : DbConnection
     parameters:
-    - id: connection
-      type: System.Data.IDbConnection
+    - id: dbConnection
+      type: '{T}'
+    - id: includeNonPublicProperties
+      type: System.Boolean
+    typeParameters:
+    - id: T
+    return:
+      type: DotNetHelper.ObjectToSql.Services.ObjectToSql
     content.vb: >-
       <ExtensionAttribute>
 
-      Public Shared Sub OpenSafely(connection As IDbConnection)
-  overload: DotNetHelper.Database.Extension.DBConnectionExtension.OpenSafely*
+      Public Shared Function ObjToSql(Of T As DbConnection)(dbConnection As T, includeNonPublicProperties As Boolean = True) As ObjectToSql
+  overload: DotNetHelper.Database.Extension.DbConnectionExtension.ObjToSql*
+  nameWithType.vb: DbConnectionExtension.ObjToSql(Of T)(T, Boolean)
   modifiers.csharp:
   - public
   - static
   modifiers.vb:
   - Public
   - Shared
-- uid: DotNetHelper.Database.Extension.DBConnectionExtension.CloseSafely(System.Data.IDbConnection)
-  commentId: M:DotNetHelper.Database.Extension.DBConnectionExtension.CloseSafely(System.Data.IDbConnection)
-  id: CloseSafely(System.Data.IDbConnection)
+  fullName.vb: DotNetHelper.Database.Extension.DbConnectionExtension.ObjToSql(Of T)(T, System.Boolean)
+  name.vb: ObjToSql(Of T)(T, Boolean)
+- uid: DotNetHelper.Database.Extension.DbConnectionExtension.DB``1(``0)
+  commentId: M:DotNetHelper.Database.Extension.DbConnectionExtension.DB``1(``0)
+  id: DB``1(``0)
   isExtensionMethod: true
-  parent: DotNetHelper.Database.Extension.DBConnectionExtension
+  parent: DotNetHelper.Database.Extension.DbConnectionExtension
   langs:
   - csharp
   - vb
-  name: CloseSafely(IDbConnection)
-  nameWithType: DBConnectionExtension.CloseSafely(IDbConnection)
-  fullName: DotNetHelper.Database.Extension.DBConnectionExtension.CloseSafely(System.Data.IDbConnection)
+  name: DB<T>(T)
+  nameWithType: DbConnectionExtension.DB<T>(T)
+  fullName: DotNetHelper.Database.Extension.DbConnectionExtension.DB<T>(T)
   type: Method
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
+      branch: Feature-Async
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database
+    id: DB
+    path: ../src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
+    startLine: 20
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Extension
+  syntax:
+    content: >-
+      public static DB<T> DB<T>(this T dbConnection)
+          where T : DbConnection, new()
+    parameters:
+    - id: dbConnection
+      type: '{T}'
+    typeParameters:
+    - id: T
+    return:
+      type: DotNetHelper.Database.DataSource.DB{{T}}
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function DB(Of T As {DbConnection, New})(dbConnection As T) As DB(Of T)
+  overload: DotNetHelper.Database.Extension.DbConnectionExtension.DB*
+  nameWithType.vb: DbConnectionExtension.DB(Of T)(T)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: DotNetHelper.Database.Extension.DbConnectionExtension.DB(Of T)(T)
+  name.vb: DB(Of T)(T)
+- uid: DotNetHelper.Database.Extension.DbConnectionExtension.OpenSafely(System.Data.IDbConnection)
+  commentId: M:DotNetHelper.Database.Extension.DbConnectionExtension.OpenSafely(System.Data.IDbConnection)
+  id: OpenSafely(System.Data.IDbConnection)
+  isExtensionMethod: true
+  parent: DotNetHelper.Database.Extension.DbConnectionExtension
+  langs:
+  - csharp
+  - vb
+  name: OpenSafely(IDbConnection)
+  nameWithType: DbConnectionExtension.OpenSafely(IDbConnection)
+  fullName: DotNetHelper.Database.Extension.DbConnectionExtension.OpenSafely(System.Data.IDbConnection)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
+      branch: Feature-Async
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database
+    id: OpenSafely
+    path: ../src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
+    startLine: 30
+  assemblies:
+  - DotNetHelper.Database
+  namespace: DotNetHelper.Database.Extension
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public static bool OpenSafely(this IDbConnection connection)
+    parameters:
+    - id: connection
+      type: System.Data.IDbConnection
+      description: ''
+    return:
+      type: System.Boolean
+      description: true if the connection was force to be opened false if connection was already open
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function OpenSafely(connection As IDbConnection) As Boolean
+  overload: DotNetHelper.Database.Extension.DbConnectionExtension.OpenSafely*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: DotNetHelper.Database.Extension.DbConnectionExtension.CloseSafely(System.Data.IDbConnection)
+  commentId: M:DotNetHelper.Database.Extension.DbConnectionExtension.CloseSafely(System.Data.IDbConnection)
+  id: CloseSafely(System.Data.IDbConnection)
+  isExtensionMethod: true
+  parent: DotNetHelper.Database.Extension.DbConnectionExtension
+  langs:
+  - csharp
+  - vb
+  name: CloseSafely(IDbConnection)
+  nameWithType: DbConnectionExtension.CloseSafely(IDbConnection)
+  fullName: DotNetHelper.Database.Extension.DbConnectionExtension.CloseSafely(System.Data.IDbConnection)
+  type: Method
+  source:
+    remote:
+      path: src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
+      branch: Feature-Async
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database
     id: CloseSafely
     path: ../src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
-    startLine: 24
+    startLine: 44
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
@@ -117,63 +223,60 @@ items:
       <ExtensionAttribute>
 
       Public Shared Sub CloseSafely(connection As IDbConnection)
-  overload: DotNetHelper.Database.Extension.DBConnectionExtension.CloseSafely*
+  overload: DotNetHelper.Database.Extension.DbConnectionExtension.CloseSafely*
   modifiers.csharp:
   - public
   - static
   modifiers.vb:
   - Public
   - Shared
-- uid: DotNetHelper.Database.Extension.DBConnectionExtension.DatabaseAccess``1(``0,System.Nullable{DotNetHelper.ObjectToSql.Enum.DataBaseType})
-  commentId: M:DotNetHelper.Database.Extension.DBConnectionExtension.DatabaseAccess``1(``0,System.Nullable{DotNetHelper.ObjectToSql.Enum.DataBaseType})
-  id: DatabaseAccess``1(``0,System.Nullable{DotNetHelper.ObjectToSql.Enum.DataBaseType})
+- uid: DotNetHelper.Database.Extension.DbConnectionExtension.OpenSafelyAsync(System.Data.Common.DbConnection,System.Threading.CancellationToken)
+  commentId: M:DotNetHelper.Database.Extension.DbConnectionExtension.OpenSafelyAsync(System.Data.Common.DbConnection,System.Threading.CancellationToken)
+  id: OpenSafelyAsync(System.Data.Common.DbConnection,System.Threading.CancellationToken)
   isExtensionMethod: true
-  parent: DotNetHelper.Database.Extension.DBConnectionExtension
+  parent: DotNetHelper.Database.Extension.DbConnectionExtension
   langs:
   - csharp
   - vb
-  name: DatabaseAccess<T>(T, Nullable<DataBaseType>)
-  nameWithType: DBConnectionExtension.DatabaseAccess<T>(T, Nullable<DataBaseType>)
-  fullName: DotNetHelper.Database.Extension.DBConnectionExtension.DatabaseAccess<T>(T, System.Nullable<DotNetHelper.ObjectToSql.Enum.DataBaseType>)
+  name: OpenSafelyAsync(DbConnection, CancellationToken)
+  nameWithType: DbConnectionExtension.OpenSafelyAsync(DbConnection, CancellationToken)
+  fullName: DotNetHelper.Database.Extension.DbConnectionExtension.OpenSafelyAsync(System.Data.Common.DbConnection, System.Threading.CancellationToken)
   type: Method
   source:
     remote:
       path: src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
-      branch: master
-      repo: https://github.com/TheMofaDe/DotNetHelper.Database.git
-    id: DatabaseAccess
+      branch: Feature-Async
+      repo: https://github.com/TheMofaDe/DotNetHelper.Database
+    id: OpenSafelyAsync
     path: ../src/DotNetHelper.Database/Extension/IDBConnectionExtension.cs
-    startLine: 36
+    startLine: 61
   assemblies:
   - DotNetHelper.Database
   namespace: DotNetHelper.Database.Extension
+  summary: "\n\n"
+  example: []
   syntax:
-    content: >-
-      public static IDatabaseAccess DatabaseAccess<T>(this T connection, DataBaseType? dataBaseType = default(DataBaseType? ))
-          where T : DbConnection, new()
+    content: public static Task<bool> OpenSafelyAsync(this DbConnection connection, CancellationToken cancellationToken = default(CancellationToken))
     parameters:
     - id: connection
-      type: '{T}'
-    - id: dataBaseType
-      type: System.Nullable{DotNetHelper.ObjectToSql.Enum.DataBaseType}
-    typeParameters:
-    - id: T
+      type: System.Data.Common.DbConnection
+      description: ''
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
     return:
-      type: DotNetHelper.Database.Interface.IDatabaseAccess
+      type: System.Threading.Tasks.Task{System.Boolean}
+      description: true if the connection was force to be opened false if connection was already open
     content.vb: >-
       <ExtensionAttribute>
 
-      Public Shared Function DatabaseAccess(Of T As {DbConnection, New})(connection As T, dataBaseType As DataBaseType? = Nothing) As IDatabaseAccess
-  overload: DotNetHelper.Database.Extension.DBConnectionExtension.DatabaseAccess*
-  nameWithType.vb: DBConnectionExtension.DatabaseAccess(Of T)(T, Nullable(Of DataBaseType))
+      Public Shared Function OpenSafelyAsync(connection As DbConnection, cancellationToken As CancellationToken = Nothing) As Task(Of Boolean)
+  overload: DotNetHelper.Database.Extension.DbConnectionExtension.OpenSafelyAsync*
   modifiers.csharp:
   - public
   - static
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: DotNetHelper.Database.Extension.DBConnectionExtension.DatabaseAccess(Of T)(T, System.Nullable(Of DotNetHelper.ObjectToSql.Enum.DataBaseType))
-  name.vb: DatabaseAccess(Of T)(T, Nullable(Of DataBaseType))
 references:
 - uid: DotNetHelper.Database.Extension
   commentId: N:DotNetHelper.Database.Extension
@@ -472,11 +575,130 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: DotNetHelper.Database.Extension.DBConnectionExtension.OpenSafely*
-  commentId: Overload:DotNetHelper.Database.Extension.DBConnectionExtension.OpenSafely
+- uid: DotNetHelper.Database.Extension.DbConnectionExtension.ObjToSql*
+  commentId: Overload:DotNetHelper.Database.Extension.DbConnectionExtension.ObjToSql
+  name: ObjToSql
+  nameWithType: DbConnectionExtension.ObjToSql
+  fullName: DotNetHelper.Database.Extension.DbConnectionExtension.ObjToSql
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: DotNetHelper.ObjectToSql.Services.ObjectToSql
+  commentId: T:DotNetHelper.ObjectToSql.Services.ObjectToSql
+  parent: DotNetHelper.ObjectToSql.Services
+  isExternal: true
+  name: ObjectToSql
+  nameWithType: ObjectToSql
+  fullName: DotNetHelper.ObjectToSql.Services.ObjectToSql
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: DotNetHelper.ObjectToSql.Services
+  commentId: N:DotNetHelper.ObjectToSql.Services
+  isExternal: true
+  name: DotNetHelper.ObjectToSql.Services
+  nameWithType: DotNetHelper.ObjectToSql.Services
+  fullName: DotNetHelper.ObjectToSql.Services
+- uid: DotNetHelper.Database.Extension.DbConnectionExtension.DB*
+  commentId: Overload:DotNetHelper.Database.Extension.DbConnectionExtension.DB
+  name: DB
+  nameWithType: DbConnectionExtension.DB
+  fullName: DotNetHelper.Database.Extension.DbConnectionExtension.DB
+- uid: DotNetHelper.Database.DataSource.DB{{T}}
+  commentId: T:DotNetHelper.Database.DataSource.DB{``0}
+  parent: DotNetHelper.Database.DataSource
+  definition: DotNetHelper.Database.DataSource.DB`1
+  name: DB<T>
+  nameWithType: DB<T>
+  fullName: DotNetHelper.Database.DataSource.DB<T>
+  nameWithType.vb: DB(Of T)
+  fullName.vb: DotNetHelper.Database.DataSource.DB(Of T)
+  name.vb: DB(Of T)
+  spec.csharp:
+  - uid: DotNetHelper.Database.DataSource.DB`1
+    name: DB
+    nameWithType: DB
+    fullName: DotNetHelper.Database.DataSource.DB
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: DotNetHelper.Database.DataSource.DB`1
+    name: DB
+    nameWithType: DB
+    fullName: DotNetHelper.Database.DataSource.DB
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.Database.DataSource.DB`1
+  commentId: T:DotNetHelper.Database.DataSource.DB`1
+  name: DB<TDbConnection>
+  nameWithType: DB<TDbConnection>
+  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>
+  nameWithType.vb: DB(Of TDbConnection)
+  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection)
+  name.vb: DB(Of TDbConnection)
+  spec.csharp:
+  - uid: DotNetHelper.Database.DataSource.DB`1
+    name: DB
+    nameWithType: DB
+    fullName: DotNetHelper.Database.DataSource.DB
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TDbConnection
+    nameWithType: TDbConnection
+    fullName: TDbConnection
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: DotNetHelper.Database.DataSource.DB`1
+    name: DB
+    nameWithType: DB
+    fullName: DotNetHelper.Database.DataSource.DB
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TDbConnection
+    nameWithType: TDbConnection
+    fullName: TDbConnection
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DotNetHelper.Database.DataSource
+  commentId: N:DotNetHelper.Database.DataSource
+  name: DotNetHelper.Database.DataSource
+  nameWithType: DotNetHelper.Database.DataSource
+  fullName: DotNetHelper.Database.DataSource
+- uid: DotNetHelper.Database.Extension.DbConnectionExtension.OpenSafely*
+  commentId: Overload:DotNetHelper.Database.Extension.DbConnectionExtension.OpenSafely
   name: OpenSafely
-  nameWithType: DBConnectionExtension.OpenSafely
-  fullName: DotNetHelper.Database.Extension.DBConnectionExtension.OpenSafely
+  nameWithType: DbConnectionExtension.OpenSafely
+  fullName: DotNetHelper.Database.Extension.DbConnectionExtension.OpenSafely
 - uid: System.Data.IDbConnection
   commentId: T:System.Data.IDbConnection
   parent: System.Data
@@ -490,117 +712,128 @@ references:
   name: System.Data
   nameWithType: System.Data
   fullName: System.Data
-- uid: DotNetHelper.Database.Extension.DBConnectionExtension.CloseSafely*
-  commentId: Overload:DotNetHelper.Database.Extension.DBConnectionExtension.CloseSafely
+- uid: DotNetHelper.Database.Extension.DbConnectionExtension.CloseSafely*
+  commentId: Overload:DotNetHelper.Database.Extension.DbConnectionExtension.CloseSafely
   name: CloseSafely
-  nameWithType: DBConnectionExtension.CloseSafely
-  fullName: DotNetHelper.Database.Extension.DBConnectionExtension.CloseSafely
-- uid: DotNetHelper.Database.Extension.DBConnectionExtension.DatabaseAccess*
-  commentId: Overload:DotNetHelper.Database.Extension.DBConnectionExtension.DatabaseAccess
-  name: DatabaseAccess
-  nameWithType: DBConnectionExtension.DatabaseAccess
-  fullName: DotNetHelper.Database.Extension.DBConnectionExtension.DatabaseAccess
-- uid: '{T}'
-  commentId: '!:T'
-  definition: T
-  name: T
-  nameWithType: T
-  fullName: T
-- uid: System.Nullable{DotNetHelper.ObjectToSql.Enum.DataBaseType}
-  commentId: T:System.Nullable{DotNetHelper.ObjectToSql.Enum.DataBaseType}
-  parent: System
-  definition: System.Nullable`1
-  name: Nullable<DataBaseType>
-  nameWithType: Nullable<DataBaseType>
-  fullName: System.Nullable<DotNetHelper.ObjectToSql.Enum.DataBaseType>
-  nameWithType.vb: Nullable(Of DataBaseType)
-  fullName.vb: System.Nullable(Of DotNetHelper.ObjectToSql.Enum.DataBaseType)
-  name.vb: Nullable(Of DataBaseType)
-  spec.csharp:
-  - uid: System.Nullable`1
-    name: Nullable
-    nameWithType: Nullable
-    fullName: System.Nullable
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: DotNetHelper.ObjectToSql.Enum.DataBaseType
-    name: DataBaseType
-    nameWithType: DataBaseType
-    fullName: DotNetHelper.ObjectToSql.Enum.DataBaseType
-    isExternal: true
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Nullable`1
-    name: Nullable
-    nameWithType: Nullable
-    fullName: System.Nullable
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: DotNetHelper.ObjectToSql.Enum.DataBaseType
-    name: DataBaseType
-    nameWithType: DataBaseType
-    fullName: DotNetHelper.ObjectToSql.Enum.DataBaseType
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: DotNetHelper.Database.Interface.IDatabaseAccess
-  commentId: T:DotNetHelper.Database.Interface.IDatabaseAccess
-  parent: DotNetHelper.Database.Interface
-  name: IDatabaseAccess
-  nameWithType: IDatabaseAccess
-  fullName: DotNetHelper.Database.Interface.IDatabaseAccess
-- uid: T
-  name: T
-  nameWithType: T
-  fullName: T
-- uid: System.Nullable`1
-  commentId: T:System.Nullable`1
+  nameWithType: DbConnectionExtension.CloseSafely
+  fullName: DotNetHelper.Database.Extension.DbConnectionExtension.CloseSafely
+- uid: DotNetHelper.Database.Extension.DbConnectionExtension.OpenSafelyAsync*
+  commentId: Overload:DotNetHelper.Database.Extension.DbConnectionExtension.OpenSafelyAsync
+  name: OpenSafelyAsync
+  nameWithType: DbConnectionExtension.OpenSafelyAsync
+  fullName: DotNetHelper.Database.Extension.DbConnectionExtension.OpenSafelyAsync
+- uid: System.Data.Common.DbConnection
+  commentId: T:System.Data.Common.DbConnection
+  parent: System.Data.Common
   isExternal: true
-  name: Nullable<T>
-  nameWithType: Nullable<T>
-  fullName: System.Nullable<T>
-  nameWithType.vb: Nullable(Of T)
-  fullName.vb: System.Nullable(Of T)
-  name.vb: Nullable(Of T)
+  name: DbConnection
+  nameWithType: DbConnection
+  fullName: System.Data.Common.DbConnection
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{System.Boolean}
+  commentId: T:System.Threading.Tasks.Task{System.Boolean}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Boolean>
+  nameWithType: Task<Boolean>
+  fullName: System.Threading.Tasks.Task<System.Boolean>
+  nameWithType.vb: Task(Of Boolean)
+  fullName.vb: System.Threading.Tasks.Task(Of System.Boolean)
+  name.vb: Task(Of Boolean)
   spec.csharp:
-  - uid: System.Nullable`1
-    name: Nullable
-    nameWithType: Nullable
-    fullName: System.Nullable
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: System.Nullable`1
-    name: Nullable
-    nameWithType: Nullable
-    fullName: System.Nullable
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
   - name: )
     nameWithType: )
     fullName: )
-- uid: DotNetHelper.Database.Interface
-  commentId: N:DotNetHelper.Database.Interface
-  name: DotNetHelper.Database.Interface
-  nameWithType: DotNetHelper.Database.Interface
-  fullName: DotNetHelper.Database.Interface
+- uid: System.Data.Common
+  commentId: N:System.Data.Common
+  isExternal: true
+  name: System.Data.Common
+  nameWithType: System.Data.Common
+  fullName: System.Data.Common
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks

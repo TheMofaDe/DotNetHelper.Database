@@ -4,7 +4,7 @@ items:
   commentId: N:DotNetHelper.Database.DataSource
   id: DotNetHelper.Database.DataSource
   children:
-  - DotNetHelper.Database.DataSource.DatabaseAccess`1
+  - DotNetHelper.Database.DataSource.DB`1
   langs:
   - csharp
   - vb
@@ -15,19 +15,19 @@ items:
   assemblies:
   - DotNetHelper.Database
 references:
-- uid: DotNetHelper.Database.DataSource.DatabaseAccess`1
-  commentId: T:DotNetHelper.Database.DataSource.DatabaseAccess`1
-  name: DatabaseAccess<TDbConnection>
-  nameWithType: DatabaseAccess<TDbConnection>
-  fullName: DotNetHelper.Database.DataSource.DatabaseAccess<TDbConnection>
-  nameWithType.vb: DatabaseAccess(Of TDbConnection)
-  fullName.vb: DotNetHelper.Database.DataSource.DatabaseAccess(Of TDbConnection)
-  name.vb: DatabaseAccess(Of TDbConnection)
+- uid: DotNetHelper.Database.DataSource.DB`1
+  commentId: T:DotNetHelper.Database.DataSource.DB`1
+  name: DB<TDbConnection>
+  nameWithType: DB<TDbConnection>
+  fullName: DotNetHelper.Database.DataSource.DB<TDbConnection>
+  nameWithType.vb: DB(Of TDbConnection)
+  fullName.vb: DotNetHelper.Database.DataSource.DB(Of TDbConnection)
+  name.vb: DB(Of TDbConnection)
   spec.csharp:
-  - uid: DotNetHelper.Database.DataSource.DatabaseAccess`1
-    name: DatabaseAccess
-    nameWithType: DatabaseAccess
-    fullName: DotNetHelper.Database.DataSource.DatabaseAccess
+  - uid: DotNetHelper.Database.DataSource.DB`1
+    name: DB
+    nameWithType: DB
+    fullName: DotNetHelper.Database.DataSource.DB
   - name: <
     nameWithType: <
     fullName: <
@@ -38,10 +38,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: DotNetHelper.Database.DataSource.DatabaseAccess`1
-    name: DatabaseAccess
-    nameWithType: DatabaseAccess
-    fullName: DotNetHelper.Database.DataSource.DatabaseAccess
+  - uid: DotNetHelper.Database.DataSource.DB`1
+    name: DB
+    nameWithType: DB
+    fullName: DotNetHelper.Database.DataSource.DB
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '

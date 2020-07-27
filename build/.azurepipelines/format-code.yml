@@ -1,0 +1,7 @@
+steps:
+- template: common-steps.yml
+  parameters:
+    includeArtifacts: true
+- pwsh: ./build.ps1 -target Format-Code
+  displayName: '[Format Code]'
+

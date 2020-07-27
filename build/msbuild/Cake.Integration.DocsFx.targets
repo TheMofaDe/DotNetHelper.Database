@@ -1,0 +1,149 @@
+<Project>
+<Target Name="DocFxCreator"   DependsOnTargets="SetVersionMetadata"  >
+
+<PropertyGroup>
+    <PrepareForBuildDependsOn Condition="'$(GenerateDocumentation)' == 'true'">$(PrepareForBuildDependsOn);DocFxCreator</PrepareForBuildDependsOn>
+</PropertyGroup>
+
+<!-- If You need to modify doxcfx value use tools like https://codebeautify.org/xml-escape-unescape to prettify the code  -->
+<PropertyGroup>
+<DocsFx>{
+  &quot;metadata&quot;:[
+     {
+        &quot;src&quot;:[
+           {
+              &quot;files&quot;:[
+                 &quot;**/$(ProjectName)*.csproj&quot;
+              ],
+              &quot;exclude&quot;:[
+                 &quot;**/bin/**&quot;,
+                 &quot;**/obj/**&quot;
+              ],
+              &quot;src&quot;:&quot;../src&quot;
+           }
+        ],
+        &quot;dest&quot;:&quot;api&quot;,
+        &quot;shouldSkipMarkup&quot;: false,
+        &quot;properties&quot;:{
+           &quot;TargetFramework&quot;:&quot;$(TargetFramework)&quot;
+        }
+     }
+  ],
+  &quot;build&quot;:{
+     &quot;content&quot;:[
+        {
+           &quot;files&quot;:[
+              &quot;*.yml&quot;,
+              &quot;*.md&quot;
+           ],
+           &quot;src&quot;:&quot;api&quot;,
+           &quot;dest&quot;:&quot;api&quot;
+        },
+        {
+           &quot;files&quot;:[
+              &quot;*.md&quot;,
+              &quot;toc.yml&quot;
+           ],
+           &quot;src&quot;:&quot;.&quot;,
+           &quot;dest&quot;:&quot;.&quot;
+        },
+        {
+           &quot;files&quot;:[
+              &quot;*.md&quot;,
+              &quot;*.yml&quot;,
+              &quot;**/*.md&quot;,
+              &quot;**/*.yml&quot;
+           ],
+           &quot;src&quot;:&quot;./tutorials&quot;,
+           &quot;dest&quot;:&quot;./tutorials&quot;
+        }
+     ],
+     &quot;resource&quot;:[
+        {
+           &quot;files&quot;:[
+              &quot;images/**&quot;,
+              &quot;langwordmapping/**&quot;
+           ],
+           &quot;exclude&quot;:[
+              &quot;**.meta&quot;
+           ]
+        }
+     ],
+     &quot;globalMetadata&quot;:{
+        &quot;_appTitle&quot;:&quot;$(Product)&quot;,
+        &quot;_gitContribute&quot;:{
+           &quot;repo&quot;:&quot;$(RepositoryUrl)&quot;,
+           &quot;branch&quot;:&quot;$(GitBranch)&quot;,
+           &quot;apiSpecFolder&quot;:&quot;docs-ref-overwrite&quot;
+        },
+        &quot;_disableContribution&quot;:false,
+        &quot;_disableBreadcrumb&quot;:false,
+        &quot;_appFaviconPath&quot;:&quot;logo/favicon.ico&quot;,
+        &quot;_disableNavbar&quot;:false,
+        &quot;_enableSearch&quot;:true,
+        &quot;_navRel&quot;:&quot;toc.html&quot;,
+        &quot;_appLogoPath&quot;:&quot;logo/logo.png&quot;,
+        &quot;_appFooter&quot;:&quot; &lt;strong&gt;$(Copyright)&lt;/strong&gt;&quot;
+     },
+     &quot;dest&quot;:&quot;./&quot;,
+     &quot;globalMetadataFiles&quot;:[
+
+     ],
+     &quot;template&quot;:[
+        &quot;default&quot;,
+        &quot;statictoc&quot;,
+        &quot;templates/darkfx&quot;
+     ],
+     &quot;postProcessors&quot;:[
+
+     ],
+     &quot;markdownEngineName&quot;:&quot;markdig&quot;,
+     &quot;noLangKeyword&quot;:false,
+     &quot;xrefService&quot;:[
+        &quot;https://xref.docs.microsoft.com/query?uid={uid}&quot;
+     ],
+     &quot;keepFileLink&quot;:true,
+     &quot;cleanupCacheHistory&quot;:true,
+     &quot;disableGitFeatures&quot;:false
+  }
+}</DocsFx>
+
+<DocsFxTableOfContent>
+# HELP LINK https://dotnet.github.io/docfx/tutorial/intro_toc.html
+# NAME : name of item this field allows white space 
+# HREF : on item click redirect lnk
+# UID  : reference file by unique identifier in header of markdown file
+- name: Home
+  href: index.md
+- name: Tutorials
+  href: tutorials/index.md
+- name: API
+  href: api/$(ProjectName).html  # if your project contains a dash it will need to be replace with a underscore on this line only
+- name: Change Log
+  href: $(GitRepositoryUrl)/blob/master/CHANGELOG.md
+- name: Github
+  href: $(GitRepositoryUrl)
+</DocsFxTableOfContent>
+</PropertyGroup>
+
+
+<WriteLinesToFile
+      Overwrite="true"
+      Lines="$(DocsFx)"
+      File="$(RepoRootPath)docs/docfx.json"
+      ContinueOnError="false"/>
+
+<WriteLinesToFile
+      Overwrite="true"
+      Lines="$(DocsFxTableOfContent)"
+      File="$(RepoRootPath)docs/toc.yml"
+      ContinueOnError="false"/> 
+
+     
+</Target>
+
+
+
+
+
+</Project>
