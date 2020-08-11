@@ -3,7 +3,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 
-## [1.0.64] - 2020-06-05
+## [1.1.4] - 2020-08-11
+
+### Changed 
+*   Update nuget package
+
+<br/>
+
+
+
+## [1.1.3] - 2020-07-27
 ### Added
 *   Async support everywhere 
 

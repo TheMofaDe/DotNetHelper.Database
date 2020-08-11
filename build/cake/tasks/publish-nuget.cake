@@ -7,7 +7,7 @@ Task("Publish-NuGet")
     .WithCriteria<BuildParameters>((context, parameters) => parameters.IsChangeLogUpToDate,  "Don't be lazy keep your change log up to date before publishing")
     .Does<BuildParameters>((parameters) =>
 {
-    if (parameters.IsStableRelease())
+    if (parameters.IsStableRelease() || parameters.IsPreRelease()) 
     {
         var apiKey = parameters.Credentials.Nuget.ApiKey;
         if(string.IsNullOrEmpty(apiKey)) {
