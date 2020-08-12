@@ -148,10 +148,9 @@ For more information, please refer to the [Officials Docs][Docs]
 [Docs-samples]: https://dotnet.github.io/docfx/
 [Changelogs]: https://github.com/TheMofaDe/DotNetHelper.Database/blob/master/CHANGELOG.md
 
-
 <!-- BADGES. -->
 
-[nuget-downloads]: https://img.shields.io/nuget/dt/DotNetHelper.Database.svg?style=flat-square
+[nuget-downloads]: https://img.shields.io/nuget/dt/DotNetHelper.Database.svg?color=blue&style=flat-square
 [tests]: https://img.shields.io/appveyor/tests/TheMofaDe/dotnethelper-database.svg?style=flat-square
 [coverage-status]: https://dev.azure.com/Josephmcnealjr0013/DotNetHelper.Database/_apis/build/status/TheMofaDe.DotNetHelper.Database?branchName=master&jobName=Windows
 
