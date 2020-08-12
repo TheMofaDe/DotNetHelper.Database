@@ -152,10 +152,10 @@ For more information, please refer to the [Officials Docs][Docs]
 <!-- BADGES. -->
 
 [nuget-downloads]: https://img.shields.io/nuget/dt/DotNetHelper.Database.svg?style=flat-square
-[tests]: https://img.shields.io/appveyor/tests/TheMofaDe/DotNetHelper.Database.svg?style=flat-square
+[tests]: https://img.shields.io/appveyor/tests/TheMofaDe/dotnethelper-database.svg?style=flat-square
 [coverage-status]: https://dev.azure.com/Josephmcnealjr0013/DotNetHelper.Database/_apis/build/status/TheMofaDe.DotNetHelper.Database?branchName=master&jobName=Windows
 
-[azure-windows]: https://dev.azure.com/Josephmcnealjr0013/DotNetHelper.Database/_apis/build/status/TheMofaDe.DotNetHelper.Database?branchName=master&jobName=Windows
+[azure-windows]: https://dev.azure.com/Josephmcnealjr0013/DotNetHelper.Database/_apis/build/status/TheMofaDe.DotNetHelper.Database?branchName=master&stageName=Build
 [azure-linux]: https://dev.azure.com/Josephmcnealjr0013/DotNetHelper.Database/_apis/build/status/TheMofaDe.DotNetHelper.Database?branchName=master&jobName=Linux
 [azure-macOS]: https://dev.azure.com/Josephmcnealjr0013/DotNetHelper.Database/_apis/build/status/TheMofaDe.DotNetHelper.Database?branchName=master&jobName=macOS
 [app-veyor]: https://ci.appveyor.com/project/TheMofaDe/dotnethelper-database
